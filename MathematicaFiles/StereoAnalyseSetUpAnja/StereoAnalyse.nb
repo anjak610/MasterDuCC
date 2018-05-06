@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    125318,       2741]
-NotebookOptionsPosition[    124908,       2725]
-NotebookOutlinePosition[    125250,       2740]
-CellTagsIndexPosition[    125207,       2737]
+NotebookDataLength[    125507,       2743]
+NotebookOptionsPosition[    125094,       2727]
+NotebookOutlinePosition[    125439,       2742]
+CellTagsIndexPosition[    125396,       2739]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1516,16 +1516,15 @@ K2___________________________________\n\n\n\>\"", "]"}], ";",
            RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
        "\[IndentingNewLine]", 
        RowBox[{"K2", "=", 
-        RowBox[{"(*", 
-         RowBox[{"A", "."}], "*)"}], 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{"2796.335", ",", "0", ",", "947.4308"}], "}"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"0", ",", "2796.944", ",", "702.8681"}], "}"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
+        RowBox[{"A", ".", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2796.335", ",", "0", ",", "947.4308"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "2796.944", ",", "702.8681"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}]}], ";", 
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"(*", 
         RowBox[{
@@ -2718,13 +2717,16 @@ Translation________________________________________________\n\n\n\>\"", "]"}],
    3.7342621387382774`*^9}, {3.7342621695682545`*^9, 
    3.7342622308232965`*^9}, {3.734268849570096*^9, 3.7342688534360905`*^9}, {
    3.734268906902105*^9, 3.7342689126351104`*^9}, {3.7342689441831164`*^9, 
-   3.73426896274512*^9}},ExpressionUUID->"14d72b4d-6772-4630-8484-\
+   3.73426896274512*^9}, {3.734583120513117*^9, 3.7345831436620665`*^9}, {
+   3.7345856018095436`*^9, 3.7345856131675453`*^9}, {3.7345860534576387`*^9, 
+   3.7345860635926404`*^9}, {3.7345862071458445`*^9, 
+   3.7345862251998477`*^9}},ExpressionUUID->"14d72b4d-6772-4630-8484-\
 59c1264927bf"],
 
 Cell[BoxData[""], "Input",ExpressionUUID->"dd9208d4-6960-40a5-875f-8070755edc7f"]
 },
 WindowSize->{962, 992},
-WindowMargins->{{Automatic, -5}, {Automatic, 0}},
+WindowMargins->{{Automatic, -1919}, {Automatic, 3}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2739,9 +2741,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 124262, 2701, 12074, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 124448, 2703, 12074, "Input", "ExpressionUUID" -> \
 "14d72b4d-6772-4630-8484-59c1264927bf"],
-Cell[124823, 2723, 81, 0, 30, "Input", "ExpressionUUID" -> \
+Cell[125009, 2725, 81, 0, 30, "Input", "ExpressionUUID" -> \
 "dd9208d4-6960-40a5-875f-8070755edc7f"]
 }
 ]

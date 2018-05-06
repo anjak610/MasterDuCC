@@ -138,6 +138,12 @@ William T. Vetterling Brian P.~Flannery William H.~Press, Saul A.~Teukolsky.
   Reserved., Reprinted with corrections 1997, Volume 1 of Fortran Numerical
   Recipes.
 
+\bibitem{ACM}
+James~Demmel Dinesh~Manocha.
+\newblock Algorithms for interesting parametric and algebraic curves 1: Simple
+  intersections.
+\newblock ACM Transactions of Graphics:73--100, 1994.
+
 \bibitem{MatlabCamParam}
 MathWorks.
 \newblock Mathworks documentation,estimate camera parameters.
