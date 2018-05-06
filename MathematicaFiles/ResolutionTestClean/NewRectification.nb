@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    116700,       2811]
-NotebookOptionsPosition[    116392,       2797]
-NotebookOutlinePosition[    116734,       2812]
-CellTagsIndexPosition[    116691,       2809]
+NotebookDataLength[    116669,       2811]
+NotebookOptionsPosition[    116358,       2797]
+NotebookOutlinePosition[    116704,       2812]
+CellTagsIndexPosition[    116661,       2809]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1564,25 +1564,25 @@ criterion_______________________________________________\n\>\"", "]"}], ";",
         RowBox[{"piC", " ", "=", " ", 
          RowBox[{"Hr", ".", "Hp", ".", "piC"}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"piD", " ", "=", " ", 
-         RowBox[{"Hr", ".", "Hp", ".", "piD"}]}], ";", "\[IndentingNewLine]", 
-        "\[IndentingNewLine]", 
-        RowBox[{"piD", " ", "=", " ", 
-         RowBox[{"piD", "/", 
-          RowBox[{"piD", "[", 
-           RowBox[{"[", "3", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"piA", " ", "=", " ", 
-         RowBox[{"piA", "/", 
-          RowBox[{"piA", "[", 
-           RowBox[{"[", "3", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"piB", " ", "=", " ", 
-         RowBox[{"piB", "/", 
-          RowBox[{"piB", "[", 
-           RowBox[{"[", "3", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"piC", " ", "=", " ", 
-         RowBox[{"piC", "/", 
-          RowBox[{"piC", "[", 
-           RowBox[{"[", "3", "]"}], "]"}]}]}], ";"}], "*)"}], 
+         RowBox[{"Hr", ".", "Hp", ".", "piD"}]}], ";"}], "*)"}], 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"piD", " ", "=", " ", 
+       RowBox[{"piD", "/", 
+        RowBox[{"piD", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"piA", " ", "=", " ", 
+       RowBox[{"piA", "/", 
+        RowBox[{"piA", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"piB", " ", "=", " ", 
+       RowBox[{"piB", "/", 
+        RowBox[{"piB", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"piC", " ", "=", " ", 
+       RowBox[{"piC", "/", 
+        RowBox[{"piC", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{"\"\<piA = \>\"", ",", " ", "piA"}], "]"}], ";", 
       "\[IndentingNewLine]", 
@@ -2792,11 +2792,11 @@ criterion_______________________________________________\n\>\"", "]"}],
    3.7346154291584616`*^9}, {3.7346154809498816`*^9, 
    3.7346154894840174`*^9}, {3.7346155966742086`*^9, 3.734615637794796*^9}, {
    3.734615689662635*^9, 
-   3.7346157017058945`*^9}},ExpressionUUID->"a2a2edca-7860-431a-a75f-\
+   3.7346157196143036`*^9}},ExpressionUUID->"a2a2edca-7860-431a-a75f-\
 8a70d82dc2b7"]
 },
-WindowSize->{962, 989},
-WindowMargins->{{Automatic, -1}, {Automatic, 0}},
+WindowSize->{1920, 997},
+WindowMargins->{{1912, Automatic}, {Automatic, -8}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2811,7 +2811,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 115830, 2775, 10684, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 115796, 2775, 9822, "Input", "ExpressionUUID" -> \
 "a2a2edca-7860-431a-a75f-8a70d82dc2b7"]
 }
 ]

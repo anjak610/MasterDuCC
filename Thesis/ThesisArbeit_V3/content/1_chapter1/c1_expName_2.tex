@@ -2,6 +2,8 @@
 \label{sec:homographien} 
 
 
+Einfügen warum muss ich das wissen.(rektifizierung)
+
 Im vorherigen Kapitel \nameref{sec:basisTransformation} wurde ausführlich dargelegt, wie Koordinatensysteme ineinander überführt werden könnens. Die folgenden Kapitel sollen anhand eines Beispiels zeigen, dass sich die in Kapitel \nameref{sec:basisTransformation} gezeigten Transformationen in Matrizen zusammenfassen lassen. Es soll eine Matrix $H$ aufgestellt werden, welche die Bildpunkte zweier Kameras ineinander überführen kann, ohne, dass die intrinsischen und extrinsischen Parameter bekannt sind. Für den Aufbau des Minimalbeispiels, werden die entsprechenden Kameramatrizen aufgestellt, jedoch wird gezeigt, dass sie für die Herleitung von $H$ keine Rolle spielen. Im ersten Beispiel wird sowohl davon ausgegangen, dass die intrinsischen und extrinsischen Kameraparameter unbekannt sind und nur die Bildpunkte von beiden Kamerakoordinatensystemen bekannt sind, als auch, dass die beiden Kameras sich ein Projektionszentrum teilen.  Des Weiteren wird festgelegt, dass sich alle Objektpunkte im Raum $\mathbb{R}^3$ auf einer Ebene befinden. Nun wird behauptet, dass es möglich ist eine sogenannte 3x3-Homographiematrix $H$ zu ermitteln, welche die Punkte von Kamera eins in die Punkte von Kamera zwei und umgekehrt überführen kann. Als Homographie wird eine projektive Transformation zwischen zwei Ebenen bezeichnet. Dabei bleiben Kollinearitäten und die Reihenfolge von Punkten auf Geraden, wie zum Beispiel Schnittpunkte mit anderen Geraden, erhalten. Aufgrund dieser Ebenenannahme, kann solch eine projektive Transformation durch eine 3x3-Homograohiematrix ausgedrückt werden\cite{Roser}. Sprich die entstehende Homograohiematrix $H$, projiziert jede Figur in eine Figur gleicher projektiver Entsprechung\cite{HZ,Elements}. Sind die Punkte $A',B',C'$ und $D'$ die projektiven Bilder eines Systems von vier kollinearen Punkten, so ist $(A',B',C',D') = (A,B,C,D)$\cite{Peiffer}. Die Homographie fasst die Transformationen wie Rotation und Translation, sowie die jeweiligen Abbildungsmatrizen der Kameras in einer 3x3-Matrix zusammen.\cite{Elements,Peiffer}.
  
 Es seien \ensuremath{m = \begin{pmatrix}
@@ -80,7 +82,7 @@ Es Resultiert also dass wenn $\lambda = \frac{\gamma'}{\gamma}$, dann gilt dass 
 \section{Homographien bei Drehungen um ein Projektionszentrum}
 
 %Homographie zwischen der Abbildungen eines Quadrates einer definierten Ausgangskamera und einer um ihr Projektionszentrum rotierten Kamera
-In diesem Beispiel werden die abgebildeten Punkte eines Quadrats einer Kamera $(C_\beta)$ mit $\beta= [\vec{b_1},\vec{b_2},\vec{b_3},C]$ in die einer anderen Kamera $(C',\beta')$ mit $\beta'= [\vec{b'_1},\vec{b'_2},\vec{b'_3},C']$  mit Hilfe einer selbst aufgestellten Homographiematrix überführt. Hierzu wird zunächst eine Szene mit den Eckpunkten des Quadrates $A_\delta, B_\delta, C_\delta, D_\delta$ und dessen Mittelpunkt mit $E_\delta$ und zwei Kameras $C_{\delta}$ und $C'_{\delta}$ definiert. Für Die Projektionszentren der Kameras gilt in hier, dass $C'_{\delta} = C_\delta$. Die Eckpunkte so wie die Kameras werden in Weltkoordinaten mit den Basen $(O,\delta)$ mit $\delta = [\vec{d_1},\vec{d_1},\vec{d_1},O]$ angegeben. Mit Hilfe der gelernten Transformationsmethoden, werden die Eckpunkte in ihre jeweiligen 2D-Bildebenenkooridnaten $(I,\tau)$ und $(I',\tau')$ umgerechnet. Nachdem die Szene vollständig definiert und die auf den Kameras abgebildeten Punkte berechnet sind, werden zwei Methoden gezeigt, mit welchem die Homographiematrix ermittelt werden kann. Da es sich in diesem Beispiel um ein selbst aufgestelltes Minimalbeispiel handelt, kommt es zu keinem überbestimmten Fall bei der der Berechnung der Homographiematrize. Da in Realbeispielen, jedoch immer damit gerechnet werden muss, dass es zu einem überbestimmten Fall kommt, wird das Verfahren, welches diesen Fall abdeckt ebenfalls aufgezeigt. Der Szenenaufbau des Minimalbeispiels soll folgendermaßen aussehen. Die Kamerakoordinatensysteme unterscheiden sich vom Weltkoordinatensystem durch eine Drehung um 180° um die \ensuremath{\vec{d}_1}-Achse. Der Ursprung beider Kamerakoordinatensysteme entspricht dem Projektionszentrum $C$. Des Weiteren ist Kamera zwei noch um $45^\circ$ um die $\vec{b_2}$ zu Kamera eins eingedreht. Es werden zwei Bilder der selben Szene mit diesen Kameras aufgenommen. Die Behauptung ist, dass sich die beiden entstandenen Bilder mit Einer Homographie ineinander überführen lassen. In Abbildung 3.3 ist der Aufbau nochmal grafisch veranschaulicht.
+In diesem Beispiel werden die abgebildeten Punkte eines Quadrats einer Kamera $(C_\beta)$ mit $\beta= [\vec{b_1},\vec{b_2},\vec{b_3},C]$ in die einer anderen Kamera $(C',\beta')$ mit $\beta'= [\vec{b'_1},\vec{b'_2},\vec{b'_3},C']$  mit Hilfe einer selbst aufgestellten Homographiematrix überführt. Hierzu wird zunächst eine Szene mit den Eckpunkten des Quadrates $A_\delta, B_\delta, C_\delta, D_\delta$ und dessen Mittelpunkt mit $E_\delta$ und zwei Kameras $C_{\delta}$ und $C'_{\delta}$ definiert. Für Die Projektionszentren der Kameras gilt in hier, dass $C'_{\delta} = C_\delta$. Die Eckpunkte so wie die Kameras werden in Weltkoordinaten mit den Basen $(O,\delta)$ mit $\delta = [\vec{d_1},\vec{d_1},\vec{d_1},O]$ angegeben. Mit Hilfe der gelernten Transformationsmethoden, werden die Eckpunkte in ihre jeweiligen 2D-Bildebenenkooridnaten $(I,\tau)$ und $(I',\tau')$ umgerechnet. Nachdem die Szene vollständig definiert und die auf den Kameras abgebildeten Punkte berechnet sind, werden zwei Methoden gezeigt, mit welchem die Homographiematrix ermittelt werden kann. Da es sich in diesem Beispiel um ein selbst aufgestelltes Minimalbeispiel handelt, kommt es zu keinem überbestimmten Fall bei der der Berechnung der Homographiematrize. Da in Realbeispielen, jedoch immer damit gerechnet werden muss, dass es zu einem überbestimmten Fall kommt, wird das Verfahren, welches diesen Fall abdeckt ebenfalls aufgezeigt. Der Szenenaufbau des Minimalbeispiels soll folgendermaßen aussehen. Die Kamerakoordinatensysteme unterscheiden sich vom Weltkoordinatensystem durch eine Drehung um 180° um die \ensuremath{\vec{d}_1}-Achse. Der Ursprung beider Kamerakoordinatensysteme entspricht dem Projektionszentrum $C$. Des Weiteren ist Kamera zwei noch um $45^\circ$ um die $\vec{b_2}$ zu Kamera eins eingedreht. Es werden zwei Bilder der selben Szene mit diesen Kameras aufgenommen. Die Behauptung ist, dass sich die beiden entstandenen Bilder mit Einer Homographie ineinander überführen lassen. In Abbildung \ref{fig:Koordinatensysteme2} ist der Aufbau nochmal grafisch veranschaulicht.
 
 \begin{gather}
 H=
@@ -96,6 +98,7 @@ h_{31}&h_{32}&h_{33}
 	\centering
 	\includegraphics[width=1.\linewidth]{images/GrafikHomographieSameC.png}
 	\captionof{figure}{Weltkoordinatensystem $(O,\delta)$ mit $\delta = [\vec{d_1},\vec{d_1},\vec{d_1},O]$ und Kamerakoordinatensysteme $\beta= [\vec{b_1},\vec{b_2},\vec{b_3},C]$ und $(C',\beta')$ mit $\beta'= [\vec{b'_1},\vec{b'_2},\vec{b'_3},C']$ .}
+	\label{fig:Koordinatensysteme2}
 \end{minipage}\\ \\
 
 Als nächstes werden die intrinsischen Kameraparameter $K$ und $K'$ für beide Kameras festgelegt. Für das Beispiel
@@ -409,9 +412,7 @@ Für Punkte spezifisch Kamera zwei ergeben sich die Punkte aus den Gleichungen 3
 \end{pmatrix}
 \end{gather}\\
 
-Die entstandenen Punkte sind nun entsprechend der Kamerakoordinatensysteme definiert. Jetzt müssen noch die jeweiligen Kameramatrizen $K$ und $K'$ mit diesen verrechnet werden, um so die 2D-Bildebenenpunkte der entsprechenden Kameras zu erhalten.
-
-$\zeta$ bekommt in diesem Beispiel den Wert -1, das bedeutet laut der Definition der Kamerakoordinatensysteme, dass der Sensor sich hinter dem Projektionszentrum befindet. Das entstehende Bild ist somit um \ensuremath{180^\circ} gedreht auf dem Sensor abgebildet.
+Die entstandenen Punkte sind nun entsprechend der Kamerakoordinatensysteme definiert. Jetzt müssen noch die jeweiligen Kameramatrizen $K$ und $K'$ mit diesen verrechnet werden, um so die 2D-Bildebenenpunkte der entsprechenden Kameras zu erhalten. $\zeta$ bekommt in diesem Beispiel den Wert -1, das bedeutet laut der Definition der Kamerakoordinatensysteme, dass der Sensor sich hinter dem Projektionszentrum befindet. Das entstehende Bild ist somit um \ensuremath{180^\circ} gedreht auf dem Sensor abgebildet.
 
 \begin{gather}
 K =	K'=
@@ -509,12 +510,13 @@ K' \cdot 	\begin{pmatrix}
 	\end{pmatrix}
 \end{gather}\\
 
-Die Entstandenen Punkte beider Kameras ergeben die in Abblidung 3.4 veranschaulichten Abblildungen, des Quadrats mit seinem Mittelpunkt, auf den jeweiligen Kamerabildebenen. Die aus den Objektpunkten $M_\delta$ entstandenen 2-D-Bildebenenkoordinaten $m_\tau$ und $m'_{\tau'}$ werden in den Koordinatensystemen $(I,\tau)$ mit $(\tau = \vec{b_1},\vec{b_2},\vec{b_4})$ und $(I',\tau')$ mit $(\tau = \vec{b'_1},\vec{b'_2},\vec{b'_4})$ dargestellt.\\
+Die Entstandenen Punkte beider Kameras ergeben die in Abblidung \ref{ErgebniseHomographie1} veranschaulichten Abblildungen, des Quadrats mit seinem Mittelpunkt, auf den jeweiligen Kamerabildebenen. Die aus den Objektpunkten $M_\delta$ entstandenen 2-D-Bildebenenkoordinaten $m_\tau$ und $m'_{\tau'}$ werden in den Koordinatensystemen $(I,\tau)$ mit $(\tau = \vec{b_1},\vec{b_2},\vec{b_4})$ und $(I',\tau')$ mit $(\tau = \vec{b'_1},\vec{b'_2},\vec{b'_4})$ dargestellt.\\
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/Geogebra.png}
 	\captionof{figure}{in blau ist die Abblidung des Quaders von Kamera eins und in rot die Abbildung des selben Quaders in Kamera zwei}
+	\label{ErgebniseHomographie1}
 \end{minipage}\\ \\
 
 Die fertigen Bildebenenkoordinaten beider Kameras, sollen nun durch eine eigens aufgestellte Homographiematrix $H$ ineinander überführt werden. Um eine Homographiematrix mit 
@@ -680,12 +682,13 @@ x=H^{-1} \cdot x' \leadsto
 
 %Abbildungsunterschiede von Rotationen um ein Projektionszentrum und Rotation um einen beliebigen Drehpunkt von Punkten in der Ebene
 
-Bis jetzt wurden die Kameras jeweils nur um ihr Projektionszentrum gedreht, die Frage die jetzt noch im folgenden beantwortet werden soll ist, ob es ebenfalls möglich ist eine Homographiematrix für korrespondierende Punktepaare in einer Ebene aufzustellen, wenn eine Kamera um einen spezifischen Drehpunkt außerhalb der Kamera gedreht wurde. In diesem Fall wären die beiden Projektionszentren $(C,\beta)$ und $(C',\beta')$ der Kameras nicht mehr identisch. Um zu veranschaulichen, was genau sich bei einer Drehung um ein Drehpunkt und der Drehung um das Projektionszentrum ändert, wurde eine Simulation geschrieben, welche die Abbildungsunterschiede beider Drehungen aufzeigt. Des Weiteren soll geklärt werden, ob Punkte die bei der Drehung um das Projektionszentrum verdeckt bleiben auch bei einer Drehung um einen außerhalb der Kamera platzierten Drehpunkt verdeckt bleiben. In der Simulation ist der rote Punkte in der Mitte des Quadrats der Drehpunkt, vergleiche Abbildung 3.3. 
+Bis jetzt wurden die Kameras jeweils nur um ihr Projektionszentrum gedreht, die Frage die jetzt noch im folgenden beantwortet werden soll ist, ob es ebenfalls möglich ist eine Homographiematrix für korrespondierende Punktepaare in einer Ebene aufzustellen, wenn eine Kamera um einen spezifischen Drehpunkt außerhalb der Kamera gedreht wurde. In diesem Fall wären die beiden Projektionszentren $(C,\beta)$ und $(C',\beta')$ der Kameras nicht mehr identisch. Um zu veranschaulichen, was genau sich bei einer Drehung um ein Drehpunkt und der Drehung um das Projektionszentrum ändert, wurde eine Simulation geschrieben, welche die Abbildungsunterschiede beider Drehungen aufzeigt. Des Weiteren soll geklärt werden, ob Punkte die bei der Drehung um das Projektionszentrum verdeckt bleiben auch bei einer Drehung um einen außerhalb der Kamera platzierten Drehpunkt verdeckt bleiben. In der Simulation ist der rote Punkte in der Mitte des Quadrats der Drehpunkt, wie in Abbildung \ref{fig:SimulationAnfang} dargestellt ist. 
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{images/Ausgangslage.png}
 	\captionof{figure}{Objekt im Raum}
+	\label{fig:SimulationAnfang}
 \end{minipage}\\
 
 
@@ -696,28 +699,32 @@ Für die Simulation der Drehung wurden zwei Schieberegler implementiert mit dem 
 	\centering
 	\includegraphics[width=1.\linewidth]{images/DrehungPZ.png}
 	\captionof{figure}{Drehung um das Projektionszentrum}
+	\label{fig:DrehungProjektionszentrum}
 \end{minipage}\\ \\
 
-Abbildung 3.4 zeigt jeweils die entstehenden Bilder, wenn die Kamera um \ensuremath{20^\circ} beziehungsweise \ensuremath{-20^\circ} um das Projektionszentrum gedreht wurde.
+Abbildung \ref{fig:DrehungProjektionszentrum} zeigt jeweils die entstehenden Bilder, wenn die Kamera um \ensuremath{20^\circ} beziehungsweise \ensuremath{-20^\circ} um das Projektionszentrum gedreht wurde.
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=1.\linewidth]{images/DrehungDZ.png}
 	\captionof{figure}{Drehung um einen Drehpunkt. In diesem Beispiel wurde der rote Punkt als Drehpunkt verwendet}
-\end{minipage}\\ \\
+	\label{fig:DrehungDrehpunkt}
+\end{minipage}\\ 
 
-Abbildung 3.5 zeigt die entstehenden Bilder, wenn die Kamera um \ensuremath{45^\circ} beziehungsweise \ensuremath{-45^\circ} um den Drehpunkt gedreht wurde. Wie sich zeigt ist hier ein weiterer grüner Punkt zu sehen welcher zu Testzwecken hinter dem roten Punkt platziert wurde sichtbar. Punkte die bei einer Drehung um das Projektionszentrum verdeckt bleiben, werden also bei einer Drehung um einen externen Drehpukt sichtbar. Abbildung 3.8 veranschaulicht was geometrisch bei beiden Fällen passiert..
+Abbildung \ref{fig:DrehungDrehpunkt} zeigt die entstehenden Bilder, wenn die Kamera um \ensuremath{45^\circ} beziehungsweise \ensuremath{-45^\circ} um den Drehpunkt gedreht wurde. Wie sich zeigt ist hier ein weiterer grüner Punkt zu sehen welcher zu Testzwecken hinter dem roten Punkt platziert wurde sichtbar. Punkte die bei einer Drehung um das Projektionszentrum verdeckt bleiben, werden also bei einer Drehung um einen externen Drehpukt sichtbar. Die Abbildungen \ref{fig:Strahlengang1} und \ref{fig:Strahlengang2} veranschaulichen was geometrisch bei beiden Fällen passiert.\\
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{images/GrafikDrehungProjektionszentrum.png}
 	\captionof{figure}{Strahlengang durch das Projektionszentrum. Auf der Grafik ist erkennbar, dass der grüne Punkt auch nach der Drehung der Kamera um das Projektionszentrum vom roten Pukt verdeckt bleibt}
+	\label{fig:Strahlengang1}
 \end{minipage}\\ \\
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{images/GrafikDrehungUmDrehpunkt.png}
 	\captionof{figure}{Strahlengang durch das Projektionszentrum. Auf der Grafik ist erkennbar, dass der grüne Punkt nach der Drehung der Kamera um einen Drehpunkt, welcher in diesem Fall der rote Punkt darstellt, sichtbar wird.}
+	\label{fig:Strahlengang2}
 \end{minipage}\\ \\
 
 Die entstehenden Abbildungen sind also voneinander verschieden, jedoch liegen die fünf Punkte des Quadrates und dessen Mittelpunkt bei beiden Fällen immer noch in einer Ebene. Die Behauptung die also nun noch zu beweisen gilt ist, dass sich für die jeweiligen Abbildungen beider Drehungen jeweils eine Homographiematrix $H$ aufstellen lässt, welche die Bilder der jewiligen Kameras ineinander überführen lässt. Im folgenden wird aufgeführt, wie sich die Homographiematrix im Falle einer Drehung um einen Drehpunkt geometrisch Herleiten lässt. Danach wird wieder ein Beispiel zu diesem Fall aufgezeigt.  Zunächst werden wieder die benötigten Koordinatensysteme definiert. Ein Weltkoordinatensystem $(0,\delta)$ mit $\delta = [\vec{d}_1,\vec{d}_2,\vec{d}_3,O]$, ein Kamerakoordinatensystem von Kamera eins $(C,\beta)$ mit $\beta = [\vec{b}_1,\vec{b}_2,\vec{b}_3,C]$ und ein Kamerakoordinatensystem für Kamera zwei $(C',\beta')$ mit $\beta' = [\vec{b'}_1,\vec{b'}_2,\vec{b'}_3,C']$. Für die Bildebenen $I$ und $I'$ der beiden Kameras gelten die Koordinatensysteme $(I,\vec{\tau})$ und $(I',\vec{\tau}')$ mit $\vec{\tau} = [\vec{d}_1,\vec{d}_2,\vec{d}_4]$ und $\tau' = [\vec{d}_1,\vec{d}_2,\vec{d'}_4]$ mit $d_4 = \vec{CO}$ und $d'_4 = \vec{CO'}$. Der Punkt in der Objektebene, welcher in die jeweiligen Bildebenen projiziert werden soll, wird mit $\vec{M}_\delta = [x\; y\; z\; 1]^T$ bezeichnet. $M$ wird auf die jeweiligen Bildebenen der Kameras projiziert und zu den 2D-Bildebenenkoordinaten $m = [u_\tau \; v_\tau \; 1]$ und $m' =  [u'_{\tau'} \; v'_{\tau'} \; 1]$ mit Projektionsmatrix $P$ beziehungsweise $P'$ transformiert.
@@ -957,7 +964,7 @@ Die Homographiematrix wird durch aufstellen der Koeffizientenmatrix und anschlie
 
 Wird $H$ auf die Punkte $pC$ angewandt, so liefert das Ergebnis die Punkte von $pC'$ und wird die Inverse $H^{-^1}$ auf die Punkte $pC'$ angewandt, so erhält man die Punkte von $pC$. Somit wurde bewiesen, dass Homographiematrizen immer zur Transformation von Punkte genutzt werden können, solange sich diese Punkte auf einer Ebene im Raum befinden. Die Definition der Homographie sagt aus, dass sowohl Tranlationen und Rotationen in der Homographiematrix vorkommen dürfen \cite{Roser} \cite{Peiffer}. Die Drehung um einen Drehpunkt ist nicht weiter als die Hintereinaderschaltung verschiedener Tranformationsmarizen. Das wichtigste Kriterium welches erfüllt sein muss, damit Homographien angewendet werden können ist, dass die Abbildungen der Punkte in allen Kameras auf einer Ebene sich befinden müssen.\cite{Elements}.
 
-In der Abbildung 3.7 ist ein grüner Punkt zu sehen welcher sich in Gegensatz zu den anderen Punkte nicht auf der selben Ebene befindet. Dieser Punkt lässt sich nicht mit der errechneten Homographiematrix ineinander überführen. Mit Hilfe von Homographien, können die Positionen und Orientierung der jeweiligen Kameras zueinander ermittelt werden, jedoch nur wenn sich die Szenepunkte auf einer Ebene befinden. Ein Beispiel hierfür wäre zum beispiel die Aufnahme einer Gebäudefassade aus unterschiedlichen Kamerawinkeln und Positionen\cite{Elements}. Für eine Szenenrekonstruktion einer kompletten 3D-Szene reichen pure Homographien nicht aus, hierfür muss sich der geometrischen Eigenschaften der Epipolargeometrie bedient werden. 
+In der Abbildung \ref{fig:DrehungDrehpunkt} ist ein grüner Punkt zu sehen welcher sich in Gegensatz zu den anderen Punkte nicht auf der selben Ebene befindet. Dieser Punkt lässt sich nicht mit der errechneten Homographiematrix ineinander überführen. Mit Hilfe von Homographien, können die Positionen und Orientierung der jeweiligen Kameras zueinander ermittelt werden, jedoch nur wenn sich die Szenepunkte auf einer Ebene befinden. Ein Beispiel hierfür wäre zum beispiel die Aufnahme einer Gebäudefassade aus unterschiedlichen Kamerawinkeln und Positionen\cite{Elements}. Für eine Szenenrekonstruktion einer kompletten 3D-Szene reichen pure Homographien nicht aus, hierfür muss sich der geometrischen Eigenschaften der Epipolargeometrie bedient werden. 
 
 
 

@@ -1,7 +1,14 @@
 \chapter{Basis Transformationen }
 \label{sec:basisTransformation} 
 
-Um die mathematischen Vorgehensweisen dieser Arbeit verständlicher zu machen, werden in den folgenden Kapiteln zunächst ein paar Grundlegende mathematische Operationen vorgestellt, welche das Grundgerüst der Stereokalibrierung und Szenenrekonstruktion bilden. Als aller erstes werden anhand praxisnaher Beispiele die Notwenidigkeit der Basis Transformation und damit einhergehend der Spezialfall einer Transformation von einem Koordinatensystem wie zum Beispiel einem Weltkoordiantensystem $(O,\delta)$ mit $\delta=(d_1, d_2, d_3)$ in ein Kamerakoordinatensystem $(C,\beta)$ mit $\beta=(b_1,b_2,b_3)$ aufgezeigt. Noch anzumerken ist, dass in dieser Arbeit grundlegend von orthogonalen Koordinatensystemen ausgegangen wird, andernfalls wird explizit darauf hingewiesen. 
+
+
+
+
+ 
+In den folgenden Kapiteln werden zunächst ein paar Grundlegende mathematische Operationen vorgestellt, welche das Grundgerüst der Stereokalibrierung und Szenenrekonstruktion bilden.
+%Um die mathematischen Vorgehensweisen dieser Arbeit verständlicher zu machen, werden in den folgenden Kapiteln zunächst ein paar Grundlegende mathematische Operationen vorgestellt, welche das Grundgerüst der Stereokalibrierung und Szenenrekonstruktion bilden. 
+Als aller erstes werden anhand praxisnaher Beispiele die Notwenidigkeit der Basis Transformation und damit einhergehend der Spezialfall einer Transformation von einem Koordinatensystem wie zum Beispiel einem Weltkoordiantensystem $(O,\delta)$ mit $\delta=(d_1, d_2, d_3)$ in ein Kamerakoordinatensystem $(C,\beta)$ mit $\beta=(b_1,b_2,b_3)$ aufgezeigt. Noch anzumerken ist, dass in dieser Arbeit grundlegend von orthogonalen Koordinatensystemen ausgegangen wird, andernfalls wird explizit darauf hingewiesen. 
 
 
 
@@ -14,12 +21,13 @@ Um die mathematischen Vorgehensweisen dieser Arbeit verständlicher zu machen, w
 \section{Koordinatentransformation durch Basistransformationen}
 
 Anhand eines Beispiels wird die Transformation der Koordinaten noch genauer veranschaulicht. Es soll kompakt in einer Symbolischen Schreibweise Punkte aus einem Weltkoordinatensystem  
-$(O,\delta)$ mit $\delta = (d_1,d_2,d_3)$ in ein Kamerakoordinatensystem  $(C,\beta)$ mit $\beta = (b_1,b_2,b_3)$ überführt werden, welches eine Verschiebung und Rotation zum Weltkoordinatesystem aufweist. Beispielhaft wird dies in Abbildung 2.1. aufgezeigt.
+$(O,\delta)$ mit $\delta = (d_1,d_2,d_3)$ in ein Kamerakoordinatensystem  $(C,\beta)$ mit $\beta = (b_1,b_2,b_3)$ überführt werden, welches eine Verschiebung und Rotation zum Weltkoordinatesystem aufweist. Beispielhaft wird dies in Abbildung \ref{fig:Koordinatensysteme1} aufgezeigt.
  
 	\begin{minipage}{\linewidth}
 		\centering
 		\includegraphics[width=0.6\linewidth]{images/WeltKordSys.png}
 		\captionof{figure}{Weltkoordinatensystem $(O,\delta)$ mit $\delta = (d_1,d_2,d_3)$ und Kamerakoordinatensystem  $(C,\beta)$ mit $\beta = (b_1,b_2,b_3)$ }
+		\label{fig:Koordinatensysteme1}
 	\end{minipage}\\ \\
 	
 	
@@ -664,9 +672,10 @@ Für die Koordinaten der Bildebene $I_\beta$ ergeben sich dann aus den Kamerakoo
 	\centering
 	\includegraphics[width=1.\linewidth]{images/ZetaHerleitung.png}
 	\captionof{figure}{In blau ist die Bildebene dargestellt auf ihr befinden sich die Punkte $Q$ und $P$. $Z$ liegt nicht auf der Ebene, Das Projetionszenter liegt hinter der Bildebene und somit auch hinter dem Sensor. $n$ ist die Normale der Bildebene}
+	\label{fig:zetaErklaerung}
 \end{minipage}\\
 
-Wie in Abbildung 2.2 ersichtlich kann für die Findung von $\zeta$, welche den Abstand des Projektionszentrums zur Bildebene beschreibt, folgende Gleichung aufgestellt werden
+Wie in Abbildung \ref{fig:zetaErklaerung} ersichtlich kann für die Findung von $\zeta$, welche den Abstand des Projektionszentrums zur Bildebene beschreibt, folgende Gleichung aufgestellt werden
 		
 		\begin{gather}
 		\vec{p}+|\vec{QZ} \cdot \vec{n}|\vec{n} = \vec{Z}
@@ -953,64 +962,64 @@ Die Transfomationsmatrix $M = \begin{bmatrix}
 		
 		Zur Verdeutlichung folgen nun noch zwei Beispiele. Es werden $\vec{u}$ und $\vec{v}$, sowie $z_1$ und $z_2$ mit Werten versehen. $p$ entspricht symbolisch einem \textit{Pixelpitch}-Wert. Mit \textit{Pixelpitch} wird der direkte Abstand der Pixel auf Bildsensoren zwischen Pixelmitte zu Pixelmitte bezeichnet.\\
 		
-		\underline{Beispiel 1:}\\
-		
-		$\vec{u} = 1pt_1 $\\
-		$\vec{v} = 2pt_2 $\\
-		$ p_1 = 15, p_2 = 20$\\
-		
-		Für die Projektionsmatrix $P$ ergibt sich somit:
-		
-		\begin{gather}
-		S_\sigma = I_\tau - \vec{u} - \vec{v} \leadsto S_\sigma = I_\tau -15 t_1 - 20 t_2\\	
-		M= 
-		\begin{bmatrix}
-		1&0\\
-		0&2
-		\end{bmatrix}
-		\leadsto
-		M^{-1}=\begin{bmatrix}
-		\frac{1}{p}&0\\
-		0&\frac{1}{2p}
-		\end{bmatrix}\\
-		K =
-		\leftidx{_{S_\sigma}}{\begin{bmatrix}
-				\pi
-		\end{bmatrix}}{_{I_\tau}} = 	
-		\begin{bmatrix}
-		\frac{-\zeta}{p}&0&15&0\\
-		0&\frac{-\zeta}{p}&20&0\\
-		0&0&1&0
-		\end{bmatrix}
-		\end{gather}\\
-		
-	 	\underline{Beispiel 2:}\\
-		
-		$\vec{v} = 1pt_1+2pt_2$\\
-		$\vec{u} = 1pt_1$\\
-		$ z_1 = 10, z_2 = 5$\\
-		
-		\begin{gather}
-		M=\begin{bmatrix}
-		1&1\\
-		0&2
-		\end{bmatrix} \leadsto 
-		M^{-1} =
-		\begin{bmatrix}
-		1&-\frac{1}{2}\\
-		0&\frac{1}{2}
-		\end{bmatrix} \\
-		K = \leftidx{_{S_\sigma}}{\begin{bmatrix}
-				\pi
-		\end{bmatrix}}{_{C_\beta}}
-		= 
-		\begin{bmatrix}
-		\frac{-\zeta}{p}&\frac{-\zeta}{2p}&10&0\\
-		0&\frac{-\zeta}{p}&5&0\\
-		0&0&1&0
-		\end{bmatrix}\\
-		= [K|0]
-		\end{gather}
+%		\underline{Beispiel 1:}\\
+%		
+%		$\vec{u} = 1pt_1 $\\
+%		$\vec{v} = 2pt_2 $\\
+%		$ p_1 = 15, p_2 = 20$\\
+%		
+%		Für die Projektionsmatrix $P$ ergibt sich somit:
+%		
+%		\begin{gather}
+%		S_\sigma = I_\tau - \vec{u} - \vec{v} \leadsto S_\sigma = I_\tau -15 t_1 - 20 t_2\\	
+%		M= 
+%		\begin{bmatrix}
+%		1&0\\
+%		0&2
+%		\end{bmatrix}
+%		\leadsto
+%		M^{-1}=\begin{bmatrix}
+%		\frac{1}{p}&0\\
+%		0&\frac{1}{2p}
+%		\end{bmatrix}\\
+%		K =
+%		\leftidx{_{S_\sigma}}{\begin{bmatrix}
+%				\pi
+%		\end{bmatrix}}{_{I_\tau}} = 	
+%		\begin{bmatrix}
+%		\frac{-\zeta}{p}&0&15&0\\
+%		0&\frac{-\zeta}{p}&20&0\\
+%		0&0&1&0
+%		\end{bmatrix}
+%		\end{gather}\\
+%		
+%	 	\underline{Beispiel 2:}\\
+%		
+%		$\vec{v} = 1pt_1+2pt_2$\\
+%		$\vec{u} = 1pt_1$\\
+%		$ z_1 = 10, z_2 = 5$\\
+%		
+%		\begin{gather}
+%		M=\begin{bmatrix}
+%		1&1\\
+%		0&2
+%		\end{bmatrix} \leadsto 
+%		M^{-1} =
+%		\begin{bmatrix}
+%		1&-\frac{1}{2}\\
+%		0&\frac{1}{2}
+%		\end{bmatrix} \\
+%		K = \leftidx{_{S_\sigma}}{\begin{bmatrix}
+%				\pi
+%		\end{bmatrix}}{_{C_\beta}}
+%		= 
+%		\begin{bmatrix}
+%		\frac{-\zeta}{p}&\frac{-\zeta}{2p}&10&0\\
+%		0&\frac{-\zeta}{p}&5&0\\
+%		0&0&1&0
+%		\end{bmatrix}\\
+%		= [K|0]
+%		\end{gather}
 		
 		Die symbolische Darstellung der Projektionsmatrix von Welt in Sensorkoordinaten $	P = \leftidx{_{S_\sigma}}{\begin{bmatrix}
 			\pi
