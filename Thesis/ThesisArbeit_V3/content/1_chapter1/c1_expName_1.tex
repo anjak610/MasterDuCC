@@ -666,28 +666,7 @@ X\\Y\\Z\\1
 \end{bmatrix}
 \end{gather}
 
-Für die Koordinaten der Bildebene $I_\beta$ ergeben sich dann aus den Kamerakoordinaten $[\zeta \frac{X}{Z},\zeta\frac{Y}{Z},\zeta,1]^T$. Da die Koordinaten momentan noch in homogenen 3D-Koordinaten angegeben sind, aber das Bildebenenkoordinatensystem ein 2D-Koordinatensystem muss der Tiefenwert noch eliminiert werden. In der Literatur  wird $\zeta$ meist mit $f$ für \textit{focal length} dargestellt und die Bildebene auch \textit{Focal plane} genannt \cite{HZ}. 
-
-	\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1.\linewidth]{images/ZetaHerleitung.png}
-	\captionof{figure}{In blau ist die Bildebene dargestellt auf ihr befinden sich die Punkte $Q$ und $P$. $Z$ liegt nicht auf der Ebene, Das Projetionszenter liegt hinter der Bildebene und somit auch hinter dem Sensor. $n$ ist die Normale der Bildebene}
-	\label{fig:zetaErklaerung}
-\end{minipage}\\
-
-Wie in Abbildung \ref{fig:zetaErklaerung} ersichtlich kann für die Findung von $\zeta$, welche den Abstand des Projektionszentrums zur Bildebene beschreibt, folgende Gleichung aufgestellt werden
-		
-		\begin{gather}
-		\vec{p}+|\vec{QZ} \cdot \vec{n}|\vec{n} = \vec{Z}
-		\end{gather}
-		
-		Q ist ein beliebiger Punkt auf der Ebene. Setze
-		\begin{gather}
-		\vec{QZ} \cdot \hat{n} = \zeta\\
-		\vec{p}= \vec{Z}\zeta \hat{n}
-		\end{gather}
-		
-		Wählt man nun  $b_3 = \hat{n}$, kann daraus geschlossen werden, dass $\vec{p} = \vec{Z} - \zeta \hat{n}$. Für die folgende Projektion der Koordinaten im 3D-Kamerakoordinatensystems auf das 2D-Bildebenenkoordinatensystem muss eine Kameramatrix der Form		
+Für die Koordinaten der Bildebene $I_\beta$ ergeben sich dann aus den Kamerakoordinaten $[\zeta \frac{X}{Z},\zeta\frac{Y}{Z},\zeta,1]^T$. Da die Koordinaten momentan noch in homogenen 3D-Koordinaten angegeben sind, aber das Bildebenenkoordinatensystem ein 2D-Koordinatensystem muss der Tiefenwert noch eliminiert werden. Für die Projektion der Koordinaten im 3D-Kamerakoordinatensystems auf das 2D-Bildebenenkoordinatensystem muss eine Kameramatrix der Form		
 		
 		\begin{gather}
 		K = \leftidx{_{K_{I_\tau}}}{\begin{bmatrix}
