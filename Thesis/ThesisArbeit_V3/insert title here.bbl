@@ -11,6 +11,12 @@ Jianzhong Lu.
 \newblock {\em Ein dreidimensionales Bildverarbeitungssystem für die
   Automatisierung visueller Prüfvorgänge}.
 
+\bibitem{CamerModels.}
+Ramalingam Tardif S.Gasparini~J.Barreto R.Sturm, S.
+\newblock Camera models and fundamental concepts used in geometric computer
+  vision.
+\newblock Mitsubishi Electric Research Laboratories, 2011.
+
 \bibitem{Elements}
 Tomas Pajdla.
 \newblock {\em Elements of Geometry for Computer Vision}.

@@ -2,7 +2,17 @@
 \label{sec:homographien} 
 
 
-Einfügen warum muss ich das wissen.(rektifizierung)
+The case of planar scenes. Like for pinhole cameras, the case of
+a planar scene is very similar to that of a rotating central camera. For
+example, Drar´eni et al. derived the expression for plane homographies
+for linear pushbroom cameras and proposed a calibration approach
+using planar grids [120]. Fitzgibbon mentioned plane homographies for
+the division model [145]. Sturm and Barreto showed the existence of
+plane homographies for all central catadioptric cameras [473].\cite{CamerModels.}
+
+Einfügen warum muss ich das wissen.(rektifizierung):As for perspective images,
+rectification can be achieved by applying appropriate homographies to
+each image\cite{CamerModels.}
 
 Im vorherigen Kapitel \nameref{sec:basisTransformation} wurde ausführlich dargelegt, wie Koordinatensysteme ineinander überführt werden könnens. Die folgenden Kapitel sollen anhand eines Beispiels zeigen, dass sich die in Kapitel \nameref{sec:basisTransformation} gezeigten Transformationen in Matrizen zusammenfassen lassen. Es soll eine Matrix $H$ aufgestellt werden, welche die Bildpunkte zweier Kameras ineinander überführen kann, ohne, dass die intrinsischen und extrinsischen Parameter bekannt sind. Für den Aufbau des Minimalbeispiels, werden die entsprechenden Kameramatrizen aufgestellt, jedoch wird gezeigt, dass sie für die Herleitung von $H$ keine Rolle spielen. Im ersten Beispiel wird sowohl davon ausgegangen, dass die intrinsischen und extrinsischen Kameraparameter unbekannt sind und nur die Bildpunkte von beiden Kamerakoordinatensystemen bekannt sind, als auch, dass die beiden Kameras sich ein Projektionszentrum teilen.  Des Weiteren wird festgelegt, dass sich alle Objektpunkte im Raum $\mathbb{R}^3$ auf einer Ebene befinden. Nun wird behauptet, dass es möglich ist eine sogenannte 3x3-Homographiematrix $H$ zu ermitteln, welche die Punkte von Kamera eins in die Punkte von Kamera zwei und umgekehrt überführen kann. Als Homographie wird eine projektive Transformation zwischen zwei Ebenen bezeichnet. Dabei bleiben Kollinearitäten und die Reihenfolge von Punkten auf Geraden, wie zum Beispiel Schnittpunkte mit anderen Geraden, erhalten. Aufgrund dieser Ebenenannahme, kann solch eine projektive Transformation durch eine 3x3-Homograohiematrix ausgedrückt werden\cite{Roser}. Sprich die entstehende Homograohiematrix $H$, projiziert jede Figur in eine Figur gleicher projektiver Entsprechung\cite{HZ,Elements}. Sind die Punkte $A',B',C'$ und $D'$ die projektiven Bilder eines Systems von vier kollinearen Punkten, so ist $(A',B',C',D') = (A,B,C,D)$\cite{Peiffer}. Die Homographie fasst die Transformationen wie Rotation und Translation, sowie die jeweiligen Abbildungsmatrizen der Kameras in einer 3x3-Matrix zusammen.\cite{Elements,Peiffer}.
  
