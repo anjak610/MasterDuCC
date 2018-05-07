@@ -6,16 +6,21 @@ Zhengyou~Zhang Gang~Xu.
   Unified Approach}.
 \newblock Springer-Science and Buissness Media, 1996.
 
-\bibitem{Jianzhong}
-Jianzhong Lu.
-\newblock {\em Ein dreidimensionales Bildverarbeitungssystem für die
-  Automatisierung visueller Prüfvorgänge}.
+\bibitem{ComputerVision}
+Lutz Priese.
+\newblock {\em Computer Vision, Einführung in die Verarbeitung und Analyse
+  digitaler Bilder}.
+\newblock Springer-Verlag Berlin Heidelberg, 2014.
 
-\bibitem{CamerModels.}
-Ramalingam Tardif S.Gasparini~J.Barreto R.Sturm, S.
-\newblock Camera models and fundamental concepts used in geometric computer
-  vision.
-\newblock Mitsubishi Electric Research Laboratories, 2011.
+\bibitem{HZ}
+Richard Hartley and Andrew Zisserman.
+\newblock {\em Multiple View Geometry in computer vision}.
+\newblock Cambridge, 2004, Second Edition.
+
+\bibitem{Ferid}
+Ferid Bajrmovic.
+\newblock {\em Self- Calibration of Multi- Camera Systems}.
+\newblock Logos Verlag Berlin GmbH, 2010.
 
 \bibitem{Elements}
 Tomas Pajdla.
@@ -23,25 +28,37 @@ Tomas Pajdla.
 \newblock "http://people.ciirc.cvut.cz/~pajdla/", 2013, überarbeitet am
   27.2.2017.
 
-\bibitem{HZ}
-Richard Hartley and Andrew Zisserman.
-\newblock {\em Multiple View Geometry in computer vision}.
-\newblock Cambridge, 2004, Second Edition.
+\bibitem{MatlabStereoApp}
+MathWorks.
+\newblock Mathworks documentation, stereo camera calibration app.
+\newblock
+  \url{"https://de.mathworks.com/help/vision/stereo-camera-calibration.html"}.
 
-\bibitem{Zhang2014}
-Zhengyou Zhang.
-\newblock {\em Epipolar Geometry}, pages 247--258.
-\newblock Springer US, Boston, MA, 2014.
+\bibitem{CamerModels.}
+Ramalingam Tardif S.Gasparini~J.Barreto R.Sturm, S.
+\newblock Camera models and fundamental concepts used in geometric computer
+  vision.
+\newblock Mitsubishi Electric Research Laboratories, 2011.
 
 \bibitem{Heipke}
 Christian Heipke.
 \newblock {\em Photogrammetrie und Fernerkundung}.
 \newblock 2017 Springer,1. Auflage.
 
+\bibitem{Jianzhong}
+Jianzhong Lu.
+\newblock {\em Ein dreidimensionales Bildverarbeitungssystem für die
+  Automatisierung visueller Prüfvorgänge}.
+
 \bibitem{Photonik}
 Rolf~Martin Ekbert~Hering.
 \newblock {\em Photonik, Grundlagen, Technologien und Anwendung}.
 \newblock Springer-Verlag Berlin Heidelberg, 2006.
+
+\bibitem{Zhang2014}
+Zhengyou Zhang.
+\newblock {\em Epipolar Geometry}, pages 247--258.
+\newblock Springer US, Boston, MA, 2014.
 
 \bibitem{Roser}
 Dipl.-Ing.~Martin Roser.
@@ -75,11 +92,6 @@ Zhengyou Zhang.
 Richard~I. Hartley.
 \newblock In defence of the 8-point algorithm.
 \newblock GE-Corporate Research and Development, Schenectady, NY, 12309.
-
-\bibitem{Ferid}
-Ferid Bajrmovic.
-\newblock {\em Self- Calibration of Multi- Camera Systems}.
-\newblock Logos Verlag Berlin GmbH, 2010.
 
 \bibitem{Mandun}
 Cui Guodong Yu~Ming Zhang~Mandun, Qi~Lichao.
@@ -160,12 +172,6 @@ MathWorks.
 MathWorks.
 \newblock Mathworks documentation, disparity.
 \newblock \url{"https://de.mathworks.com/help/vision/ref/disparity.html"}.
-
-\bibitem{MatlabStereoApp}
-MathWorks.
-\newblock Mathworks documentation, stereo camera calibration app.
-\newblock
-  \url{"https://de.mathworks.com/help/vision/stereo-camera-calibration.html"}.
 
 \bibitem{Canon6D}
 Canon.

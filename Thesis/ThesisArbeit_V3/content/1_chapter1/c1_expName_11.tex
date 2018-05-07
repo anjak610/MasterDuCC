@@ -5,32 +5,58 @@
 
 Also Kameramodell wird der rechnerische Prozess genannte, welcher Objekte aus dem 3D-Raum auf ein ein 2D-Bild projiziert und andersherum\cite{CamerModels.,HZ}. Das einfachste Kameramodell ist das Lochkameramodell. Die Reduktion einer Dreidimensionalen Welt in ein Zweidimensionales Bild, ist ein Prozess bei welchem durch eine, in den meisten Fällen angewandte, Zentralprojektion eine Dimension verloren geht\cite{HZ}. Bei einer Zentralprojektion wird ein Strahl von einem Punkt im 3D-Raum durch das Projektionszentrum der Kamera gezogen. Das Projektionszentrum der Kamera beschreibt den Punkt in der Kamera an welchem sich alle Strahlen treffen. Ein Strahl der durch einen Punkt im 3D-Raum und durch das Projektionszentrum einer Kamera geht, schneidet eine Ebene, welche im weiteren Verlauf als Bildebene bezeichnet wird. Der Schnittpunkt des Strahls mit der Bildebene wird Bildpunkt genannt\cite{CamerModels.,HZ}.\\
 
-
-(GRAFIK PROJEKTION ANFERTIGEN SIEHE ABB 1 AUF NOTIZZETTEL)\\
+	\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=.8\linewidth]{images/Zentralprojektion.png}
+	\captionof{figure}{$C$ ist die Kamera beziehungsweise das Projektionszentrum der Kamera. In rot ist die Strecke $\zeta$ markiert. $M$ ist der Dreidimensionale Onjektpunkt in Weltkoordinaten und $m$ sein projizierter Punkt auf der 2D-Bildebene}
+	\label{fig:Zentralprojektion}
+\end{minipage}\\ \\
 
 \subsection{Lochkameramodell}
 
-Das Kameramodell, auf welchem diese Arbeit aufbaut, ist das sogenannten Lochkameramodel. Das Lochkameramodell ist eines der am simpelsten aufgebauten Kameramodelle und wird standardmäßig zur Beschreibung optischer Kameras verwendet. Das Modell beruht ausschließlich auf der geometrischen Optik und vernachlässigt physikalische Effekte wie Beugung oder die Auswirkung der Linse\cite{heipke}. Das Lochkameramodell beinhaltet ein Projektionszentrum $C$, welches auch gleichzeitig das Kamerazentrum bildet. Die Kamera an sich wird im Lochkameramodell als Punkt angegeben und ist meist gleichbedeutend mit dem Punkt $C$. $C$ besitzt ein eigenes Dreidimensionales Koordinatensystem. Das Kamerakoordinatensystem und alle weiteren Koordinatensysteme, die noch eingeführt werden, dienen dazu die Position eines Punktes innerhalb ihres geometrischen eindeutig zu bezeichnen. Das Kamerakoordinatensystem hat seinen Ursprung im Projektionszentrum $C$. Die Ausrichtung des Koordinatensystems ist frei definierbar. Im weiteren Verlauf der Arbeit wird das Kamerakoordinatensystem als kartesisches und rechtsdrehendes Koordinatensystem definiert. In Abbildung ??? zeigt die X-Achse des Kamerakoordinatensystems in das Bild rein, die Y-Achse ist vertikal nach oben ausgerichtet und die Z-Achse zeigt in Richtung der Bildebene. Die Z-Achse wird hier auch als Hauptachse bezeichnet. Der Punkt in welchem sich die Hauptachse mit der Bildebene schneidet, wird Hauptpunkt genannt. Der Abstand des Hauptpunktes zum Projektionszentrum wird im folgenden mit $\zeta$ bezeichnet und bildet einen elementaren Baustein der intrinsischen Kameraparameter. Der Hautpunkt bildet den Ursprung einen neuen Zweidimensionalen Koordinatensystems. Dieses Koordinatensystem wird im weiteren Verlauf als Bildebenenkoordinatensystem bezeichnet\cite{HZ}. Als vorläufig letztes Koordinatensystem wird noch ein sogenannten 3D-Weltkoordinatensystem eingeführt, dessen Position und Orientierung frei wählbar sind. Ein Punkt im 3D-Raum wird ab jetzt als ein Punkt in Bezug auf ein Weltkoordinatensystem bezeichnet. Des Weiteren soll so zum Beispiel der gesamte Stereoskopische Aufbau mit zwei Lochkameramodellen und die 3D-Punkte im Raum immer im Bezug auf ein Weltkoordinatensystem beschrieben werden. Dieses Weltkoordinatensystem wird wiederum meist Deckungsgleich mit einem der im Stereoaufbau benutzten Kamerakoordinatensystemen gesetzt.
+Das Kameramodell, auf welchem diese Arbeit aufbaut, ist das sogenannten Lochkameramodel. Das Lochkameramodell ist eines der am simpelsten aufgebauten Kameramodelle und wird standardmäßig zur Beschreibung optischer Kameras verwendet. Das Modell beruht ausschließlich auf der geometrischen Optik und vernachlässigt physikalische Effekte wie Beugung oder die Auswirkung der Linse\cite{Heipke}. Das Lochkameramodell beinhaltet ein Projektionszentrum $C$, welches auch gleichzeitig das Kamerazentrum bildet. Die Kamera an sich wird im Lochkameramodell als Punkt angegeben und ist meist gleichbedeutend mit dem Punkt $C$. $C$ besitzt ein eigenes Dreidimensionales Koordinatensystem. Das Kamerakoordinatensystem und alle weiteren Koordinatensysteme, die noch eingeführt werden, dienen dazu die Position eines Punktes innerhalb ihres geometrischen eindeutig zu bezeichnen. Das Kamerakoordinatensystem hat seinen Ursprung im Projektionszentrum $C$. Die Ausrichtung des Koordinatensystems ist frei definierbar. Im weiteren Verlauf der Arbeit wird das Kamerakoordinatensystem als kartesisches und rechtsdrehendes Koordinatensystem definiert. In Abbildung \ref{fig:PinholeCamera3D} zeigt die X-Achse des Kamerakoordinatensystems in das Bild rein, die Y-Achse ist vertikal nach oben ausgerichtet und die Z-Achse zeigt in Richtung der Bildebene. Die Z-Achse wird hier auch als Hauptachse bezeichnet. Der Punkt in welchem sich die Hauptachse mit der Bildebene schneidet, wird Hauptpunkt $HP$ genannt. Der Abstand des Hauptpunktes zum Projektionszentrum wird im folgenden mit $\zeta$ bezeichnet und bildet einen elementaren Baustein der intrinsischen Kameraparameter. Der Hautpunkt bildet den Ursprung einen neuen Zweidimensionalen Koordinatensystems. Dieses Koordinatensystem wird im weiteren Verlauf als Bildebenenkoordinatensystem bezeichnet\cite{HZ}. Als vorläufig letztes Koordinatensystem wird noch ein sogenannten 3D-Weltkoordinatensystem eingeführt, dessen Position und Orientierung frei wählbar sind. Ein Punkt im 3D-Raum wird ab jetzt als ein Punkt in Bezug auf ein Weltkoordinatensystem bezeichnet. Des Weiteren soll so zum Beispiel der gesamte Stereoskopische Aufbau mit zwei Lochkameramodellen und die 3D-Punkte im Raum immer im Bezug auf ein Weltkoordinatensystem beschrieben werden. Dieses Weltkoordinatensystem wird wiederum meist Deckungsgleich mit einem der im Stereoaufbau benutzten Kamerakoordinatensystemen gesetzt.
 
-(GRAFIK EINFÜGEN SIEHE HZ SEITE 8)
+%(GRAFIK EINFÜGEN SIEHE HZ SEITE 8)
 
 	\begin{minipage}{\linewidth}
 	\centering
-	\includegraphics[width=.8\linewidth]{images/pinhole HZ.png}
+	\includegraphics[width=.8\linewidth]{images/PinholeCameraModell3D.png}
+	\captionof{figure}{Lochkameramodell: $C$ ist das Kamerazentrum}
+	\label{fig:PinholeCamera3D}
+\end{minipage}
+
+%\begin{figure}[!htb]
+%	\minipage{0.50\textwidth}
+%	\includegraphics[width=\linewidth]{images/PinholeCameraModell3D.png}
+%%	\caption{vereinfachte Top-Down-Ansicht des Szenenaufbaus des Minimalbeipspiels}
+%	\label{fig:PinholeCamera}
+%	\endminipage\hfill
+%	\minipage{0.50\textwidth}
+%	\includegraphics[width=\linewidth]{images/PinholeCameraModell2D.png}
+%%	\caption{In Grün ist die Abbildung auf der Bildebenen $I$ von $C$ und in rot ist die Abbildung auf der Bildebenen $I'$ von $C'$}
+%%	\label{fig:AbbildungenMinimal}
+%	\endminipage\hfill	
+%	\caption{Lochkameramodell}
+%\end{figure}
+
+	\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=.8\linewidth]{images/PinholeCameraModell2D.png}
 	\captionof{figure}{Lochkameramodell \cite{Jianzhong}}
-	\label{fig:PinholeCamera}
-\end{minipage}\\ \\
-
-
-
+	\label{fig:PinholeCamera2D}
+	\end{minipage}\\ \\
 
 \subsection{Kameraparameter}
 
-Was bedeutet nun Szenenrekonstruktion und Kamerakalibrierung eines Stereoaufbaus im Zusammenhang mit dem gerade vorgestellten Kameramodell. In Abblildung ??? ist ein Stereoaufbau aus zwei Lochkameramodellen dargestell. Jede Kamera besitz ein eigenes Kamerakoordinatensystem und eine eigene Bildebene, welche wiederrum ein eigenes Bildnebenkoordinatensystem besitzt. Des Weiteren ist ein Objektpunkt $M$ in Bezug auf ein Weltkoordinatensystem zu sehen. Die zwei Strahlen die jeweils von $M$ ausgehen, beschreiben die Projektion des 3D-Objektpunktes $m$ auf die Bildpunkte $m$ und $m'$ auf den jeweiligen Bildebenen. Diese Projektion funktioniert auch in die andere Richtung. Sind zwei zueinandern korresponiderende Bildpunkte auf den beiden Bildebenen gegeben, so kann jeweils ein Strahl durch die jeweiligen Projektionszentren $C$ und $C'$ und deren zugehörigen Bildebenenpunkte $m$ und $m'$ geschickt werden, welche sich dann in einem Punkt $M$ im Raum treffen. Diese umgekehrte Rekonstruktion eines Punktes  wird allgemein als Triangulation bezeichnet\cite{HZ}. Hier werden jetzt die Projektionsmatrizen $P$ und $P'$ eingeführt, welche die Projektion $M$ auf $m$ und $m'$ beschreiben mit $m = PM$ und $m' = P'M$ und genaus so auch anders herum gelten für die Rückprojektion von $m$ und $m'$ auf $M$\cite{CamerModels.,HZ}.\\
+Was bedeutet nun Szenenrekonstruktion und Kamerakalibrierung eines Stereoaufbaus im Zusammenhang mit dem gerade vorgestellten Kameramodell. In Abblildung ??? ist ein Stereoaufbau aus zwei Lochkameramodellen dargestellt. Jede Kamera besitz ein eigenes Kamerakoordinatensystem und eine eigene Bildebene, welche wiederrum ein eigenes Bildnebenkoordinatensystem besitzt. Des Weiteren ist ein Objektpunkt $M$ in Bezug auf ein Weltkoordinatensystem zu sehen. Die zwei Strahlen die jeweils von $M$ ausgehen, beschreiben die Projektion des 3D-Objektpunktes $m$ auf die Bildpunkte $m$ und $m'$ auf den jeweiligen Bildebenen. Diese Projektion funktioniert auch in die andere Richtung. Sind zwei zueinandern korresponiderende Bildpunkte auf den beiden Bildebenen gegeben, so kann jeweils ein Strahl durch die jeweiligen Projektionszentren $C$ und $C'$ und deren zugehörigen Bildebenenpunkte $m$ und $m'$ geschickt werden, welche sich dann in einem Punkt $M$ im Raum treffen. Diese umgekehrte Rekonstruktion eines Punktes  wird allgemein als Triangulation bezeichnet\cite{HZ}. Hier werden jetzt die Projektionsmatrizen $P$ und $P'$ eingeführt, welche die Projektion $M$ auf $m$ und $m'$ beschreiben mit $m = PM$ und $m' = P'M$ und genaus so auch anders herum gelten für die Rückprojektion von $m$ und $m'$ auf $M$\cite{CamerModels.,HZ}.\\
 
 
-(Skizze zwei Lochkameramodelle für den Steroskopieaufbau, backprojecting of point)\\
-
+	\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=.8\linewidth]{images/StereokopischerAufbauLochKamerModell.png}
+	\captionof{figure}{Steroskopischer Aufbau mit Lochkameramodellen. Der Punkt $M$ im Raum kann mit den jeweiligen Projektionsmatrizen $P$ und $P'$ der Kameras $C$ und $C'$ in die Bildpunkte $m$ und $m'$ projiziert werden. $m=PM$ und $m'=P'M$. Eine Rückprojektion der Punkte $m$ und $m'$ zum Punkt $M$ ist mit bekannten Projektionsmatrizen genauso möglich.}
+	\label{fig:StereoaufbauLochkamermodell}
+\end{minipage}\\
 
 Die Projektionsmatrizen $P$ und $P'$ bilden sich aus den extrinsischen und intrinsischen Kameraparametern. Bei den extrinsischen Kameraparametern, handelt es sich um die jeweilige Orientierung einer Kamera bezüglich eines Weltkoordinatensystems, was in einer $3\times 4$-Transformationsmatrix $R$ beschrieben ist. $R$ kann sowohl eine Rotation als auch eine Translation beinhalten. Die intrinsischen Kameraparameter werden in der sogenannten Kameramatrix $K$ ausgedrückt. In der Literatur findet man diese wie folgt definiert\cite{HZ}.
 
@@ -68,7 +94,6 @@ Im folgenden werden die Elemente der Kameramatri $K$ im einzelnen beschrieben. W
 \end{gather}\\
 
 
-
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=1.\linewidth]{images/ZetaHerleitung.png}
@@ -94,7 +119,7 @@ Bestimmt man nun, dass die Hauptachse $= \hat{n}$ ist, kann daraus geschlossen w
 $\zeta$ gibt wie bereits erwähnt den Abstand des Projektionszentrums $C$ zum Hauptpunkt der Bildebene an. 
 In der Literatur  wird $\zeta$ meist mit $f$ für \textit{focal length} dargestellt und die Bildebene auch \textit{Focal plane} genannt \cite{HZ}.\\
 
-(erklären warum focal length eigentlich die falsche bezeichnung ist)\\
+(erklären warum focal length eigentlich die falsche bezeichnung ist, muss nochmal schauen wie man das schön erklärt)\\
 
 Um die Kameramatrix allgemeiner zu formulieren und die Bedeutung hinter $\zeta$ und dessen Zusammenhang mit dem in der Literatur benutzten $f$ genauer zu erläutern, wird die Kameramatrix der Photogrammetrie in Bezug auf ein Lochkameramodell hier noch einmal genauer betrachtet und mit dem hergeleiteten Modell verglichen\cite{HZ,Heipke}. Angenommen es gilt $\zeta = f$, dann gilt für die Projektion von Punkten das selbe wie in Gleichung 2.49 nur mit $f$ statt $\zeta$. 
 
