@@ -1,0 +1,4563 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  8 MAY 2018 17:33
+entering extended mode
+**"./insert title here.tex"
+("insert title here.tex"
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+\@input{settings/settings.aux}
+\openout2 = `settings/settings.aux'.
+
+(settings/settings.tex
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\scrreprt.cls
+Document Class: scrreprt 2016/06/14 v3.21 KOMA-Script document class (report)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\scrkbase.sty
+Package: scrkbase 2016/06/14 v3.21 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\scrbase.sty
+Package: scrbase 2016/06/14 v3.21 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(L:\Programme\MikTex\tex\latex\graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\scrlfile.sty
+Package: scrlfile 2016/06/14 v3.21 KOMA-Script package (loading files)
+
+Package scrlfile, 2016/06/14 v3.21 KOMA-Script package (loading files)
+                  Copyright (C) Markus Kohm
+
+)))
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\tocbasic.sty
+Package: tocbasic 2016/06/14 v3.21 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip41
+\scr@dte@tocline@numbox=\box26
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 132.
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 133.
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 134.
+Package tocbasic Info: defining new hook before heading of `' on input line 160
+6.
+Class scrreprt Info: File `scrsize11pt.clo' used instead of
+(scrreprt)           file `scrsize11.clo' to setup font sizes on input line 226
+6.
+
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\scrsize11pt.clo
+File: scrsize11pt.clo 2016/06/14 v3.21 KOMA-Script font size class option (11pt
+)
+) (C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\typearea.sty
+Package: typearea 2016/06/14 v3.21 KOMA-Script package (type area)
+
+Package typearea, 2016/06/14 v3.21 KOMA-Script package (type area)
+                  Copyright (C) Frank Neukam, 1992-1994
+                  Copyright (C) Markus Kohm, 1994-
+
+\ta@bcor=\skip42
+\ta@div=\count79
+\ta@hblk=\skip43
+\ta@vblk=\skip44
+\ta@temp=\skip45
+\footheight=\skip46
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 10
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 418.25555pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 17.3562pt
+(typearea)              \oddsidemargin  = 17.3562pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 595.80026pt
+(typearea)              \topmargin      = -25.16531pt
+(typearea)              \headheight     = 17.0pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.6pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 1529.
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\scr@dte@part@maxnumwidth=\skip47
+\scr@dte@chapter@maxnumwidth=\skip48
+\scr@dte@section@maxnumwidth=\skip49
+\scr@dte@subsection@maxnumwidth=\skip50
+\scr@dte@subsubsection@maxnumwidth=\skip51
+\scr@dte@paragraph@maxnumwidth=\skip52
+\scr@dte@subparagraph@maxnumwidth=\skip53
+LaTeX Info: Redefining \textsubscript on input line 4780.
+\abovecaptionskip=\skip54
+\belowcaptionskip=\skip55
+\c@pti@nb@sid@b@x=\box27
+\c@figure=\count87
+\c@table=\count88
+Class scrreprt Info: Redefining `\numberline' on input line 5801.
+\bibindent=\dimen102
+) (L:\Programme\MikTex\tex\latex\geometry\geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(L:\Programme\MikTex\tex\generic\oberdiek\ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+(L:\Programme\MikTex\tex\generic\oberdiek\ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(L:\Programme\MikTex\tex\generic\ifxetex\ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count89
+\Gm@cntv=\count90
+\c@Gm@tempcnt=\count91
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+
+(L:\Programme\MikTex\tex\latex\geometry\geometry.cfg))
+(L:\Programme\MikTex\tex\latex\base\inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+(L:\Programme\MikTex\tex\latex\base\utf8.def
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(L:\Programme\MikTex\tex\latex\base\t1enc.dfu
+File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+1E02 (decimal 7682)
+   defining Unicode char U+1E03 (decimal 7683)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2010 (decimal 8208)
+   defining Unicode char U+2011 (decimal 8209)
+   defining Unicode char U+2012 (decimal 8210)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2015 (decimal 8213)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(L:\Programme\MikTex\tex\latex\base\ot1enc.dfu
+File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(L:\Programme\MikTex\tex\latex\base\omsenc.dfu
+File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(L:\Programme\MikTex\tex\generic\babel\babel.sty
+Package: babel 2016/04/23 3.9r The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(L:\Programme\MikTex\tex\latex\babel-german\ngerman.ldf
+Language: ngerman 2013/12/13 v2.7 German support for babel (new orthography)
+
+(L:\Programme\MikTex\tex\latex\babel-german\ngermanb.ldf
+Language: ngermanb 2013/12/13 v2.7 German support for babel (new orthography)
+
+(L:\Programme\MikTex\tex\generic\babel\babel.def
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count92
+\U@D=\dimen111
+)
+\l@naustrian = a dialect from \language\l@ngerman 
+\l@nswissgerman = a dialect from \language\l@ngerman 
+Package babel Info: Making " an active character on input line 88.
+)))
+(L:\Programme\MikTex\tex\latex\base\textcomp.sty
+Package: textcomp 2016/06/19 v1.99m Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(L:\Programme\MikTex\tex\latex\base\ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(L:\Programme\MikTex\tex\latex\base\ts1enc.dfu
+File: ts1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(L:\Programme\MikTex\tex\latex\00miktex\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(L:\Programme\MikTex\tex\latex\graphics-def\pdftex.def
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+
+(L:\Programme\MikTex\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(L:\Programme\MikTex\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count93
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\colortbl\colortbl.sty
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+
+(L:\Programme\MikTex\tex\latex\tools\array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen112
+\extrarowheight=\dimen113
+\NC@list=\toks18
+\extratabsurround=\skip56
+\backup@length=\skip57
+)
+\everycr=\toks19
+\minrowclearance=\skip58
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\makecell\makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen114
+\c@nlinenum=\count94
+\TeXr@lab=\toks20
+)
+(L:\Programme\MikTex\tex\latex\hyperref\hyperref.sty
+Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
+
+(L:\Programme\MikTex\tex\generic\oberdiek\hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(L:\Programme\MikTex\tex\generic\oberdiek\hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(L:\Programme\MikTex\tex\latex\oberdiek\auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(L:\Programme\MikTex\tex\latex\oberdiek\kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen115
+\Hy@linkcounter=\count95
+\Hy@pagecounter=\count96
+
+(L:\Programme\MikTex\tex\latex\hyperref\pd1enc.def
+File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count97
+
+(L:\Programme\MikTex\tex\latex\00miktex\hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4362.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4362.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4362
+.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 4362.
+Package hyperref Info: Hyper figures OFF on input line 4486.
+Package hyperref Info: Link nesting OFF on input line 4491.
+Package hyperref Info: Hyper index ON on input line 4494.
+Package hyperref Info: Plain pages OFF on input line 4501.
+Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4735.
+\c@Hy@tempcnt=\count98
+
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5088.
+\XeTeXLinkMargin=\dimen116
+\Fld@menulength=\count99
+\Field@Width=\dimen117
+\Fld@charsize=\dimen118
+Package hyperref Info: Hyper figures OFF on input line 6342.
+Package hyperref Info: Link nesting OFF on input line 6347.
+Package hyperref Info: Hyper index ON on input line 6350.
+Package hyperref Info: backreferencing OFF on input line 6357.
+Package hyperref Info: Link coloring OFF on input line 6362.
+Package hyperref Info: Link coloring with OCG OFF on input line 6367.
+Package hyperref Info: PDF/A mode OFF on input line 6372.
+LaTeX Info: Redefining \ref on input line 6412.
+LaTeX Info: Redefining \pageref on input line 6416.
+\Hy@abspage=\count100
+\c@Item=\count101
+\c@Hfootnote=\count102
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(L:\Programme\MikTex\tex\latex\hyperref\hpdftex.def
+File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
+\Fld@listcount=\count103
+\c@bookmark@seq@number=\count104
+
+(L:\Programme\MikTex\tex\latex\oberdiek\rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip59
+)
+(L:\Programme\MikTex\tex\latex\graphics\graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(L:\Programme\MikTex\tex\latex\graphics\graphics.sty
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+(L:\Programme\MikTex\tex\latex\graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(L:\Programme\MikTex\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\pdfpages\pdfpages.sty
+Package: pdfpages 2016/04/19 v0.5f Insert pages of external PDF documents (AM)
+
+(L:\Programme\MikTex\tex\latex\base\ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(L:\Programme\MikTex\tex\latex\tools\calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count105
+\calc@Bcount=\count106
+\calc@Adimen=\dimen121
+\calc@Bdimen=\dimen122
+\calc@Askip=\skip60
+\calc@Bskip=\skip61
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count107
+\calc@Cskip=\skip62
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\eso-pic\eso-pic.sty
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+)
+\AM@pagewidth=\dimen123
+\AM@pageheight=\dimen124
+
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\pdfpages\pppdftex.def
+File: pppdftex.def 2016/04/19 v0.5f Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box28
+\AM@global@opts=\toks21
+\AM@toc@title=\toks22
+\c@AM@survey=\count108
+\AM@templatesizebox=\box29
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\was\upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
+(L:\Programme\MikTex\tex\latex\amsmath\amsmath.sty
+Package: amsmath 2016/06/28 v2.15d AMS math features
+\@mathmargin=\skip63
+
+For additional information on amsmath, use the `?' option.
+(L:\Programme\MikTex\tex\latex\amsmath\amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(L:\Programme\MikTex\tex\latex\amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks23
+\ex@=\dimen125
+))
+(L:\Programme\MikTex\tex\latex\amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen126
+)
+(L:\Programme\MikTex\tex\latex\amsmath\amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count109
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count110
+\leftroot@=\count111
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count112
+\DOTSCASE@=\count113
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box30
+\strutbox@=\box31
+\big@size=\dimen127
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count114
+\c@MaxMatrixCols=\count115
+\dotsspace@=\muskip11
+\c@parentequation=\count116
+\dspbrk@lvl=\count117
+\tag@help=\toks24
+\row@=\count118
+\column@=\count119
+\maxfields@=\count120
+\andhelp@=\toks25
+\eqnshift@=\dimen128
+\alignsep@=\dimen129
+\tagshift@=\dimen130
+\tagwidth@=\dimen131
+\totwidth@=\dimen132
+\lineht@=\dimen133
+\@envbody=\toks26
+\multlinegap=\skip64
+\multlinetaggap=\skip65
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(L:\Programme\MikTex\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(L:\Programme\MikTex\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\leftidx\leftidx.sty
+Package: leftidx 2003/09/24 v1.03 Left indices
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen134
+\captionmargin@=\dimen135
+\captionwidth=\dimen136
+\caption@tempdima=\dimen137
+\caption@indent=\dimen138
+\caption@parindent=\dimen139
+\caption@hangindent=\dimen140
+)
+Package caption Info: KOMA-Script document class.
+\c@ContinuedFloat=\count121
+Package caption Info: hyperref package is loaded.
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\capt-of\capt-of.sty
+Package: capt-of 2009/12/29 v0.2 standard captions outside of floats
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\wrapfig\wrapfig.sty
+\wrapoverhang=\dimen141
+\WF@size=\dimen142
+\c@WF@wrappedlines=\count122
+\WF@box=\box32
+\WF@everypar=\toks28
+Package: wrapfig 2003/01/31  v 3.6
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+\c@subfigure=\count123
+\c@subtable=\count124
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\booktabs\booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen143
+\lightrulewidth=\dimen144
+\cmidrulewidth=\dimen145
+\belowrulesep=\dimen146
+\belowbottomsep=\dimen147
+\aboverulesep=\dimen148
+\abovetopsep=\dimen149
+\cmidrulesep=\dimen150
+\cmidrulekern=\dimen151
+\defaultaddspace=\dimen152
+\@cmidla=\count125
+\@cmidlb=\count126
+\@aboverulesep=\dimen153
+\@belowrulesep=\dimen154
+\@thisruleclass=\count127
+\@lastruleclass=\count128
+\@thisrulewidth=\dimen155
+)
+(L:\Programme\MikTex\tex\latex\tools\tabularx.sty
+Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
+\TX@col@width=\dimen156
+\TX@old@table=\dimen157
+\TX@old@col=\dimen158
+\TX@target=\dimen159
+\TX@delta=\dimen160
+\TX@cols=\count129
+\TX@ftn=\toks29
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\acronym\acronym.sty
+Package: acronym 2015/03/21 v1.41 Support for acronyms (Tobias Oetiker)
+
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\bigfoot\suffix.sty
+Package: suffix 2006/07/15 1.5a Variant command support
+)
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\latex\xstring\xstring.sty
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\generic\xstring\xstring.tex
+\@xs@message=\write3
+\integerpart=\count130
+\decimalpart=\count131
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\AC@clearlist=\toks30
+))
+("insert title here.aux"
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:awesome_image2' multiply defined.
+
+)
+\openout1 = `"insert title here.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 6.
+ (L:\Programme\MikTex\tex\latex\base\ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-60.81723pt
+* \headheight=17.0pt
+* \headsep=28.45274pt
+* \topskip=11.0pt
+* \footskip=34.1433pt
+* \marginparwidth=59.7508pt
+* \marginparsep=12.8401pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(C:\Users\Anja\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count132
+\scratchdimen=\dimen161
+\scratchbox=\box33
+\nofMPsegments=\count133
+\nofMParguments=\count134
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count135
+\MPscratchDim=\dimen162
+\MPnumerator=\count136
+\makeMPintoPDFobject=\count137
+\everyMPtoPDFconversion=\toks32
+) (L:\Programme\MikTex\tex\latex\oberdiek\epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(L:\Programme\MikTex\tex\latex\oberdiek\grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+\AtBeginShipoutBox=\box34
+Package hyperref Info: Link coloring OFF on input line 6.
+
+(L:\Programme\MikTex\tex\latex\hyperref\nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(L:\Programme\MikTex\tex\generic\oberdiek\gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count138
+)
+LaTeX Info: Redefining \ref on input line 6.
+LaTeX Info: Redefining \pageref on input line 6.
+LaTeX Info: Redefining \nameref on input line 6.
+
+("insert title here.out") ("insert title here.out")
+\@outlinefile=\write4
+\openout4 = `"insert title here.out"'.
+
+
+(L:\Programme\MikTex\tex\latex\oberdiek\pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+(L:\Programme\MikTex\tex\latex\graphics\lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+(content/0_introducing/frontpage.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 22.
+
+(L:\Programme\MikTex\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 22.
+
+(L:\Programme\MikTex\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<./images/hfu_logo.png, id=203, 1027.84pt x 379.4175pt>
+File: ./images/hfu_logo.png Graphic file (type png)
+
+<use ./images/hfu_logo.png>
+Package pdftex.def Info: ./images/hfu_logo.png used on input line 37.
+(pdftex.def)             Requested size: 241.84843pt x 89.27312pt.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 44.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 44.
+ [1
+
+
+
+
+
+{C:/Users/Anja/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/hfu
+_logo.png>]) ("insert title here.toc"
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 43.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 43.
+ [2
+
+]
+Overfull \hbox (1.095pt too wide) detected at line 47
+ []\OT1/cmss/bx/n/10.95 107
+ []
+
+
+Overfull \hbox (1.095pt too wide) detected at line 48
+ []\OT1/cmss/bx/n/10.95 108
+ []
+
+
+Overfull \hbox (1.095pt too wide) detected at line 49
+ []\OT1/cmss/bx/n/10.95 109
+ []
+
+
+Overfull \hbox (1.095pt too wide) detected at line 50
+ []\OT1/cmss/bx/n/10.95 110
+ []
+
+
+Overfull \hbox (1.095pt too wide) detected at line 51
+ []\OT1/cmss/bx/n/10.95 111
+ []
+
+)
+\tf@toc=\write5
+\openout5 = `"insert title here.toc"'.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 26.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 26.
+ [3] (content/1_chapter1/Abstract.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 6.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 6.
+ [4
+
+
+])
+(content/0_introducing/introducing.tex
+chapter 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 22.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 22.
+[5
+
+] <images/ArbeitsProzessMinimal.png, id=307, 963.6pt x 542.025pt>
+File: images/ArbeitsProzessMinimal.png Graphic file (type png)
+
+<use images/ArbeitsProzessMinimal.png>
+Package pdftex.def Info: images/ArbeitsProzessMinimal.png used on input line 26
+.
+(pdftex.def)             Requested size: 483.69687pt x 272.07874pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 27.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--30
+
+ []
+
+<images/ArbeitsProzessRealunkalibriert.png, id=310, 963.6pt x 542.025pt>
+File: images/ArbeitsProzessRealunkalibriert.png Graphic file (type png)
+
+<use images/ArbeitsProzessRealunkalibriert.png>
+Package pdftex.def Info: images/ArbeitsProzessRealunkalibriert.png used on inpu
+t line 35.
+(pdftex.def)             Requested size: 483.69687pt x 272.07874pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 36.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--39
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 39.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 39.
+[6 <./images/ArbeitsProzessMinimal.png>]
+<images/ArbeitsProzessReal.png, id=322, 963.6pt x 542.025pt>
+File: images/ArbeitsProzessReal.png Graphic file (type png)
+
+<use images/ArbeitsProzessReal.png>
+Package pdftex.def Info: images/ArbeitsProzessReal.png used on input line 44.
+(pdftex.def)             Requested size: 483.69687pt x 272.07874pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 45.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--48
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 48.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 48.
+[7 <./images/ArbeitsProzessRealunkalibriert.png>]
+Overfull \hbox (6.19572pt too wide) in paragraph at lines 88--89
+[]\OT1/cmr/m/n/10.95 Die Ka-pi-tel 1 bis 5 um-fas-sen die theo-re-ti-schen Ma-t
+he-ma-ti-schen Hin-ter-gr[]unde, wel-che f[]ur das Verst[]andnis
+ []
+
+) (content/1_chapter1/c1_expName_11.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [8 <./images/ArbeitsProzessReal.png>]
+chapter 2.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--15
+
+ []
+
+<images/Zentralprojektion.png, id=345, 676.77844pt x 462.97969pt>
+File: images/Zentralprojektion.png Graphic file (type png)
+
+<use images/Zentralprojektion.png>
+Package pdftex.def Info: images/Zentralprojektion.png used on input line 18.
+(pdftex.def)             Requested size: 386.95897pt x 264.72064pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 19.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--22
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--22
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 22.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 22.
+[9
+
+]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 23.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 23.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 23.
+<images/PinholeCameraModell3D.png, id=353, 868.74562pt x 498.36188pt>
+File: images/PinholeCameraModell3D.png Graphic file (type png)
+
+<use images/PinholeCameraModell3D.png>
+Package pdftex.def Info: images/PinholeCameraModell3D.png used on input line 33
+.
+(pdftex.def)             Requested size: 386.95897pt x 221.98706pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 34.
+See the caption package documentation for explanation.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 52.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 52.
+[10 <./images/Zentralprojektion.png>]
+<images/PinholeCameraModell2D.png, id=361, 971.12813pt x 493.0922pt>
+File: images/PinholeCameraModell2D.png Graphic file (type png)
+
+<use images/PinholeCameraModell2D.png>
+Package pdftex.def Info: images/PinholeCameraModell2D.png used on input line 54
+.
+(pdftex.def)             Requested size: 386.95897pt x 196.47345pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 55.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--58
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 59.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 59.
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+<images/StereokopischerAufbauLochKamerModell.png, id=368, 580.41844pt x 446.417
+82pt>
+File: images/StereokopischerAufbauLochKamerModell.png Graphic file (type png)
+ <use images/StereokopischerAufbauLochKamerModell.png>
+Package pdftex.def Info: images/StereokopischerAufbauLochKamerModell.png used o
+n input line 66.
+(pdftex.def)             Requested size: 386.95897pt x 297.62703pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 67.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--70
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 71.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 71.
+[11 <./images/PinholeCameraModell3D.png> <./images/PinholeCameraModell2D.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+<images/ZetaHerleitung.png, id=383, 507.39563pt x 434.37282pt>
+File: images/ZetaHerleitung.png Graphic file (type png)
+
+<use images/ZetaHerleitung.png>
+Package pdftex.def Info: images/ZetaHerleitung.png used on input line 110.
+(pdftex.def)             Requested size: 386.95897pt x 331.28003pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 111.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--114
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 114.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 114.
+[12 <./images/StereokopischerAufbauLochKamerModell.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 192.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 192.
+ [13 <./images/ZetaHerleitung.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+
+ []
+
+) (content/1_chapter1/c1_expName_1.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [14]
+chapter 3.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 20.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 20.
+<images/WeltKordSys.png, id=422, 520.94624pt x 460.72125pt>
+File: images/WeltKordSys.png Graphic file (type png)
+
+<use images/WeltKordSys.png>
+Package pdftex.def Info: images/WeltKordSys.png used on input line 27.
+(pdftex.def)             Requested size: 338.58632pt x 299.44417pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 28.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 33.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 33.
+[15
+
+ <./images/WeltKordSys.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 100.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 100.
+[16]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 181.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 181.
+ [17]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 599.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 599.
+
+Overfull \hbox (10.4681pt too wide) in paragraph at lines 601--602
+\OT1/cmr/m/n/10.95 Nachdem die ma-the-ma-ti-sche Grund-la-ge der Ba-sis - be-zi
+e-hungs-wei-se Ko-or-di-na-ten-trans-for-ma-ti-on erl[]autert
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 603.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 603.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 607.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 607.
+[18]
+Overfull \hbox (11.42635pt too wide) in paragraph at lines 672--673
+\OT1/cmr/m/n/10.95 Pro-jek-ti-on der Ko-or-di-na-ten im 3D-Kamerakoordinatensys
+tems auf das 2D-Bildebenenkoordinatensystem
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 686.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 686.
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 836--837
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 838--839
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 862.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 862.
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 866--867
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 949--950
+
+ []
+
+) (content/1_chapter1/c1_expName_2.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [21]
+chapter 4.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 48.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 48.
+[22
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+<images/Homographie_rotation_1.png, id=531, 584.93532pt x 557.08125pt>
+File: images/Homographie_rotation_1.png Graphic file (type png)
+
+<use images/Homographie_rotation_1.png>
+Package pdftex.def Info: images/Homographie_rotation_1.png used on input line 5
+7.
+(pdftex.def)             Requested size: 386.95897pt x 368.5418pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 58.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--60
+
+ []
+
+<images/Homographie_rotation_2.png, id=532, 743.77875pt x 578.16pt>
+File: images/Homographie_rotation_2.png Graphic file (type png)
+
+<use images/Homographie_rotation_2.png>
+Package pdftex.def Info: images/Homographie_rotation_2.png used on input line 6
+3.
+(pdftex.def)             Requested size: 386.95897pt x 300.80373pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 64.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--66
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 66.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 66.
+[23 <./images/Homographie_rotation_1.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 85.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 85.
+ [24 <./images/Homographie_rotation_2.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 92.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 92.
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+<images/GrafikHomographieSameC.png, id=555, 789.70032pt x 646.66594pt>
+File: images/GrafikHomographieSameC.png Graphic file (type png)
+
+<use images/GrafikHomographieSameC.png>
+Package pdftex.def Info: images/GrafikHomographieSameC.png used on input line 1
+09.
+(pdftex.def)             Requested size: 483.69687pt x 396.08388pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 110.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--113
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 113.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 113.
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 165.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 165.
+[26 <./images/GrafikHomographieSameC.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 333.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 333.
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
+
+ []
+
+
+Overfull \hbox (2.79518pt too wide) in paragraph at lines 425--426
+[]\OT1/cmr/m/n/10.95 Die ent-stan-de-nen Punk-te sind nun ent-spre-chend der Ka
+-me-ra-ko-or-di-na-ten-sys-te-me de-fi-niert. Jetzt m[]ussen
+ []
+
+
+Overfull \hbox (28.95464pt too wide) in paragraph at lines 425--426
+\OT1/cmr/m/n/10.95 noch die je-wei-li-gen Ka-me-ra-ma-tri-zen $\OML/cmm/m/it/10
+.95 K$ \OT1/cmr/m/n/10.95 und $\OML/cmm/m/it/10.95 K[]$ \OT1/cmr/m/n/10.95 mit 
+die-sen ver-rech-net wer-den, um so die 2D-Bildebenenpunkte
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 441.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 441.
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--524
+
+ []
+
+<images/Geogebra.png, id=604, 359.09157pt x 290.58563pt>
+File: images/Geogebra.png Graphic file (type png)
+
+<use images/Geogebra.png>
+Package pdftex.def Info: images/Geogebra.png used on input line 527.
+(pdftex.def)             Requested size: 386.95897pt x 313.15826pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 528.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--531
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--531
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 531.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 531.
+[29]
+Overfull \hbox (1.22757pt too wide) in paragraph at lines 532--540
+\OT1/cmr/m/n/10.95 gra-phie-ma-trix $\OML/cmm/m/it/10.95 H$ \OT1/cmr/m/n/10.95 
+in-ein-an-der []uberf[]uhrt wer-den. Um ei-ne Ho-mo-gra-phie-ma-trix mit $\OML/
+cmm/m/it/10.95 H \OT1/cmr/m/n/10.95 = []$
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 584.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 584.
+[30 <./images/Geogebra.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 634.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 634.
+ [31]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 691.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 691.
+
+<images/Ausgangslage.png, id=659, 599.23875pt x 444.91219pt>
+File: images/Ausgangslage.png Graphic file (type png)
+
+<use images/Ausgangslage.png>
+Package pdftex.def Info: images/Ausgangslage.png used on input line 699.
+(pdftex.def)             Requested size: 386.95897pt x 287.30899pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 700.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 697--703
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 705.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 705.
+[32] <images/DrehungPZ.png, id=670, 876.27374pt x 361.35pt>
+File: images/DrehungPZ.png Graphic file (type png)
+
+<use images/DrehungPZ.png>
+Package pdftex.def Info: images/DrehungPZ.png used on input line 710.
+(pdftex.def)             Requested size: 483.69687pt x 199.46541pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 711.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--714
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--714
+
+ []
+
+<images/DrehungDZ.png, id=672, 963.6pt x 542.025pt>
+File: images/DrehungDZ.png Graphic file (type png)
+ <use images/DrehungDZ.png>
+Package pdftex.def Info: images/DrehungDZ.png used on input line 719.
+(pdftex.def)             Requested size: 483.69687pt x 272.07874pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 720.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 717--723
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 723.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 723.
+[33 <./images/Ausgangslage.png> <./images/DrehungPZ.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 724--725
+
+ []
+
+
+<images/GrafikDrehungProjektionszentrum.png, id=684, 480.29437pt x 350.81062pt>
+File: images/GrafikDrehungProjektionszentrum.png Graphic file (type png)
+<use images/GrafikDrehungProjektionszentrum.png>
+Package pdftex.def Info: images/GrafikDrehungProjektionszentrum.png used on inp
+ut line 728.
+(pdftex.def)             Requested size: 386.95897pt x 282.64015pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 729.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--732
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--732
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 733.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 733.
+[34 <./images/DrehungDZ.png> <./images/GrafikDrehungProjektionszentrum.png>]
+<images/GrafikDrehungUmDrehpunkt.png, id=695, 486.31688pt x 325.96782pt>
+File: images/GrafikDrehungUmDrehpunkt.png Graphic file (type png)
+
+<use images/GrafikDrehungUmDrehpunkt.png>
+Package pdftex.def Info: images/GrafikDrehungUmDrehpunkt.png used on input line
+ 735.
+(pdftex.def)             Requested size: 386.95897pt x 259.37196pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 736.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 733--739
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 733--739
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 756.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 756.
+[35 <./images/GrafikDrehungUmDrehpunkt.png>]
+<images/HomographieGrafik.png, id=705, 899.61093pt x 450.18187pt>
+File: images/HomographieGrafik.png Graphic file (type png)
+
+<use images/HomographieGrafik.png>
+Package pdftex.def Info: images/HomographieGrafik.png used on input line 772.
+(pdftex.def)             Requested size: 483.69687pt x 242.05046pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 773.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--775
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--775
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 778.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 778.
+[36 <./images/HomographieGrafik.png>]
+<images/GrafikHomographieDifferentC.png, id=723, 843.90282pt x 522.45187pt>
+File: images/GrafikHomographieDifferentC.png Graphic file (type png)
+
+<use images/GrafikHomographieDifferentC.png>
+Package pdftex.def Info: images/GrafikHomographieDifferentC.png used on input l
+ine 781.
+(pdftex.def)             Requested size: 483.69687pt x 299.45883pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 782.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--784
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--784
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 785--786
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 807--808
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 873.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 873.
+[37 <./images/GrafikHomographieDifferentC.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 922--923
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 925.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 925.
+[38]) (content/1_chapter1/c1_expName_22.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [39]
+chapter 5.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+<images/EpipolarGeoemtrieGrafik.png, id=763, 829.59938pt x 499.11469pt>
+File: images/EpipolarGeoemtrieGrafik.png Graphic file (type png)
+
+<use images/EpipolarGeoemtrieGrafik.png>
+Package pdftex.def Info: images/EpipolarGeoemtrieGrafik.png used on input line 
+15.
+(pdftex.def)             Requested size: 483.69687pt x 291.00226pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 16.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--19
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 19.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 19.
+[40
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+
+ []
+
+<images/EpipolarLinien.png, id=778, 785.18344pt x 602.25pt>
+File: images/EpipolarLinien.png Graphic file (type png)
+
+<use images/EpipolarLinien.png>
+Package pdftex.def Info: images/EpipolarLinien.png used on input line 27.
+(pdftex.def)             Requested size: 483.69687pt x 371.01103pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 28.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--30
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 30.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 30.
+[41 <./images/EpipolarGeoemtrieGrafik.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 33.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 33.
+ [42 <./images/EpipolarLinien.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 35.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 35.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 66.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 66.
+
+[43]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 119.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 119.
+ [44]) (content/1_chapter1/c1_expName_3.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [45]
+chapter 6.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+<images/AufbauMinimalbeispiel.png, id=861, 725.71124pt x 408.77719pt>
+File: images/AufbauMinimalbeispiel.png Graphic file (type png)
+
+<use images/AufbauMinimalbeispiel.png>
+Package pdftex.def Info: images/AufbauMinimalbeispiel.png used on input line 8.
+
+(pdftex.def)             Requested size: 251.52443pt x 141.67697pt.
+
+Underfull \hbox (badness 1005) in paragraph at lines 9--9
+[][][]|\OT1/cmr/m/n/10.95 ver-ein-fach-te Top-Down-Ansicht des
+ []
+
+<images/QuadrateMinimalBeispiel.png, id=862, 509.65407pt x 325.96782pt>
+File: images/QuadrateMinimalBeispiel.png Graphic file (type png)
+
+<use images/QuadrateMinimalBeispiel.png>
+Package pdftex.def Info: images/QuadrateMinimalBeispiel.png used on input line 
+13.
+(pdftex.def)             Requested size: 203.1518pt x 129.93219pt.
+
+<images/KS_Minimalbeispiel.png, id=863, 792.71156pt x 402.75468pt>
+File: images/KS_Minimalbeispiel.png Graphic file (type png)
+
+<use images/KS_Minimalbeispiel.png>
+Package pdftex.def Info: images/KS_Minimalbeispiel.png used on input line 21.
+(pdftex.def)             Requested size: 251.52443pt x 127.79022pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 22.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--25
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 26.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 26.
+[46
+
+ <./images/AufbauMinimalbeispiel.png> <./images/QuadrateMinimalBeispiel.png> <.
+/images/KS_Minimalbeispiel.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 26.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 26.
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 83.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 83.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 103.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 103.
+[47]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 135.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 135.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 230.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 230.
+ [48]
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+
+ []
+
+File: images/QuadrateMinimalBeispiel.png Graphic file (type png)
+<use images/QuadrateMinimalBeispiel.png>
+Package pdftex.def Info: images/QuadrateMinimalBeispiel.png used on input line 
+261.
+(pdftex.def)             Requested size: 386.95897pt x 247.50433pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 262.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--283
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 284.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 284.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 287.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 287.
+[49]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 308.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 308.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 316.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 316.
+ [50]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 354.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 354.
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
+
+ []
+
+<images/Epipole_Epipollinien.png, id=941, 946.53625pt x 586.19pt>
+File: images/Epipole_Epipollinien.png Graphic file (type png)
+
+<use images/Epipole_Epipollinien.png>
+Package pdftex.def Info: images/Epipole_Epipollinien.png used on input line 375
+.
+(pdftex.def)             Requested size: 483.69687pt x 299.55223pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 376.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--378
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--378
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 378.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 378.
+[51]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 379.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 379.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 448.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 448.
+ [52 <./images/Epipole_Epipollinien.png (PNG copy)>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 458.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 458.
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 485.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 485.
+[53]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 498.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 498.
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--508
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 540.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 540.
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
+
+ []
+
+<images/P_Solution_one.png, id=1018, 579.66562pt x 409.53pt>
+File: images/P_Solution_one.png Graphic file (type png)
+
+<use images/P_Solution_one.png>
+Package pdftex.def Info: images/P_Solution_one.png used on input line 560.
+(pdftex.def)             Requested size: 251.52443pt x 177.70042pt.
+
+<images/P_Solution_two.png, id=1019, 420.06938pt x 301.8778pt>
+File: images/P_Solution_two.png Graphic file (type png)
+
+<use images/P_Solution_two.png>
+Package pdftex.def Info: images/P_Solution_two.png used on input line 565.
+(pdftex.def)             Requested size: 251.52443pt x 180.75496pt.
+
+Overfull \hbox (19.35199pt too wide) in paragraph at lines 559--569
+[]$[]$ $[]$ 
+ []
+
+<images/P_Solution_three.png, id=1020, 569.12625pt x 346.29375pt>
+File: images/P_Solution_three.png Graphic file (type png)
+
+<use images/P_Solution_three.png>
+Package pdftex.def Info: images/P_Solution_three.png used on input line 572.
+(pdftex.def)             Requested size: 251.52443pt x 153.04607pt.
+
+<images/P_Solution_four.png, id=1021, 472.76625pt x 337.26pt>
+File: images/P_Solution_four.png Graphic file (type png)
+
+<use images/P_Solution_four.png>
+Package pdftex.def Info: images/P_Solution_four.png used on input line 577.
+(pdftex.def)             Requested size: 251.52443pt x 179.43652pt.
+
+Overfull \hbox (19.35199pt too wide) in paragraph at lines 571--581
+[]$[]$ $[]$ 
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 584.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 584.
+[55 <./images/P_Solution_one.png> <./images/P_Solution_two.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 585.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 585.
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--589
+
+ []
+
+<images/optimaleTriangulierung.png, id=1035, 518.6878pt x 356.83313pt>
+File: images/optimaleTriangulierung.png Graphic file (type png)
+
+<use images/optimaleTriangulierung.png>
+Package pdftex.def Info: images/optimaleTriangulierung.png used on input line 5
+93.
+(pdftex.def)             Requested size: 386.95897pt x 266.22485pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 594.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--596
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--596
+
+ []
+
+<images/problemTriangulation.png, id=1039, 729.47531pt x 344.03531pt>
+File: images/problemTriangulation.png Graphic file (type png)
+
+<use images/problemTriangulation.png>
+Package pdftex.def Info: images/problemTriangulation.png used on input line 603
+.
+(pdftex.def)             Requested size: 386.95897pt x 182.49533pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 604.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--606
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 606.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 606.
+[56 <./images/P_Solution_three.png> <./images/P_Solution_four.png> <./images/op
+timaleTriangulierung.png>]
+Overfull \hbox (17.16109pt too wide) in paragraph at lines 613--615
+\OML/cmm/m/it/10.95 A[]; B[]; C[]; D[]; A\OT1/cmr/m/n/10.95 2[]\OML/cmm/m/it/10
+.95 ; B\OT1/cmr/m/n/10.95 2[]\OML/cmm/m/it/10.95 ; C\OT1/cmr/m/n/10.95 2[]\OML/
+cmm/m/it/10.95 ; D\OT1/cmr/m/n/10.95 2[]$ und den neu um-ge-rech-ne-ten Punk-te
+n $\OML/cmm/m/it/10.95 A[]; B[]; C[]; D[]; A\OT1/cmr/m/n/10.95 2[]\OML/cmm/m/it
+/10.95 ; B\OT1/cmr/m/n/10.95 2[]\OML/cmm/m/it/10.95 ; C\OT1/cmr/m/n/10.95 2[]\O
+ML/cmm/m/it/10.95 ; D\OT1/cmr/m/n/10.95 2[]$
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 626.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 626.
+[57 <./images/problemTriangulation.png>]
+<images/ScaleInvariance_1.png, id=1061, 510.40688pt x 517.935pt>
+File: images/ScaleInvariance_1.png Graphic file (type png)
+
+<use images/ScaleInvariance_1.png>
+Package pdftex.def Info: images/ScaleInvariance_1.png used on input line 629.
+(pdftex.def)             Requested size: 203.1518pt x 206.15082pt.
+
+<images/ScaleInvariance_2.png, id=1062, 423.83344pt x 478.03593pt>
+File: images/ScaleInvariance_2.png Graphic file (type png)
+
+<use images/ScaleInvariance_2.png>
+Package pdftex.def Info: images/ScaleInvariance_2.png used on input line 634.
+(pdftex.def)             Requested size: 203.1518pt x 229.13368pt.
+
+<images/ScaleInvariance_3.png, id=1063, 633.86812pt x 582.67688pt>
+File: images/ScaleInvariance_3.png Graphic file (type png)
+
+<use images/ScaleInvariance_3.png>
+Package pdftex.def Info: images/ScaleInvariance_3.png used on input line 643.
+(pdftex.def)             Requested size: 203.1518pt x 186.74492pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 644.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--646
+
+ []
+
+<images/MinimalBeispiel_reconstructed.png, id=1064, 608.2725pt x 522.45187pt>
+File: images/MinimalBeispiel_reconstructed.png Graphic file (type png)
+
+<use images/MinimalBeispiel_reconstructed.png>
+Package pdftex.def Info: images/MinimalBeispiel_reconstructed.png used on input
+ line 649.
+(pdftex.def)             Requested size: 203.1518pt x 174.49033pt.
+
+<images/MinimalBeispiel_reconstructed_3.png, id=1065, 536.0025pt x 503.63156pt>
+File: images/MinimalBeispiel_reconstructed_3.png Graphic file (type png)
+<use images/MinimalBeispiel_reconstructed_3.png>
+Package pdftex.def Info: images/MinimalBeispiel_reconstructed_3.png used on inp
+ut line 654.
+(pdftex.def)             Requested size: 203.1518pt x 190.88246pt.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 662.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 662.
+ [58 <./images/ScaleInvariance_1.png> <./images/ScaleInvariance_2.png> <./image
+s/ScaleInvariance_3.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 664.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 664.
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--675
+
+ []
+
+File: images/problemTriangulation.png Graphic file (type png)
+<use images/problemTriangulation.png>
+Package pdftex.def Info: images/problemTriangulation.png used on input line 680
+.
+(pdftex.def)             Requested size: 386.95897pt x 182.49533pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 681.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--683
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--689
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 689.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 689.
+[59 <./images/MinimalBeispiel_reconstructed.png> <./images/MinimalBeispiel_reco
+nstructed_3.png>]
+<images/rectifiziertesBildAusZZ.png, id=1098, 429.10312pt x 178.41656pt>
+File: images/rectifiziertesBildAusZZ.png Graphic file (type png)
+
+<use images/rectifiziertesBildAusZZ.png>
+Package pdftex.def Info: images/rectifiziertesBildAusZZ.png used on input line 
+693.
+(pdftex.def)             Requested size: 386.95897pt x 160.89464pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 694.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 691--696
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 691--696
+
+ []
+
+<images/Disparity.png, id=1101, 295.85532pt x 254.45062pt>
+File: images/Disparity.png Graphic file (type png)
+
+<use images/Disparity.png>
+Package pdftex.def Info: images/Disparity.png used on input line 699.
+(pdftex.def)             Requested size: 386.95897pt x 332.81636pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 700.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 697--702
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 697--702
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 702.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 702.
+[60 <./images/rectifiziertesBildAusZZ.png> <./images/Disparity.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 710.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 710.
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 717--718
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--739
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 759--760
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 766--767
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 777--778
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 779.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 779.
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 807--808
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--810
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 811.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 811.
+
+Underfull \hbox (badness 10000) in paragraph at lines 819--820
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 829.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 829.
+[63]
+Underfull \hbox (badness 10000) in paragraph at lines 843--844
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 849--850
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 851.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 851.
+[64]
+Underfull \hbox (badness 10000) in paragraph at lines 888--889
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 895--896
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 902.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 902.
+[65]
+Underfull \hbox (badness 10000) in paragraph at lines 902--903
+
+ []
+
+
+<images/Rectification_one_same_Solutions.png, id=1193, 898.35625pt x 560.0925pt
+>
+File: images/Rectification_one_same_Solutions.png Graphic file (type png)
+ <use images/Rectification_one_same_Solutions.png>
+Package pdftex.def Info: images/Rectification_one_same_Solutions.png used on in
+put line 920.
+(pdftex.def)             Requested size: 386.95897pt x 241.25385pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 921.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 918--923
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 923.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 923.
+[66]
+<images/Rectification_two_same_Solutions.png, id=1205, 751.80875pt x 465.74pt>
+File: images/Rectification_two_same_Solutions.png Graphic file (type png)
+
+<use images/Rectification_two_same_Solutions.png>
+Package pdftex.def Info: images/Rectification_two_same_Solutions.png used on in
+put line 926.
+(pdftex.def)             Requested size: 386.95897pt x 239.7202pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 927.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--929
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 931--932
+
+ []
+
+
+<images/Rectification_Hp_same_Solutions.png, id=1206, 695.59875pt x 437.635pt>
+File: images/Rectification_Hp_same_Solutions.png Graphic file (type png)
+
+<use images/Rectification_Hp_same_Solutions.png>
+Package pdftex.def Info: images/Rectification_Hp_same_Solutions.png used on inp
+ut line 936.
+(pdftex.def)             Requested size: 483.69687pt x 304.31236pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 937.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 934--939
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 934--939
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 939.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 939.
+[67 <./images/Rectification_one_same_Solutions.png (PNG copy)> <./images/Rectif
+ication_two_same_Solutions.png (PNG copy)>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 940.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 940.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 975.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 975.
+ [68 <./images/Rectification_Hp_same_Solutions.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 991--992
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 993--994
+
+ []
+
+
+<images/Rectification_HrHp_same_Solutions.png, id=1223, 708.6475pt x 444.66125p
+t>
+File: images/Rectification_HrHp_same_Solutions.png Graphic file (type png)
+ <use images/Rectification_HrHp_same_Solutions.png>
+Package pdftex.def Info: images/Rectification_HrHp_same_Solutions.png used on i
+nput line 997.
+(pdftex.def)             Requested size: 483.69687pt x 303.5123pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 998.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 995--1000
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 995--1000
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1000.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1000.
+[69]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1001.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1001.
+ <images/Scherungstransformation.png, id=1238, 724.20563pt x 246.1697pt>
+File: images/Scherungstransformation.png Graphic file (type png)
+
+<use images/Scherungstransformation.png>
+Package pdftex.def Info: images/Scherungstransformation.png used on input line 
+1022.
+(pdftex.def)             Requested size: 386.95897pt x 131.53607pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1023.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1025
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1025
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1025.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1025.
+[70 <./images/Rectification_HrHp_same_Solutions.png (PNG copy)>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1060.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1060.
+ [71 <./images/Scherungstransformation.png>]
+<images/Rectification_HsHrHp_same_Solutions.png, id=1261, 720.6925pt x 447.6725
+pt>
+File: images/Rectification_HsHrHp_same_Solutions.png Graphic file (type png)
+ <use images/Rectification_HsHrHp_same_Solutions.png>
+Package pdftex.def Info: images/Rectification_HsHrHp_same_Solutions.png used on
+ input line 1074.
+(pdftex.def)             Requested size: 483.69687pt x 300.45816pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1075.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1072--1077
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1072--1077
+
+ []
+
+
+<images/Rectification_four_same_Solutions.png, id=1262, 700.6175pt x 439.6425pt
+>
+File: images/Rectification_four_same_Solutions.png Graphic file (type png)
+ <use images/Rectification_four_same_Solutions.png>
+Package pdftex.def Info: images/Rectification_four_same_Solutions.png used on i
+nput line 1080.
+(pdftex.def)             Requested size: 483.69687pt x 303.52806pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1081.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1078--1083
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1078--1083
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1083.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1083.
+[72 <./images/Rectification_HsHrHp_same_Solutions.png (PNG copy)>])
+(content/2_chapter2/c2_expName_1.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [73 <./images/Rectification_four_same_Solutions.png (PNG copy)>]
+chapter 7.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 6.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+<images/Bildsensor_mit_Pixel.png, id=1293, 620.3175pt x 482.55281pt>
+File: images/Bildsensor_mit_Pixel.png Graphic file (type png)
+
+<use images/Bildsensor_mit_Pixel.png>
+Package pdftex.def Info: images/Bildsensor_mit_Pixel.png used on input line 41.
+
+(pdftex.def)             Requested size: 386.95897pt x 301.02043pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 42.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--44
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 44.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 44.
+[74
+
+]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 65.
+ [75 <./images/Bildsensor_mit_Pixel.png>]
+<images/AufloesungSensor.png, id=1318, 704.6325pt x 518.6878pt>
+File: images/AufloesungSensor.png Graphic file (type png)
+
+<use images/AufloesungSensor.png>
+Package pdftex.def Info: images/AufloesungSensor.png used on input line 68.
+(pdftex.def)             Requested size: 483.69687pt x 356.05089pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 69.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 1383) in paragraph at lines 69--69
+[][][]|[]\OT1/cmr/m/n/10.95 Bild a) zeigt die In-ter-po-la-ti-on von Pi-xeln, w
+enn bei gleich-blei-ben-den Sei-ten-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--71
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--71
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 72.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 72.
+<images/SensorSelbeAufloesung.png, id=1319, 745.28438pt x 476.53032pt>
+File: images/SensorSelbeAufloesung.png Graphic file (type png)
+
+<use images/SensorSelbeAufloesung.png>
+Package pdftex.def Info: images/SensorSelbeAufloesung.png used on input line 78
+.
+(pdftex.def)             Requested size: 251.52443pt x 160.8184pt.
+
+<images/SensorUnterschiedlicheAufloesung.png, id=1320, 733.99219pt x 480.29437p
+t>
+File: images/SensorUnterschiedlicheAufloesung.png Graphic file (type png)
+ <use images/SensorUnterschiedlicheAufloesung.png>
+Package pdftex.def Info: images/SensorUnterschiedlicheAufloesung.png used on in
+put line 83.
+(pdftex.def)             Requested size: 251.52443pt x 164.58777pt.
+
+Underfull \hbox (badness 1874) in paragraph at lines 84--84
+[][][]|$\OML/cmm/m/it/10.95 C$ \OT1/cmr/m/n/10.95 und $\OML/cmm/m/it/10.95 C[]$
+ \OT1/cmr/m/n/10.95 ha-ben un-ter-schied-li-che
+ []
+
+
+Overfull \hbox (19.35199pt too wide) in paragraph at lines 77--87
+[]$[]$ $[]$ 
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 88.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 88.
+[76 <./images/AufloesungSensor.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 93.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 93.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 127.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 127.
+ [77 <./images/SensorSelbeAufloesung.png> <./images/SensorUnterschiedlicheAuflo
+esung.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+ []
+
+<images/Zeta1.png, id=1345, 898.35625pt x 556.0775pt>
+File: images/Zeta1.png Graphic file (type png)
+ <use images/Zeta1.png>
+Package pdftex.def Info: images/Zeta1.png used on input line 132.
+(pdftex.def)             Requested size: 232.17242pt x 143.71126pt.
+
+Underfull \hbox (badness 5519) in paragraph at lines 133--133
+[][][]|$\OML/cmm/m/it/10.95 C$ \OT1/cmr/m/n/10.95 und $\OML/cmm/m/it/10.95 C[]$
+ \OT1/cmr/m/n/10.95 ha-ben die sel-be
+ []
+
+<images/Zeta2.png, id=1346, 898.35625pt x 556.0775pt>
+File: images/Zeta2.png Graphic file (type png)
+ <use images/Zeta2.png>
+Package pdftex.def Info: images/Zeta2.png used on input line 137.
+(pdftex.def)             Requested size: 232.17242pt x 143.71126pt.
+
+<images/Zeta32_12.png, id=1347, 898.35625pt x 556.0775pt>
+File: images/Zeta32_12.png Graphic file (type png)
+
+<use images/Zeta32_12.png>
+Package pdftex.def Info: images/Zeta32_12.png used on input line 145.
+(pdftex.def)             Requested size: 232.17242pt x 143.71126pt.
+
+Underfull \hbox (badness 5519) in paragraph at lines 146--146
+[][][]|$\OML/cmm/m/it/10.95 C$ \OT1/cmr/m/n/10.95 und $\OML/cmm/m/it/10.95 C[]$
+ \OT1/cmr/m/n/10.95 ha-ben die sel-be
+ []
+
+<images/Zeta05_43.png, id=1348, 898.35625pt x 556.0775pt>
+File: images/Zeta05_43.png Graphic file (type png)
+
+<use images/Zeta05_43.png>
+Package pdftex.def Info: images/Zeta05_43.png used on input line 150.
+(pdftex.def)             Requested size: 232.17242pt x 143.71126pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 208.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 208.
+[78 <./images/Zeta1.png (PNG copy)> <./images/Zeta2.png (PNG copy)> <./images/Z
+eta32_12.png (PNG copy)> <./images/Zeta05_43.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
+
+ []
+
+
+<images/DifferentAufloesungRekonstructedScene.png, id=1358, 292.84406pt x 412.5
+4124pt>
+File: images/DifferentAufloesungRekonstructedScene.png Graphic file (type png)
+ <use images/DifferentAufloesungRekonstructedScene.png>
+Package pdftex.def Info: images/DifferentAufloesungRekonstructedScene.png used 
+on input line 277.
+(pdftex.def)             Requested size: 241.84843pt x 340.71582pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 278.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--280
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--280
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 280.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 280.
+[79]
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+
+ []
+
+) (content/2_chapter2/c2_expName_2.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [80 <./images/DifferentAufloesungRekonstructedScene.png>]
+chapter 8.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 24.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 24.
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+<images/Points3DSceneLeft.png, id=1370, 844.15375pt x 562.1pt>
+File: images/Points3DSceneLeft.png Graphic file (type png)
+
+<use images/Points3DSceneLeft.png>
+Package pdftex.def Info: images/Points3DSceneLeft.png used on input line 31.
+(pdftex.def)             Requested size: 232.17242pt x 154.59941pt.
+
+Underfull \hbox (badness 1184) in paragraph at lines 32--32
+[][][]|\OT1/cmr/m/n/10.95 Auf-nah-me der Ca-non 6D von
+ []
+
+<images/Points3DSceneRight.png, id=1371, 844.15375pt x 562.1pt>
+File: images/Points3DSceneRight.png Graphic file (type png)
+
+<use images/Points3DSceneRight.png>
+Package pdftex.def Info: images/Points3DSceneRight.png used on input line 36.
+(pdftex.def)             Requested size: 232.17242pt x 154.59941pt.
+
+<images/SetUpSameResolution.jpg, id=1372, 4625.28pt x 3468.96pt>
+File: images/SetUpSameResolution.jpg Graphic file (type jpg)
+
+<use images/SetUpSameResolution.jpg>
+Package pdftex.def Info: images/SetUpSameResolution.jpg used on input line 44.
+(pdftex.def)             Requested size: 338.58632pt x 253.9148pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 45.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--47
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 49.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 49.
+[81
+
+ <./images/Points3DSceneLeft.png (PNG copy)> <./images/Points3DSceneRight.png (
+PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 63.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 63.
+[82 <./images/SetUpSameResolution.jpg>]
+<images/PointsDetectedLeft.png, id=1392, 823.075pt x 548.0475pt>
+File: images/PointsDetectedLeft.png Graphic file (type png)
+
+<use images/PointsDetectedLeft.png>
+Package pdftex.def Info: images/PointsDetectedLeft.png used on input line 66.
+(pdftex.def)             Requested size: 232.17242pt x 154.58955pt.
+
+<images/PointsDetectedRight.png, id=1393, 820.06375pt x 547.04375pt>
+File: images/PointsDetectedRight.png Graphic file (type png)
+
+<use images/PointsDetectedRight.png>
+Package pdftex.def Info: images/PointsDetectedRight.png used on input line 71.
+(pdftex.def)             Requested size: 232.17242pt x 154.87402pt.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 79.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 79.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 84.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 84.
+ [83 <./images/PointsDetectedLeft.png (PNG copy)> <./images/PointsDetectedRight
+.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 100.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 100.
+[84]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 102.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 102.
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+<images/L_F_no_Constraint.png, id=1425, 361.35pt x 362.35374pt>
+File: images/L_F_no_Constraint.png Graphic file (type png)
+
+<use images/L_F_no_Constraint.png>
+Package pdftex.def Info: images/L_F_no_Constraint.png used on input line 109.
+(pdftex.def)             Requested size: 232.17242pt x 232.8179pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
+[][][]|\OT1/cmr/m/n/10.95 Epi-po-lar-li-ni-en oh-ne \OT1/cmr/m/it/10.95 Epipola
+r-
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 110--110
+\OT1/cmr/m/it/10.95 constraint \OT1/cmr/m/n/10.95 im Bild der Ca-non
+ []
+
+<images/LPrime_PC2_F_no_Constraint.png, id=1426, 361.35pt x 362.35374pt>
+File: images/LPrime_PC2_F_no_Constraint.png Graphic file (type png)
+
+<use images/LPrime_PC2_F_no_Constraint.png>
+Package pdftex.def Info: images/LPrime_PC2_F_no_Constraint.png used on input li
+ne 114.
+(pdftex.def)             Requested size: 232.17242pt x 232.8179pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
+[][][]|\OT1/cmr/m/n/10.95 Epi-po-lar-li-ni-en oh-ne \OT1/cmr/m/it/10.95 Epipola
+r-
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 115--115
+\OT1/cmr/m/it/10.95 constraint \OT1/cmr/m/n/10.95 im Bild der Ca-non
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 122.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 122.
+[85 <./images/L_F_no_Constraint.png (PNG copy)> <./images/LPrime_PC2_F_no_Const
+raint.png (PNG copy)>]
+<images/L_PC1_F_Constraint.png, id=1435, 361.35pt x 362.35374pt>
+File: images/L_PC1_F_Constraint.png Graphic file (type png)
+
+<use images/L_PC1_F_Constraint.png>
+Package pdftex.def Info: images/L_PC1_F_Constraint.png used on input line 129.
+(pdftex.def)             Requested size: 232.17242pt x 232.8179pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+[][][]|\OT1/cmr/m/n/10.95 Epi-po-lar-li-ni-en mit \OT1/cmr/m/it/10.95 Epipolar-
+
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 130--130
+\OT1/cmr/m/it/10.95 constraint \OT1/cmr/m/n/10.95 im Bild der Ca-non
+ []
+
+<images/LPrime_PC2_F_Constraint.png, id=1436, 361.35pt x 364.36125pt>
+File: images/LPrime_PC2_F_Constraint.png Graphic file (type png)
+
+<use images/LPrime_PC2_F_Constraint.png>
+Package pdftex.def Info: images/LPrime_PC2_F_Constraint.png used on input line 
+134.
+(pdftex.def)             Requested size: 232.17242pt x 234.10774pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--135
+[][][]|\OT1/cmr/m/n/10.95 Epi-po-lar-li-ni-en oh-ne \OT1/cmr/m/it/10.95 Epipola
+r-
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 135--135
+\OT1/cmr/m/it/10.95 constraint \OT1/cmr/m/n/10.95 im Bild der Ca-non
+ []
+
+<images/L_PC1_F_Constraint_denormalized.png, id=1437, 361.35pt x 342.27875pt>
+File: images/L_PC1_F_Constraint_denormalized.png Graphic file (type png)
+
+<use images/L_PC1_F_Constraint_denormalized.png>
+Package pdftex.def Info: images/L_PC1_F_Constraint_denormalized.png used on inp
+ut line 143.
+(pdftex.def)             Requested size: 232.17242pt x 219.91939pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--144
+[][][]|\OT1/cmr/m/n/10.95 Epi-po-lar-li-ni-en mit \OT1/cmr/m/it/10.95 Epipolar-
+
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 144--144
+\OT1/cmr/m/it/10.95 constraint \OT1/cmr/m/n/10.95 im Bild der Ca-non
+ []
+
+
+<images/LPrime_PC2_F_Constraint_denormalized.png, id=1438, 361.35pt x 348.30125
+pt>
+File: images/LPrime_PC2_F_Constraint_denormalized.png Graphic file (type png)
+ <use images/LPrime_PC2_F_Constraint_denormalized.png>
+Package pdftex.def Info: images/LPrime_PC2_F_Constraint_denormalized.png used o
+n input line 148.
+(pdftex.def)             Requested size: 232.17242pt x 223.78896pt.
+
+Underfull \hbox (badness 2744) in paragraph at lines 149--149
+[][][]|\OT1/cmr/m/n/10.95 Epi-po-lar-li-ni-en oh-ne \OT1/cmr/m/it/10.95 Epipola
+r-
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 156.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 156.
+[86 <./images/L_PC1_F_Constraint.png (PNG copy)> <./images/LPrime_PC2_F_Constra
+int.png (PNG copy)> <./images/L_PC1_F_Constraint_denormalized.png (PNG copy)> <
+./images/LPrime_PC2_F_Constraint_denormalized.png (PNG copy)>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 157.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 157.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 161.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 161.
+File: images/problemTriangulation.png Graphic file (type png)
+
+<use images/problemTriangulation.png>
+Package pdftex.def Info: images/problemTriangulation.png used on input line 167
+.
+(pdftex.def)             Requested size: 232.17242pt x 109.49509pt.
+
+<images/SampsAppx.png, id=1449, 674.52pt x 283.81032pt>
+File: images/SampsAppx.png Graphic file (type png)
+
+<use images/SampsAppx.png>
+Package pdftex.def Info: images/SampsAppx.png used on input line 172.
+(pdftex.def)             Requested size: 232.17242pt x 97.68513pt.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 192.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 192.
+ [87 <./images/SampsAppx.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 194.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 194.
+
+<images/SampsAppxNewPoints.png, id=1466, 691.08188pt x 295.85532pt>
+File: images/SampsAppxNewPoints.png Graphic file (type png)
+
+<use images/SampsAppxNewPoints.png>
+Package pdftex.def Info: images/SampsAppxNewPoints.png used on input line 208.
+(pdftex.def)             Requested size: 386.95897pt x 165.65977pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 209.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--211
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 213.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 213.
+[88 <./images/SampsAppxNewPoints.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 297.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 297.
+[89]
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 358.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 358.
+[90]
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 397.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 397.
+[91]
+Underfull \hbox (badness 10000) in paragraph at lines 420--421
+
+ []
+
+
+<images/reconstructed_Points_Same_Resolutions.png, id=1523, 791.95876pt x 754.8
+2pt>
+File: images/reconstructed_Points_Same_Resolutions.png Graphic file (type png)
+ <use images/reconstructed_Points_Same_Resolutions.png>
+Package pdftex.def Info: images/reconstructed_Points_Same_Resolutions.png used 
+on input line 426.
+(pdftex.def)             Requested size: 232.17242pt x 221.27634pt.
+
+<images/reconstructed_Points_Same_Resolutions2D.png, id=1524, 1092.08pt x 685.5
+6125pt>
+File: images/reconstructed_Points_Same_Resolutions2D.png Graphic file (type png
+)
+ <use images/reconstructed_Points_Same_Resolutions2D.png>
+Package pdftex.def Info: images/reconstructed_Points_Same_Resolutions2D.png use
+d on input line 431.
+(pdftex.def)             Requested size: 232.17242pt x 145.73997pt.
+
+Underfull \hbox (badness 5696) in paragraph at lines 432--432
+[][][]|\OT1/cmr/m/n/10.95 Re-kon-stru-ier-te Sze-ne, un-s-ka-
+ []
+
+) (content/2_chapter2/c2_expName_3.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [92]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [93 <./images/reconstructed_Points_Same_Resolutions.png (PNG copy)> <./images/
+reconstructed_Points_Same_Resolutions2D.png (PNG copy)>]
+chapter 9.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 4.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 53.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 53.
+[94
+
+] <images/R_11.png, id=1548, 288.3272pt x 161.85469pt>
+File: images/R_11.png Graphic file (type png)
+
+<use images/R_11.png>
+Package pdftex.def Info: images/R_11.png used on input line 57.
+(pdftex.def)             Requested size: 232.17242pt x 130.33595pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
+[][][]|\OT1/cmr/m/n/10.95 Zeigt die Die re-kon-stru-ier-te
+ []
+
+
+Underfull \hbox (badness 6141) in paragraph at lines 58--58
+\OT1/cmr/m/n/10.95 Ma-trix $\OML/cmm/m/it/10.95 R[]$ \OT1/cmr/m/n/10.95 bei un-
+ver[]anderter
+ []
+
+<images/R_52.png, id=1549, 286.82156pt x 166.37157pt>
+File: images/R_52.png Graphic file (type png)
+ <use images/R_52.png>
+Package pdftex.def Info: images/R_52.png used on input line 62.
+(pdftex.def)             Requested size: 232.17242pt x 134.67389pt.
+
+<images/R_12.png, id=1550, 284.56313pt x 164.11313pt>
+File: images/R_12.png Graphic file (type png)
+ <use images/R_12.png>
+Package pdftex.def Info: images/R_12.png used on input line 70.
+(pdftex.def)             Requested size: 232.17242pt x 133.90501pt.
+
+<images/R_12_23.png, id=1551, 271.76532pt x 155.07938pt>
+File: images/R_12_23.png Graphic file (type png)
+
+<use images/R_12_23.png>
+Package pdftex.def Info: images/R_12_23.png used on input line 75.
+(pdftex.def)             Requested size: 232.17242pt x 132.49248pt.
+
+<images/Reconstrution3D_52.png, id=1552, 564.1075pt x 537.00626pt>
+File: images/Reconstrution3D_52.png Graphic file (type png)
+
+<use images/Reconstrution3D_52.png>
+Package pdftex.def Info: images/Reconstrution3D_52.png used on input line 84.
+(pdftex.def)             Requested size: 232.17242pt x 221.01797pt.
+
+<images/Reconstrution2D_52.png, id=1553, 657.45625pt x 415.5525pt>
+File: images/Reconstrution2D_52.png Graphic file (type png)
+
+<use images/Reconstrution2D_52.png>
+Package pdftex.def Info: images/Reconstrution2D_52.png used on input line 89.
+(pdftex.def)             Requested size: 232.17242pt x 146.7454pt.
+
+<images/Reconstrution3D_21.png, id=1554, 629.35126pt x 596.2275pt>
+File: images/Reconstrution3D_21.png Graphic file (type png)
+
+<use images/Reconstrution3D_21.png>
+Package pdftex.def Info: images/Reconstrution3D_21.png used on input line 97.
+(pdftex.def)             Requested size: 232.17242pt x 219.95479pt.
+
+<images/Reconstrution2D_21.png, id=1555, 697.60625pt x 441.65pt>
+File: images/Reconstrution2D_21.png Graphic file (type png)
+
+<use images/Reconstrution2D_21.png>
+Package pdftex.def Info: images/Reconstrution2D_21.png used on input line 102.
+(pdftex.def)             Requested size: 232.17242pt x 146.98492pt.
+
+<images/Reconstrution3D_12.png, id=1556, 556.0775pt x 527.9725pt>
+File: images/Reconstrution3D_12.png Graphic file (type png)
+
+<use images/Reconstrution3D_12.png>
+Package pdftex.def Info: images/Reconstrution3D_12.png used on input line 110.
+(pdftex.def)             Requested size: 232.17242pt x 220.44183pt.
+
+<images/Reconstrution2D_12.png, id=1557, 608.2725pt x 385.44pt>
+File: images/Reconstrution2D_12.png Graphic file (type png)
+
+<use images/Reconstrution2D_12.png>
+Package pdftex.def Info: images/Reconstrution2D_12.png used on input line 115.
+(pdftex.def)             Requested size: 232.17242pt x 147.11566pt.
+
+<images/Reconstrution3D_12_23.png, id=1558, 643.40375pt x 610.28pt>
+File: images/Reconstrution3D_12_23.png Graphic file (type png)
+
+<use images/Reconstrution3D_12_23.png>
+Package pdftex.def Info: images/Reconstrution3D_12_23.png used on input line 12
+3.
+(pdftex.def)             Requested size: 232.17242pt x 220.2221pt.
+
+<images/Reconstrution2D_12_23.png, id=1559, 698.61pt x 442.65375pt>
+File: images/Reconstrution2D_12_23.png Graphic file (type png)
+
+<use images/Reconstrution2D_12_23.png>
+Package pdftex.def Info: images/Reconstrution2D_12_23.png used on input line 12
+8.
+(pdftex.def)             Requested size: 232.17242pt x 147.10959pt.
+) (content/3_chapter3/c3_expName_1.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+
+[95 <./images/R_11.png> <./images/R_52.png> <./images/R_12.png> <./images/R_12_
+23.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [96 <./images/Reconstrution3D_52.png (PNG copy)> <./images/Reconstrution2D_52.
+png (PNG copy)> <./images/Reconstrution3D_21.png (PNG copy)> <./images/Reconstr
+ution2D_21.png (PNG copy)>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [97 <./images/Reconstrution3D_12.png (PNG copy)> <./images/Reconstrution2D_12.
+png (PNG copy)> <./images/Reconstrution3D_12_23.png (PNG copy)> <./images/Recon
+strution2D_12_23.png (PNG copy)>]
+chapter 10.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 4.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 8.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 8.
+<images/KD1.png, id=1583, 830.35219pt x 502.12593pt>
+File: images/KD1.png Graphic file (type png)
+ <use images/KD1.png>
+Package pdftex.def Info: images/KD1.png used on input line 12.
+(pdftex.def)             Requested size: 483.69687pt x 292.49744pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 13.
+See the caption package documentation for explanation.
+
+<images/KD2.png, id=1584, 834.11626pt x 519.44063pt>
+File: images/KD2.png Graphic file (type png)
+ <use images/KD2.png>
+Package pdftex.def Info: images/KD2.png used on input line 17.
+(pdftex.def)             Requested size: 483.69687pt x 301.22029pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 18.
+See the caption package documentation for explanation.
+
+<images/KD3.png, id=1585, 835.62187pt x 520.94624pt>
+File: images/KD3.png Graphic file (type png)
+ <use images/KD3.png>
+Package pdftex.def Info: images/KD3.png used on input line 22.
+(pdftex.def)             Requested size: 483.69687pt x 301.55286pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 23.
+See the caption package documentation for explanation.
+
+<images/KD4.png, id=1586, 834.86906pt x 532.99126pt>
+File: images/KD4.png Graphic file (type png)
+ <use images/KD4.png>
+Package pdftex.def Info: images/KD4.png used on input line 27.
+(pdftex.def)             Requested size: 483.69687pt x 308.8017pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 28.
+See the caption package documentation for explanation.
+
+<images/KD5.png, id=1587, 830.35219pt x 85.06781pt>
+File: images/KD5.png Graphic file (type png)
+ <use images/KD5.png>
+Package pdftex.def Info: images/KD5.png used on input line 32.
+(pdftex.def)             Requested size: 483.69687pt x 49.55353pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 33.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--35
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 35.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 35.
+[98
+
+]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 35.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 35.
+ [99 <./images/KD1.png> <./images/KD2.png>]
+<images/VerzeichnetesSchachbrett_0.png, id=1603, 468.3096pt x 456.2646pt>
+File: images/VerzeichnetesSchachbrett_0.png Graphic file (type png)
+
+<use images/VerzeichnetesSchachbrett_0.png>
+Package pdftex.def Info: images/VerzeichnetesSchachbrett_0.png used on input li
+ne 39.
+(pdftex.def)             Requested size: 232.17242pt x 226.20326pt.
+
+<images/VerzeichnetesSchachbrett_1.png, id=1604, 468.3096pt x 456.2646pt>
+File: images/VerzeichnetesSchachbrett_1.png Graphic file (type png)
+
+<use images/VerzeichnetesSchachbrett_1.png>
+Package pdftex.def Info: images/VerzeichnetesSchachbrett_1.png used on input li
+ne 44.
+(pdftex.def)             Requested size: 232.17242pt x 226.20326pt.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 49.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 49.
+ [100 <./images/KD3.png> <./images/KD4.png> <./images/KD5.png>]
+<images/VerzeichnetesSchachbrett_2.png, id=1615, 469.2732pt x 456.2646pt>
+File: images/VerzeichnetesSchachbrett_2.png Graphic file (type png)
+
+<use images/VerzeichnetesSchachbrett_2.png>
+Package pdftex.def Info: images/VerzeichnetesSchachbrett_2.png used on input li
+ne 53.
+(pdftex.def)             Requested size: 232.17242pt x 225.7368pt.
+
+<images/VerzeichnetesSchachbrett_3.png, id=1616, 468.3096pt x 456.2646pt>
+File: images/VerzeichnetesSchachbrett_3.png Graphic file (type png)
+
+<use images/VerzeichnetesSchachbrett_3.png>
+Package pdftex.def Info: images/VerzeichnetesSchachbrett_3.png used on input li
+ne 58.
+(pdftex.def)             Requested size: 232.17242pt x 226.20326pt.
+
+<images/VerzeichnetesSchachbrett_4.png, id=1617, 935.6556pt x 456.2646pt>
+File: images/VerzeichnetesSchachbrett_4.png Graphic file (type png)
+
+<use images/VerzeichnetesSchachbrett_4.png>
+Package pdftex.def Info: images/VerzeichnetesSchachbrett_4.png used on input li
+ne 67.
+(pdftex.def)             Requested size: 483.69687pt x 235.8735pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 68.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--70
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 71.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 71.
+[101 <./images/VerzeichnetesSchachbrett_0.png> <./images/VerzeichnetesSchachbre
+tt_1.png> <./images/VerzeichnetesSchachbrett_2.png> <./images/VerzeichnetesScha
+chbrett_3.png>]
+<images/VerzeichnetesSchachbrett_5.png, id=1628, 935.6556pt x 456.2646pt>
+File: images/VerzeichnetesSchachbrett_5.png Graphic file (type png)
+
+<use images/VerzeichnetesSchachbrett_5.png>
+Package pdftex.def Info: images/VerzeichnetesSchachbrett_5.png used on input li
+ne 73.
+(pdftex.def)             Requested size: 483.69687pt x 235.8735pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 74.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--76
+
+ []
+
+<images/VerzeichnetesSchachbrett_6.png, id=1629, 935.6556pt x 456.2646pt>
+File: images/VerzeichnetesSchachbrett_6.png Graphic file (type png)
+
+<use images/VerzeichnetesSchachbrett_6.png>
+Package pdftex.def Info: images/VerzeichnetesSchachbrett_6.png used on input li
+ne 79.
+(pdftex.def)             Requested size: 483.69687pt x 235.8735pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 80.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--82
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 84.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 84.
+[102 <./images/VerzeichnetesSchachbrett_4.png> <./images/VerzeichnetesSchachbre
+tt_5.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 84.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 84.
+ <images/Tonnenverzeichnung.png, id=1638, 758.08218pt x 520.19344pt>
+File: images/Tonnenverzeichnung.png Graphic file (type png)
+
+<use images/Tonnenverzeichnung.png>
+Package pdftex.def Info: images/Tonnenverzeichnung.png used on input line 90.
+(pdftex.def)             Requested size: 232.17242pt x 159.3136pt.
+
+<images/AlgTonnenverzeichnung.png, id=1639, 750.805pt x 464.73625pt>
+File: images/AlgTonnenverzeichnung.png Graphic file (type png)
+
+<use images/AlgTonnenverzeichnung.png>
+Package pdftex.def Info: images/AlgTonnenverzeichnung.png used on input line 95
+.
+(pdftex.def)             Requested size: 232.17242pt x 143.71217pt.
+
+<images/perspektivisch.png, id=1640, 845.40843pt x 579.66562pt>
+File: images/perspektivisch.png Graphic file (type png)
+
+<use images/perspektivisch.png>
+Package pdftex.def Info: images/perspektivisch.png used on input line 115.
+(pdftex.def)             Requested size: 232.17242pt x 159.19183pt.
+
+<images/AlgPerspektifisch.png, id=1641, 750.805pt x 470.75874pt>
+File: images/AlgPerspektifisch.png Graphic file (type png)
+
+<use images/AlgPerspektifisch.png>
+Package pdftex.def Info: images/AlgPerspektifisch.png used on input line 120.
+(pdftex.def)             Requested size: 232.17242pt x 145.57454pt.
+
+<images/KissenVerzeichnung.png, id=1642, 574.39594pt x 514.17094pt>
+File: images/KissenVerzeichnung.png Graphic file (type png)
+
+<use images/KissenVerzeichnung.png>
+Package pdftex.def Info: images/KissenVerzeichnung.png used on input line 140.
+(pdftex.def)             Requested size: 232.17242pt x 207.83012pt.
+
+Underfull \hbox (badness 1178) in paragraph at lines 141--141
+[][][]|\OT1/cmr/m/n/10.95 Bild ei-nes Kis-senf[]ormig ver-
+ []
+
+<images/AlgKissen.png, id=1643, 750.805pt x 464.73625pt>
+File: images/AlgKissen.png Graphic file (type png)
+
+<use images/AlgKissen.png>
+Package pdftex.def Info: images/AlgKissen.png used on input line 145.
+(pdftex.def)             Requested size: 232.17242pt x 143.71217pt.
+
+<images/TonnePers.png, id=1644, 426.09187pt x 445.665pt>
+File: images/TonnePers.png Graphic file (type png)
+
+<use images/TonnePers.png>
+Package pdftex.def Info: images/TonnePers.png used on input line 177.
+(pdftex.def)             Requested size: 232.17242pt x 242.83841pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+[][][]|\OT1/cmr/m/n/10.95 Bild ei-nes Ton-nenf[]ormig
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+\OT1/cmr/m/n/10.95 ti-visch ver-zerr-tem Schach-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+\OT1/cmr/m/n/10.95 bretts(GRFIK AUS-TAU-
+ []
+
+<images/AlgTonnePers.png, id=1645, 622.57594pt x 370.38374pt>
+File: images/AlgTonnePers.png Graphic file (type png)
+
+<use images/AlgTonnePers.png>
+Package pdftex.def Info: images/AlgTonnePers.png used on input line 182.
+(pdftex.def)             Requested size: 232.17242pt x 138.12494pt.
+
+<images/extrBsp.png, id=1646, 398.99063pt x 368.1253pt>
+File: images/extrBsp.png Graphic file (type png)
+
+<use images/extrBsp.png>
+Package pdftex.def Info: images/extrBsp.png used on input line 203.
+(pdftex.def)             Requested size: 232.17242pt x 214.20935pt.
+
+Underfull \hbox (badness 4927) in paragraph at lines 204--204
+\OT1/cmr/m/n/10.95 zeich-ne-tem leicht per-spek-ti-
+ []
+
+<images/AlgExtrBsp.png, id=1647, 750.805pt x 470.75874pt>
+File: images/AlgExtrBsp.png Graphic file (type png)
+
+<use images/AlgExtrBsp.png>
+Package pdftex.def Info: images/AlgExtrBsp.png used on input line 208.
+(pdftex.def)             Requested size: 232.17242pt x 145.57454pt.
+) (content/3_chapter3/c3_expName_2.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [103 <./images/VerzeichnetesSchachbrett_6.png> <./images/Tonnenverzeichnung.pn
+g> <./images/AlgTonnenverzeichnung.png (PNG copy)>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [104 <./images/perspektivisch.png> <./images/AlgPerspektifisch.png (PNG copy)>
+ <./images/KissenVerzeichnung.png> <./images/AlgKissen.png (PNG copy)>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [105 <./images/TonnePers.png> <./images/AlgTonnePers.png> <./images/extrBsp.pn
+g> <./images/AlgExtrBsp.png (PNG copy)>]
+chapter 11.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+) (content/96_conclusion/conclusion.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [106
+
+]
+chapter 12.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+) (content/97_nextsteps/next_steps.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [107
+
+]
+chapter 13.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+) (content/98_protocols/10112015_protocol.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [108
+
+]
+chapter 14.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+) (content/99_directorys/listOfAbbreviations.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [109
+
+]
+chapter 15.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+)
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 118.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 118.
+ [110
+
+] ("insert title here.lof"
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 28.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 28.
+ [111
+
+]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 53.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 53.
+ [112]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 88.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 88.
+ [113]
+Overfull \hbox (25.43321pt too wide) in paragraph at lines 105--105
+ [][] [][]\OT1/cmr/m/n/10.95 Bild ei-nes Ton-nenf[]ormig ver-zeich-ne-tem leich
+t per-spek-ti-visch ver-zerr-tem Schach-bretts(GRFIK 
+ []
+
+)
+\tf@lof=\write6
+\openout6 = `"insert title here.lof"'.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 125.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 125.
+ [114] ("insert title here.lot")
+\tf@lot=\write7
+\openout7 = `"insert title here.lot"'.
+
+ ("insert title here.bbl"
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [115
+
+]
+Underfull \hbox (badness 1057) in paragraph at lines 32--36
+[]\OT1/cmr/m/n/10.95 MathWorks.  Ma-thworks do-cu-men-ta-ti-on, ste-reo ca-me-r
+a ca-li-bra-ti-on app.  []$\OT1/cmtt/m/n/10.95 "https : / / de .
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 109.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 109.
+[116
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 143.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 143.
+ [117]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
+ ("insert title here.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
+
+
+Package rerunfilecheck Warning: File `"insert title here".out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `"insert title here".out':
+(rerunfilecheck)             Before: 102F1490316B480B54D63FB6ACB18463;4547
+(rerunfilecheck)             After:  590256A697B6C9714A64AACED79B5C6D;4547.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
+ ) 
+Here is how much of TeX's memory you used:
+ 14558 strings out of 493334
+ 232425 string characters out of 3142719
+ 434855 words of memory out of 3000000
+ 16970 multiletter control sequences out of 15000+200000
+ 13385 words of font info for 49 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 45i,22n,68p,8860b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{table.caption.636} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.782} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.781} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.780} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.779} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.778} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.776} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.775} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.774} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.773} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.772} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.771} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.770} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.769} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.768} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.767} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.763} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.762} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.761} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.760} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.753} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.676} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.672} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.669} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.668} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.667} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.660} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.657} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.656} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.653} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.652} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.651} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.639} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.637} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.635} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.632} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.631} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.610} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.604} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.576} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.575} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.574} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.494} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.493} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.492} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.490} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.489} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.485} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.484} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.482} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.433} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.401} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.301} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.268} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.267} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.137} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.136} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.353} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.300} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.248} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.247} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.246} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.245} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.244} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.206} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.155} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.352} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.787} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.786} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.785} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.784} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.783} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.777} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.766} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.765} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.764} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.755} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.754} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.673} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.671} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.670} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.666} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.661} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.655} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.654} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.640} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.638} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.634} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.633} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.605} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.577} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.527} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.491} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.483} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.460} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.447} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.434} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.428} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.415} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.402} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.386} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.371} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.354} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.351} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.302} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.299} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.243} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.152} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.123} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.84} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section.83} has been referenced but does not exist,
+ replaced by a fixed one
+
+ <C:\Users\Anja\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcr
+m1095.pk><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><L:/Pro
+gramme/MikTex/fonts/type1/public/amsfonts/cm/cmex10.pfb><L:/Programme/MikTex/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb><L:/Programme/MikTex/fonts/type1/public
+/amsfonts/cm/cmmi6.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmr10.pfb><L:/Program
+me/MikTex/fonts/type1/public/amsfonts/cm/cmr12.pfb><L:/Programme/MikTex/fonts/t
+ype1/public/amsfonts/cm/cmr6.pfb><L:/Programme/MikTex/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
+><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><L:/Programme/M
+ikTex/fonts/type1/public/amsfonts/cm/cmsy6.pfb><L:/Programme/MikTex/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/
+cm/cmti10.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><L
+:/Programme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><L:/Programme
+/MikTex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "insert title here.pdf" (117 pages, 11311006 bytes).
+PDF statistics:
+ 2191 PDF objects out of 2487 (max. 8388607)
+ 716 named destinations out of 1000 (max. 500000)
+ 926 words of extra memory for PDF output out of 10000 (max. 10000000)
+
