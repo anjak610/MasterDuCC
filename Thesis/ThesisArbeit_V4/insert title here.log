@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  9 MAY 2018 15:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  9 MAY 2018 21:08
 entering extended mode
 **"./insert title here.tex"
 ("insert title here.tex"
@@ -1159,12 +1159,6 @@ LaTeX Warning: Label `fig:awesome_image1' multiply defined.
 
 LaTeX Warning: Label `fig:awesome_image2' multiply defined.
 
-
-LaTeX Warning: Label `fig:awesome_image1' multiply defined.
-
-
-LaTeX Warning: Label `fig:awesome_image2' multiply defined.
-
 )
 \openout1 = `"insert title here.aux"'.
 
@@ -1791,23 +1785,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
-<images/Homographie_rotation_1.png, id=531, 584.93532pt x 557.08125pt>
-File: images/Homographie_rotation_1.png Graphic file (type png)
+<images/HomographyPZ_beschriftet.png, id=531, 426.09187pt x 442.65375pt>
+File: images/HomographyPZ_beschriftet.png Graphic file (type png)
 
-<use images/Homographie_rotation_1.png>
-Package pdftex.def Info: images/Homographie_rotation_1.png used on input line 4
-4.
-(pdftex.def)             Requested size: 251.52443pt x 239.54877pt.
+<use images/HomographyPZ_beschriftet.png>
+Package pdftex.def Info: images/HomographyPZ_beschriftet.png used on input line
+ 44.
+(pdftex.def)             Requested size: 232.17242pt x 241.1976pt.
 
-<images/Homographie_rotation_2.png, id=532, 743.77875pt x 578.16pt>
-File: images/Homographie_rotation_2.png Graphic file (type png)
+<images/HomographyPZSide_beschriftet.png, id=532, 516.42938pt x 418.56375pt>
+File: images/HomographyPZSide_beschriftet.png Graphic file (type png)
 
-<use images/Homographie_rotation_2.png>
-Package pdftex.def Info: images/Homographie_rotation_2.png used on input line 4
-9.
-(pdftex.def)             Requested size: 251.52443pt x 195.51315pt.
+<use images/HomographyPZSide_beschriftet.png>
+Package pdftex.def Info: images/HomographyPZSide_beschriftet.png used on input 
+line 49.
+(pdftex.def)             Requested size: 261.19305pt x 211.70193pt.
 
-Overfull \hbox (19.35199pt too wide) in paragraph at lines 43--53
+Overfull \hbox (9.66861pt too wide) in paragraph at lines 43--53
 []$[]$ $[]$ 
  []
 
@@ -1815,8 +1809,8 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 75.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 75.
-[23 <./images/Homographie_rotation_1.png> <./images/Homographie_rotation_2.png>
-]
+[23 <./images/HomographyPZ_beschriftet.png> <./images/HomographyPZSide_beschrif
+tet.png>]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 100.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1890,24 +1884,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--138
  []
 
 
-<images/GrafikDrehungProjektionszentrum.png, id=574, 480.29437pt x 350.81062pt>
+<images/GrafikDrehungProjektionszentrum.png, id=574, 846.91406pt x 588.69937pt>
 File: images/GrafikDrehungProjektionszentrum.png Graphic file (type png)
 <use images/GrafikDrehungProjektionszentrum.png>
 Package pdftex.def Info: images/GrafikDrehungProjektionszentrum.png used on inp
 ut line 142.
-(pdftex.def)             Requested size: 217.66211pt x 158.98207pt.
+(pdftex.def)             Requested size: 232.17242pt x 161.38528pt.
 
-Underfull \hbox (badness 1087) in paragraph at lines 143--143
-\OT1/cmr/m/n/10.95 Pro-jek-ti-ons-zen-trum vom ro-
+Underfull \hbox (badness 1742) in paragraph at lines 143--143
+\OT1/cmr/m/n/10.95 ist er-kenn-bar, dass der gr[]une
  []
 
-<images/GrafikDrehungUmDrehpunkt.png, id=575, 486.31688pt x 325.96782pt>
+<images/GrafikDrehungUmDrehpunkt.png, id=575, 930.47626pt x 571.38469pt>
 File: images/GrafikDrehungUmDrehpunkt.png Graphic file (type png)
 
 <use images/GrafikDrehungUmDrehpunkt.png>
 Package pdftex.def Info: images/GrafikDrehungUmDrehpunkt.png used on input line
  147.
-(pdftex.def)             Requested size: 241.84843pt x 162.10312pt.
+(pdftex.def)             Requested size: 241.84843pt x 148.51291pt.
 
 Underfull \hbox (badness 1975) in paragraph at lines 148--148
 \OT1/cmr/m/n/10.95 kenn-bar, dass der gr[]une Punkt
@@ -1919,12 +1913,13 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 154.
 [26 <./images/DrehungDZ.png> <./images/GrafikDrehungProjektionszentrum.png> <./
 images/GrafikDrehungUmDrehpunkt.png>]
-<images/HomographieGrafik.png, id=583, 899.61093pt x 450.18187pt>
-File: images/HomographieGrafik.png Graphic file (type png)
+<images/HomographieDP_beschriftet.png, id=583, 782.17218pt x 485.56406pt>
+File: images/HomographieDP_beschriftet.png Graphic file (type png)
 
-<use images/HomographieGrafik.png>
-Package pdftex.def Info: images/HomographieGrafik.png used on input line 157.
-(pdftex.def)             Requested size: 483.69687pt x 242.05046pt.
+<use images/HomographieDP_beschriftet.png>
+Package pdftex.def Info: images/HomographieDP_beschriftet.png used on input lin
+e 157.
+(pdftex.def)             Requested size: 386.95897pt x 240.21788pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
@@ -1945,7 +1940,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 207.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 207.
-[27 <./images/HomographieGrafik.png>]
+[27 <./images/HomographieDP_beschriftet.png>]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 236.
 Package babel Info: Redefining ngerman shorthand "~
@@ -4187,25 +4182,19 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
  ("insert title here.aux")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
+Package rerunfilecheck Info: File `"insert title here".out' has not changed.
+(rerunfilecheck)             Checksum: 1FFE64389B922E1C37CA3B599226AF27;4660.
 
-
-Package rerunfilecheck Warning: File `"insert title here".out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `"insert title here".out':
-(rerunfilecheck)             Before: 737CAA2070038C6B37827830AA861C89;4634
-(rerunfilecheck)             After:  1FFE64389B922E1C37CA3B599226AF27;4660.
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
  ) 
 Here is how much of TeX's memory you used:
- 14480 strings out of 493334
- 231996 string characters out of 3142719
- 437010 words of memory out of 3000000
- 16990 multiletter control sequences out of 15000+200000
+ 14484 strings out of 493334
+ 232166 string characters out of 3142719
+ 437183 words of memory out of 3000000
+ 16994 multiletter control sequences out of 15000+200000
  13385 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,22n,68p,8860b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -4224,9 +4213,9 @@ e1/public/amsfonts/cm/cmsy8.pfb><L:/Programme/MikTex/fonts/type1/public/amsfont
 s/cm/cmti10.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <L:/Programme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><L:/Program
 me/MikTex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "insert title here.pdf" (118 pages, 11361404 bytes).
+Output written on "insert title here.pdf" (118 pages, 11463205 bytes).
 PDF statistics:
- 2109 PDF objects out of 2487 (max. 8388607)
+ 2108 PDF objects out of 2487 (max. 8388607)
  616 named destinations out of 1000 (max. 500000)
  944 words of extra memory for PDF output out of 10000 (max. 10000000)
 
