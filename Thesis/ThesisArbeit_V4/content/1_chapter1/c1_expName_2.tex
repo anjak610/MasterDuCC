@@ -1,37 +1,25 @@
 \chapter{Homographien}
 \label{sec:homographien} 
 
+Im vorherigen Kapitel wurde mathematisch die Projektion eines 3D-Punktes in einen 2D-Bildpunkt auf einem Kamerasensor durch Koordinatentransformation aufgezeigt. Im nächsten Schritt soll die Beziehung zwischen dem projizierten 3D-Punkt in zwei perspektivische Kameras und den entstehenden 2D-Bildpunkten genauer erläutert werden. Die 2D-Bilder des projizierten 3D-Punktes sind abhängig vom Aufbau der abgebildeten Szene und den Positionen und Ausrichtungen der Kameras\cite{Elements}. Die Beziehung zwischen einem 3D-Punkt und seinen projektionen auf zwei Kameras, kann in einer sogenannten Homographie beschrieben werden. Die Homographie gilt jedoch nur für die Projektion einer planaren Szene im 3D-Raum auf auf zwei Kamerasensoren. Als Homographie wird eine projektive Transformation zwischen zwei Ebenen bezeichnet. Dabei bleiben Kollinearitäten und die Reihenfolge von Punkten auf Geraden, wie zum Beispiel Schnittpunkte mit anderen Geraden, erhalten. Bei den Ebenen handelt sich in diesem Fall um die Bildebenen des Kameramodells. Aufgrund dieser Ebenenannahme, kann solch eine projektive Transformation durch eine 3x3-Homograohiematrix ausgedrückt werden\cite{Roser}. Die Homograohiematrix $H$, projiziert jede Figur in eine Figur gleicher projektiver Entsprechung\cite{HZ,Elements}. Sind die Punkte $A',B',C'$ und $D'$ die projektiven Bilder eines Systems von vier kollinearen Punkten, so ist $(A',B',C',D') = (A,B,C,D)$\cite{Peiffer}. Der Grund warum Homographien in dieser Arbeti eingeführt werden ist, dass sie elementar sind wenn es darum geht Transformationen auf den Bildebenen der Kamera durchzuführen, wie es im Kapitel \nameref{sec:rectification} für die geometrische Entzerrung zweier Bilder von Nöten ist.Außerde bildet ihre geometrische Herleitung eine gute Brücke zur \nameref{sec:epipolar}, welche im nachfolgenden Kapitel vorgestellt wird und der Elementare Baustein für die Stereobildanalyse bildet. Mit Hilfe der Homography ist es möglich eine Beziehung zwischen den zwei projizierten 2D-Bildpunkten herzuleiten, ohne das intrinsische Parameter in Form einer Kamermatrix $K$ noch die extrisischen Parameter in Form der Matrix $R$ bekannt sind\cite{HZ,Elements}.  Diese können dann wiederum aus der, durch die Bildpunkte beider Kameras, entstandenen Homographiematrix geschätzt werden\cite{HZ}. Die Homographie fasst die Transformationen wie Rotation und Translation, sowie die jeweiligen Abbildungsmatrizen der Kameras in einer 3x3-Matrix zusammen.\cite{Elements,Peiffer}. 
 
-The case of planar scenes. Like for pinhole cameras, the case of
-a planar scene is very similar to that of a rotating central camera. For
-example, Drar´eni et al. derived the expression for plane homographies
-for linear pushbroom cameras and proposed a calibration approach
-using planar grids [120]. Fitzgibbon mentioned plane homographies for
-the division model [145]. Sturm and Barreto showed the existence of
-plane homographies for all central catadioptric cameras [473].\cite{CamerModels.}
 
-Einfügen warum muss ich das wissen.(rektifizierung):As for perspective images,
-rectification can be achieved by applying appropriate homographies to
-each image\cite{CamerModels.}
-
-Im vorherigen Kapitel \nameref{sec:basisTransformation} wurde ausführlich dargelegt, wie Koordinatensysteme ineinander überführt werden könnens. Die folgenden Kapitel sollen anhand eines Beispiels zeigen, dass sich die in Kapitel \nameref{sec:basisTransformation} gezeigten Transformationen in Matrizen zusammenfassen lassen. Es soll eine Matrix $H$ aufgestellt werden, welche die Bildpunkte zweier Kameras ineinander überführen kann, ohne, dass die intrinsischen und extrinsischen Parameter bekannt sind. Für den Aufbau des Minimalbeispiels, werden die entsprechenden Kameramatrizen aufgestellt, jedoch wird gezeigt, dass sie für die Herleitung von $H$ keine Rolle spielen. Im ersten Beispiel wird sowohl davon ausgegangen, dass die intrinsischen und extrinsischen Kameraparameter unbekannt sind und nur die Bildpunkte von beiden Kamerakoordinatensystemen bekannt sind, als auch, dass die beiden Kameras sich ein Projektionszentrum teilen.  Des Weiteren wird festgelegt, dass sich alle Objektpunkte im Raum $\mathbb{R}^3$ auf einer Ebene befinden. Nun wird behauptet, dass es möglich ist eine sogenannte 3x3-Homographiematrix $H$ zu ermitteln, welche die Punkte von Kamera eins in die Punkte von Kamera zwei und umgekehrt überführen kann. Als Homographie wird eine projektive Transformation zwischen zwei Ebenen bezeichnet. Dabei bleiben Kollinearitäten und die Reihenfolge von Punkten auf Geraden, wie zum Beispiel Schnittpunkte mit anderen Geraden, erhalten. Aufgrund dieser Ebenenannahme, kann solch eine projektive Transformation durch eine 3x3-Homograohiematrix ausgedrückt werden\cite{Roser}. Sprich die entstehende Homograohiematrix $H$, projiziert jede Figur in eine Figur gleicher projektiver Entsprechung\cite{HZ,Elements}. Sind die Punkte $A',B',C'$ und $D'$ die projektiven Bilder eines Systems von vier kollinearen Punkten, so ist $(A',B',C',D') = (A,B,C,D)$\cite{Peiffer}. Die Homographie fasst die Transformationen wie Rotation und Translation, sowie die jeweiligen Abbildungsmatrizen der Kameras in einer 3x3-Matrix zusammen.\cite{Elements,Peiffer}.
- 
-Es seien \ensuremath{m = \begin{pmatrix}
-		m_1\\m_2\\m_3
-\end{pmatrix}} die homogenen Koordinaten eines Punktes der projektiven Ebene und \ensuremath{m' = \begin{pmatrix}
-m'_1\\m'_2\\m'_3
-\end{pmatrix}} die Punkte des projektiv transformierten Punktes. Dann gilt
+Es seien \ensuremath{m_{\tau} = \begin{pmatrix}
+		m_{\tau,1}\\m_{\tau,2}\\m_{\tau,3}
+\end{pmatrix}} die homogenen Koordinaten eines Punktes auf der Bildebene$(I,\tau)$ und \ensuremath{m'_{\tau'} = \begin{pmatrix}
+m'_{\tau',1}\\m'_{\tau',2}\\m'_{\tau',3}
+\end{pmatrix}} ein Punkt der projektiv transformierten Bildebene $(I',\tau')$. Dann gilt
 
 \begin{gather}
-	m' = Hm\\
-	Hm = \begin{bmatrix}
-	{h_1}^T \cdot m\\{h_2}^T \cdot m\\{h_3}^T \cdot m
+	m'_{\tau'} = Hm_{\tau}\\
+	Hm_{\tau} = \begin{bmatrix}
+	{h_1}^T \cdot m_{\tau}\\{h_2}^T \cdot m_{\tau}\\{h_3}^T \cdot m_{\tau}
 	\end{bmatrix} \\
 	\leadsto 
-	m'= Hm= \begin{bmatrix}
-	h_{11}m_1+h_{12}m_2+h_{13}m_3\\
-	h_{21}m_1+h_{22}m_2+h_{23}m_3\\
-	h_{31}m_1+h_{32}m_2+h_{33}m_3
+	m'_{\tau'}= Hm_{\tau}= \begin{bmatrix}
+	h_{11}m_{\tau,1}+h_{12}m_{\tau,2}+h_{13}m_{\tau,3}\\
+	h_{21}m_{\tau,1}+h_{22}m_{\tau,2}+h_{23}m_{\tau,3}\\
+	h_{31}m_{\tau,1}+h_{32}m_{\tau,2}+h_{33}m_{\tau,3}
 	\end{bmatrix}\\
 	\leadsto 
 	H=\begin{bmatrix}
@@ -41,668 +29,93 @@ m'_1\\m'_2\\m'_3
 	\end{bmatrix}
 \end{gather}
 
-Dabei müssen die Koeffizienten so geartet sein, dass die zugehörige Transformation umkehrbar ist. \cite{HZ}\cite{Peiffer}.Sprich es muss gelten dass wenn 
+Dabei müssen die Koeffizienten so geartet sein, dass die zugehörige Transformation umkehrbar ist\cite{HZ}\cite{Peiffer}.
 \begin{gather}
-	m'=Hm\\
-	m= H^{-1}m'
+	m'_{\tau'}=Hm_\tau\\
+	m_\tau= H^{-1}m'_{\tau}
 \end{gather}\\
 
-Die Einträge der Homographiematrix  soll die Transformationen der Kameras zueinander und deren jeweilige Abbildungsmatrizen in einer 3x3-Matrix zusammenfassen. Im folgenden wird die Homographiematrix $H$ in ihre Elemente zerlegt, um die Herleitung von $H$ für zwei Kameras mit identischem Projektionszentrum aufzuzeigen\cite{HZ,Peiffer,Elements}. zunächst wird festgelegt, dass für Punkte im Weltkoordinatensystem die Darstellung zur Basis $(O,\delta)$ gilt. Für Punkte in den jeweiligen Bildebenenkoordinaten gelten die Basen $(C,\beta)$ und $(C',\beta')$. Für die beiden Kameras soll des Weiteren gelten, dass $C_{1\delta} = C_{2\delta}$. 
-
-Diese Kameras projizieren nun einen Punkt $M_\delta$ im Raum auf die jeweiligen Bildebenen $I_{1\delta}$ und $I_{2\delta}$ der beiden Kameras. Auf den Bildebenen entstehen die projizierten Bildpunkte von $M_\delta$ als $m_\beta$ und $m'_{\beta'}$.
 
 (GRAFIK NOCH ANPASSEN MIT $m_\beta$ etc)\\
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=0.8\linewidth]{images/Homographie_rotation_1.png}
-	\captionof{figure}{Veranschaulichung von Homographie mit nur einer rotierten Kamera.}
-\end{minipage}\\ \\
 
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=0.8\linewidth]{images/Homographie_rotation_2.png}
-	\captionof{figure}{Veranschaulichung von Homographie mit nur einer rotierten Kamera.}
-\end{minipage}\\ \\
 
-Die Umrechnung des Objektpunktes $M_\delta$ zu den abgebildeten Punkte $m_\beta$ und $m'_\beta$ mit Basis zu ihren jeweiligen Bildebenenkoordinatensystemem $(o, \beta)$ und $(o',\beta')$ funktioniert wie bereits von den Transformationen in den vorherigen Kapitel bekannt. Hier wird der Vorgang nochmal symbolisch in den Gleichungen 3.7 und 3.8 aufgeführt. Die Projektionsmatrizen, welche die Rotationen und Abbildungsmatrizen der einzelnen Kameras zusammenfasst wird hier mit $P$ für Kamer eins  und $P'$ für Kamera zwei abgekürzt.\cite{Elements}
+\begin{figure}[!htb]
+	\minipage{0.52\textwidth}
+	\includegraphics[width=\linewidth]{images/Homographie_rotation_1.png}
+	%	\caption{A really Awesome Image}
+	\label{fig:awesome_image1}
+	\endminipage\hfill
+	\minipage{0.52\textwidth}
+	\includegraphics[width=\linewidth]{images/Homographie_rotation_2.png}
+	%	\caption{A really Awesome Image}
+	\label{fig:awesome_image2}
+	\endminipage\hfill
+	\caption{Die Abblildung zeigt zwei Aufnahmen einer um ihr Projektionszentrum $C$ gedrehten Kamera. Die zwei blauen Ebenen stellen jeweils die Bildebene vor und nach der Drehung dar sie wird einmal als Bildebene $(I,\tau)$ und einmal als Bildebene $(I',\tau')$ bezeichnet. Die Objektebene befindet sich im 3D-Raum, dementsprechend sind die Punkte $M_{1,\delta}$ und $M_{2,\delta}$ in homogenen 3D-Koordinaten gegeben. Die Punkte $m_{1,\tau}$ und $m_{2,\tau}$ sind die projizierten Puntke auf der Bildebene $(I,\tau)$ und Die Punkte $m_{1,\tau'}$ und $m_{2,\tau'}$ sind die projizierten Punkte auf der Bildebene $(I',\tau')$}
+	\label{fig:homographyRotatedProjectionCenter}
+\end{figure}
+
+Um die Herleitung der Homographiematrix zu veranschaulichen, werden zwei unterschiedliche Fälle betrachtet. Der erste Fall ist in Abbildung \ref{fig:homographyRotatedProjectionCenter} gezeigt. Eine planare Szene im Raum soll auf die Bildebene $(I,\tau)$ einer Kamer projiziert werden, danach wird die Kamera um ihr Projektionszentrum gedreht die 3D-Objektpunkte somit auf die neu ausgerichtet Bildebene $(I,\tau')$ projiziert. Im zweiten Fall wird die Kamera nicht um ihr Projetionszentrum gedreht, sondern um einen definierten Drehpunkt, so dass zu der Rotation noch eine zusätzliche Translation der Kamera erfolgt. Für Fall eins wird zunächst angenommen, dass die Transformationsmatrizen $R$ und $R'$ sowie die Kameramatrizen $K$ und $K'$ bekannt sind. $m_\tau$ und $m'_{\tau'}$ sind die projizierten Punkte von $M_\delta$ auf den Bildebenen $(I,_tau)$ mit $\tau=(\hat{t_1},\hat{t_2},I)$ und $(I',_\tau')$ mit $\tau=(\hat{t_1}',\hat{t_2}',I)$. Die Kamerakoordiantensyteme werden definiert als $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3},C)$, wobei $\hat{b_3} = \overline{CO}$ ist und $(C',\beta')$ mit $\beta' = (\hat{b_1}',\hat{b_2}',\hat{b_3}',C')$, wobei $\hat{b_3}' = \overline{C'O}$\cite{Elements}. 
+
+% jedoch werden für die Rechnung eine andere Darstellung von $m$ und $m'$ verwendet. Die zu dem zweidimensionalen Bildebenkoordinatensystemen $(I,\tau)$ und $(I',\tau')$ korrespondierenden dreidimensionalen Kamerakoordinatensysteme $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3},\overline{IC})$ und $(C',\beta')$ mit $\beta' = (\hat{b_1}',\hat{b_2}',\hat{b_3}',\overline{I'C'})$ werden für die Herleitung verwendet.
+% 
+%  Diese Koordinatensysteme stellt die Bildebenenpunkte $m_\beta$ und $m'_{\beta'}$ wie im Kapitel \nameref{sec:basisTransformation} Gleichung 3.26 dar. Da in dieser Darstellung $\hat{b_1} = \hat{t_1} $ und $\hat{b_2} = \hat{t_2}$ ist, kommt es zu keinen Komplikationen. Die Koordinaten bleiben die selben nur werden sie aus dem 3D-Koordinatensystem der Kameras beschrieben und bekommen somit die Tiefenkomponeten $\zeta$ und $\zeta'$ wieder dazu. Der Grund warum diese Koordinatendarstellung für die Bildpunkte gewählt wird, ist das so vermieden wird, dass es zu konflikten der Dimensionen der Matrizen $R$ und $R'$ sowie $K$ und $K'$ und den Punkten $m_\beta$ und $m'_\beta$ kommt\cite{Elements}. 
+  
+Die folgenden Gleichungen 4.7 und 4.8 zeigen wieder die bereits bekannte Projektion eines 3D-Punktes auf die 2D-Bildebebe, jedoch werden die projizierten Punkte $m_\beta$ und $m_{\beta'}$ noch bezüglich der dreidimensionalen Kamerakoordinatensysteme dargestellt. $\gamma$ und $\gamma'$ repräsentieren jeweils die Tiefe von $m_\beta$ und $m'_{\beta'}$, welche gegen Ende eliminiert wird\cite{Elements}.
+
 
 \begin{gather}
 \gamma \vec{m}_\beta = P \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix} = 
-\begin{bmatrix}KR|-KR\vec{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\11\end{bmatrix} = KR(\vec{M}\delta - \vec{C}_\delta)\\
+\begin{bmatrix}KR|-KR\vec{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = KR(\vec{M}\delta - \vec{C}_\delta)\\
 \gamma' \vec{m'_{\beta'}} = P' \begin{bmatrix}\vec{M'}_\delta\\1\end{bmatrix} = 
-\begin{bmatrix}K'R'|-K'R'\vec{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\11\end{bmatrix} = K'R'(\vec{M}\delta - \vec{C}_\delta)
+\begin{bmatrix}K'R'|-K'R'\vec{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = K'R'(\vec{M}\delta - \vec{C}_\delta)
 \end{gather}
-%Danach wird dann die Beziehung von Punkten im Raum aufgezeigt, welche sich nicht auf einer Ebene befinden. Die Relationen dieser Punkte zueinander lassen sich mit der so genannten Epipolargeometrie beschreiben. Mehr dazu ab Kapitel (link zu Kapitel 3.3
-Der Vektor $(\vec{M}\delta - \vec{C}_\delta)$, beschreibt die Verbindung zwischen dem Objektpunkt $M_\delta$ der Objektebene im Raum und dem Projektionszentrum $C_\delta$ im Raum. Die Gleichung sind bereits aus Kapitel \nameref{sec:basisTransformation},Gleichungen 2.73 oder 2.74, bekannt. Es handelt sich hier lediglich wieder um eine Transformation von einem Punkt in 3D Weltkoordinaten über einen Punkt eines 3D- Kamerakoordinatensystems, in 2D-Bildkoordinaten. Jetzt soll aber gezeigt werden, dass die Bildpunkte nur mit einer Homographiematrix, ohne Kenntniss der Kameraparameter ineinander überführt werden können und das alles nur mit den beiden Bildkoordinaten $m_\beta$ und $m'_{\beta}$. Dazu wird im folgenden erst einmal aufgeführt, wie man aus Gleichung 3.7 und 3.8 die Homographiematrix $H$ gewinnen kann. Was bei den zwei Gleichungen auffällt ist, dass die rechte Seite der Gleichungen, die Ergebnisse nur in ihren Kameraparametern $KR$ und $RK$ unterscheiden, während der Vektor $(\vec{M}-\vec{C}_\delta)$, der selbe ist. Das liegt daran, dass zuvor festgelegt wurde, dass die Kameras identische Projektionszentren besitzen. Also gilt $\vec{C_{1\delta}} = \vec{C_{2\delta}} = \vec{C_{\delta}}$. Mit Hilfe dieser Bedinung können wir die Gleichungen gleichsetzten und für $H$ das folgende Ergebnis herleiten. 
 
+
+Der Vektor $(\vec{M}\delta - \vec{C}_\delta)$, beschreibt die Verbindung zwischen dem Objektpunkt $M_\delta$  und dem Projektionszentrum $C_\delta$. Die Gleichungen 4.7 und 4.8 können auf Grund ihrer identischen Projektionszentren jeweils nach  $(\vec{M}\delta - \vec{C}_\delta)$ aufgelöst werden 
 
 \begin{gather}
 	\gamma RK^{-1}\vec{m_\beta} = \vec{M}_\delta - \vec{C}_\delta\\
-	\gamma' R'K'^{-1}\vec{m'_{\beta'}} = \vec{M}_\delta - \vec{C}_\delta\\
-	\leadsto \gamma' R'K'^{-1}\vec{m'_{\beta'}}=\gamma RK^{-1}\vec{m_\beta}\\
+	\gamma' R'K'^{-1}\vec{m'_{\beta'}} = \vec{M}_\delta - \vec{C}_\delta
+\end{gather}
+
+Da die Rechten seiten der Gleichungen 4.9 und 4.10 identisch sind, können die linken Seiten gleichgesetzt werden.
+
+\begin{gather}
+	\gamma' R'K'^{-1}\vec{m'_{\beta'}}=\gamma RK^{-1}\vec{m_\beta}\\
+\end{gather}
+
+Um nun die gewünschte Form von $m'_{\tau'} = Hm_{\tau}$ zu bekommen, wird die Gleichung nach $	\frac{\gamma'}{\gamma}\vec{m'_{\beta'}}$ aufgelöst.
+
+\begin{gather}
 	\frac{\gamma'}{\gamma}\vec{m'_{\beta'}} = K'R'R^TK^{-1}\vec{m}_\beta\\
-	\lambda \vec{m'}_{\beta'} = H\vec{m}_\beta
+\lambda \vec{m'}_{\beta'} = H\vec{m}_\beta\\
+\leadsto m'_{\tau'} = H m_\tau
 \end{gather}
 
-Es Resultiert also dass wenn $\lambda = \frac{\gamma'}{\gamma}$, dann gilt dass $H = K'R'R^TK^{-1}$ gleicht. Gilt nun noch der Fall, dass $K = K'$ ist, dann reduziert sich $H$ zu $K^{-1}HK = R'R$, welches einer schlichten Rotation gleicht.\cite{Elements}
+Es Resultiert also dass wenn $\lambda = \frac{\gamma'}{\gamma}$, dann gilt dass $H = K'R'R^TK^{-1}$ gleicht. Gilt nun noch der Fall, dass $K = K'$ ist, dann reduziert sich $H$ zu $K^{-1}HK = R'R$, welches einer Rotation gleicht.\cite{Elements}. 
 
 
 
-
-\section{Homographien bei Drehungen um ein Projektionszentrum}
-
-%Homographie zwischen der Abbildungen eines Quadrates einer definierten Ausgangskamera und einer um ihr Projektionszentrum rotierten Kamera
-In diesem Beispiel werden die abgebildeten Punkte eines Quadrats einer Kamera $(C_\beta)$ mit $\beta= [\vec{b_1},\vec{b_2},\vec{b_3},C]$ in die einer anderen Kamera $(C',\beta')$ mit $\beta'= [\vec{b'_1},\vec{b'_2},\vec{b'_3},C']$  mit Hilfe einer selbst aufgestellten Homographiematrix überführt. Hierzu wird zunächst eine Szene mit den Eckpunkten des Quadrates $A_\delta, B_\delta, C_\delta, D_\delta$ und dessen Mittelpunkt mit $E_\delta$ und zwei Kameras $C_{\delta}$ und $C'_{\delta}$ definiert. Für Die Projektionszentren der Kameras gilt in hier, dass $C'_{\delta} = C_\delta$. Die Eckpunkte so wie die Kameras werden in Weltkoordinaten mit den Basen $(O,\delta)$ mit $\delta = [\vec{d_1},\vec{d_1},\vec{d_1},O]$ angegeben. Mit Hilfe der gelernten Transformationsmethoden, werden die Eckpunkte in ihre jeweiligen 2D-Bildebenenkooridnaten $(I,\tau)$ und $(I',\tau')$ umgerechnet. Nachdem die Szene vollständig definiert und die auf den Kameras abgebildeten Punkte berechnet sind, werden zwei Methoden gezeigt, mit welchem die Homographiematrix ermittelt werden kann. Da es sich in diesem Beispiel um ein selbst aufgestelltes Minimalbeispiel handelt, kommt es zu keinem überbestimmten Fall bei der der Berechnung der Homographiematrize. Da in Realbeispielen, jedoch immer damit gerechnet werden muss, dass es zu einem überbestimmten Fall kommt, wird das Verfahren, welches diesen Fall abdeckt ebenfalls aufgezeigt. Der Szenenaufbau des Minimalbeispiels soll folgendermaßen aussehen. Die Kamerakoordinatensysteme unterscheiden sich vom Weltkoordinatensystem durch eine Drehung um 180° um die \ensuremath{\vec{d}_1}-Achse. Der Ursprung beider Kamerakoordinatensysteme entspricht dem Projektionszentrum $C$. Des Weiteren ist Kamera zwei noch um $45^\circ$ um die $\vec{b_2}$ zu Kamera eins eingedreht. Es werden zwei Bilder der selben Szene mit diesen Kameras aufgenommen. Die Behauptung ist, dass sich die beiden entstandenen Bilder mit Einer Homographie ineinander überführen lassen. In Abbildung \ref{fig:Koordinatensysteme2} ist der Aufbau nochmal grafisch veranschaulicht.
-
-\begin{gather}
-H=
-\begin{bmatrix}
-h_{11}&h_{12}&h_{13}\\
-h_{21}&h_{22}&h_{23}\\
-h_{31}&h_{32}&h_{33}
-\end{bmatrix}
-\end{gather}\\
-
-
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1.\linewidth]{images/GrafikHomographieSameC.png}
-	\captionof{figure}{Weltkoordinatensystem $(O,\delta)$ mit $\delta = [\vec{d_1},\vec{d_1},\vec{d_1},O]$ und Kamerakoordinatensysteme $\beta= [\vec{b_1},\vec{b_2},\vec{b_3},C]$ und $(C',\beta')$ mit $\beta'= [\vec{b'_1},\vec{b'_2},\vec{b'_3},C']$ .}
-	\label{fig:Koordinatensysteme2}
-\end{minipage}\\ \\
-
-Als nächstes werden die intrinsischen Kameraparameter $K$ und $K'$ für beide Kameras festgelegt. Für das Beispiel
-
-\begin{gather}
-K=K'
-= 
-\begin{pmatrix}
-\zeta&0&0&0\\
-0&\zeta&0&0\\
-0&0&\zeta&0\\
-0&0&1&0
-\end{pmatrix}\\
-\leadsto
-\begin{pmatrix}
-X\\Y\\Z
-\end{pmatrix} = 
-K
-\begin{pmatrix}
-X\\Y\\Z\\1
-\end{pmatrix}
-=
-\begin{pmatrix}
-\zeta X\\\zeta Y\\\zeta Z\\Z
-\end{pmatrix}
-=
-\begin{pmatrix}
-\frac{\zeta}{Z} X\\\frac{\zeta}{Z} Y\\\zeta\\1
-\end{pmatrix}
-\end{gather}\\
-
-Für das Beispiel gilt die Bedingung, dass $\zeta \neq 0$ sein soll. Des Weiteren soll gelten, dass  \ensuremath{\vec{b}_1} gleich der Lotgeraden vom Objektpunkt zum Projektionszentrum entsptricht und somit folgt, dass \ensuremath{\vec{b}_1} in Sensorebene liegt und \ensuremath{\vec{b}_2 = \vec{b}_3 \times \vec{b}_1} ist. Der Quader besteht aus den Punkten $A_\delta,B_\delta,C_\delta, D_\delta$ und $E\delta$ in homogenen Weltkoordinaten. Die Punkte in Weltkoordinaten bekommen die Koordinatenwerte zugewiesen. 
-
-\begin{gather}
-A_\delta=\begin{pmatrix}
-0\\0\\2\\1
-\end{pmatrix}, 
-B_\delta=
-\begin{pmatrix}
-1\\0\\2\\1
-\end{pmatrix},
-C_\delta=
-\begin{pmatrix}
-1\\1\\2\\1
-\end{pmatrix},
-D_\delta=
-\begin{pmatrix}
-0\\1\\2\\1
-\end{pmatrix},
-E_\delta=
-\begin{pmatrix}
-\frac{1}{2}\\\frac{1}{2}\\2\\1
-\end{pmatrix}
-\end{gather}\\
-
-Für die Transformation der Weltkoordinatentupel in die Bildebenen $I$ und $I'$ werden die Projektionsmatrizen $P=[KR|-KRC_\delta]$ und $P'=[K'R'|-K'R'C_\delta]$ aufgestellt werden. \ensuremath{R} soll eine Drehung der Punkte um 180° um die \ensuremath{\vec{d}_1}-Achse druchführen. \ensuremath{R'} muss zusätzlich im Anschluss noch eine Drehung, um \ensuremath{45^\circ} um die neue $\vec{b'_3}$-Achse von Kamera zwei, an die vorherige Drehung anhängen. Die so erhaltenen Matrizen \ensuremath{R} und \ensuremath{R'} können nun dazu verwendet werden, die Objektpunkte bezüglich des Weltkoordinatensystems $(O,\delta)$ in Punkte bezüglich der jeweiligen Kamerakoordinatensysteme $(C,\beta)$ und $(C',\beta')$ zu transformieren.
-
-
-\begin{gather}
-	\begin{bmatrix}
-		\cos(180)&-\sin(180)&0&0\\
-		\sin(180)&\cos(180)&0&0\\
-		0&0&1&0\\
-		0&0&0&1
-	\end{bmatrix}
-	\begin{pmatrix}
-		\vec{d}_1,\vec{d}_2,\vec{d}_3,O
-	\end{pmatrix}
-	=
-	\begin{bmatrix}
-		-1&0&0&0\\
-		0&-1&0&0\\
-		0&0&1&0\\
-		0&0&0&1
-	\end{bmatrix} 
-	\begin{pmatrix}
-		\vec{d}_1,\vec{d}_2,\vec{d}_3,O
-	\end{pmatrix}\\
-	\begin{bmatrix}
-		-1&0&0&0\\
-		0&-1&0&0\\
-		0&0&1&0\\
-		0&0&0&1
-	\end{bmatrix}^T =\begin{bmatrix}
-	-1&0&0&0\\
-	0&-1&0&0\\
-	0&0&1&0\\
-	0&0&0&1
-	\end{bmatrix}= R
-\end{gather}\\
-
-Im nächsten Schritt wird Kamera zwei noch um \ensuremath{45^\circ} um ihre $\vec{b'_3}$-Achse gedreht. Diese Transformation wird mit der vorherigen Transformation multipliziert und es entsteht $P'$ für Kamera zwei.
-
-\begin{gather}
-	\cos(45)=\sin(45)=\frac{1}{\sqrt{2}} = a\\
-	\begin{bmatrix}
-		a&0&a&0\\
-		0&1&0&0\\
-		-a&0&a&0\\
-		0&0&0&1
-	\end{bmatrix}
-	\begin{bmatrix}
-		-1&0&0&0\\
-		0&-1&0&0\\
-		0&0&1&0\\
-		0&0&0&1
-	\end{bmatrix}
-	=\begin{bmatrix}
-		-a&0&a&0\\
-		0&-1&0&0\\
-		a&0&a&0\\
-		0&0&0&1
-	\end{bmatrix}
-	\begin{pmatrix}
-		\vec{d}_1,\vec{d}_2,\vec{d}_3,O
-	\end{pmatrix}\\
-	=\begin{bmatrix}
-	-a&0&a&0\\
-	0&-1&0&0\\
-	a&0&a&0\\
-	0&0&0&1
-	\end{bmatrix}^T
-	=
-	\begin{bmatrix}
-		-a&0&a&0\\
-		0&-1&0&0\\
-		a&0&a&0\\
-		0&0&0&1
-	\end{bmatrix}
-	= R'
-\end{gather}\\
-
-Handelt es sich bei den Kamerakoordinatensystemen nicht um karteische Koordinatensysteme, so muss von den Rotationsmatrizen jeweils die Inverse genommen werden, um \ensuremath{R} und \ensuremath{R'} zu erhalten. Die Inversen Rotationsmatrizen werden in den folgenden Gleichungen nicht mit $R^{-1}$, sondern $R$ bezeichnet. So entsprechen sie auch den Notationen der Literatur\cite{Elements,HZ}. Sind die Matrizen \ensuremath{R} und \ensuremath{R'} ermittelt, können nun die Punkte des Quadrats im Raum in Punkte der jeweiligen Kameras umgerechnet werden. Für Punkte spezifisch Kamera eins ergeben sich die in den Gleichungen 3.23 bis 3.27 aufgezeigten Werte.
-
-
-\begin{gather}
-	\begin{pmatrix}
-		A_\beta\\1
-	\end{pmatrix}
-	=
-	\begin{bmatrix}
-		-1&0&0&0\\
-		0&-1&0&0\\
-		0&0&1&0\\
-		0&0&0&1
-	\end{bmatrix}
-	\begin{pmatrix}
-		0\\0\\2\\1
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-		0\\0\\2\\1
-	\end{pmatrix}\\
-	\begin{pmatrix}
-		B_\beta\\1
-	\end{pmatrix}
-	=
-	\begin{bmatrix}
-		-1&0&0&0\\
-		0&-1&0&0\\
-		0&0&1&0\\
-		0&0&0&1
-	\end{bmatrix}
-	\begin{pmatrix}
-		1\\0\\2\\1
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-		-1\\0\\2\\1
-	\end{pmatrix}\\
-	\begin{pmatrix}
-		C_\beta\\1
-	\end{pmatrix}
-	=
-	\begin{bmatrix}
-		-1&0&0&0\\
-		0&-1&0&0\\
-		0&0&1&0\\
-		0&0&0&1
-	\end{bmatrix}
-	\begin{pmatrix}
-		1\\1\\2\\1
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-		-1\\-1\\2\\1
-	\end{pmatrix}\\
-	\begin{pmatrix}
-		D_\beta\\1
-	\end{pmatrix}
-	=
-	\begin{bmatrix}
-		-1&0&0&0\\
-		0&-1&0&0\\
-		0&0&1&0\\
-		0&0&0&1
-	\end{bmatrix}
-	\begin{pmatrix}
-		0\\1\\2\\1
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-		0\\-1\\2\\1
-	\end{pmatrix}\\
-	\begin{pmatrix}
-	E_\beta\\1
-\end{pmatrix}
-=
-\begin{bmatrix}
-	-1&0&0&0\\
-	0&-1&0&0\\
-	0&0&1&0\\
-	0&0&0&1
-\end{bmatrix}
-\begin{pmatrix}
-	\frac{1}{2}\\\frac{1}{2}\\2\\1
-\end{pmatrix}
-=
-\begin{pmatrix}
-	-\frac{1}{2}\\-\frac{1}{2}\\2\\1
-\end{pmatrix}
-\end{gather}
-
-Für Punkte spezifisch Kamera zwei ergeben sich die Punkte aus den Gleichungen 3.28 bis 3.32.
-
-\begin{gather}
-	\begin{pmatrix}
-		A'_{\beta'}\\1
-	\end{pmatrix}
-	=
-	\begin{bmatrix}
-		-a&0&a&0\\
-		0&-1&0&0\\
-		a&0&a&0\\
-		0&0&0&1
-	\end{bmatrix}
-	\begin{pmatrix}
-		0\\0\\2\\1
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-		2a\\0\\2a\\1
-	\end{pmatrix}\\
-	\begin{pmatrix}
-		B'_{\beta'}\\1
-	\end{pmatrix}
-	=
-	\begin{bmatrix}
-		-a&0&a&0\\
-		0&-1&0&0\\
-		a&0&a&0\\
-		0&0&0&1
-	\end{bmatrix}
-	\begin{pmatrix}
-		1\\0\\2\\1
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-		a\\0\\3a\\1
-	\end{pmatrix}\\
-	\begin{pmatrix}
-		C'_{\beta'}\\1
-	\end{pmatrix}
-	=
-	\begin{bmatrix}
-		-a&0&a&0\\
-		0&-1&0&0\\
-		a&0&a&0\\
-		0&0&0&1
-	\end{bmatrix}
-	\begin{pmatrix}
-		1\\1\\2\\1
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-		a\\-1\\3a\\1
-	\end{pmatrix}\\
-	\begin{pmatrix}
-		D'_{\beta'}\\1
-	\end{pmatrix}
-	=
-	\begin{bmatrix}
-		-a&0&a&0\\
-		0&-1&0&0\\
-		a&0&a&0\\
-		0&0&0&1
-	\end{bmatrix}
-	\begin{pmatrix}
-		0\\1\\2\\1
-	\end{pmatrix}
-	=
-	\begin{pmatrix}
-		2a\\-1\\2a\\1
-	\end{pmatrix}\\
-	\begin{pmatrix}
-	E'_{\beta'}\\1
-\end{pmatrix}
-=
-\begin{bmatrix}
-	-a&0&a&0\\
-	0&-1&0&0\\
-	a&0&a&0\\
-	0&0&0&1
-\end{bmatrix}
-\begin{pmatrix}
-	\frac{1}{2}\\\frac{1}{2}\\2\\1
-\end{pmatrix}
-=
-\begin{pmatrix}
-	\frac{3}{2}a\\-\frac{1}{2}\\\frac{5}{2}a\\1
-\end{pmatrix}
-\end{gather}\\
-
-Die entstandenen Punkte sind nun entsprechend der Kamerakoordinatensysteme definiert. Jetzt müssen noch die jeweiligen Kameramatrizen $K$ und $K'$ mit diesen verrechnet werden, um so die 2D-Bildebenenpunkte der entsprechenden Kameras zu erhalten. $\zeta$ bekommt in diesem Beispiel den Wert -1, das bedeutet laut der Definition der Kamerakoordinatensysteme, dass der Sensor sich hinter dem Projektionszentrum befindet. Das entstehende Bild ist somit um \ensuremath{180^\circ} gedreht auf dem Sensor abgebildet.
-
-\begin{gather}
-K =	K'=
-	\begin{pmatrix}
-		\zeta&0&0&0\\
-		0&\zeta&0&0\\
-		0&0&\zeta&0\\
-		0&0&1&0
-	\end{pmatrix}=
-	\begin{pmatrix}
-		-1&0&0&0\\
-		0&-1&0&0\\
-		0&0&-1&0\\
-		0&0&1&0
-	\end{pmatrix}
-\end{gather}
-
- Man kann natürlich wie bereits gewohnt die Rotationsmatrizen und die Kameramatrizen bereits im Vorhinein miteinander multiplizieren und dann auf einen 3D-Weltpunkt anwenden. Auf diese Weise bekommt man die fertigen Projektionsmatrizen  $P=[KR|-KRC_\delta]$ und $P'=[K'R'|-K'R'C_\delta]$. In diesem Beispiel werden sie nochmal getrennt voneinander auf die Punkte angewandt. Die fünf Punkte werden jeweils in einer Matrix zusammengeschrieben und mit $K$ beziehungsweise $K'$ verrechnet. 
-
-\begin{gather}
-K \cdot 
-	\begin{pmatrix}
-0&-1&-1&0&-\frac{1}{2}\\
-0&0&-1&-1&-\frac{1}{2}\\
-2&2&2&2&2\\
-1&1&1&1&1
-\end{pmatrix}=
-	\begin{pmatrix}
-		-1&0&0&0\\
-		0&-1&0&0\\
-		0&0&-1&0\\
-		0&0&1&0
-	\end{pmatrix}
-	\begin{pmatrix}
-		0&-1&-1&0&-\frac{1}{2}\\
-		0&0&-1&-1&-\frac{1}{2}\\
-		2&2&2&2&2\\
-		1&1&1&1&1
-	\end{pmatrix}\\=
-	\begin{pmatrix}
-		0&1&1&0&-\frac{1}{2}\\
-		0&0&1&1&-\frac{1}{2}\\
-		-2&-2&-2&-2&-2\\
-		2&2&2&2&2
-	\end{pmatrix}\\
-	\simeq
-	\begin{pmatrix}
-		0&\frac{1}{2}&\frac{1}{2}&0&\frac{1}{4}\\
-		0&0&\frac{1}{2}&\frac{1}{2}&\frac{1}{4}\\
-		-1&-1&-1&-1&-1\\
-		1&1&1&1&1
-	\end{pmatrix}	
-	\simeq
-	\begin{pmatrix}
-	0&\frac{1}{2}&\frac{1}{2}&0&\frac{1}{4}\\
-	0&0&\frac{1}{2}&\frac{1}{2}&\frac{1}{4}\\
-	1&1&1&1&1
-	\end{pmatrix}\\
-K' \cdot 	\begin{pmatrix}
-2a&a&a&2a&\frac{3}{2}a\\
-0&0&-1&-1&-\frac{1}{2}\\
-2a&3a&3a&2a&\frac{5}{2}a\\
-1&1&1&1&1
-\end{pmatrix}=
-	\begin{pmatrix}
-		-1&0&0&0\\
-		0&-1&0&0\\
-		0&0&-1&0\\
-		0&0&1&0
-	\end{pmatrix}
-	\begin{pmatrix}
-		2a&a&a&2a&\frac{3}{2}a\\
-		0&0&-1&-1&-\frac{1}{2}\\
-		2a&3a&3a&2a&\frac{5}{2}a\\
-		1&1&1&1&1
-	\end{pmatrix}\\=
-	\begin{pmatrix}
-		-2a&-a&-a&-2a&-\frac{3}{2}a\\
-		0&0&1&1&\frac{1}{2}\\
-		-2a&-3a&-3a&-2a&-\frac{5}{2}a\\
-		2a&3a&3a&2a&\frac{5}{2}a
-	\end{pmatrix}\\
-	\simeq
-	\begin{pmatrix}
-		-1&-\frac{1}{3}&-\frac{1}{3}&-1&\frac{3}{5}\\
-		0&0&\frac{1}{3a}&\frac{1}{2a}&\frac{1}{5}a\\
-		-1&-1&-1&-1&-1\\
-		1&1&1&1&1
-	\end{pmatrix}
-		\simeq
-	\begin{pmatrix}
-	-1&-\frac{1}{3}&-\frac{1}{3}&-1&\frac{3}{5}\\
-	0&0&\frac{1}{3a}&\frac{1}{2a}&\frac{1}{5a}\\
-	1&1&1&1&1
-	\end{pmatrix}
-\end{gather}\\
-
-Die Entstandenen Punkte beider Kameras ergeben die in Abblidung \ref{ErgebniseHomographie1} veranschaulichten Abblildungen, des Quadrats mit seinem Mittelpunkt, auf den jeweiligen Kamerabildebenen. Die aus den Objektpunkten $M_\delta$ entstandenen 2-D-Bildebenenkoordinaten $m_\tau$ und $m'_{\tau'}$ werden in den Koordinatensystemen $(I,\tau)$ mit $(\tau = \vec{b_1},\vec{b_2},\vec{b_4})$ und $(I',\tau')$ mit $(\tau = \vec{b'_1},\vec{b'_2},\vec{b'_4})$ dargestellt.\\
-
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=0.8\linewidth]{images/Geogebra.png}
-	\captionof{figure}{in blau ist die Abblidung des Quaders von Kamera eins und in rot die Abbildung des selben Quaders in Kamera zwei}
-	\label{ErgebniseHomographie1}
-\end{minipage}\\ \\
-
-Die fertigen Bildebenenkoordinaten beider Kameras, sollen nun durch eine eigens aufgestellte Homographiematrix $H$ ineinander überführt werden. Um eine Homographiematrix mit 
-$H=
-\begin{bmatrix}
-h_{11}&h_{12}&h_{13}\\
-h_{21}&h_{22}&h_{23}\\
-h_{31}&h_{32}&h_{33}
-\end{bmatrix}
-$ zu erhalten werden die Punkte beider Kameras in eine Koeffizientenmatrix eingetragen, welche sich nach dem in den Gleichungen 4.40 bis 3.52 laufenden Schema ergibt. Das Verfahren wird anhand der Bildebenekoordinagen aufgezeigt.
-
-\begin{gather}
-H\cdot m_\tau = m'_{\tau}\\
-\begin{bmatrix}
-h_{11}&h_{12}&h_{13}\\
-h_{21}&h_{22}&h_{23}\\
-h_{31}&h_{32}&h_{33}
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
-\\m_\tau\\\\
-\end{bmatrix}
-=
-\begin{bmatrix}
-\\m'_{\tau'}\\\\
-\end{bmatrix}\\
-\begin{bmatrix}
-h_{11}&h_{12}&h_{13}\\
-h_{21}&h_{22}&h_{23}\\
-h_{31}&h_{32}&h_{33}
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
-x\\y\\z
-\end{bmatrix}
-=
-\begin{bmatrix}
-x'\\y'\\z'
-\end{bmatrix}
-\end{gather}
-
-Aus Gleichung 3.42 lassen sich ein Gleichungssystem mit zwölf Bekannten und neun unbekannten aufstellen.  
-
-\begin{gather}
-h_{11}x+h_{12}y+h_{13}z= \lambda x'\\
-h_{21}x+h_{22}y+h_{23}z= \lambda y'\\
-h_{31}x+h_{32}y+h_{33}z= \lambda z'
-\end{gather}
-
-Da mit homogenen Koordinaten gearbeitet wird und somit $z$ und $z'$ = 1 sind, ergibt sich für die letzte Zeile $h_{31}x+h_{32}y+h_{33}z= 1$. Dieser Ausdruck kann in den ersten beiden Gleichungen für $\lambda$ eingesetzt werden. Pro Punktepaar $m_\tau$ und $m'_{\tau'}$ ergeben sich somit zwei Gleichungen. 
-
-\begin{gather}
-	h_{11}x+h_{12}y+h_{13}z= (h_{31}x+h_{32}y+h_{33}z) \cdot x'\\
-		h_{21}x+h_{22}y+h_{23}z= (h_{31}x+h_{32}y+h_{33}z) \cdot y'
-\end{gather}
-
-Für den Aufbau der nötigen Koeffizientenmatrix werden beide Ausdrücke noch nach Null aufgelöst, so dass sich die Gleichungen 3.48 und 3.49 aus 3.46 und 3.47 ergeben.
-
-\begin{gather}
-	h_{11}x+h_{12}y+h_{13}z -(h_{31}x+h_{32}y+h_{33}z) \cdot x'= 0 \\	h_{21}x+h_{22}y+h_{23}z-(h_{31}x+h_{32}y+h_{33}z) \cdot y'=0
-	\end{gather}
-\begin{gather}
-	\leadsto h_{11}x+h_{12}y+h_{13}z -h_{31}x\cdot x' - h_{32}y \cdot x'-h_{33}z\cdot x'= 0\\
-	\leadsto h_{21}x+h_{22}y+h_{23}z-h_{31}x\cdot y -h_{32}y \cdot y -h_{33}z) \cdot y'=0
-\end{gather}
-
-Die enstandnen Gleichungen werden jetzt pro Punktepaar $m_\tau$ und $m'_{\tau'}$ in eine Matrix nach folgendem Schema eingetragen.\cite{Elements,HZ,Schwarz,Heipke}
-
-\begin{gather}
-	\begin{pmatrix}
-	x_1&y_1&1&0&0&0&x_1 x'_1&y_1 x'_1 & 1\cdot x'_1\\
-	0&0&0&x_1&y_1&1&x_1 y'_1&y_1 y'_1 & 1\cdot y'_1\\
-	&&&&&.&&&\\	
-	&&&&&.&&&\\	
-	&&&&&.&&&\\	
-	x_i&y_i&1&0&0&0&x_i x'_i&y_i x'_i & 1\cdot x'_i\\
-	0&0&0&x_i&y_i&1&x_i y'_i&y_i y'_i & 1\cdot y'_i
-	\end{pmatrix}
-	\cdot
-	\begin{pmatrix}
-	h1\\h2\\.\\.\\.\\hi
-	\end{pmatrix}
-	=0
-\end{gather}
-
-Wenn ein nicht überbestimmter Fall vorliegt, sprich wenn der Rang der Koeffizientenmatrix genau acht und nicht höher beträgt, kann aus der Koeffizientenmatrix einfach der Nullraum berechnet werden, um so die Einträge für die 3x3-Homographiematrix zu erhalten\cite{HZ,Elements,Schwarz}. Gesucht wird also ein Vector $\vec{x}$, für den gilt das $H \cdot x = 0$. Der gesuchte Vektor $\vec{x}$ entspricht dem Kern der Koeffizientenmatrix und ist ein Spaltenvektor mit 9 Einträgen, welche in die 3x3-Homographiematrix eingetragen werden können\cite{HZ,Schwarz}. Tritt nun der Fall ein, dass es zu einem überbestimmtes System kommt, \textcolor{red}{was Beipielsweise auftritt wenn mehr als neun Punktepaare durch eine Homographie ineinander überführt werden sollen}, so kann nicht mehr die Ermittlung des Nullraums für die Berechnung der Homographiematrix genutzt werden. Für die Lösung überbestimmter Gleichungssysteme bietet sich die Singulärwertzerlegung an\cite{HZ}\cite{Scholz}. Das bedeutet es wird nicht derjenige Vektor $\vec{x}$ gesucht für den gilt $H \cdot x = 0$, sondern es wird derjenige Vektor $\vec{x}$ gesucht, für den \ensuremath{\parallel H \cdot x\parallel} minimal wird\cite{HZ,Schwarz}. Die Singulärwertzerlegung von zum Beispiel der Koeffizientenmatrix ist eine Faktorisierung einer beliebeigen Matrix \ensuremath{A \in \mathbb{R}^{mxn}} der Form \ensuremath{A = U \cdot S \cdot V^T} mit orthogonalen Matrizen \ensuremath{U \in \mathbb{R}^{m \times n}} und \ensuremath{V \in \mathbb{R}^{m \times n}} sowie mit einer Diagonalmatrix. 
-
-\begin{gather}
-	S = \begin{pmatrix}
-	s_1&&...&&0&0&&...&&0\\
-	.&.&&&.&.&&&&.\\
-	.&&.&&.&.&&&&.\\
-	.&&&.&.&.&&&&.\\
-	0&&...&&s_r&0&&...&&0\\	
-	0&&...&&0&0&&...&&0\\
-	.&&&&.&.&&&&.\\
-	.&&&&.&.&&&&.\\	
-	.&&&&.&.&&&&.\\	
-	0&&...&&0&0&&...&&0\\	
-	\end{pmatrix}
-\end{gather}
-
-Dabei soll für die Singulärwerte $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}. Entsprechend dieser Methode wird eine Singulärwertszerlegung, kurz $SVD$ der entstandenen Koeffizientenmatrix durchgeführt. Wir erhalten 3 Matrizen $U \cdot S\cdot V^T$. Durch die Zerlegung sind die diagonaleinträge von $S$ in einer absteigenden Reihenfolge sortiert. Die Spalte von $V^T$, welche mit dem kleinsten Singulärwert von $S$ korrespondiert, ergibt den Vektor $\vec{x}$, für den \ensuremath{\parallel H \cdot x\parallel} minimal wird. Somit gleichen die neun Einträge der Homographiematrix gleich der letzten Spalte von $V$. Das Ergebnis für $H$ hat dann die folgende Form
-
-\begin{gather}
-	H=
-	\begin{pmatrix}
-	v_{19}&v_{29}&v_{39}\\
-	v_{49}&v_{59}&v_{69}\\
-	v_{79}&v_{89}&v_{99}
-	\end{pmatrix}
-\end{gather}
-
-Für das Minimalbeispiel mit reinen Punkten, welches in diesem Kapitel erstellt wurde, würde die Herleitung der Homographiematrix über die Ermittlung des Nullraumes der Koeffizientenmatrix genügen. Für die Matrix $H$ ergibt sich aus den Werten der im Beispiel verwendeten Punkte
-
-\begin{gather}
-	\begin{pmatrix}
-	1&0&-1\\
-	0&\sqrt{2}&0\\
-	1&0&1
-	\end{pmatrix}
-\end{gather}
-
-Nun werden die Punkte aus Kamera eins s mit Hilfe von $H$ in die Punkte von Kamera zwei überführt und umgekehrt werden die Punkte aus Kamera zwei mit der Inversen $H^{-1}$ in die Punkte von Kamera eins überführt. 
-
-\begin{gather}
-x'=H \cdot x \leadsto 
-	\begin{pmatrix}
-	-1&-\frac{1}{3}&-\frac{1}{3}&-1\\
-	0&0&\frac{1}{3a}&\frac{1}{2a}\\
-	1&1&1&1
-\end{pmatrix}= 	\begin{pmatrix}
-1&0&-1\\
-0&\sqrt{2}&0\\
-1&0&1
-\end{pmatrix}
-\cdot
-\begin{pmatrix}
-0&\frac{1}{2}&\frac{1}{2}&0\\
-0&0&\frac{1}{2}&\frac{1}{2}\\
-1&1&1&1
-\end{pmatrix}\\
-x=H^{-1} \cdot x' \leadsto 
-\begin{pmatrix}
-0&\frac{1}{2}&\frac{1}{2}&0\\
-0&0&\frac{1}{2}&\frac{1}{2}\\
-1&1&1&1
-\end{pmatrix}
-= 	\begin{pmatrix}
-\frac{1}{2}&0&\frac{1}{2}\\
-0&\frac{1}{\sqrt{2}}&0\\
-\frac{1}{2}&0&\frac{1}{2}
-\end{pmatrix}
-\cdot
-\begin{pmatrix}
--1&-\frac{1}{3}&-\frac{1}{3}&-1\\
-0&0&\frac{1}{3a}&\frac{1}{2a}\\
-1&1&1&1
-\end{pmatrix}
-\end{gather}
 
 \section{Abbildungsunterschiede bei verschobenen Rotationsachsen}
 
-%Abbildungsunterschiede von Rotationen um ein Projektionszentrum und Rotation um einen beliebigen Drehpunkt von Punkten in der Ebene
-
-Bis jetzt wurden die Kameras jeweils nur um ihr Projektionszentrum gedreht, die Frage die jetzt noch im folgenden beantwortet werden soll ist, ob es ebenfalls möglich ist eine Homographiematrix für korrespondierende Punktepaare in einer Ebene aufzustellen, wenn eine Kamera um einen spezifischen Drehpunkt außerhalb der Kamera gedreht wurde. In diesem Fall wären die beiden Projektionszentren $(C,\beta)$ und $(C',\beta')$ der Kameras nicht mehr identisch. Um zu veranschaulichen, was genau sich bei einer Drehung um ein Drehpunkt und der Drehung um das Projektionszentrum ändert, wurde eine Simulation geschrieben, welche die Abbildungsunterschiede beider Drehungen aufzeigt. Des Weiteren soll geklärt werden, ob Punkte die bei der Drehung um das Projektionszentrum verdeckt bleiben auch bei einer Drehung um einen außerhalb der Kamera platzierten Drehpunkt verdeckt bleiben. In der Simulation ist der rote Punkte in der Mitte des Quadrats der Drehpunkt, wie in Abbildung \ref{fig:SimulationAnfang} dargestellt ist. 
+Wie am Anfang des Kapitels erwähnt, sollen zwei verschiedene Fälle für die Homographie betrachtet werden. Der Grund sind, die unterschiedlichen Abbildungsmerkmale die bei einer Drehung um das Projektionszentrum und einer Drehung um einen definierten Drehpunkt entstehen. Die Frage ist, ob und wie sich beim zweiten Fall eine Homographiematrix herleiten lässt und in wie fern sie sich von der bereits bekannten Herleitung unterscheidet. Um zu veranschaulichen, was genau sich bei einer Drehung um ein Drehpunkt und der Drehung um das Projektionszentrum ändert, wurde eine Simulation geschrieben, welche die Abbildungsunterschiede beider Drehungen aufzeigt. Abbildung \ref{fig:SimulationAnfang} zeigt die Ausgangssituation der Simulation. In einen virtuellen Raum wurde eine Kamera platziert, welche auf ein Objekt gerichtet ist. Dieses Objekt besteht aus deinem Quadrat, das durch die schwarzen Eckpunkte begrenzt ist. In der Mitte des Quadrats wurde mit Rot der Mittelpunkt des Quadrats gekennzeichnet. Dieser Mittelpunkt symbolisiert den Drehpunkt um welchem sich die Kamera später drehen soll. 
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{images/Ausgangslage.png}
-	\captionof{figure}{Objekt im Raum}
+	\captionof{figure}{Ausgangsituation der Simulation}
 	\label{fig:SimulationAnfang}
 \end{minipage}\\
 
+%Im folgenden soll zunächst die Abbildungsunterschiede der entstehenden 2D-Bilder, bei den zwei genannten unterschiedlichen Fällen aufgezeigt werden.
+%
+%
+%Bis jetzt wurden die Kameras jeweils nur um ihr Projektionszentrum gedreht, die Frage die jetzt noch im folgenden beantwortet werden soll ist, ob es ebenfalls möglich ist eine Homographiematrix für korrespondierende Punktepaare in einer Ebene aufzustellen, wenn eine Kamera um einen spezifischen Drehpunkt außerhalb der Kamera gedreht wurde. 
+%
+%In diesem Fall wären die beiden Projektionszentren $(C,\beta)$ und $(C',\beta')$ der Kameras nicht mehr identisch.  Des Weiteren soll geklärt werden, ob Punkte die bei der Drehung um das Projektionszentrum verdeckt bleiben auch bei einer Drehung um einen außerhalb der Kamera platzierten Drehpunkt verdeckt bleiben. In der Simulation ist der rote Punkte in der Mitte des Quadrats der Drehpunkt, wie in Abbildung \ref{fig:SimulationAnfang} dargestellt ist. 
 
-Für die Simulation der Drehung wurden zwei Schieberegler implementiert mit dem sich die Kamera einmal um das Projektionszentrum, und einmal um den Drehpunkt, welcher der rote Mittelpunkt ist, drehen lässt.
+Für die Simulation der unterschiedlichen Drehungen wurden zwei Schieberegler implementiert mit denen sich die Kamera einmal um ihr Projektionszentrum, und einmal um den Drehpunkt drehen lässt. Abbildung \ref{fig:DrehungProjektionszentrum} zeigt jeweils die entstehenden Bilder, wenn die Kamera um \ensuremath{20^\circ} beziehungsweise \ensuremath{-20^\circ} um das Projektionszentrum gedreht wurde.
 
 
 \begin{minipage}{\linewidth}
@@ -712,7 +125,7 @@ Für die Simulation der Drehung wurden zwei Schieberegler implementiert mit dem 
 	\label{fig:DrehungProjektionszentrum}
 \end{minipage}\\ \\
 
-Abbildung \ref{fig:DrehungProjektionszentrum} zeigt jeweils die entstehenden Bilder, wenn die Kamera um \ensuremath{20^\circ} beziehungsweise \ensuremath{-20^\circ} um das Projektionszentrum gedreht wurde.
+Abbildung \ref{fig:DrehungDrehpunkt} zeigt die entstehenden Bilder, wenn die Kamera um \ensuremath{45^\circ} beziehungsweise \ensuremath{-45^\circ} um den Drehpunkt gedreht wurde. Wie sich zeigt ist hier ein weiterer grüner Punkt zu sehen welcher zu Testzwecken hinter dem roten Punkt platziert wurde sichtbar.
 
 \begin{minipage}{\linewidth}
 	\centering
@@ -721,260 +134,209 @@ Abbildung \ref{fig:DrehungProjektionszentrum} zeigt jeweils die entstehenden Bil
 	\label{fig:DrehungDrehpunkt}
 \end{minipage}\\ 
 
-Abbildung \ref{fig:DrehungDrehpunkt} zeigt die entstehenden Bilder, wenn die Kamera um \ensuremath{45^\circ} beziehungsweise \ensuremath{-45^\circ} um den Drehpunkt gedreht wurde. Wie sich zeigt ist hier ein weiterer grüner Punkt zu sehen welcher zu Testzwecken hinter dem roten Punkt platziert wurde sichtbar. Punkte die bei einer Drehung um das Projektionszentrum verdeckt bleiben, werden also bei einer Drehung um einen externen Drehpukt sichtbar. Die Abbildungen \ref{fig:Strahlengang1} und \ref{fig:Strahlengang2} veranschaulichen was geometrisch bei beiden Fällen passiert.\\
+Punkte die bei einer Drehung um das Projektionszentrum verdeckt bleiben, können bei einer Drehung um einen außerhalb der Kamera liegenden Drehpunkt sichtbar werden. Die Abbildungen \ref{fig:Strahlengang1} und \ref{fig:Strahlengang2} veranschaulichen anhand von Strahlenoptik, was der Grund für die Verdeckung ist. \\
 
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=.8\linewidth]{images/GrafikDrehungProjektionszentrum.png}
-	\captionof{figure}{Strahlengang durch das Projektionszentrum. Auf der Grafik ist erkennbar, dass der grüne Punkt auch nach der Drehung der Kamera um das Projektionszentrum vom roten Pukt verdeckt bleibt}
+
+\begin{figure}[!htb]
+	\minipage{0.45\textwidth}
+	\includegraphics[width=\linewidth]{images/GrafikDrehungProjektionszentrum.png}
+	\captionof{figure}{Strahlengang durch das Projektionszentrum. Auf der Abbildung ist erkennbar, dass der grüne Punkt auch nach der Drehung der Kamera um das Projektionszentrum vom roten Pukt verdeckt bleibt}
 	\label{fig:Strahlengang1}
-\end{minipage}\\ \\
-
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=.8\linewidth]{images/GrafikDrehungUmDrehpunkt.png}
-	\captionof{figure}{Strahlengang durch das Projektionszentrum. Auf der Grafik ist erkennbar, dass der grüne Punkt nach der Drehung der Kamera um einen Drehpunkt, welcher in diesem Fall der rote Punkt darstellt, sichtbar wird.}
+	\endminipage\hfill
+	\minipage{0.5\textwidth}
+	\includegraphics[width=\linewidth]{images/GrafikDrehungUmDrehpunkt.png}
+		\captionof{figure}{Strahlengang durch das Projektionszentrum. Auf der Grafik ist erkennbar, dass der grüne Punkt nach der Drehung der Kamera um einen Drehpunkt, welcher in diesem Fall der rote Punkt darstellt, sichtbar wird.}
 	\label{fig:Strahlengang2}
-\end{minipage}\\ \\
+	\endminipage\hfill
+\end{figure}
 
-Die entstehenden Abbildungen sind also voneinander verschieden, jedoch liegen die fünf Punkte des Quadrates und dessen Mittelpunkt bei beiden Fällen immer noch in einer Ebene. Die Behauptung die also nun noch zu beweisen gilt ist, dass sich für die jeweiligen Abbildungen beider Drehungen jeweils eine Homographiematrix $H$ aufstellen lässt, welche die Bilder der jewiligen Kameras ineinander überführen lässt. Im folgenden wird aufgeführt, wie sich die Homographiematrix im Falle einer Drehung um einen Drehpunkt geometrisch Herleiten lässt. Danach wird wieder ein Beispiel zu diesem Fall aufgezeigt.  Zunächst werden wieder die benötigten Koordinatensysteme definiert. Ein Weltkoordinatensystem $(0,\delta)$ mit $\delta = [\vec{d}_1,\vec{d}_2,\vec{d}_3,O]$, ein Kamerakoordinatensystem von Kamera eins $(C,\beta)$ mit $\beta = [\vec{b}_1,\vec{b}_2,\vec{b}_3,C]$ und ein Kamerakoordinatensystem für Kamera zwei $(C',\beta')$ mit $\beta' = [\vec{b'}_1,\vec{b'}_2,\vec{b'}_3,C']$. Für die Bildebenen $I$ und $I'$ der beiden Kameras gelten die Koordinatensysteme $(I,\vec{\tau})$ und $(I',\vec{\tau}')$ mit $\vec{\tau} = [\vec{d}_1,\vec{d}_2,\vec{d}_4]$ und $\tau' = [\vec{d}_1,\vec{d}_2,\vec{d'}_4]$ mit $d_4 = \vec{CO}$ und $d'_4 = \vec{CO'}$. Der Punkt in der Objektebene, welcher in die jeweiligen Bildebenen projiziert werden soll, wird mit $\vec{M}_\delta = [x\; y\; z\; 1]^T$ bezeichnet. $M$ wird auf die jeweiligen Bildebenen der Kameras projiziert und zu den 2D-Bildebenenkoordinaten $m = [u_\tau \; v_\tau \; 1]$ und $m' =  [u'_{\tau'} \; v'_{\tau'} \; 1]$ mit Projektionsmatrix $P$ beziehungsweise $P'$ transformiert.
-
-\begin{gather}
-	\gamma \vec{m}_\beta = P \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix} = \begin{bmatrix}
-	KR|-KR\vec{C}_\delta\end{bmatrix} \cdot \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix} = G \cdot \vec{n}_\tau\\
-	\gamma' \vec{m'}_\beta = P' \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix} = \begin{bmatrix}
-	K'R'|-K'R'\vec{C'}_\delta\end{bmatrix} \cdot \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix} = G' \cdot \vec{n}_\tau
-\end{gather}
-
-$\vec{n}_\tau$ und $\vec{n'}_{\tau'}$ stellen den Objektpunkt $M_\delta$ in Koordinatendarstellung von $(I,\tau)$ und $(I', \tau')$ dar.Die zwei unterschiedlichen $\vec{n}_\tau$ und $\vec{n'}_{\tau'}$ zeigen den Unterschied zu diesem Beispiel von Kameras mit unterschiedlichen Projektionszentren und dem Beispiel mit identischen Projektionszentren. 
- 
- Die beiden Projektionsmatrizen $P$ und $P'$ können auf Grund der unterschiedlichen Ergebnisse auf der rechten Seite der Gleichungen 3.58 und 3.59, so wie sie jetzt dastehen nicht gleichgesetzt werden. Um wie in den Gleichungen 3.9 bis 3.13, auf eine Homographiematrix schließen zu können, muss zunächst die Verbindung von  $\vec{n}_\tau$ und $\vec{n'}_{\tau'}$ aufgezeigt werden. Es muss also erst mal güberprüft werden, ob für $[x \; y\; 1]$ mit Hilfe von $G$ und $G'$ gelten kann, so dass gilt $\vec{n}_\tau = \vec{n'}_{\tau'} = [x \; y\; 1]^T$. 
-
-\begin{gather}
-\vec{n}_\tau = (\vec{M}+ \vec{CO})_\tau = \vec{M}_\tau + \vec{d_4}_\tau = \vec{M}_{(\vec{d_1},\vec{d_2},\vec{d_4})} + \vec{d_4}_{(\vec{d_1},\vec{d_2},\vec{d_4})} =\begin{bmatrix}x\\y\\1\end{bmatrix}\\	
-\vec{n'}_{\tau'} = (\vec{M}+ \vec{C'O})_{\tau'} = \vec{M}_{\tau'} + \vec{d'_4}_{\tau'} = \vec{M}_{(\vec{d_1},\vec{d_2},\vec{d'_4})} + \vec{d'_4}_{(\vec{d_1},\vec{d_2},\vec{d'_4})} =\begin{bmatrix}x\\y\\1\end{bmatrix}\\
-\end{gather}
-
-Für $\lambda = \frac{\gamma'}{\gamma}$ und  $C \neq 0$ und $C' \neq 0$, kann somit für $H$ wieder die folgenden Beziehungsgleichung aufgestellt werden. \cite{Elements}
-
-\begin{gather}
-	\gamma \vec{m}_\beta = G \cdot \vec{n}_\tau\\
-	\gamma'\vec{m'}_{\beta'} = G' \cdot \vec{n'}_{\tau'}\\
-	\leadsto \gamma'\vec{m'}_\beta = G'G^{-1} \cdot \gamma \vec{m'}_{\beta'}\\
-	\leadsto \lambda \vec{m'}_{\beta'} = H \vec{m}_\beta
-\end{gather}
-
-
-(NOTSTIONEN DER GRAFIK NOCH ANPASSEN, DEFINITION VON $\tau$ nochmal genau ansehen,..... ist noch verwirrend....)
+Die Bildebene ist in diesem Beispiel hinter dem Projektionszentrum platziert. Die Lage der Bildebene ist in sofern egal, dass es sei sie im gleichen Abstand vor oder hinter dem Projektionszentrum, immer zur selben Abbildung kommt. Jedoch ist die Abbildung, bei hinter dem Projektionszentrum platzierten Bildebene, auf dem Kopf abgebildet. Die Positionierung hinter das Projektionszentrum dient allein der Übersichtlichkeit der Abbildungen, im restlichen Verlauf der Arbeit wird die Bildebene immer vor das Projektionszentrum platziert um Verwirrungen zu vermeiden. Der grüne Punkt wurde nur als Beweis platziert, dass sich die entstehenden Abbildungen beider Fälle voneinander unterscheiden. Für den weiteren Verlauf wird er nicht weiter beachtet. Für die Homographie gelten nur die Punkte, welche sich im Raum auf einer Ebene befinden. Im folgenden wird eine Herleitung der Homographiematrix für den zweiten Fall aufgestellt. 
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=1.\linewidth]{images/HomographieGrafik.png}
 	\captionof{figure}{Veranschaulichung der Homographie bei zwei verschieden translatierten und rotierten Kameras. $(\vec{CO})$ und $(\vec{C'O})$ sind jeweils die Vektoren welche von den Abbildungspunkten $m$ beziehungsweise $m'$ ausgehen und sich im Objektpunkt $M$ treffen.}  
-\end{minipage}\\ \\
+\end{minipage}\\
 
+Angenommen es existiert eine Ebene $\pi$ im Raum mit einem Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3},O)$. $\hat{d_1}$ und $\hat{d_2}$ spannen Die Ebene $\pi$ auf. Der Punkt $M_\delta$ wird nun mit den Projektionsmatrizen $P = [KR|-KR\vec{C}_\delta]$ und $P'=	[K'R'|-K'R'\vec{C}_\delta]$ in einen Punkt bezüglich der Bildebenen $(I,\tau)$ mit $\tau = (\hat{t_1}, \hat{t_2},I)$ und $(I',\tau')$ mit $\tau' = (\hat{t_1}', \hat{t_2}',I')$ projiziert. auch hier gilt wie im vorherigen Beispiel, dass die projizierten Bildkoordinaten als $m_\beta$ und $m'_{\beta'}$ der jeweiligen Kamerakoordinatensysteme $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3},C)$, wobei $\hat{b_3} = \overline{CO}$ und $(C',\beta')$ mit $\beta' = (\hat{b_1}',\hat{b_2}',\hat{b_3}',\overline{C'O})$, wobei $\hat{b_3}' = \overline{C'O}$, dargestellt werden. Da der Ursprung des Weltkoordinatensystem $(O,\delta)$ auf der Ebene $\pi$ liegt und $\hat{d_1}$ und $\hat{d_2}$ diese aufspannen, gilt für den Punt $M_\delta$ auf $\pi$ $M_\delta = \begin{pmatrix}
+x_{\hat{d_1}}\\
+y_{\hat{d_2}}\\
+0
+\end{pmatrix}$. die Bezeichnungen $p_i$ und $p_i'$ stehen im folgenden für die einzelnen Spalten der Projektionsmatrizen $P$ und $P'$. Für die Projektion des Punktes $M_\delta$ in die Bildpunkte  $m_\beta$ und $m'_{\beta}$ bezüglich $(C,\beta)$ und $(C',\beta')$ gelten die folgenden beiden Gleichungen\cite{Elements}.
 
-Im folgenden wird das breits bekannte Beipiel für die Drehung um das Projektionszentrum, für die Drehung um einen Drehpunkt umgebaut. Danach soll nach dem gleichen Verfahren wie im vorherignen Beispiel aufgezeigt wurde eine Homographiematrix ermittelt werden, welche die Bildebenenkoordinaten der einen Kamera in die der anderen Kamera überführen kann. Die Herangehensweise für  dieses Beispiel größtenteils die selbe wie in dem Beispiel zuvor.Der unterschied liegt lediglich in der Transformation der Punkte in as Koordinatensystem von der gedrehten Kamera zwei. Diese besteht, im Gegensatzt zum vorherigen Beispiel, nicht nur aus hintereinander geschalteten Rotationen, sondern beinhlatet des Weiteren noch zwei Translationen. Die komplette Transformationsmatrix wird, um der vorherigen Notation gerecht zu bleiben, wieder mit $R$ beziehungsweise $R'$ notiert, auch wenn es sich hier nicht mehr um eine Reine Rotation handelt. In der Literatur wird die gesamte Transformationsmatrix ebenfalls mit $R$ notiert\cite{HZ,Elements,Schwarz}. $R$ und $R'$ bestehen aus insgesamt drei Transformationsmatrizen \ensuremath{R = \text{Verschiebung}_1 \cdot \text{Rotation} \cdot \text{Verschiebung}_2}. Da die Position des Projektionszentrums von Kamera zwei nicht mehr mit dem von Kamera eins übereinstimmt, muss diese erst mit Hilfe einer Tranformationsmatrix $T$ berechnet werden. $C_{\delta} = [0 \;0 \;0\; 1]$ sind die Koordinaten von Kamera eins in Weltkoordinaten. Da in diesem Beispiel das Kamerakoodrinatensystem von Kamera eins und das Weltkoordinatensystem deckungsgleich sind heißt das,  $C_{\beta} = [0 \;0 \;0\; 1]$. somit ist Matrix $R$, welche die Transformation der ersten Kamera im Bezug auf das Weltkoordinatensystem beschreibt gleich der Einheitsmatrix.
-
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1.\linewidth]{images/GrafikHomographieDifferentC.png}
-	\captionof{figure}{Weltkoordinatensystem $(O,\delta)$ mit $\delta = [\vec{d_1},\vec{d_1},\vec{d_1},O]$ und Kamerakoordinatensysteme $\beta= [\vec{b_1},\vec{b_2},\vec{b_3},C]$ und $(C',\beta')$ mit $\beta'= [\vec{b'_1},\vec{b'_2},\vec{b'_3},C']$ .}
-\end{minipage}\\ \\
-
-Mit $C'$ wird der Ursprung des Koordinatensystems von Kamera zwei bezeichnet. Als Objekte in der Ebene im $\mathbb{R}^3$-Raum, werden die selben Punkt $A_\delta,B_\delta,C_\delta,D_\delta$ und $E_\delta$ wie im vorherigen Beispiel verwendet.\\
 
 \begin{gather}
-A_\delta=\begin{pmatrix}
-0\\0\\2\\1
-\end{pmatrix}, 
-B_\delta=
-\begin{pmatrix}
-1\\0\\2\\1
-\end{pmatrix},
-C_\delta=
-\begin{pmatrix}
-1\\1\\2\\1
-\end{pmatrix},
-D_\delta=
-\begin{pmatrix}
-0\\1\\2\\1
-\end{pmatrix},
-E_\delta=
-\begin{pmatrix}
-\frac{1}{2}\\\frac{1}{2}\\2\\1
-\end{pmatrix}
+\gamma m_\beta = P \cdot 
+\begin{bmatrix}
+	M_\delta\\1
+\end{bmatrix} = 
+\begin{bmatrix}
+	p_1&p_2&p_3&p_4
+\end{bmatrix} \cdot
+\begin{bmatrix}
+	x_\delta\\y_\delta\\0\\1
+\end{bmatrix}=
+\begin{bmatrix}
+	p_1&p_2&p_4
+\end{bmatrix} \cdot
+\begin{bmatrix}
+	x_\delta\\y_\delta\\1
+\end{bmatrix}=
+G \vec{m}_\tau\\
+\gamma' m'_{\beta'} = P \cdot 
+\begin{bmatrix}
+	M_\delta\\1
+\end{bmatrix} = 
+\begin{bmatrix}
+	p'_1&p'_2&p'_3&p'_4
+\end{bmatrix} \cdot
+\begin{bmatrix}
+	x_\delta\\y_\delta\\0\\1
+\end{bmatrix}=
+\begin{bmatrix}
+	p'_1&p'_2&p'_4
+\end{bmatrix} \cdot
+\begin{bmatrix}
+	x'_\delta\\y'_\delta\\1
+\end{bmatrix}=
+G' \vec{m}'_{\alpha}\\
 \end{gather}\\
 
-Punkt $E_\delta$ bildet den Mittelpunkt des Quadrates und wird als Drehpunkt gewählt und mit $\textit{PivotPoint}$ bezeichnet. Als nächstes wird Matrix $T$ aus drei Transformationsmatrizen zusammengestellt. Diese Matrix verschiebt das Projektionszentrum von $C'$ an den gewünschten Ort im Weltkoordinatensystem. Bezeichnet werden die drei Matrizen mit $T_1, T_2$ und $T_3$. $T_1$ beinhaltet die Verschiebung von des Ursprungs von Kamera eins zum $\textit{PivotPoint}$, $T_2$ bildet die Rotationsmatrize, welche den Verschobenen Punkt um die gewünschten $45^\circ$ dreht. Die letzte Matrize $T_3$ beinhaltet wieder eine Translation, welche den Punkt vom $\textit{PivotPoint}$ zurück verschiebt. 
+In diesem Prozess sind sowohl die zwei Matrizen $G$ und $G'$, sowie zwei weitere Koordinatensysteme $(C,\alpha)$ mit $\alpha = (\hat{d_1},\hat{d_2},\hat{d_4})$, wobei $\hat{d_4} = \overline{CO}$ und  $(C',\alpha')$ mit $\alpha' = (\hat{d_1},\hat{d_2},\hat{d_4}')$, wobei $\hat{d_4}' = \overline{C'O}$ entstanden\cite{Elements}.
+Des Weiteren sind zwei neue Punkte $m_\alpha$ und $m'_{\alpha}$ entstanden, von denen behauptet wird, dass $\gamma m_\beta = G\cdot m_\alpha$ und $\gamma' m'_{\beta'} = G'\cdot m'_{\alpha'}$ gelte\cite{Elements}. Um dies zu testen werden $m_\alpha$ und $m'_{\alpha}$ anders formuliert.
 
 \begin{gather}
-	T_1 = \begin{bmatrix}
-	1&0&0&-\textit{PivotPoint}_x\\
-	0&1&0&-\textit{PivotPoint}_y\\
-	0&0&1&-\textit{PivotPoint}_z\\
-	0&0&0&1
-	\end{bmatrix} = 
+	m_\alpha = M_\alpha + \overline{CO}_\alpha = M_{(\hat{d_1},\hat{d_2},\hat{d_4})} + \overline{CO}_{(\hat{d_1},\hat{d_2},\hat{d_4})} = \begin{pmatrix}
+		x_\delta\\
+		y_\delta\\
+		1
+	\end{pmatrix} \\
+	m'_{\alpha'} = M_{\alpha'} + \overline{CO}_{\alpha'} = M_{(\hat{d_1},\hat{d_2},\hat{d_4}')} + \overline{CO}_{(\hat{d_1},\hat{d_2},\hat{d_4}')} = \begin{pmatrix}
+	x_\delta\\
+	y_\delta\\
+	1
+\end{pmatrix} 
+\end{gather}
+
+Aus Gleichungen 4.18 und 4.19 folgt dann, dass für alle Punkte in der Ebene $\pi$ gilt, dass $m_\alpha = m'_{\alpha}$. Woraus für die Punkte $\gamma m_\beta$ und $\gamma' m'_{\beta'}$ folgt, dass $\gamma m_\beta = G\cdot m_\alpha$ und $\gamma' m'_{\beta'} = G'\cdot m'_{\alpha'}$\cite{Elements}. Somit kann für $\gamma m_\beta$ und $\gamma' m'_{\beta'}$ folgende Beziehungsgleichung aufgestellt werden\cite{Elements}.
+
+\begin{gather}
+	\gamma' m'_{\beta'} = G' G^{-1} \gamma m_\beta
+\end{gather}
+
+Für $\frac{\gamma'}{\gamma} = \lambda$, kann Gleichung 4.20 dann wieder umformuliert werden in:
+
+\begin{gather}
+	\lambda m'_{\beta'} = H m_\beta\\
+	\leadsto m'_{\tau'} = H m_\tau
+\end{gather} 
+
+Zwei projizierte Bilder einer Ebene sind also über eine Homographie $H$ miteinander verwandt, welche wiederum eine Kombination aus denjenigen Homographien ist, welche die jeweiligen Bilder mit der Ebene $\pi$ in Beziehung setzten\cite{Elements}.
+ 
+\section{Berechnung der Homographiematrix aus Bildebenenkoordinaten}
+
+Nachdem nun bekannt ist, wie eine Homographie Beziehungen zwischen projizierten Punkte beschreiben kann, wird im nächsten Schritt davon ausgegangen, dass die Transformationsmatrizen $R$ und $R'$ sowie die Kameramatrizen $K$ und $K'$ nicht bekannt sind. Es wird schematisch aufgezeigt, wie die Homographiematrix aus 2D-Bildpunkte gewonnen werden kann. Um eine Homographiematrix mit 
+$H=
+\begin{bmatrix}
+h_{11}&h_{12}&h_{13}\\
+h_{21}&h_{22}&h_{23}\\
+h_{31}&h_{32}&h_{33}
+\end{bmatrix}
+$ zu erhalten werden die Punkte beider Kameras in eine Koeffizientenmatrix $A$ eingetragen, welche sich nach dem in den Gleichungen 4.25 bis 4.34 laufenden Schema aufstellen lässt. 
+
+\begin{gather}
+	H\cdot m_\tau = m'_{\tau}\\
 	\begin{bmatrix}
-	1&0&0&-\frac{1}{2}\\
-	0&1&0&-\frac{1}{2}\\
-	0&0&1&-2\\
-	0&0&0&1
-	\end{bmatrix}\\
-	T_2 = \begin{bmatrix}
-	\cos(45^\circ)&0&\sin(45^\circ)&0\\
-	0&1&0&0\\
-	-\sin(45^\circ)&0&\cos(45^\circ)&0\\
-	0&0&0&1
-	\end{bmatrix}=
+		h_{11}&h_{12}&h_{13}\\
+		h_{21}&h_{22}&h_{23}\\
+		h_{31}&h_{32}&h_{33}
+	\end{bmatrix}
+	\cdot
 	\begin{bmatrix}
-	\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}&0\\
-	0&1&0&0\\
-	-\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}&0\\
-	0&0&0&1
-	\end{bmatrix}\\
-	T_3 = 
-	\begin{bmatrix}
-	1&0&0&\textit{PivotPoint}_x\\
-	0&1&0&\textit{PivotPoint}_y\\
-	0&0&1&\textit{PivotPoint}_z\\
-	0&0&0&1
-	\end{bmatrix} = 
-	\begin{bmatrix}
-	1&0&0&\frac{1}{2}\\
-	0&1&0&\frac{1}{2}\\
-	0&0&1&2\\
-	0&0&0&1
-	\end{bmatrix}\\
-	T= 
-	T_3 \cdot T_2 \cdot T_1
-	= 
-	\begin{bmatrix}
-	\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}&-1.26777\\
-	0&1&0&0\\
-	-\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}&0.93934\\
-	0&0&0&1
-	\end{bmatrix}\\
-	C'_\delta = T \cdot C_\delta
-	 = 	
-	 \begin{bmatrix}
-	\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}&-1.26777\\
-	0&1&0&0\\
-	-\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}&0.93934\\
-	0&0&0&1
-	\end{bmatrix} \cdot 
-	\begin{bmatrix}
-	0\\0\\0\\1
+		\\m_\tau\\\\
 	\end{bmatrix}
 	=
 	\begin{bmatrix}
-	-1.27\\0\\0.94\\1
-	\end{bmatrix}	
-\end{gather} 
-
-Der Ursprung des Koordinatensystems von Kamera zwei befindet sich, angegeben in Weltkoordinaten, bei $C'_\delta =\begin{bmatrix}-1.26777&0&0.93934&1\end{bmatrix}^T$. Da nun die $C'_\delta$ bekannt ist, können die 3D-Objektpunkte in das Kamerakoordinatensystem von Kamera zwei transformiert werden. Hierzu wird die Matrix $R'$ aufgestellt.
-
-\begin{gather}
-	R' = \begin{bmatrix}
-	&&&\\
-	&[T_2]^{-1}&& -[T_2]^{-1} \cdot V\\
-	&&&\\
-	0&0&0&1\\
-	\end{bmatrix}
-\end{gather}
-
-aufgestellt werden. $V$ ist der Translationsvektor welcher den Wert von $C'_\delta$ bekommt. Da es sich wieder um kartesische Koordinatensysteme handelt gilt wieder $[T_2]^{-1}$ = $[T_2]^{T}$.
-
-\begin{gather}
-	 -[T_2]^{T}\cdot C'_\delta = 
-	 \begin{pmatrix}
-	 \frac{1}{\sqrt{2}}&0&-\frac{1}{\sqrt{2}}\\
-	 0&1&0\\
-	 \frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}
-	 \end{pmatrix}
-	 \cdot
-	 \begin{pmatrix}
-	 -1.27\\0\\0.94
-	 \end{pmatrix}
-	 =
-	  \begin{pmatrix}
-	 1.56\\0\\0.23
-	 \end{pmatrix}
-\end{gather}
-
-Für die Transformationsmatrizen $R$ und $R'$ gilt dann jeweils:
-
-\begin{gather}
-	R = 
+		\\m'_{\tau'}\\\\
+	\end{bmatrix}\\
 	\begin{bmatrix}
-	1&0&0&0\\
-	0&1&0&0\\
-	0&0&1&0\\
-	0&0&0&1
-	\end{bmatrix}\\	
-	R'=
-	 \begin{bmatrix}
-	\frac{1}{\sqrt{2}}&0&-\frac{1}{\sqrt{2}}&1.56\\
-	0&1&0&0\\
-	\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}&0.23\\
-	0&0&0&1
+		h_{11}&h_{12}&h_{13}\\
+		h_{21}&h_{22}&h_{23}\\
+		h_{31}&h_{32}&h_{33}
 	\end{bmatrix}
-\end{gather}\\
-
-Nachdem $R$ und $R'$ bestimmt sind,  müssen die Punkte in Weltkoordinaten noch in die entsprechenden Kamerakoordinatensysteme und mit den Projektionsmatrizen $K$ und $K'$ in deren Bildkoordinatensysteme transformiert werden. Es gilt wieder wie im Beispiel zuvor, dass $K = K'$ ist.
-
- \begin{gather}
- \leftidx{_{K_{c1}}}{\begin{bmatrix}
- 	\pi
- 	\end{bmatrix}}{_{K_{c1}}}
- =		\leftidx{_{K_{c2}}}{\begin{bmatrix}
- 	\pi
- 	\end{bmatrix}}{_{K_{c2}}}
- =
- \begin{pmatrix}
- \zeta&0&0&0\\
- 0&\zeta&0&0\\
- 0&0&\zeta&0\\
- 0&0&1&0
- \end{pmatrix}=
- \begin{pmatrix}
- -1&0&0&0\\
- 0&-1&0&0\\
- 0&0&-1&0\\
- 0&0&1&0
- \end{pmatrix}
- \end{gather}
- 
- Es entstehen die folgenden beiden Punktematrizen $pC$ für Kamera eins und $pC'$ für Kamera zwei. Die Koordinaten der jeweiligen Punkte $ pC = [A_\tau \;B_\tau\;C_\tau\;D_\tau\;E_\tau$] und $pC' =[A_{\tau'}\;B_{\tau'}\;C_{\tau'}\;D_{\tau'}\;E_{\tau'}]$ aus Sicht der beiden Kameras befinden sich der Reihe nach in den Spalten der Punktematrix.
- 
- \begin{gather}
- 	pC = 
- 	\begin{bmatrix}
- 	0&\frac{1}{2}&\frac{1}{2}&0&\frac{1}{4}\\
- 	0&0&\frac{1}{2}&\frac{1}{2}&\frac{1}{4}\\
- 	1&1&1&1&1
- 	\end{bmatrix}\\
- 	pC'=
- 		\begin{bmatrix}
- 	0.09&0.36&0.36&0.09&\frac{1}{4}\\
- 	0&0&0.42&0.61&\frac{1}{4}\\
- 	1&1&1&1&1
- 	\end{bmatrix}\\
- \end{gather}
-
-Die Homographiematrix wird durch aufstellen der Koeffizientenmatrix und anschließendes Bestimmen von $H \cdot x = 0$ oder durch findes desjenigen Vektors $\vec{x}$ für den $||H\cdot x||$ minimal wird. Da es sich auch hier nicht um einen überbestimmten Fall handelt, kann die homographiematrix entweder durch die Bestimmung des Kerns oder durch anwenden der Singulärwertszerlegung $SVD$, gewonnen werden. Die resultierende Homographiematrix sieht folgendermaßen aus.
-
-\begin{gather}
-	H = \begin{bmatrix}
-	0.43&0&0.43\\
-	0&0.6&0\\
-	0.4&0&0.5
+	\cdot
+	\begin{bmatrix}
+		x\\y\\z
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		x'\\y'\\z'
 	\end{bmatrix}
 \end{gather}
 
-Wird $H$ auf die Punkte $pC$ angewandt, so liefert das Ergebnis die Punkte von $pC'$ und wird die Inverse $H^{-^1}$ auf die Punkte $pC'$ angewandt, so erhält man die Punkte von $pC$. Somit wurde bewiesen, dass Homographiematrizen immer zur Transformation von Punkte genutzt werden können, solange sich diese Punkte auf einer Ebene im Raum befinden. Die Definition der Homographie sagt aus, dass sowohl Tranlationen und Rotationen in der Homographiematrix vorkommen dürfen \cite{Roser} \cite{Peiffer}. Die Drehung um einen Drehpunkt ist nicht weiter als die Hintereinaderschaltung verschiedener Tranformationsmarizen. Das wichtigste Kriterium welches erfüllt sein muss, damit Homographien angewendet werden können ist, dass die Abbildungen der Punkte in allen Kameras auf einer Ebene sich befinden müssen.\cite{Elements}.
+Aus Gleichung 4.24 lässt sich ein Gleichungssystem mit zwölf Bekannten und neun unbekannten aufstellen.  
 
-In der Abbildung \ref{fig:DrehungDrehpunkt} ist ein grüner Punkt zu sehen welcher sich in Gegensatz zu den anderen Punkte nicht auf der selben Ebene befindet. Dieser Punkt lässt sich nicht mit der errechneten Homographiematrix ineinander überführen. Mit Hilfe von Homographien, können die Positionen und Orientierung der jeweiligen Kameras zueinander ermittelt werden, jedoch nur wenn sich die Szenepunkte auf einer Ebene befinden. Ein Beispiel hierfür wäre zum beispiel die Aufnahme einer Gebäudefassade aus unterschiedlichen Kamerawinkeln und Positionen\cite{Elements}. Für eine Szenenrekonstruktion einer kompletten 3D-Szene reichen pure Homographien nicht aus, hierfür muss sich der geometrischen Eigenschaften der Epipolargeometrie bedient werden. 
+\begin{gather}
+	h_{11}x+h_{12}y+h_{13}z= \lambda x'\\
+	h_{21}x+h_{22}y+h_{23}z= \lambda y'\\
+	h_{31}x+h_{32}y+h_{33}z= \lambda z'
+\end{gather}
+
+Da mit homogenen Koordinaten gearbeitet wird und somit $z$ und $z'$ = 1 sind, ergibt sich für die letzte Zeile $h_{31}x+h_{32}y+h_{33}z= 1$. Dieser Ausdruck kann in den ersten beiden Gleichungen für $\lambda$ eingesetzt werden. Pro Punktepaar $m_\tau$ und $m'_{\tau'}$ ergeben sich somit zwei Gleichungen. 
+
+\begin{gather}
+	h_{11}x+h_{12}y+h_{13}z= (h_{31}x+h_{32}y+h_{33}z) \cdot x'\\
+	h_{21}x+h_{22}y+h_{23}z= (h_{31}x+h_{32}y+h_{33}z) \cdot y'
+\end{gather}
+
+Für den Aufbau von $A$ werden beide Ausdrücke noch nach Null aufgelöst, so dass sich die Gleichungen 4.34 und 4.35 aus 4.32 und 4.33 ergeben.
+
+\begin{gather}
+	h_{11}x+h_{12}y+h_{13}z -(h_{31}x+h_{32}y+h_{33}z) \cdot x'= 0 \\	h_{21}x+h_{22}y+h_{23}z-(h_{31}x+h_{32}y+h_{33}z) \cdot y'=0
+\end{gather}
+\begin{gather}
+	\leadsto h_{11}x+h_{12}y+h_{13}z -h_{31}x\cdot x' - h_{32}y \cdot x'-h_{33}z\cdot x'= 0\\
+	\leadsto h_{21}x+h_{22}y+h_{23}z-h_{31}x\cdot y -h_{32}y \cdot y -h_{33}z) \cdot y'=0
+\end{gather}
+
+Die enstandnen Gleichungen werden jetzt pro Punktepaar $m_\tau$ und $m'_{\tau'}$ in die Koeffizientmatrix $A$ nach folgendem Schema eingetragen.\cite{Elements,HZ,Schwarz,Heipke}
+
+\begin{gather}
+	\begin{pmatrix}
+		x_1&y_1&1&0&0&0&x_1 x'_1&y_1 x'_1 & 1\cdot x'_1\\
+		0&0&0&x_1&y_1&1&x_1 y'_1&y_1 y'_1 & 1\cdot y'_1\\
+		&&&&&.&&&\\	
+		&&&&&.&&&\\	
+		&&&&&.&&&\\	
+		x_i&y_i&1&0&0&0&x_i x'_i&y_i x'_i & 1\cdot x'_i\\
+		0&0&0&x_i&y_i&1&x_i y'_i&y_i y'_i & 1\cdot y'_i
+	\end{pmatrix}
+	\cdot
+	\begin{pmatrix}
+		h1\\h2\\.\\.\\.\\hi
+	\end{pmatrix}
+	=0
+\end{gather}
+
+Wenn ein nicht überbestimmter Fall vorliegt, sprich wenn der Matrixrang von $A$ $\leq$ 8 beträgt, kann aus $A$ einfach der Kern bestimmt werden, um so die Einträge für die 3x3-Homographiematrix zu erhalten\cite{HZ,Elements,Schwarz}. Gesucht wird also ein Vektor $\vec{x}$, für den gilt das $H \cdot x = 0$. Der gesuchte Vektor $\vec{x}$ entspricht dem Kern der Koeffizientenmatrix und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Homographiematrix eingetragen werden können\cite{HZ,Schwarz}. Tritt nun der Fall ein, dass es zu einem überbestimmtes System kommt, sprich wenn der Rang von $A$ größer 8 ist, so liefert die Bestimmung des Kerns kein eindeutiges Ergebnis mehr für den Vektor $\vec{x}$ und somit kann die Homographiematrix nicht eindeutig bestimmt werden\cite{HZ}. Für die Lösung überbestimmter Systeme wird die Singulärwertzerlegung angewandt\cite{HZ}\cite{Scholz}. Das bedeutet es wird nicht mehr derjenige Vektor $\vec{x}$ gesucht für den gilt $H \cdot x = 0$ ergibt, sondern es wird derjenige Vektor $\vec{x}$ gesucht, für den \ensuremath{\parallel H \cdot x\parallel} minimal wird\cite{HZ,Schwarz}. Die Singulärwertzerlegung von $A$ ist eine Faktorisierung der Matrix \ensuremath{A \in \mathbb{R}^{m \times n}} der Form \ensuremath{A = U \cdot S \cdot V^T} mit orthogonalen Matrizen \ensuremath{U \in \mathbb{R}^{m \times n}} und \ensuremath{V \in \mathbb{R}^{m \times n}} sowie mit einer Diagonalmatrix $S$. 
+
+\begin{gather}
+	S = \begin{pmatrix}
+		s_1&&...&&0&0&&...&&0\\
+		.&.&&&.&.&&&&.\\
+		.&&.&&.&.&&&&.\\
+		.&&&.&.&.&&&&.\\
+		0&&...&&s_r&0&&...&&0\\	
+		0&&...&&0&0&&...&&0\\
+		.&&&&.&.&&&&.\\
+		.&&&&.&.&&&&.\\	
+		.&&&&.&.&&&&.\\	
+		0&&...&&0&0&&...&&0\\	
+	\end{pmatrix}
+\end{gather}
+
+Dabei soll für die diagonalen Singulärwerte in $S$ mit $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}. Nach dem Schema der Singulärwertszerlung, wird Matrix $A$ in die Form $USV^T$ zerlegt. Nach der Zerlegung sind die Diagonaleinträge von $S$ in einer absteigenden Reihenfolge sortiert. Die Spalte von $V^T$, welche mit dem kleinsten Singulärwert von $S$ korrespondiert, ergibt den Vektor $\vec{x}$, für den \ensuremath{\parallel H \cdot x\parallel} minimal wird. Somit gleichen die neun Einträge der Homographiematrix gleich der letzten Spalte von $V^T$. Beispielrechnungen, in denen die Homographiematrix einmal für den Fall des rotierten Projektionszentrums und einmal mit der Drehung um einen Drehpunkt mit durchgerechnet wurde befindet sich im  \nameref{sec:appendix} unter \ref{sec:AppendixHomographieRotationPZ} und \ref{sec:AppendixHomographieRotationDP}.
+
 
 
 
