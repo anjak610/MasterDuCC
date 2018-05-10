@@ -60,13 +60,13 @@ Um die Herleitung der Homographiematrix zu veranschaulichen, werden zwei untersc
 % 
 %  Diese Koordinatensysteme stellt die Bildebenenpunkte $m_\beta$ und $m'_{\beta'}$ wie im Kapitel \nameref{sec:basisTransformation} Gleichung 3.26 dar. Da in dieser Darstellung $\hat{b_1} = \hat{t_1} $ und $\hat{b_2} = \hat{t_2}$ ist, kommt es zu keinen Komplikationen. Die Koordinaten bleiben die selben nur werden sie aus dem 3D-Koordinatensystem der Kameras beschrieben und bekommen somit die Tiefenkomponeten $\zeta$ und $\zeta'$ wieder dazu. Der Grund warum diese Koordinatendarstellung für die Bildpunkte gewählt wird, ist das so vermieden wird, dass es zu konflikten der Dimensionen der Matrizen $R$ und $R'$ sowie $K$ und $K'$ und den Punkten $m_\beta$ und $m'_\beta$ kommt\cite{Elements}. 
   
-Die folgenden Gleichungen 4.7 und 4.8 zeigen wieder die bereits bekannte Projektion eines 3D-Punktes auf die 2D-Bildebene, jedoch werden die projizierten Punkte $m_\beta$ und $m_{\beta'}$ noch bezüglich der dreidimensionalen Kamerakoordinatensysteme dargestellt. $\gamma$ und $\gamma'$ repräsentieren jeweils die Tiefe von $m_\beta$ und $m'_{\beta'}$, welche gegen Ende eliminiert wird\cite{Elements}.
+Die folgenden Gleichungen 4.7 und 4.8 zeigen wieder die bereits bekannte Projektion eines 3D-Punktes auf die 2D-Bildebene, jedoch werden die projizierten Punkte $m_\beta$ und $m_{\beta'}$ noch bezüglich der dreidimensionalen Kamerakoordinatensysteme dargestellt. $\zeta$ und $\zeta'$ repräsentieren jeweils die Tiefe von $m_\beta$ und $m'_{\beta'}$, welche gegen Ende eliminiert wird\cite{Elements}.
 
 
 \begin{gather}
-\gamma \vec{m}_\beta = P \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix} = 
+\zeta \vec{m}_\beta = P \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix} = 
 \begin{bmatrix}KR|-KR\vec{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = KR(\vec{M}\delta - \vec{C}_\delta)\\
-\gamma' \vec{m'_{\beta'}} = P' \begin{bmatrix}\vec{M'}_\delta\\1\end{bmatrix} = 
+\zeta' \vec{m'_{\beta'}} = P' \begin{bmatrix}\vec{M'}_\delta\\1\end{bmatrix} = 
 \begin{bmatrix}K'R'|-K'R'\vec{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = K'R'(\vec{M}\delta - \vec{C}_\delta)
 \end{gather}
 
@@ -74,25 +74,25 @@ Die folgenden Gleichungen 4.7 und 4.8 zeigen wieder die bereits bekannte Projekt
 Der Vektor $(\vec{M}\delta - \vec{C}_\delta)$, beschreibt die Verbindung zwischen dem Objektpunkt $M_\delta$  und dem Projektionszentrum $C_\delta$. Die Gleichungen 4.7 und 4.8 können auf Grund ihrer identischen Projektionszentren jeweils nach  $(\vec{M}\delta - \vec{C}_\delta)$ aufgelöst werden 
 
 \begin{gather}
-	\gamma RK^{-1}\vec{m_\beta} = \vec{M}_\delta - \vec{C}_\delta\\
-	\gamma' R'K'^{-1}\vec{m'_{\beta'}} = \vec{M}_\delta - \vec{C}_\delta
+	\zeta RK^{-1}\vec{m_\beta} = \vec{M}_\delta - \vec{C}_\delta\\
+	\zeta' R'K'^{-1}\vec{m'_{\beta'}} = \vec{M}_\delta - \vec{C}_\delta
 \end{gather}
 
 Da die Rechten seiten der Gleichungen 4.9 und 4.10 identisch sind, können die linken Seiten gleichgesetzt werden.
 
 \begin{gather}
-	\gamma' R'K'^{-1}\vec{m'_{\beta'}}=\gamma RK^{-1}\vec{m_\beta}\\
+	\zeta' R'K'^{-1}\vec{m'_{\beta'}}=\\zeta RK^{-1}\vec{m_\beta}\\
 \end{gather}
 
-Um nun die gewünschte Form von $m'_{\tau'} = Hm_{\tau}$ zu bekommen, wird die Gleichung nach $	\frac{\gamma'}{\gamma}\vec{m'_{\beta'}}$ aufgelöst.
+Um nun die gewünschte Form von $m'_{\tau'} = Hm_{\tau}$ zu bekommen, wird die Gleichung nach $	\frac{\zeta'}{\zeta}\vec{m'_{\beta'}}$ aufgelöst.
 
 \begin{gather}
-	\frac{\gamma'}{\gamma}\vec{m'_{\beta'}} = K'R'R^TK^{-1}\vec{m}_\beta\\
+	\frac{\zeta'}{\zeta}\vec{m'_{\beta'}} = K'R'R^TK^{-1}\vec{m}_\beta\\
 \lambda \vec{m'}_{\beta'} = H\vec{m}_\beta\\
 \leadsto m'_{\tau'} = H m_\tau
 \end{gather}
 
-Es Resultiert also dass wenn $\lambda = \frac{\gamma'}{\gamma}$, dann gilt dass $H = K'R'R^TK^{-1}$ gleicht. Gilt nun noch der Fall, dass $K = K'$ ist, dann reduziert sich $H$ zu $K^{-1}HK = R'R$, welches einer Rotation gleicht.\cite{Elements}. 
+Es Resultiert also dass wenn $\lambda = \frac{\zeta'}{\zeta}$, dann gilt dass $H = K'R'R^TK^{-1}$ gleicht. Gilt nun noch der Fall, dass $K = K'$ ist, dann reduziert sich $H$ zu $K^{-1}HK = R'R$, welches einer Rotation gleicht.\cite{Elements}. 
 
 
 
@@ -166,7 +166,7 @@ y_{\hat{d_2}}\\
 
 
 \begin{gather}
-\gamma m_\beta = P \cdot 
+\zeta m_\beta = P \cdot 
 \begin{bmatrix}
 	M_\delta\\1
 \end{bmatrix} = 
@@ -183,7 +183,7 @@ y_{\hat{d_2}}\\
 	x_\delta\\y_\delta\\1
 \end{bmatrix}=
 G \vec{m}_\tau\\
-\gamma' m'_{\beta'} = P \cdot 
+\zeta' m'_{\beta'} = P \cdot 
 \begin{bmatrix}
 	M_\delta\\1
 \end{bmatrix} = 
@@ -203,7 +203,7 @@ G' \vec{m}'_{\alpha}\\
 \end{gather}\\
 
 In diesem Prozess sind sowohl die zwei Matrizen $G$ und $G'$, sowie zwei weitere Koordinatensysteme $(C,\alpha)$ mit $\alpha = (\hat{d_1},\hat{d_2},\hat{d_4})$, wobei $\hat{d_4} = \overline{CO}$ und  $(C',\alpha')$ mit $\alpha' = (\hat{d_1},\hat{d_2},\hat{d_4}')$, wobei $\hat{d_4}' = \overline{C'O}$ entstanden\cite{Elements}.
-Des Weiteren sind zwei neue Punkte $m_\alpha$ und $m'_{\alpha}$ entstanden, von denen behauptet wird, dass $\gamma m_\beta = G\cdot m_\alpha$ und $\gamma' m'_{\beta'} = G'\cdot m'_{\alpha'}$ gelte\cite{Elements}. Um dies zu testen werden $m_\alpha$ und $m'_{\alpha}$ anders formuliert.
+Des Weiteren sind zwei neue Punkte $m_\alpha$ und $m'_{\alpha}$ entstanden, von denen behauptet wird, dass $\zeta m_\beta = G\cdot m_\alpha$ und $\zeta' m'_{\beta'} = G'\cdot m'_{\alpha'}$ gelte\cite{Elements}. Um dies zu testen werden $m_\alpha$ und $m'_{\alpha}$ anders formuliert.
 
 \begin{gather}
 	m_\alpha = M_\alpha + \overline{CO}_\alpha = M_{(\hat{d_1},\hat{d_2},\hat{d_4})} + \overline{CO}_{(\hat{d_1},\hat{d_2},\hat{d_4})} = \begin{pmatrix}
@@ -218,13 +218,13 @@ Des Weiteren sind zwei neue Punkte $m_\alpha$ und $m'_{\alpha}$ entstanden, von 
 \end{pmatrix} 
 \end{gather}
 
-Aus Gleichungen 4.18 und 4.19 folgt dann, dass für alle Punkte in der Ebene $\pi$ gilt, dass $m_\alpha = m'_{\alpha}$. Woraus für die Punkte $\gamma m_\beta$ und $\gamma' m'_{\beta'}$ folgt, dass $\gamma m_\beta = G\cdot m_\alpha$ und $\gamma' m'_{\beta'} = G'\cdot m'_{\alpha'}$\cite{Elements}. Somit kann für $\gamma m_\beta$ und $\gamma' m'_{\beta'}$ folgende Beziehungsgleichung aufgestellt werden\cite{Elements}.
+Aus Gleichungen 4.18 und 4.19 folgt dann, dass für alle Punkte in der Ebene $\pi$ gilt, dass $m_\alpha = m'_{\alpha}$. Woraus für die Punkte $\zeta m_\beta$ und $\zeta' m'_{\beta'}$ folgt, dass $\zeta m_\beta = G\cdot m_\alpha$ und $\zeta' m'_{\beta'} = G'\cdot m'_{\alpha'}$\cite{Elements}. Somit kann für $\zeta m_\beta$ und $\zeta' m'_{\beta'}$ folgende Beziehungsgleichung aufgestellt werden\cite{Elements}.
 
 \begin{gather}
-	\gamma' m'_{\beta'} = G' G^{-1} \gamma m_\beta
+	\zeta' m'_{\beta'} = G' G^{-1} \zeta m_\beta
 \end{gather}
 
-Für $\frac{\gamma'}{\gamma} = \lambda$, kann Gleichung 4.20 dann wieder umformuliert werden in:
+Für $\frac{\zeta'}{\zeta} = \lambda$, kann Gleichung 4.20 dann wieder umformuliert werden in:
 
 \begin{gather}
 	\lambda m'_{\beta'} = H m_\beta\\
