@@ -1,111 +1,107 @@
 \select@language {ngerman}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces $C$ ist die Kamera beziehungsweise das Projektionszentrum der Kamera. In rot ist die Strecke $\zeta $ markiert. $M$ ist der Dreidimensionale Objektpunkt in Weltkoordinaten und $m$ sein projizierter Punkt auf der 2D-Bildebene\relax }}{7}{figure.4}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Lochkameramodell: $C$ ist das Kamerazentrum\relax }}{8}{figure.6}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Lochkameramodell \cite {Jianzhong}\relax }}{9}{figure.7}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Steroskopischer Aufbau mit Lochkameramodellen. Der Punkt $M$ im Raum kann mit den jeweiligen Projektionsmatrizen $P$ und $P'$ der Kameras $C$ und $C'$ in die Bildpunkte $m$ und $m'$ projiziert werden. $m=PM$ und $m'=P'M$. Eine R\IeC {\"u}ckprojektion der Punkte $m$ und $m'$ zum Punkt $M$ ist mit bekannten Projektionsmatrizen genauso m\IeC {\"o}glich.\relax }}{10}{figure.9}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces In blau ist die Bildebene dargestellt auf ihr befinden sich die Punkte $Q$ und $HP$. $HP$ steht in dieser Abbildung f\IeC {\"u}r den Hauptpunkt. $Z$ liegt nicht auf der Ebene, Das Projetionszentrum $C$ liegt hinter der Bildebene und somit auch hinter dem Sensor. $n$ ist die Normale der Bildebene\relax }}{11}{figure.14}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces $\zeta _x$ und $\zeta _y$ beschreiben den Abstand des Kamerazentrums zu den jeweiligen Pixelkanten\relax }}{12}{figure.21}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematik eines Abbildendes System. Eine Punkt $M$ im Weltkoordinatensystem wird durch eine Kamera $C$ aufgenommen. Diese Aufnahme wird durch eine Projektion, die als Verbindungslinie von $M$ zu $C$ dargestellt ist und $M$ auf $m$ abbildet, beschrieben. \relax }}{7}{figure.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Lochkameramodell \cite {Jianzhong}\relax }}{8}{figure.6}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces $\zeta _x$ und $\zeta _y$ beschreiben den Abstand des Kamerazentrums zu den jeweiligen Pixelkanten\relax }}{9}{figure.11}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Weltkoordinatensystem $(O,\delta )$ mit $\delta = (\mathaccentV {hat}05E{d_1},\mathaccentV {hat}05E{d_2},\mathaccentV {hat}05E{d_3},O)$ und Kamerakoordinatensystem $(C,\beta )$ mit $\beta = (\mathaccentV {hat}05E{b_1},\mathaccentV {hat}05E{b_2},\mathaccentV {hat}05E{b_3},C)$ \relax }}{10}{figure.17}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Koordinatensysteme von einer Kamera aus im \IeC {\"U}berblick. Das Weltkoordinatensystem $(O,\delta )$ ist Deckungsgleich mit dem Kamerakoordinatensystem $(C,\beta )$\relax }}{13}{figure.61}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Weltkoordinatensystem $(O,\delta )$ mit $\delta = (\mathaccentV {hat}05E{d_1},\mathaccentV {hat}05E{d_2},\mathaccentV {hat}05E{d_3})$ und Kamerakoordinatensystem $(C,\beta )$ mit $\beta = (\mathaccentV {hat}05E{b_1},\mathaccentV {hat}05E{b_2},\mathaccentV {hat}05E{b_3})$ \relax }}{13}{figure.24}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Koordinatensysteme von einer Kamera aus im \IeC {\"U}berblick. Das Weltkoordinatensystem $(O,\delta )$ ist Deckungsgleich mit dem Kamerakoordinatensystem $(C,\beta )$\relax }}{16}{figure.68}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Die Abblildung zeigt zwei Aufnahmen einer um ihr Projektionszentrum $C$ gedrehten Kamera. Die zwei blauen Ebenen stellen jeweils die Bildebene vor und nach der Drehung dar sie wird einmal als Bildebene $(I,\tau )$ und einmal als Bildebene $(I',\tau ')$ bezeichnet. Die Objektebene befindet sich im 3D-Raum, dementsprechend sind die Punkte $M_{1,\delta }$ und $M_{2,\delta }$ in homogenen 3D-Koordinaten gegeben. Die Punkte $m_{1,\tau }$ und $m_{2,\tau }$ sind die projizierten Puntke auf der Bildebene $(I,\tau )$ und Die Punkte $m_{1,\tau '}$ und $m_{2,\tau '}$ sind die projizierten Punkte auf der Bildebene $(I',\tau ')$\relax }}{16}{figure.caption.97}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Ausgangsituation der Simulation\relax }}{18}{figure.117}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Drehung um das Projektionszentrum\relax }}{18}{figure.118}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Drehung um einen Drehpunkt. In diesem Beispiel wurde der rote Punkt als Drehpunkt verwendet\relax }}{19}{figure.119}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Strahlengang durch das Projektionszentrum. Auf der Abbildung ist erkennbar, dass der gr\IeC {\"u}ne Punkt auch nach der Drehung der Kamera um das Projektionszentrum vom roten Pukt verdeckt bleibt\relax }}{19}{figure.caption.120}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Strahlengang durch das Projektionszentrum. Auf der Grafik ist erkennbar, dass der gr\IeC {\"u}ne Punkt nach der Drehung der Kamera um einen Drehpunkt, welcher in diesem Fall der rote Punkt darstellt, sichtbar wird.\relax }}{19}{figure.caption.120}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Veranschaulichung der Homographie bei zwei verschieden translatierten und rotierten Kameras.\relax }}{20}{figure.121}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Die Abblildung zeigt zwei Aufnahmen einer um ihr Projektionszentrum $C$ gedrehten Kamera. Die zwei blauen Ebenen stellen jeweils die Bildebene vor und nach der Drehung dar sie wird einmal als Bildebene $(I,\tau )$ und einmal als Bildebene $(I',\tau ')$ bezeichnet. Die Objektebene befindet sich im 3D-Raum, dementsprechend sind die Punkte $M_{1,\delta }$ und $M_{2,\delta }$ in homogenen 3D-Koordinaten gegeben. Die Punkte $m_{1,\tau }$ und $m_{2,\tau }$ sind die projizierten Puntke auf der Bildebene $(I,\tau )$ und Die Punkte $m_{1,\tau '}$ und $m_{2,\tau '}$ sind die projizierten Punkte auf der Bildebene $(I',\tau ')$\relax }}{21}{figure.caption.108}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Ausgangsituation der Simulation\relax }}{23}{figure.128}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Drehung um das Projektionszentrum\relax }}{23}{figure.129}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Drehung um einen Drehpunkt. In diesem Beispiel wurde der rote Punkt als Drehpunkt verwendet\relax }}{24}{figure.130}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Strahlengang durch das Projektionszentrum. Auf der Abbildung ist erkennbar, dass der gr\IeC {\"u}ne Punkt auch nach der Drehung der Kamera um das Projektionszentrum vom roten Pukt verdeckt bleibt\relax }}{24}{figure.caption.131}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Strahlengang durch das Projektionszentrum. Auf der Grafik ist erkennbar, dass der gr\IeC {\"u}ne Punkt nach der Drehung der Kamera um einen Drehpunkt, welcher in diesem Fall der rote Punkt darstellt, sichtbar wird.\relax }}{24}{figure.caption.131}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Veranschaulichung der Homographie bei zwei verschieden translatierten und rotierten Kameras.\relax }}{25}{figure.132}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces $C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinien verbindet die Projektionszentren der Kameras. Der Punkt an welchem die Basislinie die Bildebenen schneidet, wird als Epipol bezeichnet. Durch den Epipol verlaufen alle Epipolarlinien des Bildes. $M$ ist der Objektpunkt im 3D-Raum und $m_1$ und $m_2$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M$ bilden die sogenannte Epipolarebene\cite {Elements,HZ,ZZGXr}.\relax }}{24}{figure.168}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, w\IeC {\"a}hrend sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.\relax }}{26}{figure.173}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces $C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinien verbindet die Projektionszentren der Kameras. Der Punkt an welchem die Basislinie die Bildebenen schneidet, wird als Epipol bezeichnet. Durch den Epipol verlaufen alle Epipolarlinien des Bildes. $M$ ist der Objektpunkt im 3D-Raum und $m_1$ und $m_2$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M$ bilden die sogenannte Epipolarebene\cite {Elements,HZ,ZZGXr}.\relax }}{29}{figure.179}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, w\IeC {\"a}hrend sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.\relax }}{31}{figure.184}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Arbeitsprozesse der Stereoanalyse bei Verwendung von eigens erstellten synthetischen Bilddaten\relax }}{30}{figure.222}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces vereinfachte Top-Down-Ansicht des Szenenaufbaus des Minimalbeipspiels\relax }}{31}{figure.caption.223}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces In Gr\IeC {\"u}n ist die Abbildung auf der Bildebenen $I$ von $C$ und in rot ist die Abbildung auf der Bildebenen $I'$ von $C'$\relax }}{31}{figure.caption.223}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces In Blau und Rot sind jeweils das Welt- und Kamerakoordinatensystem von Kamera eins zu sehen. In gr\IeC {\"u}n ist das gedrehte Koordiantensystem von Kamera 2 zu sehen.\relax }}{31}{figure.224}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Gr\IeC {\"u}n zeigt den Quader welcher auf $I$ von $C$ abgebildet wird. Das gr\IeC {\"o}\IeC {\ss }ere Quadrat sind die vorderen Punkte \ensuremath {A,B,C,D}, das kleinere Quadrat sind die hinteren Punkte \ensuremath {A',B',C',D'}. Der Punt $E$ ist weiter weg von den Abbildungen und deshalb auf dieser Abbildung momentan nicht zu sehen. Rot zeigt denselben Quader auf $I'$ von $C'$ abgebildet.\relax }}{34}{figure.272}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Die blauen Geraden zeigen die jeweiligen Epipolargeraden. Die vom roten Quader schneiden sich bei -1 im Epipol $e'$ . Die Epipolargeraden vom gr\IeC {\"u}nen Quader schneiden sich im Epipol $e'$ im Unendlichen, weshalb die Epipolarlinien Parallel zueinadner verlaufen.\relax }}{37}{figure.304}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Anordnung der Kameras bei den vier verschiedenen L\IeC {\"o}sungen f\IeC {\"u}r $P$\relax }}{41}{figure.caption.353}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum\relax }}{41}{figure.355}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt\relax }}{42}{figure.356}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form der Objekte\relax }}{43}{figure.360}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces auf Originalgr\IeC {\"o}\IeC {\ss }e skalierte rekonstruierte Szene\relax }}{44}{figure.caption.361}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt\relax }}{44}{figure.363}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Beipiel eines rektifizierten Bildes. Quelle: \cite {ZZ}\relax }}{45}{figure.364}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Beispiel einer einfachen Tiefenkarte eines Stereobildpaares nach der Rektifizierung. Quelle: \cite {Javier}\relax }}{45}{figure.365}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Aufnahmen zweier Kameras mit den selben Aufl\IeC {\"o}sungen, Kamera eins(Gr\IeC {\"u}n) und Kamera(rot) zwei gelten jeweils \ensuremath {\zeta =1}\relax }}{52}{figure.445}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Epipole f\IeC {\"u}r Kamera eins und Kamera zwei vor der Rektifizierung \relax }}{52}{figure.446}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen. Das die enstehenden parallelen Epipolarlinien auch hier schon horizontal ausgerichtet sind ist Zufall. Die Epipolarlinien sind immer parallel nach dieser Transformation aber die Richtung ist nicht immer automatisch bereits i = [1,0,0].\relax }}{53}{figure.447}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet\relax }}{55}{figure.475}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Die Abbildung verdeutlicht noch mal Schematisch, wie sich die Punkte ausrichten sollen. Bild a) zeigt die durch die Rektifizierung verschobenen Bildkantenmitten. Bild b= zeigt, wie sich die Bildkantenmitten durch die Scherungstransformation wieder ausrichten sollen.\relax }}{56}{figure.481}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.\relax }}{57}{figure.502}
+\contentsline {figure}{\numberline {5.21}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{58}{figure.503}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Arbeitsprozesse der Stereoanalyse bei Verwendung von eigens erstellten synthetischen Bilddaten\relax }}{35}{figure.233}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces vereinfachte Top-Down-Ansicht des Szenenaufbaus des Minimalbeipspiels\relax }}{36}{figure.caption.234}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces In Gr\IeC {\"u}n ist die Abbildung auf der Bildebenen $I$ von $C$ und in rot ist die Abbildung auf der Bildebenen $I'$ von $C'$\relax }}{36}{figure.caption.234}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces In Blau und Rot sind jeweils das Welt- und Kamerakoordinatensystem von Kamera eins zu sehen. In gr\IeC {\"u}n ist das gedrehte Koordiantensystem von Kamera 2 zu sehen.\relax }}{36}{figure.235}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Gr\IeC {\"u}n zeigt den Quader welcher auf $I$ von $C$ abgebildet wird. Das gr\IeC {\"o}\IeC {\ss }ere Quadrat sind die vorderen Punkte \ensuremath {A,B,C,D}, das kleinere Quadrat sind die hinteren Punkte \ensuremath {A',B',C',D'}. Der Punt $E$ ist weiter weg von den Abbildungen und deshalb auf dieser Abbildung momentan nicht zu sehen. Rot zeigt denselben Quader auf $I'$ von $C'$ abgebildet.\relax }}{39}{figure.283}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Die blauen Geraden zeigen die jeweiligen Epipolargeraden. Die vom roten Quader schneiden sich bei -1 im Epipol $e'$ . Die Epipolargeraden vom gr\IeC {\"u}nen Quader schneiden sich im Epipol $e'$ im Unendlichen, weshalb die Epipolarlinien Parallel zueinadner verlaufen.\relax }}{42}{figure.315}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Anordnung der Kameras bei den vier verschiedenen L\IeC {\"o}sungen f\IeC {\"u}r $P$\relax }}{46}{figure.caption.364}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum\relax }}{46}{figure.366}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt\relax }}{47}{figure.367}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form der Objekte\relax }}{48}{figure.371}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces auf Originalgr\IeC {\"o}\IeC {\ss }e skalierte rekonstruierte Szene\relax }}{49}{figure.caption.372}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt\relax }}{49}{figure.374}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Beipiel eines rektifizierten Bildes. Quelle: \cite {ZZ}\relax }}{50}{figure.375}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Beispiel einer einfachen Tiefenkarte eines Stereobildpaares nach der Rektifizierung. Quelle: \cite {Javier}\relax }}{50}{figure.376}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Aufnahmen zweier Kameras mit den selben Aufl\IeC {\"o}sungen, Kamera eins(Gr\IeC {\"u}n) und Kamera(rot) zwei gelten jeweils \ensuremath {\zeta =1}\relax }}{57}{figure.456}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Epipole f\IeC {\"u}r Kamera eins und Kamera zwei vor der Rektifizierung \relax }}{57}{figure.457}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen. Das die enstehenden parallelen Epipolarlinien auch hier schon horizontal ausgerichtet sind ist Zufall. Die Epipolarlinien sind immer parallel nach dieser Transformation aber die Richtung ist nicht immer automatisch bereits i = [1,0,0].\relax }}{58}{figure.458}
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet\relax }}{60}{figure.486}
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Die Abbildung verdeutlicht noch mal Schematisch, wie sich die Punkte ausrichten sollen. Bild a) zeigt die durch die Rektifizierung verschobenen Bildkantenmitten. Bild b= zeigt, wie sich die Bildkantenmitten durch die Scherungstransformation wieder ausrichten sollen.\relax }}{61}{figure.492}
-\contentsline {figure}{\numberline {6.20}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.\relax }}{62}{figure.513}
-\contentsline {figure}{\numberline {6.21}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{63}{figure.514}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Pixeln. Vlg \cite {Photonik}\relax }}{60}{figure.506}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Bild a) zeigt die Interpolation von Pixeln, wenn bei gleichbleibenden Seitenver\IeC {\"a}ltnissten weniger Pixel f\IeC {\"u}r das Bild verwendet werden sollen. Die interpolierten Pixel leiten dann alle das selbe Signal weiter. Bild b) zeigt in gelb markiert, den verweneten Bereich des Sensors, wenn sich die Seitenver\IeC {\"a}ltnisse \IeC {\"a}ndern und nicht mehr der volle Sensor genutzt wird.\relax }}{61}{figure.508}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{62}{figure.caption.510}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{62}{figure.caption.510}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{63}{figure.caption.522}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{63}{figure.caption.522}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{63}{figure.caption.523}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{63}{figure.caption.523}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Die rekonstruierten Szenenpunkte und Kamerapositionen bleibt auch bei unterschiedlichen Aufl\IeC {\"o}sungen die selben\relax }}{65}{figure.524}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Pixeln. Vlg \cite {Photonik}\relax }}{65}{figure.517}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Bild a) zeigt die Interpolation von Pixeln, wenn bei gleichbleibenden Seitenver\IeC {\"a}ltnissten weniger Pixel f\IeC {\"u}r das Bild verwendet werden sollen. Die interpolierten Pixel leiten dann alle das selbe Signal weiter. Bild b) zeigt in gelb markiert, den verweneten Bereich des Sensors, wenn sich die Seitenver\IeC {\"a}ltnisse \IeC {\"a}ndern und nicht mehr der volle Sensor genutzt wird.\relax }}{66}{figure.519}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{67}{figure.caption.521}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{67}{figure.caption.521}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{68}{figure.caption.533}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{68}{figure.caption.533}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{68}{figure.caption.534}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{68}{figure.caption.534}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Die rekonstruierten Szenenpunkte und Kamerapositionen bleibt auch bei unterschiedlichen Aufl\IeC {\"o}sungen die selben\relax }}{70}{figure.535}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Aufnahme der Canon 6D von links\relax }}{66}{figure.caption.527}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Aufnahme der Canon 60D von rechts\relax }}{66}{figure.caption.527}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Szenenaufbau: Die Canon 60D befindet sich in dieser Abbildung auf der linken Seite, die Canon 60 D auf der rechten. Auf dem Tisch zwischen den Kameras ist die in den Abbildungen 6.1 und 6.1 abgebildete Szene zu sehen. Die Canon 60D ist etwas hinter der Canon 6D positioniert. Beide Kameras sind zu Szene hin gedreht und auch leicht nach unten geneigt.\relax }}{67}{figure.528}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Die mit dem \textit {SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet\relax }}{68}{figure.caption.531}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 6D\relax }}{70}{figure.caption.538}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }}{70}{figure.caption.538}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D\relax }}{71}{figure.caption.539}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }}{71}{figure.caption.539}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D, nach der denormalizierung von F\relax }}{71}{figure.caption.540}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D, nach der denormalizierung von F\relax }}{71}{figure.caption.540}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces a)\relax }}{72}{figure.caption.543}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces b)\relax }}{72}{figure.caption.543}
+\contentsline {figure}{\numberline {7.13}{\ignorespaces a) Die r\IeC {\"u}ckprojzierten Strahlen der ungenauen korrespondierenden Punkte $m$ und $m'$ sind schief und treffen sich nicht in einem Punkt im 3D-Raum. b) The epipolar geometry for $m,\tmspace +\thinmuskip {.1667em} m'$. The measured points do not satisfy the epipolar constraint. The epipolar line $l' = Fm$ is the image of the ray through $n$, and $l = F^Tm'$ is the image of the ray through $m'$. Since the rays do not intersect, $m'$ does not lie on $l'$, and $m$ does not lie on $l$.\relax }}{72}{figure.caption.543}
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Frafische Darstellung der optimalen Punkte $\mathaccentV {hat}05E{m}$ und $\mathaccentV {hat}05E{m'}$\relax }}{73}{figure.547}
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Rekonstruierte Szene, unskaliert in Pixeleinheiten\relax }}{78}{figure.caption.624}
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot geschrieben\relax }}{78}{figure.caption.624}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Aufnahme der Canon 6D von links\relax }}{71}{figure.caption.538}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Aufnahme der Canon 60D von rechts\relax }}{71}{figure.caption.538}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Szenenaufbau: Die Canon 60D befindet sich in dieser Abbildung auf der linken Seite, die Canon 60 D auf der rechten. Auf dem Tisch zwischen den Kameras ist die in den Abbildungen 6.1 und 6.1 abgebildete Szene zu sehen. Die Canon 60D ist etwas hinter der Canon 6D positioniert. Beide Kameras sind zu Szene hin gedreht und auch leicht nach unten geneigt.\relax }}{72}{figure.539}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Die mit dem \textit {SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet\relax }}{73}{figure.caption.542}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 6D\relax }}{75}{figure.caption.549}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }}{75}{figure.caption.549}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D\relax }}{76}{figure.caption.550}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }}{76}{figure.caption.550}
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D, nach der denormalizierung von F\relax }}{76}{figure.caption.551}
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D, nach der denormalizierung von F\relax }}{76}{figure.caption.551}
-\contentsline {figure}{\numberline {8.11}{\ignorespaces a)\relax }}{77}{figure.caption.554}
-\contentsline {figure}{\numberline {8.12}{\ignorespaces b)\relax }}{77}{figure.caption.554}
-\contentsline {figure}{\numberline {8.13}{\ignorespaces a) Die r\IeC {\"u}ckprojzierten Strahlen der ungenauen korrespondierenden Punkte $m$ und $m'$ sind schief und treffen sich nicht in einem Punkt im 3D-Raum. b) The epipolar geometry for $m,\tmspace +\thinmuskip {.1667em} m'$. The measured points do not satisfy the epipolar constraint. The epipolar line $l' = Fm$ is the image of the ray through $n$, and $l = F^Tm'$ is the image of the ray through $m'$. Since the rays do not intersect, $m'$ does not lie on $l'$, and $m$ does not lie on $l$.\relax }}{77}{figure.caption.554}
-\contentsline {figure}{\numberline {8.14}{\ignorespaces Frafische Darstellung der optimalen Punkte $\mathaccentV {hat}05E{m}$ und $\mathaccentV {hat}05E{m'}$\relax }}{78}{figure.558}
-\contentsline {figure}{\numberline {8.15}{\ignorespaces Rekonstruierte Szene, unskaliert in Pixeleinheiten\relax }}{83}{figure.caption.635}
-\contentsline {figure}{\numberline {8.16}{\ignorespaces Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot geschrieben\relax }}{83}{figure.caption.635}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Zeigt die Die rekonstruierte Matrix $R'$ bei unver\IeC {\"a}nderter Aufl\IeC {\"o}sung. Die Aufl\IeC {\"o}sungen von $C_\delta $ und $C'_\delta $ sind die selben.\relax }}{80}{figure.caption.629}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{80}{figure.caption.629}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{80}{figure.caption.630}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{80}{figure.caption.630}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{81}{figure.caption.631}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[2:1]$ skaliert wurde\relax }}{81}{figure.caption.632}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{82}{figure.caption.633}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{82}{figure.caption.634}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Zeigt die Die rekonstruierte Matrix $R'$ bei unver\IeC {\"a}nderter Aufl\IeC {\"o}sung. Die Aufl\IeC {\"o}sungen von $C_\delta $ und $C'_\delta $ sind die selben.\relax }}{85}{figure.caption.640}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{85}{figure.caption.640}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{85}{figure.caption.641}
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{85}{figure.caption.641}
-\contentsline {figure}{\numberline {9.5}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{86}{figure.caption.642}
-\contentsline {figure}{\numberline {9.6}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[2:1]$ skaliert wurde\relax }}{86}{figure.caption.643}
-\contentsline {figure}{\numberline {9.7}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{87}{figure.caption.644}
-\contentsline {figure}{\numberline {9.8}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{87}{figure.caption.645}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Klassendiagramm\relax }}{84}{figure.638}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Klassendiagramm\relax }}{84}{figure.639}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Klassendiagramm\relax }}{85}{figure.640}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Klassendiagramm\relax }}{85}{figure.641}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Klassendiagramm\relax }}{85}{figure.642}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces \relax }}{86}{figure.caption.643}
+\contentsline {figure}{\numberline {9.7}{\ignorespaces \relax }}{86}{figure.caption.643}
+\contentsline {figure}{\numberline {9.8}{\ignorespaces \relax }}{86}{figure.caption.644}
+\contentsline {figure}{\numberline {9.9}{\ignorespaces \relax }}{86}{figure.caption.644}
+\contentsline {figure}{\numberline {9.10}{\ignorespaces Klassendiagramm\relax }}{87}{figure.645}
+\contentsline {figure}{\numberline {9.11}{\ignorespaces Klassendiagramm\relax }}{87}{figure.646}
+\contentsline {figure}{\numberline {9.12}{\ignorespaces Klassendiagramm\relax }}{88}{figure.647}
+\contentsline {figure}{\numberline {9.13}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{88}{figure.caption.649}
+\contentsline {figure}{\numberline {9.14}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{88}{figure.caption.649}
+\contentsline {figure}{\numberline {9.15}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{89}{figure.caption.650}
+\contentsline {figure}{\numberline {9.16}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{89}{figure.caption.650}
+\contentsline {figure}{\numberline {9.17}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{89}{figure.caption.651}
+\contentsline {figure}{\numberline {9.18}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{89}{figure.caption.651}
+\contentsline {figure}{\numberline {9.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }}{90}{figure.caption.652}
+\contentsline {figure}{\numberline {9.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{90}{figure.caption.652}
+\contentsline {figure}{\numberline {9.21}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{90}{figure.caption.653}
+\contentsline {figure}{\numberline {9.22}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{90}{figure.caption.653}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Klassendiagramm\relax }}{89}{figure.649}
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Klassendiagramm\relax }}{89}{figure.650}
-\contentsline {figure}{\numberline {10.3}{\ignorespaces Klassendiagramm\relax }}{90}{figure.651}
-\contentsline {figure}{\numberline {10.4}{\ignorespaces Klassendiagramm\relax }}{90}{figure.652}
-\contentsline {figure}{\numberline {10.5}{\ignorespaces Klassendiagramm\relax }}{90}{figure.653}
-\contentsline {figure}{\numberline {10.6}{\ignorespaces \relax }}{91}{figure.caption.654}
-\contentsline {figure}{\numberline {10.7}{\ignorespaces \relax }}{91}{figure.caption.654}
-\contentsline {figure}{\numberline {10.8}{\ignorespaces \relax }}{91}{figure.caption.655}
-\contentsline {figure}{\numberline {10.9}{\ignorespaces \relax }}{91}{figure.caption.655}
-\contentsline {figure}{\numberline {10.10}{\ignorespaces Klassendiagramm\relax }}{92}{figure.656}
-\contentsline {figure}{\numberline {10.11}{\ignorespaces Klassendiagramm\relax }}{92}{figure.657}
-\contentsline {figure}{\numberline {10.12}{\ignorespaces Klassendiagramm\relax }}{93}{figure.658}
-\contentsline {figure}{\numberline {10.13}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{93}{figure.caption.660}
-\contentsline {figure}{\numberline {10.14}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{93}{figure.caption.660}
-\contentsline {figure}{\numberline {10.15}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{94}{figure.caption.661}
-\contentsline {figure}{\numberline {10.16}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{94}{figure.caption.661}
-\contentsline {figure}{\numberline {10.17}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{94}{figure.caption.662}
-\contentsline {figure}{\numberline {10.18}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{94}{figure.caption.662}
-\contentsline {figure}{\numberline {10.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }}{95}{figure.caption.663}
-\contentsline {figure}{\numberline {10.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{95}{figure.caption.663}
-\contentsline {figure}{\numberline {10.21}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{95}{figure.caption.664}
-\contentsline {figure}{\numberline {10.22}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{95}{figure.caption.664}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {11.1}{\ignorespaces Weltkoordinatensystem $(O,\delta )$ mit $\delta = [\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},O]$ und Kamerakoordinatensysteme $\beta = [\mathaccentV {vec}17E{b_1},\mathaccentV {vec}17E{b_2},\mathaccentV {vec}17E{b_3},C]$ und $(C',\beta ')$ mit $\beta '= [\mathaccentV {vec}17E{b'_1},\mathaccentV {vec}17E{b'_2},\mathaccentV {vec}17E{b'_3},C']$ .\relax }}{97}{figure.669}
-\contentsline {figure}{\numberline {11.2}{\ignorespaces in blau ist die Abblidung des Quaders von Kamera eins und in rot die Abbildung des selben Quaders in Kamera zwei\relax }}{101}{figure.720}
-\contentsline {figure}{\numberline {11.3}{\ignorespaces Weltkoordinatensystem $(O,\delta )$ mit $\delta = [\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},O]$ und Kamerakoordinatensysteme $\beta = [\mathaccentV {vec}17E{b_1},\mathaccentV {vec}17E{b_2},\mathaccentV {vec}17E{b_3},C]$ und $(C',\beta ')$ mit $\beta '= [\mathaccentV {vec}17E{b'_1},\mathaccentV {vec}17E{b'_2},\mathaccentV {vec}17E{b'_3},C']$ .\relax }}{104}{figure.758}
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Weltkoordinatensystem $(O,\delta )$ mit $\delta = [\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},O]$ und Kamerakoordinatensysteme $\beta = [\mathaccentV {vec}17E{b_1},\mathaccentV {vec}17E{b_2},\mathaccentV {vec}17E{b_3},C]$ und $(C',\beta ')$ mit $\beta '= [\mathaccentV {vec}17E{b'_1},\mathaccentV {vec}17E{b'_2},\mathaccentV {vec}17E{b'_3},C']$ .\relax }}{92}{figure.658}
+\contentsline {figure}{\numberline {10.2}{\ignorespaces in blau ist die Abblidung des Quaders von Kamera eins und in rot die Abbildung des selben Quaders in Kamera zwei\relax }}{96}{figure.709}
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Weltkoordinatensystem $(O,\delta )$ mit $\delta = [\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},\mathaccentV {vec}17E{d_1},O]$ und Kamerakoordinatensysteme $\beta = [\mathaccentV {vec}17E{b_1},\mathaccentV {vec}17E{b_2},\mathaccentV {vec}17E{b_3},C]$ und $(C',\beta ')$ mit $\beta '= [\mathaccentV {vec}17E{b'_1},\mathaccentV {vec}17E{b'_2},\mathaccentV {vec}17E{b'_3},C']$ .\relax }}{99}{figure.747}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -22,12 +22,12 @@ In diesem Kapitel wird der Fokus auf die benötigten Koordinatensysteme für die
 Anhand eines Beispiels wird im folgenden eine Transformation eines Punktes bezüglich des Weltkoordinatensystems in das Kamerakoordinatensystem veranschaulicht. Es soll in einer Symbolischen Schreibweise Punkte aus einem Weltkoordinatensystem  
 $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3})$ in ein Kamerakoordinatensystem  $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3})$ überführt werden, dessen Ursprung eine Verschiebung und Rotation zum Weltkoordinatensystem aufweist. Beispielhaft wird dies in Abbildung \ref{fig:Koordinatensysteme1} aufgezeigt.
  
-	\begin{minipage}{\linewidth}
-		\centering
-		\includegraphics[width=0.7\linewidth]{images/WeltKordSys.png}
-		\captionof{figure}{Weltkoordinatensystem $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3})$ und Kamerakoordinatensystem  $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3})$ }
-		\label{fig:Koordinatensysteme1}
-	\end{minipage}\\ \\
+%	\begin{minipage}{\linewidth}
+%		\centering
+%		\includegraphics[width=0.7\linewidth]{images/WeltKordSys.png}
+%		\captionof{figure}{Weltkoordinatensystem $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3})$ und Kamerakoordinatensystem  $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3})$ }
+%		\label{fig:Koordinatensysteme1}
+%	\end{minipage}\\ \\
 	
 	
 Zunächst wird eine sogenannte Koordinatisierung von Punkten im Weltkoordinatensystem vorgenommen. Ein Punkt $P_\delta$ bezüglich des Weltkoordinatensystems wird dann wie folgt beschrieben.
@@ -236,22 +236,16 @@ C_{\beta,3}
 		
 Für die geplante Stereoanalyse werden insgesamt sieben verschiedene Koordinatensysteme definiert. Das Weltkoordinatensystem $(O,\delta)$ und zwei Kamerakoordinatensysteme $(C,\beta)$, welche alle drei zu den dreidimensionalen Koordinatensystemen gehören. Des Weiteren gibt noch vier zweidimensionale Koordinatensysteme. Zum einen die Bildebenenkoordinatensystem $(I,\tau)$ und $(I',\tau')$ und die Sensorkoordinatensystem $(S,\sigma)$ und $(S',\sigma')$. Alle Koordinatensysteme sind innerhalb dieser Masterarbeit als kartesische, rechtsdrehende Koordinatensysteme festgelegt. Abbildung \ref{fig:KoordinatensystemeUeberblick} zeigt als Übersicht die Koordinatensysteme von einer Kamera ausgehend im Überblick. \\
 
-	\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=0.8\linewidth]{images/UebersichtKoordinatensysteme_beschriftet.png}
-	\captionof{figure}{Koordinatensysteme von einer Kamera aus im Überblick. Das Weltkoordinatensystem $(O,\delta)$ ist Deckungsgleich mit dem Kamerakoordinatensystem $(C,\beta)$}
-	\label{fig:KoordinatensystemeUeberblick}
-\end{minipage}\\ \\
+%	\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=0.8\linewidth]{images/UebersichtKoordinatensysteme_beschriftet.png}
+%	\captionof{figure}{Koordinatensysteme von einer Kamera aus im Überblick. Das Weltkoordinatensystem $(O,\delta)$ ist Deckungsgleich mit dem Kamerakoordinatensystem $(C,\beta)$}
+%	\label{fig:KoordinatensystemeUeberblick}
+%\end{minipage}\\ \\
 
 %
 %Grundlegend muss erst einmal festgelegt werden, welche Orientierungen die Koordinatensysteme haben sollen. Die Arbeit und auch die entstanden Algorithmen basieren auf rechtsdrehenden Systemen. Die Möglichkeit linksdrehende Systeme zu benutzen, ist aus dem entstandenen Algorithmus nicht ausgeschlossen, jedoch ist es für die spätere Deutung und Interpretation der Resultate wichtig im Vorhinein definiert zu haben, wie die Orientierung der einzelnen Koordinatensysteme ist. 
-Das Weltkoordinatensystem $(O,\delta)$ ist mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3},O)$ definiert.
-Die Kamerakoordinatensysteme der Kameras werden mit $(C,\beta)$ mit $(\beta = \hat{b_1},\hat{b_2},\hat{b_3},C)$ und $(C',\beta')$ mit $(\hat{b_1}',\hat{b_2}',\hat{b_3}',C')$ bezeichnet. Die Projektionszentren der Kameras entsprechen den Koordinatenursprüngen $C$ und $C'$, wie aus dem Lochkameramodell bekannt. Das zweidimensionale Bildebenenkoordinatensystem wird im weiteren Verlauf mit $(I,\tau)$ mit $\tau = (\hat{t_1},\hat{t_2},I)$ bezeichnet und zu guter Letzt fehlt noch das Sensorkoordinatensystem $(S,\sigma)$ mit $\sigma = (\hat{u},\hat{v},S)$.  Der Ursprung des Bildkoordinatensystem ist Deckungsgleich mit dem Hauptpunkt $HP$ auf der Bildebene. Der Ursprung des Sensorkoordinatensystems befindet sich in einer der Ecken der Bildebene. Das Bildebenenkoordinatensystem und das Sensorkoordinatensystem unterscheiden sich darin, dass das Sensorkoordinatensystem an die geometrie der Pixel auf dem Sensor angepasst ist und somit die Werte der Koordinatenachsen in Pixeleinheiten angegeben werden. Währendessen sind das Bildebenenkoordinatensystem, sowie auch die anderen hier vorgestellten Koordinatensysteme in dieser Arbeit immer in Millimeter definiert. Das Weltkoordinatensystem wird deckungsgleich mit dem Koordinatensystem von einer der beiden Kameras definiert, es gilt $(C,\beta)=(O,\delta)$.
- 
-%Jede der Bildebenen wird mit $<\hat{d_1},\hat{d_2}> + HP = I$ definiert, anhand dessen werden die Kamerakoordinatensysteme ausgerichtet. Die Achsen der Kamerkoordinatesysteme
-%Des Weiteren soll gelten, dass \ensuremath{C_\beta = Z}, sprich der Ursprung des Kamerakoordinatensystems Deckungsgleich mit dem Projektionszentrum auf der Bildebene $I$ ist und somit auch \ensuremath{ <d_1,d_2> + P = I}. \ensuremath{P} bezeichent hier den Hauptpunkt der Bildebene. 
 
-%Für die Wahl der Kamerakoordinatenachsen wird folgendes Schema verfolgt: \ensuremath{\hat{c}_1 \cdot \hat{n} = 0}, \ensuremath{\hat{c}_2 \cdot \hat{n} = 0}, \ensuremath{\hat{c}_3  = \pm\;\hat{n}}.  Die Bildebene selbst bekommt auch ein eigenes Koordinatensystem zugewiesen, welches sich aber nicht mehr auf einen 3D-Raum sondern auf die 2D-Ebene bezieht. Es soll \ensuremath{K_b = (\hat{b}_1,\hat{b}_2,O_b)} mit \ensuremath{O_b = P}, \ensuremath{\hat{b}_1 = \hat{c}_1}, \ensuremath{\hat{b}_2 = \hat{c}_2} gelten.  Formuliert man die Bildebene in Hess'scher Normalform so gilt \ensuremath{E: \hat{n} \cdot (\vec{x} - \vec{p}) = 0}. Als letztes kommt noch das Sensorkoordinatensystem mit  \ensuremath{K_s = (\vec{u}, \vec{v}, O_s)}. Dieses Koordinatensystem ist an die Geometrie der Pixel und des Sensors angepasst und daher muss es sich nicht unbedingt um ein kartesisches Koordinatensystem handeln. 
 
 Nachdem die einzelnen Koordinatensysteme definiert sind, soll symbolisch die Projektion eines Objekts  aus dem 3D-Raum auf den 2D-Sensor aufgezeigt werden. Für die Transformation der Weltkoordinaten in Kamerakoordinaten gilt, dass $[\hat{d_1}\,\hat{d_2}\,\hat{d_3}\,1] \cdot R = [\hat{b_1}\,\hat{b_2}\, \hat{b_3}\, 1]$, wobei $R$ eine Tranformationsmatrix ist, wie sie im vorherigen Abschnitt eingeführt wurde. $R=[D|V]$, wobei $D$ eine $3 \times 3$-Rotationsmatrix darstellt und $V$ die Tranlationskomponente beschreibt. Der Translationsvektor \ensuremath{\vec{V}} besteht aus den Koordinaten des Projektionszentrums \textit{C}. Es gilt also $\vec{V} = C \leadsto \vec{v} = \begin{pmatrix}	C_{\delta,1}\\C_{\delta,2}\\C_{\delta,3}\end{pmatrix}$. 
 
@@ -259,27 +253,6 @@ Nachdem die einzelnen Koordinatensysteme definiert sind, soll symbolisch die Pro
 (BEISPIEL BILDAUFNAHME IM ROTIERTEN SYSTEM)
  
 \begin{gather} 		
-%(d_1,d_2,d_3)[C] =(b_1, b_2, b_3) \leadsto b_1 = C_{11}d_1 + C_{21}d_2 + C_{31}d_3\\	
-%\begin{bmatrix}
-%\\C\\\\
-%\end{bmatrix}
-%=	\begin{bmatrix}
-%\begin{pmatrix}
-%\\
-%c_1\\
-%\\
-%\end{pmatrix}_\delta
-%\begin{pmatrix}
-%\\
-%c_2\\
-%\\
-%\end{pmatrix}_\delta
-%\begin{pmatrix}
-%\\
-%c_3\\
-%\\
-%\end{pmatrix}_\delta
-%\end{bmatrix}\\
 (\hat{b_1}, \hat{b_2}, \hat{b_3},1)=(\hat{d_1},\hat{d_2},\hat{d_3},1) \cdot
 \begin{bmatrix}
 &  &  &C_{\delta,1} \\
