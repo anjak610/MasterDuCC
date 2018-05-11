@@ -1,4 +1,4 @@
-\chapter{Basis Transformationen }
+\chapter{Koordinatensysteme im Lochkamermodell}
 \label{sec:basisTransformation} 
 
 (Neue Einleitung schreiben)
@@ -255,6 +255,8 @@ Die Kamerakoordinatensysteme der Kameras werden mit $(C,\beta)$ mit $(\beta = \h
 
 Nachdem die einzelnen Koordinatensysteme definiert sind, soll symbolisch die Projektion eines Objekts  aus dem 3D-Raum auf den 2D-Sensor aufgezeigt werden. Für die Transformation der Weltkoordinaten in Kamerakoordinaten gilt, dass $[\hat{d_1}\,\hat{d_2}\,\hat{d_3}\,1] \cdot R = [\hat{b_1}\,\hat{b_2}\, \hat{b_3}\, 1]$, wobei $R$ eine Tranformationsmatrix ist, wie sie im vorherigen Abschnitt eingeführt wurde. $R=[D|V]$, wobei $D$ eine $3 \times 3$-Rotationsmatrix darstellt und $V$ die Tranlationskomponente beschreibt. Der Translationsvektor \ensuremath{\vec{V}} besteht aus den Koordinaten des Projektionszentrums \textit{C}. Es gilt also $\vec{V} = C \leadsto \vec{v} = \begin{pmatrix}	C_{\delta,1}\\C_{\delta,2}\\C_{\delta,3}\end{pmatrix}$. 
 
+
+(BEISPIEL BILDAUFNAHME IM ROTIERTEN SYSTEM)
  
 \begin{gather} 		
 %(d_1,d_2,d_3)[C] =(b_1, b_2, b_3) \leadsto b_1 = C_{11}d_1 + C_{21}d_2 + C_{31}d_3\\	

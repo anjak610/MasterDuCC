@@ -2,8 +2,24 @@
 \label{sec:minimal} 
 
 %Minimalbeispiel 3D-Stereokalibrierung und Szenenrekonstruktion bei Kameras gleicher Auflösung
+Nachdem die theoretischen Grundlagen geschaffen wurden, wird nun der Algorithmus für die Rekonstruktion der Szene aus einer Stereoskopischen Bildaufnahme vorgestellt, welcher im Laufe dieser Masterarbeit entstanden ist. Zuerst wird die Funktionsweise und der Ablauf des Algorithmus anhand eines eigens erstellten virtuellen Beispiels näher gebracht. Dieses dient gleichzeitig dazu, die Funktionalität des Algorithmus unter optimal Bedingungen zu veranschaulichen. Im Anschluss wird der Algorithmus auf ein reales Beispiel einer Stereoaufnahme angewendet. Ein weiterer Vorteil, den das virtuelle Beispiel mit sich bringt, ist, das wenn im real Beispiel Fehler oder Unklarheiten beim Anwenden des Algorithmus auftreten sollten, diese im virtuellen Beispiel nachgestellt und simuliert werden können. Anhand dessen, kann dann die Ursache des Fehlers ausfindig gemacht werden und ein Lösungsansatz entwickelt werden. Abbildung \ref{fig:ArbeitsProzessVirtuell} veranschaulicht den Arbeitsprozess des Algorithmus vom Aufbau der Szene bis zu Szenerekonstruktion. In den folgenden Abschnitten des Kapitels, werden die einzelnen Schritte der Reihe nach beschrieben. 
 
-Um den Mathematischen Vorgänge der stereoskopischen Szenenrekonstruktion zu veranschaulichen und besser nachvollziehen zu können, wurde ein Minimalszenario erstellt. Mit Hilfe dieses Minimalszenarios, können Theorien besser getestet und bestimmte Situationen simuliert werden. Des Weiteren kann es von Nutzen sein, wenn es darum geht, Fehler in Realbeispielen nachzustellen oder eine Lösung für diese zu finden. Für dieses Minimalszenario wurde ein Objekt, in diesem Falle ein Quader, in ein zuvor definiertes Weltkoordinatensystem $(O,\delta)$ mit $\delta = (d_1,d_2,d_3)$ platziert. Außerdem wurden zwei Kameras $(C,\beta)$ mit $\beta = (b_1,b_2,b_3)$ und $(C',\beta')$ mit $\beta' = (b'_1,b'_2,b'_3)$ definiert und in $(O,\delta)$ platziert. Kamera eins $(C,\beta)$ ist Deckungsgleich mit $(O,\delta)$. Kamera zwei $(C',\beta')$ wurde von $C$ in positive $d_1$-Richtung, verschoben und um einen Winkel $\alpha$ zu $C$ um die eigene $b'_3$-Achse rotiert. Die verwendeten kartesischen Koordinatensysteme sind in diesem Minimalbeispiel alle rechtshändig orientiert. Die äußeren und inneren Kameraparameter wurden für den Aufbau der Szene festgelegt. Dies hat den positiven Effekt, dass somit die späteren Ergebnisse besser validiert werden können. In den Abbildung \ref{fig:aufbauMinimalTopDown} bis \ref{fig:KoordsystemeMinimal} wird der Aufbau noch einmal genauer veranschaulicht. \\
+dass entstehende Fehler oder Unklarheiten im realen Beispiel hier simuliert werden können und somit Lösungsansätze für diese zu finden. Für das virtuelle Beispiel, wurde ein Quader in einem Weltkoordinatensystem $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3}, O)$ platziert. Innerhalb dieses Koordinatensystem wurden des Weiteren zwei virtuelle Kameras $C_\delta$ und $C'_\delta$ eingefügt, welche jeweils ein eigenes Koordinatensystem  $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3},C)$ und  $(C',\beta')$ mit $\beta' = (\hat{b_1}',\hat{b_2}',\hat{b_3}',C')$ besitzen. 
+ 
+
+ 
+\begin{minipage}{\linewidth}
+ 	\centering
+ 	\includegraphics[width=1.\linewidth]{images/ArbeitsProzessMinimal.png}
+ 	\captionof{figure}{Arbeitsprozesse der Stereoanalyse bei Verwendung von eigens erstellten synthetischen Bilddaten}
+ 	\label{fig:ArbeitsProzessVirtuell}
+\end{minipage}\\ \\
+ 
+(Noch sagen dass sensorkoordinatensystem und Bildebenenkoordinatensystem im virtuellen Beispiel gleich definiert sind.)
+ 
+Um den Mathematischen Vorgänge der stereoskopischen Szenenrekonstruktion zu veranschaulichen und besser nachvollziehen zu können, wurde ein Minimalszenario erstellt. Mit Hilfe dieses Minimalszenarios, können Theorien besser getestet und bestimmte Situationen simuliert werden. Des Weiteren kann es von Nutzen sein, wenn es darum geht, Fehler in Realbeispielen nachzustellen oder eine Lösung für diese zu finden. Für dieses Minimalszenario wurde ein Objekt, in diesem Falle ein Quader, in ein zuvor definiertes
+
+Weltkoordinatensystem $(O,\delta)$ mit $\delta = (d_1,d_2,d_3)$ platziert. Außerdem wurden zwei Kameras $(C,\beta)$ mit $\beta = (b_1,b_2,b_3)$ und $(C',\beta')$ mit $\beta' = (b'_1,b'_2,b'_3)$ definiert und in $(O,\delta)$ platziert. Kamera eins $(C,\beta)$ ist Deckungsgleich mit $(O,\delta)$. Kamera zwei $(C',\beta')$ wurde von $C$ in positive $d_1$-Richtung, verschoben und um einen Winkel $\alpha$ zu $C$ um die eigene $b'_3$-Achse rotiert. Die verwendeten kartesischen Koordinatensysteme sind in diesem Minimalbeispiel alle rechtshändig orientiert. Die äußeren und inneren Kameraparameter wurden für den Aufbau der Szene festgelegt. Dies hat den positiven Effekt, dass somit die späteren Ergebnisse besser validiert werden können. In den Abbildung \ref{fig:aufbauMinimalTopDown} bis \ref{fig:KoordsystemeMinimal} wird der Aufbau noch einmal genauer veranschaulicht. \\
 
 \begin{figure}[!htb]
 	\minipage{0.52\textwidth}
