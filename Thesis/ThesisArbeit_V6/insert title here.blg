@@ -19,6 +19,7 @@ I was expecting a `,' or a `}'---line 229 of file bibliography.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--empty publisher in Elements
+Warning--empty publisher in Heipke
 Too many commas in name 1 of "R.Sturm,S,Ramalingam,Tardif,S.Gasparini,J.Barreto" for entry CamerModels.
 while executing---line 944 of file unsrt.bst
 Too many commas in name 1 of "R.Sturm,S,Ramalingam,Tardif,S.Gasparini,J.Barreto" for entry CamerModels.
@@ -26,24 +27,21 @@ while executing---line 944 of file unsrt.bst
 Too many commas in name 1 of "R.Sturm,S,Ramalingam,Tardif,S.Gasparini,J.Barreto" for entry CamerModels.
 while executing---line 944 of file unsrt.bst
 Warning--empty journal in CamerModels.
-Warning--empty publisher in Heipke
-Warning--empty publisher in Jianzhong
-Warning--empty year in Jianzhong
-Warning--can't use both author and editor fields in Zhang2014
 Warning--empty publisher in Roser
 Warning--empty publisher in Peiffer
 Warning--empty publisher in Schwarz
 Warning--empty publisher in Scholz
+Warning--can't use both author and editor fields in Zhang2014
 Warning--empty journal in ZZPaper
 Warning--empty journal in HZ8
 Warning--empty year in HZ8
 Too many commas in name 1 of "Zhang Mandun, Qi Lichao, Cui Guodong, Yu Ming" for entry Mandun
 while executing---line 944 of file unsrt.bst
 Warning--empty journal in Mandun
-Warning--empty journal in ZZ
-Warning--empty publisher in Javier
 Warning--empty journal in Fusiello
 Warning--empty year in Fusiello
+Warning--empty publisher in Javier
+Warning--empty journal in ZZ
 Warning--empty journal in R.H.
 Warning--empty year in R.H.
 Warning--empty journal in Margulies.

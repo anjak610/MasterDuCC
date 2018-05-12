@@ -28,11 +28,10 @@ Tomas Pajdla.
 \newblock "http://people.ciirc.cvut.cz/~pajdla/", 2013, überarbeitet am
   27.2.2017.
 
-\bibitem{MatlabStereoApp}
-MathWorks.
-\newblock Mathworks documentation, stereo camera calibration app.
-\newblock
-  \url{"https://de.mathworks.com/help/vision/stereo-camera-calibration.html"}.
+\bibitem{Heipke}
+Christian Heipke.
+\newblock {\em Photogrammetrie und Fernerkundung}.
+\newblock 2017 Springer,1. Auflage.
 
 \bibitem{CamerModels.}
 Ramalingam Tardif S.Gasparini~J.Barreto R.Sturm, S.
@@ -40,25 +39,12 @@ Ramalingam Tardif S.Gasparini~J.Barreto R.Sturm, S.
   vision.
 \newblock Mitsubishi Electric Research Laboratories, 2011.
 
-\bibitem{Heipke}
-Christian Heipke.
-\newblock {\em Photogrammetrie und Fernerkundung}.
-\newblock 2017 Springer,1. Auflage.
-
-\bibitem{Jianzhong}
-Jianzhong Lu.
-\newblock {\em Ein dreidimensionales Bildverarbeitungssystem für die
-  Automatisierung visueller Prüfvorgänge}.
-
-\bibitem{Photonik}
-Rolf~Martin Ekbert~Hering.
-\newblock {\em Photonik, Grundlagen, Technologien und Anwendung}.
-\newblock Springer-Verlag Berlin Heidelberg, 2006.
-
-\bibitem{Zhang2014}
-Zhengyou Zhang.
-\newblock {\em Epipolar Geometry}, pages 247--258.
-\newblock Springer US, Boston, MA, 2014.
+\bibitem{SURF}
+Herbert Bay, Tinne Tuytelaars, and Luc Van~Gool.
+\newblock Surf: Speeded up robust features.
+\newblock In Ale{\v{s}} Leonardis, Horst Bischof, and Axel Pinz, editors, {\em
+  Computer Vision -- ECCV 2006}, pages 404--417, Berlin, Heidelberg, 2006.
+  Springer Berlin Heidelberg.
 
 \bibitem{Roser}
 Dipl.-Ing.~Martin Roser.
@@ -83,6 +69,11 @@ Daniel Scholz.
   Verfahren anwenden mit taramath}.
 \newblock 2016, Sringer Verlag.
 
+\bibitem{Zhang2014}
+Zhengyou Zhang.
+\newblock {\em Epipolar Geometry}, pages 247--258.
+\newblock Springer US, Boston, MA, 2014.
+
 \bibitem{ZZPaper}
 Zhengyou Zhang.
 \newblock Determining the epipolar geometry and its uncertainty: A review.
@@ -100,18 +91,39 @@ Cui Guodong Yu~Ming Zhang~Mandun, Qi~Lichao.
   Technology Tianjin, China, 2009, Second International Conference on
   Intelligent Networks and Intelligent Systems.
 
+\bibitem{MatlabCamParam}
+MathWorks.
+\newblock Mathworks documentation,estimate camera parameters.
+\newblock
+  \url{"https://de.mathworks.com/help/vision/ref/estimatecameraparameters.html"}.
+
 \bibitem{MatlabRec}
 MathWorks.
 \newblock Mathworks documentation, rectify stereo images.
 \newblock
   \url{"https://de.mathworks.com/help/vision/ref/rectifystereoimages.html"}.
 
-\bibitem{ZZ}
-Charles Loop and Zhengyou Zhang.
-\newblock Computing rectifying homographies for stereo vision.
-\newblock Proceedings of IEEE Conference on Computer Vision and Pattern
-  Recognition, Vol.1, pages 125–131, June 23-25, 1999. Fort Collins,
-  Colorado, USA, 1999 Errors corrected on June 6, 2001.
+\bibitem{Fusiello}
+Luca~Irsara Andrea~Fusiello.
+\newblock Euclidean epipolar rectification of uncalibrated images.
+\newblock Eurac researc, IT.
+
+\bibitem{FusielloSite}
+Andrea Fusiello.
+\newblock Euclidean epipolar rectification.
+\newblock
+  \url{"http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/FUSIELLO2/rectif_cvol.html"}.
+
+\bibitem{MatlabDisp}
+MathWorks.
+\newblock Mathworks documentation, disparity.
+\newblock \url{"https://de.mathworks.com/help/vision/ref/disparity.html"}.
+
+\bibitem{MatlabStereoApp}
+MathWorks.
+\newblock Mathworks documentation, stereo camera calibration app.
+\newblock
+  \url{"https://de.mathworks.com/help/vision/stereo-camera-calibration.html"}.
 
 \bibitem{Javier}
 Carlos VILLAGRÁ~ARNEDOr Antonio Javier GALLEGO~SÁNCHEZ, Rafael
@@ -121,21 +133,28 @@ Carlos VILLAGRÁ~ARNEDOr Antonio Javier GALLEGO~SÁNCHEZ, Rafael
 \newblock Januar 2005,uploaded by Antonio Javier Gallego Sánchez on 21 May
   2014, ResearchGate.
 
-\bibitem{Fusiello}
-Luca~Irsara Andrea~Fusiello.
-\newblock Euclidean epipolar rectification of uncalibrated images.
-\newblock Eurac researc, IT.
+\bibitem{ZZ}
+Charles Loop and Zhengyou Zhang.
+\newblock Computing rectifying homographies for stereo vision.
+\newblock Proceedings of IEEE Conference on Computer Vision and Pattern
+  Recognition, Vol.1, pages 125–131, June 23-25, 1999. Fort Collins,
+  Colorado, USA, 1999 Errors corrected on June 6, 2001.
+
+\bibitem{Photonik}
+Rolf~Martin Ekbert~Hering.
+\newblock {\em Photonik, Grundlagen, Technologien und Anwendung}.
+\newblock Springer-Verlag Berlin Heidelberg, 2006.
+
+\bibitem{Canon6D}
+Canon.
+\newblock Eos 6d, eos 6d (wg), eos 6d (n), instruction manual, pages 188.
+\newblock
+  \url{"http://gdlp01.c-wss.com/gds/6/0300009626/01/EOS_6D_Instruction_Manual_DE.pdf"}.
 
 \bibitem{R.H.}
 Richard~I. Hartley.
 \newblock Euclidean reconstruction from uncalibrated views.
 \newblock G.E. CRD, Schenectady, NY, 12301.
-
-\bibitem{FusielloSite}
-Andrea Fusiello.
-\newblock Euclidean epipolar rectification.
-\newblock
-  \url{"http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/FUSIELLO2/rectif_cvol.html"}.
 
 \bibitem{leastSquare}
 Dongqing Li, editor.
@@ -161,29 +180,5 @@ James~Demmel Dinesh~Manocha.
 \newblock Algorithms for interesting parametric and algebraic curves 1: Simple
   intersections.
 \newblock ACM Transactions of Graphics:73--100, 1994.
-
-\bibitem{MatlabCamParam}
-MathWorks.
-\newblock Mathworks documentation,estimate camera parameters.
-\newblock
-  \url{"https://de.mathworks.com/help/vision/ref/estimatecameraparameters.html"}.
-
-\bibitem{MatlabDisp}
-MathWorks.
-\newblock Mathworks documentation, disparity.
-\newblock \url{"https://de.mathworks.com/help/vision/ref/disparity.html"}.
-
-\bibitem{Canon6D}
-Canon.
-\newblock Eos 6d, eos 6d (wg), eos 6d (n), instruction manual, pages 188.
-\newblock
-  \url{"http://gdlp01.c-wss.com/gds/6/0300009626/01/EOS_6D_Instruction_Manual_DE.pdf"}.
-
-\bibitem{SURF}
-Herbert Bay, Tinne Tuytelaars, and Luc Van~Gool.
-\newblock Surf: Speeded up robust features.
-\newblock In Ale{\v{s}} Leonardis, Horst Bischof, and Axel Pinz, editors, {\em
-  Computer Vision -- ECCV 2006}, pages 404--417, Berlin, Heidelberg, 2006.
-  Springer Berlin Heidelberg.
 
 \end{thebibliography}
