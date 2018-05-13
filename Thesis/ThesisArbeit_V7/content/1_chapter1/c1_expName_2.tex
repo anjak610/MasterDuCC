@@ -1,13 +1,41 @@
 \chapter{Geometrische Beziehungen zwischen Punktekorrespondenzen}
 \label{sec:HFE}
 
-Das Ziel dieser Masterarbeit ist es Punkte im dreidimensionalen Raum aus einer Stereoskopischen Aufnahme zweier Kameras zu rekonstruieren. Bis jetzt wurde die Bildaufnahme einer einzigen Kamera betrachtet. Jedoch kann eine Kamera allein nicht räumlich sehen. Um Räumlichkeit aus Bilder zu rekonstruieren, müssen mindestens zwei Aufnahmen der gleichen Szene aus unterschiedlichen Blickwinkeln aufgenommen werden. Innerhalb dieser Aufnahmen müssen Punktekorrespondenzen gesucht werden. Korrespondierende Punkte zeichnen sich dadurch aus, dass sie die Abbildungen ein und des selben projektiven Punkts im Raum sind. Für diese Punkte muss dann eine gemeinsame Abbildungsvorschrift aufgestellt werden. Über die Abbildungsvorschrift können dann Schlüsse auf die Kameraparameter der beiden Kameras gezogen werden. Im ersten Schritt wird eine Abbildungsvorschrift für die Korrespondenzanalyse von Punkten auf einer Ebene aufgestellt. Im zweiten Schritt wird diese Abbildungsvorschrift für die Lautkorrespondenz zwischen willkürlichen Punkten im Raum entwprechend erweitert. \\
+Das Ziel dieser Masterarbeit ist es Punkte im dreidimensionalen Raum aus einer Stereoskopischen Aufnahme zweier Kameras zu rekonstruieren. Bis jetzt wurde die Bildaufnahme einer einzigen Kamera betrachtet. Jedoch kann eine Kamera allein nicht räumlich sehen. Um Räumlichkeit aus Bilder zu rekonstruieren, müssen mindestens zwei Aufnahmen der gleichen Szene aus unterschiedlichen Blickwinkeln aufgenommen werden. Innerhalb dieser Aufnahmen müssen Punktekorrespondenzen gesucht werden. Korrespondierende Punkte zeichnen sich dadurch aus, dass sie die Abbildungen ein und des selben projektiven Punkts im Raum sind.Für diese Punkte muss dann eine gemeinsame Abbildungsvorschrift aufgestellt werden. Mit diesen Abbildungsvorschriften ist es möglich eine Beziehung zwischen zwei projizierten Bildpunkten 
+herzuleiten, ohne dass intrinsischen und extrinsische Kameraparameter bekannt sind. Die Abbildungsvorschrift wird in einer $3 \times 3$-Matrix $H$ ausgedrückt, welche die Transformationsmatrizen, sowie die Kameramatrizen zusammenfasst. Die $3 \times 3$-Matrix, kann aus gegebenen Punktekorrespondenzen abgeleitet werden. Aus $H$ können dann wiederum Schlüssen auf die Kameraparameter der beiden Kameras gezogen werden.  
 
 
-Im letzten Schritt wird die berechnung des ersten Falls dargelegt, die berechnung des zweiten falls folgt im zuge der Szenenrekonstruktion im Virtuellen Beispiel.
+%
+%Über die Abbildungsvorschrift können dann Schlüsse auf die Kameraparameter der beiden Kameras gezogen werden. Im ersten Schritt wird eine Abbildungsvorschrift für die Korrespondenzanalyse von Punkten auf einer Ebene aufgestellt. Im zweiten Schritt wird diese Abbildungsvorschrift für die Korrespondenz zwischen willkürlichen Punkten im Raum entsprechend erweitert. \\
+
+Es seien \ensuremath{m_{\tau} = \begin{pmatrix}
+		m_{\tau,1}\\m_{\tau,2}\\m_{\tau,3}
+\end{pmatrix}} die homogenen Koordinaten eines Punktes auf der Bildebene$(I,\tau)$ und \ensuremath{m'_{\tau'} = \begin{pmatrix}
+		m'_{\tau',1}\\m'_{\tau',2}\\m'_{\tau',3}
+\end{pmatrix}} ein Punkt der projektiv transformierten Bildebene $(I',\tau')$.Dann gilt
+
+\begin{gather}
+m'_{\tau'} = Hm_{\tau}\\
+Hm_{\tau} = \begin{bmatrix}
+{h_1}^T \cdot m_{\tau,1}\\{h_2}^T \cdot m_{\tau,2}\\{h_3}^T \cdot m_{\tau,3}
+\end{bmatrix} \\
+\leadsto 
+m'_{\tau'}= Hm_{\tau}= \begin{bmatrix}
+h_{11}m_{\tau,1}+h_{12}m_{\tau,2}+h_{13}m_{\tau,3}\\
+h_{21}m_{\tau,1}+h_{22}m_{\tau,2}+h_{23}m_{\tau,3}\\
+h_{31}m_{\tau,1}+h_{32}m_{\tau,2}+h_{33}m_{\tau,3}
+\end{bmatrix}\\
+\leadsto 
+H=\begin{bmatrix}
+h_{11}&h_{12}&h_{13}\\
+h_{21}&h_{22}&h_{23}\\
+h_{31}&h_{32}&h_{33}
+\end{bmatrix}
+\end{gather}
+
+Im folgenden werden zunächst zwei Fälle für die Beschreibung von Abbildungsvorschriften unterschieden. Bei den Fällen wird angenommen, dass sowohl intrinsische und extrinsische Parameter bekannt sind. Im ersten Fall wird davon ausgegangen, dass die 3D-Punkte im Raum auf einer Ebene liegen und auf die Bildebenen von zwei zueinander verschobenen und rotierten Bildebenen abgebildet werden. Im zweiten Fall werden die Punkte eines komplexeren 3D-Objektes auf die Bildebenen abgebildet. Danach werden die Herleitungen beider Beispiele für den Fall von unbekannten Kameraparameter aufgezeigt. 
 
 
-Zum detektieren solcher Punktekorrespondenzen gibt bereits Algorihtmen, wie Beispielsweise den SURF-Algorithmus\cite{SURF}, welcher auch in dieser Arbeit verwendet wurde.  
 
  
  \section{Korrespondenzanalyse für Punkte auf einer Ebene (Homographie)}
@@ -56,7 +84,7 @@ Zum detektieren solcher Punktekorrespondenzen gibt bereits Algorihtmen, wie Beis
  	m'_{\tau}P'^{-1}=M_{\delta z}m'_{n,\tau}P'^{-1} = M_{\delta}.
  \end{gather}\\
  
- Auf der rechten Seite der Gleichung steht schlieslich derselbe Ursprungspunkt, sodass wir beide gleichung zusammenfassen können. 
+ Auf der rechten Seite der Gleichung steht schließlich derselbe Ursprungspunkt, sodass wir beide gleichung zusammenfassen können. 
  
  \begin{gather}
  	m_{\tau}\cdot P^{-1} = m'_{\tau}P'^{-1} \\
