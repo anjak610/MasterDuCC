@@ -5,35 +5,35 @@
 \BOOKMARK [1][]{section.35}{2.3 Aufname mit einer willk\374rlichen Kameraorientierung}{chapter.3}% 5
 \BOOKMARK [0][]{chapter.50}{3 Geometrische Beziehungen zwischen Punktekorrespondenzen}{}% 6
 \BOOKMARK [1][]{section.59}{3.1 Korrespondenzanalyse f\374r Punkte auf einer Ebene \(Homographie\)}{chapter.50}% 7
-\BOOKMARK [1][]{section.75}{3.2 Korrespondenzanalyse f\374r willk\374rliche Punkte im Raum \(Epipolare Geometrie\)}{chapter.50}% 8
-\BOOKMARK [1][]{section.108}{3.3 Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{chapter.50}% 9
-\BOOKMARK [0][]{chapter.137}{4 Virtuelle Rekonstruktion}{}% 10
-\BOOKMARK [1][]{section.139}{4.1 Simulierte Bildaufnahme einer virtuellen Szene}{chapter.137}% 11
-\BOOKMARK [1][]{section.170}{4.2 Bildanalyse}{chapter.137}% 12
-\BOOKMARK [2][]{subsection.171}{4.2.1 Bestimmung der Abbildungsvorschriften}{section.170}% 13
-\BOOKMARK [2][]{subsection.184}{4.2.2 Bestimmung der externen Kameraparameter}{section.170}% 14
-\BOOKMARK [2][]{subsection.207}{4.2.3 Szenenrekonstruktion durch Triangulation}{section.170}% 15
-\BOOKMARK [0][]{chapter.215}{5 Auswirkungen von unterschiedlichen Kameraaufl\366sungen}{}% 16
-\BOOKMARK [1][]{section.216}{5.1 Abbildungsunterschiede}{chapter.215}% 17
-\BOOKMARK [1][]{section.220}{5.2 Auswirkungen auf die Epipolargeometrie}{chapter.215}% 18
-\BOOKMARK [1][]{section.222}{5.3 Minimalbeispiel mit unterschiedlichen Kameraaufl\366sungen}{chapter.215}% 19
-\BOOKMARK [0][]{chapter.236}{6 Relle Rekonstruktion}{}% 20
-\BOOKMARK [1][]{section.237}{6.1 Arbeitsprozess}{chapter.236}% 21
-\BOOKMARK [1][]{section.243}{6.2 Normalized-eight-Point-Algorithm}{chapter.236}% 22
-\BOOKMARK [2][]{subsection.248}{6.2.1 Singularity-Constraint der Fundamentalmatrix}{section.243}% 23
-\BOOKMARK [2][]{subsection.252}{6.2.2 Singularity- Constraint der essentiellen Matrix}{section.243}% 24
-\BOOKMARK [1][]{section.253}{6.3 Szenenrekonstruktion}{chapter.236}% 25
-\BOOKMARK [2][]{subsection.255}{6.3.1 Minimieren der Kostenfunktion durch Sampson-approximation}{section.253}% 26
-\BOOKMARK [1][]{section.336}{6.4 Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\366sung}{chapter.236}% 27
-\BOOKMARK [0][]{chapter.345}{7 Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen \(Matlab\)}{}% 28
-\BOOKMARK [1][]{subsection.381}{7.0.1 Projektive Transformation}{chapter.345}% 29
-\BOOKMARK [2][]{subsection.431}{7.0.2 \304hnlichkeitstransformation}{subsection.381}% 30
-\BOOKMARK [2][]{subsection.459}{7.0.3 Scherungstransformation}{subsection.381}% 31
-\BOOKMARK [0][]{chapter.487}{8 Punktesortierung in Schachbrettmustern}{}% 32
-\BOOKMARK [1][]{section.488}{8.1 Algorithmus zur Punktesortierung in verzeichneten Schachbrettbildern}{chapter.487}% 33
-\BOOKMARK [2][]{subsection.489}{8.1.1 Vorl\344ufiges Klassendiagramm}{section.488}% 34
-\BOOKMARK [2][]{subsection.500}{8.1.2 Beispiele}{section.488}% 35
-\BOOKMARK [0][]{chapter.506}{9 Fazit - Conclusion}{}% 36
-\BOOKMARK [0][]{chapter.507}{10 N\344chste Schritte - next steps}{}% 37
-\BOOKMARK [0][]{chapter.508}{11 Protocol - 10.11.2015}{}% 38
-\BOOKMARK [0][]{chapter.509}{12 Abk\374rzungsverzeichnis - List of Abbrevations}{}% 39
+\BOOKMARK [1][]{section.76}{3.2 Korrespondenzanalyse f\374r willk\374rliche Punkte im Raum \(Epipolare Geometrie\)}{chapter.50}% 8
+\BOOKMARK [1][]{section.109}{3.3 Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{chapter.50}% 9
+\BOOKMARK [0][]{chapter.138}{4 Virtuelle Rekonstruktion}{}% 10
+\BOOKMARK [1][]{section.140}{4.1 Simulierte Bildaufnahme einer virtuellen Szene}{chapter.138}% 11
+\BOOKMARK [1][]{section.171}{4.2 Bildanalyse}{chapter.138}% 12
+\BOOKMARK [2][]{subsection.172}{4.2.1 Bestimmung der Abbildungsvorschriften}{section.171}% 13
+\BOOKMARK [2][]{subsection.185}{4.2.2 Bestimmung der externen Kameraparameter}{section.171}% 14
+\BOOKMARK [2][]{subsection.208}{4.2.3 Szenenrekonstruktion durch Triangulation}{section.171}% 15
+\BOOKMARK [0][]{chapter.216}{5 Auswirkungen von unterschiedlichen Kameraaufl\366sungen}{}% 16
+\BOOKMARK [1][]{section.217}{5.1 Abbildungsunterschiede}{chapter.216}% 17
+\BOOKMARK [1][]{section.221}{5.2 Auswirkungen auf die Epipolargeometrie}{chapter.216}% 18
+\BOOKMARK [1][]{section.223}{5.3 Minimalbeispiel mit unterschiedlichen Kameraaufl\366sungen}{chapter.216}% 19
+\BOOKMARK [0][]{chapter.237}{6 Relle Rekonstruktion}{}% 20
+\BOOKMARK [1][]{section.238}{6.1 Arbeitsprozess}{chapter.237}% 21
+\BOOKMARK [1][]{section.244}{6.2 Normalized-eight-Point-Algorithm}{chapter.237}% 22
+\BOOKMARK [2][]{subsection.249}{6.2.1 Singularity-Constraint der Fundamentalmatrix}{section.244}% 23
+\BOOKMARK [2][]{subsection.253}{6.2.2 Singularity- Constraint der essentiellen Matrix}{section.244}% 24
+\BOOKMARK [1][]{section.254}{6.3 Szenenrekonstruktion}{chapter.237}% 25
+\BOOKMARK [2][]{subsection.256}{6.3.1 Minimieren der Kostenfunktion durch Sampson-approximation}{section.254}% 26
+\BOOKMARK [1][]{section.337}{6.4 Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\366sung}{chapter.237}% 27
+\BOOKMARK [0][]{chapter.346}{7 Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen \(Matlab\)}{}% 28
+\BOOKMARK [1][]{subsection.382}{7.0.1 Projektive Transformation}{chapter.346}% 29
+\BOOKMARK [2][]{subsection.432}{7.0.2 \304hnlichkeitstransformation}{subsection.382}% 30
+\BOOKMARK [2][]{subsection.460}{7.0.3 Scherungstransformation}{subsection.382}% 31
+\BOOKMARK [0][]{chapter.488}{8 Punktesortierung in Schachbrettmustern}{}% 32
+\BOOKMARK [1][]{section.489}{8.1 Algorithmus zur Punktesortierung in verzeichneten Schachbrettbildern}{chapter.488}% 33
+\BOOKMARK [2][]{subsection.490}{8.1.1 Vorl\344ufiges Klassendiagramm}{section.489}% 34
+\BOOKMARK [2][]{subsection.501}{8.1.2 Beispiele}{section.489}% 35
+\BOOKMARK [0][]{chapter.507}{9 Fazit - Conclusion}{}% 36
+\BOOKMARK [0][]{chapter.508}{10 N\344chste Schritte - next steps}{}% 37
+\BOOKMARK [0][]{chapter.509}{11 Protocol - 10.11.2015}{}% 38
+\BOOKMARK [0][]{chapter.510}{12 Abk\374rzungsverzeichnis - List of Abbrevations}{}% 39

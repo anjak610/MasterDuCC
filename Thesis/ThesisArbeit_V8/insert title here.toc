@@ -6,35 +6,35 @@
 \contentsline {section}{\numberline {2.3}Aufname mit einer willk\IeC {\"u}rlichen Kameraorientierung}{10}{section.35}
 \contentsline {chapter}{\numberline {3}Geometrische Beziehungen zwischen Punktekorrespondenzen}{13}{chapter.50}
 \contentsline {section}{\numberline {3.1}Korrespondenzanalyse f\IeC {\"u}r Punkte auf einer Ebene (Homographie)}{13}{section.59}
-\contentsline {section}{\numberline {3.2}Korrespondenzanalyse f\IeC {\"u}r willk\IeC {\"u}rliche Punkte im Raum (Epipolare Geometrie)}{15}{section.75}
-\contentsline {section}{\numberline {3.3}Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{18}{section.108}
-\contentsline {chapter}{\numberline {4}Virtuelle Rekonstruktion}{21}{chapter.137}
-\contentsline {section}{\numberline {4.1}Simulierte Bildaufnahme einer virtuellen Szene}{22}{section.139}
-\contentsline {section}{\numberline {4.2}Bildanalyse}{24}{section.170}
-\contentsline {subsection}{\numberline {4.2.1}Bestimmung der Abbildungsvorschriften}{24}{subsection.171}
-\contentsline {subsection}{\numberline {4.2.2}Bestimmung der externen Kameraparameter}{25}{subsection.184}
-\contentsline {subsection}{\numberline {4.2.3}Szenenrekonstruktion durch Triangulation}{27}{subsection.207}
-\contentsline {chapter}{\numberline {5}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{31}{chapter.215}
-\contentsline {section}{\numberline {5.1}Abbildungsunterschiede}{31}{section.216}
-\contentsline {section}{\numberline {5.2}Auswirkungen auf die Epipolargeometrie}{33}{section.220}
-\contentsline {section}{\numberline {5.3}Minimalbeispiel mit unterschiedlichen Kameraaufl\IeC {\"o}sungen}{34}{section.222}
-\contentsline {chapter}{\numberline {6}Relle Rekonstruktion}{38}{chapter.236}
-\contentsline {section}{\numberline {6.1}Arbeitsprozess}{38}{section.237}
-\contentsline {section}{\numberline {6.2}Normalized-eight-Point-Algorithm}{40}{section.243}
-\contentsline {subsection}{\numberline {6.2.1}Singularity-Constraint der Fundamentalmatrix}{42}{subsection.248}
-\contentsline {subsection}{\numberline {6.2.2}Singularity- Constraint der essentiellen Matrix}{44}{subsection.252}
-\contentsline {section}{\numberline {6.3}Szenenrekonstruktion}{44}{section.253}
-\contentsline {subsection}{\numberline {6.3.1}Minimieren der Kostenfunktion durch Sampson-approximation}{45}{subsection.255}
-\contentsline {section}{\numberline {6.4}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{49}{section.336}
-\contentsline {chapter}{\numberline {7}Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen (Matlab)}{54}{chapter.345}
-\contentsline {subsection}{\numberline {7.0.1}Projektive Transformation}{58}{subsection.381}
-\contentsline {subsection}{\numberline {7.0.2}\IeC {\"A}hnlichkeitstransformation}{63}{subsection.431}
-\contentsline {subsection}{\numberline {7.0.3}Scherungstransformation}{65}{subsection.459}
-\contentsline {chapter}{\numberline {8}Punktesortierung in Schachbrettmustern}{69}{chapter.487}
-\contentsline {section}{\numberline {8.1}Algorithmus zur Punktesortierung in verzeichneten Schachbrettbildern}{69}{section.488}
-\contentsline {subsection}{\numberline {8.1.1}Vorl\IeC {\"a}ufiges Klassendiagramm}{70}{subsection.489}
-\contentsline {subsection}{\numberline {8.1.2}Beispiele}{74}{subsection.500}
-\contentsline {chapter}{\numberline {9}Fazit - Conclusion}{77}{chapter.506}
-\contentsline {chapter}{\numberline {10}N\IeC {\"a}chste Schritte - next steps}{78}{chapter.507}
-\contentsline {chapter}{\numberline {11}Protocol - 10.11.2015}{79}{chapter.508}
-\contentsline {chapter}{\numberline {12}Abk\IeC {\"u}rzungsverzeichnis - List of Abbrevations}{80}{chapter.509}
+\contentsline {section}{\numberline {3.2}Korrespondenzanalyse f\IeC {\"u}r willk\IeC {\"u}rliche Punkte im Raum (Epipolare Geometrie)}{15}{section.76}
+\contentsline {section}{\numberline {3.3}Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{18}{section.109}
+\contentsline {chapter}{\numberline {4}Virtuelle Rekonstruktion}{22}{chapter.138}
+\contentsline {section}{\numberline {4.1}Simulierte Bildaufnahme einer virtuellen Szene}{23}{section.140}
+\contentsline {section}{\numberline {4.2}Bildanalyse}{25}{section.171}
+\contentsline {subsection}{\numberline {4.2.1}Bestimmung der Abbildungsvorschriften}{25}{subsection.172}
+\contentsline {subsection}{\numberline {4.2.2}Bestimmung der externen Kameraparameter}{26}{subsection.185}
+\contentsline {subsection}{\numberline {4.2.3}Szenenrekonstruktion durch Triangulation}{28}{subsection.208}
+\contentsline {chapter}{\numberline {5}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{32}{chapter.216}
+\contentsline {section}{\numberline {5.1}Abbildungsunterschiede}{32}{section.217}
+\contentsline {section}{\numberline {5.2}Auswirkungen auf die Epipolargeometrie}{34}{section.221}
+\contentsline {section}{\numberline {5.3}Minimalbeispiel mit unterschiedlichen Kameraaufl\IeC {\"o}sungen}{35}{section.223}
+\contentsline {chapter}{\numberline {6}Relle Rekonstruktion}{39}{chapter.237}
+\contentsline {section}{\numberline {6.1}Arbeitsprozess}{39}{section.238}
+\contentsline {section}{\numberline {6.2}Normalized-eight-Point-Algorithm}{41}{section.244}
+\contentsline {subsection}{\numberline {6.2.1}Singularity-Constraint der Fundamentalmatrix}{43}{subsection.249}
+\contentsline {subsection}{\numberline {6.2.2}Singularity- Constraint der essentiellen Matrix}{45}{subsection.253}
+\contentsline {section}{\numberline {6.3}Szenenrekonstruktion}{45}{section.254}
+\contentsline {subsection}{\numberline {6.3.1}Minimieren der Kostenfunktion durch Sampson-approximation}{46}{subsection.256}
+\contentsline {section}{\numberline {6.4}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{50}{section.337}
+\contentsline {chapter}{\numberline {7}Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen (Matlab)}{55}{chapter.346}
+\contentsline {subsection}{\numberline {7.0.1}Projektive Transformation}{59}{subsection.382}
+\contentsline {subsection}{\numberline {7.0.2}\IeC {\"A}hnlichkeitstransformation}{64}{subsection.432}
+\contentsline {subsection}{\numberline {7.0.3}Scherungstransformation}{66}{subsection.460}
+\contentsline {chapter}{\numberline {8}Punktesortierung in Schachbrettmustern}{70}{chapter.488}
+\contentsline {section}{\numberline {8.1}Algorithmus zur Punktesortierung in verzeichneten Schachbrettbildern}{70}{section.489}
+\contentsline {subsection}{\numberline {8.1.1}Vorl\IeC {\"a}ufiges Klassendiagramm}{71}{subsection.490}
+\contentsline {subsection}{\numberline {8.1.2}Beispiele}{75}{subsection.501}
+\contentsline {chapter}{\numberline {9}Fazit - Conclusion}{78}{chapter.507}
+\contentsline {chapter}{\numberline {10}N\IeC {\"a}chste Schritte - next steps}{79}{chapter.508}
+\contentsline {chapter}{\numberline {11}Protocol - 10.11.2015}{80}{chapter.509}
+\contentsline {chapter}{\numberline {12}Abk\IeC {\"u}rzungsverzeichnis - List of Abbrevations}{81}{chapter.510}
