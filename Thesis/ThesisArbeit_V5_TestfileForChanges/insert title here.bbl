@@ -45,11 +45,20 @@ Dipl.-Ing.~Martin Roser.
   Bildfolgen zur Verbesserung von viedeobasierten Fahrerassistenzfunktionen}.
 \newblock 1986, 1994 Springer Basel AG, KIT Scientific Publishing.
 
-\bibitem{Peiffer}
-Jeanne Peiffer and Amy Dahan-Dalmedico.
-\newblock {\em Wege und Irrwege - Eine Geschichte der Mathematik}.
-\newblock 1986, 1994 Springer Basel AG, Editions du Seuil, Springer Basel AG ,
-  aus dem französischen von Klaus Volkert.
+\bibitem{Zhang2014}
+Zhengyou Zhang.
+\newblock {\em Epipolar Geometry}, pages 247--258.
+\newblock Springer US, Boston, MA, 2014.
+
+\bibitem{ZZPaper}
+Zhengyou Zhang.
+\newblock Determining the epipolar geometry and its uncertainty: A review.
+\newblock Received July 16, 1996; Accepted February 13, 1997.
+
+\bibitem{HZ8}
+Richard~I. Hartley.
+\newblock In defence of the 8-point algorithm.
+\newblock GE-Corporate Research and Development, Schenectady, NY, 12309.
 
 \bibitem{Schwarz}
 Norbert~Köckler Hans Rudolf~Schwarz.
@@ -61,11 +70,6 @@ Daniel Scholz.
 \newblock {\em Numerik interaktiv, Grundlagen verstehen, Modelle erforschen und
   Verfahren anwenden mit taramath}.
 \newblock 2016, Sringer Verlag.
-
-\bibitem{Zhang2014}
-Zhengyou Zhang.
-\newblock {\em Epipolar Geometry}, pages 247--258.
-\newblock Springer US, Boston, MA, 2014.
 
 \bibitem{Mandun}
 Cui Guodong Yu~Ming Zhang~Mandun, Qi~Lichao.
@@ -171,9 +175,10 @@ Herbert Bay, Tinne Tuytelaars, and Luc Van~Gool.
   Computer Vision -- ECCV 2006}, pages 404--417, Berlin, Heidelberg, 2006.
   Springer Berlin Heidelberg.
 
-\bibitem{HZ8}
-Richard~I. Hartley.
-\newblock In defence of the 8-point algorithm.
-\newblock GE-Corporate Research and Development, Schenectady, NY, 12309.
+\bibitem{Peiffer}
+Jeanne Peiffer and Amy Dahan-Dalmedico.
+\newblock {\em Wege und Irrwege - Eine Geschichte der Mathematik}.
+\newblock 1986, 1994 Springer Basel AG, Editions du Seuil, Springer Basel AG ,
+  aus dem französischen von Klaus Volkert.
 
 \end{thebibliography}

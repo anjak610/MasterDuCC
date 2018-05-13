@@ -63,6 +63,9 @@
 \newlabel{fig:KoordinatensystemeUeberblick}{{2.4}{10}{Das Schaubild zeigt die einzelnen Koordinatensysteme in einem Lochkameramodell. Das Weltkoordinatensystem $(O,\delta )$ mit $\delta = (\hat {d_1},\hat {d_2},\hat {d_3})$, das Kamerakoordinatensystem $(C,\beta )$ mit $\beta = (\hat {b_1},\hat {b_2},\hat {b_3})$, das Bildebenenkoordinatensystem $(I,\tau )$ mit $\tau = (\hat {t_1},\hat {t_2})$ und das Sensorkoordinatensystem $(S,\sigma )$ mit $\sigma = (\hat {u},\hat {v})$\relax }{figure.36}{}}
 \newlabel{mbeta}{{2.14}{10}{Aufname mit einer willkürlichen Kameraorientierung}{equation.37}{}}
 \newlabel{mbeta1}{{2.15}{10}{Aufname mit einer willkürlichen Kameraorientierung}{equation.38}{}}
+\citation{HZ}
+\citation{Elements}
+\citation{Roser}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Geometrische Beziehungen zwischen Punktekorrespondenzen}{13}{chapter.50}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -70,76 +73,93 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Korrespondenzanalyse f\IeC {\"u}r Punkte auf einer Ebene (Homographie)}{13}{section.59}}
 \citation{Elements}
 \citation{Elements}
-\citation{Elements}
-\citation{Elements}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta $ bez\IeC {\"u}glich eines Weltkoordinatensystems $(O,\delta )$ befindet sich auf der Ebene $\pi $, welche durch die Achsen $\mathaccentV {hat}05E{d_1}$ und $\mathaccentV {hat}05E{d_2}$ aufgespannt wird. $M_\delta $ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $\gamma m_\tau $ und $\gamma ' m'_\tau $.\relax }}{14}{figure.60}}
+\newlabel{fig:Homographie}{{3.1}{14}{In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta $ bezüglich eines Weltkoordinatensystems $(O,\delta )$ befindet sich auf der Ebene $\pi $, welche durch die Achsen $\hat {d_1}$ und $\hat {d_2}$ aufgespannt wird. $M_\delta $ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $\gamma m_\tau $ und $\gamma ' m'_\tau $.\relax }{figure.60}{}}
+\newlabel{eq:Homo}{{3.6}{14}{Korrespondenzanalyse für Punkte auf einer Ebene (Homographie)}{equation.64}{}}
 \citation{Elements}
 \citation{Elements}
 \citation{HZ}
 \citation{Elements}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta $ bez\IeC {\"u}glich eines Weltkoordinatensystems $(O,\delta )$ befindet sich auf der Ebene $\pi $, welche durch die Achsen $\mathaccentV {hat}05E{d_1}$ und $\mathaccentV {hat}05E{d_2}$ aufgespannt wird. $M_\delta $ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $\gamma m_\tau $ und $\gamma ' m'_\tau $.\relax }}{15}{figure.66}}
-\newlabel{fig:Homographie}{{3.1}{15}{In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta $ bezüglich eines Weltkoordinatensystems $(O,\delta )$ befindet sich auf der Ebene $\pi $, welche durch die Achsen $\hat {d_1}$ und $\hat {d_2}$ aufgespannt wird. $M_\delta $ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $\gamma m_\tau $ und $\gamma ' m'_\tau $.\relax }{figure.66}{}}
-\citation{Elements}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Korrespondenzanalyse f\IeC {\"u}r willk\IeC {\"u}rliche Punkte ?im Raum? (Epipolare Geometrie)}{16}{section.79}}
+\citation{HZ}
+\citation{ZZGXr}
 \citation{Elements}
 \citation{HZ}
+\citation{ZZGXr}
+\citation{HZ}
+\citation{Zhang2014}
+\citation{ZZPaper}
+\citation{Elements}
+\newlabel{eq:gammaTau}{{3.10}{15}{Korrespondenzanalyse für Punkte auf einer Ebene (Homographie)}{equation.72}{}}
+\newlabel{eq:H}{{3.11}{15}{Korrespondenzanalyse für Punkte auf einer Ebene (Homographie)}{equation.74}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Korrespondenzanalyse f\IeC {\"u}r willk\IeC {\"u}rliche Punkte im Raum (Epipolare Geometrie)}{15}{section.75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces $C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinien verbindet die Projektionszentren der Kameras. Die Punkte an welchen die Basislinie die Bildebenen schneidet, werden als Epipole $e$ und $e'$ bezeichnet. Durch einen Epipol verlaufen alle Epipolarlinien des Bildes. $M$ ist der Objektpunkt im 3D-Raum und $m_1$ und $m_2$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M$ bilden die sogenannte Epipolarebene\cite  {Elements,HZ,ZZGXr}.\relax }}{15}{figure.76}}
+\newlabel{fig:Epipolargeometry}{{3.2}{15}{$C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinien verbindet die Projektionszentren der Kameras. Die Punkte an welchen die Basislinie die Bildebenen schneidet, werden als Epipole $e$ und $e'$ bezeichnet. Durch einen Epipol verlaufen alle Epipolarlinien des Bildes. $M$ ist der Objektpunkt im 3D-Raum und $m_1$ und $m_2$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M$ bilden die sogenannte Epipolarebene\cite {Elements,HZ,ZZGXr}.\relax }{figure.76}{}}
+\citation{HZ}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, w\IeC {\"a}hrend sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.\relax }}{16}{figure.77}}
+\newlabel{fig:Epipolarconstraint}{{3.3}{16}{Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, während sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.\relax }{figure.77}{}}
+\newlabel{eq:Ep1}{{3.12}{16}{Korrespondenzanalyse für willkürliche Punkte im Raum (Epipolare Geometrie)}{equation.80}{}}
+\newlabel{eq:Ep2}{{3.13}{16}{Korrespondenzanalyse für willkürliche Punkte im Raum (Epipolare Geometrie)}{equation.81}{}}
+\newlabel{eq:Ep3}{{3.14}{16}{Korrespondenzanalyse für willkürliche Punkte im Raum (Epipolare Geometrie)}{equation.84}{}}
+\newlabel{eq:Ep4}{{3.15}{16}{Korrespondenzanalyse für willkürliche Punkte im Raum (Epipolare Geometrie)}{equation.85}{}}
+\citation{Elements}
+\citation{HZ}
+\citation{HZ}
+\citation{Elements}
 \citation{HZ8}
+\citation{ZZGXr}
 \citation{HZ}
 \citation{Elements}
 \citation{HZ8}
 \citation{ZZGXr}
 \citation{HZ}
-\citation{Zhang2014}
-\citation{ZZGXr}
-\citation{HZ}
-\citation{Zhang2014}
 \citation{Elements}
+\citation{HZ8}
 \citation{ZZGXr}
-\citation{Zhang2014}
-\citation{Elements}
+\newlabel{eq:Ep5}{{3.17}{17}{Korrespondenzanalyse für willkürliche Punkte im Raum (Epipolare Geometrie)}{equation.89}{}}
+\newlabel{eq:Ep6}{{3.18}{17}{Korrespondenzanalyse für willkürliche Punkte im Raum (Epipolare Geometrie)}{equation.91}{}}
+\newlabel{eq:Ep7}{{3.20}{17}{Korrespondenzanalyse für willkürliche Punkte im Raum (Epipolare Geometrie)}{equation.95}{}}
+\newlabel{eq:equ8}{{3.22}{17}{Korrespondenzanalyse für willkürliche Punkte im Raum (Epipolare Geometrie)}{equation.99}{}}
 \citation{HZ}
-\citation{ZZGXr}
 \citation{Elements}
-\citation{HZ}
-\citation{ZZGXr}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}geometrische Erl\IeC {\"a}uterung der Epipolargeometrie}{18}{section.128}}
-\newlabel{sec:epipolar}{{3.3}{18}{geometrische Erläuterung der Epipolargeometrie}{section.128}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces $C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinien verbindet die Projektionszentren der Kameras. Der Punkt an welchem die Basislinie die Bildebenen schneidet, wird als Epipol bezeichnet. Durch den Epipol verlaufen alle Epipolarlinien des Bildes. $M$ ist der Objektpunkt im 3D-Raum und $m_1$ und $m_2$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M$ bilden die sogenannte Epipolarebene\cite  {Elements,HZ,ZZGXr}.\relax }}{19}{figure.129}}
-\newlabel{fig:Epipolargeometry}{{3.2}{19}{$C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinien verbindet die Projektionszentren der Kameras. Der Punkt an welchem die Basislinie die Bildebenen schneidet, wird als Epipol bezeichnet. Durch den Epipol verlaufen alle Epipolarlinien des Bildes. $M$ ist der Objektpunkt im 3D-Raum und $m_1$ und $m_2$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M$ bilden die sogenannte Epipolarebene\cite {Elements,HZ,ZZGXr}.\relax }{figure.129}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, w\IeC {\"a}hrend sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.\relax }}{19}{figure.130}}
-\newlabel{fig:Epipolarconstraint}{{3.3}{19}{Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, während sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.\relax }{figure.130}{}}
 \citation{Elements}
 \citation{HZ}
 \citation{Schwarz}
 \citation{Heipke}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{20}{section.131}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{18}{section.108}}
+\newlabel{eq:eq9}{{3.29}{18}{Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{equation.114}{}}
+\newlabel{eq:eq10}{{3.35}{18}{Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{equation.127}{}}
+\newlabel{eq:eq11}{{3.36}{18}{Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{equation.128}{}}
 \citation{HZ}
 \citation{Schwarz}
-\citation{Zhang2014}
 \citation{HZ}
+\citation{Zhang2014}
 \citation{HZ}
 \citation{Ferid}
 \citation{HZ}
+\newlabel{eq:F}{{3.39}{19}{Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{equation.134}{}}
+\citation{HZ}
 \citation{ZZGXr}
 \citation{HZ}
+\citation{Schwarz}
 \citation{HZ}
 \citation{Scholz}
 \citation{Schwarz}
 \citation{Scholz}
 \citation{Scholz}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Virtuelle Rekonstruktion}{23}{chapter.172}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Virtuelle Rekonstruktion}{21}{chapter.137}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:minimal}{{4}{23}{Virtuelle Rekonstruktion}{chapter.172}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Arbeitsprozesse der Stereoanalyse bei Verwendung von eigens erstellten synthetischen Bilddaten\relax }}{23}{figure.173}}
-\newlabel{fig:ArbeitsProzessVirtuell}{{4.1}{23}{Arbeitsprozesse der Stereoanalyse bei Verwendung von eigens erstellten synthetischen Bilddaten\relax }{figure.173}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Erstellen eines virtuellen Stereoaufbaus}{23}{section.174}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces In der Abbildung ist der vereinfachte Stereoaufbau in einer Top-Down-Ansicht zu sehen\relax }}{24}{figure.caption.175}}
+\newlabel{sec:minimal}{{4}{21}{Virtuelle Rekonstruktion}{chapter.137}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Arbeitsprozesse der Stereoanalyse bei Verwendung von eigens erstellten synthetischen Bilddaten\relax }}{21}{figure.138}}
+\newlabel{fig:ArbeitsProzessVirtuell}{{4.1}{21}{Arbeitsprozesse der Stereoanalyse bei Verwendung von eigens erstellten synthetischen Bilddaten\relax }{figure.138}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Simulierte Bildaufnahme einer virtuellen Szene}{22}{section.139}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces In der Abbildung ist der vereinfachte Stereoaufbau in einer Top-Down-Ansicht zu sehen\relax }}{22}{figure.caption.140}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:aufbauMinimalTopDown}{{4.2}{24}{In der Abbildung ist der vereinfachte Stereoaufbau in einer Top-Down-Ansicht zu sehen\relax }{figure.caption.175}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces In Gr\IeC {\"u}n ist die Abbildung des Quaders auf der Bildebenen $I$ von $C$ und in rot ist die Abbildung des Quaders auf der Bildebenen $I'$ von $C'$ zu sehen\relax }}{24}{figure.caption.175}}
-\newlabel{fig:AbbildungenMinimal}{{4.3}{24}{In Grün ist die Abbildung des Quaders auf der Bildebenen $I$ von $C$ und in rot ist die Abbildung des Quaders auf der Bildebenen $I'$ von $C'$ zu sehen\relax }{figure.caption.175}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces \leavevmode {\color  {red}Achsen falsch!!!}In Blau und Rot sind jeweils das Welt- und Kamerakoordinatensystem von Kamera eins zu sehen . In gr\IeC {\"u}n ist das gedrehte Koordiantensystem von Kamera 2 zu sehen.\relax }}{24}{figure.176}}
-\newlabel{fig:KoordsystemeMinimal}{{4.4}{24}{\textcolor {red}{Achsen falsch!!!}In Blau und Rot sind jeweils das Welt- und Kamerakoordinatensystem von Kamera eins zu sehen . In grün ist das gedrehte Koordiantensystem von Kamera 2 zu sehen.\relax }{figure.176}{}}
+\newlabel{fig:aufbauMinimalTopDown}{{4.2}{22}{In der Abbildung ist der vereinfachte Stereoaufbau in einer Top-Down-Ansicht zu sehen\relax }{figure.caption.140}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces In Gr\IeC {\"u}n ist die Abbildung des Quaders auf der Bildebenen $I$ von $C$ und in rot ist die Abbildung des Quaders auf der Bildebenen $I'$ von $C'$ zu sehen\relax }}{22}{figure.caption.140}}
+\newlabel{fig:AbbildungenMinimal}{{4.3}{22}{In Grün ist die Abbildung des Quaders auf der Bildebenen $I$ von $C$ und in rot ist die Abbildung des Quaders auf der Bildebenen $I'$ von $C'$ zu sehen\relax }{figure.caption.140}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces \leavevmode {\color  {red}Achsen falsch!!!}In Blau und Rot sind jeweils das Welt- und Kamerakoordinatensystem von Kamera eins zu sehen . In gr\IeC {\"u}n ist das gedrehte Koordiantensystem von Kamera 2 zu sehen.\relax }}{22}{figure.141}}
+\newlabel{fig:KoordsystemeMinimal}{{4.4}{22}{\textcolor {red}{Achsen falsch!!!}In Blau und Rot sind jeweils das Welt- und Kamerakoordinatensystem von Kamera eins zu sehen . In grün ist das gedrehte Koordiantensystem von Kamera 2 zu sehen.\relax }{figure.141}{}}
 \citation{HZ}
 \citation{HZ}
 \citation{HZ}
@@ -154,44 +174,44 @@
 \citation{Ferid}
 \citation{HZ}
 \citation{Ferid}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Bildanalyse}{24}{section.170}}
+\newlabel{sec:MinimalFun}{{4.2}{24}{Bildanalyse}{section.170}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Bestimmung der Abbildungsvorschriften}{24}{subsection.171}}
 \citation{HZ}
-\citation{HZ}
-\citation{Ferid}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Bildanalyse}{26}{section.205}}
-\newlabel{sec:MinimalFun}{{4.2}{26}{Bildanalyse}{section.205}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Bestimmung der Abbildungsvorschriften}{26}{subsection.206}}
-\citation{HZ}
-\citation{Ferid}
-\citation{HZ}
-\citation{HZ}
-\citation{HZ}
-\citation{Ferid}
-\citation{HZ}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Bestimmung der externen Kameraparameter}{27}{subsection.219}}
 \citation{HZ}
 \citation{Ferid}
 \citation{HZ}
 \citation{Ferid}
 \citation{HZ}
+\citation{HZ}
+\citation{HZ}
 \citation{Ferid}
-\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 306}}{28}{Bestimmung der externen Kameraparameter}{figure.caption.240}{}}
-\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 311}}{28}{Bestimmung der externen Kameraparameter}{figure.caption.240}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Bestimmung der externen Kameraparameter}{25}{subsection.184}}
+\citation{HZ}
+\citation{HZ}
+\citation{Ferid}
+\citation{HZ}
+\citation{Ferid}
+\citation{HZ}
+\citation{Ferid}
+\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 315}}{26}{Bestimmung der externen Kameraparameter}{figure.caption.205}{}}
+\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 320}}{26}{Bestimmung der externen Kameraparameter}{figure.caption.205}{}}
 \citation{Mandun}
 \citation{Mandun}
 \citation{HZ}
-\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 318}}{29}{Bestimmung der externen Kameraparameter}{figure.caption.241}{}}
-\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 323}}{29}{Bestimmung der externen Kameraparameter}{figure.caption.241}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Die Abbildung zeigt die vier m\IeC {\"o}glichen L\IeC {\"o}sungen f\IeC {\"u}r $R$. \relax }}{29}{figure.caption.241}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Szenenrekonstruktion durch Triangulation}{29}{subsection.242}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum\relax }}{29}{figure.243}}
+\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 327}}{27}{Bestimmung der externen Kameraparameter}{figure.caption.206}{}}
+\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 332}}{27}{Bestimmung der externen Kameraparameter}{figure.caption.206}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Die Abbildung zeigt die vier m\IeC {\"o}glichen L\IeC {\"o}sungen f\IeC {\"u}r $R$. \relax }}{27}{figure.caption.206}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Szenenrekonstruktion durch Triangulation}{27}{subsection.207}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum\relax }}{27}{figure.208}}
 \citation{HZ}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt\relax }}{30}{figure.244}}
-\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 377}}{31}{Szenenrekonstruktion durch Triangulation}{figure.caption.247}{}}
-\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 382}}{31}{Szenenrekonstruktion durch Triangulation}{figure.caption.247}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form der Objekte\relax }}{32}{figure.248}}
-\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 397}}{32}{Szenenrekonstruktion durch Triangulation}{figure.caption.249}{}}
-\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 402}}{32}{Szenenrekonstruktion durch Triangulation}{figure.caption.249}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces auf Originalgr\IeC {\"o}\IeC {\ss }e skalierte rekonstruierte Szene\relax }}{32}{figure.caption.249}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt\relax }}{28}{figure.209}}
+\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 388}}{29}{Szenenrekonstruktion durch Triangulation}{figure.caption.212}{}}
+\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 393}}{29}{Szenenrekonstruktion durch Triangulation}{figure.caption.212}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form der Objekte\relax }}{29}{figure.213}}
+\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 408}}{30}{Szenenrekonstruktion durch Triangulation}{figure.caption.214}{}}
+\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 413}}{30}{Szenenrekonstruktion durch Triangulation}{figure.caption.214}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces auf Originalgr\IeC {\"o}\IeC {\ss }e skalierte rekonstruierte Szene\relax }}{30}{figure.caption.214}}
 \citation{MatlabCamParam}
 \citation{MatlabRec}
 \citation{Fusiello}
@@ -207,55 +227,55 @@
 \citation{Photonik}
 \citation{Photonik}
 \citation{Photonik}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{34}{chapter.250}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{31}{chapter.215}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:minimalAuf}{{5}{34}{Auswirkungen von unterschiedlichen Kameraauflösungen}{chapter.250}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Abbildungsunterschiede}{34}{section.251}}
+\newlabel{sec:minimalAuf}{{5}{31}{Auswirkungen von unterschiedlichen Kameraauflösungen}{chapter.215}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Abbildungsunterschiede}{31}{section.216}}
 \citation{Photonik}
 \citation{Canon6D}
 \citation{Canon6D}
 \citation{Canon6D}
 \citation{Photonik}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Pixeln. Vlg \cite  {Photonik}\relax }}{35}{figure.252}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Aufl\IeC {\"o}sungen Canon EOS 6D\relax }}{35}{table.caption.253}}
-\newlabel{my-label}{{5.1}{35}{Auflösungen Canon EOS 6D\relax }{table.caption.253}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Vgl \cite  {Canon6D}\relax }}{35}{table.caption.253}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Bild a) zeigt die Interpolation von Pixeln, wenn bei gleichbleibenden Seitenver\IeC {\"a}ltnissten weniger Pixel f\IeC {\"u}r das Bild verwendet werden sollen. Die interpolierten Pixel leiten dann alle das selbe Signal weiter. Bild b) zeigt in gelb markiert, den verweneten Bereich des Sensors, wenn sich die Seitenver\IeC {\"a}ltnisse \IeC {\"a}ndern und nicht mehr der volle Sensor genutzt wird.\relax }}{36}{figure.254}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Auswirkungen auf die Epipolargeometrie}{36}{section.255}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Pixeln. Vlg \cite  {Photonik}\relax }}{32}{figure.217}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Aufl\IeC {\"o}sungen Canon EOS 6D\relax }}{32}{table.caption.218}}
+\newlabel{my-label}{{5.1}{32}{Auflösungen Canon EOS 6D\relax }{table.caption.218}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Vgl \cite  {Canon6D}\relax }}{32}{table.caption.218}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Bild a) zeigt die Interpolation von Pixeln, wenn bei gleichbleibenden Seitenver\IeC {\"a}ltnissten weniger Pixel f\IeC {\"u}r das Bild verwendet werden sollen. Die interpolierten Pixel leiten dann alle das selbe Signal weiter. Bild b) zeigt in gelb markiert, den verweneten Bereich des Sensors, wenn sich die Seitenver\IeC {\"a}ltnisse \IeC {\"a}ndern und nicht mehr der volle Sensor genutzt wird.\relax }}{33}{figure.219}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Auswirkungen auf die Epipolargeometrie}{33}{section.220}}
 \citation{Elements}
 \citation{HZ}
 \citation{Ferid}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{37}{figure.caption.256}}
-\newlabel{fig:awesome_image1}{{5.3}{37}{$C$ und $C'$ haben die selbe Auflösung eingestellt\relax }{figure.caption.256}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{37}{figure.caption.256}}
-\newlabel{fig:awesome_image2}{{5.4}{37}{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt\relax }{figure.caption.256}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Minimalbeispiel mit unterschiedlichen Kameraaufl\IeC {\"o}sungen}{37}{section.257}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{38}{figure.caption.268}}
-\newlabel{fig:awesome_image1}{{5.5}{38}{$C$ und $C'$ haben die selbe Auflösung eingestellt\relax }{figure.caption.268}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{38}{figure.caption.268}}
-\newlabel{fig:awesome_image2}{{5.6}{38}{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt\relax }{figure.caption.268}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{38}{figure.caption.269}}
-\newlabel{fig:awesome_image1}{{5.7}{38}{$C$ und $C'$ haben die selbe Auflösung eingestellt\relax }{figure.caption.269}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{38}{figure.caption.269}}
-\newlabel{fig:awesome_image2}{{5.8}{38}{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt\relax }{figure.caption.269}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{34}{figure.caption.221}}
+\newlabel{fig:awesome_image1}{{5.3}{34}{$C$ und $C'$ haben die selbe Auflösung eingestellt\relax }{figure.caption.221}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{34}{figure.caption.221}}
+\newlabel{fig:awesome_image2}{{5.4}{34}{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt\relax }{figure.caption.221}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Minimalbeispiel mit unterschiedlichen Kameraaufl\IeC {\"o}sungen}{34}{section.222}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{35}{figure.caption.233}}
+\newlabel{fig:awesome_image1}{{5.5}{35}{$C$ und $C'$ haben die selbe Auflösung eingestellt\relax }{figure.caption.233}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{35}{figure.caption.233}}
+\newlabel{fig:awesome_image2}{{5.6}{35}{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt\relax }{figure.caption.233}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{35}{figure.caption.234}}
+\newlabel{fig:awesome_image1}{{5.7}{35}{$C$ und $C'$ haben die selbe Auflösung eingestellt\relax }{figure.caption.234}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{35}{figure.caption.234}}
+\newlabel{fig:awesome_image2}{{5.8}{35}{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt\relax }{figure.caption.234}{}}
 \citation{HZ}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Die rekonstruierten Szenenpunkte und Kamerapositionen bleibt auch bei unterschiedlichen Aufl\IeC {\"o}sungen die selben\relax }}{40}{figure.270}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Relle Rekonstruktion}{41}{chapter.271}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Die rekonstruierten Szenenpunkte und Kamerapositionen bleibt auch bei unterschiedlichen Aufl\IeC {\"o}sungen die selben\relax }}{37}{figure.235}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Relle Rekonstruktion}{38}{chapter.236}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:real}{{6}{41}{Relle Rekonstruktion}{chapter.271}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Arbeitsprozess}{41}{section.272}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Aufnahme der Canon 6D von links\relax }}{41}{figure.caption.273}}
-\newlabel{fig:awesome_image1}{{6.1}{41}{Aufnahme der Canon 6D von links\relax }{figure.caption.273}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Aufnahme der Canon 60D von rechts\relax }}{41}{figure.caption.273}}
-\newlabel{fig:awesome_image2}{{6.2}{41}{Aufnahme der Canon 60D von rechts\relax }{figure.caption.273}{}}
+\newlabel{sec:real}{{6}{38}{Relle Rekonstruktion}{chapter.236}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Arbeitsprozess}{38}{section.237}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Aufnahme der Canon 6D von links\relax }}{38}{figure.caption.238}}
+\newlabel{fig:awesome_image1}{{6.1}{38}{Aufnahme der Canon 6D von links\relax }{figure.caption.238}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Aufnahme der Canon 60D von rechts\relax }}{38}{figure.caption.238}}
+\newlabel{fig:awesome_image2}{{6.2}{38}{Aufnahme der Canon 60D von rechts\relax }{figure.caption.238}{}}
 \citation{MatlabStereoApp}
 \citation{SURF}
 \citation{SURF}
 \citation{SURF}
 \citation{SURF}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Szenenaufbau: Die Canon 60D befindet sich in dieser Abbildung auf der linken Seite, die Canon 60 D auf der rechten. Auf dem Tisch zwischen den Kameras ist die in den Abbildungen 6.1 und 6.1 abgebildete Szene zu sehen. Die Canon 60D ist etwas hinter der Canon 6D positioniert. Beide Kameras sind zu Szene hin gedreht und auch leicht nach unten geneigt.\relax }}{42}{figure.274}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Szenenaufbau: Die Canon 60D befindet sich in dieser Abbildung auf der linken Seite, die Canon 60 D auf der rechten. Auf dem Tisch zwischen den Kameras ist die in den Abbildungen 6.1 und 6.1 abgebildete Szene zu sehen. Die Canon 60D ist etwas hinter der Canon 6D positioniert. Beide Kameras sind zu Szene hin gedreht und auch leicht nach unten geneigt.\relax }}{39}{figure.239}}
 \citation{HZ}
 \citation{HZ8}
 \citation{Ferid}
@@ -266,10 +286,10 @@
 \citation{HZ8}
 \citation{Ferid}
 \citation{HZ8}
-\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 69}}{43}{Arbeitsprozess}{figure.caption.277}{}}
-\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 74}}{43}{Arbeitsprozess}{figure.caption.277}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Die mit dem \textit  {SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet\relax }}{43}{figure.caption.277}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Normalized-eight-Point-Algorithm}{43}{section.278}}
+\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 69}}{40}{Arbeitsprozess}{figure.caption.242}{}}
+\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 74}}{40}{Arbeitsprozess}{figure.caption.242}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Die mit dem \textit  {SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet\relax }}{40}{figure.caption.242}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Normalized-eight-Point-Algorithm}{40}{section.243}}
 \citation{HZ8}
 \citation{HZ}
 \citation{HZ8}
@@ -277,20 +297,20 @@
 \citation{HZ}
 \citation{HZ}
 \citation{HZ}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Singularity-Constraint der Fundamentalmatrix}{45}{subsection.283}}
-\newlabel{sec:realFun}{{6.2.1}{45}{Singularity-Constraint der Fundamentalmatrix}{subsection.283}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Epipolarlinien ohne \textit  {Epipolar-constraint} im Bild der Canon 6D\relax }}{45}{figure.caption.284}}
-\newlabel{fig:awesome_image1}{{6.5}{45}{Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 6D\relax }{figure.caption.284}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Epipolarlinien ohne \textit  {Epipolar-constraint} im Bild der Canon 60D\relax }}{45}{figure.caption.284}}
-\newlabel{fig:awesome_image2}{{6.6}{45}{Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }{figure.caption.284}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Epipolarlinien mit \textit  {Epipolar-constraint} im Bild der Canon 6D\relax }}{46}{figure.caption.285}}
-\newlabel{fig:awesome_image1}{{6.7}{46}{Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D\relax }{figure.caption.285}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Epipolarlinien ohne \textit  {Epipolar-constraint} im Bild der Canon 60D\relax }}{46}{figure.caption.285}}
-\newlabel{fig:awesome_image2}{{6.8}{46}{Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }{figure.caption.285}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Epipolarlinien mit \textit  {Epipolar-constraint} im Bild der Canon 6D, nach der denormalizierung von F\relax }}{46}{figure.caption.286}}
-\newlabel{fig:awesome_image1}{{6.9}{46}{Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D, nach der denormalizierung von F\relax }{figure.caption.286}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Epipolarlinien ohne \textit  {Epipolar-constraint} im Bild der Canon 60D, nach der denormalizierung von F\relax }}{46}{figure.caption.286}}
-\newlabel{fig:awesome_image2}{{6.10}{46}{Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D, nach der denormalizierung von F\relax }{figure.caption.286}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Singularity-Constraint der Fundamentalmatrix}{42}{subsection.248}}
+\newlabel{sec:realFun}{{6.2.1}{42}{Singularity-Constraint der Fundamentalmatrix}{subsection.248}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Epipolarlinien ohne \textit  {Epipolar-constraint} im Bild der Canon 6D\relax }}{42}{figure.caption.249}}
+\newlabel{fig:awesome_image1}{{6.5}{42}{Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 6D\relax }{figure.caption.249}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Epipolarlinien ohne \textit  {Epipolar-constraint} im Bild der Canon 60D\relax }}{42}{figure.caption.249}}
+\newlabel{fig:awesome_image2}{{6.6}{42}{Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }{figure.caption.249}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Epipolarlinien mit \textit  {Epipolar-constraint} im Bild der Canon 6D\relax }}{43}{figure.caption.250}}
+\newlabel{fig:awesome_image1}{{6.7}{43}{Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D\relax }{figure.caption.250}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Epipolarlinien ohne \textit  {Epipolar-constraint} im Bild der Canon 60D\relax }}{43}{figure.caption.250}}
+\newlabel{fig:awesome_image2}{{6.8}{43}{Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }{figure.caption.250}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Epipolarlinien mit \textit  {Epipolar-constraint} im Bild der Canon 6D, nach der denormalizierung von F\relax }}{43}{figure.caption.251}}
+\newlabel{fig:awesome_image1}{{6.9}{43}{Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D, nach der denormalizierung von F\relax }{figure.caption.251}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Epipolarlinien ohne \textit  {Epipolar-constraint} im Bild der Canon 60D, nach der denormalizierung von F\relax }}{43}{figure.caption.251}}
+\newlabel{fig:awesome_image2}{{6.10}{43}{Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D, nach der denormalizierung von F\relax }{figure.caption.251}{}}
 \citation{HZ}
 \citation{HZ}
 \citation{HZ}
@@ -298,46 +318,46 @@
 \citation{HZ}
 \citation{HZ}
 \citation{HZ}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Singularity- Constraint der essentiellen Matrix}{47}{subsection.287}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Szenenrekonstruktion}{47}{section.288}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces a)\relax }}{47}{figure.caption.289}}
-\newlabel{fig:awesome_image1}{{6.11}{47}{a)\relax }{figure.caption.289}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces b)\relax }}{47}{figure.caption.289}}
-\newlabel{fig:awesome_image2}{{6.12}{47}{b)\relax }{figure.caption.289}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.13}{\ignorespaces  a) Die r\IeC {\"u}ckprojzierten Strahlen der ungenauen korrespondierenden Punkte $m$ und $m'$ sind schief und treffen sich nicht in einem Punkt im 3D-Raum. b) The epipolar geometry for $m,\tmspace  +\thinmuskip {.1667em} m'$. The measured points do not satisfy the epipolar constraint. The epipolar line $l' = Fm$ is the image of the ray through $n$, and $l = F^Tm'$ is the image of the ray through $m'$. Since the rays do not intersect, $m'$ does not lie on $l'$, and $m$ does not lie on $l$.\relax }}{47}{figure.caption.289}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Singularity- Constraint der essentiellen Matrix}{44}{subsection.252}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Szenenrekonstruktion}{44}{section.253}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces a)\relax }}{44}{figure.caption.254}}
+\newlabel{fig:awesome_image1}{{6.11}{44}{a)\relax }{figure.caption.254}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces b)\relax }}{44}{figure.caption.254}}
+\newlabel{fig:awesome_image2}{{6.12}{44}{b)\relax }{figure.caption.254}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.13}{\ignorespaces  a) Die r\IeC {\"u}ckprojzierten Strahlen der ungenauen korrespondierenden Punkte $m$ und $m'$ sind schief und treffen sich nicht in einem Punkt im 3D-Raum. b) The epipolar geometry for $m,\tmspace  +\thinmuskip {.1667em} m'$. The measured points do not satisfy the epipolar constraint. The epipolar line $l' = Fm$ is the image of the ray through $n$, and $l = F^Tm'$ is the image of the ray through $m'$. Since the rays do not intersect, $m'$ does not lie on $l'$, and $m$ does not lie on $l$.\relax }}{44}{figure.caption.254}}
 \citation{HZ}
 \citation{HZ}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Minimieren der Kostenfunktion durch Sampson-approximation}{48}{subsection.290}}
-\newlabel{sec:sampson}{{6.3.1}{48}{Minimieren der Kostenfunktion durch Sampson-approximation}{subsection.290}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.14}{\ignorespaces Frafische Darstellung der optimalen Punkte $\mathaccentV {hat}05E{m}$ und $\mathaccentV {hat}05E{m'}$\relax }}{48}{figure.293}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Minimieren der Kostenfunktion durch Sampson-approximation}{45}{subsection.255}}
+\newlabel{sec:sampson}{{6.3.1}{45}{Minimieren der Kostenfunktion durch Sampson-approximation}{subsection.255}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.14}{\ignorespaces Frafische Darstellung der optimalen Punkte $\mathaccentV {hat}05E{m}$ und $\mathaccentV {hat}05E{m'}$\relax }}{45}{figure.258}}
 \citation{HZ}
 \citation{HZ}
-\newlabel{sec:realAuf}{{6.3.1}{52}{Minimieren der Kostenfunktion durch Sampson-approximation}{figure.caption.370}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{52}{section.371}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.15}{\ignorespaces Rekonstruierte Szene, unskaliert in Pixeleinheiten\relax }}{53}{figure.caption.370}}
-\newlabel{fig:awesome_image1}{{6.15}{53}{Rekonstruierte Szene, unskaliert in Pixeleinheiten\relax }{figure.caption.370}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.16}{\ignorespaces Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot geschrieben\relax }}{53}{figure.caption.370}}
-\newlabel{fig:awesome_image2}{{6.16}{53}{Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot geschrieben\relax }{figure.caption.370}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.17}{\ignorespaces Zeigt die Die rekonstruierte Matrix $R'$ bei unver\IeC {\"a}nderter Aufl\IeC {\"o}sung. Die Aufl\IeC {\"o}sungen von $C_\delta $ und $C'_\delta $ sind die selben.\relax }}{54}{figure.caption.374}}
-\newlabel{fig:awesome_image1}{{6.17}{54}{Zeigt die Die rekonstruierte Matrix $R'$ bei unveränderter Auflösung. Die Auflösungen von $C_\delta $ und $C'_\delta $ sind die selben.\relax }{figure.caption.374}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.18}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{54}{figure.caption.374}}
-\newlabel{fig:awesome_image2}{{6.18}{54}{Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde\relax }{figure.caption.374}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.19}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{54}{figure.caption.375}}
-\newlabel{fig:awesome_image1}{{6.19}{54}{Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verhältnis von $[1:2]$ skaliert wurde\relax }{figure.caption.375}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.20}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{54}{figure.caption.375}}
-\newlabel{fig:awesome_image2}{{6.20}{54}{Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verhältnis von $[1.2:2.3]$ skaliert wurde\relax }{figure.caption.375}{}}
-\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 86}}{55}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.376}{}}
-\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 91}}{55}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.376}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.21}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{55}{figure.caption.376}}
-\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 99}}{55}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.377}{}}
-\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 104}}{55}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.377}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.22}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[2:1]$ skaliert wurde\relax }}{55}{figure.caption.377}}
-\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 112}}{56}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.378}{}}
-\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 117}}{56}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.378}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.23}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{56}{figure.caption.378}}
-\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 125}}{56}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.379}{}}
-\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 130}}{56}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.379}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.24}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{56}{figure.caption.379}}
+\newlabel{sec:realAuf}{{6.3.1}{49}{Minimieren der Kostenfunktion durch Sampson-approximation}{figure.caption.335}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{49}{section.336}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.15}{\ignorespaces Rekonstruierte Szene, unskaliert in Pixeleinheiten\relax }}{50}{figure.caption.335}}
+\newlabel{fig:awesome_image1}{{6.15}{50}{Rekonstruierte Szene, unskaliert in Pixeleinheiten\relax }{figure.caption.335}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.16}{\ignorespaces Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot geschrieben\relax }}{50}{figure.caption.335}}
+\newlabel{fig:awesome_image2}{{6.16}{50}{Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot geschrieben\relax }{figure.caption.335}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.17}{\ignorespaces Zeigt die Die rekonstruierte Matrix $R'$ bei unver\IeC {\"a}nderter Aufl\IeC {\"o}sung. Die Aufl\IeC {\"o}sungen von $C_\delta $ und $C'_\delta $ sind die selben.\relax }}{51}{figure.caption.339}}
+\newlabel{fig:awesome_image1}{{6.17}{51}{Zeigt die Die rekonstruierte Matrix $R'$ bei unveränderter Auflösung. Die Auflösungen von $C_\delta $ und $C'_\delta $ sind die selben.\relax }{figure.caption.339}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.18}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{51}{figure.caption.339}}
+\newlabel{fig:awesome_image2}{{6.18}{51}{Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde\relax }{figure.caption.339}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.19}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{51}{figure.caption.340}}
+\newlabel{fig:awesome_image1}{{6.19}{51}{Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verhältnis von $[1:2]$ skaliert wurde\relax }{figure.caption.340}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.20}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{51}{figure.caption.340}}
+\newlabel{fig:awesome_image2}{{6.20}{51}{Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verhältnis von $[1.2:2.3]$ skaliert wurde\relax }{figure.caption.340}{}}
+\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 86}}{52}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.341}{}}
+\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 91}}{52}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.341}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.21}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{52}{figure.caption.341}}
+\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 99}}{52}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.342}{}}
+\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 104}}{52}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.342}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.22}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[2:1]$ skaliert wurde\relax }}{52}{figure.caption.342}}
+\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 112}}{53}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.343}{}}
+\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 117}}{53}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.343}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.23}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{53}{figure.caption.343}}
+\newlabel{fig:awesome_image1}{{\caption@xref {fig:awesome_image1}{ on input line 125}}{53}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.344}{}}
+\newlabel{fig:awesome_image2}{{\caption@xref {fig:awesome_image2}{ on input line 130}}{53}{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}{figure.caption.344}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.24}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{53}{figure.caption.344}}
 \citation{MatlabRec}
 \citation{ZZ}
 \citation{Javier}
@@ -350,11 +370,11 @@
 \citation{ZZ}
 \citation{Javier}
 \citation{ZZ}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen (Matlab)}{57}{chapter.380}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen (Matlab)}{54}{chapter.345}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:rectification}{{7}{57}{Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen (Matlab)}{chapter.380}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt\relax }}{57}{figure.381}}
+\newlabel{sec:rectification}{{7}{54}{Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen (Matlab)}{chapter.345}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt\relax }}{54}{figure.346}}
 \citation{ZZ}
 \citation{ZZ}
 \citation{Javier}
@@ -369,80 +389,80 @@
 \citation{Fusiello}
 \citation{ZZ}
 \citation{ZZ}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Beipiel eines rektifizierten Bildes. Quelle: \cite  {ZZ}\relax }}{58}{figure.382}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Beispiel einer einfachen Tiefenkarte eines Stereobildpaares nach der Rektifizierung. Quelle: \cite  {Javier}\relax }}{58}{figure.383}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Beipiel eines rektifizierten Bildes. Quelle: \cite  {ZZ}\relax }}{55}{figure.347}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Beispiel einer einfachen Tiefenkarte eines Stereobildpaares nach der Rektifizierung. Quelle: \cite  {Javier}\relax }}{55}{figure.348}}
 \citation{leastSquare}
 \citation{ZZ}
 \citation{leastSquare}
 \citation{leastSquare}
 \citation{Margulies.}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.0.1}Projektive Transformation}{61}{subsection.416}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.0.1}Projektive Transformation}{58}{subsection.381}}
 \citation{Fortran77}
 \citation{Fortran77}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces Aufnahmen zweier Kameras mit den selben Aufl\IeC {\"o}sungen, Kamera eins(Gr\IeC {\"u}n) und Kamera(rot) zwei gelten jeweils \ensuremath  {\zeta =1}\relax }}{64}{figure.463}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces Epipole f\IeC {\"u}r Kamera eins und Kamera zwei vor der Rektifizierung \relax }}{65}{figure.464}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.6}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen. Das die enstehenden parallelen Epipolarlinien auch hier schon horizontal ausgerichtet sind ist Zufall. Die Epipolarlinien sind immer parallel nach dieser Transformation aber die Richtung ist nicht immer automatisch bereits i = [1,0,0].\relax }}{66}{figure.465}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.0.2}\IeC {\"A}hnlichkeitstransformation}{66}{subsection.466}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.7}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet\relax }}{68}{figure.493}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.0.3}Scherungstransformation}{68}{subsection.494}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.8}{\ignorespaces Die Abbildung verdeutlicht noch mal Schematisch, wie sich die Punkte ausrichten sollen. Bild a) zeigt die durch die Rektifizierung verschobenen Bildkantenmitten. Bild b= zeigt, wie sich die Bildkantenmitten durch die Scherungstransformation wieder ausrichten sollen.\relax }}{69}{figure.499}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces Aufnahmen zweier Kameras mit den selben Aufl\IeC {\"o}sungen, Kamera eins(Gr\IeC {\"u}n) und Kamera(rot) zwei gelten jeweils \ensuremath  {\zeta =1}\relax }}{61}{figure.428}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces Epipole f\IeC {\"u}r Kamera eins und Kamera zwei vor der Rektifizierung \relax }}{62}{figure.429}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.6}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen. Das die enstehenden parallelen Epipolarlinien auch hier schon horizontal ausgerichtet sind ist Zufall. Die Epipolarlinien sind immer parallel nach dieser Transformation aber die Richtung ist nicht immer automatisch bereits i = [1,0,0].\relax }}{63}{figure.430}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.0.2}\IeC {\"A}hnlichkeitstransformation}{63}{subsection.431}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.7}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet\relax }}{65}{figure.458}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.0.3}Scherungstransformation}{65}{subsection.459}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.8}{\ignorespaces Die Abbildung verdeutlicht noch mal Schematisch, wie sich die Punkte ausrichten sollen. Bild a) zeigt die durch die Rektifizierung verschobenen Bildkantenmitten. Bild b= zeigt, wie sich die Bildkantenmitten durch die Scherungstransformation wieder ausrichten sollen.\relax }}{66}{figure.464}}
 \citation{ZZ}
 \citation{ACM}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.9}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.\relax }}{70}{figure.520}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.10}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{71}{figure.521}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Punktesortierung in Schachbrettmustern}{72}{chapter.522}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.9}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.\relax }}{67}{figure.485}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.10}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{68}{figure.486}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Punktesortierung in Schachbrettmustern}{69}{chapter.487}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:schachbrettAlg}{{8}{72}{Punktesortierung in Schachbrettmustern}{chapter.522}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}Algorithmus zur Punktesortierung in verzeichneten Schachbrettbildern}{72}{section.523}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Vorl\IeC {\"a}ufiges Klassendiagramm}{73}{subsection.524}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces Klassendiagramm\relax }}{73}{figure.525}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Klassendiagramm\relax }}{73}{figure.526}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.3}{\ignorespaces Klassendiagramm\relax }}{74}{figure.527}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces Klassendiagramm\relax }}{74}{figure.528}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.5}{\ignorespaces Klassendiagramm\relax }}{74}{figure.529}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.6}{\ignorespaces \relax }}{75}{figure.caption.530}}
-\newlabel{fig:awesome_image1}{{8.6}{75}{\relax }{figure.caption.530}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.7}{\ignorespaces \relax }}{75}{figure.caption.530}}
-\newlabel{fig:awesome_image2}{{8.7}{75}{\relax }{figure.caption.530}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.8}{\ignorespaces \relax }}{75}{figure.caption.531}}
-\newlabel{fig:awesome_image1}{{8.8}{75}{\relax }{figure.caption.531}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.9}{\ignorespaces \relax }}{75}{figure.caption.531}}
-\newlabel{fig:awesome_image2}{{8.9}{75}{\relax }{figure.caption.531}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.10}{\ignorespaces Klassendiagramm\relax }}{76}{figure.532}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.11}{\ignorespaces Klassendiagramm\relax }}{76}{figure.533}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.12}{\ignorespaces Klassendiagramm\relax }}{77}{figure.534}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}Beispiele}{77}{subsection.535}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.13}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{77}{figure.caption.536}}
-\newlabel{fig:awesome_image1}{{8.13}{77}{Bild eines Tonnenförmig verzeichneten Schachbretts\relax }{figure.caption.536}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.14}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{77}{figure.caption.536}}
-\newlabel{fig:awesome_image2}{{8.14}{77}{Algorithmisch detektierte Linie der dritten i-Reihe\relax }{figure.caption.536}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.15}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{78}{figure.caption.537}}
-\newlabel{fig:awesome_image1}{{8.15}{78}{Bild eines perspektivisch verzerrtem Schachbretts\relax }{figure.caption.537}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.16}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{78}{figure.caption.537}}
-\newlabel{fig:awesome_image2}{{8.16}{78}{Algorithmisch detektierte Linie der dritten i-Reihe\relax }{figure.caption.537}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.17}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{78}{figure.caption.538}}
-\newlabel{fig:awesome_image1}{{8.17}{78}{Bild eines Kissenförmig verzeichnetem Schachbretts\relax }{figure.caption.538}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.18}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{78}{figure.caption.538}}
-\newlabel{fig:awesome_image2}{{8.18}{78}{Algorithmisch detektierte Linie der dritten i-Reihe\relax }{figure.caption.538}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }}{79}{figure.caption.539}}
-\newlabel{fig:awesome_image1}{{8.19}{79}{Bild eines Tonnenförmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }{figure.caption.539}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{79}{figure.caption.539}}
-\newlabel{fig:awesome_image2}{{8.20}{79}{Algorithmisch detektierte Linie der dritten i-Reihe\relax }{figure.caption.539}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.21}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{79}{figure.caption.540}}
-\newlabel{fig:awesome_image1}{{8.21}{79}{Bild eines Tonnenförmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }{figure.caption.540}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.22}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{79}{figure.caption.540}}
-\newlabel{fig:awesome_image2}{{8.22}{79}{Algorithmisch detektierte Linie der dritten i-Reihe\relax }{figure.caption.540}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Fazit - Conclusion}{80}{chapter.541}}
+\newlabel{sec:schachbrettAlg}{{8}{69}{Punktesortierung in Schachbrettmustern}{chapter.487}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}Algorithmus zur Punktesortierung in verzeichneten Schachbrettbildern}{69}{section.488}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Vorl\IeC {\"a}ufiges Klassendiagramm}{70}{subsection.489}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces Klassendiagramm\relax }}{70}{figure.490}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Klassendiagramm\relax }}{70}{figure.491}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.3}{\ignorespaces Klassendiagramm\relax }}{71}{figure.492}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces Klassendiagramm\relax }}{71}{figure.493}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.5}{\ignorespaces Klassendiagramm\relax }}{71}{figure.494}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.6}{\ignorespaces \relax }}{72}{figure.caption.495}}
+\newlabel{fig:awesome_image1}{{8.6}{72}{\relax }{figure.caption.495}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.7}{\ignorespaces \relax }}{72}{figure.caption.495}}
+\newlabel{fig:awesome_image2}{{8.7}{72}{\relax }{figure.caption.495}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.8}{\ignorespaces \relax }}{72}{figure.caption.496}}
+\newlabel{fig:awesome_image1}{{8.8}{72}{\relax }{figure.caption.496}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.9}{\ignorespaces \relax }}{72}{figure.caption.496}}
+\newlabel{fig:awesome_image2}{{8.9}{72}{\relax }{figure.caption.496}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.10}{\ignorespaces Klassendiagramm\relax }}{73}{figure.497}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.11}{\ignorespaces Klassendiagramm\relax }}{73}{figure.498}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.12}{\ignorespaces Klassendiagramm\relax }}{74}{figure.499}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}Beispiele}{74}{subsection.500}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.13}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{74}{figure.caption.501}}
+\newlabel{fig:awesome_image1}{{8.13}{74}{Bild eines Tonnenförmig verzeichneten Schachbretts\relax }{figure.caption.501}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.14}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.501}}
+\newlabel{fig:awesome_image2}{{8.14}{74}{Algorithmisch detektierte Linie der dritten i-Reihe\relax }{figure.caption.501}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.15}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{75}{figure.caption.502}}
+\newlabel{fig:awesome_image1}{{8.15}{75}{Bild eines perspektivisch verzerrtem Schachbretts\relax }{figure.caption.502}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.16}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.502}}
+\newlabel{fig:awesome_image2}{{8.16}{75}{Algorithmisch detektierte Linie der dritten i-Reihe\relax }{figure.caption.502}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.17}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{75}{figure.caption.503}}
+\newlabel{fig:awesome_image1}{{8.17}{75}{Bild eines Kissenförmig verzeichnetem Schachbretts\relax }{figure.caption.503}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.18}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.503}}
+\newlabel{fig:awesome_image2}{{8.18}{75}{Algorithmisch detektierte Linie der dritten i-Reihe\relax }{figure.caption.503}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }}{76}{figure.caption.504}}
+\newlabel{fig:awesome_image1}{{8.19}{76}{Bild eines Tonnenförmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }{figure.caption.504}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{76}{figure.caption.504}}
+\newlabel{fig:awesome_image2}{{8.20}{76}{Algorithmisch detektierte Linie der dritten i-Reihe\relax }{figure.caption.504}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.21}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{76}{figure.caption.505}}
+\newlabel{fig:awesome_image1}{{8.21}{76}{Bild eines Tonnenförmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }{figure.caption.505}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.22}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{76}{figure.caption.505}}
+\newlabel{fig:awesome_image2}{{8.22}{76}{Algorithmisch detektierte Linie der dritten i-Reihe\relax }{figure.caption.505}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Fazit - Conclusion}{77}{chapter.506}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {10}N\IeC {\"a}chste Schritte - next steps}{81}{chapter.542}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {10}N\IeC {\"a}chste Schritte - next steps}{78}{chapter.507}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {11}Protocol - 10.11.2015}{82}{chapter.543}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {11}Protocol - 10.11.2015}{79}{chapter.508}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {12}Abk\IeC {\"u}rzungsverzeichnis - List of Abbrevations}{83}{chapter.544}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {12}Abk\IeC {\"u}rzungsverzeichnis - List of Abbrevations}{80}{chapter.509}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \citation{Elements}

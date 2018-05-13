@@ -4,14 +4,22 @@
 
 (WICHTIG $\sigma$ zu $\tau$ umschreiben, da ja gesagt wird das S = I, sonst kommt Verwirrung auf)
 
+Anhand der erarbeiteten mathematischen Grundlagen ist ein Algorithmus für Rekonstruktion einer Szenen durch eine Stereobildaufnahme entstanden. Der Algorithmus wurde unter Berücksichtigung eines zuvor festgelegten Kriterien entwickelt werden. Zum einen sollten die Kameraparameter bestimmt werden können und zum anderen sollte es prinzipiell möglich sein, Szenen aus Bildern unterschiedlicher Auflösung zu rekonstruieren. Bestimmten Stereolaibrierungs-Applikationen nicht möglich ist Bilder unterschiedlicher Auflösung zu rekonstruieren. Im Verlauf des Entwicklungsprozesses wurde immer mehr ersichtlich, warum es einigen Applikationen nicht möglich ist und es wurde dementsprechend ein anderer Weg eingeschlagen. Der entwickelte Algorithmus ist sowohl in der Lage aus einem Stereobildpaar extrinsische Kameraparameter bis auf eine Skaleninvarianz zu bestimmen und anhand dessen die 3D-Szene zu rekonstruieren, jedoch unter der Vorraussetzung, dass die intrinsischen Kameraparamteter beider Kameras bekannt sind.\\
 
-Für den in dieser Arbeit benutzen Ansatz des Szenenrekonstruktionsalgorithmus, wird davon ausgegangen, dass die intrinsischen Kameraparameter bekannt sind. Der Grund dafür ist, dass in dieser Arbeit ein Ansatz entwickelt werden sollte, welcher die Möglichkeit von unterschiedlichen Auflösungen der Kameras mit einbeziehen sollte. Aus diesem Grund wurde ein Ansatz für die Szenenrekonstruktion entwickelt, welcher keine Rektifizierung der Bilder mit einschließt. \\
+Im folgenden soll die Funktion Algorithmus anhand eines virtuellen Beispiels erklärt werde. Dabei werden die einzelnen Schritte des Aufbaus der virtuellen Szene, der Bestimmung der extrinsischen Kameraparameter und der letztendlichen Rekonstruktion der virtuellen 3D-Szene beschrieben. Abbildung \ref{fig:ArbeitsProzessVirtuell} fasst den Arbeitsprozess des Szenenrekonstruktionsalgorithmus für das virtuelle Beispiel chronolgisch seiner Implementierten Funktionen zusammen. \\
 
-Im folgenden sollen die Funktionsweisen und Abläufe des entstandenen Szenenrekonstruktionsalgorithmus aufgezeigt werden. Hierzu wurde ein virtuelle Beispielszene gebaut mit einem 3D-Objekt und zwei simulierten zueinander rotierten und verschobenen Kameras. Das Objekt wird mathematisch auf die virtuellen Sensoren der beiden Kameras abgebildet. In Abblidung \ref{fig:ArbeitsProzessVirtuell} werden die einzelnen Schritte des Algorthmus nocheinmal schematisch kurz zusammengefasst. Die Schritte eins bis vier beschreiben den Aufbau der virtuellen Szene. In schritt drei der Einzelkalibrierung werden die intrinsischen Kameraparameter der beiden Kameras bestimmt. Ab hier setzt dann der Szenenrekonstruktionsalgorithmus an.
+
+% Da dies in einigen Sterokalibrierungs Applikationen nicht
+%
+%Aus diesem Grund wurde ein Ansatz entwickelt, welcher eine Szenenrekonstruktion 
+%
+%Für den entwickelten Ansatz des implementierten Szenenrekonstruktionsalgorithmus, wird davon ausgegangen, dass die intrinsischen Kameraparameter bekannt sind. Der Grund dafür ist, dass in dieser Arbeit ein Ansatz entwickelt werden sollte, welcher die Möglichkeit von unterschiedlichen Auflösungen der Kameras mit einbeziehen sollte. Aus diesem Grund wurde ein Ansatz für die Szenenrekonstruktion entwickelt, welcher keine Rektifizierung der Bilder mit einschließt. \\
+%
+%Im folgenden sollen die Funktionsweisen und Abläufe des entstandenen Szenenrekonstruktionsalgorithmus aufgezeigt werden. Hierzu wurde ein virtuelle Beispielszene gebaut mit einem 3D-Objekt und zwei simulierten zueinander rotierten und verschobenen Kameras. Das Objekt wird mathematisch auf die virtuellen Sensoren der beiden Kameras abgebildet. In Abblidung \ref{fig:ArbeitsProzessVirtuell} werden die einzelnen Schritte des Algorthmus nocheinmal schematisch kurz zusammengefasst. Die Schritte eins bis vier beschreiben den Aufbau der virtuellen Szene. In schritt drei der Einzelkalibrierung werden die intrinsischen Kameraparameter der beiden Kameras bestimmt. Ab hier setzt dann der Szenenrekonstruktionsalgorithmus an.
 
 \begin{minipage}{\linewidth}
 	\centering
-	\includegraphics[width=1.\linewidth]{images/ArbeitsProzessMinimal.png}
+	\includegraphics[width=1.\linewidth]{images/NEU_Virtuel_Arbeitsprozess.png}
 	\captionof{figure}{Arbeitsprozesse der Stereoanalyse bei Verwendung von eigens erstellten synthetischen Bilddaten}
 	\label{fig:ArbeitsProzessVirtuell}
 \end{minipage}\\ \\
@@ -21,10 +29,9 @@ Im folgenden sollen die Funktionsweisen und Abläufe des entstandenen Szenenreko
 
 
 
-\section{Erstellen eines virtuellen Stereoaufbaus}
+\section{Simulierte Bildaufnahme einer virtuellen Szene}
 
-Als 3D-Objekt wurde ein Quader, in ein Weltkoordinatensystem $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3})$ positioniert. Des Weiteren wurden zwei Kameras $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3})$ und $(C',\beta')$ mit $\beta' = (\hat{b'_1},\hat{b'_2},\hat{b'_3})$ in $(O,\delta)$ platziert. Das Weltkoordinatensystem $(O,\delta)$ und Das Kamerakoordinatensystem $(C,\beta)$ sind deckungsgleich. Im weiteren Verlauf werden die beiden Kameras jeweils mit $C$ oder $C'$ bezeichnet, um die Unterscheidung beider klar zu machen. $C'$ ist von $C$ entlang der x-Achse verschoben worden und um $45^\circ$ Richtung $C'$ rotiert. Die zwei Bildebenen $(I,\tau)$ mit $\tau = (\hat{t_1},\hat{t_2},\hat{t_3},I)$ und $(I,\tau)$ mit $\tau = (\hat{t_1},\hat{t_2},\hat{t_3},I)$ befinden sich vor $C$ und $C'$ in positiver z-Richtung. 
-Anzumerken ist, dass für das virtuelle Beispiel angenommen wurde, dass Bildebenenkoordinatensystem und Sensorkoordinatensysetm gleich sind und deshalb mit der vereinfachten Kameramatrix $K_0$, siehe Kapitel \nameref{sec:CameraModels}.
+Als 3D-Objekt wurde ein Quader, in ein Weltkoordinatensystem $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3})$ positioniert. Des Weiteren wurden zwei Kameras $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3})$ und $(C',\beta')$ mit $\beta' = (\hat{b'_1},\hat{b'_2},\hat{b'_3})$ in $(O,\delta)$ platziert. Das Weltkoordinatensystem $(O,\delta)$ und Das Kamerakoordinatensystem $(C,\beta)$ sind deckungsgleich. Im weiteren Verlauf werden die beiden Kameras jeweils mit $C$ oder $C'$ bezeichnet, um die Unterscheidung beider klar zu machen. $C'$ ist von $C$ entlang der x-Achse verschoben worden und um $45^\circ$ Richtung $C'$ rotiert. Die zwei Bildebenen $(I,\tau)$ mit $\tau = (\hat{t_1},\hat{t_2},\hat{t_3},I)$ und $(I,\tau)$ mit $\tau = (\hat{t_1},\hat{t_2},\hat{t_3},I)$ befinden sich vor $C$ und $C'$ in positiver z-Richtung. Das Sensorkoordinatensystem $(S,\sigma)$ wurde gleich dem Bildebenenkoordinatensystem $(I,\tau)$ definiert, deshalb wird im virtuellen Beispiel mit der vereinfachten Kameramatrix $K_0$ gerechnet, siehe Kapitel \nameref{sec:CameraModels}.
 Der schematische Aufbau der Szenen ist in den Abbildungen \ref{fig:aufbauMinimalTopDown}, \ref{fig:AbbildungenMinimal} und \ref{fig:KoordsystemeMinimal} dargestellt.
 
 
@@ -53,7 +60,7 @@ Der schematische Aufbau der Szenen ist in den Abbildungen \ref{fig:aufbauMinimal
 %
 %Für die Stereokamerakalibrierung wird $C'$ relativ zur zu $C$ um einen Vektor \ensuremath{\vec{V'}} verschoben und anschließend um einen Winkel \ensuremath{\alpha} um die $b'_3$ Achse gedreht. Für die Rotation um \ensuremath{b'_3} wird eine Drehmatrix $D'$ aufgestellt.
 
-Zunächst werden die extrinsischen Kameraparameter von $C$ und $C'$ definiert. $C$ ist gegenüber $O$ weder rotiert noch verschoben, $C'$ dagegen ist entlang $\hat{d_1}$ verschoben und um $\hat{b_2}$ rotiert. Somit ergibt sich für $R=[D|V]$ von $C$:
+Zunächst werden die extrinsischen Kameraparameter von $C$ und $C'$ definiert. $C$ ist gegenüber $O$ weder rotiert noch verschoben, $C'$ dagegen ist entlang $\hat{d_1}$ verschoben und um $\hat{b_2}$ rotiert. Somit ergibt sich für $T=[R|V]$ von $C$:
 
 %Dabei gehen wir davon aus, dass $C$ weder rotiert noch verschoben ist, während $C'$ verschoben und rotiert ist.(Hier eher wieder allgemein bleiben C gegenüber O keine verönderung C' schon)
 
@@ -62,8 +69,8 @@ Zunächst werden die extrinsischen Kameraparameter von $C$ und $C'$ definiert. $
 	V=\begin{pmatrix}
 		0\\0\\0
 	\end{pmatrix}\\
-	R = [I|V]\\
-	R = \begin{bmatrix}
+	T = [I|V]\\
+	T = \begin{bmatrix}
 		1&&0&&0&&v_1\\
 		0&&1&&0&&v_2\\
 		0&&0&&1&&v_3
@@ -77,7 +84,7 @@ Und für $R'=[D'|V']$ von $C'$ gilt:
 
 \begin{gather}		
 		R'=D'^T\cdot [I|V]\\
-	D'= 
+	R'= 
 	\begin{pmatrix}
 		\cos(\alpha)&0&\sin(\alpha)\\
 		0&1&0\\
@@ -89,7 +96,7 @@ Und für $R'=[D'|V']$ von $C'$ gilt:
 		0&1&0&-v'_2\\
 		0&0&1&-v'_3			
 	\end{pmatrix}\\
-	R'=		\begin{pmatrix}
+	T'=		\begin{pmatrix}
 		\cos(\alpha)&0&-\sin(\alpha)\\
 		0&1&0\\
 		\sin(\alpha)&0&\cos(\alpha)
@@ -100,7 +107,7 @@ Und für $R'=[D'|V']$ von $C'$ gilt:
 		0&1&0&-v'_2\\
 		0&0&1&-v'_3			
 	\end{pmatrix}\\
-	R'=
+	T'=
 	\begin{pmatrix}
 		\cos(\alpha)&0&-\sin(\alpha)&-v'_1\cos(\alpha)+v'_3\sin(\alpha)\\
 		0&1&0&-v'_2\\
@@ -114,22 +121,22 @@ Die Eckpunkte des Quaders $A_\delta,B_\delta,C_\delta,D_\delta,A'_\delta,B'_\del
 
 %Im Unterkapitel \nameref{sec:MinimalFun} wird nochmal genauer drauf eingegangen, was das für $F$ bedeutet. Fürs erste wird festgelegt, dass insgesamt neun Punkte sich in der Szene befinden.
 
- Um diese Punkte auf die Bildebenen $(I,\tau)$ und $(I',\tau)$ zu projizieren, müssen neben den Transformationsmatrizen $R$ und $R'$ noch die Kameramatrizen $K$ und $K'$ festgelget werden.
+ Um diese Punkte auf die Bildebenen $(I,\tau)$ und $(I',\tau')$ zu projizieren, müssen neben den Transformationsmatrizen $R$ und $R'$ noch die Kameramatrizen $K$ und $K'$ festgelegt werden.
 
 
 \begin{gather}		
 K =
 \begin{bmatrix}
-\zeta_{C}&0&0&0\\
-0&\zeta_{C}&0&0\\
-0&0&\zeta_{C}&0\\
+\zeta_{C}&0&0\\
+0&\zeta_{C}&0\\
+0&0&1\\
 %0&0&1&0
 \end{bmatrix}\\
 K' =
 \begin{bmatrix}
-\zeta_{C'}&0&0&0\\
-0&\zeta_{C'}&0&0\\
-0&0&\zeta_{C'}&0\\
+\zeta_{C'}&0&0\\
+0&\zeta_{C'}&0\\
+0&0&1\\
 %0&0&1&0
 \end{bmatrix}
 \end{gather}
@@ -147,16 +154,16 @@ Sind $R,R',K$ und $K'$ bekannt, können die Projektionsmatrizen $P$ und $P'$ geb
 P = K\cdot R \\
 P =
 \begin{bmatrix}
-\zeta_{C}&0&0&0\\
-0&\zeta_{C}&0&0\\
-0&0&\zeta_{C}&0\\
+\zeta_{C}&0&0\\
+0&\zeta_{C}&0\\
+0&0&1\\
 %0&0&1&0
 \end{bmatrix}\\
 P' = K' \cdot R'\\
 P' =
 \begin{bmatrix}
-\zeta_{C'} \cos(\alpha)&0&\zeta_{C'} \sin(\alpha)&-\zeta_{C'} (v'_1\cos(\alpha)+v'_3\sin(\alpha) )&0\\
-0&1&0&\zeta_{C'}-v'_2&0\\
+\zeta_{C'} \cos(\alpha)&0&\zeta_{C'} \sin(\alpha)&-\zeta_{C'} (v'_1\cos(\alpha)+v'_3\sin(\alpha) )\\
+0&1&0&\zeta_{C'}-v'_2\\
 \zeta_{C'}\sin(\alpha)&0&\zeta_{C'}\cos(\alpha)&-\zeta_{C'}(v'_1\sin(\alpha)+v'_3\cos(\alpha))\\
 %0&0&0&0&1
 \end{bmatrix}
@@ -166,7 +173,9 @@ P' =
 
 %\section{Transformation der Objektpunkte von Weltkoordinaten in Kamerakoordinaten}
 
-Die 3D-Punkte $A_\delta,B_\delta,C_\delta,D_\delta,A'_\delta,B'_\delta,C'_\delta,D'_\delta, E_\delta$, werden mit den Projektionsmatrizen \ensuremath{P} und \ensuremath{P2} auf die Bildebenen $I$ und $I'$ projizierten. Ein Beispiel für die entstehende Abbildung ist in Abbildung \ref{fig:AbbildungenMinimal} zu sehen. Da festgelegt wurde dass Sensorkoordinatensystem und Bildebenenkoordinatensystem Deckungsgleich sind, ist somit das Objekt auf den Bildebenen der virtuellen Kameras projiziert und es kann der Szenenrekonstruktionsalgorithmus beginnen.
+Die 3D-Punkte $A_\delta,B_\delta,C_\delta,D_\delta,A'_\delta,B'_\delta,C'_\delta,D'_\delta, E_\delta$, werden mit den Projektionsmatrizen \ensuremath{P} und \ensuremath{P'} auf die Bildebenen $I$ und $I'$ projizierten. Da das Sensorkoordinatensystem $(S,\sigma)$ deckungsgleich mit dem Bildebenenkoordinatesystem gesetzt wurde gilt das ein Bildebenpunkt $m_\tau$ gleich einem Sensorpunkt $m_\sigma$ ist. Die Bildaufnahme ist somit 
+
+ Ein Beispiel für die entstehende Abbildung ist in Abbildung \ref{fig:AbbildungenMinimal} zu sehen. Da festgelegt wurde dass Sensorkoordinatensystem und Bildebenenkoordinatensystem Deckungsgleich sind, ist somit das Objekt auf den Bildebenen der virtuellen Kameras projiziert und es kann der Szenenrekonstruktionsalgorithmus beginnen.
 
 
 
@@ -275,16 +284,16 @@ Z=
 \end{pmatrix}
 \end{gather}
 
-Mit dem Ergebnis der $SVD$ von \ensuremath{E} lassen sich nun jeweils zwei mögliche Lösungen für $S$ und $D$ aufstellen.
+Mit dem Ergebnis der $SVD$ von \ensuremath{E} lassen sich nun jeweils zwei mögliche Lösungen für $S$ und $R$ aufstellen.
 
 
 \begin{gather}
-S_1 = -UZU^T \;\;\;\; D_1 = UW^TV^T\\
-S_2 = UZU^T \;\;\;\; D_2 = UWV^T
+S_1 = -UZU^T \;\;\;\; R_1 = UW^TV^T\\
+S_2 = UZU^T \;\;\;\; R_2 = UWV^T
 \end{gather}\\
 
 
-Um sicher zu gehen, dass es sich bei \ensuremath{D_1} und \ensuremath{D_2} auch um gültige Rotationsmatrizen handelt, kann eine Probe durchgeführt werden. Zum einen muss \ensuremath{D\cdot D^T=I_{3x3}} sein. \ensuremath{I_{3x3}} steht für die 3x3-Einheitsmatrix.  $S_1$ und $S_2$ sind jeweils schiefsymmetrische Matrizen, welche die Information für den noch gesuchten Vektor $\vec{v}$ beherbergt\cite{HZ}. 
+Um sicher zu gehen, dass es sich bei \ensuremath{R_1} und \ensuremath{R_2} auch um gültige Rotationsmatrizen handelt, kann eine Probe durchgeführt werden. Zum einen muss \ensuremath{r\cdot R^T=I_{3x3}} sein. \ensuremath{I_{3x3}} steht für die 3x3-Einheitsmatrix.  $S_1$ und $S_2$ sind jeweils schiefsymmetrische Matrizen, welche die Information für den noch gesuchten Vektor $\vec{v}$ beherbergt\cite{HZ}. 
 
 \begin{gather}
 St = [v]_\times \cdot v = v \times v
@@ -292,10 +301,10 @@ St = [v]_\times \cdot v = v \times v
 
 Um $v$ zu ermitteln muss lediglich der Kern von $S_1$ und $S_2$ gefunden werden. Die jeweilgen Ergebnisse für $v_1$ und $v_2$ sind bis auf ihre Vorzeichen die selben. Jedoch lässt sich hier $\vec{x}$ nur bis auf eine Skaleninvarianz genau bestimmen.(Grund nochmal finden... vergessen wo der stand... und was er war...). Die externen Kamerparameter lassen sich wie gesagt nur bis zu einem Skalierungsfaktor genau bestimmen\cite{HZ,Ferid}. Wie die Skaleninvarianz im virutellen Beispiel gelöst wurde, wird im nachfolgenden Abschnitt der Szenenrekonstruktion durch Triangulierung noch erklärt. \\
 
-Letztendlich können, für die Rekonstruktion der externen Kameraparameter vier mögliche Lösungen für $R$ gefunden werden.\cite{HZ,Ferid}. $\lambda v$ heißt dabei, dass sowohl $v$ also auch alle Vielfache von $v$, Lösungen sein können, was durch die Skaleninvarianz der Resultate bedingt ist\cite{HZ,Ferid}. 
+Letztendlich können, für die Rekonstruktion der externen Kameraparameter vier mögliche Lösungen für $T$ in Form von $T = R[I-C]$ wie in Gleichung \ref{eq:trafo} in Kapitel \ref{sec:CameraModels} gezeigt, gefunden werden.\cite{HZ,Ferid}. $\lambda v$ heißt dabei, dass sowohl $v$ also auch alle Vielfache von $v$, Lösungen sein können, was durch die Skaleninvarianz der Resultate bedingt ist\cite{HZ,Ferid}. 
 
 \begin{gather}
-R = [UWV^T|+\lambda v] \;\;\; \textit{oder} \;\;\;[UW^TV^T|+\lambda v]\\
+T = [UWV^T|+\lambda v] \;\;\; \textit{oder} \;\;\;[UW^TV^T|+\lambda v]\\
 \textit{oder}\;\;\; [UWV^T|-\lambda v] \;\;\; \textit{oder} \;\;\;[UW^TV^T|-\lambda v]
 \end{gather}
 
@@ -326,12 +335,12 @@ R = [UWV^T|+\lambda v] \;\;\; \textit{oder} \;\;\;[UW^TV^T|+\lambda v]\\
 \end{figure}
 \pagebreak
 
-(Noch einen Ansatz einbauen wie man die richtige Lösung algorithmisch auswertet? Im implementierte Algorithmus der arbeit wurden die Vier Lösungen jeweils rekonstruiert und alle ergebnisse ausgegeben.)
+%(Noch einen Ansatz einbauen wie man die richtige Lösung algorithmisch auswertet? Im implementierte Algorithmus der arbeit wurden die Vier Lösungen jeweils rekonstruiert und alle ergebnisse ausgegeben.)
 
 \subsection{Szenenrekonstruktion durch Triangulation}
 
-
-Unter Triangulierung versteht man das Rekonstruieren der 3D-Szenenpunkte durch Schnittpunktberechnung derjenigen Geraden, welche durch die jeweiligen Projektionszentren der Kameras und deren korrespondierenden Bildpunkte auf deren Bildebenen gehen, so dass sich ein Dreick bildet.\\
+Die Rekonstruktion der dreidimensionalen Objektpunkte für das virtuelle 
+%Unter Triangulierung versteht man das Rekonstruieren der 3D-Szenenpunkte durch Rückprojektion des dreidimensionalen Objektpunktes durch Schnittpunktberechnung derjenigen Geraden, welche durch die jeweiligen Projektionszentren der Kameras und deren korrespondierenden Bildpunkte auf deren Bildebenen gehen.\\
 
 
 \begin{minipage}{\linewidth}
@@ -341,7 +350,9 @@ Unter Triangulierung versteht man das Rekonstruieren der 3D-Szenenpunkte durch S
 \end{minipage}\\ \\
 
 
-Da das Minimalbeispiel mit reinen Daten arbeitet, ist damit garantiert, dass die Linien sich in einem Schnittpunkt treffen. Anders hingegen wäre es in einem realen Beispiel mit korrespondierenden Punkten, welche Beispielsweise über einen \textit{SURF}- Algorithmus detektiert wurden\cite{Mandun}. In Realbildern, können Bildfehler wie beispielsweise Rauschen nicht vermieden werden, des Weiteren können korrespondierende Punkte nicht immer exakt auf den Pixel genau bestimmt werden. Diese Fehler führen dazu, dass wenn ein Schnittpunkt der Geraden durch die vermeintlichen korresponiderenden Punkte nicht gefunden werden kann, da die Geraden sich sehr wahrscheinlich nicht in einem Punkt treffen werden\cite{Mandun,HZ}. 
+Im virtuellen Beispiel wird mit reinen Daten gearbeitet, sprich die Bildpunkte sind frei von Bildfehlern
+
+ ist damit garantiert, dass die Linien sich in einem Schnittpunkt treffen. Anders hingegen wäre es in einem realen Beispiel mit korrespondierenden Punkten, welche Beispielsweise über einen \textit{SURF}- Algorithmus detektiert wurden\cite{Mandun}. In Realbildern, können Bildfehler wie beispielsweise Rauschen nicht vermieden werden, des Weiteren können korrespondierende Punkte nicht immer exakt auf den Pixel genau bestimmt werden. Diese Fehler führen dazu, dass wenn ein Schnittpunkt der Geraden durch die vermeintlichen korresponiderenden Punkte nicht gefunden werden kann, da die Geraden sich sehr wahrscheinlich nicht in einem Punkt treffen werden\cite{Mandun,HZ}. 
 
 
 \begin{minipage}{\linewidth}

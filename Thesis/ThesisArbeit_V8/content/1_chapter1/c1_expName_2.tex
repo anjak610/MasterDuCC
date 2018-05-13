@@ -1,91 +1,103 @@
 \chapter{Geometrische Beziehungen zwischen Punktekorrespondenzen}
 \label{sec:HFE}
 
-Das Ziel dieser Masterarbeit ist es Punkte im dreidimensionalen Raum aus einer Stereoskopischen Aufnahme zweier Kameras zu rekonstruieren. Bis jetzt wurde die Bildaufnahme einer einzigen Kamera betrachtet. Jedoch kann eine Kamera allein nicht räumlich sehen. Um Räumlichkeit aus Bilder zu rekonstruieren, müssen mindestens zwei Aufnahmen der gleichen Szene aus unterschiedlichen Blickwinkeln aufgenommen werden. Innerhalb dieser Aufnahmen müssen Punktekorrespondenzen gesucht werden. Korrespondierende Punkte zeichnen sich dadurch aus, dass sie die Abbildungen ein und des selben projektiven Punkts im Raum sind. Für diese Punkte muss dann eine gemeinsame Abbildungsvorschrift aufgestellt werden. Mit diesen Abbildungsvorschriften ist es möglich eine Beziehung zwischen zwei projizierten Bildpunkten 
-herzuleiten, ohne dass intrinsischen und extrinsische Kameraparameter bekannt sind. Die Abbildungsvorschrift wird in einer $3 \times 3$-Matrix $H$ ausgedrückt, welche die Transformationsmatrizen, sowie die Kameramatrizen zusammenfasst. Die $3 \times 3$-Matrix, kann aus gegebenen Punktekorrespondenzen abgeleitet werden. Aus $H$ können dann wiederum Schlüssen auf die Kameraparameter der beiden Kameras gezogen werden.  
+Das Ziel dieser Masterarbeit ist es Punkte im dreidimensionalen Raum aus einer Stereoskopischen Aufnahme zweier Kameras zu rekonstruieren. Bisher wurde die Bildaufnahme einer einzigen Kamera betrachtet. Jedoch kann eine Kamera allein nicht räumlich sehen. Um dreidimensionale Szenen aus Bilder zu rekonstruieren, müssen mindestens zwei Aufnahmen der gleichen Szene aus unterschiedlichen Blickwinkeln aufgenommen werden. Innerhalb dieser Aufnahmen müssen Punktekorrespondenzen gesucht werden. Korrespondierende Punkte zeichnen sich dadurch aus, dass sie die Abbildungen desselben Ursprungspunktes im Raum sind. Für diese Punkte muss dann eine gemeinsame Abbildungsvorschrift aufgestellt werden. Mit diesen Abbildungsvorschriften ist es möglich eine Beziehung zwischen zwei projizierten Bildpunkten 
+herzuleiten. Die Abbildungsvorschrift wird in einer $3 \times 3$-Matrix $H$ ausgedrückt, welche die Transformationsmatrizen, sowie die Kameramatrizen zusammenfasst. Die $3 \times 3$-Matrix, kann aus gegebenen Punktekorrespondenzen abgeleitet werden. Aus $H$ können Rückschlüssen auf die Kameraparameter der beiden Kameras gezogen werden.  \\
 
 
 %
 %Über die Abbildungsvorschrift können dann Schlüsse auf die Kameraparameter der beiden Kameras gezogen werden. Im ersten Schritt wird eine Abbildungsvorschrift für die Korrespondenzanalyse von Punkten auf einer Ebene aufgestellt. Im zweiten Schritt wird diese Abbildungsvorschrift für die Korrespondenz zwischen willkürlichen Punkten im Raum entsprechend erweitert. \\
 
-Es seien \ensuremath{m_{\tau} = \begin{pmatrix}
-		m_{\tau,1}\\m_{\tau,2}\\m_{\tau,3}
-\end{pmatrix}} die homogenen Koordinaten eines Punktes auf der Bildebene$(I,\tau)$ und \ensuremath{m'_{\tau'} = \begin{pmatrix}
-		m'_{\tau',1}\\m'_{\tau',2}\\m'_{\tau',3}
-\end{pmatrix}} ein Punkt der projektiv transformierten Bildebene $(I',\tau')$.Dann gilt
+Es seien \ensuremath{m_{\tau} =(m_{\tau,1},m_{\tau,2},m_{\tau,3})^T} die homogenen Koordinaten eines Punktes auf der Bildebene$(I,\tau)$ und \ensuremath{m'_{\tau'} = (m'_{\tau',1},m'_{\tau',2},m'_{\tau',3})^T} der dazu Korrespondierende Punkt der projektiv transformierten Bildebene $(I',\tau')$. Gesucht wird eine Abbildungsvorschift welche als Matrix H ausgedrückt wird:
 
 \begin{gather}
-m'_{\tau'} = Hm_{\tau}\\
-Hm_{\tau} = \begin{bmatrix}
-{h_1}^T \cdot m_{\tau,1}\\{h_2}^T \cdot m_{\tau,2}\\{h_3}^T \cdot m_{\tau,3}
-\end{bmatrix} \\
-\leadsto 
-m'_{\tau'}= Hm_{\tau}= \begin{bmatrix}
-h_{11}m_{\tau,1}+h_{12}m_{\tau,2}+h_{13}m_{\tau,3}\\
-h_{21}m_{\tau,1}+h_{22}m_{\tau,2}+h_{23}m_{\tau,3}\\
-h_{31}m_{\tau,1}+h_{32}m_{\tau,2}+h_{33}m_{\tau,3}
-\end{bmatrix}\\
-\leadsto 
-H=\begin{bmatrix}
-h_{11}&h_{12}&h_{13}\\
-h_{21}&h_{22}&h_{23}\\
-h_{31}&h_{32}&h_{33}
-\end{bmatrix}
+	m'_{\tau'} = Hm_{\tau}\\
+	Hm_{\tau} = \begin{bmatrix}
+		{h_1}^T \cdot m_{\tau,1}\\{h_2}^T \cdot m_{\tau,2}\\{h_3}^T \cdot m_{\tau,3}
+	\end{bmatrix} \\
+	\leadsto 
+	m'_{\tau'}= Hm_{\tau}= \begin{bmatrix}
+		h_{11}m_{\tau,1}+h_{12}m_{\tau,2}+h_{13}m_{\tau,3}\\
+		h_{21}m_{\tau,1}+h_{22}m_{\tau,2}+h_{23}m_{\tau,3}\\
+		h_{31}m_{\tau,1}+h_{32}m_{\tau,2}+h_{33}m_{\tau,3}
+	\end{bmatrix}\\
+	\leadsto 
+	H=\begin{bmatrix}
+		h_{11}&h_{12}&h_{13}\\
+		h_{21}&h_{22}&h_{23}\\
+		h_{31}&h_{32}&h_{33}
+	\end{bmatrix}
 \end{gather}
 
 %Im folgenden werden zunächst zwei Fälle für die Herleitung von Abbildungsvorschriften unterschieden.
 
-In den ersten beiden Abschnitten werden zwei Herleitungen der gesuchten Abbildungsvorschriften, in zwei unterschiedlichen Fällen, anhand von bekannten Transformationsmatrizen und Kameramatrizen aufgezeigt. (Grund warum irgendwie angeben???)
-Im ersten Fall wird davon ausgegangen, dass die 3D-Punkte im Raum auf einer Ebene liegen und auf die Bildebenen von zwei zueinander verschobenen und rotierten Kameras abgebildet werden. Im zweiten Fall werden die Punkte eines komplexeren 3D-Objektes auf die beiden Bildebenen abgebildet. Im letzten Abschnitt werden dann die Herleitungen beider entstehenden Matrizen für den Fall von unbekannten Kameraparameter aufgezeigt. 
+In den ersten beiden Abschnitten werden zwei Herleitungen der gesuchten Abbildungsvorschriften, in zwei unterschiedlichen Fällen, anhand von bekannten Transformationsmatrizen und Kameramatrizen aufgezeigt. 
+Im ersten Fall wird davon ausgegangen, dass die 3D-Punkte im Raum auf einer Ebene liegen und auf die Bildebenen von zwei zueinander verschobenen und rotierten Kameras abgebildet werden. Im zweiten Fall werden die Punkte eines komplexeren 3D-Objektes auf die beiden Bildebenen abgebildet. Im letzten Abschnitt werden dann die Herleitungen der entstehenden Matrizen beider Fälle für den Fall von unbekannten Kameraparameter aufgezeigt. 
 
- 
+
 \section{Korrespondenzanalyse für Punkte auf einer Ebene (Homographie)}
- 
-Ein Punkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3},O)$, wird auf zwei Bildebenen $(I,\tau)$ und $(I',\tau')$ projiziert. Für die Abgebildeten Punkte $\gamma m_\tau$ und $\gamma m'_{\tau'}$ gelten die bekannte Projektionsvorschrift:
+
+Eine Abbildungsvorschrift kann in bestimmten Fällen eindeutig bestimmt werden. In diesen Fällen nennt man die Abbildung zwischen beiden zweidimensionalen Bildern Homographie\cite{HZ,Elements,Roser}. In diesem Kapitel wird der beispielhafte Fall behandelt, dass Punkte auf der $x,y$-Ebene im Weltkoordinatensystem auf zwei unterschiedlichen Kameras $C$ und $C'$ abgebildet wird. Dies ist in Abbildung dargestellt.
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=0.8\linewidth]{images/HomographieDP_beschriftet.png}
+	\captionof{figure}{In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ befindet sich auf der Ebene $\pi$, welche durch die Achsen $\hat{d_1}$ und $\hat{d_2}$ aufgespannt wird. $M_\delta$ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $\gamma m_\tau$ und $\gamma' m'_\tau$.}  
+	\label{fig:Homographie}
+\end{minipage}\\
+
+Um die Abbildungsvorschrift herzuleiten beginnen wir bei dem Bildpunkt \ensuremath{m_{\tau} = (m_{\tau,1},m_{\tau,2},m'_{\tau,3})^T} mit $m_{\tau,3}=1$. Während in der Bildaufnahme ein Punkt $m_\beta$ durch Division mit der $m_{\beta,3}$-Komponenten eindeutig zu $m_{\tau}$ wird ist die Rückrichtung nicht eindeutig. Alle Punkte auf der Geraden von C und $m_{\tau}$, siehe\\
+
+Abbildung (einfügen),\\
+
+
+werden auf denselben Bildpunkt projiziert. Die Projektion von $m_{\tau}$ auf $m_\beta$ ist demnach nicht eindeutig. Die Gerade mit allen möglichen Punkten $m_\beta$ kann als $\gamma m_{\tau}$, mit der freien Variablen $\gamma > 0$ ausgedrückt werden.  
+
+%Ein Punkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3},O)$, wird auf zwei Bildebenen $(I,\tau)$ und $(I',\tau')$ projiziert. 
+Für zwei korrespondierende Bildpunkte $m_\tau$ und $ m'_{\tau'}$ kann für die möglichen Punkte $m_\beta$ und $m'_\beta$ die folgende Projektionsvorschrift hergeleitet werden \cite{Elements}.
 
 \begin{gather}
 	\gamma \vec{m}_\tau = P \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix} = 
 	\begin{bmatrix}KR|-KR\vec{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = KR(\vec{M}\delta - \vec{C}_\delta)\\
 	\gamma' \vec{m'_{\tau'}} = P' \begin{bmatrix}\vec{M'}_\delta\\1\end{bmatrix} = 
-	\begin{bmatrix}K'R'|-K'R'\vec{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = K'R'(\vec{M}\delta - \vec{C}_\delta)
+	\begin{bmatrix}K'R'|-K'R'\vec{C'}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = K'R'(\vec{M}\delta - \vec{C'}_\delta)\label{eq:Homo}
 \end{gather}
 
 
-$\gamma m_\tau$ und $\gamma m'_{\tau'}$ stehen für die nicht-normierten Kamerakoordinaten mit einer willkürlichen Tiefe $\gamma$.Zur Erinnerung in Kapitel ?? wurde in Gleichung \ref{eq:21} ein 3D-Punkt $M_\delta$ auf eine Bildebene projiziert. Der entstandene Punkt $m_\tau$ hatte bei einer bekannten Tiefe $Z$ die Form $	m_\tau = \begin{pmatrix}
-\zeta X\\ \zeta Y\\Z
-\end{pmatrix} $, man spricht hier von einer nicht-normierten Bildebenenkoordinate. Durch normierung wird aus $m_\tau$ eine zweidimensionale Bildebenkoordinate mit $m_\tau = \begin{pmatrix}
-\frac{\zeta X}{Z}\\ \frac{\zeta Y}{Z}
-\end{pmatrix}$.Für die Rücktransformation der normierten auf die nicht-normierten Bildebenkooridnaten wurde eifnach wieder mit $Z$ erweitert.\\
+%$\gamma m_\tau$ und $\gamma m'_{\tau'}$ stehen für die nicht-normierten Kamerakoordinaten mit einer willkürlichen Tiefe $\gamma$.Zur Erinnerung in Kapitel ?? wurde in Gleichung \ref{eq:21} ein 3D-Punkt $M_\delta$ auf eine Bildebene projiziert. Der entstandene Punkt $m_\tau$ hatte bei einer bekannten Tiefe $Z$ die Form $	m_\tau = \begin{pmatrix}
+%\zeta X\\ \zeta Y\\Z
+%\end{pmatrix} $, man spricht hier von einer nicht-normierten Bildebenenkoordinate. Durch normierung wird aus $m_\tau$ eine zweidimensionale Bildebenkoordinate mit $m_\tau = \begin{pmatrix}
+%\frac{\zeta X}{Z}\\ \frac{\zeta Y}{Z}
+%\end{pmatrix}$.Für die Rücktransformation der normierten auf die nicht-normierten Bildebenkooridnaten wurde eifnach wieder mit $Z$ erweitert.\\
 
-Für die Herleitung der Abbildungsvorschriften, wird in beiden Fällen davon ausgegangen dass die Tiefe $Z$ willkürlich ist und so wird der nicht normierte Bildebenpunkt $m_\tau$ mit einer undefinierten Tiefe $\gamma$ eweitert\cite{Elements}. So das gilt:
+%Für die Herleitung der Abbildungsvorschriften, wird in beiden Fällen davon ausgegangen dass die Tiefe $Z$ willkürlich ist und so wird der nicht normierte Bildebenpunkt $m_\tau$ mit einer undefinierten Tiefe $\gamma$ eweitert\cite{Elements}. So das gilt:
 
-\begin{gather}
-	\begin{pmatrix}
-		\frac{\zeta X}{\gamma}\\ \frac{\zeta Y}{\gamma}
-	\end{pmatrix}
- \leadsto 
- \begin{pmatrix}
-		\zeta X\\ \zeta Y\\\gamma
-	\end{pmatrix}
-\end{gather}\\
-
-
-Für den F gilt der ein bestimmter Szenenaufbau. Es existiert eine Ebene $\pi$ im Raum, auf welcher sich ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatesystems $(O,\delta)$ befindet. Die Achsen $\hat{d_1}$ und $\hat{d_2}$ von $O$ spannen die Ebene $\pi$ auf. Der Punkt $M_\delta$ wird nun mit den Projektionsmatrizen $P = [KR|-KR\vec{C}_\delta]$ und $P'=	[K'R'|-K'R'\vec{C}_\delta]$ in einen Punkt bezüglich der Bildebenen $(I,\tau)$ mit $\tau = (\hat{t_1}, \hat{t_2},I)$ und $(I',\tau')$ mit $\tau' = (\hat{t_1}', \hat{t_2}',I')$ projiziert. Es entstehen zunächst die nicht-normierten Bildebenkoordinaten $\gamma m_\tau$ und $\gamma m'_{\tau'}$.  Da der Ursprung des Weltkoordinatensystem $(O,\delta)$ auf der Ebene $\pi$ liegt, gilt für den Punt $M_\delta$ auf $\pi$ $M_\delta = \begin{pmatrix}
-x_{\hat{d_1}}\\
-y_{\hat{d_2}}\\
-0
-\end{pmatrix}$. Abbildung \ref{fig:Homographie} veranschaulicht den eben beschrieben Aufbau noch einmal grafisch.
-
-(GRAFIK NOCH AKTUALISIEREN)\\
-\begin{minipage}{\linewidth}
- 	\centering
- 	\includegraphics[width=0.8\linewidth]{images/HomographieDP_beschriftet.png}
- 	\captionof{figure}{In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ befindet sich auf der Ebene $\pi$, welche durch die Achsen $\hat{d_1}$ und $\hat{d_2}$ aufgespannt wird. $M_\delta$ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $\gamma m_\tau$ und $\gamma' m'_\tau$.}  
- 	\label{fig:Homographie}
- \end{minipage}\\
+%\begin{gather}
+%	\begin{pmatrix}
+%		\frac{\zeta X}{\gamma}\\ \frac{\zeta Y}{\gamma}
+%	\end{pmatrix}
+% \leadsto 
+% \begin{pmatrix}
+%		\zeta X\\ \zeta Y\\\gamma
+%	\end{pmatrix}
+%\end{gather}\\
 
 
-Für die Projektion des Punktes $M_\delta$ in die Bildpunkte  $m_\beta$ und $m'_{\beta}$ bezüglich $(C,\beta)$ und $(C',\beta')$ mit 
+%Für den F gilt der ein bestimmter Szenenaufbau. Es existiert eine Ebene $\pi$ im Raum, auf welcher sich ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatesystems $(O,\delta)$ befindet. Die Achsen $\hat{d_1}$ und $\hat{d_2}$ von $O$ spannen die Ebene $\pi$ auf. Der Punkt $M_\delta$ wird nun mit den Projektionsmatrizen $P = [KR|-KR\vec{C}_\delta]$ und $P'=	[K'R'|-K'R'\vec{C}_\delta]$ in einen Punkt bezüglich der Bildebenen $(I,\tau)$ mit $\tau = (\hat{t_1}, \hat{t_2},I)$ und $(I',\tau')$ mit $\tau' = (\hat{t_1}', \hat{t_2}',I')$ projiziert. Es entstehen zunächst die nicht-normierten Bildebenkoordinaten $\gamma m_\tau$ und $\gamma m'_{\tau'}$.  Da der Ursprung des Weltkoordinatensystem $(O,\delta)$ auf der Ebene $\pi$ liegt, gilt für den Punt $M_\delta$ auf $\pi$ $M_\delta = \begin{pmatrix}
+%x_{\hat{d_1}}\\
+%y_{\hat{d_2}}\\
+%0
+%\end{pmatrix}$. Abbildung \ref{fig:Homographie} veranschaulicht den eben beschrieben Aufbau noch einmal grafisch.
+
+%(GRAFIK NOCH AKTUALISIEREN)\\
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=0.8\linewidth]{images/HomographieDP_beschriftet.png}
+%	\captionof{figure}{In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ befindet sich auf der Ebene $\pi$, welche durch die Achsen $\hat{d_1}$ und $\hat{d_2}$ aufgespannt wird. $M_\delta$ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $\gamma m_\tau$ und $\gamma' m'_\tau$.}  
+%	\label{fig:Homographie}
+%\end{minipage}\\
+
+Mit einem Ursprungspunkt $M_\delta=(x_\delta,y_\delta,0)^T$ auf der x,y Ebene im Weltkoordinatensystem und einer unbekannten Projektionsmatrix P mit
 
 \begin{gather}
 	P=
@@ -93,8 +105,12 @@ Für die Projektion des Punktes $M_\delta$ in die Bildpunkte  $m_\beta$ und $m'_
 		p_{11}&p_{21}&p_{31}&p_{41}\\
 		p_{12}&p_{22}&p_{32}&p_{42}\\
 		p_{13}&p_{23}&p_{33}&p_{43}
+	\end{bmatrix}=	\begin{bmatrix}
+		p_1&p_2&p_3&p_4
 	\end{bmatrix}
-\end{gather} gilt dann\cite{Elements}:
+\end{gather} 
+
+kann die folgende Gleichung aufgestellt werden \cite{Elements}
 
 
 \begin{gather}
@@ -131,43 +147,30 @@ Für die Projektion des Punktes $M_\delta$ in die Bildpunkte  $m_\beta$ und $m'_
 	\begin{bmatrix}
 		x_\delta\\y_\delta\\1
 	\end{bmatrix}=
-	G' \vec{m}_{\delta}
+	G' \vec{m}_{\delta}. 
 \end{gather}\\
- 
-% In diesem Prozess sind sowohl die zwei Matrizen $G$ und $G'$, sowie zwei weitere Koordinatensysteme $(C,\alpha)$ mit $\alpha = (\hat{d_1},\hat{d_2},\hat{d_4})$, wobei $\hat{d_4} = \overline{CO}$ und  $(C',\alpha')$ mit $\alpha' = (\hat{d_1},\hat{d_2},\hat{d_4}')$, wobei $\hat{d_4}' = \overline{C'O}$ entstanden\cite{Elements}.
-% Des Weiteren sind zwei neue Punkte $m_\alpha$ und $m'_{\alpha}$ entstanden, von denen behauptet wird, dass $\gamma m_\beta = G\cdot m_\alpha$ und $\gamma' m'_{\beta'} = G'\cdot m'_{\alpha'}$ gelte\cite{Elements}. Um dies zu testen werden $m_\alpha$ und $m'_{\alpha}$ anders formuliert.
-% 
-% \begin{gather}
-% 	m_\alpha = M_\alpha + \overline{CO}_\alpha = M_{(\hat{d_1},\hat{d_2},\hat{d_4})} + \overline{CO}_{(\hat{d_1},\hat{d_2},\hat{d_4})} = \begin{pmatrix}
-% 		x_\delta\\
-% 		y_\delta\\
-% 		1
-% 	\end{pmatrix} \\
-% 	m'_{\alpha'} = M_{\alpha'} + \overline{CO}_{\alpha'} = M_{(\hat{d_1},\hat{d_2},\hat{d_4}')} + \overline{CO}_{(\hat{d_1},\hat{d_2},\hat{d_4}')} = \begin{pmatrix}
-% 		x_\delta\\
-% 		y_\delta\\
-% 		1
-% 	\end{pmatrix} 
-% \end{gather}
-% 
-% Aus Gleichungen 3.12 und 4.19 folgt dann, dass für alle Punkte in der Ebene $\pi$ gilt, dass $m_\alpha = m'_{\alpha}$.
- 
-Woraus für die Punkte $\gamma m_\tau$ und $\gamma' m'_{\tau'}$ folgt, dass $\gamma m_\tau = G\cdot m_\delta$ und $\gamma' m'_{\tau'} = G'\cdot m'_{\delta'}$\cite{Elements}. Somit kann für $\gamma m_\tau$ und $\gamma' m'_{\tau}$ folgende Beziehungsgleichung aufgestellt werden\cite{Elements}.
- 
- \begin{gather}
- 	\gamma' m'_{\tau'} = G' G^{-1} \gamma m_\tau
- \end{gather}
- 
- Für $\frac{\gamma'}{\gamma} = \lambda$, kann Gleichung 4.20 dann wieder umformuliert werden in:
- 
- \begin{gather}
- 	\lambda m'_{\tau'} = H m_\tau\\
- 	\leadsto m'_{\tau'} = H m_\tau
- \end{gather} 
- 
- 
-Die Matrix $H$ wird im Fall 
- Zwei projizierte Bilder einer Ebene über eine Matrix $H$ , welche wiederum eine Kombination aus denjenigen Homographien ist, welche die jeweiligen Bilder mit der Ebene $\pi$ in Beziehung setzten\cite{Elements}
+
+
+Aus $\gamma m_\tau = G\cdot m_\delta$ und $\gamma' m'_{\tau'} = G'\cdot m_{\delta}$ kann dann folgendes abgeleitet werden\cite{Elements}.
+
+\begin{gather}
+	\gamma' m'_{\tau'} = G' G^{-1} \gamma m_\tau \label{eq:gammaTau}
+\end{gather}
+
+Mit $\lambda= \frac{\gamma'}{\gamma}$, kann Gleichung \ref{eq:gammaTau} dann wieder umformuliert werden und in die Bedienungsgleichung der Homographie mit $H=G' G^{-1}$ umgeformt werden:
+
+\begin{gather}
+	\lambda m'_{\tau'} = H m_\tau\label{eq:H}
+	%\leadsto m'_{\tau'} = H m_\tau, 
+\end{gather} 
+
+
+Die entstandene Homographie $H$ ist somit eine Abbildungsvorschrift welche zwei korrespondierende Punkte in Verbindung setzt \cite{Elements}. %$\lambda= \frac{\gamma'}{\gamma}$ ist ein Mass für den Relativen unterschied der Distanz zwischen beiden Kameras zum Bildpunkt.
+Diese Homographiebedingung stellt ein Gleichungssystem mit 9 unbekannten, welche in Kapitel 3.2 gelöst wird\cite{HZ}.
+
+% (WO ist die verbindung zur rektifizierung, wie stell ich verbindung von H zur projektionsmatrix her?) 
+
+
 % %Ein Punkt auf der normierten Bildebene m_{n,\tau}=(m_{n,\tau x},m_{n,\tau y},1, I) lässt sich somit eindeutig zurücktransformieren indem die Gerade $\g=vec(C)+t\vec(Cm)
 % 
 % Ein Punkt auf der normierten Bildebene $m_{n,\tau}=(m_{n,\tau x},m_{n,\tau y},1, I)$ lässt sich somit eindeutig auf die Bildebene erweitern mit 
@@ -208,106 +211,141 @@ Die Matrix $H$ wird im Fall
 % \\
 % Mann könnte das gleichungssystem hier ausformulieren um auf die bestimmung der Kameraparameter einzugehn, wenn du willst (denke das hilft hier zwar nicht aber schaden tut warhscheinlich auch nicht so sehr)
 % 
- 
- 
- \section{Korrespondenzanalyse für willkürliche Punkte ?im Raum? (Epipolare Geometrie)}
- Nachdem die Theorie der geometrischen Hintergründe der Epipolargeometrie, bei der Stereokalibrierung und Szenerekonstruktion, erläutert wurden, wird nun der mathematische Hintergrund genauer aufgezeigt. Vor allem soll auf die Herleitung der neu eingeführten Fundamental Matrix $F$ und der essentiellen Matrix $E$ eingegangen werden. Diese spielen nämlich eine entscheidende Rolle bei der Rekonstruktion der Kamerapose und der Szenenrekonstruktion\cite{Elements, HZ}. $F$ und $E$ bilden jeweils eine singuläre 3x3-Matrix, welche die Geometrie zwischen den Bildpunkten $m_\tau$ und $m'_\tau$ auf $I$ und $I'$ und dem Objektpunkt $M_\delta$ im Raum beschreibt. Die Vektoren $\overline{CM} = (\vec{M}_\delta - \vec{C}_\delta),\, \overline{C'M} = (\vec{M}_\delta - \vec{C'}_\delta)$ und $\overline{CC'} = (\vec{C'}_\delta - \vec{C}_\delta)$ bilden das in Abbildung \ref{fig:Epipolargeometry} sichtbare schwarze Dreieck. $F$ und $E$ fassen dieses Dreieck in ihren Matrizen zusammen. Um das ganze mathematisch zu erklären, wird ein Stereokameraufbau definiert. Ein Objektpunkt $M_\delta$ in Weltkoordinaten$(O,\delta)$ wird von zwei Kameras $C$ mit $(C,\beta)$ und $C'$ mit $(C',\beta')$ aufgenommen und auf deren Bildebenen $I$ und $I'$ als $m_\beta$ und $m'_\beta$ abgebildet. $C$ und $C'$ besitzen jeweils eine eigene Projektionsmatrix $P$ und $P'$. Anzumerken ist, dass die folgende Herleitung nach \cite{Elements} aufgestellt wurde.
- 
- \begin{gather}
- 	P = \begin{bmatrix}
- 		KR|-KR\vec{C}_\delta
- 	\end{bmatrix}\\
- 	P' = \begin{bmatrix}
- 		K'R'|-K'R'\vec{C'}_\delta
- 	\end{bmatrix}
- \end{gather}
- 
- $M$ wird mit $P$ und $P'$ auf die Bildebenen $I$ und $I'$ mit den jeweiligen Koordinatensystemen $I = (I,\tau)$ und $I'= (I',\tau')$ projiziert. Wichtig anzumerken, auch für den späteren Aufbau mit zwei Kameras unterschiedlicher Auflösung, ist, dass es sich bei den Koordinatensystemen von $I$ und $I'$ nicht um identische handeln muss.\cite{Elements} Es entstehen die Bildpunkte $\gamma m_\tau$ und $\gamma' m'_{\tau'}$ mit $\gamma \geq 0$ und $\gamma' \geq 0$. (gamma erklären)
- 
- \begin{gather}
- 	\gamma\vec{m}_\tau = P \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix}\\
- 	\gamma\vec{m}_\tau = \begin{bmatrix}KR|-KR\vec{C}_\delta\end{bmatrix}\begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix}\\
- 	\gamma'\vec{m'}_{\tau'} = P' \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix}\\
- 	\gamma'\vec{m'}_{\tau'} = \begin{bmatrix}K'R'|-K'R'\vec{C'}_\delta\end{bmatrix}\begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix}\\
- \end{gather}
- 
- $-KR\vec{C}_\delta$ und $-K'R'\vec{C'}_\delta$ verrechnet mit $M$ sind gleich den Vektorausdrücken $(\vec{M}_\delta - \vec{C}_\delta)$ und $(\vec{M}_\delta - \vec{C'}_\delta)$, welche die Verbindungslinie der beiden Projektionszentren mit dem Objektpunkt $M$ im Raum beschreiben.
- 
- \begin{gather}
- 	\gamma\vec{m}_\tau = KR(\vec{M}-\vec{C}_\delta)\\
- 	\gamma'\vec{m'}_\tau = K'R'(\vec{M}-\vec{C'}_\delta)
- \end{gather}
- 
- Gleichungen 4.8 und 4.9 werden nach $(\vec{M}-\vec{C}_\delta)$ und $(\vec{M}-\vec{C'}_\delta)$ aufgelöst.
- 
- \begin{gather}
- 	\gamma R^TK^{-1}\vec{m}_\tau = (\vec{M}-\vec{C}_\delta)\\
- 	\gamma R'^TK'^{-1}\vec{m'}_{\tau'} = (\vec{M}-\vec{C'}_\delta)
- \end{gather}
- 
- Wie bereits erwähnt ergibt sich aus den Vektoren $(\vec{M}_\delta - \vec{C}_\delta),\, (\vec{M}_\delta - \vec{C'}_\delta)$ und $(\vec{C'}_\delta - \vec{C}_\delta)$ das Dreieck aus Abbildung \ref{fig:Epipolargeometry}. Für das Dreieck kann, aus den drei Vektoren, die folgende Gleichung aufgestellt werden. 
- 
- \begin{gather}
- 	(\vec{C'}_\delta - \vec{C}_\delta) = (\vec{M}_\delta - \vec{C}_\delta) - (\vec{M}_\delta - \vec{C'}_\delta)
- \end{gather}
- 
- $(\vec{M}-\vec{C}_\delta)$ und $(\vec{M} - \vec{C'}_\delta)$ können durch die Ausdrücke in den Gleichungen 4.10 und 4.11 ersetzt werden.
- 
- \begin{gather}
- 	(\vec{C'}_\delta - \vec{C}_\delta) = \gamma R^TK^{-1}\vec{m}_\tau - \gamma R'^TK'^{-1}\vec{m'}_{\tau'}
- \end{gather}
- 
- Es gilt $\gamma \geq 0$ und $\gamma' \geq 0$, sie stehen für die Teife von $m$ und $m'$ und können mit Hilfe des Kreuzproduktes eliminiert werden\cite{Elements}. Zunächst wird $(\vec{C}'_\delta - \vec{C}_\delta)$ auf die rechte Seite gebracht, so dass die Gleichung nach Null aufgelöst wird.
- 
- 
- \begin{gather}
- 	\begin{bmatrix}\vec{C'}_\delta - \vec{C}_\delta\end{bmatrix}_\times \gamma R^TK^{-1}\vec{m}_\tau - 
- 	\begin{bmatrix}	\vec{C'}_\delta - \vec{C}_\delta\end{bmatrix}_\times \gamma' R'^TK'^{-1} \vec{m'}_{\tau'} =  0
- \end{gather}
- 
- Gleichung 4.14 wird von links mit $\gamma' \vec{x'}^T_{\tau'}K'^{-T}R'$. Somit kann eine der beiden Schiefsymmetrischen Matrizen aus der Gleichung eliminiert werden. 
- 
- \begin{gather}
- 	\gamma' \vec{m'}_{\tau'} K'^{-T}R' \begin{bmatrix}	\vec{C'}_\delta - \vec{C}_\delta\end{bmatrix}_\times \gamma R^TK^{-1}\vec{m}_\tau = 0
- \end{gather}
- 
- Da $\gamma \geq 0$ und $\gamma' \geq 0$, kann für Gleichung 4.15 auch folgendes geschrieben werden.
- 
- \begin{gather}
- 	\vec{m'}_{\tau'} K'^{-T}R' \begin{bmatrix}	\vec{C'}_\delta - \vec{C}_\delta\end{bmatrix}_\times R^TK^{-1}\vec{m}_\tau = 0
- \end{gather}
- 
- Aus Gleichung 4.16 können nun die Matrizen $F$ und $E$ ausgelesen werden. Bei $E$ handelt es sich um einen Kalibrierten Fall, dass bedeutet dass sowohl $K$ als auch $K'$ bekannt sind und die normalisierten Bildkoordinaten $\vec{\hat{m}}$ und $\vec{\hat{m}}'$  durch multiplikation mit $K$ und $K'$ entstehen. $E$ selbst fässt die Schiefsymmetrische Matrix $[\vec{C'}_\delta - \vec{C}_\delta]_\times$ und die beiden Transformationsmatrizen $R$ und $R'$ zusammen. 
- 
- \begin{gather}
- 	\vec{m'}_{\tau'}^T K'^{-T}EK^{-1}\vec{m}_\tau = 0\\
- 	\vec{\hat{m}}_\tau^T E \vec{\hat{m}}'_{\tau'} = 0
- \end{gather}
- 
- Matrix $E$ wird zu $F$, wenn es sich um einen unkalibrierten Fall handelt. Unkalibriert bedeutet, dass $K$ und $K'$ nicht bekannt sind, die Informationen zu $K$ und $K'$ in $F$ befinden. Werden $K$ und $K'$ zu $E'$ multipliziert, wird $E$ zu $F$. 
- 
- \begin{gather}
- 	\vec{m'}_{\tau'}^T K'^{-T}EK^{-1}\vec{m}_\tau = 0\\
- 	\vec{m'}_{\tau'}^T F\vec{m}_\tau = 0
- \end{gather}
- 
- $F$ und $E$, fassen die komplette Epipoloargeometrie, sprich externe und interne Parameter, sowie die geometrische Beziehung der jeweiligen Bildpunkte zu den 3-D Objektpunkten in einer 3x3-Matrix zusammen. Für $F$ und $E$ gibt es nicht nur eine Lösung. Werden $F$ oder $E$ Beispielsweise über den \textit{eight-Point-Algorithm} ermittelt, so sind die entstehenden 3x3-Matrixen und jedes vielfache von diesen gültige Lösungen für $F$ und $E$\cite{HZ,HZ8}. \textcolor{red}{Noch herausfinden ob das mit den Tiefen $\gamma$ und $\gamma'$ zusammenhängt!!}. Mit $F$ und $E$ kann wie bereits nachgeprüft werden, ob der \textit{epipolar-constraint} $m'^TFm = o$ oder $\hat{m'}^TE\hat{m} = 0$ zwischen zwei Bildpunkte gilt. Des weiteren können Epipole $e$ und $e'$ und Epipolarlinien $l$ und $l'$ ausfindig gemacht werden, sobald $E$ oder $F$ bekannt ist\cite{HZ,Elements,HZ8,ZZGXr}. Um die zu $m$ oder $m'$ korrespondierende Epipolarlinie $l'$ oder $l$ zu berechnen gilt:
- 
- \begin{gather}
- 	l' = Fm\\
- 	l = F^Tm'
- \end{gather} 
- 
- Um die Epipole $e$ und $e'$ zu berechnen die Gleichungen 3.103 und 3.104 erfüllt sein. Für $e$ reicht es also den rechten Nullraum von F zu bestimmen und für $e'$ muss dementsprechend der linke Kern von $F$ gefunden werden. 
- 
- \begin{gather}
- 	Fe = 0\\
- 	F^Te' = 0
- \end{gather}
- 
- Die Matrizen $F$ und $E$ sind die ausschlaggebenden Elemente, wenn es um die rekonstruktion der Kameraorientierungen und der Rekonstruktion der Szene geht. In beiden folgenden Kapitel werden zwei Beispiele zur Findung der exterenen Kameraparameter und der Szenenrekonstruktion aufgezeigt. Beim ersten Beispiel handelt es sich um ein Minimalbeispiel mit synthetisch erzeugten reinen Daten, um die theoretische Funktionalität des Algorithmus zu beweisen. Im zweiten Beispiel, wird der Algorithmus, mit einigen Anpassungen an die Realverhältnisse, auf Stereobildpaare, aufgenommen von zwei verschiedenen Kameras, angewandt. Die implementierten Algotithmen ermitteln aus einem Satz korrespondierender Bildpunkte die Fundamental Matrix und die essentielle Matrix mit Hilfe des sogenannten \textit{eight-Point-Alhorithm}, Im Anschluss werden dann die externen Kameraparameter ermittelt und die Szene mit einem Triangulationsverfahren rekonstruiert. 
- 
- 
+
+
+\section{Korrespondenzanalyse für willkürliche Punkte im Raum (Epipolare Geometrie)}
+
+Für Bilder von dreidimensionalen Objekten, bei denen die Punkte auf verschiedenen Ebenen liegen können, kann keine Homographiebedingung hergestellt werden um die Kameraparameter zu bestimmen. Jedoch kann auf geometrische Bedingungen zurückgegriffen werden mit denen die Abbildungsvorschrift zwischen den Bildern ausgenutzt werden um die Kameraparameter beider Kameras zu bestimmen. Ein Ursprungspunkt $M_\delta$ wird wieder mit zwei Kameras $C$ und $C'$ aufgenommen. In Abbildung \ref{fig:Epipolargeometry} ist das stereoskopische System dargestellt . 
+
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=.8\linewidth]{images/EpipolarGeoemtrieGrafik.png}
+	\captionof{figure}{$C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinien verbindet die Projektionszentren der Kameras. Die Punkte an welchen die Basislinie die Bildebenen schneidet, werden als Epipole $e$ und $e'$ bezeichnet. Durch einen Epipol verlaufen alle Epipolarlinien des Bildes. $M$ ist der Objektpunkt im 3D-Raum und $m_1$ und $m_2$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M$ bilden die sogenannte Epipolarebene\cite{Elements,HZ,ZZGXr}.}  
+	\label{fig:Epipolargeometry}
+\end{minipage}\\ \\
+
+Es werden hier einige Definitionen eingeführt und die Berechnung geometrisch Motiviert um die danach folgende mathematische Herleitung genauer zu verstehen. Die Vektoren $\overline{CM} = (\vec{M}_\delta - \vec{C}_\delta),\, \overline{C'M} = (\vec{M}_\delta - \vec{C'}_\delta)$ und $\overline{CC'} = (\vec{C'}_\delta - \vec{C}_\delta)$ definieren die Epipolarebene, die durch das schwarze Dreieck in Abbildung \ref{fig:Epipolargeometry} gekennzeichnet ist. Der Schnittpunkt der Gerade zwischen $C$ und $C'$ mit der jeweiligen Bildebene $I$ und $I'$ werden als Epipole $e$ und $e'$ bezeichnet. Die Schnittgerade der Epipolarebene mit $I$ und $I'$ bilden die sogenannten Epipolarlinien $l$ und $l'$\cite{HZ,Zhang2014,ZZPaper,Elements}.\\
+
+Ein Bildpunkt $m_i$ auf der Bildebene $I$ wird zuerst auf die Gerade, die durch $m_i$ und $C$ geht abgebildet. Die Gerade stellt alle möglichen Ursprungspunkte zu $m_i$ da. Dies ist durch die drei möglichen Punkte $M1$,$M2$,$M3$ in Figur \ref{fig:Epipolarconstraint} dargestellt. Jeder dieser Punkte wird nun wiederum auf I' projiziert. Die so entstandenen Punkte liegen alle auf der Epipolarlinie $l'$\cite{HZ}. 
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=.8\linewidth]{images/EpipolarLinien.png}
+	\captionof{figure}{Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, während sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.}  
+	\label{fig:Epipolarconstraint}
+\end{minipage}\\ \\
+
+
+
+Die hier gezeigte Abbildung von $mi$ auf $l'$ wird nun genauer betrachtet. Es werden wieder die Gleichungen für $m_\tau$ und $m'_\tau$, wie in Gleichung \ref{eq:Homo}, aufgestellt    
+
+\begin{gather}
+	\gamma \vec{m}_\tau = P \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix} = 
+	\begin{bmatrix}KR|-KR\vec{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = KR(\vec{M}\delta - \vec{C}_\delta) \label{eq:Ep1} \\
+	\gamma' \vec{m'_{\tau'}} = P' \begin{bmatrix}\vec{M'}_\delta\\1\end{bmatrix} = 
+	\begin{bmatrix}K'R'|-K'R'\vec{C'}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = K'R'(\vec{M}\delta - \vec{C'}_\delta)\label{eq:Ep2}
+\end{gather}
+
+
+Gleichungen \ref{eq:Ep1} und \ref{eq:Ep2} werden nach $(\vec{M}-\vec{C}_\delta)$ und $(\vec{M}-\vec{C'}_\delta)$ aufgelöst.
+
+\begin{gather}
+	\gamma R^TK^{-1}\vec{m}_\tau = (\vec{M}-\vec{C}_\delta)\label{eq:Ep3}\\
+	\gamma' R'^TK'^{-1}\vec{m'}_{\tau'} = (\vec{M}-\vec{C'}_\delta)\label{eq:Ep4}
+\end{gather}
+
+
+Wie in Abbildung \ref{fig:Epipolargeometry} gezeigt bilden Vektoren $(\vec{M}_\delta - \vec{C}_\delta),\, (\vec{M}_\delta - \vec{C'}_\delta)$ und $(\vec{C'}_\delta - \vec{C}_\delta)$ ein Dreieck. Für dieses Dreieck kann die folgende Gleichung aufgestellt werden. 
+
+\begin{gather}
+	(\vec{C'}_\delta - \vec{C}_\delta) = (\vec{M}_\delta - \vec{C}_\delta) - (\vec{M}_\delta - \vec{C'}_\delta)
+\end{gather}
+
+$(\vec{M}-\vec{C}_\delta)$ und $(\vec{M} - \vec{C'}_\delta)$ können durch die Ausdrücke in den Gleichungen \ref{eq:Ep3} und \ref{eq:Ep4} ersetzt werden um folgende Gleichung zu erhalten
+
+\begin{gather}
+	(\vec{C'}_\delta - \vec{C}_\delta) = \gamma' R^TK^{-1}\vec{m}_\tau - \gamma R'^TK'^{-1}\vec{m'}_{\tau'}. \label{eq:Ep5}
+\end{gather}
+
+Durch Vektoridentitäten können $\gamma$ und $\gamma'$ elimiert werden und folgende Bedingung  aus Gleichung \ref{eq:Ep5} hergeleitet werden \cite{Elements} 
+
+\begin{gather}
+	0=\vec{m'_\tau}^T(K'^-1)^TR' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\vec{m_\tau}=\vec{m'_\tau}F\vec{m_\tau}\label{eq:Ep6}
+	%0=\vec{m'_\tau}F\vec{m_\tau}
+\end{gather}
+mit  
+
+\begin{gather}
+	\left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times=
+	\begin{bmatrix}0&-(C'_{z\delta}-C_{z\delta})&C'_{y\delta}-C_{y\delta}\\
+		C'_{z\delta}-C_{z\delta}&0&-(C'_{x\delta}-C_{x\delta})\\
+		-(C'_{y\delta}-C_{y\delta})&C'_{x \delta}-C_{x\delta}&0\\
+	\end{bmatrix}.
+	%0=\vec{m'_\tau}F\vec{m_\tau}
+\end{gather}
+
+In Gleichung \ref{eq:Ep6} wurde die Bedingungsgleichung für die sogenannte Fundamentalmatrix $F$ definiert. 
+
+Sind die Kameraparameter und dadurch die Kameramatrix $K$ bekannt, so wird die essentielle Matrix $E=R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_x R^T$ definiert. Gleichung \ref{eq:Ep6} kann zu einer Bedingung für die $E$ umgeformt werden.
+\begin{gather}
+	0=\vec{m'_\tau}^TK'^{-T}EK^{-1}\vec{m_\tau}\label{eq:Ep7}
+\end{gather}
+
+Gleichung \ref{eq:Ep6} oder \ref{eq:Ep7} kann verwendet werden um die Fundamentalmatrix oder essentielle Matrix aus bekannten Korrespondierenden Punkten zu bestimmen. Für die essentielle muss vorher aber noch die Koordinaten der Form
+
+\begin{gather}
+	\vec{\hat{m}}'_\tau = \vec{m'_\tau}^TK'^{-T}\\
+	\vec{\hat{m}}_\tau = K^{-1}\vec{m_\tau}\label{eq:equ8}
+\end{gather}
+
+umgerechnet werden\cite{HZ}.  Der verwendete Algorithmus zur Bestimmung wird in Kapitel 3.3 näher beschrieben.\\
+
+
+
+
+
+%Aus der Bedingung in Gleichung \ref{eq:Ep6} wird die Fundamentalmatrix definiert.
+
+
+
+%Matrizen $F$ und $E$ ausgelesen werden. Bei $E$ handelt es sich um einen Kalibrierten Fall, dass bedeutet dass sowohl $K$ als auch $K'$ bekannt sind und die normalisierten Bildkoordinaten $\vec{\hat{m}}$ und $\vec{\hat{m}}'$  durch multiplikation mit $K$ und $K'$ entstehen. $E$ selbst fässt die Schiefsymmetrische Matrix $[\vec{C'}_\delta - \vec{C}_\delta]_\times$ und die beiden Transformationsmatrizen $R$ und $R'$ zusammen. 
+
+%\begin{gather}
+% 	\vec{m'}_{\tau'}^T K'^{-T}EK^{-1}\vec{m}_\tau = 0\\
+% 	\vec{\hat{m}}_\tau^T E \vec{\hat{m}}'_{\tau'} = 0
+% \end{gather}
+
+% Matrix $E$ wird zu $F$, wenn es sich um einen unkalibrierten Fall handelt. Unkalibriert bedeutet, dass $K$ und $K'$ nicht bekannt sind, die Informationen zu $K$ und $K'$ in $F$ befinden. Werden $K$ und $K'$ zu $E'$ multipliziert, wird $E$ zu $F$. 
+
+%\begin{gather}
+%	\vec{m'}_{\tau'}^T K'^{-T}EK^{-1}\vec{m}_\tau = 0\\
+%	\vec{m'}_{\tau'}^T F\vec{m}_\tau = 0
+%\end{gather}
+
+%$F$ und $E$, fassen die komplette Epipoloargeometrie, sprich externe und interne Parameter, sowie die geometrische Beziehung der jeweiligen Bildpunkte zu den 3-D Objektpunkten in einer 3x3-Matrix zusammen. Für $F$ und $E$ gibt es nicht nur eine Lösung. Werden $F$ oder $E$ Beispielsweise über den \textit{eight-Point-Algorithm} ermittelt, so sind die entstehenden 3x3-Matrixen und jedes vielfache von diesen gültige Lösungen für $F$ und $E$\cite{HZ,HZ8}. \textcolor{red}{Noch herausfinden ob das mit den Tiefen $\gamma$ und $\gamma'$ zusammenhängt!!}. Mit $F$ und $E$ kann wie bereits nachgeprüft werden, ob der \textit{epipolar-constraint} $m'^TFm = o$ oder $\hat{m'}^TE\hat{m} = 0$ zwischen zwei Bildpunkte gilt. 
+Wenn die Fundamentalmatrix bekannt ist, können auch die Epipole $e$ und $e'$ und Epipolarlinien $l$ und $l'$ aus Eigenschaften den Fundamentalmatrix bestimmt werden \cite{HZ,Elements,HZ8,ZZGXr}. 
+
+Um die Epipole $e$ zu bekommen, wird der rechte Kern von F zu bestimmt und für $e'$ muss der linke Kern von $F$ bestimmt werden\cite{HZ,Elements,HZ8,ZZGXr}.
+
+\begin{gather}
+	Fe = 0\\
+	F^Te' = 0.
+\end{gather}
+
+Um die zu $m$ oder $m'$ korrespondierende Epipolarlinie $l'$ oder $l$ zu bestimmten kann die folgende Transformation verwendet werden\cite{HZ,Elements,HZ8,ZZGXr}
+
+\begin{gather}
+	l' = Fm\\
+	l = F^Tm'.
+\end{gather} 
+
+Die Matrizen $F$ und $E$ sind mit diesen Eigenschaften wichtige Instrumente für die Bestimmung der Kameraorientierungen, wie im nächsten Abschnitt beschrieben wird und ihre Eigenschaften werden in den folgenden Kapiteln ausgenutzt um effiziente Rekonstruktionalgorithmen für die Szene zu implementieren. 
+
+
+%In beiden folgenden Kapitel werden zwei Beispiele zur Findung der exterenen Kameraparameter und der Szenenrekonstruktion aufgezeigt. Beim ersten Beispiel handelt es sich um ein Minimalbeispiel mit synthetisch erzeugten reinen Daten, um die theoretische Funktionalität des Algorithmus zu beweisen. Im zweiten Beispiel, wird der Algorithmus, mit einigen Anpassungen an die Realverhältnisse, auf Stereobildpaare, aufgenommen von zwei verschiedenen Kameras, angewandt. Die implementierten Algotithmen ermitteln aus einem Satz korrespondierender Bildpunkte die Fundamental Matrix und die essentielle Matrix mit Hilfe des sogenannten \textit{eight-Point-Alhorithm}, Im Anschluss werden dann die externen Kameraparameter ermittelt und die Szene mit einem Triangulationsverfahren rekonstruiert. 
+
+
 % In diesem Kapitel wird der Fall einer Korrespondenzanalyse für Punkte behandelt, bei denen die z-Komponente des abzubildenden Punktes $M_{\delta z}$ nicht bekannt ist. Die Punkte können somit überall im Raum liegen und wir definieren $M_{\delta z}=k$, mit einer freien Variablen k. Für die Transformation eines Punktes im normalisiertn Bildkoordinatensystem in die nicht normalisierten Bildkoordinaten gilt somit:
 % 
 % \begin{gather}
@@ -346,60 +384,13 @@ Die Matrix $H$ wird im Fall
 %\textcolor{red}{(WICHTIG: dann noch zeigen was es mit den normierten Bildpunkten auf sich hat!!! sobald die rechnung wieder da ist)}
 
 
-\section{geometrische Erläuterung der Epipolargeometrie}
-\label{sec:epipolar} 
-
-
-Auf Abbildung \ref{fig:Epipolargeometry} wird die oben beschriebene mathematische Herleitung der Epipolargeomety grafisch dargestellt.  \textcolor{red}{(Kurz darlegen was ist was in der Grafik in bezug zu den Formeln)}\\
-
-Ein Objektpunkt $M_\delta$ wird auf die Bildebenen $I$ und $I'$ der beiden Kameras $C$ und $C'$ projiziert. Es entstehen die zueinander korrespondierenden Bildpunkte $m_\tau$ und $m'_{\tau'}$. Die durch die Bildpunkte $m_\tau$ und $m'_{\tau}$ und den entsprechenden Epipolen $e$ und $e'$ verlaufenden Epipolarlinien, sind zueinander korrespondierende Epipolarlinien. Die zum Punkt $m_\tau$ korrespondierende Epipolarlinie $l'$ beinhaltet alle zu $m_\tau$ möglichen korrespondierenden Punkte, darunter eben auch der eindeutig korrespondierende Punkt $m'_{\tau'}$.\\
-
- Die Epipolargeometrie beschreibt weiterhin eine Beziehung zwischen einem Bildpunkt $m$ und dessen korrespondierender Epipolarlinie $l'$. \textcolor{red}{Hier kann eine Verbindung zu den willkürlichen Tiefen hergestellt werden und anhand des Bildes gezeigt werden und anhand von Abbildung \ref{fig:Epipolarconstraint}} \\
- 
-Diese Beziehung ist der sogenannte ist der sogenannte \textit{Epipolar-Constraint}\cite{HZ,Zhang2014,ZZGXr}.  \textcolor{red}{(beschreibt der nicht quasi das selbe wie die Abbildungsvorschrift, also bzw hier könnte man die grafik in bezug zur gleichung bringen)}
-Der \textit{Epipolar-Constraint} sagt aus, dass wenn ein 3D-Bildpunkt $M_\delta$ sich entlang seiner Verbindungslinie $\overline{CM_\delta}$ auf die Bildebene $I$ zu bewegt, so ändert sich die Position des Bildpunktes $m_\tau$ auf $I$ nicht,während der korrespondierende Punkt $m'_{\tau'}$ sich entlang seiner Epipolarlinie bewegt. In Abbildung \ref{fig:Epipolarconstraint} ist $m_\tau$ mit $m_{\tau,i}$ bezeichnet. \\
-Ist der Constraint erfüllt, dann sagt der\textit{Epipolar-Constraint} aus, das Bildpunkt  $m'_{\tau'}$ auf der zu $m_\tau$ korrespondierenden Epipolarlinie $l'$ liegt und somit ein möglicher korrespondierender Punkt zu $m_\tau$\cite{HZ,Zhang2014,Elements,ZZGXr}.\\
-
-Ist der \textit{Epipolar-Constraint} erfüllt, so wird gleichzeitig der Suchaufwand nach weiteren Korrespondenzen reduziert, da somit nur noch eine eindimensionale Suche, entlang der Epipolarlinie, anstatt einer zweidimensionalen durchgeführt werden muss. Dieser neue \textit{Contraint} wird auch als \textit{Coplanarity-Constraint} oder Koplanaritätsbeschränkung bezeichnet. Er sagt aus, dass die Projektionszentren der Kameras und die korrespondierenden Bildpunkte auf ein und der selben Epipolarebene liegen müssen \cite{Zhang2014}.\\
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=.8\linewidth]{images/EpipolarGeoemtrieGrafik.png}
-	\captionof{figure}{$C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinien verbindet die Projektionszentren der Kameras. Der Punkt an welchem die Basislinie die Bildebenen schneidet, wird als Epipol bezeichnet. Durch den Epipol verlaufen alle Epipolarlinien des Bildes. $M$ ist der Objektpunkt im 3D-Raum und $m_1$ und $m_2$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M$ bilden die sogenannte Epipolarebene\cite{Elements,HZ,ZZGXr}.}  
-	\label{fig:Epipolargeometry}
-\end{minipage}\\ \\
-
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1.\linewidth]{images/EpipolarLinien.png}
-	\captionof{figure}{Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, während sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.}  
-	\label{fig:Epipolarconstraint}
-\end{minipage}\\ \\
-
-%Abbildung \ref{fig:Epipolarconstraint} veranschaulicht die soeben genannte Beziehung eines Bildpunktes zu seiner korrespondierenden Epipolarlinie noch mal grafisch. 
-
-%Ist also nur Bildpunkt $m_\tau$ bekannt, so können alle Punkte auf dessen korrespondierender Epipolarlinie $l'$ mögliche korrespondierende Punkte zu $m_\tau$ sein. Der \textit{Epipolar-Contraint} kann durch $3 \times 3$-Matrizen ausgedrückt werden. Bei diesen Matrizen handelt es sich entweder um die Fundamentalmatrix $F$ oder die essentielle Matrix $E$\cite{HZ,ZZGXr,Elements,CamerModels.,Zhang2014}. Deren Herleitung und Beziehung, zu den korrespondierenden Bildpunkten, im weiteren Verlauf noch aufgezeigt wird. Der \textit{Epipolar-Contraint} gilt dann als erfüllt, wenn gilt, dass:
-%
-%
-%
-%\begin{gather}
-%	m'^T_{\tau'} \cdot F \cdot m_\tau = 0\\
-%	\bar{m}'^T_{\tau'} \cdot E \cdot \bar{m}_{\tau} = 0
-%\end{gather}
-
-%ergeben.
-
-
-%
-%
-%
-%Die essentielle Matrix und die Fundamentalmatrix unterscheiden sich darin, ob die intrinsischen Kameraparameter bekannt sind oder nicht. Die Fundamentalmatrix kommt dann zum Einsatz, wenn nur die Bildpunkte $m_\tau$ und $m'_{\tau'}$ bekannt sind, die Kameramatrizen $K$ und $K'$ und die Translationsmatrizen $R$ und $R'$ jedoch unbekannt sind. Man spricht hier von einem unkalibrierten Fall\cite{HZ,ZZGXr,Ferid}. Sind die intrinsischen Kameraparameter bekannt, so wird die Fundamentalmatrix $F$ zur essentiellen Matrix und man spricht von einem kalibrierten Fall$E$\cite{HZ,Elements}. Das Wissen über die Aussagen dieser \textit{Constraints} ist vor allem dann von Nutzen, wenn es darum geht aus einer Stereoskopischen Aufnahme anhand von korrespondierenden Bildpunkten die 3D-Szene zu rekonstruieren. Die korrespondierenden Punkte müssen zu Beginn der Stereobildanlayse erst einmal auf den Bilder ausfindig gemacht werden. Hierfür gibt es unterschiedliche Algorithmen, die in der \nameref{sec:einleitung} bereits erwähnt wurden. Wird einer dieser Algorithmen auf die Bilder angewandt, kann mit Hilfe des \textit{Epipolar-Constraints} deren Exaktheit der zueinander korrespondierenden Punkte überprüft werden\cite{Elements,ZZGXr,HZ}. 
 
 \section{Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}
 
-(sollte vllt zwischen rein)
-Hier sagen wo man die Punkte herbekommt
 
-Im folgenden soll nun gezeigt werden, wie Homographien und Fundamentalmatrizen aus Punktekorrespondenzen gewonnen werden können. Für essentielle Matrizen gilt das selbe Verfahren wie für die Fundamentalmatrizen nur sind hier die Punktekorrespondenzen in normierten Koordinaten gegeben. Es wird davon ausgegangen, das die Transformationsmatrizen $R$ und $R'$ sowie die Kameramatrizen $K$ und $K'$ nicht bekannt sind. Des Weiteren gehen wir davon aus, dass zuvor mindestens acht korrespondierende Punkte aus den jeweiligen  Bildpaaren detektiert wurden. \\
+Im folgenden soll nun gezeigt werden, wie eine Homographie, Fundamentalmatrix und dementsprechend auch eine essentielle Maztix aus Punktekorrespondenzen gewonnen werden können. Für essentielle Matrizen gilt das selbe Verfahren wie für die Fundamentalmatrizen nur sind hier die Punkte in der Form wie in Gleichung \ref{eq:equ8} gezeigt. Die Herleitung wird am Beispiel der Fundamentalmatrix aufgezeigt.\\
+
+Es wird davon ausgegangen, das die Transformationsmatrizen $R$ und $R'$ sowie die Kameramatrizen $K$ und $K'$ nicht bekannt sind. Des Weiteren gehen wir davon aus, dass zuvor mindestens acht korrespondierende Punkte aus den jeweiligen Bildpaaren detektiert wurden. \\
 
 
 Um eine Homographiematrix mit 
@@ -409,10 +400,10 @@ h_{11}&h_{12}&h_{13}\\
 h_{21}&h_{22}&h_{23}\\
 h_{31}&h_{32}&h_{33}
 \end{bmatrix}
-$ zu erhalten werden die Punkte beider Kameras in eine Koeffizientenmatrix $A$ eingetragen, welche sich nach dem folgenden Schema aufstellen lässt. 
+$ zu erhalten werden die Punkte beider Kameras in eine Koeffizientenmatrix $A$ eingetragen, welche sich nach dem folgenden Schema aufstellen lässt\cite{HZ,Elements}. Ausgehend von der Abbildungsvorschrift aus Gleichung \ref{eq:H} gilt:
 
 \begin{gather}
-	H\cdot m_\tau = m'_{\tau}\\
+	 H m_\tau = \lambda m'_{\tau'}\\
 	\begin{bmatrix}
 		h_{11}&h_{12}&h_{13}\\
 		h_{21}&h_{22}&h_{23}\\
@@ -424,7 +415,7 @@ $ zu erhalten werden die Punkte beider Kameras in eine Koeffizientenmatrix $A$ e
 	\end{bmatrix}
 	=
 	\begin{bmatrix}
-		\\m'_{\tau'}\\\\
+		\\\lambda m'_{\tau'}\\\\
 	\end{bmatrix}\\
 	\begin{bmatrix}
 		h_{11}&h_{12}&h_{13}\\
@@ -433,52 +424,53 @@ $ zu erhalten werden die Punkte beider Kameras in eine Koeffizientenmatrix $A$ e
 	\end{bmatrix}
 	\cdot
 	\begin{bmatrix}
-		x\\y\\z
+		m_{x \tau}\\m_{y \tau}\\m_{z \tau}
 	\end{bmatrix}
 	=
 	\begin{bmatrix}
-		x'\\y'\\z'
+		\lambda m'_{x \tau'}\\\lambda m'_{y \tau'}\\\lambda m'_{z \tau'}\label{eq:eq9}
 	\end{bmatrix}
 \end{gather}
 
-Aus Gleichung 3.16 lässt sich das folgende Gleichungssystem aufstellen.  
+Aus Gleichung \ref{eq:eq9} lässt sich das folgende Gleichungssystem aufstellen.  
 
 \begin{gather}
-	h_{11}x+h_{12}y+h_{13}z= \lambda x'\\
-	h_{21}x+h_{22}y+h_{23}z= \lambda y'\\
-	h_{31}x+h_{32}y+h_{33}z= \lambda z'
+	h_{11}m_{x \tau}+h_{12}m_{y \tau}+h_{13}m_{z \tau}= \lambda m'_{x\tau'}\\
+	h_{21}m_{x\tau}+h_{22}m_{y\tau}+h_{23}m_{z\tau}= \lambda m'_{y\tau'}\\
+	h_{31}m_{x\tau}+h_{32}m_{y\tau}+h_{33}m_{z\tau}= \lambda m'_{z\tau'}
 \end{gather}
 
-Da mit zweidimensionalen homogenen Bildkoordinaten gearbeitet wird und somit $z$ und $z'$ = 1 sind, ergibt sich für die letzte Zeile $h_{31}x+h_{32}y+h_{33}z= \lambda$. Setzt man das anstelle von $\lambda$ ein, so ergeben sich die folgenden Gleichungen:
+Da mit zweidimensionalen homogenen Bildkoordinaten gearbeitet wird und somit $m_{\tau,z}$ und $m'_{\tau',x}$ = 1 ist, ergibt sich für die letzte Zeile $h_{31}m_{\tau,x}+h_{32}m_{\tau,y}+h_{33}m_{\tau,z}= \lambda$. Setzt man diesen Ausdruck anstelle von $\lambda$ in die anderen beiden Gleichungen ein, so ergeben sich:
 
 %Dieser Ausdruck kann in den ersten beiden Gleichungen für $\lambda$ eingesetzt werden. Pro Punktepaar $m_\tau$ und $m'_{\tau'}$ ergeben sich somit zwei Gleichungen. 
 
 \begin{gather}
-	h_{11}x+h_{12}y+h_{13}z= (h_{31}x+h_{32}y+h_{33}z) \cdot x'\\
-	h_{21}x+h_{22}y+h_{23}z= (h_{31}x+h_{32}y+h_{33}z) \cdot y'
+	h_{11}m_{x\tau}+h_{12}m_{y\tau}+h_{13}m_{z\tau}= (h_{31}m_{x\tau}+h_{32}m_{y\tau}+h_{33}m_{z\tau}) \cdot m'_{x\tau'}\\
+	h_{21}m_{x\tau}+h_{22}m_{y\tau}+h_{23}m_{z\tau}= (h_{31}m_{x\tau}+h_{32}m_{y\tau}+h_{33}m_{z\tau}) \cdot m'_{y\tau'}
 \end{gather}
 
-Für den Aufbau von $A$ werden beide Ausdrücke noch nach Null aufgelöst, so dass sich die Gleichungen 4.34 und 4.35 aus 4.32 und 4.33 ergeben. Pro korrespondierendem Punktepaar $m_\tau$ und $m'_{\tau'}$ ergeben sich somit zwei Gleichungen:
+Für den Aufbau von $A$ werden beide Ausdrücke nach Null aufgelöst, so dass sich die Gleichungen pro korrespondierendem Paar zwei Gleichungen nach \ref{eq:eq10} und \ref{eq:eq11} ergeben.
 
+\begin{gather*}
+	h_{11}m_{x\tau}+h_{12}m_{y\tau}+h_{13}m_{z\tau} -(h_{31}m_{x\tau}+h_{32}m_{y\tau}+h_{33}m_{z\tau}) \cdot m'_{x\tau'}= 0 \\	h_{21}m_{x\tau}+h_{22}m_{y\tau}+h_{23}m_{z\tau}-(h_{31}m_{x\tau}+h_{32}m_{y\tau}+h_{33}m_{z\tau}) \cdot m'_{y\tau'}=0
+\end{gather*}
 \begin{gather}
-	h_{11}x+h_{12}y+h_{13}z -(h_{31}x+h_{32}y+h_{33}z) \cdot x'= 0 \\	h_{21}x+h_{22}y+h_{23}z-(h_{31}x+h_{32}y+h_{33}z) \cdot y'=0
-\end{gather}
-\begin{gather}
-	\leadsto h_{11}x+h_{12}y+h_{13}z -h_{31}x\cdot x' - h_{32}y \cdot x'-h_{33}z\cdot x'= 0\\
-	\leadsto h_{21}x+h_{22}y+h_{23}z-h_{31}x\cdot y -h_{32}y \cdot y -h_{33}z) \cdot y'=0
+	\leadsto h_{11}m_{x\tau}+h_{12}m_{y\tau}+h_{13}m_{z\tau} -h_{31}m_{x\tau}\cdot m'_{x\tau'} - h_{32}m_{y\tau} \cdot m'_{x\tau'}-h_{33}m_{z\tau}\cdot m'_{x\tau'}= 0 \label{eq:eq10}\\
+	\leadsto h_{21}m_{x\tau}+h_{22}m_{y\tau}+h_{23}m_{z\tau}-h_{31}m_{x\tau}\cdot m'_{y\tau'} -h_{32}m_{y\tau} \cdot m'_{y\tau'} -h_{33}m_{z\tau}) \cdot m'_{y\tau'}=0 \label{eq:eq11}
 \end{gather}
 
 Die entstandenen Gleichungen werden dann nach folgendem Schema in die Koeffizientmatrix $A$ eingetragen.\cite{Elements,HZ,Schwarz,Heipke}
 
 \begin{gather}
+		A\cdot x = 0\\
 	\begin{pmatrix}
-		x_1&y_1&1&0&0&0&x_1 x'_1&y_1 x'_1 & 1\cdot x'_1\\
-		0&0&0&x_1&y_1&1&x_1 y'_1&y_1 y'_1 & 1\cdot y'_1\\
+		m_{x\tau}&m_{y\tau}&1&0&0&0&m_{x\tau} m'_{x\tau'}&m_{y\tau} m'_{x\tau'} & 1\cdot m'_{x\tau'}\\
+		0&0&0&m_{x\tau}&m_{y\tau}&1&m_{x\tau} m'_{y\tau'}&m_{y\tau} m'_{y\tau'} & 1\cdot m'_{y\tau'}\\
 		&&&&&.&&&\\	
 		&&&&&.&&&\\	
 		&&&&&.&&&\\	
-		x_i&y_i&1&0&0&0&x_i x'_i&y_i x'_i & 1\cdot x'_i\\
-		0&0&0&x_i&y_i&1&x_i y'_i&y_i y'_i & 1\cdot y'_i
+		m_{i,x\tau}&m_{i,y\tau}&1&0&0&0&m_{i,x\tau} m'_{i,x\tau'}&m_{i,y\tau} m'_{i,x\tau'} & 1\cdot m'_{i,x\tau'}\\
+		0&0&0&m_{i,x\tau}&m_{i,y\tau}&1&m_{i,x\tau} m'_{i,y\tau'}&m_{i,y\tau} m'_{i,y\tau'} & 1\cdot m'_{i,y\tau'}\\
 	\end{pmatrix}
 	\cdot
 	\begin{pmatrix}
@@ -487,22 +479,22 @@ Die entstandenen Gleichungen werden dann nach folgendem Schema in die Koeffizien
 	=0
 \end{gather}
 
-Gesucht wird nun ein Vektor $\vec{x}$, für den gilt das $A \cdot x = 0$. Der gesuchte Vektor $\vec{x}$ entspricht dem Kern der Koeffizientenmatrix und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Homographiematrix eingetragen werden können\cite{HZ,Schwarz}.\\
+Gesucht wird ein Vektor $\vec{x}$, für den gilt das $A \cdot x = 0$. Der gesuchte Vektor $\vec{x}$ entspricht dem Kern der Koeffizientenmatrix und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Homographiematrix eingetragen werden können\cite{HZ,Schwarz}.\\
 
 
 %Die Ermittlung der Fundamentalmatrix $F$ mit den korrespondierenden Bildpunkten der beiden Kamerabilder erfolgt mit Hilfe des sogenannten  \textit{8-Point-Algorithms}\cite{HZ}.  
-Das Verfahren mit welchem sowohl $F$ als auch $E$ geschätzt werden können, ähnelt in seinem Ablauf dem der Homographiebestimmung. Das Verfahren wird hier allgemein als der \textit{eigth-Point-Algorithm} bezeichnet. Der \textit{8-Point-Algorithm} ist eine lineare Technik die angewandt wird, um die Fundamentalmatrix, sowie auch die essentielle Matrix, aus  $n \geq 8$ Punkten schätzen zu können \cite{Zhang2014,HZ}. Der Algorithmus benötigt $n \geq 8$ Punkte, um ein valides Ergebnis zu liefern \cite{HZ,Ferid}. Das Ergebnis und jedes seiner Vielfachen ist eine mögliche Lösung für $F$. Das auch jedes Vielfache eine gültige Lösung ist, kann aus der Herleitung der Epipolargeometrie geschlossen werden. \textcolor{red}{(sagen warum aber ich weiß nicht wie genau man das sagt ohne wieder auszuschweifen ....)}. Der Algorithmus wird am Beispiel ür die Bestimmung von $F$ veranschaulicht. Zunächst wird auch hier eine Koeffizientenmatrix aus den detektierten Punktekorrespondenzen gebildet. 
+Das Verfahren mit welchem sowohl $F$ als auch $E$ geschätzt werden können, ähnelt in seinem Aufbau dem der Homographiebestimmung. Das Verfahren wird hier allgemein als der \textit{eigth-Point-Algorithm} bezeichnet. Der \textit{8-Point-Algorithm} ist eine lineare Technik die angewandt wird, um die Fundamentalmatrix, sowie auch die essentielle Matrix, aus  $n \geq 8$ Punkten schätzen zu können \cite{HZ,Zhang2014}. Der Algorithmus benötigt $n \geq 8$ Punkte, um ein valides Ergebnis zu liefern \cite{HZ,Ferid}. Das Ergebnis und jedes seiner Vielfachen ist eine mögliche Lösung für $F$\cite{HZ}. Der Algorithmus wird am Beispiel für die Bestimmung von $F$ veranschaulicht. Zunächst wieder eine Koeffizientenmatrix $A$ aus Punktekorrespondenzen gebildet. Hierzu wird sich auf die für $F$ hergeleitete Gleichung \ref{eq:Ep6} bezogen.
 
 
-\begin{gather}
-	{m'}_{\sigma'}^T \cdot F \cdot m_\sigma =0\\
+\begin{gather*}	
+	{m'}_{\tau'}^T \cdot F \cdot m_\tau =0\\
 	F=\begin{bmatrix}
 		f_{11}&f_{122}&f_{13}\\
 		f_{21}&f_{22}&f_{23}\\
 		f_{31}&f_{32}&f_{33}
 	\end{bmatrix}\\
 	\begin{bmatrix}
-		x'_n&y'_n&1
+		m'_{x\tau'}&m'_{y\tau'}&1
 	\end{bmatrix} 
 	\cdot
 	\begin{bmatrix}
@@ -512,34 +504,44 @@ Das Verfahren mit welchem sowohl $F$ als auch $E$ geschätzt werden können, äh
 	\end{bmatrix}
 	\cdot
 	\begin{bmatrix}
-		x_n\\y_n\\1
-	\end{bmatrix} =0\\
-	f_{11}x_nx'_n+f_{12}y_nx'_n+f_{13}x'_n+f_{21}x_ny'_n+f_{22}y_ny'_n+f{23}y'_n+f_{31}x_n+f_{32}y_n+f_{33} =0\\
-	(x_nx'_n,y_nx'_n,x'_n,x_ny'_n,y_ny'_n,y'_n,x_n,y_n,1)\cdot f =0\\
+		m_{x\tau}\\m_{y\tau}\\1
+	\end{bmatrix} =0
+\end{gather*}
+
+\begin{gather}
+\begin{split}
+	f_{11}m_{x\tau}m'_{x\tau'}+f_{12}m_{y\tau}m'_{x\tau'}+f_{13}m'_{x\tau'}+f_{21}m_{x\tau}m'_{y\tau'}\\
+	+f_{22}m_{y\tau}m_{y'\tau'}+f_{23}m'_{y\tau'}+f_{31}m_{x\tau}+f_{32}m_{y\tau}+f_{33} =0
+\end{split} \label{eq:F}
+\end{gather}
+
+\begin{gather*}
+	(m_{x\tau}m'_{x\tau'},m_{y\tau}m'_{x\tau'},m'_{x\tau'},m_{x\tau}m'_{y\tau'},m_{y\tau}m'_{x\tau'},m'_{x\tau'},m_{x\tau},m_{y\tau},1)\cdot f =0\\
 	\begin{bmatrix}
-		x_1x'_1&y_1x'_1&x'_1&x_1y'_1&y_1y'_1&y'_1&x_1&y_1&1\\
-		x_2x'_2&y_2x'_2&x'_2&x_2y'_2&y_2y'_2&y'_2&x_2&y_2&1\\
+		m_{x\tau}m'_{x\tau'}&m_{y\tau}m'_{x\tau'}&m'_{x\tau'}&m_{x\tau}m'_{y\tau'}&m_{y\tau}m'_{y\tau'}&m'_{y\tau'}&m_{x\tau}&m_{y\tau}&1\\
+	%	x_2x'_2&y_2x'_2&x'_2&x_2y'_2&y_2y'_2&y'_2&x_2&y_2&1\\
 		.&.&.&.&.&.&.&.&.\\
 		.&.&.&.&.&.&.&.&.\\
 		.&.&.&.&.&.&.&.&.\\
-		x_nx'_n&y_nx'_n&x'_n&x_ny'_n&y_ny'_n&y'_n&x_n&y_n&1
+		m_{i,x\tau}m'_{i,x\tau'}&m_{i,y\tau}m'_{i,x\tau'}&m'_{i,x\tau'}&m_{i,x\tau}m'_{i,y\tau'}&m_{i,y\tau}m'_{i,y\tau'}&m'_{i,y\tau'}&m_{i,x\tau}&m_{i,y\tau}&1
 	\end{bmatrix}
 	\cdot 
 	\begin{pmatrix}
 		f_{11}\\f_{12}\\f_{13}\\f_{21}\\f_{22}\\f_{23}\\f_{31}\\f_{32}\\f_{33}
 	\end{pmatrix}
-	= 0
-\end{gather}\\
+	= 0\\
+	A\cdot f = 0
+\end{gather*}\\
 
-Gesucht wird wieder ein Vektor $\vec{f}$, für den gilt das $A \cdot f = 0$. Der gesuchte Vektor $\vec{f}$ entspricht auch hier dem Kern von A und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Fundamentalmatrix eingetragen werden können\cite{HZ,ZZGXr}.\\
+\pagebreak
+
+Gesucht wird nun ein Vektor $\vec{f}$, für den gilt das $A \cdot f = 0$. Der gesuchte Vektor $\vec{f}$ entspricht auch hier dem Kern von A und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Fundamentalmatrix eingetragen werden können\cite{HZ,ZZGXr}.\\
 
 
-Bei der Homographie wie auch bei der Fundamentalmatrix, kann es dazukommen ,dass das Gleichungssystem, welches für die Kernbestimmung beider Koeffizientenmatrizen gelöst wird, zu einem überbestimmten System wird. Ein System gilt als überbestimmt, wenn es durch mehr Gleichungen als Unbekannte beschrieben wird. Für die Koeffizientenmatrix für $F$ und $H$ hätte, dass zur Folge, dass die Koeffizientenmatrix in ihrem Rang steigt. Die Bestimmung des Kerns würde in beiden Fällen kein eindeutiges Ergebnis mehr liefern\cite{HZ}.  \\
+Bei der Homographie wie auch bei der Fundamentalmatrix, kann es zu überbestimmten Systemen kommen. Ein System gilt als überbestimmt, wenn es durch mehr Gleichungen als Unbekannte beschrieben wird. Für die Koeffizientenmatrix für $F$ und $H$ hätte, dass zur Folge, dass sie in ihrem Rang steigt. Die Bestimmung des Kerns würde in beiden Fällen kein eindeutiges Ergebnis mehr liefern\cite{HZ,Schwarz}.  \\
 
 
-Für die Lösung überbestimmter Systeme wird durch ein \textit{least-square}- Verfahren, mit Hilfe der Singulärwertszerlegung einer Matrix $A$ eine Lösung für einen Vektor $\vec{x}$ beziehungsweise gesucht, so dass $\parallel A \cdot x \parallel$ minimal wird \cite{HZ,Scholz,Schwarz}. Die Singulärwertzerlegung von $A$ ist eine Faktorisierung der Matrix \ensuremath{A \in \mathbb{R}^{m \times n}} der Form \ensuremath{A = U \cdot S \cdot V^T} mit orthogonalen Matrizen \ensuremath{U \in \mathbb{R}^{m \times n}} und \ensuremath{V \in \mathbb{R}^{m \times n}} sowie mit einer Diagonalmatrix $S$. 
-
- 
+Für die Lösung überbestimmter Systeme wird durch ein \textit{least-square}- Verfahren, mit Hilfe der Singulärwertszerlegung einer Matrix $A$ eine Lösung für einen Vektor $\vec{x}$ gesucht, so dass $\parallel A \cdot x \parallel$ minimal wird \cite{HZ,Scholz,Schwarz}. Die Singulärwertzerlegung von $A$ ist eine Faktorisierung der Matrix \ensuremath{A \in \mathbb{R}^{m \times n}} der Form \ensuremath{A = U \cdot S \cdot V^T} mit orthogonalen Matrizen \ensuremath{U \in \mathbb{R}^{m \times n}} und \ensuremath{V \in \mathbb{R}^{m \times n}} sowie mit einer Diagonalmatrix $S$. 
 
 
 \begin{gather}
@@ -557,11 +559,7 @@ Für die Lösung überbestimmter Systeme wird durch ein \textit{least-square}- V
 	\end{pmatrix}
 \end{gather}
 
-Die  Diagonalmatrix $S$ beherbergt die Singulärwerte der Matrix. Für die Singulärwerte in $S$ soll für $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}.Dabei soll für die diagonalen Singulärwerte in $S$ mit $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}. Die Spalte von $V^T$, welche mit dem kleinsten Singulärwert von $S$ korrespondiert, ergibt den Vektor $\vec{x}$, für den \ensuremath{\parallel A \cdot x\parallel} minimal wird. \\
- 
-  
-  
-%Beispielrechnungen, in denen die Homographiematrix einmal für den Fall des rotierten Projektionszentrums und einmal mit der Drehung um einen Drehpunkt mit durchgerechnet wurde befindet sich im  \nameref{sec:appendix} unter \ref{sec:AppendixHomographieRotationPZ} und \ref{sec:AppendixHomographieRotationDP}.
+Die  Diagonalmatrix $S$ beinhaltet die Singulärwerte der Matrix. Für die Singulärwerte in $S$ soll für $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}. Dabei soll für die diagonalen Singulärwerte in $S$ mit $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}. Die Spalte der Matrix $V^T$, welche mit dem kleinsten Singulärwert von $S$ korrespondiert, ergibt den Vektor $\vec{x}$, für den \ensuremath{\parallel A \cdot x\parallel} minimal wird. \\
 
 
 
