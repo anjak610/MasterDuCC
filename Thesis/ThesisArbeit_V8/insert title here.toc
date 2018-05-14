@@ -1,7 +1,7 @@
 \select@language {ngerman}
 \contentsline {chapter}{\numberline {1}Einleitung}{5}{chapter.2}
 \contentsline {chapter}{\numberline {2}Model der Bildaufnahme mit einer Kamera}{6}{chapter.3}
-\contentsline {section}{\numberline {2.1}Lochkameramodell zur Abbildung eines Punktes auf Bildebene}{6}{section.5}
+\contentsline {section}{\numberline {2.1}Lochkameramodell zur Abbildung eines Punktes auf der Bildebene}{6}{section.5}
 \contentsline {section}{\numberline {2.2}Koordinatentransformation}{7}{section.9}
 \contentsline {section}{\numberline {2.3}Aufname mit einer willk\IeC {\"u}rlichen Kameraorientierung}{10}{section.35}
 \contentsline {chapter}{\numberline {3}Geometrische Beziehungen zwischen Punktekorrespondenzen}{13}{chapter.50}
@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {3.2}Korrespondenzanalyse f\IeC {\"u}r willk\IeC {\"u}rliche Punkte im Raum (Epipolare Geometrie)}{15}{section.76}
 \contentsline {section}{\numberline {3.3}Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{18}{section.109}
 \contentsline {chapter}{\numberline {4}Virtuelle Rekonstruktion}{22}{chapter.138}
-\contentsline {section}{\numberline {4.1}Simulierte Bildaufnahme einer virtuellen Szene}{23}{section.140}
+\contentsline {section}{\numberline {4.1}Simulierte Bildaufnahme einer virtuellen Szene}{22}{section.140}
 \contentsline {section}{\numberline {4.2}Bildanalyse}{25}{section.171}
 \contentsline {subsection}{\numberline {4.2.1}Bestimmung der Abbildungsvorschriften}{25}{subsection.172}
 \contentsline {subsection}{\numberline {4.2.2}Bestimmung der externen Kameraparameter}{26}{subsection.185}
