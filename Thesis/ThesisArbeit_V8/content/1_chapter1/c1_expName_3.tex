@@ -309,24 +309,24 @@ T = [UWV^T|+\lambda v] \;\;\; \textit{oder} \;\;\;[UW^TV^T|+\lambda v]\\
 	\minipage{0.52\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_one.png}
 	%	\caption{A really Awesome Image}
-	\label{fig:awesome_image1}
+	\label{fig:T_1}
 	\endminipage\hfill
 	\minipage{0.52\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_two.png}
 	%	\caption{A really Awesome Image}
-	\label{fig:awesome_image2}
+	\label{fig:T_2}
 	\endminipage\hfill
 \end{figure}
 \begin{figure}[!htb]
 	\minipage{0.52\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_three.png}
 	%	\caption{A really Awesome Image}
-	\label{fig:awesome_image1}
+	\label{fig:T_3}
 	\endminipage\hfill
 	\minipage{0.52\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_four.png}
 	%	\caption{A really Awesome Image}
-	\label{fig:awesome_image2}
+	\label{fig:T_4}
 	\endminipage\hfill
 	\caption{Die Abbildung zeigt die vier möglichen Lösungen für $R$. }
 \end{figure}
@@ -336,20 +336,19 @@ T = [UWV^T|+\lambda v] \;\;\; \textit{oder} \;\;\;[UW^TV^T|+\lambda v]\\
 
 \subsection{Szenenrekonstruktion durch Triangulation}
 
-Die Rekonstruktion der dreidimensionalen Objektpunkte für das virtuelle 
-%Unter Triangulierung versteht man das Rekonstruieren der 3D-Szenenpunkte durch Rückprojektion des dreidimensionalen Objektpunktes durch Schnittpunktberechnung derjenigen Geraden, welche durch die jeweiligen Projektionszentren der Kameras und deren korrespondierenden Bildpunkte auf deren Bildebenen gehen.\\
+Unter Triangulierung versteht man das Rekonstruieren der 3D-Szenenpunkte durch Rückprojektion des dreidimensionalen Objektpunktes. Im virtuellen Beispiel wird durch einfache Schnittpunktberechnung derjenigen Geraden, welche durch die jeweiligen Projektionszentren und deren Bildpunkte auf deren Bildebenen gehen, der Ursprungspunkt im Raum rekonstruiert. Um die Rekonstruktion so nah an einem realen Beispiel wie möglich zu halten, wird davon ausgegangen, dass ab hier nur die Kameraparameter und die jeweiligen Bildkoordinaten bekannt sind.\\
 
+Im virtuellen Beispiel wird mit reinen Daten gearbeitet. Unter reinen Daten versteht man in diesem Zusammenhang, dass die Bildpunkte mathematisch von ihrem Urspungspunkt im Raum berechnet wurden. Anders ausgedrückt die Bildpunkte sind frei von Abbildungsfehlern.Ein zum Bildpunkt $m_\tau$ korrespondierende Bildpunkt $m'_{\tau'}$ liegt genau auf der zu $m_\tau$ korrespondierenden Epipolarlinien $l'$. Damit ist garantiert, dass sich die Bildpunkte $m_\tau$ und $m'_{\tau'}$ in einem Punkt $M_{0,\delta}$ im Raum treffen. Durch die zuvor erwähnte Skaleninvarianz der bestimmten extrinsischen Kameraparameter, handelt es sich bei  $M_{0,\delta}$ noch nicht um den eigentlichen Ursprungspunkt $M_\delta$. Abbildung \ref{fig:TriangulationOptimal} ist ein optimaler Fall der Rückprojektion zweier Bildpunkte schematisch dargestellt.
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/optimaleTriangulierung.png}
 	\captionof{figure}{Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum} 
+	\label{fig:TriangulationOptimal}
 \end{minipage}\\ \\
 
 
-Im virtuellen Beispiel wird mit reinen Daten gearbeitet, sprich die Bildpunkte sind frei von Bildfehlern
-
- ist damit garantiert, dass die Linien sich in einem Schnittpunkt treffen. Anders hingegen wäre es in einem realen Beispiel mit korrespondierenden Punkten, welche Beispielsweise über einen \textit{SURF}- Algorithmus detektiert wurden\cite{Mandun}. In Realbildern, können Bildfehler wie beispielsweise Rauschen nicht vermieden werden, des Weiteren können korrespondierende Punkte nicht immer exakt auf den Pixel genau bestimmt werden. Diese Fehler führen dazu, dass wenn ein Schnittpunkt der Geraden durch die vermeintlichen korresponiderenden Punkte nicht gefunden werden kann, da die Geraden sich sehr wahrscheinlich nicht in einem Punkt treffen werden\cite{Mandun,HZ}. 
+ Anders hingegen wäre es in einem realen Beispiel mit korrespondierenden Punkten, welche Beispielsweise über einen \textit{SURF}- Algorithmus detektiert wurden\cite{Mandun}. In Realbildern, können Bildfehler wie beispielsweise Rauschen nicht vermieden werden, des Weiteren können korrespondierende Punkte nicht immer exakt auf den Pixel genau bestimmt werden. Diese Fehler führen dazu, dass wenn ein Schnittpunkt der Geraden durch die vermeintlichen korresponiderenden Punkte nicht gefunden werden kann, da die Geraden sich sehr wahrscheinlich nicht in einem Punkt treffen werden\cite{Mandun,HZ}. 
 
 
 \begin{minipage}{\linewidth}
