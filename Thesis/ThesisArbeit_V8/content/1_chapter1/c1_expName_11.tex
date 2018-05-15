@@ -15,7 +15,7 @@ Ein Punkt $M$ in einem dreidimensionalen Weltkoordinatensystem wird mit Hilfe ei
 Im folgenden wird zuerst ein Kameramodel eingeführt um die Projektion auf die Bildebene zu beschreiben. Daraufhin werden Koordinatentransformationen eingeführt um abschließend die Aufnahme eines Punktes mit einer willkürlichen Kameraorientierung zu berechnen. 
 
 
-\section{Lochkameramodell zur Abbildung eines Punktes auf der Bildebene}
+\section{Lochkameramodell zur Abbildung eines Punktes auf die Bildebene}
 
 Mit Hilfe des Lochkameramodells wird die Abbildung eines Objektes auf eine Bildebene beschrieben. Das Modell beruht ausschließlich auf der geometrischen Optik und vernachlässigt physikalische Effekte, wie Beugung oder die Auswirkung der Linse\cite{Heipke}. Das Lochkameramodell besteht aus einem Projektionszentrum $C$. $C$ beschreibt gleichzeitig die Lage des Kamerazentrums und bildet den Ursprung des Kamerakoordinatensystems.\cite{CamerModels.,HZ}.
 Die Blickrichtung der Kamera wird als Hauptachse bezeichnet. Die Bildebene steht senkrecht zu Hauptachse und der Schnittpunkt der Hauptachse mit der Bildebene bildet den Hauptpunkt $HP$. Der Hauptpunkt ist der Ursprung des Bildebenenkoordinatensystems. Der Abstand vom Projektionszentrum zum Hauptpunkt wird als Brennweite $\zeta$ beschrieben\cite{HZ,CamerModels.}. Der Bildpunkt $m$ entsteht am Schnittpunk der Verbindungsgerade von $C$ und $M$ mit der der Bildebene $I$. 
@@ -56,7 +56,7 @@ Die Koordinaten auf der zweidimensionalen Bildebene werden häufig als homomogen
 
 \section{Koordinatentransformation}
 
-Um einen Punkt von einem übergeordneten Weltkoordinatensystem in ein bestimmtes zum Weltkoordinatensystem verdrehtes Kamerakoordinatensystem zu überführen ist eine Transformation notwendig. Im folgenden wird der mathematische Weg einer Transformation eines Weltkoordinatensystem $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3},O)$ in ein Kamerakoordinatensystem $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3},C)$ beschrieben.
+Um einen Punkt von einem übergeordneten Weltkoordinatensystem in ein bestimmtes zum Weltkoordinatensystem rotiertes Kamerakoordinatensystem zu überführen ist eine Transformation notwendig. Im folgenden wird der mathematische Weg einer Transformation eines Weltkoordinatensystem $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3},O)$ in ein Kamerakoordinatensystem $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3},C)$ beschrieben.
 
 
 
@@ -166,7 +166,7 @@ $\vec{p_{4\beta}}=(p_{1\beta},p_{2\beta},p_{3\beta},1)^T=(\vec{p_{\beta}},1)^T$ 
 	\end{pmatrix}.	 \label{eq:trafo}
 \end{gather}
 
-Die Transformationsmatrix $T$ setzt sich aus der Rotationsmatrix $R$ und der Translationsmatrix  $[I -C]$ zusammen und wirkt auf den neu definierten vierdimensionalen Vektor. Wichtig dabei ist, dass $[I -C]$ eine symbolische Schreibweise für eine $3 \times 4$ Matrix ist.   
+Die Transformationsmatrix $T$ setzt sich aus der Rotationsmatrix $R$ und der Translationsmatrix  $[I |-C]$ zusammen und wirkt auf den neu definierten vierdimensionalen Vektor. Wichtig dabei ist, dass $[I| -C]$ eine symbolische Schreibweise für eine $3 \times 4$ Matrix ist.   
 
 %Einmal wird wie bereits angefangen mit Spaltenvektoren gearbeitet, das selbe Verfahren wird dann noch einmal mit Zeilenvektoren dargestellt.  Beide Ansätze funktionieren nach dem selben Prinzip. Der Unterschied ist die Darstellung der Matrizen.
 
@@ -328,7 +328,7 @@ m_{x \beta}/m_{z \beta}\\m_{y \beta}/m_{z \beta}\\1
 \end{bmatrix}
 \end{equation}.
 
-Zuletzt folgt die Transformation der Bildebenenkoordinaten auf den Sensorchip. Der Sensorchip besteht aus einer Ansammlung von Sensorelementen. Diese Sensorelemente können verschiedenste Formen annehmen. Die meisten Sensorchips bestehen aus rechtwinkligen, rechteckigen Sensorelementen. Aus diesem Grund wird ein rechtwinkliges Sensorelement mit einer Größe $lx$ $ly$ angenommen. Diese Sensorelementgröße $lx$ $ly$ definiert auch die Pixelgröße und bildet die Längenskalierung des Sensorkoordinatensystems. Neben der unterschiedlichen Skalierung, wird der Ursprung des Sensorkoordinatensystems in der Regel an einer Ecke des Sensorchips definiert, sodass die Transformation von Bildebenenkoordinaten in Sensorkoordinaten auch eine Translation $(V_{x\sigma x},V_{y\sigma})$ aufweist\cite{HZ,Photonik}. Für einen Punkt $m_\sigma = ({u},{v},1)$ auf dem Sensorkoordinatensystem lassen sich die folgenden Bedingungen herleiten. %.$w$ ist die z Koordinate des Sensorsystems, welches hier gleich der z-Achse des Kamerasystems angenommen wird. Zudem wird angenommen, dass das Sensorsystem aus rechteckigen Pixel handelt und durch ein kartesische Koordinatensystem angenommen werden kann. Für die Transformation wird eine Matrix $R_\sigma$ aufgestellt, welche eine Koordinatentransformation mit einer Translation des Koordinatenursprungs und eine Skalierung der Koordinaten beinhaltet.
+Zuletzt folgt die Transformation der Bildebenenkoordinaten auf den Sensorchip. Der Sensorchip besteht aus einer Ansammlung von Sensorelementen. Diese Sensorelemente können verschiedene Formen annehmen. Die meisten Sensorchips bestehen aus rechtwinkligen, rechteckigen Sensorelementen. Aus diesem Grund wird ein rechtwinkliges Sensorelement mit einer Größe $lx$ $ly$ angenommen. Diese Sensorelementgröße $lx$ $ly$ definiert auch die Pixelgröße und bildet die Längenskalierung des Sensorkoordinatensystems. Neben der unterschiedlichen Skalierung, wird der Ursprung des Sensorkoordinatensystems in der Regel an einer Ecke des Sensorchips definiert, sodass die Transformation von Bildebenenkoordinaten in Sensorkoordinaten auch eine Translation $(V_{x\sigma},V_{y\sigma})$ aufweist\cite{HZ,Photonik}. Für einen Punkt $m_\sigma = ({u},{v},1)$ auf dem Sensorkoordinatensystem lassen sich die folgenden Bedingungen herleiten. %.$w$ ist die z Koordinate des Sensorsystems, welches hier gleich der z-Achse des Kamerasystems angenommen wird. Zudem wird angenommen, dass das Sensorsystem aus rechteckigen Pixel handelt und durch ein kartesische Koordinatensystem angenommen werden kann. Für die Transformation wird eine Matrix $R_\sigma$ aufgestellt, welche eine Koordinatentransformation mit einer Translation des Koordinatenursprungs und eine Skalierung der Koordinaten beinhaltet.
 
 \begin{gather}	
 	{u}=m_{\tau x} k_x - V_{x\sigma}\\
@@ -351,7 +351,7 @@ Es wird angemerkt, dass in der Bildebene und der Sensorebene die Punkte ausschli
 
 Mit Hilfe der Transformationsmatrix $R_\sigma$ kann ein Punkt von der Bildebene auf das Sensorelement projiziert werden.\\
 
-Der hier skizzierte Lösungsweg beschreibt die Bildaufnahme eines Punktes im Lochkameramodel. Die hier eingeführte Projektionsmatrix $P=K_0R[I -C]$ gilt für die Abbildung eines Punktes auf den Bildpunkt. Wobei der Bildpunkt normiert und in das Sensorkoordinatensystem umgerechnet wird. In der Literatur wird häufig die Transformation in das Sensorkoordinatensystem bereits in der Kameramatrix zusammengefasst. Damit bildet sich die erweiterte Kameramatrix $K$
+Der hier skizzierte Lösungsweg beschreibt die Bildaufnahme eines Punktes im Lochkameramodel. Die hier eingeführte Projektionsmatrix $P=K_0R[I -C]$ gilt für die Abbildung eines Punktes auf den Bildpunkt. Der Bildpunkt wird normiert und in das Sensorkoordinatensystem umgerechnet wird. In der Literatur wird häufig die Transformation in das Sensorkoordinatensystem bereits in der Kameramatrix zusammengefasst. Damit bildet sich die erweiterte Kameramatrix $K$
 
 \begin{equation}
 K=	R_\sigma K_0=  \begin{bmatrix}

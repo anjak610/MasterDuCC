@@ -28,11 +28,10 @@ Tomas Pajdla.
 \newblock "http://people.ciirc.cvut.cz/~pajdla/", 2013, überarbeitet am
   27.2.2017.
 
-\bibitem{MatlabStereoApp}
-MathWorks.
-\newblock Mathworks documentation, stereo camera calibration app.
-\newblock
-  \url{"https://de.mathworks.com/help/vision/stereo-camera-calibration.html"}.
+\bibitem{Heipke}
+Christian Heipke.
+\newblock {\em Photogrammetrie und Fernerkundung}.
+\newblock 2017 Springer,1. Auflage.
 
 \bibitem{CamerModels.}
 Ramalingam Tardif S.Gasparini~J.Barreto R.Sturm, S.
@@ -40,25 +39,10 @@ Ramalingam Tardif S.Gasparini~J.Barreto R.Sturm, S.
   vision.
 \newblock Mitsubishi Electric Research Laboratories, 2011.
 
-\bibitem{Heipke}
-Christian Heipke.
-\newblock {\em Photogrammetrie und Fernerkundung}.
-\newblock 2017 Springer,1. Auflage.
-
-\bibitem{Jianzhong}
-Jianzhong Lu.
-\newblock {\em Ein dreidimensionales Bildverarbeitungssystem für die
-  Automatisierung visueller Prüfvorgänge}.
-
 \bibitem{Photonik}
 Rolf~Martin Ekbert~Hering.
 \newblock {\em Photonik, Grundlagen, Technologien und Anwendung}.
 \newblock Springer-Verlag Berlin Heidelberg, 2006.
-
-\bibitem{Zhang2014}
-Zhengyou Zhang.
-\newblock {\em Epipolar Geometry}, pages 247--258.
-\newblock Springer US, Boston, MA, 2014.
 
 \bibitem{Roser}
 Dipl.-Ing.~Martin Roser.
@@ -66,11 +50,49 @@ Dipl.-Ing.~Martin Roser.
   Bildfolgen zur Verbesserung von viedeobasierten Fahrerassistenzfunktionen}.
 \newblock 1986, 1994 Springer Basel AG, KIT Scientific Publishing.
 
-\bibitem{Peiffer}
-Jeanne Peiffer and Amy Dahan-Dalmedico.
-\newblock {\em Wege und Irrwege - Eine Geschichte der Mathematik}.
-\newblock 1986, 1994 Springer Basel AG, Editions du Seuil, Springer Basel AG ,
-  aus dem französischen von Klaus Volkert.
+\bibitem{Hoffmann}
+Christoph~Stiller Thao~Dang, Christian~Hoffmann.
+\newblock Continuous stereo self-calibration by camera parameter tracking.
+\newblock IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 18, NO. 7, 2009.
+
+\bibitem{phdTwoView}
+Branislav Micusik.
+\newblock {\em Two-View Geometry of Omnidirectional Cameras}.
+\newblock Dissertation, Technische Universität Prag.
+
+\bibitem{Zhang2014}
+Zhengyou Zhang.
+\newblock {\em Epipolar Geometry}, pages 247--258.
+\newblock Springer US, Boston, MA, 2014.
+
+\bibitem{ZZPaper}
+Zhengyou Zhang.
+\newblock Determining the epipolar geometry and its uncertainty: A review.
+\newblock Received July 16, 1996; Accepted February 13, 1997.
+
+\bibitem{Bronstein}
+K.A.~Semendjajew I.N.~Bronstein.
+\newblock {\em Taschenbuch der Mathematik}, volume 5. Auflage.
+\newblock "https://doi.org/10.1002/bimj.19640060108", First Published 1962.
+
+\bibitem{phdextrinsicPara}
+Sascha jockel.
+\newblock {\em 3-dimensionale Rekonstruktion einer Tischszene aus monokularen
+  Handkamera-Bildsequenzen im Kontext automotiver Serviceroboter}.
+\newblock Dissertation, Fakultät für Mathematik, Informatik und
+  Naturwissenschaften, Universität Hamburg.
+
+\bibitem{HZ8}
+Richard~I. Hartley.
+\newblock In defence of the 8-point algorithm.
+\newblock GE-Corporate Research and Development, Schenectady, NY, 12309.
+
+\bibitem{SURF}
+Herbert Bay, Tinne Tuytelaars, and Luc Van~Gool.
+\newblock Surf: Speeded up robust features.
+\newblock In Ale{\v{s}} Leonardis, Horst Bischof, and Axel Pinz, editors, {\em
+  Computer Vision -- ECCV 2006}, pages 404--417, Berlin, Heidelberg, 2006.
+  Springer Berlin Heidelberg.
 
 \bibitem{Schwarz}
 Norbert~Köckler Hans Rudolf~Schwarz.
@@ -83,28 +105,22 @@ Daniel Scholz.
   Verfahren anwenden mit taramath}.
 \newblock 2016, Sringer Verlag.
 
-\bibitem{ZZPaper}
-Zhengyou Zhang.
-\newblock Determining the epipolar geometry and its uncertainty: A review.
-\newblock Received July 16, 1996; Accepted February 13, 1997.
+\bibitem{LongQuan}
+LongQuan.
+\newblock {\em Image Based Modeling}, volume 1. Auflage.
+\newblock Springer US, 2010.
 
-\bibitem{HZ8}
-Richard~I. Hartley.
-\newblock In defence of the 8-point algorithm.
-\newblock GE-Corporate Research and Development, Schenectady, NY, 12309.
+\bibitem{Canon6D}
+Canon.
+\newblock Eos 6d, eos 6d (wg), eos 6d (n), instruction manual.
 
-\bibitem{Mandun}
-Cui Guodong Yu~Ming Zhang~Mandun, Qi~Lichao.
-\newblock A triangulation method in 3d reconstruction from image sequences.
-\newblock College of Computer Science and Software, Hebei University of
-  Technology Tianjin, China, 2009, Second International Conference on
-  Intelligent Networks and Intelligent Systems.
+\bibitem{MatlabStereoApp}
+MathWorks.
+\newblock Mathworks documentation, stereo camera calibration app.
 
 \bibitem{MatlabRec}
 MathWorks.
 \newblock Mathworks documentation, rectify stereo images.
-\newblock
-  \url{"https://de.mathworks.com/help/vision/ref/rectifystereoimages.html"}.
 
 \bibitem{ZZ}
 Charles Loop and Zhengyou Zhang.
@@ -132,10 +148,7 @@ Richard~I. Hartley.
 \newblock G.E. CRD, Schenectady, NY, 12301.
 
 \bibitem{FusielloSite}
-Andrea Fusiello.
-\newblock Euclidean epipolar rectification.
-\newblock
-  \url{"http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/FUSIELLO2/rectif_cvol.html"}.
+
 
 \bibitem{leastSquare}
 Dongqing Li, editor.
@@ -161,29 +174,5 @@ James~Demmel Dinesh~Manocha.
 \newblock Algorithms for interesting parametric and algebraic curves 1: Simple
   intersections.
 \newblock ACM Transactions of Graphics:73--100, 1994.
-
-\bibitem{MatlabCamParam}
-MathWorks.
-\newblock Mathworks documentation,estimate camera parameters.
-\newblock
-  \url{"https://de.mathworks.com/help/vision/ref/estimatecameraparameters.html"}.
-
-\bibitem{MatlabDisp}
-MathWorks.
-\newblock Mathworks documentation, disparity.
-\newblock \url{"https://de.mathworks.com/help/vision/ref/disparity.html"}.
-
-\bibitem{Canon6D}
-Canon.
-\newblock Eos 6d, eos 6d (wg), eos 6d (n), instruction manual, pages 188.
-\newblock
-  \url{"http://gdlp01.c-wss.com/gds/6/0300009626/01/EOS_6D_Instruction_Manual_DE.pdf"}.
-
-\bibitem{SURF}
-Herbert Bay, Tinne Tuytelaars, and Luc Van~Gool.
-\newblock Surf: Speeded up robust features.
-\newblock In Ale{\v{s}} Leonardis, Horst Bischof, and Axel Pinz, editors, {\em
-  Computer Vision -- ECCV 2006}, pages 404--417, Berlin, Heidelberg, 2006.
-  Springer Berlin Heidelberg.
 
 \end{thebibliography}

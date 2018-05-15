@@ -1,14 +1,13 @@
 \chapter{Geometrische Beziehungen zwischen Punktekorrespondenzen}
 \label{sec:HFE}
 
-Das Ziel dieser Masterarbeit ist es Punkte im dreidimensionalen Raum aus einer Stereoskopischen Aufnahme zweier Kameras zu rekonstruieren. Bisher wurde die Bildaufnahme einer einzigen Kamera betrachtet. Jedoch kann eine Kamera allein nicht räumlich sehen. Um dreidimensionale Szenen aus Bilder zu rekonstruieren, müssen mindestens zwei Aufnahmen der gleichen Szene aus unterschiedlichen Blickwinkeln aufgenommen werden. Innerhalb dieser Aufnahmen müssen Punktekorrespondenzen gesucht werden. Korrespondierende Punkte zeichnen sich dadurch aus, dass sie die Abbildungen desselben Ursprungspunktes im Raum sind. Für diese Punkte muss dann eine gemeinsame Abbildungsvorschrift aufgestellt werden. Mit diesen Abbildungsvorschriften ist es möglich eine Beziehung zwischen zwei projizierten Bildpunkten 
-herzuleiten. Die Abbildungsvorschrift wird in einer $3 \times 3$-Matrix $H$ ausgedrückt, welche die Transformationsmatrizen, sowie die Kameramatrizen zusammenfasst. Die $3 \times 3$-Matrix, kann aus gegebenen Punktekorrespondenzen abgeleitet werden. Aus $H$ können Rückschlüssen auf die Kameraparameter der beiden Kameras gezogen werden.  \\
+Das Ziel dieser Masterarbeit ist es Punkte im dreidimensionalen Raum aus einer stereoskopischen Aufnahme zweier Kameras zu rekonstruieren. Bisher wurde die Bildaufnahme einer einzigen Kamera betrachtet. Jedoch kann eine Kamera allein nicht räumlich sehen. Um dreidimensionale Szenen aus Bilder zu rekonstruieren, müssen mindestens zwei Aufnahmen der gleichen Szene aus unterschiedlichen Blickwinkeln aufgenommen werden. Innerhalb dieser Aufnahmen müssen Punktekorrespondenzen gesucht werden. Korrespondierende Punkte zeichnen sich dadurch aus, dass sie die Abbildungen desselben Ursprungspunktes im Raum sind. Für diese Punkte muss eine gemeinsame Abbildungsvorschrift aufgestellt werden. Die Abbildungsvorschrift wird in einer $3 \times 3$-Matrix $H$ ausgedrückt, welche die Transformationsmatrizen, sowie die Kameramatrizen zusammenfasst. Die $3 \times 3$-Matrix, kann aus gegebenen Punktekorrespondenzen abgeleitet werden. Aus $H$ können Rückschlüssen auf die Kameraparameter der beiden Kameras gezogen werden.  \\
 
 
 %
 %Über die Abbildungsvorschrift können dann Schlüsse auf die Kameraparameter der beiden Kameras gezogen werden. Im ersten Schritt wird eine Abbildungsvorschrift für die Korrespondenzanalyse von Punkten auf einer Ebene aufgestellt. Im zweiten Schritt wird diese Abbildungsvorschrift für die Korrespondenz zwischen willkürlichen Punkten im Raum entsprechend erweitert. \\
 
-Es seien \ensuremath{m_{\tau} =(m_{x\tau},m_{y\tau},m_{z\tau})^T} die homogenen Koordinaten eines Punktes auf der Bildebene$(I,\tau)$ und \ensuremath{m'_{\tau'} = (m'_{x\tau'},m'_{y\tau'},m'_{z\tau'})^T} der dazu Korrespondierende Punkt der projektiv transformierten Bildebene $(I',\tau')$. Gesucht wird eine Abbildungsvorschrift welche als Matrix $H$ ausgedrückt wird:
+Es seien \ensuremath{m_{\tau} =(m_{x\tau},m_{y\tau},m_{z\tau})^T} die homogenen Koordinaten eines Punktes auf der Bildebene$(I,\tau)$ und \ensuremath{m'_{\tau'} = (m'_{x\tau'},m'_{y\tau'},m'_{z\tau'})^T} der dazu korrespondierende Punkt der Bildebene $(I',\tau')$. Gesucht wird eine Abbildungsvorschrift welche als Matrix $H$ ausgedrückt wird:
 
 \begin{gather}
 	m'_{\tau'} = Hm_{\tau}\\
@@ -17,9 +16,9 @@ Es seien \ensuremath{m_{\tau} =(m_{x\tau},m_{y\tau},m_{z\tau})^T} die homogenen 
 	\end{bmatrix} \\
 	\leadsto 
 	m'_{\tau'}= Hm_{\tau}= \begin{bmatrix}
-		h_{11}m_{x\tau}+h_{12}m_{y\tau}+h_{13}m_{z\tau}\\
-		h_{21}m_{x\tau}+h_{22}m_{y\tau}+h_{23}m_{z\tau}\\
-		h_{31}m_{x\tau}+h_{32}m_{y\tau}+h_{33}m_{z\tau}
+		h_{11}m_{\tau x}+h_{12}m_{\tau y}+h_{13}m_{\tau z}\\
+		h_{21}m_{\tau x}+h_{22}m_{\tau y}+h_{23}m_{\tau z}\\
+		h_{31}m_{\tau x}+h_{32}m_{\tau y}+h_{33}m_{\tau z}
 	\end{bmatrix}\\
 	\leadsto 
 	H=\begin{bmatrix}
@@ -31,11 +30,10 @@ Es seien \ensuremath{m_{\tau} =(m_{x\tau},m_{y\tau},m_{z\tau})^T} die homogenen 
 
 %Im folgenden werden zunächst zwei Fälle für die Herleitung von Abbildungsvorschriften unterschieden.
 
-In den ersten beiden Abschnitten werden zwei Herleitungen der gesuchten Abbildungsvorschriften, in zwei unterschiedlichen Fällen, anhand von bekannten Transformationsmatrizen und Kameramatrizen aufgezeigt. 
-Im ersten Fall wird vorausgesetzt, dass die 3D-Punkte im Raum auf einer Ebene liegen und auf die Bildebenen von zwei zueinander verschobenen und rotierten Kameras abgebildet werden. Im zweiten Fall werden die Punkte eines komplexeren 3D-Objektes auf die beiden Bildebenen abgebildet. Im letzten Abschnitt werden dann die Herleitungen der entstehenden Matrizen beider Fälle für den Fall von unbekannten Kameraparameter aufgezeigt. 
+In den ersten beiden Abschnitten werden zwei Herleitungen der Abbildungsvorschriften zwei unterschiedlicher Fälle gesucht. Im ersten Fall wird vorausgesetzt, dass die 3D-Punkte im Raum auf einer Ebene liegen und auf die Bildebenen von zwei zueinander verschobenen und rotierten Kameras abgebildet werden. Im zweiten Fall werden die Punkte eines komplexeren 3D-Objektes auf die beiden Bildebenen abgebildet. Im letzten Abschnitt wird die Herleitungen der entstehenden Matrizen beider Fälle anhand von Punktekorrespondenzen aufgezeigt. 
 
 
-\section{Korrespondenzanalyse für Punkte auf einer Ebene (Homographie)}
+\section{Korrespondenzen planarer Punktmengen mit Homographien}
 
 Eine Abbildungsvorschrift kann in bestimmten Fällen eindeutig bestimmt werden. In diesen Fällen nennt man die Abbildung zwischen beiden zweidimensionalen Bildern Homographie\cite{HZ,Elements,Roser}. In diesem Kapitel wird der beispielhafte Fall behandelt, dass Punkte auf der $x,y$-Ebene im Weltkoordinatensystem auf zwei unterschiedlichen Kameras $C$ und $C'$ abgebildet wird. Dies ist in Abbildung \ref{fig:Homographie} dargestellt.
 
@@ -216,7 +214,7 @@ Diese Homographiebedingung stellt ein Gleichungssystem mit 9 unbekannten, welche
 % 
 
 
-\section{Korrespondenzanalyse für willkürliche Punkte im Raum (Epipolare Geometrie)}
+\section{Korrespondenzanalyse für beliebige Punkte im Raum (Epipolare Geometrie)}
 
 Für Bilder von komplexeren dreidimensionalen Objekten, bei denen die Punkte auf verschiedenen Ebenen liegen können, kann keine Homographiebedingung hergestellt werden um die Kameraparameter zu bestimmen. Jedoch kann auf geometrische Bedingungen zurückgegriffen werden, um die Abbildungsvorschrift zwischen den Bildern auszunutzen, um die Kameraparameter beider Kameras zu bestimmen. Ein Ursprungspunkt $M_\delta$ wird wieder mit zwei Kameras $C$ und $C'$ aufgenommen. In Abbildung \ref{fig:Epipolargeometry} ist das stereoskopische System dargestellt . 
 
@@ -224,11 +222,11 @@ Für Bilder von komplexeren dreidimensionalen Objekten, bei denen die Punkte auf
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{images/EpipolarGeoemtrieGrafik_beschriftet.png}
-	\captionof{figure}{$C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinie verbindet die Projektionszentren der Kameras. Die Punkte an welchen die Basislinie die Bildebenen schneidet, werden als Epipole $e$ und $e'$ bezeichnet. Durch einen Epipol verlaufen alle Epipolarlinien des Bildes. $M_\delta$ ist der Objektpunkt im 3D-Raum und $m_\tau$ und $m'_{\tau'}$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M_\delta$ bilden die sogenannte Epipolarebene\cite{Elements,HZ,ZZGXr}.}  
+	\captionof{figure}{$C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinie verbindet die Projektionszentren der Kameras. Die Punkte an welchen die Basislinie die Bildebenen schneidet, werden als Epipole $e$ und $e'$ bezeichnet. Durch einen Epipol verlaufen alle Epipolarlinien des Bildes. $M_\delta$ ist der Objektpunkt im 3D-Raum und $m_\tau$ und $m'_{\tau'}$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M_\delta$ bilden die sogenannte Epipolarebene\cite{Hoffmann,phdTwoView,HZ,ZZGXr}.}  
 	\label{fig:Epipolargeometry}
 \end{minipage}\\ \\
 
-Es werden hier einige geometrische Definitionen eingeführt um die danach folgende mathematische Herleitung genauer zu verstehen. Die Vektoren $\overline{CM} = (\vec{M}_\delta - \vec{C}_\delta),\, \overline{C'M} = (\vec{M}_\delta - \vec{C'}_\delta)$ und $\overline{CC'} = (\vec{C'}_\delta - \vec{C}_\delta)$ definieren die Epipolarebene, die durch das schwarze Dreieck in Abbildung \ref{fig:Epipolargeometry} gekennzeichnet ist. Die Schnittpunkte der Geraden zwischen $C$ und $C'$ mit der jeweiligen Bildebene $I$ und $I'$ werden als Epipole $e$ und $e'$ bezeichnet. Die Schnittgerade der Epipolarebene mit $I$ und $I'$ bilden die sogenannten Epipolarlinien $l$ und $l'$\cite{HZ,Zhang2014,ZZPaper,Elements}.\\
+Es werden hier einige geometrische Definitionen eingeführt um die danach folgende mathematische Herleitung genauer zu verstehen. Die Vektoren $\overline{CM} = (\vec{M}_\delta - \vec{C}_\delta),\, \overline{C'M} = (\vec{M}_\delta - \vec{C'}_\delta)$ und $\overline{CC'} = (\vec{C'}_\delta - \vec{C}_\delta)$ definieren die Epipolarebene, die durch das schwarze Dreieck in Abbildung \ref{fig:Epipolargeometry} gekennzeichnet ist. Die Schnittpunkte der Geraden zwischen $C$ und $C'$ mit der jeweiligen Bildebene $I$ und $I'$ werden als Epipole $e$ und $e'$ bezeichnet. Die Schnittgerade der Epipolarebene mit $I$ und $I'$ bilden die sogenannten Epipolarlinien $l$ und $l'$\cite{HZ,Zhang2014,ZZPaper,phdTwoView}.\\%Elements
 
 Ein Bildpunkt $m_i$ auf der Bildebene $I$ wird zuerst auf die Gerade, die durch $m_i$ und $C$ geht abgebildet. Die Gerade stellt alle möglichen Ursprungspunkte zu $m_i$ da. Dies ist durch die drei möglichen Punkte $M1$,$M2$,$M3$ in Figur \ref{fig:Epipolarconstraint} dargestellt. Jeder dieser Punkte wird nun wiederum auf $I'$ projiziert. Die so entstandenen Punkte liegen alle auf der Epipolarlinie $l'$\cite{HZ}. 
 
@@ -271,7 +269,7 @@ $(\vec{M}-\vec{C}_\delta)$ und $(\vec{M} - \vec{C'}_\delta)$ können durch die A
 	(\vec{C'}_\delta - \vec{C}_\delta) = \gamma' R^TK^{-1}\vec{m}_\tau - \gamma R'^TK'^{-1}\vec{m'}_{\tau'}. \label{eq:Ep5}
 \end{gather}
 
-Durch Vektoridentitäten können $\gamma$ und $\gamma'$ elimiert werden und folgende Bedingung  aus Gleichung \ref{eq:Ep5} hergeleitet werden \cite{Elements} 
+Durch Vektoridentitäten können $\gamma$ und $\gamma'$ elimiert werden und folgende Bedingung  aus Gleichung \ref{eq:Ep5} hergeleitet werden \cite{Bronstein} %Elements
 
 \begin{gather}
 	0=\vec{m'_\tau}^T(K'^-1)^TR' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\vec{m_\tau}=\vec{m'_\tau}F\vec{m_\tau}\label{eq:Ep6}
@@ -288,21 +286,19 @@ mit
 	%0=\vec{m'_\tau}F\vec{m_\tau}
 \end{gather}
 
-In Gleichung \ref{eq:Ep6} wurde die Bedingungsgleichung für die sogenannte Fundamentalmatrix $F$ definiert. 
-
-Sind die Kameraparameter und dadurch die Kameramatrix $K$ bekannt, so wird die essentielle Matrix $E=R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^T$ definiert. Gleichung \ref{eq:Ep6} kann zu einer Bedingung für die $E$ umgeformt werden.
+In Gleichung \ref{eq:Ep6} wurde die Bedingungsgleichung für die sogenannte Fundamentalmatrix $F$ definiert \cite{Hoffmann}. Sind die Kameraparameter und dadurch die Kameramatrix $K$ bekannt, so wird die essentielle Matrix $E=R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^T$ definiert. Gleichung \ref{eq:Ep6} kann zu einer Bedingung für die $E$ umgeformt werden.
 \begin{gather}
 	0=\vec{m'_\tau}^TK'^{-T}EK^{-1}\vec{m_\tau}\label{eq:Ep7}
 \end{gather}
 
-Gleichung \ref{eq:Ep6} oder \ref{eq:Ep7} kann verwendet werden um die Fundamentalmatrix oder essentielle Matrix aus bekannten Korrespondierenden Punkten zu bestimmen. Für die essentielle Matrix müssen zuvor noch die Koordinaten umgerechnet werden in der Form
+Gleichung \ref{eq:Ep6} und \ref{eq:Ep7} definieren den sogenannten \textit{Epipolar-Constraint}\cite{HZ,Hoffmann} und können verwendet werden um die Fundamentalmatrix oder essentielle Matrix aus bekannten Korrespondierenden Punkten zu bestimmen. Für die essentielle Matrix müssen zuvor noch die Koordinaten umgerechnet werden in der Form
 
 \begin{gather}
 	\vec{\hat{m}}'_\tau = \vec{m'_\tau}^TK'^{-T}\\
 	\vec{\hat{m}}_\tau = K^{-1}\vec{m_\tau}\label{eq:equ8}
 \end{gather}
 
-umgerechnet werden\cite{HZ}.  Der verwendete Algorithmus zur Bestimmung wird in Kapitel 3.3 näher beschrieben.\\
+umgerechnet werden\cite{HZ,phdextrinsicPara}.  Der verwendete Algorithmus zur Bestimmung wird in Kapitel 3.3 näher beschrieben.\\
 
 
 
@@ -327,23 +323,23 @@ umgerechnet werden\cite{HZ}.  Der verwendete Algorithmus zur Bestimmung wird in 
 %\end{gather}
 
 %$F$ und $E$, fassen die komplette Epipoloargeometrie, sprich externe und interne Parameter, sowie die geometrische Beziehung der jeweiligen Bildpunkte zu den 3-D Objektpunkten in einer 3x3-Matrix zusammen. Für $F$ und $E$ gibt es nicht nur eine Lösung. Werden $F$ oder $E$ Beispielsweise über den \textit{eight-Point-Algorithm} ermittelt, so sind die entstehenden 3x3-Matrixen und jedes vielfache von diesen gültige Lösungen für $F$ und $E$\cite{HZ,HZ8}. \textcolor{red}{Noch herausfinden ob das mit den Tiefen $\gamma$ und $\gamma'$ zusammenhängt!!}. Mit $F$ und $E$ kann wie bereits nachgeprüft werden, ob der \textit{epipolar-constraint} $m'^TFm = o$ oder $\hat{m'}^TE\hat{m} = 0$ zwischen zwei Bildpunkte gilt. 
-Wenn die Fundamentalmatrix bekannt ist, können auch die Epipole $e$ und $e'$ und Epipolarlinien $l$ und $l'$ aus Eigenschaften den Fundamentalmatrix bestimmt werden \cite{HZ,Elements,HZ8,ZZGXr}. 
+Wenn die Fundamentalmatrix bekannt ist, können auch die Epipole $e$ und $e'$ und Epipolarlinien $l$ und $l'$ aus Eigenschaften den Fundamentalmatrix bestimmt werden \cite{HZ,phdTwoView,HZ8,ZZGXr,phdextrinsicPara}. 
 
-Um die Epipole $e$ zu bekommen, wird der rechte Kern von F bestimmt und für $e'$ muss der linke Kern von $F$ bestimmt werden\cite{HZ,Elements,HZ8,ZZGXr}. Es gilt also
+Um die Epipole $e$ zu bekommen, wird der rechte Kern von F bestimmt und für $e'$ muss der linke Kern von $F$ bestimmt werden\cite{HZ,phdTwoView,HZ8,ZZGXr,phdextrinsicPara}. Es gilt also%Elements
 
 \begin{gather}
 	Fe = 0\\
 	F^Te' = 0.
 \end{gather}
 
-Um die zu $m$ oder $m'$ korrespondierende Epipolarlinie $l'$ oder $l$ zu bestimmten kann die folgende Transformation verwendet werden\cite{HZ,Elements,HZ8,ZZGXr}
+Um die zu $m$ oder $m'$ korrespondierende Epipolarlinie $l'$ oder $l$ zu bestimmten kann die folgende Transformation verwendet werden\cite{HZ,phdTwoView,HZ8,ZZGXr,phdextrinsicPara}%Elements
 
 \begin{gather}
 	l' = Fm\\
 	l = F^Tm'.
 \end{gather} 
 
-Die Matrizen $F$ und $E$ sind mit diesen Eigenschaften wichtige Instrumente für die Bestimmung der Kameraorientierungen, wie im nächsten Abschnitt beschrieben wird und ihre Eigenschaften werden in den folgenden Kapiteln ausgenutzt um effiziente Rekonstruktionalgorithmen für die Szene zu implementieren. 
+Die Matrizen $F$ und $E$ sind mit diesen Eigenschaften wichtige Instrumente für die Bestimmung der extrinsischen und intrinsischen Kameraparameter und ihre Eigenschaften werden in den folgenden Kapiteln ausgenutzt um effiziente Rekonstruktionalgorithmen für die Szene zu implementieren. 
 
 
 %In beiden folgenden Kapitel werden zwei Beispiele zur Findung der exterenen Kameraparameter und der Szenenrekonstruktion aufgezeigt. Beim ersten Beispiel handelt es sich um ein Minimalbeispiel mit synthetisch erzeugten reinen Daten, um die theoretische Funktionalität des Algorithmus zu beweisen. Im zweiten Beispiel, wird der Algorithmus, mit einigen Anpassungen an die Realverhältnisse, auf Stereobildpaare, aufgenommen von zwei verschiedenen Kameras, angewandt. Die implementierten Algotithmen ermitteln aus einem Satz korrespondierender Bildpunkte die Fundamental Matrix und die essentielle Matrix mit Hilfe des sogenannten \textit{eight-Point-Alhorithm}, Im Anschluss werden dann die externen Kameraparameter ermittelt und die Szene mit einem Triangulationsverfahren rekonstruiert. 
@@ -391,7 +387,7 @@ Die Matrizen $F$ und $E$ sind mit diesen Eigenschaften wichtige Instrumente für
 \section{Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}
 
 
-Im folgenden soll nun gezeigt werden, wie beispielsweise eine Homographie, Fundamentalmatrix und dementsprechend auch eine essentielle Matrix aus Punktekorrespondenzen gewonnen werden können. Für essentielle Matrizen gilt das selbe Verfahren wie für die Fundamentalmatrizen nur sind hier die Punkte in der Form wie in Gleichung \ref{eq:equ8} gezeigt. Die Herleitung selbst wird am Beispiel der Fundamentalmatrix aufgezeigt.\\
+Im folgenden wird gezeigt, wie beispielsweise eine Homographie, Fundamentalmatrix und dementsprechend auch eine essentielle Matrix aus Punktekorrespondenzen gewonnen werden können. Für essentielle Matrizen gilt das selbe Verfahren wie für die Fundamentalmatrizen nur sind hier die Punkte in der Form wie in Gleichung \ref{eq:equ8} gezeigt. Die Herleitung selbst wird am Beispiel der Fundamentalmatrix aufgezeigt.\\
 
 Es wird davon ausgegangen, das die Transformationsmatrizen $R$ und $R'$ sowie die Kameramatrizen $K$ und $K'$ nicht bekannt sind. Des Weiteren wir vorausgesetzt, dass zuvor mindestens acht korrespondierende Punkte aus den jeweiligen Bildpaaren detektiert wurden. Im Realfall, werden hierfür bestimmte Detektionsalgorithmen verwendet, wie Beispielsweise der SURF-Algorithmus\cite{SURF}, welche markante Bildpunkte in beiden Bilder suchen.\\
 
@@ -482,11 +478,11 @@ Die entstandenen Gleichungen werden dann nach folgendem Schema in die Koeffizien
 	=0
 \end{gather}
 
-Gesucht wird ein Vektor $\vec{x}$, für den gilt das $A \cdot x = 0$. Der gesuchte Vektor $\vec{x}$ entspricht dem Kern der Koeffizientenmatrix und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Homographiematrix eingetragen werden können\cite{HZ,Schwarz}.\\
+Gesucht wird ein Vektor $\vec{x}$, für den gilt das $A \cdot x = 0$. Besitzt Matrix $A$ einen Rang von 8, so entspricht der gesuchte Vektor $\vec{x}$ dem Kern der Koeffizientenmatrix und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Homographiematrix eingetragen werden können\cite{HZ,Schwarz}.\\
 
 
 %Die Ermittlung der Fundamentalmatrix $F$ mit den korrespondierenden Bildpunkten der beiden Kamerabilder erfolgt mit Hilfe des sogenannten  \textit{8-Point-Algorithms}\cite{HZ}.  
-Das Verfahren mit welchem sowohl $F$ als auch $E$ geschätzt werden können, ähnelt in seinem Aufbau dem der Bestimmung der Homographiematrix. Das Verfahren wird hier allgemein als der \textit{eigth-Point-Algorithm} bezeichnet. Der \textit{8-Point-Algorithm} ist eine lineare Technik die angewandt wird, um die Fundamentalmatrix, sowie auch die essentielle Matrix, aus  $n \geq 8$ Punkten schätzen zu können \cite{HZ,Zhang2014,Ferid}. Der Algorithmus benötigt $n \geq 8$ Punkte, um ein valides Ergebnis zu liefern \cite{HZ,Zhang2014,Ferid}. Das Ergebnis und jedes seiner Vielfachen ist eine mögliche Lösung für $F$\cite{HZ}. Der Algorithmus wird am Beispiel für die Bestimmung von $F$ veranschaulicht. Zunächst wird eine Koeffizientenmatrix $A$ aus Punktekorrespondenzen gebildet. Hierzu wird sich auf die für $F$ hergeleitete Gleichung \ref{eq:Ep6} bezogen.
+Das Verfahren mit welchem sowohl $F$ als auch $E$ geschätzt werden können, ähnelt in seinem Aufbau dem der Bestimmung der Homographiematrix. Das Verfahren wird hier allgemein als der 8-Punkte-Algorithmus bezeichnet. Der 8-Punkte-Algorithmus ist eine lineare Technik, welche angewandt wird, um die Fundamentalmatrix aus  $n \geq 8$ Punkten schätzen zu können \cite{HZ,Zhang2014,Ferid}. Der Algorithmus benötigt $n \geq 8$ Punkte, um ein valides Ergebnis zu liefern \cite{HZ,Zhang2014,Ferid}. Das Ergebnis und jedes seiner Vielfachen ist eine mögliche Lösung für $F$\cite{HZ}. Der Algorithmus wird am Beispiel für die Bestimmung von $F$ veranschaulicht. Zunächst wird eine Koeffizientenmatrix $A$ aus Punktekorrespondenzen gebildet. Hierzu wird sich auf die für $F$ hergeleitete Gleichung \ref{eq:Ep6} bezogen.
 
 
 \begin{gather*}	
@@ -537,10 +533,10 @@ Das Verfahren mit welchem sowohl $F$ als auch $E$ geschätzt werden können, äh
 \end{gather*}\\
 
 
-Gesucht wird nun ein Vektor $\vec{f}$, für den gilt das $A \cdot f = 0$. Der gesuchte Vektor $\vec{f}$ entspricht auch hier dem Kern von A und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Fundamentalmatrix eingetragen werden können\cite{HZ,ZZGXr}.\\
+Gesucht wird nun ein Vektor $\vec{f}$, für den gilt das $A \cdot f = 0$. Besitzt Matrix $A$ einen Rang von 8, so entspricht der gesuchte Vektor $\vec{x}$ auch hier dem Kern von A und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Fundamentalmatrix eingetragen werden können\cite{HZ,ZZGXr}.\\
 
 
-Bei der Homographie wie auch bei der Fundamentalmatrix, kann es zu überbestimmten Systemen kommen. Ein System gilt als überbestimmt, wenn es durch mehr Gleichungen als Unbekannte beschrieben wird\cite{Schwarz,Scholz}. Für die Koeffizientenmatrix für $F$ und $H$ hätte, dass zur Folge, dass sie in ihrem Rang steigt. Die Bestimmung des Kerns würde in beiden Fällen kein eindeutiges Ergebnis mehr liefern\cite{HZ,Schwarz}.\\
+Bei der Homographie wie auch bei der Fundamentalmatrix, kann es zu überbestimmten Systemen kommen. Ein System gilt als überbestimmt, wenn es durch mehr Gleichungen als Unbekannte beschrieben wird\cite{Schwarz,Scholz}. Für die Koeffizientenmatrix für $F$ und $H$ hätte das zur Folge, dass sie in ihrem Rang steigt. Die Bestimmung des Kerns würde in beiden Fällen kein eindeutiges Ergebnis mehr liefern\cite{HZ,Schwarz}.\\
 
 
 Für die Lösung überbestimmter Systeme wird durch ein \textit{least-square}- Verfahren, mit Hilfe der Singulärwertszerlegung einer Matrix $A$ eine Lösung für einen Vektor $\vec{x}$ gesucht, so dass $\parallel A \cdot x \parallel$ minimal wird \cite{HZ,Scholz,Schwarz}. Die Singulärwertzerlegung von $A$ ist eine Faktorisierung der Matrix \ensuremath{A \in \mathbb{R}^{m \times n}} der Form \ensuremath{A = U \cdot S \cdot V^T} mit orthogonalen Matrizen \ensuremath{U \in \mathbb{R}^{m \times n}} und \ensuremath{V \in \mathbb{R}^{m \times n}} sowie mit einer Diagonalmatrix $S$. 
@@ -561,7 +557,7 @@ Für die Lösung überbestimmter Systeme wird durch ein \textit{least-square}- V
 	\end{pmatrix}
 \end{gather}
 
-Die  Diagonalmatrix $S$ beinhaltet die Singulärwerte der Matrix. Für die Singulärwerte in $S$ soll für $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}. Dabei soll für die diagonalen Singulärwerte in $S$ mit $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}. Die Spalte der Matrix $V^T$, welche mit dem kleinsten Singulärwert von $S$ korrespondiert, ergibt den Vektor $\vec{x}$, für den \ensuremath{\parallel A \cdot x\parallel} minimal wird. \\
+Die  Diagonalmatrix $S$ beinhaltet die Singulärwerte der Matrix. Dabei soll für die diagonalen Singulärwerte in $S$ mit $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}. Die Spalte der Matrix $V^T$, welche mit dem kleinsten Singulärwert von $S$ korrespondiert, ergibt den Vektor $\vec{x}$, für den \ensuremath{\parallel A \cdot x\parallel} minimal wird. \\
 
 
 

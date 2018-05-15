@@ -1,37 +1,16 @@
 \chapter{Auswirkungen von unterschiedlichen Kameraauflösungen}
 \label{sec:minimalAuf} 
 
-Wenn man sich mit digitalen Bilddaten auseinandersetzt, so kommt man nicht drum herum sich auch mit den  verschiedenen Auflösungsarten beschäftigen zu müssen. Im vorherigen Kapitel wurde gezeigt, wie eine 3D-Szene aus zwei heterogenen Bildquellen, welche von zwei Kameras gleicher Auflösung aufgenommen wurden, rekonstruiert werden konnte und gleichzeitig noch die externen Kameraparameter von $C'$ in Relation zu $C$ geschätzt werden konnten. Dies wirft die Frage auf, welche Auswirkungen Bilder zweier Kameras mit unterschiedlichen Auflösungen für die Rekonstruktionen haben können. Aus der Stereokalibrierungsapp, welche \textit{MatLab} anbietet, ist bekannt, dass diese nicht mit Bildern unterschiedlicher Auflösung eine Szenerekonstruktion durchführen kann. Der erste Schritt bestand erstmal darin zu überprüfen, warum zwei unterschiedliche Auflösungen in \textit{MatLab} Probleme machen. \textit{MatLab} verfolgt einen etwas anderen Rekonstruktionsansatz. Zu aller erst werden die Kameras kalibriert. Dies geschieht über die Matlab-Funktion \text{estimateCameraParameters}\cite{MatlabCamParam}. Diese Funktion funktioniert auch bei Bildern unterschiedlicher Auflösung noch ohne Probleme. Das Problem, welches sich als eigentlich minimales Problem herausstellt, ist, dass die darauf folgenden Rektifizierung der Stereobilder nicht mit zwei Bildern unterschiedlicher Auflösung funktioniert. In den \textit{MatLab} references, steht es nicht expliziet drin \cite{MatlabRec}. Die Rektifizierung in Matlab funktioniert nach einem Schema, welches ähnlich dem aufgezeigten Beispiel im Kapitel \nameref{sec:rectification} bereits erwähnt wurde und in \cite{Fusiello,FusielloSite} nochmal genau aufgeführt wird. Das Problem liegt also nicht daran, dass bilder unterschiedlicher Auflösung nicht rektifiziert werden können, sondern das Problem liegt an dem in \textit{MatLab} verwendeten Algorithmus für die Rektifizierung zweier Stereobilder (Foren Zitieren????). Warum \textit{MatLab} überhaupt rektifiziert, liegt daran, dass ein Ansatz der Szenerekonstruktion gewählt wurde, welcher die essentielle Matrix nicht benötigt. In diesem Falle, werden zwei Stereobilder aufgenommen, danach rektifiziert und anschließend über eine sogenannte \textit{Disparity-Map}, die Szenen punkte rekonstruiert\cite{MatlabDisp,MatlabStereoApp,Fusiello,Javier}. Der in dieser Arbeit gewählte Rektifizierungsalgorithmus, ist nicht auf gleiche Kameraauflösungen beschränkt. Mittlerweile gibt es natürlich deutlich fortgeschrittenere Rektifizierungsansätze, jedoch wurde für diese Arbeit der Ansatz von \cite{ZZ} gewählt, um ein Gefühl zu vermitteln, dass wenn man sich auf die Epipolargeometrie bezieht, die Auflösungen der Kameras keine Rolle spielen\cite{Elements}. Was genau unterschiedliche Auflösungen der Kameras für die einzelnen Bilder bedeutet und was genau sich bei der Aufnahme mit dem Sensor dabei ändert, soll im folgenden Unterkapitel kurz erläutert werden. Danach wird aufgezeigt, was genau diese Veränderungen für die Epipolargeometrie bedeuten und letztendlich wird das Minimalbeispiel so angepasst, als hätten zwei Kameras unterschiedlicher Auflösung die selbe Szene wie davor aufgenommen und die Resultate miteinander verglichen. 
+
+Im vorherigen Kapitel wurde gezeigt, wie eine 3D-Szene aus zwei heterogenen Bildquellen, welche von zwei Kameras gleicher Auflösung aufgenommen wurden, rekonstruiert werden konnte und gleichzeitig noch die externen Kameraparameter von $C'$ in Relation zu $C$ geschätzt werden konnten. Dies wirft die Frage auf, welche Auswirkungen Bilder zweier Kameras mit unterschiedlichen Auflösungen für den 
+
+ Rekonstruktionen haben können. Im folgenden soll zunächst aufgezeigt werden, wie prinzipiell die Auflösungseinstellungen auf einem CMOS-Chip funktionieren.
+
+
+ Was genau unterschiedliche Auflösungen der Kameras für die einzelnen Bilder bedeutet und was genau sich bei der Aufnahme mit dem Sensor dabei ändert, soll im folgenden Unterkapitel kurz erläutert werden. Danach wird aufgezeigt, was genau diese Veränderungen für die Epipolargeometrie bedeuten und letztendlich wird das Minimalbeispiel so angepasst, als hätten zwei Kameras unterschiedlicher Auflösung die selbe Szene wie davor aufgenommen und die Resultate miteinander verglichen. 
 
 \section{Abbildungsunterschiede}
 
-%Hier vllt kurz erklären was unterschiedliche Auflösung für die Funktion eines Sensors bedeutet (Interpolierung mehrerer Pixel, Nicht nutzung des gesammten Pixelspektrums)\\
-%
-%
-%Aufbau eines CCD Sensors und dessen funktionen\\
-%
-%Ein Bildsensor, der dieses Prinzip zum Verschieben und Auslesen der Ladungen der lichtaktiven Pixel anwendet, wird ''CCD-Sensor'' genannt.\\
-%
-%Allgemein werden einige typische CCD-Sensor-Bauarten unterschieden, die auf weiteren Homepage-Seiten beschrieben werden:
-%
-%\begin{itemize}
-%	\item Interline Transfer CCD
-%	\item Full Frame Transfer CCD
-%	\item Frame Transfer CCD
-%\end{itemize}
-%
-%von denen sich in der industriellen Bildverarbeitung vor allem der so genannte "Interline Transfer Sensor" durchgesetzt hat.
-%
-%\begin{itemize}
-%	\item In der Masse der industriellen Applikationen werden Kameras mit CCD-Sensoren verwendet. Sie sind rauscharm, lichtempfindlich, haben eine hohe Uniformität und sind aufgrund Ihrer linearen Charakteristik geeignet für präzise Messapplikationen.
-%	\item Eine überwältigende Mehrheit der Hersteller industrieller Kameras verbaut in Ihren Standardmodellen CCD-Sensoren, die in 90\% der Fälle von der Fa. Sony stammen. Über die Jahre hinweg wurden immer wieder neue, weiter entwickelte Sensoren auf den Markt gebracht. Überprüfen Sie, falls Sie besonders hohe Ansprüche an Ihren Sensor haben, ob eine neuere oder ältere Sensorvariante verwendet wird.
-%	\item Aufgrund verbesserter Fertigungstechnologien werden höhere Empfindlichkeiten der Pixel erzielt, die damit (bei Beibehaltung der Qualität) immer kleinere Pixelgrößen erlauben. Die Anforderungen an die Qualität der Optik sind dadurch extrem gestiegen.
-%	\item CCD-Sensoren mit besonders schnellen Frameraten oder mit besonders hoher Auflösung werden von der Fa. TrueSense (ehemals Kodak) entwickelt. Auch hier lohnt sich ein Blick auf das Datenblatt, welche Type (neue / alte Variante) verwendet wird.
-%	\item Fast jeder Sensor hat eine gewisse Anzahl an Defektpixeln, die meistens aber kaum auffallen und manchmal von der Kamera-Firmware durch eine Pixel-Fehlerkorrektur heraus interpoliert werden können. CCD-Hersteller unterscheiden üblicherweise Ihre Sensoren in die Qualitätsstufen Grade "B", Grade "A" und Grade "zero", um die Anzahl der Defektpixel zu beschreiben. Diese unterscheiden sich preislich. Bei extrem kritischen Applikationen können  von bestimmten Kamera-Herstellern gegen Aufpreis auch Kameras mit Grade "zero"-Sensoren mit null Defektpixeln gekauft werden.
-%	\item 
-%	Etwa alle 6 Grad Temperaturerhöhung verdoppelt sich das thermische Rauschen der Pixel. Gute Kameras sollten im Betrieb nicht besonders warm werden. Vermeiden Sie außerdem die Montage der Kamera in Bereichen von Wärmestau.
-%	
-%\end{itemize}
 
 
 Das Herz einer modernen Kamera ist der Halbleiter-Bildsensor. Die Bildsensoren spielen in der optischen Messtechnik und industriellen Bildverarbeitung eine große Rolle\cite{Photonik}. Die in dieser Arbeit verwendeten Kameras für die Aufnahme der Stereobildpaare, waren zum einen die Vollformatkamera Canon EOS 6D und die Halbformatikamera Canon EOS 60D. Beide besitzen einen CMOS-Sensorchip, welcher zu den Halbleiterbildsensoren gehört\cite{Canon6D}. Die Geometrie dieser Sensoren, ist grob gesprochen als eine $M \times N$ - Matrix, bestehend aus $M \times N$ Pixeln. Die Pixel bedecken nur einen Teil der Sensorfläche und können in ihrer geometrischen Beschaffenheit von der Form des Sensors unterschieden werden\cite{Photonik}. Abbildung 5.1 zeigt einen schematischen Aufbau eines Halbleiterbildsensors\\
@@ -283,5 +262,12 @@ Die Behauptung, dass die Auflösung der Kamera bei dem in dieser Arbeit gewählt
 
 
 
-
+%(NICHT LÖSCHEN!DAS GEHÖRT ALLES IN KAPITEL 7!!!)
+%Wenn man sich mit digitalen Bilddaten auseinandersetzt, so kommt man nicht drum herum sich auch mit den verschiedenen Auflösungsarten beschäftigen zu müssen.
+%Aus der Stereokalibrierungsapp, welche \textit{MatLab} anbietet, ist bekannt, dass diese nicht mit Bildern unterschiedlicher Auflösung eine Szenerekonstruktion durchführen kann. 
+%Der erste Schritt bestand erstmal darin zu überprüfen, warum zwei unterschiedliche Auflösungen in \textit{MatLab} Probleme machen. \textit{MatLab} verfolgt einen etwas anderen Rekonstruktionsansatz. Zu aller erst werden die Kameras kalibriert. Dies geschieht über die Matlab-Funktion \text{estimateCameraParameters}\cite{MatlabCamParam}. 
+%Diese Funktion funktioniert auch bei Bildern unterschiedlicher Auflösung noch ohne Probleme. Das Problem, welches sich als eigentlich minimales Problem herausstellt, ist, dass die darauf folgenden Rektifizierung der Stereobilder nicht mit zwei Bildern unterschiedlicher Auflösung funktioniert. 
+%In den \textit{MatLab} references, steht es nicht expliziet drin \cite{MatlabRec}. Die Rektifizierung in Matlab funktioniert nach einem Schema, welches ähnlich dem aufgezeigten Beispiel im Kapitel \nameref{sec:rectification} bereits erwähnt wurde und in \cite{Fusiello,FusielloSite} nochmal genau aufgeführt wird.
+% Das Problem liegt also nicht daran, dass bilder unterschiedlicher Auflösung nicht rektifiziert werden können, sondern das Problem liegt an dem in \textit{MatLab} verwendeten Algorithmus für die Rektifizierung zweier Stereobilder (Foren Zitieren????). Warum \textit{MatLab} überhaupt rektifiziert, liegt daran, dass ein Ansatz der Szenerekonstruktion gewählt wurde, welcher die essentielle Matrix nicht benötigt. In diesem Falle, werden zwei Stereobilder aufgenommen, danach rektifiziert und anschließend über eine sogenannte \textit{Disparity-Map}, die Szenen punkte rekonstruiert\cite{MatlabDisp,MatlabStereoApp,Fusiello,Javier}. 
+%Der in dieser Arbeit gewählte Rektifizierungsalgorithmus, ist nicht auf gleiche Kameraauflösungen beschränkt. Mittlerweile gibt es natürlich deutlich fortgeschrittenere Rektifizierungsansätze, jedoch wurde für diese Arbeit der Ansatz von \cite{ZZ} gewählt, um ein Gefühl zu vermitteln, dass wenn man sich auf die Epipolargeometrie bezieht, die Auflösungen der Kameras keine Rolle spielen\cite{Elements}.
 
