@@ -2,27 +2,39 @@
 \label{sec:minimalAuf} 
 
 
-Im vorherigen Kapitel wurde gezeigt, wie eine 3D-Szene aus zwei heterogenen Bildquellen, welche von zwei Kameras gleicher Auflösung aufgenommen wurden, rekonstruiert werden konnte und gleichzeitig noch die externen Kameraparameter von $C'$ in Relation zu $C$ geschätzt werden konnten. Dies wirft die Frage auf, welche Auswirkungen Bilder zweier Kameras mit unterschiedlichen Auflösungen für den 
 
- Rekonstruktionen haben können. Im folgenden soll zunächst aufgezeigt werden, wie prinzipiell die Auflösungseinstellungen auf einem CMOS-Chip funktionieren.
+Igendwie sagen, dass wie gezeigt wurde der Ansatz für für gleiche Auflösungen funktioniert hat. sRoll im folgendenden die möglichkeit in betracht gezogen werden dass $\zeta \neq \zeta'$. Dazu soll erst einmal erklärt werden, was es für den Sensor bedeutet, wenn sich eine Auflösung ändert und was es bedeutet wenn sich zusätzlich auch noch die Seitenverhältnisse ändern.
+%Im vorherigen Kapitel wurde gezeigt, wie eine 3D-Szene aus zwei heterogenen Bildquellen, welche von zwei Kameras gleicher Auflösung aufgenommen wurden, rekonstruiert wurden und gleichzeitig noch die externen Kameraparameter von $C'$ in Relation zu $C$ geschätzt wurden.
 
 
- Was genau unterschiedliche Auflösungen der Kameras für die einzelnen Bilder bedeutet und was genau sich bei der Aufnahme mit dem Sensor dabei ändert, soll im folgenden Unterkapitel kurz erläutert werden. Danach wird aufgezeigt, was genau diese Veränderungen für die Epipolargeometrie bedeuten und letztendlich wird das Minimalbeispiel so angepasst, als hätten zwei Kameras unterschiedlicher Auflösung die selbe Szene wie davor aufgenommen und die Resultate miteinander verglichen. 
+
+
+Dies wirft die Frage auf, welche Auswirkungen Bilder zweier Kameras mit unterschiedlichen Auflösungen auf die Funktionen den Szenenrekonstruktionsalgorithmus haben. 
+
+
+Was genau unterschiedliche Auflösungen der Kameras für die einzelnen Bilder bedeutet und was genau sich bei der Aufnahme mit dem Sensor dabei ändert, soll im folgenden Unterkapitel kurz erläutert werden. 
+
+Danach soll analysiert werden, ob eine veränderte Bildauflösung Auswirkungen auf die in Kapitel \ref{sec:HFE} hergeleiteten Abildungsvorschriften hat. Als letztes wird im synthetischen Beispiel die Auflösung einer Kamera mehrmals verändert und der Szenenrekonstruktionsalgorithmus angewandt. Das Ergebnis des Algorithmus wird analysiert und validiert. 
+
+%Danach wird aufgezeigt, was genau diese Veränderungen für die in Kapitel \ref{sec:HFE} Hergeleiteten Bedingungen Epipolargeometrie bedeuten und letztendlich wird das Minimalbeispiel so angepasst, als hätten zwei Kameras unterschiedlicher Auflösung die selbe Szene wie davor aufgenommen und die Resultate miteinander verglichen. 
 
 \section{Abbildungsunterschiede}
 
 
-
-Das Herz einer modernen Kamera ist der Halbleiter-Bildsensor. Die Bildsensoren spielen in der optischen Messtechnik und industriellen Bildverarbeitung eine große Rolle\cite{Photonik}. Die in dieser Arbeit verwendeten Kameras für die Aufnahme der Stereobildpaare, waren zum einen die Vollformatkamera Canon EOS 6D und die Halbformatikamera Canon EOS 60D. Beide besitzen einen CMOS-Sensorchip, welcher zu den Halbleiterbildsensoren gehört\cite{Canon6D}. Die Geometrie dieser Sensoren, ist grob gesprochen als eine $M \times N$ - Matrix, bestehend aus $M \times N$ Pixeln. Die Pixel bedecken nur einen Teil der Sensorfläche und können in ihrer geometrischen Beschaffenheit von der Form des Sensors unterschieden werden\cite{Photonik}. Abbildung 5.1 zeigt einen schematischen Aufbau eines Halbleiterbildsensors\\
+Die Geometrie eines Sensors, kann als eine  $M \times N$ - Matrix, bestehend aus $M \times N$  Sensorelementen dargestellt werden\cite{Photonik}. Abbildung \ref{fig:Sensor} zeigt den schematischen Aufbaue eines Sensors (CMOS).
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{images/Bildsensor_mit_Pixel.png}
 	\captionof{figure}{Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Pixeln. Vlg \cite{Photonik}} 
+	\label{fig:Sensor}
 \end{minipage}\\ \\
 
 
-Die Auflösung des Sensors hängt von den horizontalen und vertikalen Pixelabständen ab und gibt wieder, welche Objektdetails mit dem Sensor gerade noch erkannt werden können.\cite{Photonik}. Ein Sensor hat eine maximale Auflösung, welche durch die Anzahl seiner fest installierten Pixel bestimmt wird. Die Bildqualität ist abhängig von der Größe des Sensorchips und der Menge der sich darauf befindenden Pixel. Der CMOS-Sensor einer Canon 6D hat beispielsweise eine Größe von $36 \times 24 mm$ und eine maximale Auflösung von $5.472 \times 3.648$ Pixel. Jedoch ist das nicht die einzige Auflösung, welche beim fotographieren oder filmen mit der Kamera genutzt werden kann. Es können sowohl die Pixelanzahl als auch das Seitenverhältnis der entstehenden Bilder eingestellt werden. Bei der Canon EOS 6D können insgesamt vier verschiedene Seinsverhältnisse eingestellt werden $[3:2], \,[4:3], \,[16:9]$ und $[1:1]$\cite{Canon6D}. Die Bildauflösungen unterscheiden sich pro Seitenverhältnis in sechs Auflösungseinstellungen \textit{L, M, S1, S2, S3}. 
+Die Auflösung eines Sensors hängt von den horizontalen und vertikalen Pixelabständen ab und gibt wieder, welche Objektdetails mit dem Sensor gerade noch erkannt werden können.\cite{Photonik}. 
+
+
+Ein Sensor hat eine maximale Auflösung, welche durch die Anzahl seiner fest installierten Pixel bestimmt wird. Die Bildqualität ist abhängig von der Größe des Sensorchips und der Menge der sich darauf befindenden Pixel. Der CMOS-Sensor einer Canon 6D hat beispielsweise eine Größe von $36 \times 24 mm$ und eine maximale Auflösung von $5.472 \times 3.648$ Pixel. Jedoch ist das nicht die einzige Auflösung, welche beim fotographieren oder filmen mit der Kamera genutzt werden kann. Es können sowohl die Pixelanzahl als auch das Seitenverhältnis der entstehenden Bilder eingestellt werden. Bei der Canon EOS 6D können insgesamt vier verschiedene Seinsverhältnisse eingestellt werden $[3:2], \,[4:3], \,[16:9]$ und $[1:1]$\cite{Canon6D}. Die Bildauflösungen unterscheiden sich pro Seitenverhältnis in sechs Auflösungseinstellungen \textit{L, M, S1, S2, S3}. 
 
 	\begin{table}[h]
 	\centering

@@ -1,14 +1,14 @@
 \chapter{Synthetische Rekonstruktion}
 \label{sec:minimal} 
 
-Anhand der erarbeiteten mathematischen Grundlagen ist ein Algorithmus für Rekonstruktion einer Szenen durch eine Stereobildaufnahme entstanden. Der Algorithmus wurde mit dem Ziel der Kamerakalibrierung und der Szenenrekonstruktion aus Bildquellen unterschiedlicher Auflösungen entwickelt.Der Algorithmus wurde unter Berücksichtigung eines zuvor festgelegten Kriterien entwickelt werden. Zum einen sollten die Kameraparameter bestimmt werden können und zum anderen sollte es prinzipiell möglich sein, Szenen aus Bildern unterschiedlicher Auflösung zu rekonstruieren. Grund hierfür ist, dass Stereokalibrierungsverfahren einiger Computer Vision Applikationen kein unterschiedlichen Auflösungen von Kameras berücksichtigen.
+Anhand der erarbeiteten mathematischen Grundlagen ist ein Algorithmus für Rekonstruktion einer Szenen durch eine Stereobildaufnahme entstanden. Der Algorithmus wurde mit dem Ziel der Kamerakalibrierung und der Szenenrekonstruktion aus Bildquellen unterschiedlicher Auflösungen entwickelt. Grund hierfür ist, dass Stereokalibrierungsverfahren einiger Computer Vision Applikationen kein unterschiedlichen Auflösungen von Kameras berücksichtigen.
 Der entwickelte Algorithmus ist sowohl in der Lage aus einem Stereobildpaar extrinsische Kameraparameter zu bestimmen und anhand dessen die 3D-Szene zu rekonstruieren, jedoch unter der Voraussetzung, dass die intrinsischen Kameraparameter beider Kameras bekannt sind.\\
 
 Im folgenden soll der Algorithmus anhand eines virtuellen Beispiels erklärt werde. Dabei werden die einzelnen Schritte des Aufbaus der virtuellen Szene, der Bestimmung der extrinsischen Kameraparameter und der Rekonstruktion der virtuellen 3D-Szene beschrieben. Abbildung \ref{fig:ArbeitsProzessVirtuell} fasst den Arbeitsprozess des Szenenrekonstruktionsalgorithmus für das virtuelle Beispiel zusammen. \\
 
 
 % Da dies in einigen Sterokalibrierungs Applikationen nicht
-%
+%Der Algorithmus wurde unter Berücksichtigung eines zuvor festgelegten Kriterien entwickelt werden. Zum einen sollten die Kameraparameter bestimmt werden können und zum anderen sollte es prinzipiell möglich sein, Szenen aus Bildern unterschiedlicher Auflösung zu rekonstruieren.
 %Aus diesem Grund wurde ein Ansatz entwickelt, welcher eine Szenenrekonstruktion 
 %
 %Für den entwickelten Ansatz des implementierten Szenenrekonstruktionsalgorithmus, wird davon ausgegangen, dass die intrinsischen Kameraparameter bekannt sind. Der Grund dafür ist, dass in dieser Arbeit ein Ansatz entwickelt werden sollte, welcher die Möglichkeit von unterschiedlichen Auflösungen der Kameras mit einbeziehen sollte. Aus diesem Grund wurde ein Ansatz für die Szenenrekonstruktion entwickelt, welcher keine Rektifizierung der Bilder mit einschließt. \\
@@ -299,42 +299,47 @@ Um $v$ zu ermitteln wird der Kern von $S_1$ und $S_2$ bestimmt. Die jeweilgen Er
 Letztendlich können, für die Rekonstruktion der extrinsischen Kameraparameter vier mögliche Lösungen für $T$ in Form von $T = R[I|-C]$, wie in Gleichung \ref{eq:trafo} in Kapitel \ref{sec:CameraModels} definiert, gefunden werden\cite{HZ,Ferid}. $\lambda v$ heißt dabei, dass sowohl $v$ also auch alle Vielfache von $v$, Lösungen sein können, was durch die Skaleninvarianz der Resultate bedingt ist\cite{HZ,Ferid}. 
 
 \begin{gather}
-T = [UWV^T|+\lambda v] \;\;\; \textit{oder} \;\;\;[UW^TV^T|+\lambda v]\\
+T' = [UWV^T|+\lambda v] \;\;\; \textit{oder} \;\;\;[UW^TV^T|+\lambda v]\\
 \textit{oder}\;\;\; [UWV^T|-\lambda v] \;\;\; \textit{oder} \;\;\;[UW^TV^T|-\lambda v]
 \end{gather}
+
+Die Abbildungen \ref{fig:T_1}, \ref{fig:T_2}, \ref{fig:T_3} und \ref{fig:T_4} stellen schematisch die vier verschiedenen Transformationsmöglichkeiten von $T'$ dar. 
+
 
 \begin{figure}[!htb]
 	\minipage{0.52\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_one.png}
-	%	\caption{A really Awesome Image}
+	\caption{a)}
 	\label{fig:T_1}
 	\endminipage\hfill
 	\minipage{0.52\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_two.png}
-	%	\caption{A really Awesome Image}
+	\caption{b)}
 	\label{fig:T_2}
 	\endminipage\hfill
 \end{figure}
 \begin{figure}[!htb]
 	\minipage{0.52\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_three.png}
-	%	\caption{A really Awesome Image}
+	\caption{c)}
 	\label{fig:T_3}
 	\endminipage\hfill
 	\minipage{0.52\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_four.png}
-	%	\caption{A really Awesome Image}
+	\caption{d)}
 	\label{fig:T_4}
 	\endminipage\hfill
-	\caption{Die Abbildung zeigt die vier möglichen Lösungen für $R$. }
+	\caption{Die Abbildungen a, b, c und d veranschaulichen, welche Bilder aus den vier Lösungen entstehen. In den Abbildungen a und b kommt es zu einer Umkehrung der Basisline. In den Abbildungen c und d wird $C'$ und $180^\circ$ gedreht}
 \end{figure}
 \pagebreak
+
+
 
 %(Noch einen Ansatz einbauen wie man die richtige Lösung algorithmisch auswertet? Im implementierte Algorithmus der arbeit wurden die Vier Lösungen jeweils rekonstruiert und alle ergebnisse ausgegeben.)
 
 \subsection{Szenenrekonstruktion durch Triangulation}
 
-Als Triangulierung wird in der Computer Vision die Bestimmung eines 3D-Objektpunktes aus korrespondierenden Bildpunkten genannt. Als Voraussetzung für die Rekonstruktion müssen die jeweiligen korrespondierenden Bildpunkte und die Kameraparameter der einzelnen Kameras bekannt sein. Die Triangulierung funktioniert wie die Projektion eines Objektpunktes auf die Bildebene, nur in die andere Richtung. Zwei Gerden, welche jeweils durch die Porjektionszentren und den zu rekonstruierenden Bildpunkten gehen,  treffen sich im Raum. Der Schnittpunkt beider Geraden, bildet den zu den Bildpunkten gehörenden Ursprungspunkt, vgl Abbildung \ref{fig:TriangulationOptimal}.  
+Als Triangulierung wird in der Computer Vision die Bestimmung eines 3D-Objektpunktes aus korrespondierenden Bildpunkten genannt. Als Voraussetzung für die Rekonstruktion müssen die jeweiligen korrespondierenden Bildpunkte und die Kameraparameter der einzelnen Kameras bekannt sein. Die Triangulierung funktioniert wie die Projektion eines Objektpunktes auf die Bildebene, nur in die andere Richtung. Zwei Gerden, welche jeweils durch die Porjektionszentren und den zu rekonstruierenden Bildpunkten gehen,  treffen sich im Raum. Der Schnittpunkt beider Geraden, bildet den zu den Bildpunkten gehörenden Ursprungspunkt, vgl Abbildung \ref{fig:TriangulationOptimal}.  \\
 
 
 %wird das Rekonstruieren der Ursprünglichen 3D-Objektpunkte durch eine Rückprojektion vom jeweiligen Projektionszentrum der Kameras durch ihre Bildpunkte bezeichnet. Im synthetischen Beispiel wird durch einfache Schnittpunktberechnung derjenigen Geraden, welche durch die jeweiligen Projektionszentren und deren Bildpunkte auf deren Bildebenen gehen, der Ursprungspunkt im Raum rekonstruiert.\\
@@ -367,7 +372,7 @@ Als Triangulierung wird in der Computer Vision die Bestimmung eines 3D-Objektpun
 Im synthetischen Beispiel wird mit reinen Daten gearbeitet. Das heißt, die Bildpunkte wurden mathematisch von ihrem Ursprungspunkt im Raum berechnet und sind somit frei von Verfälschungen durch äußere Einflüsse. Ein zum Bildpunkt $m_\tau$ korrespondierender Bildpunkt $m'_{\tau'}$ liegt genau auf der zu $m_\tau$ korrespondierenden Epipolarlinien $l'$. Somit ist garantiert, dass sich die Bildpunkte $m_\tau$ und $m'_{\tau'}$ bei einer Rückprojektion in einem Punkt $M_{0,\delta}$ im Raum treffen. Durch die zuvor erwähnte Skaleninvarianz der extrinsischen Kameraparameter, handelt es sich bei $M_{0,\delta}$ jedoch noch nicht um den eigentlichen Ursprungspunkt $M_\delta$. Um die Rekonstruktion im synthetischen Beispiel so nah wie möglich an einem realen Beispiel zu halten, wird davon ausgegangen, dass nur die Kameraparameter und die jeweiligen Bildkoordinaten bekannt sind.\\
 
 
-Für die Bestimmung der extrinsischen Kameraparameter wurde festgesetzt, dass die Projektionsmatrix $P = [I|0]$ für $C$ gilt und die ermittelte Lösung für $T$ die zu $C$ relative Position von $C'$ ist. $T$ entspricht $T = R'[I|-C']$ somit gilt für $C'$ die Projketionsmatrix $P' = K'R'[I|-C']$.Um eine Gerade von den Projektionszentren $C$ und $C'$ durch die jeweiligen Bildpunkte bilden zu können, müssen die Positionen von $C$ und $C'$ bekannt sein. Für $C$ gilt, wie aus Projektionsmatrix $P$ ersichtlich, dass $C = (0,0,0)^T$. Also ist die Position von Kamera eins in Weltkoordinaten $C_\delta = [0 \, 0 \, 0 \, 1]^T$. Was jetzt noch fehlt ist die Position von Kamera zwei in Weltkoordinaten. Um $C'$ zu ermitteln, wird der reine Translationsanteil aus $T$ benötigt. Um $C$ aus $T = R[I|-C]=[R|-RC]$ zu bestimmen wird der Translationsvektor $-RC$ aus $T$ mit dem Transponierten Rotationsmatrix aus $T$ mulitpliziert.
+Für die Bestimmung der extrinsischen Kameraparameter wurde festgesetzt, dass die Translationsmatrix $T = [I|-0]$ für $C$ gilt und eine der ermittelten vier Lösungen der extrinsischen Kameraparameter $T'$ die zu $C$ relative Position von $C'$ ist. Für $C'$ wurde die Projketionsmatrix $P' = K'R'[I|-C']$.Um eine Gerade von den Projektionszentren $C$ und $C'$ durch die jeweiligen Bildpunkte bilden zu können, müssen die Positionen von $C$ und $C'$ bekannt sein. Für $C$ gilt, wie aus Projektionsmatrix $P$ ersichtlich, dass $C = (0,0,0)^T$. Also ist die Position von Kamera eins in Weltkoordinaten $C_\delta = [0 \, 0 \, 0 \, 1]^T$. Was jetzt noch fehlt ist die Position von Kamera zwei in Weltkoordinaten. Um $C'$ zu ermitteln, wird der reine Translationsanteil aus $T$ benötigt. Um $C$ aus $T = R[I|-C]=[R|-RC]$ zu bestimmen wird der Translationsvektor $-RC$ aus $T$ mit dem Transponierten Rotationsmatrix aus $T$ mulitpliziert.
 
 \begin{gather}
 	C' =  R^T \cdot -RC 

@@ -15,16 +15,20 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces In der Abbildung ist der vereinfachte Stereoaufbau in einer Top-Down-Ansicht zu sehen\relax }}{22}{figure.caption.141}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces In Gr\IeC {\"u}n ist die Abbildung des Quaders auf der Bildebenen $I$ von $C$ und in rot ist die Abbildung des Quaders auf der Bildebenen $I'$ von $C'$ zu sehen\relax }}{22}{figure.caption.141}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces \leavevmode {\color {red}Achsen falsch!!!}In Blau und Rot sind jeweils das Welt- und Kamerakoordinatensystem von Kamera eins zu sehen . In gr\IeC {\"u}n ist das gedrehte Koordiantensystem von Kamera 2 zu sehen.\relax }}{22}{figure.142}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Die Abbildung zeigt die vier m\IeC {\"o}glichen L\IeC {\"o}sungen f\IeC {\"u}r $R$. \relax }}{27}{figure.caption.211}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum\relax }}{27}{figure.213}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces \relax }}{29}{figure.caption.226}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces \relax }}{29}{figure.caption.226}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form und Gr\IeC {\"o}\IeC {\ss }e der Objekte\relax }}{29}{figure.227}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \relax }}{30}{figure.caption.228}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces \relax }}{30}{figure.caption.228}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Der rote Punkt stellt Die Postion von $C$ dar, der gr\IeC {\"u}ne steht f\IeC {\"u}r die Position von $C'$ relativ zu $C$. Die blauen Punkte stellen den rekonstruierten Quader und den extern platzierten neunten Punkt da. Das Abbild entstand aus dem in \textit {Mathematica} implementierten Algorithmus.\relax }}{30}{figure.caption.228}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces a)\relax }}{26}{figure.caption.210}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces b)\relax }}{26}{figure.caption.210}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces c)\relax }}{27}{figure.caption.211}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces d)\relax }}{27}{figure.caption.211}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Die Abbildungen a, b, c und d veranschaulichen, welche Bilder aus den vier L\IeC {\"o}sungen entstehen. In den Abbildungen a und b kommt es zu einer Umkehrung der Basisline. In den Abbildungen c und d wird $C'$ und $180^\circ $ gedreht\relax }}{27}{figure.caption.211}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum\relax }}{27}{figure.213}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces \relax }}{29}{figure.caption.226}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces \relax }}{29}{figure.caption.226}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form und Gr\IeC {\"o}\IeC {\ss }e der Objekte\relax }}{29}{figure.227}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces \relax }}{30}{figure.caption.228}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces \relax }}{30}{figure.caption.228}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Der rote Punkt stellt Die Postion von $C$ dar, der gr\IeC {\"u}ne steht f\IeC {\"u}r die Position von $C'$ relativ zu $C$. Die blauen Punkte stellen den rekonstruierten Quader und den extern platzierten neunten Punkt da. Das Abbild entstand aus dem in \textit {Mathematica} implementierten Algorithmus.\relax }}{30}{figure.caption.228}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Pixeln. Vlg \cite {Photonik}\relax }}{32}{figure.231}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Pixeln. Vlg \cite {Photonik}\relax }}{31}{figure.231}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Bild a) zeigt die Interpolation von Pixeln, wenn bei gleichbleibenden Seitenver\IeC {\"a}ltnissten weniger Pixel f\IeC {\"u}r das Bild verwendet werden sollen. Die interpolierten Pixel leiten dann alle das selbe Signal weiter. Bild b) zeigt in gelb markiert, den verweneten Bereich des Sensors, wenn sich die Seitenver\IeC {\"a}ltnisse \IeC {\"a}ndern und nicht mehr der volle Sensor genutzt wird.\relax }}{33}{figure.233}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{34}{figure.caption.235}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{34}{figure.caption.235}

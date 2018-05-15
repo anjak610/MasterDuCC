@@ -1,0 +1,36 @@
+\BOOKMARK [0][]{chapter.2}{1 Einleitung}{}% 1
+\BOOKMARK [0][]{chapter.3}{2 Model der Bildaufnahme mit einer Kamera}{}% 2
+\BOOKMARK [1][]{section.5}{2.1 Lochkameramodell zur Abbildung eines Punktes auf die Bildebene}{chapter.3}% 3
+\BOOKMARK [1][]{section.9}{2.2 Koordinatentransformation}{chapter.3}% 4
+\BOOKMARK [1][]{section.35}{2.3 Aufname mit einer willk\374rlichen Kameraorientierung}{chapter.3}% 5
+\BOOKMARK [0][]{chapter.50}{3 Geometrische Beziehungen zwischen Punktekorrespondenzen}{}% 6
+\BOOKMARK [1][]{section.59}{3.1 Korrespondenzen planarer Punktmengen mit Homographien}{chapter.50}% 7
+\BOOKMARK [1][]{section.76}{3.2 Korrespondenzanalyse f\374r beliebige Punkte im Raum \(Epipolare Geometrie\)}{chapter.50}% 8
+\BOOKMARK [1][]{section.109}{3.3 Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{chapter.50}% 9
+\BOOKMARK [0][]{chapter.138}{4 Synthetische Rekonstruktion}{}% 10
+\BOOKMARK [1][]{section.140}{4.1 Simulierte Bildaufnahme einer virtuellen Szene}{chapter.138}% 11
+\BOOKMARK [1][]{section.173}{4.2 Bildanalyse}{chapter.138}% 12
+\BOOKMARK [2][]{subsection.174}{4.2.1 Bestimmung der Abbildungsvorschriften}{section.173}% 13
+\BOOKMARK [2][]{subsection.189}{4.2.2 Bestimmung der extrinsischen Kameraparameter}{section.173}% 14
+\BOOKMARK [2][]{subsection.212}{4.2.3 Szenenrekonstruktion durch Triangulation}{section.173}% 15
+\BOOKMARK [0][]{chapter.227}{5 Auswirkungen von unterschiedlichen Kameraaufl\366sungen}{}% 16
+\BOOKMARK [1][]{section.228}{5.1 Abbildungsunterschiede}{chapter.227}% 17
+\BOOKMARK [1][]{section.231}{5.2 Auswirkungen auf die Epipolargeometrie}{chapter.227}% 18
+\BOOKMARK [1][]{section.241}{5.3 Synthetisches Beispiel mit unterschiedlichen Kameraaufl\366sungen}{chapter.227}% 19
+\BOOKMARK [0][]{chapter.255}{6 Relle Rekonstruktion}{}% 20
+\BOOKMARK [1][]{section.256}{6.1 Arbeitsprozess}{chapter.255}% 21
+\BOOKMARK [1][]{section.262}{6.2 Normalized-eight-Point-Algorithm}{chapter.255}% 22
+\BOOKMARK [2][]{subsection.267}{6.2.1 Singularity-Constraint der Fundamentalmatrix}{section.262}% 23
+\BOOKMARK [2][]{subsection.271}{6.2.2 Singularity- Constraint der essentiellen Matrix}{section.262}% 24
+\BOOKMARK [1][]{section.272}{6.3 Szenenrekonstruktion mit Sampson-Approximation}{chapter.255}% 25
+\BOOKMARK [1][]{section.354}{6.4 Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\366sung}{chapter.255}% 26
+\BOOKMARK [0][]{chapter.363}{7 Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen \(Matlab\)}{}% 27
+\BOOKMARK [1][]{section.399}{7.1 Projektive Transformation}{chapter.363}% 28
+\BOOKMARK [1][]{section.449}{7.2 \304hnlichkeitstransformation}{chapter.363}% 29
+\BOOKMARK [1][]{section.477}{7.3 Scherungstransformation}{chapter.363}% 30
+\BOOKMARK [0][]{chapter.505}{8 Punktesortierung in Schachbrettmustern}{}% 31
+\BOOKMARK [1][]{section.506}{8.1 Vorl\344ufiges Klassendiagramm}{chapter.505}% 32
+\BOOKMARK [1][]{section.517}{8.2 Beispiele}{chapter.505}% 33
+\BOOKMARK [0][]{chapter.523}{9 Fazit - Conclusion}{}% 34
+\BOOKMARK [0][]{chapter.524}{10 Alternativen}{}% 35
+\BOOKMARK [0][]{chapter.525}{11 Abk\374rzungsverzeichnis - List of Abbrevations}{}% 36
