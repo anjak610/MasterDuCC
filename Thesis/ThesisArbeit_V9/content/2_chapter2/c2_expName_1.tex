@@ -88,18 +88,12 @@ Um die Aufgestellte Theorie zu überprüfen, wurde im synthetischen Beispiel die
 \end{gather}
 
 
-Die Kamermatrix $K'$ von $C'$ galt ursprünglich, dass $K = K'$. Die Auflösung von $C'$ wird geändert indem ein Skalierungsfaktor mit $\zeta'_x$ und $\zeta_y$ multipliziert wird. Für das Beispiel wurden dre verschiedenen Auflösungen getestet. $K'_1$ wurde mit $\zeta_x \dot 2$
+Die Kamermatrix $K'$ von $C'$ galt ursprünglich, dass $K = K'$. Die Auflösung von $C'$ wird geändert indem ein Skalierungsfaktor mit $\zeta'_x$ und $\zeta_y$ multipliziert wird. Für das Beispiel wurden drei verschiedenen Auflösungen getestet.  $K'_1$ mit $\zeta'_x \cdot 2$ und $\zeta'_y \cdot 2$, $K'_2$ mit $\zeta'_x \cdot 3.2$ und $\zeta'_y \cdot 1.2$ und $K'_e$ mit $\zeta'_x \cdot 0.5$ und $\zeta'_y \cdot 4.3$. Da ursprünglich galt, dass $\zeta'_x =\zeta'_y = 1$ ergeben sich die folgenden Kameramatrizen für $K'$.
 %Während für die Kameramatrix von $C$ der Wert  $\zeta_x = \zeta_y = 1$ ist, wird in der Kamermatrix $K$ ist, wird das $\zeta$ in $C'$ verändert, so dass drei verschiedene neue Kameramatrizen $K'_1, K'_2$ und $K'_3$ ergeben. 
 
 
 
 \begin{gather}
-	K = \begin{bmatrix}
-		1&0&0&0\\
-		0&1&0&0\\
-		0&0&1&0\\
-		%0&0&1&0
-	\end{bmatrix}\\
 	K'_1 = \begin{bmatrix}
 		2&0&0&0\\
 		0&2&0&0\\
@@ -120,7 +114,9 @@ Die Kamermatrix $K'$ von $C'$ galt ursprünglich, dass $K = K'$. Die Auflösung 
 	\end{bmatrix}
 \end{gather}\\
 
-
+Die Unterschiede der enstehenden Abbildungen in $C'$ sind in den Abbildungen \ref{fig:K}, \ref{fig:K1},\ref{fig:K2} und \ref{fig:K3} zu sehen. \\
+ 
+ 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Zeta1.png}
@@ -146,7 +142,88 @@ Die Kamermatrix $K'$ von $C'$ galt ursprünglich, dass $K = K'$. Die Auflösung 
 	\label{fig:K3}
 	\endminipage\hfill
 \end{figure}
+\pagebreak
 
+Wird das synthetische Beispiel jeweils mit den drei verschiedenen modifizierten $K'$ durchgerechnet, so ergeben sich für die essentielle Matrix folgende Ergebnisse.
+
+\begin{gather*}
+	\zeta'_x = 1, \, \zeta'_y = 1: \; \; \;\;
+	E = \begin{pmatrix}
+		0&-0.5&0\\
+		0&0&\frac{1}{\sqrt{2}}\\
+		0&0.5&0
+	\end{pmatrix} |: 0.5 \; \leadsto
+	E = \begin{pmatrix}
+		0&-1&0\\
+		0&0&-\sqrt{2}\\
+		0&1&0
+	\end{pmatrix}\\
+	\zeta'_x = 2, \, \zeta'_y = 2: \; \; \;\;
+	E = \begin{pmatrix}
+		0&0.756&0\\
+		0&0&1.069\\
+		0&-0.756&0
+	\end{pmatrix} |: -0.756 \; \leadsto
+	E = \begin{pmatrix}
+		0&-1&0\\
+		0&0&-\sqrt{2}\\
+		0&1&0
+	\end{pmatrix}\\
+	\zeta'_x = 3.2, \, \zeta'_y = 1.2: \; \; \;\;
+	E = \begin{pmatrix}
+		0&0.634&0\\
+		0&0&1.069\\
+		0&-0.634&0
+	\end{pmatrix} |: -0.634 \; \leadsto
+	E = \begin{pmatrix}
+		0&-1&0\\
+		0&0&-\sqrt{2}\\
+		0&1&0
+	\end{pmatrix}\\
+	\zeta'_x = 0.5, \, \zeta'_y = 4.3: \; \; \;\;
+	E = \begin{pmatrix}
+		0&0.442&0\\
+		0&0&1.069\\
+		0&-0.442&0
+	\end{pmatrix} |: -0.442 \; \leadsto
+	E = \begin{pmatrix}
+		0&-1&0\\
+		0&0&-\sqrt{2}\\
+		0&1&0
+	\end{pmatrix}\\
+\end{gather*}
+
+Wie beobachtet werden kann, werden, trotz unterschiedlicher Kameraauflösungen für $K'$, immer die selbe essentielle Matrix im algorithmus bestimmt. Dies lässt sich mit Hilfe des \textit{Epipolar-Constraints} von $E$ aus Gleichung \ref{eq:Ep7} genauer erläutern.\\
+
+
+Die Fundamentalmatrix beinhaltet, sowohl die intrinsischen als auch die extrinsischen Parameter, um von $F$ auf $E$ zu kommen, müssen die intrinsischen Kameraparameter bekannt sein. Mit bekannten $K$ und $K'$ gilt, dass:
+
+\begin{gather}
+	F = K'^{-T}R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\\
+	E = K'^{T}FK\\
+	E= K'^T (K'^{-T}R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}) K\\
+	\leadsto E = R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^T		
+\end{gather}
+
+Da bei der Bestimmung von $E$ aus $F$ die intrinsischen Kameraparameter eliminiert werden, haben unterschiedliche Auflösungen keine Auswirkung auf die essentielle Matrix. Folglich ist das Ergebnist bei der Bestimmung der extrinsischen Kameraparameter unverändert, wie in Abblidung \ref{fig: reconstructedDifferentResolutions} veranschaulicht wird. Als Vergleich kann die Abbildung \ref{fig: reconstructedDifferentResolutions}, welche das Ergebnis der Rekonstruktion der Szene mit $K'_3$ als Kameramatrix für $C'$ veranschaulicht, mit der Rekonstruierten Szene in Abbildung 	\ref{fig:Quader1} und \ref{fig:Quader2} aus dem ersten Beispiel, betrachtet werden.  
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=1.\linewidth]{images/EMatrizen.png}
+%	\captionof{figure}{Die essentiellen Matrizen sind bei jeder Auflösung, die gewählt wurden immer Vielfache voneinander} 
+%\end{minipage}\\ \\
+
+%Bei der Rekonstruktion der externen Kamerparameter ergibt sich daraus stehts die selbe Matrix für $P'$. Was wie gezeigt daran liegt, dass sich geometrisch nichts ändert, sondern lediglich die skalierung der Koordinatenwerte der Bildpunkte und somit auch eine Skalierung der Einträge in $F$ und $E$, welche aber ebenfalls als Skaleninvariant definiert sind\cite{HZ}. Die Ergebnisse der darauffolgenden Szenenrekonstruktionen, der einzelnen Szenen zeigt, dass sich immer die selbe Szene ergibt, welche mit der eigens aufgebauten Szene übereinstimmen.\\
+
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/DifferentAufloesungRekonstructedScene.png}
+	\captionof{figure}{Die Abbildung zeigt die rekonstruierte Szenen des synthetischen Beispiels mit $K'_3$ als intrisische Parameter für $C'$.} 
+	\label{fig: reconstructedDifferentResolutions}
+\end{minipage}\\ \\
+
+%Die Behauptung, dass die Auflösung der Kamera bei dem in dieser Arbeit gewählten Workflow für die Rekonstruktion der Szene keine Auswirkung hat, kann für das Minimalbeispiel bestätigt werden. \\
 
 % zuerst Koordinatensysteme, was ändert sich ... Längenskalierung der Sensorkoordinatenachsen, da sich die Pixelskalierungen ändern.
 
@@ -252,12 +329,12 @@ Die Kamermatrix $K'$ von $C'$ galt ursprünglich, dass $K = K'$. Die Auflösung 
 %\end{bmatrix}
 %\end{gather*}
 
-Berchnung Für F und E mit unterschiedlichen Auflösungen, was verändert sich für F  ?  E erklären, dass dadurch das K auf die Punkte berechnet wird E unverändert bleibt
+%Berchnung Für F und E mit unterschiedlichen Auflösungen, was verändert sich für F  ?  E erklären, dass dadurch das K auf die Punkte berechnet wird E unverändert bleibt
+%
+%
+%Jetzt noch irgendwie drauf verweisen dass bei der herleitung eh von K und K' ausgegangen wird also zwei unterschieldlichen Kameramatrizen....
 
-
-Jetzt noch irgendwie drauf verweisen dass bei der herleitung eh von K und K' ausgegangen wird also zwei unterschieldlichen Kameramatrizen....
-
-Für die Fundamentalmatrix und die essentielle Matrix ergeben sich verglichen mit denen aus dem ersten Beispiel mit Kameras gleicher Abbildung folgende Matrizen.\\
+%Für die Fundamentalmatrix und die essentielle Matrix ergeben sich verglichen mit denen aus dem ersten Beispiel mit Kameras gleicher Abbildung folgende Matrizen.\\
 
 
 
@@ -368,55 +445,55 @@ Für die Fundamentalmatrix und die essentielle Matrix ergeben sich verglichen mi
 %
 %Während die Abbildung von $C$ Unverändert bleibt, wird in Abbildung??? Die Abbildung des Quaders in $C'$ ''vergrößert'', was für eine höhere Anzahl an verwendeten Pixeln steht. In Abbildung ??? werden die Pixel in horizontaler Richtung um das 3.2- fache und in vertikaler Richtung um das 1.2-fache erweitert und in Abbilung ??? wird in horzontaler Richtung die Anzahl der Pixel um das 0.5-fache und in vertikaler Richtung um das 4.3-fache skaliert. 
 
-Für die Fundamentalmatrix und die essentielle Matrix ergeben sich verglichen mit denen aus dem ersten Beispiel mit Kameras gleicher Abbildung folgende Matrizen.\\
+%Für die essentielle Matrix ergeben sich verglichen mit denen aus dem ersten Beispiel mit Kameras gleicher Abbildung folgende Matrizen.\\
 
 
-\begin{gather*}
-	\zeta_x = 1, \, \zeta_y = 1: \; \; \;\;
-	F = \begin{pmatrix}
-			0&-0.5&0\\
-			0&0&\frac{1}{\sqrt{2}}\\
-			0&-0.5&0
-		\end{pmatrix} |: -0.5 \; \leadsto
-	F=\begin{pmatrix}
-		0&1&0\\
-		0&0&-\sqrt{2}\\
-		0&1&0
-	\end{pmatrix}\\	
-	\zeta_x = 2, \, \zeta_y = 2: \; \; \;
-	F = \begin{pmatrix}
-		0&0.378&0\\
-		0&0&-0.534\\
-		0&0.756&0
-	\end{pmatrix} |: 0.756 \; \leadsto
-	F=\begin{pmatrix}
-		0&0.5&0\\
-		0&0&-\frac{1}{\sqrt{2}}\\
-		0&1&0
-	\end{pmatrix}\\ \frac{1}{\zeta_x} = 0.5, \;\; \frac{\sqrt{2}}{\zeta_y} = \frac{1}{\sqrt{2}}\\
-	\zeta_x = 3.2, \, \zeta_y = 1.2: \; \; \;
-F = \begin{pmatrix}
-	0&0.198&0\\
-	0&0&-0.747\\
-	0&0.634&0
-\end{pmatrix} |: 0.634 \; \leadsto
-F=\begin{pmatrix}
-	0&0.312&0\\
-	0&0&-1.178\\
-	0&1&0
-\end{pmatrix}\\ \frac{1}{\zeta_x} = 0.312, \;\; \frac{\sqrt{2}}{\zeta_y} = -1.178\\
-	\zeta_x = 0.5, \, \zeta_y = 4.3: \; \; \;
-F = \begin{pmatrix}
-	0&0.885&0\\
-	0&0&-0.145\\
-	0&0.442&0
-\end{pmatrix} |: 0.442 \; \leadsto
-F=\begin{pmatrix}
-	0&2&0\\
-	0&0&-0.328\\
-	0&1&0
-\end{pmatrix}\\ \frac{1}{\zeta_x} =2, \;\; \frac{\sqrt{2}}{\zeta_y} = -0.328
-\end{gather*}\\
+%\begin{gather*}
+%	\zeta_x = 1, \, \zeta_y = 1: \; \; \;\;
+%	F = \begin{pmatrix}
+%			0&-0.5&0\\
+%			0&0&\frac{1}{\sqrt{2}}\\
+%			0&-0.5&0
+%		\end{pmatrix} |: -0.5 \; \leadsto
+%	F=\begin{pmatrix}
+%		0&1&0\\
+%		0&0&-\sqrt{2}\\
+%		0&1&0
+%	\end{pmatrix}\\	
+%	\zeta_x = 2, \, \zeta_y = 2: \; \; \;
+%	F = \begin{pmatrix}
+%		0&0.378&0\\
+%		0&0&-0.534\\
+%		0&0.756&0
+%	\end{pmatrix} |: 0.756 \; \leadsto
+%	F=\begin{pmatrix}
+%		0&0.5&0\\
+%		0&0&-\frac{1}{\sqrt{2}}\\
+%		0&1&0
+%	\end{pmatrix}\\ \frac{1}{\zeta_x} = 0.5, \;\; \frac{\sqrt{2}}{\zeta_y} = \frac{1}{\sqrt{2}}\\
+%	\zeta_x = 3.2, \, \zeta_y = 1.2: \; \; \;
+%F = \begin{pmatrix}
+%	0&0.198&0\\
+%	0&0&-0.747\\
+%	0&0.634&0
+%\end{pmatrix} |: 0.634 \; \leadsto
+%F=\begin{pmatrix}
+%	0&0.312&0\\
+%	0&0&-1.178\\
+%	0&1&0
+%\end{pmatrix}\\ \frac{1}{\zeta_x} = 0.312, \;\; \frac{\sqrt{2}}{\zeta_y} = -1.178\\
+%	\zeta_x = 0.5, \, \zeta_y = 4.3: \; \; \;
+%F = \begin{pmatrix}
+%	0&0.885&0\\
+%	0&0&-0.145\\
+%	0&0.442&0
+%\end{pmatrix} |: 0.442 \; \leadsto
+%F=\begin{pmatrix}
+%	0&2&0\\
+%	0&0&-0.328\\
+%	0&1&0
+%\end{pmatrix}\\ \frac{1}{\zeta_x} =2, \;\; \frac{\sqrt{2}}{\zeta_y} = -0.328
+%\end{gather*}\\
 
 %\begin{minipage}{\linewidth}
 %	\centering
@@ -424,74 +501,6 @@ F=\begin{pmatrix}
 %	\captionof{figure}{Die Fundamentalmatrizen sind bei jeder Auflösung, die gewählt wurden immer Vielfache voneinander} 
 %\end{minipage}\\ \\
 %Die Werte für $\zeta_x$ wirken sich auf die erste Zeile der Fundamentalmatrix aus, während die Werte von $\zeta_y$ sich auf die zweite Zeile auswirken. Bei der nachfolgenden Umrechnung der Fundamentalmatrix in die essentielle Matrix mit Hilfe der Kameramatrizen $K$ und $K'$, kann festgestellt werden, dass die Ergebnisse jeweils Vielfache voneinander sind. \\
-
-Ich weiß nicht wie ich das formuliere was man hier beobachtet.... 
-
-\begin{gather*}
-		\zeta_x = 1, \, \zeta_y = 1: \; \; \;\;
-	E = \begin{pmatrix}
-		0&-0.5&0\\
-		0&0&\frac{1}{\sqrt{2}}\\
-		0&0.5&0
-	\end{pmatrix} |: 0.5 \; \leadsto
-E = \begin{pmatrix}
-	0&-1&0\\
-	0&0&-\sqrt{2}\\
-	0&1&0
-\end{pmatrix}\\
-		\zeta_x = 2, \, \zeta_y = 2: \; \; \;\;
-E = \begin{pmatrix}
-	0&0.756&0\\
-	0&0&1.069\\
-	0&-0.756&0
-\end{pmatrix} |: -0.756 \; \leadsto
-E = \begin{pmatrix}
-	0&-1&0\\
-	0&0&-\sqrt{2}\\
-	0&1&0
-\end{pmatrix}\\
-		\zeta_x = 3.2, \, \zeta_y = 1.2: \; \; \;\;
-E = \begin{pmatrix}
-	0&0.634&0\\
-	0&0&1.069\\
-	0&-0.634&0
-\end{pmatrix} |: -0.634 \; \leadsto
-E = \begin{pmatrix}
-	0&-1&0\\
-	0&0&-\sqrt{2}\\
-	0&1&0
-\end{pmatrix}\\
-		\zeta_x = 0.5, \, \zeta_y = 4.3: \; \; \;\;
-E = \begin{pmatrix}
-	0&0.442&0\\
-	0&0&1.069\\
-	0&-0.442&0
-\end{pmatrix} |: -0.442 \; \leadsto
-E = \begin{pmatrix}
-	0&-1&0\\
-	0&0&-\sqrt{2}\\
-	0&1&0
-\end{pmatrix}\\
-\end{gather*}
-
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=1.\linewidth]{images/EMatrizen.png}
-%	\captionof{figure}{Die essentiellen Matrizen sind bei jeder Auflösung, die gewählt wurden immer Vielfache voneinander} 
-%\end{minipage}\\ \\
-
-Bei der Rekonstruktion der externen Kamerparameter ergibt sich daraus stehts die selbe Matrix für $P'$. Was wie gezeigt daran liegt, dass sich geometrisch nichts ändert, sondern lediglich die skalierung der Koordinatenwerte der Bildpunkte und somit auch eine Skalierung der Einträge in $F$ und $E$, welche aber ebenfalls als Skaleninvariant definiert sind\cite{HZ}. Die Ergebnisse der darauffolgenden Szenenrekonstruktionen, der einzelnen Szenen zeigt, dass sich immer die selbe Szene ergibt, welche mit der eigens aufgebauten Szene übereinstimmen.\\
-
-
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=0.5\linewidth]{images/DifferentAufloesungRekonstructedScene.png}
-	\captionof{figure}{Die rekonstruierten Szenenpunkte und Kamerapositionen bleibt auch bei unterschiedlichen Auflösungen die selben} 
-\end{minipage}\\ \\
-
-Die Behauptung, dass die Auflösung der Kamera bei dem in dieser Arbeit gewählten Workflow für die Rekonstruktion der Szene keine Auswirkung hat, kann für das Minimalbeispiel bestätigt werden. \\
-
-
 
 
 %(NICHT LÖSCHEN!DAS GEHÖRT ALLES IN KAPITEL 7!!!)
