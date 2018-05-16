@@ -13,88 +13,89 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Ablaufdiagramm f\IeC {\"u}r das synthetische Beispiel\relax }}{21}{figure.139}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces In der Abbildung ist der vereinfachte Stereoaufbau in einer Top-Down-Ansicht zu sehen\relax }}{22}{figure.caption.141}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Das Weltkoordinatensystem $(O,\delta )$ und das Kamerakoordinatensystem $(C,\beta )$ sind deckungsgleich definiert. Das Kamerakoordinatensystem $(C',\beta ')$ ist bez\IeC {\"u}glich $(C,\beta )$ verschoben und rotiert.\relax }}{22}{figure.caption.141}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces a)\relax }}{26}{figure.caption.209}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces b)\relax }}{26}{figure.caption.209}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces c)\relax }}{27}{figure.caption.210}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces d)\relax }}{27}{figure.caption.210}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Die Abbildungen a, b, c und d veranschaulichen, welche Bilder aus den vier L\IeC {\"o}sungen entstehen. In den Abbildungen a und b kommt es zu einer Umkehrung der Basisline. In den Abbildungen c und d wird $C'$ und $180^\circ $ gedreht\relax }}{27}{figure.caption.210}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum\relax }}{27}{figure.212}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \relax }}{29}{figure.caption.223}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces \relax }}{29}{figure.caption.223}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form und Gr\IeC {\"o}\IeC {\ss }e der Objekte\relax }}{29}{figure.224}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces \relax }}{30}{figure.caption.225}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces \relax }}{30}{figure.caption.225}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Der rote Punkt stellt Die Postion von $C$ dar, der gr\IeC {\"u}ne steht f\IeC {\"u}r die Position von $C'$ relativ zu $C$. Die blauen Punkte stellen den rekonstruierten Quader und den extern platzierten neunten Punkt da. Das Abbild entstand aus dem in \textit {Mathematica} implementierten Algorithmus.\relax }}{30}{figure.caption.225}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Simulierite Abbildung des Quaders auf die Kamera $C$ in Gr\IeC {\"u}n und auf $C'$ in rot\relax }}{22}{figure.caption.141}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Abbildung der verschiedenen Kamerakoordinatensysteme, das Weltkoordinatensystem $O$ ist zum Kamerakoordinatensystem $C$ deckungsgleich und $C'$ verschoben und rotiert.\relax }}{22}{figure.142}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces a)\relax }}{26}{figure.caption.211}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces b)\relax }}{26}{figure.caption.211}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces c)\relax }}{26}{figure.caption.212}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces d)\relax }}{26}{figure.caption.212}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Die Abbildungen a, b, c und d veranschaulichen, welche Bilder aus den vier L\IeC {\"o}sungen entstehen. In den Abbildungen a und b kommt es zu einer Umkehrung der Basisline. In den Abbildungen c und d wird $C'$ und $180^\circ $ gedreht\relax }}{26}{figure.caption.212}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum\relax }}{27}{figure.214}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces \relax }}{28}{figure.caption.225}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces \relax }}{28}{figure.caption.225}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form und Gr\IeC {\"o}\IeC {\ss }e der Objekte\relax }}{29}{figure.226}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces \relax }}{29}{figure.caption.227}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces \relax }}{29}{figure.caption.227}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Der rote Punkt stellt Die Postion von $C$ dar, der gr\IeC {\"u}ne steht f\IeC {\"u}r die Position von $C'$ relativ zu $C$. Die blauen Punkte stellen den rekonstruierten Quader und den extern platzierten neunten Punkt da. Das Abbild entstand aus dem in \textit {Mathematica} implementierten Algorithmus.\relax }}{29}{figure.caption.227}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Sensorelementen. Vergleiche \cite {Photonik}\relax }}{31}{figure.228}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Bild a) zeigt die den Zusammenschluss mehrerer benachbarter Pixel zu einem neuen Pixel. Bild b) zeigt in gelb markiert, den aktiven lichtempfindlichen Bereich des Sensors, wenn sich das Seitenverh\IeC {\"a}ltnis ge\IeC {\"a}ndert wird und nicht mehr der komplette Sensor genutzt wird.\relax }}{32}{figure.229}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{33}{figure.caption.231}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{33}{figure.caption.231}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{34}{figure.caption.251}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt. $C$ mit $K$ und $C'$ mit $K_1'$\relax }}{34}{figure.caption.251}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces $C$ mit $K$ und $C'$ mit $K_2'$\relax }}{34}{figure.caption.252}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces $C$ mit $K$ und $C'$ mit $K_3'$\relax }}{34}{figure.caption.252}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Die rekonstruierten Szenenpunkte und Kamerapositionen bleibt auch bei unterschiedlichen Aufl\IeC {\"o}sungen die selben\relax }}{36}{figure.253}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Sensorelementen. Vergleiche \cite {Photonik}\relax }}{30}{figure.230}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Bild a) zeigt die den Zusammenschluss mehrerer benachbarter Pixel zu einem neuen Pixel. Bild b) zeigt in gelb markiert, den aktiven lichtempfindlichen Bereich des Sensors, wenn sich das Seitenverh\IeC {\"a}ltnis ge\IeC {\"a}ndert wird und nicht mehr der komplette Sensor genutzt wird.\relax }}{31}{figure.231}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{32}{figure.caption.233}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt\relax }}{32}{figure.caption.233}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces $C$ und $C'$ haben die selbe Aufl\IeC {\"o}sung eingestellt\relax }}{33}{figure.caption.245}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces $C$ und $C'$ haben unterschiedliche Aufl\IeC {\"o}sungen eingestellt. $C$ mit $K$ und $C'$ mit $K_1'$\relax }}{33}{figure.caption.245}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces $C$ mit $K$ und $C'$ mit $K_2'$\relax }}{33}{figure.caption.246}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces $C$ mit $K$ und $C'$ mit $K_3'$\relax }}{33}{figure.caption.246}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Die rekonstruierten Szenenpunkte und Kamerapositionen bleibt auch bei unterschiedlichen Aufl\IeC {\"o}sungen die selben\relax }}{35}{figure.247}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Aufnahme der Canon 6D von links\relax }}{37}{figure.caption.256}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Aufnahme der Canon 60D von rechts\relax }}{37}{figure.caption.256}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Szenenaufbau: Die Canon 60D befindet sich in dieser Abbildung auf der linken Seite, die Canon 60 D auf der rechten. Auf dem Tisch zwischen den Kameras ist die in den Abbildungen 6.1 und 6.1 abgebildete Szene zu sehen. Die Canon 60D ist etwas hinter der Canon 6D positioniert. Beide Kameras sind zu Szene hin gedreht und auch leicht nach unten geneigt.\relax }}{38}{figure.257}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Die mit dem \textit {SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet\relax }}{39}{figure.caption.260}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 6D\relax }}{41}{figure.caption.267}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }}{41}{figure.caption.267}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D\relax }}{42}{figure.caption.268}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }}{42}{figure.caption.268}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D, nach der denormalizierung von F\relax }}{42}{figure.caption.269}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D, nach der denormalizierung von F\relax }}{42}{figure.caption.269}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces a)\relax }}{43}{figure.caption.272}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces b)\relax }}{43}{figure.caption.272}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces a) Die r\IeC {\"u}ckprojzierten Strahlen der ungenauen korrespondierenden Punkte $m$ und $m'$ sind schief und treffen sich nicht in einem Punkt im 3D-Raum. b) The epipolar geometry for $m,\tmspace +\thinmuskip {.1667em} m'$. The measured points do not satisfy the epipolar constraint. The epipolar line $l' = Fm$ is the image of the ray through $n$, and $l = F^Tm'$ is the image of the ray through $m'$. Since the rays do not intersect, $m'$ does not lie on $l'$, and $m$ does not lie on $l$.\relax }}{43}{figure.caption.272}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Frafische Darstellung der optimalen Punkte $\mathaccentV {hat}05E{m}$ und $\mathaccentV {hat}05E{m'}$\relax }}{44}{figure.275}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Rekonstruierte Szene, unskaliert in Pixeleinheiten\relax }}{49}{figure.caption.352}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot geschrieben\relax }}{49}{figure.caption.352}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Zeigt die Die rekonstruierte Matrix $R'$ bei unver\IeC {\"a}nderter Aufl\IeC {\"o}sung. Die Aufl\IeC {\"o}sungen von $C_\delta $ und $C'_\delta $ sind die selben.\relax }}{50}{figure.caption.356}
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{50}{figure.caption.356}
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{50}{figure.caption.357}
-\contentsline {figure}{\numberline {6.20}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{50}{figure.caption.357}
-\contentsline {figure}{\numberline {6.21}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{51}{figure.caption.358}
-\contentsline {figure}{\numberline {6.22}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[2:1]$ skaliert wurde\relax }}{51}{figure.caption.359}
-\contentsline {figure}{\numberline {6.23}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{52}{figure.caption.360}
-\contentsline {figure}{\numberline {6.24}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{52}{figure.caption.361}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Ablaufdiagramm f\IeC {\"u}r die reelle Rekonstruktion\relax }}{36}{figure.249}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Szenenaufbau: Die Canon 60D befindet sich in dieser Abbildung auf der linken Seite, die Canon 60 D auf der rechten. Auf dem Tisch zwischen den Kameras ist die in den Abbildungen 6.1 und 6.1 abgebildete Szene zu sehen. Beide Kameras sind zu Szene hin gedreht.\relax }}{37}{figure.251}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces a\relax }}{38}{figure.caption.253}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces b\relax }}{38}{figure.caption.253}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 6D\relax }}{39}{figure.caption.264}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }}{39}{figure.caption.264}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D\relax }}{40}{figure.caption.265}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D\relax }}{40}{figure.caption.265}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Epipolarlinien mit \textit {Epipolar-constraint} im Bild der Canon 6D, nach der denormalizierung von F\relax }}{40}{figure.caption.266}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Epipolarlinien ohne \textit {Epipolar-constraint} im Bild der Canon 60D, nach der denormalizierung von F\relax }}{40}{figure.caption.266}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces a)\relax }}{41}{figure.caption.269}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces b)\relax }}{41}{figure.caption.269}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces a) Die r\IeC {\"u}ckprojzierten Strahlen der ungenauen korrespondierenden Punkte $m$ und $m'$ sind schief und treffen sich nicht in einem Punkt im 3D-Raum. b) The epipolar geometry for $m,\tmspace +\thinmuskip {.1667em} m'$. The measured points do not satisfy the epipolar constraint. The epipolar line $l' = Fm$ is the image of the ray through $n$, and $l = F^Tm'$ is the image of the ray through $m'$. Since the rays do not intersect, $m'$ does not lie on $l'$, and $m$ does not lie on $l$.\relax }}{41}{figure.caption.269}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Frafische Darstellung der optimalen Punkte $\mathaccentV {hat}05E{m}$ und $\mathaccentV {hat}05E{m'}$\relax }}{42}{figure.272}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Rekonstruierte Szene, unskaliert in Pixeleinheiten\relax }}{47}{figure.caption.349}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot geschrieben\relax }}{47}{figure.caption.349}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Zeigt die Die rekonstruierte Matrix $R'$ bei unver\IeC {\"a}nderter Aufl\IeC {\"o}sung. Die Aufl\IeC {\"o}sungen von $C_\delta $ und $C'_\delta $ sind die selben.\relax }}{48}{figure.caption.353}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{48}{figure.caption.353}
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{48}{figure.caption.354}
+\contentsline {figure}{\numberline {6.20}{\ignorespaces Zeigt die rekonstruierte Matrix $R'$ wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{48}{figure.caption.354}
+\contentsline {figure}{\numberline {6.21}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[5:2]$ skaliert wurde\relax }}{49}{figure.caption.355}
+\contentsline {figure}{\numberline {6.22}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[2:1]$ skaliert wurde\relax }}{49}{figure.caption.356}
+\contentsline {figure}{\numberline {6.23}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1:2]$ skaliert wurde\relax }}{50}{figure.caption.357}
+\contentsline {figure}{\numberline {6.24}{\ignorespaces Rekonstruierte Szene, wenn $K'$ mit einem Verh\IeC {\"a}ltnis von $[1.2:2.3]$ skaliert wurde\relax }}{50}{figure.caption.358}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces (\IeC {\"U}berarbeiten sie Abb \ref {fig:ArbeitsProzessVirtuell})Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt\relax }}{53}{figure.363}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Beipiel eines rektifizierten Bildes. Quelle: \cite {ZZ}\relax }}{54}{figure.364}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Beispiel einer einfachen Tiefenkarte eines Stereobildpaares nach der Rektifizierung. Quelle: \cite {Javier}\relax }}{54}{figure.365}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Aufnahmen zweier Kameras mit den selben Aufl\IeC {\"o}sungen, Kamera eins(Gr\IeC {\"u}n) und Kamera(rot) zwei gelten jeweils \ensuremath {\zeta =1}\relax }}{61}{figure.445}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Epipole f\IeC {\"u}r Kamera eins und Kamera zwei vor der Rektifizierung \relax }}{61}{figure.446}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen. Das die enstehenden parallelen Epipolarlinien auch hier schon horizontal ausgerichtet sind ist Zufall. Die Epipolarlinien sind immer parallel nach dieser Transformation aber die Richtung ist nicht immer automatisch bereits i = [1,0,0].\relax }}{62}{figure.447}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet\relax }}{64}{figure.475}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Die Abbildung verdeutlicht noch mal Schematisch, wie sich die Punkte ausrichten sollen. Bild a) zeigt die durch die Rektifizierung verschobenen Bildkantenmitten. Bild b= zeigt, wie sich die Bildkantenmitten durch die Scherungstransformation wieder ausrichten sollen.\relax }}{65}{figure.481}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.\relax }}{66}{figure.502}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{67}{figure.503}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces (\IeC {\"U}berarbeiten sie Abb \ref {fig:ArbeitsProzessVirtuell})Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt\relax }}{51}{figure.360}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Beipiel eines rektifizierten Bildes. Quelle: \cite {ZZ}\relax }}{52}{figure.361}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Beispiel einer einfachen Tiefenkarte eines Stereobildpaares nach der Rektifizierung. Quelle: \cite {Javier}\relax }}{52}{figure.362}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Aufnahmen zweier Kameras mit den selben Aufl\IeC {\"o}sungen, Kamera eins(Gr\IeC {\"u}n) und Kamera(rot) zwei gelten jeweils \ensuremath {\zeta =1}\relax }}{59}{figure.442}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Epipole f\IeC {\"u}r Kamera eins und Kamera zwei vor der Rektifizierung \relax }}{59}{figure.443}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen. Das die enstehenden parallelen Epipolarlinien auch hier schon horizontal ausgerichtet sind ist Zufall. Die Epipolarlinien sind immer parallel nach dieser Transformation aber die Richtung ist nicht immer automatisch bereits i = [1,0,0].\relax }}{60}{figure.444}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet\relax }}{62}{figure.472}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Die Abbildung verdeutlicht noch mal Schematisch, wie sich die Punkte ausrichten sollen. Bild a) zeigt die durch die Rektifizierung verschobenen Bildkantenmitten. Bild b= zeigt, wie sich die Bildkantenmitten durch die Scherungstransformation wieder ausrichten sollen.\relax }}{63}{figure.478}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.\relax }}{64}{figure.499}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{65}{figure.500}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Klassendiagramm\relax }}{69}{figure.506}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Klassendiagramm\relax }}{69}{figure.507}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Klassendiagramm\relax }}{70}{figure.508}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Klassendiagramm\relax }}{70}{figure.509}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Klassendiagramm\relax }}{70}{figure.510}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces \relax }}{71}{figure.caption.511}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces \relax }}{71}{figure.caption.511}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces \relax }}{71}{figure.caption.512}
-\contentsline {figure}{\numberline {8.9}{\ignorespaces \relax }}{71}{figure.caption.512}
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Klassendiagramm\relax }}{72}{figure.513}
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Klassendiagramm\relax }}{72}{figure.514}
-\contentsline {figure}{\numberline {8.12}{\ignorespaces Klassendiagramm\relax }}{73}{figure.515}
-\contentsline {figure}{\numberline {8.13}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{73}{figure.caption.517}
-\contentsline {figure}{\numberline {8.14}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{73}{figure.caption.517}
-\contentsline {figure}{\numberline {8.15}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{74}{figure.caption.518}
-\contentsline {figure}{\numberline {8.16}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.518}
-\contentsline {figure}{\numberline {8.17}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{74}{figure.caption.519}
-\contentsline {figure}{\numberline {8.18}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.519}
-\contentsline {figure}{\numberline {8.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }}{75}{figure.caption.520}
-\contentsline {figure}{\numberline {8.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.520}
-\contentsline {figure}{\numberline {8.21}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{75}{figure.caption.521}
-\contentsline {figure}{\numberline {8.22}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.521}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Klassendiagramm\relax }}{67}{figure.503}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Klassendiagramm\relax }}{67}{figure.504}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Klassendiagramm\relax }}{68}{figure.505}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Klassendiagramm\relax }}{68}{figure.506}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Klassendiagramm\relax }}{68}{figure.507}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces \relax }}{69}{figure.caption.508}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces \relax }}{69}{figure.caption.508}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces \relax }}{69}{figure.caption.509}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces \relax }}{69}{figure.caption.509}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Klassendiagramm\relax }}{70}{figure.510}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Klassendiagramm\relax }}{70}{figure.511}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Klassendiagramm\relax }}{71}{figure.512}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{71}{figure.caption.514}
+\contentsline {figure}{\numberline {8.14}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{71}{figure.caption.514}
+\contentsline {figure}{\numberline {8.15}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{72}{figure.caption.515}
+\contentsline {figure}{\numberline {8.16}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{72}{figure.caption.515}
+\contentsline {figure}{\numberline {8.17}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{72}{figure.caption.516}
+\contentsline {figure}{\numberline {8.18}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{72}{figure.caption.516}
+\contentsline {figure}{\numberline {8.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }}{73}{figure.caption.517}
+\contentsline {figure}{\numberline {8.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{73}{figure.caption.517}
+\contentsline {figure}{\numberline {8.21}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{73}{figure.caption.518}
+\contentsline {figure}{\numberline {8.22}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{73}{figure.caption.518}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

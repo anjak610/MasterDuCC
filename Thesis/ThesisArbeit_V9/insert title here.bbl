@@ -53,7 +53,6 @@ Dipl.-Ing.~Martin Roser.
 \bibitem{Hoffmann}
 Christoph~Stiller Thao~Dang, Christian~Hoffmann.
 \newblock Continuous stereo self-calibration by camera parameter tracking.
-\newblock IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 18, NO. 7, 2009.
 
 \bibitem{phdTwoView}
 Branislav Micusik.
@@ -115,9 +114,29 @@ Olaf Dössel.
 \newblock {\em Bildgebende Verfahren in der Medizin}, volume 2. Auflage.
 \newblock Springer-Verlag Berlin Heidelberg, 2016.
 
-\bibitem{MatlabStereoApp}
-MathWorks.
-\newblock Mathworks documentation, stereo camera calibration app.
+\bibitem{Mathematica}
+Wolfram~Research{,} Inc.
+\newblock Mathematica, {V}ersion 11.1.1.
+\newblock Champaign, IL, 2018.
+
+\bibitem{SIFTSURF}
+Emmanuel Habets Nicolas~Paparoditis Xiaozhi~Qu, Bahman~Soheilian.
+\newblock Evaluation of sift and surf for vision based localization.
+\newblock The International Archives of the Photogrammetry, Remote Sensing and
+  Spatial Information Sciences, Volume XLI-B3, 2016.
+
+\bibitem{Brooks}
+Antin van den Hengel Darren~Gawey Wojciech~Chojnacki, Michael J.~Brooks.
+\newblock Revisiting hartley's normalized eight-point-algorithm.
+\newblock IEEE Transactions on Pattern Analysis and Machine
+  Intelligence,Volume: 25, 2003.
+
+\bibitem{ConditionNumber}
+Jarosław~Bylina Anna~Pyzara, Beata~Bylina.
+\newblock The influence of a matrix condition number on iterative methods
+  convergence.
+\newblock Proceedings of the Federated Conference on Computer Science and
+  Information Systems, pp. 459–464, 2011.
 
 \bibitem{MatlabRec}
 MathWorks.

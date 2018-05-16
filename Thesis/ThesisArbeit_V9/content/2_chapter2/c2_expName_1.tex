@@ -2,21 +2,22 @@
 \label{sec:minimalAuf} 
 
 
-
-Igendwie sagen, dass wie gezeigt wurde der Ansatz für gleiche Auflösungen funktioniert hat. sRoll im folgendenden die möglichkeit in betracht gezogen werden dass $\zeta \neq \zeta'$. Dazu soll erst einmal erklärt werden, was es für den Sensor bedeutet, wenn sich eine Auflösung ändert und was es bedeutet wenn sich zusätzlich auch noch die Seitenverhältnisse ändern.
-%Im vorherigen Kapitel wurde gezeigt, wie eine 3D-Szene aus zwei heterogenen Bildquellen, welche von zwei Kameras gleicher Auflösung aufgenommen wurden, rekonstruiert wurden und gleichzeitig noch die externen Kameraparameter von $C'$ in Relation zu $C$ geschätzt wurden.
-
-
-Dies wirft die Frage auf, welche Auswirkungen Bilder zweier Kameras mit unterschiedlichen Auflösungen auf die Funktionen den Szenenrekonstruktionsalgorithmus haben. 
-
-
-Was genau unterschiedliche Auflösungen der Kameras für die einzelnen Bilder bedeutet und was genau sich bei der Aufnahme mit dem Sensor dabei ändert, soll im folgenden Unterkapitel kurz erläutert werden. 
-
-Danach soll analysiert werden, ob eine veränderte Bildauflösung Auswirkungen auf die in Kapitel \ref{sec:HFE} hergeleiteten Abildungsvorschriften hat. Als letztes wird im synthetischen Beispiel die Auflösung einer Kamera mehrmals verändert und der Szenenrekonstruktionsalgorithmus angewandt. Das Ergebnis des Algorithmus wird analysiert und validiert. 
+Aufbauend auf dem entstandenen Szenenrekonstruktionsalgorithmus für Kameras mit gleicher Auflösung, wurde der Algorithmus dhingehend getestet, ob eine Szenenrekonstruktion auch möglich ist, wenn gilt, dass $\zeta \neq \zeta'$. Zunächst wird beschrieben, was genau bei der Umstellung der Auflösung auf einem Sensor sich verändert. Anschließend wird analysiert, wie sich die Auflösungsänderung auf das in Kapitel \ref{sec:CameraModels} beschriebene Kameramodell ändert und welche Einflüsse sie auf die in Kapitel \ref{sec:HFE} hergeleiteten Epipolaren Bedingungen hat. Zum Schluss werden die Ergebnisse des synthetischen Beispiels mit unterschiedlichen Kameraauflösungen präsentiert und validiert.
+ 
+%Igendwie sagen, dass wie gezeigt wurde der Ansatz für gleiche Auflösungen funktioniert hat. sRoll im folgendenden die möglichkeit in betracht gezogen werden dass $\zeta \neq \zeta'$. Dazu soll erst einmal erklärt werden, was es für den Sensor bedeutet, wenn sich eine Auflösung ändert und was es bedeutet wenn sich zusätzlich auch noch die Seitenverhältnisse ändern.
+%%Im vorherigen Kapitel wurde gezeigt, wie eine 3D-Szene aus zwei heterogenen Bildquellen, welche von zwei Kameras gleicher Auflösung aufgenommen wurden, rekonstruiert wurden und gleichzeitig noch die externen Kameraparameter von $C'$ in Relation zu $C$ geschätzt wurden.
+%
+%
+%Dies wirft die Frage auf, welche Auswirkungen Bilder zweier Kameras mit unterschiedlichen Auflösungen auf die Funktionen den Szenenrekonstruktionsalgorithmus haben. 
+%
+%
+%Was genau unterschiedliche Auflösungen der Kameras für die einzelnen Bilder bedeutet und was genau sich bei der Aufnahme mit dem Sensor dabei ändert, soll im folgenden Unterkapitel kurz erläutert werden. 
+%
+%Danach soll analysiert werden, ob eine veränderte Bildauflösung Auswirkungen auf die in Kapitel \ref{sec:HFE} hergeleiteten Abildungsvorschriften hat. Als letztes wird im synthetischen Beispiel die Auflösung einer Kamera mehrmals verändert und der Szenenrekonstruktionsalgorithmus angewandt. Das Ergebnis des Algorithmus wird analysiert und validiert. 
 
 %Danach wird aufgezeigt, was genau diese Veränderungen für die in Kapitel \ref{sec:HFE} Hergeleiteten Bedingungen Epipolargeometrie bedeuten und letztendlich wird das Minimalbeispiel so angepasst, als hätten zwei Kameras unterschiedlicher Auflösung die selbe Szene wie davor aufgenommen und die Resultate miteinander verglichen. 
 
-\section{Abbildungsunterschiede}
+\section{Geometrie eines Sensors}
 
 
 Die Geometrie eines Sensors kann als eine  $M \times N$ - Matrix, bestehend aus $M \times N$ Sensorelementen dargestellt werden\cite{Photonik}. Die Auflösung eines Sensors hängt von den horizontalen und vertikalen Abständen der Sensorelemente ab. Abbildung \ref{fig:Sensor} zeigt den schematischen Aufbau eines Sensors (CMOS). 
@@ -29,9 +30,9 @@ Die Geometrie eines Sensors kann als eine  $M \times N$ - Matrix, bestehend aus 
 \end{minipage}\\ \\
 
 
-Ein Sensor hat eine maximale Auflösung. Bei maximaler Auflösung definiert ein Sensorelement einen Pixel. Ein Pixel wiederum bildet einen Bildpunkt auf dem Sensor\cite{Photonik}. Die Bildqualität ist abhängig von der Größe des Sensorchips und der Menge der sich darauf befindenden Sensorelemente. Wird eine Auflösung kleiner der maximal möglichen Auflösung eingestellt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen\cite{Photonik}. Ein neuer Pixel wird aus den benachbarten Pixeln berechnet. Dabei nehmen alle Pixel, die sich zum neuen Pixel zusammengeschlossen haben, die gleichen Farbwerte an. \\
+Ein Sensor hat eine maximale Auflösung. Bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}. Die Bildqualität ist abhängig von der Größe des Sensorchips und der Menge der sich darauf befindenden Sensorelemente. Wird eine Auflösung kleiner der maximal möglichen Auflösung eingestellt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen\cite{Photonik}. Ein neuer Pixel wird aus den benachbarten Pixeln berechnet. Dabei nehmen alle Pixel, die sich zum neuen Pixel zusammengeschlossen haben, die gleichen Farbwerte an. \\
 
-Des Weiteren kann eine Veränderung der Auflösung auch eine Änderung der Seitenverhältnisse mit einschließen. Ändert sich das Seitenverhältnis so wird der Bereich der lichtempfindlichen Fläche auf dem Sensor beschränkt\cite{Photonik}. Abbildung \ref{fig:SensorResolutions} stellt schematisch da wie sich die lichtempfindlichen Bereiche auf dem Sensor bei unterschiedlichen Auflösungen ändert.
+Eine Veränderung der Auflösung auch eine Änderung der Seitenverhältnisse mit einschließen. Ändert sich das Seitenverhältnis so wird der Bereich der lichtempfindlichen Fläche auf dem Sensor beschränkt\cite{Photonik}. Abbildung \ref{fig:SensorResolutions} stellt schematisch da wie sich die lichtempfindlichen Bereiche auf dem Sensor bei unterschiedlichen Auflösungen ändert.
 
 
 \begin{minipage}{\linewidth}
@@ -41,13 +42,13 @@ Des Weiteren kann eine Veränderung der Auflösung auch eine Änderung der Seite
 	\label{fig:SensorResolutions}
 \end{minipage}\\ \\
 
-\section{Auswirkungen auf die Epipolargeometrie}
+\section{Auswirkungen auf die Szenenrekonstruktion}
 
-Im folgenden soll analysiert werden, ob eine Änderung der Bildauflösung auch eine Änderung in den Epipolargeometrischen Beziehungen, wie sie in Kapitel \ref{sec:HFE} hergeleitet wurden, mit sich bringt. 
+Im folgenden soll analysiert werden, welche Änderungen sich im Lochkameramodell bei veränderte Auflösung ergeben und was für Auswirkungen diese auf den,  \textit{Epipolar-Constraints} haben, gerade in Bezug auf die Bestimmung der extrinsischen Kameraparameter.\\
 
-Als erstes werden die Koordinatensysteme innerhalb des Kameramodels genauer betrachtet. 
+Im Lochkameramodell verändert sich mit ändernder Auflösung der Kamera lediglicht die Skalierung der Sensorkoordinatenachsen. Diese orientieren sich wie in Kapitel \ref{sec:CameraModels} beschrieben an längenskalierung der Pixelkanten $l_x$ und $l_y$. Wird die Auflösung einer Kamera verändert, so ändern sich die Anzahl und die Größe der Pixel. Folglich kommt es zu einer Skalierung des Sensorkoordinatensystems.Für alle anderen Koordinatensysteme ändert sich nichts. Während sich für dein Punkt im Sensorkoordinatensystem neue skalierte Koordinaten ergeben, so bleibt der Bildpunkt in Bildebenenkoordinaten unverändert. Durch Nachbarschaftsopterationen werden aus mehreren benachbarten Pixel ein neuer, jedoch bleibt der Ort des Pixel der gleiche\cite{Doessel}.
+Die Abbildungen \ref{fig:Aufl1} und \ref{fig:Aufl2} zeigen, dass sich zwar das Mapping von Bildebenenkoordinatensystem auf das Sensorsystem ändert, Jedoch wird der Bildpunkt $m_{\tau'}$ an der selben Position des Sensors wie zuvor auch abgebildet.\\
 
-Wird die Auflösung einer Kamera verändert, so ändern sich die Anzahl und die Größe der Pixel. Die Längenskalierung des Sensorkoordinatensystem orientiert sich an der Größe und an der Anzahl der Pixel. Folglich kommt es zu einer Skalierung des Sensorkoordinatensystems. Für alle anderen Koordinatensysteme ändert sich nichts. Durch Nachbarschaftsopterationen werden aus mehreren Pixel einer, jedoch bleibt der Ort des Pixel der gleiche\cite{Doessel}.  Die Abbildungen \ref{fig:Aufl1} und \ref{fig:Aufl2} zeigen, dass sich zwar das Mapping von Bildebenenkoordinatensystem auf das Sensorsystem ändert, Jedoch wird der Bildpunkt $m_{\tau'}$ an der Position des Sensors wie zuvor auch abgebildet. Das Dreick zwischen den Projektionszentren und dem Objektpunkt bleibt unverändert. Daraus wird geschlossen, dass sich die Epipolargeometrischen Beziehungen zwischen dem Abbildungspunkten und dem Objektpunkt bei unterschiedlichen Kameraauflösungen nicht ändert 
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
@@ -63,74 +64,60 @@ Wird die Auflösung einer Kamera verändert, so ändern sich die Anzahl und die 
 \end{figure}
 
 
-\begin{gather}
-\vec{m_\sigma}=\begin{bmatrix}u \\v\\1 \end{bmatrix}=
-\begin{bmatrix}
-k_x&0&V_{\sigma,x}\\
-0&k_y&V_{\sigma,y}\\
-0&0&1&\\
+Eine Skalierung der Sensorkoordinaten führt eine Skalierung der Kameramatrix mit sich. Wie in Kapitel \ref{sec:CameraModels} gezeigt, setzt sich die erweiterte Kameramatrix $K$ wie folgt zusammen:
+
+\begin{equation}
+K=	R_\sigma K_0=  \begin{bmatrix}
+k_x \zeta & 0 & V_{\sigma,x}\\
+0 & k_y \zeta & V_{\sigma,y}\\
+0 & 0   & 1 &\\
 \end{bmatrix}
-\begin{bmatrix}m_{x \tau}\\ m_{y \tau}\\ 1\end{bmatrix}= R_\sigma \vec{m_\tau}\\
-\end{gather}
+\end{equation}
 
-Ändert sich die Auflösung so ändert sich $k_x$ und $k_y$, $V_{\sigma,x}$ und $V_{\sigma,y}$, da sich die Länge $l_x$ und die Breite $l_y$ verändern. Die Bildpunkte werden kann mit $k_x' = \frac{1}{l_x}'$ und $k_y' = \frac{1}{l_y}'$ skaliert. Die Translation des Hauptpunktes mit  $V_{\sigma,x}$ und $V_{\sigma,y}$ wird auch auf die neuen Sensorkoordinaten skaliert.
+Wird die Kameraauflösung verändert so bleibt die Brennweite $\zeta_x$ und $\zeta_y$ effektiv die gleiche, da sich aber die skalierung der Pixel mit $k_x$ und $k_y$ ändert, ist die Brennweite in Pixeln ausgedrückt verändert. Im synthetischen Beispiel wurde die Auflösung von $K'$ verändert indem, die Werte $\zeta'_x$ und $\zeta'_y$ durch multiplikation mit einem Salierungsfaktor verändert wurden.\\
 
-\begin{gather}
-\vec{m_\sigma}'=\begin{bmatrix}u' \\v'\\1 \end{bmatrix}=
-\begin{bmatrix}
-k_x'&0&V_{\sigma,x}'\\
-0&k_y'&V_{\sigma,y}'\\
-0&0&1&\\
-\end{bmatrix}
-\begin{bmatrix}m_{x \tau}\\ m_{y \tau}\\ 1\end{bmatrix}= R_\sigma \vec{m_\tau}\\
-\end{gather}
-
-
-
-\section{Synthetisches Beispiel mit unterschiedlichen Kameraauflösungen}
-
-Um die Aufgestellte Theorie zu überprüfen, wurde im synthetischen Beispiel die Kameramatrix von einer der beiden Kameras modifiziert. Für $C$ wurde $\zeta_x = \zeta_y = \zeta$ definiert, so das für Kameramatrix $K$ gilt:
+Um die Aufgestellte Theorie zu überprüfen, wurde im synthetischen Beispiel die Kameramatrix von einer der beiden Kameras modifiziert. Für $C$ wurde $\zeta_x = \zeta_y = 1$ definiert, so das für Kameramatrix $K$ gilt:
 
 \begin{gather}
 	K = \begin{bmatrix}
-	1&0&0&0\\
-	0&1&0&0\\
-	0&0&1&0\\
-	%0&0&1&0
+		1&0&0&0\\
+		0&1&0&0\\
+		0&0&1&0\\
+		%0&0&1&0
 	\end{bmatrix}
 \end{gather}
 
-Für $C'$ wurden drei verschiedene Kamermatrizen $K'$ definiert. Die resultierenden Abbildungen des Quaders sind in den Abbildungen \ref{fig:K},\ref{fig:K1},\ref{fig:K2} und \ref{fig:K3} zu sehen.
 
-Während für die Kameramatrix von $C$ der Wert  $\zeta_x = \zeta_y = 1$ in der Kamermatrix $K$ ist, wird das $\zeta$ in $C'$ verändert, so dass drei verschiedene neue Kameramatrizen $K'_1, K'_2$ und $K'_3$ ergeben. 
+Die Kamermatrix $K'$ von $C'$ galt ursprünglich, dass $K = K'$. Die Auflösung von $C'$ wird geändert indem ein Skalierungsfaktor mit $\zeta'_x$ und $\zeta_y$ multipliziert wird. Für das Beispiel wurden dre verschiedenen Auflösungen getestet. $K'_1$ wurde mit $\zeta_x \dot 2$
+%Während für die Kameramatrix von $C$ der Wert  $\zeta_x = \zeta_y = 1$ ist, wird in der Kamermatrix $K$ ist, wird das $\zeta$ in $C'$ verändert, so dass drei verschiedene neue Kameramatrizen $K'_1, K'_2$ und $K'_3$ ergeben. 
 
 
 
 \begin{gather}
-K = \begin{bmatrix}
-1&0&0&0\\
-0&1&0&0\\
-0&0&1&0\\
-%0&0&1&0
-\end{bmatrix}\\
-K'_1 = \begin{bmatrix}
-2&0&0&0\\
-0&2&0&0\\
-0&0&1&0\\
-%0&0&1&0
-\end{bmatrix}\\
-K'_2 = \begin{bmatrix}
-3.2&0&0&0\\
-0&1.2&0&0\\
-0&0&1&0\\
-%0&0&1&0
-\end{bmatrix}\\
-K'_3 = \begin{bmatrix}
-0.5&0&0&0\\
-0&4.3&0&0\\
-0&0&1&0\\
-%0&0&1&0
-\end{bmatrix}
+	K = \begin{bmatrix}
+		1&0&0&0\\
+		0&1&0&0\\
+		0&0&1&0\\
+		%0&0&1&0
+	\end{bmatrix}\\
+	K'_1 = \begin{bmatrix}
+		2&0&0&0\\
+		0&2&0&0\\
+		0&0&1&0\\
+		%0&0&1&0
+	\end{bmatrix}\\
+	K'_2 = \begin{bmatrix}
+		3.2&0&0&0\\
+		0&1.2&0&0\\
+		0&0&1&0\\
+		%0&0&1&0
+	\end{bmatrix}\\
+	K'_3 = \begin{bmatrix}
+		0.5&0&0&0\\
+		0&4.3&0&0\\
+		0&0&1&0\\
+		%0&0&1&0
+	\end{bmatrix}
 \end{gather}\\
 
 
@@ -159,6 +146,221 @@ K'_3 = \begin{bmatrix}
 	\label{fig:K3}
 	\endminipage\hfill
 \end{figure}
+
+
+% zuerst Koordinatensysteme, was ändert sich ... Längenskalierung der Sensorkoordinatenachsen, da sich die Pixelskalierungen ändern.
+
+
+ 
+% Hat als auswirkung: dass sich die Pixelwerte der Brennweiten ändern, jedoch nicht die Brennweite selbst 
+% 
+% Beispiel einbauen: Formel erweiterte Kameramatritze was ändert sich zeigen. 
+% 
+% Danach was ändert sich epipolargeoemtrisch für die rekonstruktion.
+% 
+% Der Punkt bleibt epipolargeometrisch der selbe... das dreieck ändert sich nicht.
+% 
+% Für die essentielle matrxc ändert sich nichts, da die kamermatrizen rausgezogen werden...hier formeln schreiben
+
+%ob eine Änderung der Bildauflösung auch eine Änderung in den epipolargeometrischen Beziehungen, wie sie in Kapitel \ref{sec:HFE} hergeleitet wurden, mit sich bringt. 
+
+
+
+
+
+%Für das Dreieck $	(\vec{C'}_\delta - \vec{C}_\delta) = (\vec{M}_\delta - \vec{C}_\delta) - (\vec{M}_\delta - \vec{C'}_\delta)$ zwischen den Projektionszentren und dem Objektpunkt bleibt unverändert. Im folgenden werden $F$ und $E$ aus den Gleichungen \ref{eq:Ep6} und \ref{eq:Ep7} aus Kapitel \ref{sec:EpiolarContraints} einmal mit gleichen Kameramatrizen $K =K'$ berechnet und einmal mit unterschiedlichen $K \neq K'$. 
+
+%\begin{gather*}
+%	F = K'^{-T}R'\left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\\
+%	K = \begin{bmatrix}
+%		1&0&0\\
+%		0&1&0\\
+%		0&0&1
+%	\end{bmatrix} \;\;\;
+%	K' = \begin{bmatrix}
+%	2&0&0\\
+%	0&3&0\\
+%	0&0&1
+%\end{bmatrix}\\
+%R = \begin{bmatrix}
+%	1&0&0\\
+%	0&1&0\\
+%	0&0&1\\ 
+%\end{bmatrix}\;\;\;
+%R'=\begin{bmatrix}
+%	r&0&-r\\
+%	0&1&0\\
+%	r&0&r\\ 
+%\end{bmatrix}\\
+%	\left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times=
+%	\begin{bmatrix}0&-(C'_{z\delta}-C_{z\delta})&C'_{y\delta}-C_{y\delta}\\
+%		C'_{z\delta}-C_{z\delta}&0&-(C'_{x\delta}-C_{x\delta})\\
+%		-(C'_{y\delta}-C_{y\delta})&C'_{x \delta}-C_{x\delta}&0\\
+%	\end{bmatrix}\\
+%	F = \begin{bmatrix}
+%		2&0&0\\
+%		0&3&0\\
+%		0&0&1
+%	\end{bmatrix}^{-T} 
+%	\begin{bmatrix}
+%		a&0&-a\\
+%		0&1&0\\
+%		a&0&a\\ 
+%	\end{bmatrix}
+%		\begin{bmatrix}0&-(C'_{z\delta}-C_{z\delta})&C'_{y\delta}-C_{y\delta}\\
+%		C'_{z\delta}-C_{z\delta}&0&-(C'_{x\delta}-C_{x\delta})\\
+%		-(C'_{y\delta}-C_{y\delta})&C'_{x \delta}-C_{x\delta}&0\\
+%	\end{bmatrix} 
+%	\begin{bmatrix}
+%		1&0&0\\
+%		0&1&0\\
+%		0&0&1\\ 
+%	\end{bmatrix}^T 
+%	\begin{bmatrix}
+%		1&0&0\\
+%		0&1&0\\
+%		0&0&1
+%	\end{bmatrix}^{-1}\\
+%F = \begin{bmatrix}
+%	\frac{1}{2}&0&0\\
+%	0&\frac{1}{3}&0\\
+%	0&0&1
+%\end{bmatrix}
+%\begin{bmatrix}
+%	r&0&-r\\
+%	0&1&0\\
+%	r&0&r\\ 
+%\end{bmatrix}
+%\begin{bmatrix}0&-(C'_{z\delta}-C_{z\delta})&C'_{y\delta}-C_{y\delta}\\
+%	C'_{z\delta}-C_{z\delta}&0&-(C'_{x\delta}-C_{x\delta})\\
+%	-(C'_{y\delta}-C_{y\delta})&C'_{x \delta}-C_{x\delta}&0\\
+%\end{bmatrix} \\
+%F= \begin{bmatrix}
+%	\frac{1}{2}&0&0\\
+%	0&\frac{1}{3}&0\\
+%	0&0&1
+%\end{bmatrix}
+%\begin{bmatrix}
+%	(C'_{z\delta}-C_{z\delta})r&0&(C'_{z\delta}-C_{z\delta})r\\
+%	(C'_{z\delta}-C_{z\delta})&0&-(C'_{z\delta}-C_{z\delta})\\
+%	-(C'_{z\delta}-C_{z\delta})r&0&(C'_{z\delta}-C_{z\delta})r
+%\end{bmatrix}\\
+%F=\begin{bmatrix}
+%	\frac{1}{2}(C'_{z\delta}-C_{z\delta})r&0&\frac{1}{2}(C'_{z\delta}-C_{z\delta})r\\
+%	\frac{1}{3}(C'_{z\delta}-C_{z\delta})r&0&-\frac{1}{3}(C'_{z\delta}-C_{z\delta})r\\
+%		-(C'_{z\delta}-C_{z\delta})r&0&(C'_{z\delta}-C_{z\delta})r
+%\end{bmatrix}
+%\end{gather*}
+
+Berchnung Für F und E mit unterschiedlichen Auflösungen, was verändert sich für F  ?  E erklären, dass dadurch das K auf die Punkte berechnet wird E unverändert bleibt
+
+
+Jetzt noch irgendwie drauf verweisen dass bei der herleitung eh von K und K' ausgegangen wird also zwei unterschieldlichen Kameramatrizen....
+
+Für die Fundamentalmatrix und die essentielle Matrix ergeben sich verglichen mit denen aus dem ersten Beispiel mit Kameras gleicher Abbildung folgende Matrizen.\\
+
+
+
+
+
+%\begin{gather}
+%\vec{m_\sigma}=\begin{bmatrix}u \\v\\1 \end{bmatrix}=
+%\begin{bmatrix}
+%k_x&0&V_{\sigma,x}\\
+%0&k_y&V_{\sigma,y}\\
+%0&0&1&\\
+%\end{bmatrix}
+%\begin{bmatrix}m_{x \tau}\\ m_{y \tau}\\ 1\end{bmatrix}= R_\sigma \vec{m_\tau}\\
+%\end{gather}
+%
+%Ändert sich die Auflösung so ändert sich $k_x$ und $k_y$, $V_{\sigma,x}$ und $V_{\sigma,y}$, da sich die Länge $l_x$ und die Breite $l_y$ verändern. Die Bildpunkte werden kann mit $k_x' = \frac{1}{l_x}'$ und $k_y' = \frac{1}{l_y}'$ skaliert. Die Translation des Hauptpunktes mit  $V_{\sigma,x}$ und $V_{\sigma,y}$ wird auch auf die neuen Sensorkoordinaten skaliert.
+%
+%\begin{gather}
+%\vec{m_\sigma}'=\begin{bmatrix}u' \\v'\\1 \end{bmatrix}=
+%\begin{bmatrix}
+%k_x'&0&V_{\sigma,x}'\\
+%0&k_y'&V_{\sigma,y}'\\
+%0&0&1&\\
+%\end{bmatrix}
+%\begin{bmatrix}m_{x \tau}\\ m_{y \tau}\\ 1\end{bmatrix}= R_\sigma \vec{m_\tau}\\
+%\end{gather}
+%
+%
+%Wie schließ ich hier ab???
+
+
+%\section{Synthetisches Beispiel mit unterschiedlichen Kameraauflösungen}
+
+%Um die Aufgestellte Theorie zu überprüfen, wurde im synthetischen Beispiel die Kameramatrix von einer der beiden Kameras modifiziert. Für $C$ wurde $\zeta_x = \zeta_y = \zeta$ definiert, so das für Kameramatrix $K$ gilt:
+%
+%\begin{gather}
+%	K = \begin{bmatrix}
+%	1&0&0&0\\
+%	0&1&0&0\\
+%	0&0&1&0\\
+%	%0&0&1&0
+%	\end{bmatrix}
+%\end{gather}
+%
+%Für $C'$ wurden drei verschiedene Kamermatrizen $K'$ definiert. Die resultierenden Abbildungen des Quaders sind in den Abbildungen \ref{fig:K},\ref{fig:K1},\ref{fig:K2} und \ref{fig:K3} zu sehen.
+%
+%Während für die Kameramatrix von $C$ der Wert  $\zeta_x = \zeta_y = 1$ in der Kamermatrix $K$ ist, wird das $\zeta$ in $C'$ verändert, so dass drei verschiedene neue Kameramatrizen $K'_1, K'_2$ und $K'_3$ ergeben. 
+%
+%
+%
+%\begin{gather}
+%K = \begin{bmatrix}
+%1&0&0&0\\
+%0&1&0&0\\
+%0&0&1&0\\
+%%0&0&1&0
+%\end{bmatrix}\\
+%K'_1 = \begin{bmatrix}
+%2&0&0&0\\
+%0&2&0&0\\
+%0&0&1&0\\
+%%0&0&1&0
+%\end{bmatrix}\\
+%K'_2 = \begin{bmatrix}
+%3.2&0&0&0\\
+%0&1.2&0&0\\
+%0&0&1&0\\
+%%0&0&1&0
+%\end{bmatrix}\\
+%K'_3 = \begin{bmatrix}
+%0.5&0&0&0\\
+%0&4.3&0&0\\
+%0&0&1&0\\
+%%0&0&1&0
+%\end{bmatrix}
+%\end{gather}\\
+%
+%
+%\begin{figure}[!htb]
+%	\minipage{0.48\textwidth}
+%	\includegraphics[width=\linewidth]{images/Zeta1.png}
+%	\caption{$C$ und $C'$ haben die selbe Auflösung eingestellt}
+%	\label{fig:K}
+%	\endminipage\hfill
+%	\minipage{0.48\textwidth}
+%	\includegraphics[width=\linewidth]{images/Zeta2.png}
+%	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt. $C$ mit $K$ und $C'$ mit $K_1'$}
+%	\label{fig:K1}
+%	\endminipage\hfill
+%\end{figure}
+%
+%\begin{figure}[!htb]
+%	\minipage{0.48\textwidth}
+%	\includegraphics[width=\linewidth]{images/Zeta32_12.png}
+%	\caption{$C$ mit $K$ und $C'$ mit $K_2'$}
+%	\label{fig:K2}
+%	\endminipage\hfill
+%	\minipage{0.48\textwidth}
+%	\includegraphics[width=\linewidth]{images/Zeta05_43.png}
+%	\caption{$C$ mit $K$ und $C'$ mit $K_3'$}
+%	\label{fig:K3}
+%	\endminipage\hfill
+%\end{figure}
 
 
 %(GRAFIK $\zeta * 2, \zeta *3,2 und 1.2$, $\zeta * 0.5 und 4.3$ sagen dass das rote jeweils das mit dem verändertem $\zeta$ )\\

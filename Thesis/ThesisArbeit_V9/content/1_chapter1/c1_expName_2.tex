@@ -215,6 +215,7 @@ Diese Homographiebedingung stellt ein Gleichungssystem mit 9 unbekannten, welche
 
 
 \section{Korrespondenzanalyse für beliebige Punkte im Raum (Epipolare Geometrie)}
+\label{sec:EpiolarContraints}
 
 Für Bilder von komplexeren dreidimensionalen Objekten, bei denen die Punkte auf verschiedenen Ebenen liegen können, kann keine Homographiebedingung hergestellt werden um die Kameraparameter zu bestimmen. Jedoch kann auf geometrische Bedingungen zurückgegriffen werden, um die Abbildungsvorschrift zwischen den Bildern auszunutzen, um die Kameraparameter beider Kameras zu bestimmen. Ein Ursprungspunkt $M_\delta$ wird wieder mit zwei Kameras $C$ und $C'$ aufgenommen. In Abbildung \ref{fig:Epipolargeometry} ist das stereoskopische System dargestellt . 
 
@@ -272,7 +273,7 @@ $(\vec{M}-\vec{C}_\delta)$ und $(\vec{M} - \vec{C'}_\delta)$ können durch die A
 Durch Vektoridentitäten können $\gamma$ und $\gamma'$ elimiert werden und folgende Bedingung  aus Gleichung \ref{eq:Ep5} hergeleitet werden \cite{Bronstein} %Elements
 
 \begin{gather}
-	0=\vec{m'_\tau}^T(K'^-1)^TR' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\vec{m_\tau}=\vec{m'_\tau}F\vec{m_\tau}\label{eq:Ep6}
+	0=\vec{m'_\tau}^T(K'^{-1})^TR' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\vec{m_\tau}=\vec{m'_\tau}F\vec{m_\tau}\label{eq:Ep6}
 	%0=\vec{m'_\tau}F\vec{m_\tau}
 \end{gather}
 mit  
@@ -288,7 +289,7 @@ mit
 
 In Gleichung \ref{eq:Ep6} wurde die Bedingungsgleichung für die sogenannte Fundamentalmatrix $F$ definiert \cite{Hoffmann}. Sind die Kameraparameter und dadurch die Kameramatrix $K$ bekannt, so wird die essentielle Matrix $E=R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^T$ definiert. Gleichung \ref{eq:Ep6} kann zu einer Bedingung für die $E$ umgeformt werden.
 \begin{gather}
-	0=\vec{m'_\tau}^TK'^{-T}EK^{-1}\vec{m_\tau}\label{eq:Ep7}
+	\vec{m'_\tau}^TK'^{-T}EK^{-1}\vec{m_\tau} = 0\label{eq:Ep7}
 \end{gather}
 
 Gleichung \ref{eq:Ep6} und \ref{eq:Ep7} definieren den sogenannten \textit{Epipolar-Constraint}\cite{HZ,Hoffmann} und können verwendet werden um die Fundamentalmatrix oder essentielle Matrix aus bekannten Korrespondierenden Punkten zu bestimmen. Für die essentielle Matrix müssen zuvor noch die Koordinaten in der Form
@@ -385,7 +386,7 @@ Die Matrizen $F$ und $E$ sind mit diesen Eigenschaften wichtige Instrumente für
 
 
 \section{Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}
-
+\label{sec:8pointAlg}
 
 Im folgenden wird gezeigt, wie beispielsweise eine Homographie, Fundamentalmatrix und dementsprechend auch eine essentielle Matrix aus Punktekorrespondenzen gewonnen werden können. Für essentielle Matrizen gilt das selbe Verfahren wie für die Fundamentalmatrizen nur sind hier die Punkte in der Form wie in Gleichung \ref{eq:equ8} gezeigt. Die Herleitung selbst wird am Beispiel der Fundamentalmatrix aufgezeigt.\\
 
