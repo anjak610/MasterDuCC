@@ -311,14 +311,16 @@ S_2 = UZU^T \;\;\;\; R_2' = UWV^T
 
 %Um sicher zu gehen, dass es sich bei \ensuremath{R_1}' und \ensuremath{R_2}' auch um gültige Rotationsmatrizen handelt, kann eine Probe durchgeführt werden.  \ensuremath{R\cdot R^T=I_{3\times3}} sein. \ensuremath{I_{3\times3}} steht für die 3$\times$3-Einheitsmatrix.
 
-$[C'_\delta]_\times$ ist eine schiefsymmetrische Matrix, welche die Information für den noch gesuchten Translationsanteil $v = -R'C'$ beinhaltet. Ohne zusätzliche Informationen kann $v$, nur bis zu einer Skaleninvarianz genau bestimmt werden\cite{HZ,Ferid,phdextrinsicPara}. Durch die Modulation der Singulärwerte von $E$ gilt für $\parallel v \parallel = 1$\cite{HZ,Ferid}. Um $v$ aus $[C'_\delta]_\times$ zu extrahieren, wird der Kern von $[C'_\delta]_\times$ bestimmt
+$[C'_\delta]_\times$ ist eine schiefsymmetrische Matrix, welche die Information für den noch gesuchten Translationsanteil $v = -R'C'$ beinhaltet. Ohne zusätzliche Informationen kann $v$, nur bis zu einer Skaleninvarianz genau bestimmt werden\cite{HZ,Ferid,phdextrinsicPara}. Durch die Modifizierung der Singulärwerte von $E$ gilt für $\parallel v \parallel = 1$\cite{HZ,Ferid}. Das bedeutet, dass es sich bei dem Translationsvektor $v$ lediglich um den normierten Richtungsvektor zwischen $C$ und $C'$ handelt\cite{KIT}. Um $v$ aus $[C'_\delta]_\times$ zu extrahieren, wird der Kern von $[C'_\delta]_\times$ bestimmt
+
+%Aufgrund der Tatsache, dass die essentielle Matrix eine Größe des projektiven Raumes darstellt und deshalb nur bis auf einen Skalierungsfaktor definiert ist, kann lediglich die Richtung, nicht aber die Läange des Translationsvektors bestimmt werden\cite{KIT}
 
 \begin{gather}
 [C'_\delta]_\times \cdot v = v \times v = 0
 \end{gather} 
 .
 
-Die Skaleninvarianz bewirkt, dass es bei der Rekonstruktion die Größe der Objekte von ihrer Originalgröße abweichen. Die Abbildungen \ref{fig:scale1},\ref{fig:scale2} und \ref{fig:scale3}, zeigen die Auswirkungen von Skaleninvarianz auf die später rekonstruierte Szene. \\
+Die Skaleninvarianz bewirkt, dass es bei der Rekonstruktion die Größe der Objekte von ihrer Originalgröße abweichen, da es sich bei $v$ wie gesagt nur um den normierten Richtungsvektor der Ursprünglichen Strecke handelt. Die Abbildungen \ref{fig:scale1},\ref{fig:scale2} und \ref{fig:scale3}, zeigen die Auswirkungen von Skaleninvarianz auf die später rekonstruierte Szene. \\
 
 Letztendlich können, für die Rekonstruktion der extrinsischen Kameraparameter vier mögliche Lösungen für $T$ in Form von $T = R[I|-C]$, wie in Gleichung \ref{eq:trafo} in Kapitel \ref{sec:CameraModels} definiert, gefunden werden\cite{HZ,Ferid,phdextrinsicPara}. $\lambda v$ heißt dabei, dass sowohl $v$ also auch alle Vielfache von $v$, Lösungen sein können, was durch die Skaleninvarianz der Resultate bedingt ist\cite{HZ,Ferid,phdextrinsicPara}. 
 
@@ -327,7 +329,7 @@ T' = [UWV^T|+\lambda v] \;\;\; \text{oder} \;\;\;[UW^TV^T|+\lambda v]\\
 \textit{oder}\;\;\; [UWV^T|-\lambda v] \;\;\; \text{oder} \;\;\;[UW^TV^T|-\lambda v]
 \end{gather}
 
-Die Abbildungen \ref{fig:T_1}, \ref{fig:T_2}, \ref{fig:T_3} und \ref{fig:T_4} stellen schematisch die vier verschiedenen Transformationsmöglichkeiten von $T'$ dar. \\\\
+Die Abbildungen \ref{fig:T_1}, \ref{fig:T_2}, \ref{fig:T_3} und \ref{fig:T_4} stellen schematisch die vier verschiedenen Transformationsmöglichkeiten von $T'$ dar.  Die Entscheidung welche Lösung $T$ die richtige für das implementierte Beispiel ist, fällt auf diejenige Lösung, bei welcher das Abbild des der Objekte vor den Kameras liegt.\\\\
 
 
 \begin{figure}[!htb]
@@ -426,7 +428,9 @@ Als Triangulierung wird in der Computer Vision die Bestimmung eines 3D-Objektpun
 %
 % Um den Schnittpunkt beider Geraden zu berechnen, werden zum einen die Bildpunkte  $A_\tau,B_\tau,C_\tau,D_\tau,A2_\tau,B2_\tau,C2_\tau,D2_\tau$ und $A_{\tau'},B_{\tau'},C_{\tau'},D_{\tau'},A2_{\tau'},B2_{\tau'},C2_{\tau'},D2_{\tau'}$, sowie die korrekt ermittelte Projektionsmatrix $P'$ von zuvor benötigt. 
 
-Im synthetischen Beispiel wird mit reinen Daten gearbeitet. Das heißt, die Bildpunkte wurden mathematisch von ihrem Ursprungspunkt im Raum berechnet und sind somit frei von Verfälschungen durch äußere Einflüsse. Ein zum Bildpunkt $m_\tau$ korrespondierender Bildpunkt $m'_{\tau'}$ liegt genau auf der zu $m_\tau$ korrespondierenden Epipolarlinien $l'$. Somit ist garantiert, dass sich die Bildpunkte $m_\tau$ und $m'_{\tau'}$ bei einer Rückprojektion in einem Punkt $M_{0,\delta}$ im Raum treffen. Durch die zuvor erwähnte Skaleninvarianz der extrinsischen Kameraparameter, handelt es sich bei $M_{0,\delta}$ jedoch noch nicht um den eigentlichen Ursprungspunkt $M_\delta$. Um die Rekonstruktion im synthetischen Beispiel so nah wie möglich an einem realen Beispiel zu halten, wird davon ausgegangen, dass nur die Kameraparameter und die jeweiligen Bildkoordinaten bekannt sind.\\
+Im synthetischen Beispiel wird mit reinen Daten gearbeitet. Das heißt, die Bildpunkte wurden mathematisch von ihrem Ursprungspunkt im Raum berechnet und sind somit frei von Verfälschungen durch äußere Einflüsse. Ein zum Bildpunkt $m_\tau$ korrespondierender Bildpunkt $m'_{\tau'}$ liegt genau auf der zu $m_\tau$ korrespondierenden Epipolarlinien $l'$. Somit ist garantiert, dass sich die Bildpunkte $m_\tau$ und $m'_{\tau'}$ bei einer Rückprojektion in einem Punkt $M_{0,\delta}$ im Raum treffen. Durch die zuvor erwähnte Skaleninvarianz der extrinsischen Kameraparameter, handelt es sich bei $M_{0,\delta}$ jedoch noch nicht um den eigentlichen Ursprungspunkt $M_\delta$. \\
+
+%Um die Rekonstruktion im synthetischen Beispiel so nah wie möglich an einem realen Beispiel zu halten, wird davon ausgegangen, dass nur die Kameraparameter und die jeweiligen Bildkoordinaten bekannt sind.\\
 
 
 Vor der Bestimmung der extrinsischen Kameraparameter wurde festgesetzt, dass $T = [I|-0]$ die Translationsmatrix von $C$ ist. Somit gilt für die Projektionsmatrix von $C$, dass $P= K_0T =K_0[I|-0]$ ist. Die Projektionsmatrix $P'$ für $C'$ setzt sich aus einer der Lösungen von $T'$ und der Kameramatrix $K_0'$ zusammen, so dass gilt $P'=K_0'T' = K[R'|-RC]$.\\
@@ -503,7 +507,7 @@ g' := \vec{C'} + t \cdot
 %
 %Nun muss für jedes Linienpaar eine Lösung für $t$ und $t'$ gefunden werden und die Lösungen in die Gleichungen 4.65 und 4.66 eingesetzt werden. Es sollte für beide Gleichungen die selbe Lösung für den rekonstruierten Punkt $A$ im Raum ergeben. Die Lösung entspricht meist noch nicht exakt dem eigentlichen Ergebnis, das liegt an der zuvor erwähnten Skaleninvariants der Rekonstruktion der exterenen Kameraparameter. 
 
-Bei den zuvor ermittelten extrinsischen Kameraparametern, ist der Translationsvektor skaleninvariant.Dies führt dazu, dass der rekonstruierte Objektpunkt $M_{\delta,0}$ nach der Szenenrekonstruktion noch nicht dem Ursprunglichen $M_\delta$ entsprechen muss. Dementsprechend wird als letzter Schritt Die rekonstruierte Szenen anhand einer bekannten Referenzgröße skaliert. Als Referenzgröße kann beispielsweise ein zuvor abgemessener Abstand zwischen zwei Punkten in der Szene dienen. Im synthetischen Aufbau sind beispielsweise die Abstände zwischen den Originalbildpunkten bekannt. Die Abbildungen \ref{fig:scale1},\ref{fig:scale2} und \ref{fig:scale3} zeigen die Szene des Quader mit unterschiedlichen Skalierungen. Die Abbildungen \ref{fig:Quader1} und \ref{fig:Quader2} zeigt die rekonstruierte Szene des synthetischen Beispiels.
+Bei den zuvor ermittelten extrinsischen Kameraparametern, ist der Translationsvektor skaleninvariant. Dies führt dazu, dass der rekonstruierte Objektpunkt $M_{\delta,0}$ nach der Szenenrekonstruktion noch nicht dem Ursprünglichen $M_\delta$ entsprechen muss. Dementsprechend wird als letzter Schritt die rekonstruierte Szenen anhand einer bekannten Referenzgröße skaliert. Als Referenzgröße kann beispielsweise ein zuvor abgemessener Abstand zwischen zwei Punkten in der Szene dienen. Im synthetischen Aufbau sind beispielsweise die Abstände zwischen den Originalbildpunkten bekannt. Die Abbildungen \ref{fig:scale1},\ref{fig:scale2} und \ref{fig:scale3} zeigen die Szene des Quader mit unterschiedlichen Skalierungen. Die Abbildungen \ref{fig:Quader1} und \ref{fig:Quader2} zeigt die rekonstruierte Szene des synthetischen Beispiels. Die Abbildungen \ref{fig:Quader1} und \ref{fig:Quader2} zeigen die auf Ursprugsgröße skalierte rekonstruierte Szene des Quaders. \\
 
 
 %ihrer Originalgröße entsprechen. 
@@ -527,13 +531,14 @@ Bei den zuvor ermittelten extrinsischen Kameraparametern, ist der Translationsve
 \end{figure}
 \pagebreak
 
-
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=0.42\linewidth]{images/ScaleInvariance_3.png}
 	\captionof{figure}{Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form und Größe der Objekte} 
 	\label{fig:scale3}
-\end{minipage}
+\end{minipage}\\\\
+
+
 
 \begin{figure}[!htb]
 	\minipage{0.42\textwidth}
@@ -546,7 +551,7 @@ Bei den zuvor ermittelten extrinsischen Kameraparametern, ist der Translationsve
 	\caption{}
 	\label{fig:Quader2}
 	\endminipage\hfill
-	\captionof{figure}{Der rote Punkt stellt Die Postion von $C$ dar, der grüne steht für die Position von $C'$ relativ zu $C$. Die blauen Punkte stellen den rekonstruierten Quader und den extern platzierten neunten Punkt da. Das Abbild entstand aus dem in \textit{Mathematica} implementierten Algorithmus.}
+	\captionof{figure}{Der rote Punkt stellt Die Postion von $C$ dar, der grüne steht für die Position von $C'$ relativ zu $C$. Die blauen Punkte stellen den rekonstruierten Quader und den extern platzierten neunten Punkt da. Die Abbildungen entstand aus dem in \textit{Mathematica}\cite{Mathematica} implementierten Algorithmus.}
 \end{figure}
 
 

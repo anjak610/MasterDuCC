@@ -17,55 +17,55 @@ You're missing a field name---line 29 of file bibliography.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "FusielloSite" isn't style-file defined
---line 167 of file bibliography.bib
-You're missing a field name---line 168 of file bibliography.bib
+--line 184 of file bibliography.bib
+You're missing a field name---line 185 of file bibliography.bib
  : 
  : %  author  = {Andrea Fusiello },
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "MatlabRec" isn't style-file defined
---line 179 of file bibliography.bib
-You're missing a field name---line 182 of file bibliography.bib
+--line 196 of file bibliography.bib
+You're missing a field name---line 199 of file bibliography.bib
  :  
  :  % note   = {\url{"https://de.mathworks.com/help/vision/ref/rectifystereoimages.html"}},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 189 of file bibliography.bib
+You're missing a field name---line 206 of file bibliography.bib
  :  
  :  % note   = {\url{"https://de.mathworks.com/help/vision/stereo-camera-calibration.html"}},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 196 of file bibliography.bib
+You're missing a field name---line 213 of file bibliography.bib
  :  
  :  % note   = {\url{"https://de.mathworks.com/help/vision/ref/estimatecameraparameters.html"}},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 203 of file bibliography.bib
+You're missing a field name---line 220 of file bibliography.bib
  :  
  :  % note   = {\url{"https://de.mathworks.com/help/vision/ref/disparity.html"}},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 234 of file bibliography.bib
+You're missing a field name---line 251 of file bibliography.bib
  : 
  : %doi = {https://doi.org/10.1007/3-540-29708-1},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 244 of file bibliography.bib
+You're missing a field name---line 261 of file bibliography.bib
  : 
  : %doi = {https://doi.org/10.1007/978-3-662-45129-8},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 288 of file bibliography.bib
+You're missing a field name---line 305 of file bibliography.bib
  : 
  : %doi="10.1007/978-0-387-48998-8_804",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 308 of file bibliography.bib
+You're missing a field name---line 325 of file bibliography.bib
  : 
  : %doi="10.1007/978-0-387-31439-6_128",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 317 of file bibliography.bib
+I was expecting a `,' or a `}'---line 334 of file bibliography.bib
  :  
  :  doi ={10.1007/978-3-642-47866-6}
 (Error may have been on previous line)
@@ -98,6 +98,7 @@ Too many commas in name 1 of "Wojciech Chojnacki, Michael J. Brooks, Antin van d
 while executing---line 944 of file unsrt.bst
 Warning--empty journal in Brooks
 Warning--empty journal in ConditionNumber
+Warning--empty journal in Manocha
 Warning--empty journal in ZZ
 Warning--empty publisher in Javier
 Warning--empty journal in Fusiello

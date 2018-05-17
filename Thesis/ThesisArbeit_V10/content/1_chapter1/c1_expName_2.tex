@@ -35,7 +35,7 @@ In den ersten beiden Abschnitten werden zwei Herleitungen der Abbildungsvorschri
 
 \section{Korrespondenzen planarer Punktmengen mit Homographien}
 
-Eine Abbildungsvorschrift kann in bestimmten Fällen eindeutig bestimmt werden. In diesen Fällen nennt man die Abbildung zwischen beiden zweidimensionalen Bildern Homographie\cite{HZ,Elements,Roser}. In diesem Kapitel wird der beispielhafte Fall behandelt, dass Punkte auf der $x,y$-Ebene im Weltkoordinatensystem auf zwei unterschiedlichen Kameras $C$ und $C'$ abgebildet wird. Dies ist in Abbildung \ref{fig:Homographie} dargestellt.
+Eine Abbildungsvorschrift kann in bestimmten Fällen eindeutig bestimmt werden. In diesen Fällen nennt man die Abbildung zwischen beiden zweidimensionalen Bildern Homographie\cite{HZ,Elements,Roser}. In diesem Kapitel wird der beispielhafte Fall behandelt, dass Punkte auf der $x,y$-Ebene im Weltkoordinatensystem auf zwei unterschiedlichen Kameras $C$ und $C'$ abgebildet werden. Dies ist in Abbildung \ref{fig:Homographie} dargestellt.
 
 \begin{minipage}{\linewidth}
 	\centering
@@ -273,7 +273,7 @@ $(\vec{M}-\vec{C}_\delta)$ und $(\vec{M} - \vec{C'}_\delta)$ können durch die A
 Durch Vektoridentitäten können $\gamma$ und $\gamma'$ elimiert werden und folgende Bedingung  aus Gleichung \ref{eq:Ep5} hergeleitet werden \cite{Bronstein} %Elements
 
 \begin{gather}
-	0=\vec{m'_\tau}^T(K'^{-1})^TR' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\vec{m_\tau}=\vec{m'_\tau}F\vec{m_\tau}\label{eq:Ep6}
+	\vec{m'_\tau}^TK'^{-T}TR' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\vec{m_\tau}=\vec{m'_\tau}F\vec{m_\tau} = 0\label{eq:Ep6}
 	%0=\vec{m'_\tau}F\vec{m_\tau}
 \end{gather}
 mit  
@@ -287,7 +287,8 @@ mit
 	%0=\vec{m'_\tau}F\vec{m_\tau}
 \end{gather}
 
-In Gleichung \ref{eq:Ep6} wurde die Bedingungsgleichung für die sogenannte Fundamentalmatrix $F$ definiert \cite{Hoffmann}. Sind die Kameraparameter und dadurch die Kameramatrix $K$ bekannt, so wird die essentielle Matrix $E=R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^T$ definiert. Gleichung \ref{eq:Ep6} kann zu einer Bedingung für die $E$ umgeformt werden.
+In Gleichung \ref{eq:Ep6} wurde die Bedingungsgleichung für die sogenannte Fundamentalmatrix $F$ definiert \cite{Hoffmann}. Sind die Kameraparameter und dadurch die Kameramatrix $K$ bekannt, so wird die essentielle Matrix $E$  mit $E=R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^T$ definiert. Gleichung \ref{eq:Ep6} kann zu einer Bedingung für $E$ umgeformt werden.
+
 \begin{gather}
 	\vec{m'_\tau}^TK'^{-T}EK^{-1}\vec{m_\tau} = 0\label{eq:Ep7}
 \end{gather}
@@ -299,7 +300,7 @@ Gleichung \ref{eq:Ep6} und \ref{eq:Ep7} definieren den sogenannten \textit{Epipo
 	\vec{\hat{m}}_\tau = K^{-1}\vec{m_\tau}\label{eq:equ8}
 \end{gather}
 
-umgerechnet werden\cite{HZ,phdextrinsicPara}.  Der verwendete Algorithmus zur Bestimmung von $F$ wird in Kapitel 3.3 näher beschrieben.\\
+zu normierten Bildebenenkoordinaten umgerechnet werden\cite{HZ,phdextrinsicPara}.  Der verwendete Algorithmus zur Bestimmung von $F$ wird in Kapitel 3.3 näher beschrieben.\\
 
 
 
@@ -324,9 +325,7 @@ umgerechnet werden\cite{HZ,phdextrinsicPara}.  Der verwendete Algorithmus zur Be
 %\end{gather}
 
 %$F$ und $E$, fassen die komplette Epipoloargeometrie, sprich externe und interne Parameter, sowie die geometrische Beziehung der jeweiligen Bildpunkte zu den 3-D Objektpunkten in einer 3x3-Matrix zusammen. Für $F$ und $E$ gibt es nicht nur eine Lösung. Werden $F$ oder $E$ Beispielsweise über den \textit{eight-Point-Algorithm} ermittelt, so sind die entstehenden 3x3-Matrixen und jedes vielfache von diesen gültige Lösungen für $F$ und $E$\cite{HZ,HZ8}. \textcolor{red}{Noch herausfinden ob das mit den Tiefen $\gamma$ und $\gamma'$ zusammenhängt!!}. Mit $F$ und $E$ kann wie bereits nachgeprüft werden, ob der \textit{epipolar-constraint} $m'^TFm = o$ oder $\hat{m'}^TE\hat{m} = 0$ zwischen zwei Bildpunkte gilt. 
-Wenn die Fundamentalmatrix bekannt ist, können auch die Epipole $e$ und $e'$ und Epipolarlinien $l$ und $l'$ aus Eigenschaften den Fundamentalmatrix bestimmt werden \cite{HZ,phdTwoView,HZ8,ZZGXr,phdextrinsicPara}. 
-
-Um die Epipole $e$ zu bekommen, wird der rechte Kern von F bestimmt und für $e'$ muss der linke Kern von $F$ bestimmt werden\cite{HZ,phdTwoView,HZ8,ZZGXr,phdextrinsicPara}. Es gilt also%Elements
+Wenn die Fundamentalmatrix bekannt ist, können auch die Epipole $e$ und $e'$ und Epipolarlinien $l$ und $l'$ aus Eigenschaften der Fundamentalmatrix bestimmt werden \cite{HZ,phdTwoView,HZ8,ZZGXr,phdextrinsicPara}. Um die Epipole $e$ zu bekommen, wird der rechte Kern von F bestimmt und für $e'$ muss der linke Kern von $F$ bestimmt werden\cite{HZ,phdTwoView,HZ8,ZZGXr,phdextrinsicPara}. Es gilt also%Elements
 
 \begin{gather}
 	Fe = 0\\
@@ -483,7 +482,7 @@ Gesucht wird ein Vektor $\vec{x}$, für den gilt das $A \cdot x = 0$. Besitzt Ma
 
 
 %Die Ermittlung der Fundamentalmatrix $F$ mit den korrespondierenden Bildpunkten der beiden Kamerabilder erfolgt mit Hilfe des sogenannten  \textit{8-Point-Algorithms}\cite{HZ}.  
-Das Verfahren mit welchem sowohl $F$ als auch $E$ geschätzt werden können, ähnelt in seinem Aufbau dem der Bestimmung der Homographiematrix. Das Verfahren wird hier allgemein als der 8-Punkte-Algorithmus bezeichnet. Der 8-Punkte-Algorithmus ist eine lineare Technik, welche angewandt wird, um die Fundamentalmatrix aus  $n \geq 8$ Punkten schätzen zu können \cite{HZ,Zhang2014,Ferid}. Der Algorithmus benötigt $n \geq 8$ Punkte, um ein valides Ergebnis zu liefern \cite{HZ,Zhang2014,Ferid}. Das Ergebnis und jedes seiner Vielfachen ist eine mögliche Lösung für $F$\cite{HZ}. Der Algorithmus wird am Beispiel für die Bestimmung von $F$ veranschaulicht. Zunächst wird eine Koeffizientenmatrix $A$ aus Punktekorrespondenzen gebildet. Hierzu wird sich auf die für $F$ hergeleitete Gleichung \ref{eq:Ep6} bezogen.
+Das Verfahren mit welchem sowohl $F$ als auch $E$ geschätzt werden können, ähnelt in seinem Aufbau dem der Bestimmung der Homographiematrix. Das Verfahren wird hier allgemein als der 8-Punkte-Algorithmus bezeichnet\cite{HZ,Ferid,Zhang2014}. Der 8-Punkte-Algorithmus ist eine lineare Technik, welche angewandt wird, um die Fundamentalmatrix aus  $n \geq 8$ Punkten schätzen zu können. Der Algorithmus benötigt $n \geq 8$ Punkte, um ein valides Ergebnis zu liefern \cite{HZ,Zhang2014,Ferid}. Das Ergebnis und jedes seiner Vielfachen ist eine mögliche Lösung für $F$. Der Algorithmus wird am Beispiel für die Bestimmung von $F$ veranschaulicht. Zunächst wird eine Koeffizientenmatrix $A$ aus Punktekorrespondenzen gebildet. Hierzu wird sich auf die für $F$ hergeleitete Gleichung \ref{eq:Ep6} bezogen.
 
 
 \begin{gather*}	
@@ -540,7 +539,7 @@ Gesucht wird nun ein Vektor $\vec{f}$, für den gilt das $A \cdot f = 0$. Besitz
 Bei der Homographie wie auch bei der Fundamentalmatrix, kann es zu überbestimmten Systemen kommen. Ein System gilt als überbestimmt, wenn es durch mehr Gleichungen als Unbekannte beschrieben wird\cite{Schwarz,Scholz}. Für die Koeffizientenmatrix für $F$ und $H$ hätte das zur Folge, dass sie in ihrem Rang steigt. Die Bestimmung des Kerns würde in beiden Fällen kein eindeutiges Ergebnis mehr liefern\cite{HZ,Schwarz}.\\
 
 
-Für die Lösung überbestimmter Systeme wird durch ein \textit{least-square}- Verfahren, mit Hilfe der Singulärwertszerlegung einer Matrix $A$ eine Lösung für einen Vektor $\vec{x}$ gesucht, so dass $\parallel A \cdot x \parallel$ minimal wird \cite{HZ,Scholz,Schwarz}. Die Singulärwertzerlegung von $A$ ist eine Faktorisierung der Matrix \ensuremath{A \in \mathbb{R}^{m \times n}} der Form \ensuremath{A = U \cdot S \cdot V^T} mit orthogonalen Matrizen \ensuremath{U \in \mathbb{R}^{m \times n}} und \ensuremath{V \in \mathbb{R}^{m \times n}} sowie mit einer Diagonalmatrix $S$. 
+Für die Lösung überbestimmter Systeme wird durch ein \textit{Least-Square}-Verfahren, mit Hilfe der Singulärwertszerlegung einer Matrix $A$ eine Lösung für einen Vektor $\vec{x}$ gesucht, so dass $\parallel A \cdot x \parallel$ minimal wird \cite{HZ,Scholz,Schwarz}. Die Singulärwertzerlegung von $A$ ist eine Faktorisierung der Matrix \ensuremath{A \in \mathbb{R}^{m \times n}} der Form \ensuremath{A = U \cdot \Sigma \cdot V^T} mit orthogonalen Matrizen \ensuremath{U \in \mathbb{R}^{m \times n}} und \ensuremath{V \in \mathbb{R}^{m \times n}} sowie mit einer Diagonalmatrix $\Sigma$. 
 
 
 \begin{gather}
@@ -558,7 +557,7 @@ Für die Lösung überbestimmter Systeme wird durch ein \textit{least-square}- V
 	\end{pmatrix}
 \end{gather}
 
-Die  Diagonalmatrix $S$ beinhaltet die Singulärwerte der Matrix. Dabei soll für die diagonalen Singulärwerte in $S$ mit $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}. Die Spalte der Matrix $V^T$, welche mit dem kleinsten Singulärwert von $S$ korrespondiert, ergibt den Vektor $\vec{x}$, für den \ensuremath{\parallel A \cdot x\parallel} minimal wird. \\
+Die  Diagonalmatrix $\Sigma$ beinhaltet die Singulärwerte der Matrix. Dabei soll für die diagonalen Singulärwerte in $\Sigma$ mit $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}. Die Spalte der Matrix $V^T$, welche mit dem kleinsten Singulärwert von $\Sigma$ korrespondiert, ergibt den Vektor $\vec{x}$, für den \ensuremath{\parallel A \cdot x\parallel} minimal wird. \\
 
 
 

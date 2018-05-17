@@ -109,15 +109,21 @@ LongQuan.
 \newblock {\em Image Based Modeling}, volume 1. Auflage.
 \newblock Springer US, 2010.
 
-\bibitem{Doessel}
-Olaf Dössel.
-\newblock {\em Bildgebende Verfahren in der Medizin}, volume 2. Auflage.
-\newblock Springer-Verlag Berlin Heidelberg, 2016.
+\bibitem{KIT}
+Bernd KITT.
+\newblock {\em Effiziente Schätzung dichter Bewegungsvektorfelder}, volume
+  Band 027.
+\newblock KIT Scientific Publishing, 2013.
 
 \bibitem{Mathematica}
 Wolfram~Research{,} Inc.
 \newblock Mathematica, {V}ersion 11.1.1.
 \newblock Champaign, IL, 2018.
+
+\bibitem{Doessel}
+Olaf Dössel.
+\newblock {\em Bildgebende Verfahren in der Medizin}, volume 2. Auflage.
+\newblock Springer-Verlag Berlin Heidelberg, 2016.
 
 \bibitem{SIFTSURF}
 Emmanuel Habets Nicolas~Paparoditis Xiaozhi~Qu, Bahman~Soheilian.
@@ -137,6 +143,12 @@ Jarosław~Bylina Anna~Pyzara, Beata~Bylina.
   convergence.
 \newblock Proceedings of the Federated Conference on Computer Science and
   Information Systems, pp. 459–464, 2011.
+
+\bibitem{Manocha}
+James~Demmel Dinesh~Manocha.
+\newblock Algorithms for intersecting parametric and algebraic curves 1.
+\newblock ACM Transactions on Graphics (TOG), Volume 13 Issue 1, Pages 73-100,
+  1994.
 
 \bibitem{MatlabRec}
 MathWorks.
