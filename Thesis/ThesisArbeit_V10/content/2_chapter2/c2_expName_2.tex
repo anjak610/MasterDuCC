@@ -267,13 +267,13 @@ Nach erzwingen der Bedingung $\hat{E} = U \hat{\Sigma}V^T$ mit $\hat{\Sigma} = \
 \section{Szenenrekonstruktion mit Sampson-Approximation}
 \label{sec:sampson}
 
-Aufgrund der Ungenauigkeit der korrespondierenden Punkte ist es nicht möglich die 3D-Objektpunkte durch einfache Rückprojektion der Bildpunkte zu rekonstruieren. Liegt der zu $m_\tau$ korrespondierende Bildpunkt $m'_{\tau'}$ nicht ganz genau auf der zu $m_\tau$ korrespondierenden Epipolarlinie, so ist der in Kapitel \ref{sec:HFE} aufgestellt \textit{Epipolar-Constraint} aus Gleichung \ref{eq:Ep6} nicht mehr erfüllt. Durch einsetzten der durch den SURF-Alggorithmus detektierten korrespondierenden Punkte $m_\tau$ und $m'_{\tau'}$ in die Gleichung 
+Aufgrund der Ungenauigkeit der korrespondierenden Punkte ist es nicht möglich die 3D-Objektpunkte durch einfache Rückprojektion der Bildpunkte zu rekonstruieren. Liegt der zu $m_\sigma$ korrespondierende Bildpunkt $m'_{\sigma'}$ nicht ganz genau auf der zu $m_\sigma$ korrespondierenden Epipolarlinie, so ist der in Kapitel \ref{sec:HFE} aufgestellt \textit{Epipolar-Constraint} aus Gleichung \ref{eq:Ep6} nicht mehr erfüllt. Durch einsetzten der durch den SURF-Alggorithmus detektierten korrespondierenden Punkte $m_\sigma$ und $m'_{\sigma'}$ in die Gleichung 
 
 \begin{gather}
-	m'^T_{\tau'}Fm_\tau = 0
+	m'^T_{\sigma'}Fm_\sigma = 0
 \end{gather}
 
-kommt ein Wert $\neq 0$ heraus. Je weiter der Wert von 0 abweicht, desto ungenauer ist die korrespondenz beider Bildpunkte. Dies führt dazu, dass bei der Rückprojektion der Bildpunkte $m_\tau$ und $m'_{\tau'}$ sich die Linien nicht im Raum treffen. Die Abbildungen \ref{fig:ProblemTraingulation} und \ref{fig:lFm} veranschaulichen die Konsequenz von ungenauen Punktekorrespondenzen.
+kommt ein Wert $\neq 0$ heraus. Je weiter der Wert von 0 abweicht, desto ungenauer ist die korrespondenz beider Bildpunkte. Dies führt dazu, dass bei der Rückprojektion der Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ sich die Linien nicht im Raum treffen. Die Abbildungen \ref{fig:ProblemTraingulation} und \ref{fig:lFm} veranschaulichen eine Konsequenz von ungenauen Punktekorrespondenzen.
 %
 %ist es bei den Fehlerhaften Bildkooridinaten nicht möglich die 3D-Szenenpunkte durch eine einfache Rückprojektion der der Bildpunkte zu einem Punkt im 3D-Raum zu erhalten. 
 %
@@ -286,7 +286,7 @@ kommt ein Wert $\neq 0$ heraus. Je weiter der Wert von 0 abweicht, desto ungenau
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
-	\includegraphics[width=\linewidth]{images/problemTriangulation.png}
+	\includegraphics[width=\linewidth]{images/problemTriangulation_beschriftet.png}
 	\caption{a)}
 	\label{fig:ProblemTraingulation}
 	\endminipage\hfill
@@ -295,10 +295,10 @@ kommt ein Wert $\neq 0$ heraus. Je weiter der Wert von 0 abweicht, desto ungenau
 	\caption{b)}
 	\label{fig:lFm}
 	\endminipage\hfill
-	\caption{ a) Die rückprojizierten Strahlen der ungenauen korrespondierenden Punkte $m_\tau$ und $m'_{\tau'}$ sind Windschief zueinander und treffen sich nicht in einem Punkt $M_\delta$ im Raum. b) Die korrespondierenden Bildpunkte $m_\tau$ und $m'_{\tau'}$ erfüllen nicht den \textit{Epipolar-Constraint}. Die Epipolarlinie $l' = Fm$ is die korrespondierende Epipolarlinie zu $m_\tau$ und $l = F^Tm'$ ist die korrespondierende Epipolarlinie zu $m'_{\tau}$. Da weder $m_\tau$ noch $m'_{\tau'}$ auf der Epipolarlinie zum jeweils korrespondierenden Punkt liegt, kommt es zu keinem Schnittpunkt der rückprojizierten Strahlen}
+	\caption{ a) Die rückprojizierten Strahlen der ungenauen korrespondierenden Punkte $m_\sigma$ und $m'_{\sigma'}$ sind Windschief zueinander und treffen sich nicht in einem Punkt $M_\delta$ im Raum. b) Die korrespondierenden Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ erfüllen nicht den \textit{Epipolar-Constraint}. Die Epipolarlinie $l' = Fm$ is die korrespondierende Epipolarlinie zu $m_\sigma$ und $l = F^Tm'$ ist die korrespondierende Epipolarlinie zu $m'_{\sigma}$. Da weder $m_\sigma$ noch $m'_{\sigma'}$ auf der Epipolarlinie zum jeweils korrespondierenden Punkt liegt, kommt es zu keinem Schnittpunkt der rückprojizierten Strahlen}
 \end{figure}
 
-Um trotz der ungenauen korrespondierenden Punkte eine Triangulation zu ermöglichen, wurde ein Verfahren voran geschaltet, welches zwei Punkte $\hat{m}_\tau$ und $\hat{m}'_{\tau'}$ sucht, die möglichst nah an den ursprünglichen Punkten $m_\tau$ und $m'_{\tau'}$ liegen und gleichzeitig den \textit{Epipolar-Constraint} $\hat{m}'^T_{\tau'}F\hat{m}_\tau = 0$ erfüllen. $\hat{m}_\tau$ und $\hat{m}'_{\tau'}$ sollen durch Minimierung einer Kostenfunktion $C$ bestimmt werden, welche die Distanz  $d$ zwischen $m_\tau$ und $\hat{m}_\tau$ und $m'_{\tau'}$ und $\hat{m}'_{\tau'}$ minimiert. Für die Minimierung wird das Verfahren der Sampson-Approximation gewählt\cite{HZ}. (Literatur zu Sampson approximation?? erklären wie??) Voraussetzung für die Triangulierung ist, dass die Projektionsmatrizen $P$ und $P'$, sowie die Fundamentalmatrix $F$ bekannt sein müssen\cite{HZ}.
+Um trotz der ungenauen korrespondierenden Punkte eine Triangulation zu ermöglichen, wurde ein Verfahren voran geschaltet, welches zwei Punkte $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sucht, die möglichst nah an den ursprünglichen Punkten $m_\sigma$ und $m'_{\sigma'}$ liegen und gleichzeitig den \textit{Epipolar-Constraint} $\hat{m}'^T_{\sigma'}F\hat{m}_\sigma = 0$ erfüllen. $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sollen durch Minimierung einer Kostenfunktion $C$ bestimmt werden, welche die Distanz  $d$ zwischen $m_\sigma$ und $\hat{m}_\sigma$ und $m'_{\sigma'}$ und $\hat{m}'_{\sigma'}$ minimiert. Für die Minimierung wird das Verfahren der Sampson-Approximation gewählt\cite{HZ}. (Literatur zu Sampson approximation?? erklären wie??) Voraussetzung für die Triangulierung ist, dass die Projektionsmatrizen $P$ und $P'$, sowie die Fundamentalmatrix $F$ bekannt sein müssen\cite{HZ}.
 
 \begin{gather}
 	C(m,m') = d(m,\hat{m})^2 + d(m',\hat{m'})^2
@@ -312,23 +312,23 @@ Die optimalen $\hat{m}$ und $\hat{m}'$ liegen auf den korrespondierenden Epipola
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{images/SampsAppxNewPoints.png}
-	\captionof{figure}{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\tau}$ und $\hat{m'_{\tau'}}$}
+	\captionof{figure}{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\sigma}$ und $\hat{m'_{\sigma'}}$}
 \end{minipage}\\\\
 
-Jedes andere Punktepaar auf $\hat{l}$ und $\hat{l}'$ würde den \textit{Epipolar-Constraint} erfüllen, jedoch minimieren nur $m_{\tau\bot}$ und $m'_{\tau' \bot}$ die quadratischen Distanzen $d(m_\tau,\hat{m}_\tau)^2$ und $ d(m'_{\tau'},\hat{m}'_{\tau'})^2$ in der Kostenfunktion $C$. Gesucht wird also der geringste Abstand von $m_\tau$ zu $\hat{l}$ und $m'_{\tau'}$ zu $\hat{l}'$. Die Kostenfunktion $C$ kann dem entsprechend umformuliert werden in 
+Jedes andere Punktepaar auf $\hat{l}$ und $\hat{l}'$ würde den \textit{Epipolar-Constraint} erfüllen, jedoch minimieren nur $m_{\sigma\bot}$ und $m'_{\sigma' \bot}$ die quadratischen Distanzen $d(m_\sigma,\hat{m}_\sigma)^2$ und $ d(m'_{\sigma'},\hat{m}'_{\sigma'})^2$ in der Kostenfunktion $C$. Gesucht wird also der geringste Abstand von $m_\sigma$ zu $\hat{l}$ und $m'_{\sigma'}$ zu $\hat{l}'$. Die Kostenfunktion $C$ kann dem entsprechend umformuliert werden in 
 
 \begin{gather}
-	C(m,m') = d(\hat{m}_\tau,\hat{l})^2 + d(\hat{m}'_{\tau'},\hat{l}')^2
+	C(m,m') = d(\hat{m}_\sigma,\hat{l})^2 + d(\hat{m}'_{\sigma'},\hat{l}')^2
 \end{gather}
 .
 
-Aus allen möglichen Epipolarlinien, welche $\hat{l}$ und $\hat{l}'$ annehmen können, wird immer der senkrechte Abstand von $m_\tau$ und $m'_{\tau'}$ zur jeweiligen Epipolarlinie berechnet. jedoch soll genau das Epipolalinienpaar gewählt werden, welches die Kostenfunktion $C$ minimal werden lässt\cite{HZ}.\\
+Aus allen möglichen Epipolarlinien, welche $\hat{l}$ und $\hat{l}'$ annehmen können, wird immer der senkrechte Abstand von $m_\sigma$ und $m'_{\sigma'}$ zur jeweiligen Epipolarlinie berechnet. jedoch soll genau das Epipolalinienpaar gewählt werden, welches die Kostenfunktion $C$ minimal werden lässt\cite{HZ}.\\
 
 Im ersten Schritt werden die Epipolarlinien Parametrisiert, so dass eine Linie als $\hat{l}(t)$ geschrieben werden kann. Durch die Parametrisierung der Epipolarlinien, kann die Kostenfunktion $C$ als Funktion von $t$ umformuliert werden.
 
 
 \begin{gather}
-	C(m_\tau,m'_{\tau'}) = d(m_\tau,\hat{l}(t))^2 + d(m',\hat{l}'(t))^2
+	C(m_\sigma,m'_{\sigma'}) = d(m_\sigma,\hat{l}(t))^2 + d(m',\hat{l}'(t))^2
 \end{gather}
 
 
@@ -342,24 +342,24 @@ Im ersten Schritt werden die Epipolarlinien Parametrisiert, so dass eine Linie a
 
 Um zu verhindern dass Bildpunkte, die mit dem Epipol des anderen Bildes korrespondieren 
 
-Bei Bildpunkten, welche mit dem Epipol des anderen Bildes korrespondieren, würde sich der rückprojizierte Objektpunkt $M_\delta$ auf der Basislinie der zwei Projektionszentren befinden. Eine Rekonstruktion des Punktes wäre nicht möglich\cite{HZ}. Um diesen Fall zu vermeiden, werden die Bildpunkte $m_\tau$ und $m'_{\tau'} $ mit jeweils einer Matrix $T$ und $T'$ in den Ursprung $(0,0,1)^T$ verschoben.
+Bei Bildpunkten, welche mit dem Epipol des anderen Bildes korrespondieren, würde sich der rückprojizierte Objektpunkt $M_\delta$ auf der Basislinie der zwei Projektionszentren befinden. Eine Rekonstruktion des Punktes wäre nicht möglich\cite{HZ}. Um diesen Fall zu vermeiden, werden die Bildpunkte $m_\sigma$ und $m'_{\sigma'} $ mit jeweils einer Matrix $T$ und $T'$ in den Ursprung $(0,0,1)^T$ verschoben.
 
 %Es kann passieren , dass ein Bildpunkt korrespondierend zum jeweiligen Epipol des anderen Bildes ist, der Rückprojizierte Punkt im 3D-Raum würde sich dann auf der Basislinie der zwei Projektionszentren befinden und es ist somit nicht möglich ihn zu rekonstruieren. Um solche Fälle zu vermeiden, wird eine Transformation der Punkte $m$ und $m'$ in den Ursprung $(0,0,1)^T$ zu verschieben.
 
 \begin{gather}
 	T = \begin{bmatrix}
-	1&0&-m_{x\tau}\\
-	0&1&-m_{y\tau'}\\
+	1&0&-m_{x\sigma}\\
+	0&1&-m_{y\sigma'}\\
 	0&0&1
 	\end{bmatrix} \leadsto \bar{m_\tau} = T\cdot m_\tau\\
 	T' = \begin{bmatrix}
-	1&0&-m'_{x\tau'}\\
-	0&1&-m'_{y\tau'}\\
+	1&0&-m'_{x\sigma'}\\
+	0&1&-m'_{y\sigma'}\\
 	0&0&1
 	\end{bmatrix} \leadsto 	\bar{m}'_{\tau'} = T' \cdot m'_{\tau'}
 \end{gather} \\
 
-Die Fundamentalmatrix $F$ wird ebenfalls mit $T$ und $T'$ transformiert, so dass sie an die verschobenen Punkte $\bar{m}_{\tau}$ und $\bar{m}'_{\tau'}$ angepasst ist.
+Die Fundamentalmatrix $F$ wird ebenfalls mit $T$ und $T'$ transformiert, so dass sie an die verschobenen Punkte $\bar{m}_{\sigma}$ und $\bar{m}'_{\sigma'}$ angepasst ist.
 %
 %Die Fundamentalmatrix $F$ wird dann wieder an die neu translatierten Punkte $\bar{m}$ und $\bar{m}'$ angepasst.
 
@@ -454,7 +454,7 @@ Die quadratische Distanz dieser Linie zum Ursprung wird dann bezeichnet mit:
 
 
 \begin{gather}
-	d(\bar{m_\tau},\hat{l}(t))^2 = \frac{t^2}{1+(tf)^2} \label{eq:quadraticDistance}
+	d(\bar{m_\sigma},\hat{l}(t))^2 = \frac{t^2}{1+(tf)^2} \label{eq:quadraticDistance}
 \end{gather}
 
 Für die Herleitung von Gleichung \ref{eq:quadraticDistance} wird eine Gerade zunächst in Koordinatenform Dargestellt.
@@ -503,7 +503,7 @@ Um die zu $\hat{l}(t)$ korresponiderende Epipolarlinie $\hat{l}'(t)$ zu bestimme
 Für die quadratische Distanz $d(m',l'(t))^2$ ergibt sich dann:
 
 \begin{gather}
-	d(\bar{m_\tau},\hat{l}(t))^2 = \frac{(ct + d)^2}{(at+b)^2+f'^2(ct+d)^2}
+	d(\bar{m_\sigma},\hat{l}(t))^2 = \frac{(ct + d)^2}{(at+b)^2+f'^2(ct+d)^2}
 \end{gather} \\
 
 Die Kostenfunktion $C$ kann jetzt in eine Funktion $s(t)$ umformuliert werden.
@@ -528,11 +528,11 @@ Werden die beiden Terme in $s'(t)$ auf einen gemeinsamen Nenner gebracht und der
 
 Funktion $g(t)$ ist ein Polynom vom Grad 6. Das Minimum für $s(t)$ ergibt sich aus einer der 6 möglichen Lösungen für $t$ aus $g(t)$. Für die Bestimmung des Minimums werden nur die reellen Lösungen in Betracht gezogen, die nicht-reellen Lösungen können ignoriert werden. Die reellen Lösungen für $t$ aus $g(t)$, werden dann wieder in $s(t)$ eingesetzt. Das $t$, welches durch einsetzte in $s(t)$ den kleinsten Wert ergibt, ist das gesuchte Minimum $t_{min}$. \\
 
-Mit $t_{min}$ können die Epipolarlinien $\hat{l}(t)=(tf,1,-t)$ und $\hat{l}'(t) = F(0,t,1)^T$ durch einsetzen von $t_{min}$ berechnet werden. Danach werden die zwei neuen Punkte $\hat{m}_{\tau}$ und $\hat{m}'_{\tau'}$ auf den Epipolarlinien bestimmt. $\hat{m}_{\tau Rot}$ und $\hat{m}'_{\tau' Rot}$ sind die Punkte auf der Epipolarlinie welche dem Ursprung am nächsten sind. Der Punkt, welcher vom Ursprung aus am nächsten auf einer Linien $(\lambda, \mu,\upsilon)$ liegt, kann mit $(-\lambda \cdot \upsilon, -\mu \cdot \upsilon, \lambda^2+ \mu^2)$ berechnet werden.
+Mit $t_{min}$ können die Epipolarlinien $\hat{l}(t)=(tf,1,-t)$ und $\hat{l}'(t) = F(0,t,1)^T$ durch einsetzen von $t_{min}$ berechnet werden. Danach werden die zwei neuen Punkte $\hat{m}_{\sigma}$ und $\hat{m}'_{\sigma'}$ auf den Epipolarlinien bestimmt. $\hat{m}_{\sigma Rot}$ und $\hat{m}'_{\sigma' Rot}$ sind die Punkte auf der Epipolarlinie welche dem Ursprung am nächsten sind. Der Punkt, welcher vom Ursprung aus am nächsten auf einer Linien $(\lambda, \mu,\upsilon)$ liegt, kann mit $(-\lambda \cdot \upsilon, -\mu \cdot \upsilon, \lambda^2+ \mu^2)$ berechnet werden.
 
 \begin{gather}
 	\hat{l} = (tf, 1, -t)\
-	\hat{m}_{\tau Rot} = (-(tf) \cdot \upsilon , - 1 \cdot \upsilon, (tf)^2 \cdot 1^2 )\\
+	\hat{m}_{\sigma Rot} = (-(tf) \cdot \upsilon , - 1 \cdot \upsilon, (tf)^2 \cdot 1^2 )\\
 \end{gather}\\
  
 Nachdem zu beiden Linien $\hat{l}$ und $l\hat{a}'$ der jeweils nächste Punkte $\hat{m}_{Rot}$ und $\hat{m}'_{Rot}$ vom Ursprung aus gefunden wurden, werden diese nun mit $T$, $T'$, $R$ und $R'$ wieder an ihre Ausgangsposition zurück Transformiert. 
@@ -547,7 +547,7 @@ Nachdem zu beiden Linien $\hat{l}$ und $l\hat{a}'$ der jeweils nächste Punkte $
 
 Für auf diese weise neu berechneten korrespondierneden Punkte ist der \textit{Epipolar-Constraint} \ref{eq:Ep6} erfüllt und es ist gewährleistst, dass sich ihre jeweiligen Rückprijektionen in einem Punkt im Raum treffen.\\
 
-Für die Rückprojektion der einzelnen Bildpunkte wurde ein lineares Triangulationsverfahren gewählt\cite{HZ}. Für die Rückprojektion werden pro korrespondieredem Punktepaar zunächst die Projektionsgleichungen  $\hat{m}_\tau = P\hat{M}_\delta$ und $\hat{m}'_{\tau'}  = P'\hat{M}_\delta$ aufgestellt. Diese werden so in eine Koeffizientenmatrix $A$ eingetragen dass gilt $A\cdot x = 0$. Durch die Verwendung des Kreuzproduktes, wird die Homogene Komponente eliminiert\cite{HZ}. 
+Für die Rückprojektion der einzelnen Bildpunkte wurde ein lineares Triangulationsverfahren gewählt\cite{HZ}. Für die Rückprojektion werden pro korrespondieredem Punktepaar zunächst die Projektionsgleichungen  $\hat{m}_\sigma = P\hat{M}_\delta$ und $\hat{m}'_{\sigma'}  = P'\hat{M}_\delta$ aufgestellt. Diese werden so in eine Koeffizientenmatrix $A$ eingetragen dass gilt $A\cdot x = 0$. Durch die Verwendung des Kreuzproduktes, wird die Homogene Komponente eliminiert\cite{HZ}. 
 
 %(HIER WEITER MACHEN)
 %Nachdem nun gewährleistet ist, dass sich Rückprojektion der neuen Punkte $\hat{m}_\tau$ und $\hat{m}'_{\tau'}$

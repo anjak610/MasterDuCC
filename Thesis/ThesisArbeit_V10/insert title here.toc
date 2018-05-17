@@ -16,21 +16,21 @@
 \contentsline {chapter}{\numberline {5}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{30}{chapter.228}
 \contentsline {section}{\numberline {5.1}Geometrie eines Sensors}{30}{section.229}
 \contentsline {section}{\numberline {5.2}Auswirkungen auf die Szenenrekonstruktion}{31}{section.232}
-\contentsline {chapter}{\numberline {6}Reelle Rekonstruktion}{35}{chapter.254}
-\contentsline {section}{\numberline {6.1}Stereoaufbau}{35}{section.256}
-\contentsline {section}{\numberline {6.2}Korrespondenzanalyse}{36}{section.258}
-\contentsline {section}{\numberline {6.3}Normierter acht-Punkt-Algorithmus}{37}{section.260}
-\contentsline {subsection}{\numberline {6.3.1}Singularit\IeC {\"a}t der Fundamentalmatrix}{38}{subsection.269}
-\contentsline {subsection}{\numberline {6.3.2}Singul\IeC {\"a}rwerte der essentiellen Matrix}{40}{subsection.273}
-\contentsline {section}{\numberline {6.4}Szenenrekonstruktion mit Sampson-Approximation}{41}{section.274}
-\contentsline {section}{\numberline {6.5}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{46}{section.358}
-\contentsline {chapter}{\numberline {7}Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen (Matlab)}{51}{chapter.367}
-\contentsline {section}{\numberline {7.1}Projektive Transformation}{55}{section.403}
-\contentsline {section}{\numberline {7.2}\IeC {\"A}hnlichkeitstransformation}{60}{section.453}
-\contentsline {section}{\numberline {7.3}Scherungstransformation}{62}{section.481}
-\contentsline {chapter}{\numberline {8}Punktesortierung in Schachbrettmustern}{66}{chapter.509}
-\contentsline {section}{\numberline {8.1}Vorl\IeC {\"a}ufiges Klassendiagramm}{67}{section.510}
-\contentsline {section}{\numberline {8.2}Beispiele}{71}{section.521}
-\contentsline {chapter}{\numberline {9}Fazit - Conclusion}{74}{chapter.527}
-\contentsline {chapter}{\numberline {10}Alternativen}{75}{chapter.528}
-\contentsline {chapter}{\numberline {11}Abk\IeC {\"u}rzungsverzeichnis - List of Abbrevations}{76}{chapter.529}
+\contentsline {chapter}{\numberline {6}Reelle Rekonstruktion}{36}{chapter.258}
+\contentsline {section}{\numberline {6.1}Stereoaufbau}{36}{section.260}
+\contentsline {section}{\numberline {6.2}Korrespondenzanalyse}{37}{section.262}
+\contentsline {section}{\numberline {6.3}Normierter acht-Punkt-Algorithmus}{38}{section.264}
+\contentsline {subsection}{\numberline {6.3.1}Singularit\IeC {\"a}t der Fundamentalmatrix}{39}{subsection.273}
+\contentsline {subsection}{\numberline {6.3.2}Singul\IeC {\"a}rwerte der essentiellen Matrix}{41}{subsection.277}
+\contentsline {section}{\numberline {6.4}Szenenrekonstruktion mit Sampson-Approximation}{42}{section.278}
+\contentsline {section}{\numberline {6.5}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{47}{section.362}
+\contentsline {chapter}{\numberline {7}Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen (Matlab)}{52}{chapter.378}
+\contentsline {section}{\numberline {7.1}Projektive Transformation}{56}{section.414}
+\contentsline {section}{\numberline {7.2}\IeC {\"A}hnlichkeitstransformation}{61}{section.464}
+\contentsline {section}{\numberline {7.3}Scherungstransformation}{63}{section.492}
+\contentsline {chapter}{\numberline {8}Punktesortierung in Schachbrettmustern}{67}{chapter.520}
+\contentsline {section}{\numberline {8.1}Vorl\IeC {\"a}ufiges Klassendiagramm}{68}{section.521}
+\contentsline {section}{\numberline {8.2}Beispiele}{72}{section.532}
+\contentsline {chapter}{\numberline {9}Fazit - Conclusion}{75}{chapter.538}
+\contentsline {chapter}{\numberline {10}Alternativen}{76}{chapter.539}
+\contentsline {chapter}{\numberline {11}Abk\IeC {\"u}rzungsverzeichnis - List of Abbrevations}{77}{chapter.540}
