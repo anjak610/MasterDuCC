@@ -1,23 +1,8 @@
 \chapter{Auswirkungen von unterschiedlichen Kameraauflösungen}
 \label{sec:minimalAuf} 
 
-
-%Ausgehend von dem entstandenen Szenenrekonstruktionsalgorithmus, welcher für Kameras mit gleicher Bildauflösung bereits getestet wurde, wird wurde der Algorithmus dhingehend getestet, ob eine Szenenrekonstruktion auch möglich ist, wenn gilt, dass $\zeta \neq \zeta'$. 
-
-Der entstandene Szenenrekonstruktionsalforithmus wurde anhand von Kameras gleicher Auflösung implementiert und bereits validiert. Im folgenden soll nun getestet werden, ob der entwickelte Algorithmus auch im Stande ist für Kameras unterschiedlicher Auflösung eine Szene richtig zu Rekonstruieren. Zunächst wird beschrieben, was genau bei einer Auflösungsänderung auf einem Sensor ändert. Anschließend wird analysiert, wie sich die Auflösungsänderung auf das in Kapitel \ref{sec:CameraModels} beschriebene Kameramodell ändert und welche Einflüsse sie auf die in Kapitel \ref{sec:HFE} hergeleiteten Epipolaren Bedingungen und somit auf die Bestimmung der extrinsischen Kameraparameter und der folgenden Szenenrekonstruktion hat. Zum Schluss werden die Ergebnisse der synthetischen Rekonstruktion mit unterschiedlichen Kameraauflösungen präsentiert und validiert.
+Der entstandene Szenenrekonstruktionsalforithmus wurde anhand von Kameras gleicher Auflösung implementiert und bereits validiert. Im folgenden soll nun getestet werden, ob der entwickelte Algorithmus auch im Stande ist für Kameras unterschiedlicher Auflösung eine Szene richtig zu Rekonstruieren. Zunächst wird beschrieben, welche Modifizierungen auf einem Sensor bei veränderung Der Auflösung stattfinden. Anschließend wird analysiert, wie sich die Auflösungsänderung auf das in Kapitel \ref{sec:CameraModels} beschriebene Kameramodell ändert und welche Einflüsse sie auf die in Kapitel \ref{sec:HFE} hergeleiteten Epipolaren Bedingungen und somit auf die Bestimmung der extrinsischen Kameraparameter und der folgenden Szenenrekonstruktion hat. Zum Schluss werden die Ergebnisse der synthetischen Rekonstruktion mit unterschiedlichen Kameraauflösungen präsentiert und validiert.
  
-%Igendwie sagen, dass wie gezeigt wurde der Ansatz für gleiche Auflösungen funktioniert hat. sRoll im folgendenden die möglichkeit in betracht gezogen werden dass $\zeta \neq \zeta'$. Dazu soll erst einmal erklärt werden, was es für den Sensor bedeutet, wenn sich eine Auflösung ändert und was es bedeutet wenn sich zusätzlich auch noch die Seitenverhältnisse ändern.
-%%Im vorherigen Kapitel wurde gezeigt, wie eine 3D-Szene aus zwei heterogenen Bildquellen, welche von zwei Kameras gleicher Auflösung aufgenommen wurden, rekonstruiert wurden und gleichzeitig noch die externen Kameraparameter von $C'$ in Relation zu $C$ geschätzt wurden.
-%
-%
-%Dies wirft die Frage auf, welche Auswirkungen Bilder zweier Kameras mit unterschiedlichen Auflösungen auf die Funktionen den Szenenrekonstruktionsalgorithmus haben. 
-%
-%
-%Was genau unterschiedliche Auflösungen der Kameras für die einzelnen Bilder bedeutet und was genau sich bei der Aufnahme mit dem Sensor dabei ändert, soll im folgenden Unterkapitel kurz erläutert werden. 
-%
-%Danach soll analysiert werden, ob eine veränderte Bildauflösung Auswirkungen auf die in Kapitel \ref{sec:HFE} hergeleiteten Abildungsvorschriften hat. Als letztes wird im synthetischen Beispiel die Auflösung einer Kamera mehrmals verändert und der Szenenrekonstruktionsalgorithmus angewandt. Das Ergebnis des Algorithmus wird analysiert und validiert. 
-
-%Danach wird aufgezeigt, was genau diese Veränderungen für die in Kapitel \ref{sec:HFE} Hergeleiteten Bedingungen Epipolargeometrie bedeuten und letztendlich wird das Minimalbeispiel so angepasst, als hätten zwei Kameras unterschiedlicher Auflösung die selbe Szene wie davor aufgenommen und die Resultate miteinander verglichen. 
 
 \section{Geometrie eines Sensors}
 
@@ -29,12 +14,26 @@ Die Geometrie eines Sensors kann als eine  $M \times N$ - Matrix, bestehend aus 
 	\includegraphics[width=.8\linewidth]{images/Bildsensor_mit_Pixel.png}
 	\captionof{figure}{Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Sensorelementen. Vergleiche \cite{Photonik}} 
 	\label{fig:Sensor}
-\end{minipage}\\
+\end{minipage}\\\\
 
 
-Ein Sensor hat eine maximale Auflösung. Bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}. Die Bildqualität ist abhängig von der Größe des Sensorchips und der Menge der sich darauf befindenden Sensorelemente. Wird eine Auflösung kleiner der maximal möglichen Auflösung eingestellt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen\cite{Photonik}. \pagebreak
+%Ein Sensor hat eine maximale Auflösung. Bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}. Die Bildqualität ist abhängig von der Größe des Sensorchips und der Menge der sich darauf befindenden Sensorelemente. 
+%Wird eine Auflösung kleiner der maximal möglichen Auflösung eingestellt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen\cite{Photonik}. \\
 
-Ein neuer Pixel wird aus den benachbarten Pixeln berechnet. Dabei nehmen alle Pixel, die sich zu einem neuen Pixel zusammen schließen, die gleichen Farbwerte an. \\
+Ein Sensor hat eine maximale Auflösung. Die maximale Anzahl der Sensorelemente auf einem Sensor beschreit die maximale Auflösung. Verschiedene Kameras können aus diesem Grund verschiedenen Auflösungen besitzen. Die Anzahl und Größe der Einzelnen Sensorelemente variiert mit den Größen der Sensorchips. Je größer ein Sensor ist und je mehr Sensorelemente er besitzt, desto besser ist die Bildqualität\cite{Photonik}. Bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}. Auch ist es möglich die Auflösung eines Sensors digital zu verändern. Wird eine Auflöung kleiner der maximalen Auflösung eingesteltt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen. Benachbarte Pixel werden hier zu einem neuen Pixel definiert\cite{Photonik}. Ein neuer Pixel wird aus den benachbarten Pixeln berechnet.\\
+
+%
+%Dabei nehmen alle Pixel, die sich zu einem neuen Pixel zusammen schließen, die gleichen Farbwerte an. \\
+
+%In diesem Fall werden Pixel 
+%
+% Auch ist es möglich die Auflösung eines Sensors digital zu verändern. 
+%
+% bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}.
+%
+%Die maximale Anzahl der Sensorelemente beschreibt die maximale Auflösung....
+%verschieden sensoren könne aus diesem Grund unterschiedliche Auflösungen besitzten. Auch ist es möglich die Auflösung digital zu verändern. In diesem Fall werden pixel
+
 
 Eine Veränderung der Auflösung kann auch eine Änderung der Seitenverhältnisse mit einschließen. Ändert sich das Seitenverhältnis so wird der Bereich der lichtempfindlichen Fläche auf dem Sensor beschränkt\cite{Photonik}. Dies führt dazu, dass sich die Bildausschnnitte ändern. Abbildung \ref{fig:SensorResolutions} stellt schematisch da wie sich die lichtempfindlichen Bereiche auf dem Sensor bei unterschiedlichen Auflösungen ändert.
 
@@ -50,7 +49,9 @@ Eine Veränderung der Auflösung kann auch eine Änderung der Seitenverhältniss
 
 Im folgenden wird zunächst analysiert, welche Änderungen sich im Lochkameramodell bei veränderter Auflösung ergeben und was für Auswirkungen diese auf die in Kapitel \ref{sec:HFE} aufgestellten Epipolaren Bedingungen hat.\\
 
-Im Lochkameramodell hat eine Änderung der Kameraauflösung lediglich eine Auswirkung auf die Skalierung der Sensorkoordinatenachsen. Mit der Auflösung, ändern sich die Anzahl und die Größe der Pixel. Die Längeneinheiten des Sensorkoordinatensystems orientieren sich, wie in Kapitel \ref{sec:CameraModels} beschrieben, an genau diesen Längenskalierung der Pixelkanten $l_x$ und $l_y$. Folglich kommt es zu einer Skalierung des Sensorkoordinatensystems. Für alle anderen Koordinatensysteme ändert sich nichts. Durch Nachbarschaftsopterationen werden aus mehreren benachbarten Pixel ein neuer, jedoch bleibt der Ort des Pixel der gleiche\cite{Doessel}. Die Abbildungen \ref{fig:Aufl1} und \ref{fig:Aufl2} zeigen, dass sich zwar das Mapping von Bildebenenkoordinatensystem auf das Sensorkoordinatensystem für den Punkt $m_\sigma$ ändert, Jedoch wird der Bildpunkt $m_{\tau'}$ an der selben Position des Sensors wie zuvor auch abgebildet.\\
+Im Lochkameramodell hat eine Änderung der Kameraauflösung lediglich eine Auswirkung auf die Skalierung der Sensorkoordinatenachsen. Mit der Auflösung, ändern sich die Anzahl und die Größe der Pixel. Die Längeneinheiten des Sensorkoordinatensystems orientieren sich, wie in Kapitel \ref{sec:CameraModels} beschrieben, an genau diesen Längenskalierung der Pixelkanten $l_x$ und $l_y$. Folglich kommt es zu einer Skalierung des Sensorkoordinatensystems.Alle anderen Koordinatensysteme bleiben unverändert. Durch Nachbarschaftsopterationen werden aus mehreren benachbarten Pixel ein neuer, jedoch bleibt der Ort des Pixel der gleiche\cite{Doessel}. Die Abbildungen \ref{fig:Aufl1} und \ref{fig:Aufl2} zeigen, dass sich zwar die Projektion von Bildebenenkoordinatensystem auf das Sensorkoordinatensystem für den Punkt $m_\sigma$ ändert, 
+
+%Jedoch wird der Bildpunkt $m_{\tau'}$ an der selben Position des Sensors wie zuvor auch abgebildet.\\
 
 
 %Eine Änderung der Kameraauflösung hat im Lochkameramodell lediglich eine Auswirkung auf die skalierung der Längeneinheiten des Sensorkoordinatensystems.
@@ -118,7 +119,8 @@ Wie bereits bekannt wird kommt es bei der Transformation von Bildebenenkoordinat
 \end{bmatrix}
 \end{gather}
 
-Die Veränderung der Kameraauflösung hat in diesem Beispiel zur Folge, dass es so wirkt, als wäre die Brennweite verdoppelt worden. Das würde bedeuten, dass sich die Kamera von der Bildebene entfernt hätte, was jedoch nicht der Fall ist. Sowohl die Der Abstand von Kamera zur Bildebene bleibt effektiv die selbe. Die Pixel wurde um das doppelte in beiden Kantenlängen verdoppelt, weshalb die Bildauflösung geringer ist, da sich ein Pixel mit seinen Nachbarn zu einem neuen größeren Pixel zusammen geschlossen haben.\\
+Die Veränderung der Kameraauflösung hat in diesem Beispiel zur Folge, dass es so wirkt, als wäre die Brennweite verdoppelt worden. Das würde bedeuten, dass sich die Kamera von der Bildebene entfernt hätte, jedoch verändert weder Kamera noch Bildebene ihre Position. Dennoch vergrößert oder verkleinert sich durch die Skalierung der Pixel effektiv die Bildgröße. 
+%Sowohl die Der Abstand von Kamera zur Bildebene bleibt effektiv die selbe. Die Pixel wurde um das doppelte in beiden Kantenlängen verdoppelt, weshalb die Bildauflösung geringer ist, da sich ein Pixel mit seinen Nachbarn zu einem neuen größeren Pixel zusammen geschlossen haben.\\
 
 Um zu überprüfen. ob die Änderung der Kameraauflösung auch eine Änderung der Epipolaren Bedingungen mit sich führt, werden wieder die Gleichungen der Epipolaren Bedingungen in Kapitel \ref{sec:HFE} genauer betrachtet.\\
 
