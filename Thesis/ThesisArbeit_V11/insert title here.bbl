@@ -179,19 +179,15 @@ Richard~I. Hartley.
 \newblock Euclidean reconstruction from uncalibrated views.
 \newblock G.E. CRD, Schenectady, NY, 12301.
 
-\bibitem{FusielloSite}
-
-
 \bibitem{leastSquare}
 Dongqing Li, editor.
 \newblock {\em Encyclopedia of Microfluidics and Nanofluidics}, pages 999--999.
 \newblock Springer US, Boston, MA, 2008.
 
-\bibitem{Margulies.}
-S.~Margulies.
-\newblock Fitting experimental data using the method of least squares.
-\newblock Department of Physics, University of Illinois at Chicago Circle,
-  Chicago, Illinois 60680, 1967.
+\bibitem{FormelsammlungMatrizen}
+Jürgen~Adamy Christian~Voigt.
+\newblock {\em Formelsammlung der Matrizenrechnung}.
+\newblock Oldenburg Verlag München Wien, 2007.
 
 \bibitem{Fortran77}
 William T. Vetterling Brian P.~Flannery William H.~Press, Saul A.~Teukolsky.

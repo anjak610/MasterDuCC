@@ -58,7 +58,7 @@ Mit Hilfe dieser Eigenschaften ist es somit möglich die enstandenen korresponie
 
 
 Rektifizierung mit unterschiedlichen Aufnahme... warum funktioniert es in vielen Ansätzen nicht... was würde mit dem Bildpassieren? \\
-Für Disparity maps müssen die horizontalen werte auf die selbe reihe passen. \cite{Javier,Fusiello,}\\
+Für Disparity maps müssen die horizontalen werte auf die selbe reihe passen. \cite{Javier,Fusiello}\\
 
 
 standardvorgehen erklären\\
@@ -215,13 +215,16 @@ Im Folgenden wird die Herleitung der Matrizen $H_p$ und $H_p'$ beschrieben. Die 
 %, welche die, durch die Rektifizierung entstehende, Bildverzerrung minimieren soll. Für beide Bilder werden $w$ und $w'$ folgendermaßen gewählt
 
 \begin{gather}
-	w = [e]_x \cdot z\\
-	w'= F\cdot z
+	w = [e]_x \cdot z \label{eq:w}\\ 
+	w'= F\cdot z \label{eq:w'}
 \end{gather}\\
 
 
-(AB HIER WEITER SCHREIBEN)
-Jedes beliebige $z$ würde zwei korrespondierende Epipolarlinien definieren, um ein $z$ zu finden, welches die Verzerrung der Bilder minimiert, wird ein Kriterium aufgestellt, welches ein $z$ finden soll, dass die Verzerrung minimal halten wird. Minimierung bedeutet in diesem Falle, dass versucht wird die Matrizen $H_p$ und $H_p'$ so affin wie möglich zu machen. So affin wie möglich bedeute, dass die Werte von $w_a$ und $w_b$ so nah wie möglich an den Wert 0 gebracht werden sollen.
+%(AB HIER WEITER SCHREIBEN)
+%Jedes beliebige $z$ würde zwei korrespondierende Epipolarlinien definieren, um ein $z$ zu finden, welches die Verzerrung der Bilder minimiert, wird ein Kriterium aufgestellt, welches ein $z$ finden soll, dass die Verzerrung minimal halten wird. 
+Unter der Minimierung versteht man in diesem Falle, dass versucht wird ein $z$ zu finden, welches $w = (w_a,w_b,w_c)^T$ und $w'=(w_a',w_b',w_c')^T$ so definiert, dass die Eintrage $w_a$ und $w_b$ und auch $w_a'$ und $w_b'$ in $H_p$ und $H_p'$ nahezu null sind. Anders ausgedrückt es wird versucht die projektive Matrizen $H_p$ und $H_p'$ so affin wie möglich zu machen\cite{ZZ}.\\ 
+
+%Minimierung bedeutet in diesem Falle, dass versucht wird die Matrizen $H_p$ und $H_p'$ so affin wie möglich zu machen. So affin wie möglich bedeute, dass die Werte von $w_a$ und $w_b$ so nah wie möglich an den Wert 0 gebracht werden sollen.
 
 \begin{gather}
 	H_p = 	\begin{bmatrix}
@@ -231,19 +234,46 @@ Jedes beliebige $z$ würde zwei korrespondierende Epipolarlinien definieren, um 
 	\end{bmatrix}
 \end{gather}
 
-Jedoch sollen sie nicht ganz null werden, da die projektive Matrix dann keine projektive mehr wäre, sondern eine affine.  Deswegen heißt es auch sie soll so affin wie möglich gemacht werden. Das selbe gilt natürlich auch für $w_a'$ und $w_b'$ aus $H_p'$. Wäre das der Fall, so wären die beiden Epipole $e$ und $e'$ bereits im unendlichen und die Matrizen $H_p$ und $H_p'$ hätten keine Auswirkungen auf die Punkte. Für die Minimierung wird die Methode des \textit{least-square-fitting}, also die Anpassung des kleinsten Quadrats, genutzt\cite{leastSquare}. Es werden also die Gewichtungen der Punkte in beiden Bildern in der Methode der Anpassung der kleinsten Quadrate verbaut, welche versucht eine Funktion zu finden, die einen Wert für $z$ berechnen soll welcher die Bildverzerrung minimal hält. \textcolor{red}{Anders ausgedrückt man sucht einen Wert für $z$, welcher am nächsten an den gegebenen Punktesammlungen der jeweiligen Bildern dran liegt, wobei für $z$ bereits gilt, dass es sich um einen Punkt im Unendlichen handeln soll}\cite{ZZ,leastSquare}. Angenommenem, dass die Annäherungsfunktion $g(x)$ eine Funktion $f(x)$, mit $x \in [a,b]$, annähern soll, dann versucht die Methode, die Summe der Quadrate der oridnatischen Differenzen, welche zwischen den von der Funktion generierten Punkten und den Punkten aus den Daten gewonnen wird, zu minimieren\cite{leastSquare,Margulies.}. Zum Beispiel werden $n$ Datenpunkte angenommen, dann gilt:
+%Jedoch sollen sie nicht ganz null werden, da die projektive Matrix dann keine projektive mehr wäre, sondern eine affine.  Deswegen heißt es auch sie soll so affin wie möglich gemacht werden. Das selbe gilt natürlich auch für $w_a'$ und $w_b'$ aus $H_p'$. 
 
-\begin{gather}
-	e = \sum_{i=1}^{n}[f(x_i)-g(x_i)]^2
-\end{gather}
+Sollte es der Fall sein, dass beispielsweise Epipole $e$ bereits im unendlichen wären, so wären $w_a = 0$ und $w_b = 0$. In diesem Fall wäre eine projektive Transformation für diesen Epipol nicht mehr nötig.\\
 
-Für die Minimierung der Bildverzerrung werden die Gewichtungen der Punkte beider Bilder benötigt. $p_i$ beinhaltet alle Punkte von Bild eins und $p_j$ beinhaltet alle Punkte von Bild zwei. Angenommen wir nehmen einen Punkt aus Bild eins $p_{i1} = \begin{bmatrix}p_{i1,u}&p_{i1,v}&1\end{bmatrix}^T$, so soll dieser Punkt mit der Matrix $H_p$ zu einem Punkt der Form  $p_{i1} = \begin{bmatrix}\frac{p_{i1,u}}{w_i}&\frac{p_{i1,v}}{w_i}&1\end{bmatrix}^T$ transformiert werden. $w_i$ ist die Gewichtung welche durch die Verrechnung von $w$ mit $p_i$ zustande kommt.
+Für die Minimierung wird die Methode der kleinsten Quadrate auf angewandt. Die Methode der kleinsten Quadrate ist ein mathematisches Standardverfahren für eine Ausgleichsrechnung, mit deren Hilfe aus der Menge der Bildpunkten beider Bilder ein wert für $z$ ermittelt werden soll\cite{leastSquare}. Für $z$ gilt mit $z = \begin{bmatrix}\lambda&\mu&0\end{bmatrix}^T$ bereits die Bedingung, dass es sich um einen Punkt im unendlichen handeln soll. $\lambda$ und $\mu$, sollen dabei einen Wert annehmen, welcher am nächsten an den Punkteansammlungen beider Bilder ist. \\
+
+
+
+
+%Es werden also die Gewichtungen der Punkte in beiden Bildern in der Methode der Anpassung der kleinsten Quadrate verbaut, welche versucht eine Funktion zu finden, die einen Wert für $z$ berechnen soll welcher die Bildverzerrung minimal hält. \textcolor{red}{Anders ausgedrückt man sucht einen Wert für $z$, welcher am nächsten an den gegebenen Punktesammlungen der jeweiligen Bildern dran liegt, wobei für $z$ bereits gilt, dass es sich um einen Punkt im Unendlichen handeln soll}\cite{ZZ,leastSquare}.
+
+%
+% Angenommenem, dass die Annäherungsfunktion $g(x)$ eine Funktion $f(x)$, mit $x \in [a,b]$, annähern soll, dann versucht die Methode, die Summe der Quadrate der oridnatischen Differenzen, welche zwischen den von der Funktion generierten Punkten und den Punkten aus den Daten gewonnen wird, zu minimieren\cite{leastSquare,Margulies.}. Zum Beispiel werden $n$ Datenpunkte angenommen, dann gilt:
+%
+%\begin{gather}
+%	e = \sum_{i=1}^{n}[f(x_i)-g(x_i)]^2
+%\end{gather}
+
+Um ein solchen $z$ zu ermitteln, werden zunächst die Gewichtungen der Punkte beider Bilder benötigt. $p_i$ beinhaltet alle Punkte von Bild eins und $p_j$ beinhaltet alle Punkte von Bild zwei. Ein Punkt  $p_{i1} = \begin{bmatrix}p_{i1,u}&p_{i1,v}&1\end{bmatrix}^T$ aus Bild eins soll zu einem Punkt $p_{i1} = \begin{bmatrix}\frac{p_{i1,u}}{w_i}&\frac{p_{i1,v}}{w_i}&1\end{bmatrix}^T$ mit $w_i$ gleich der Gewichtung 
 
 \begin{gather}
 	w_i=w^Tp_i
 \end{gather} 
 
-Ist die Gewichtung der Punkte identisch gibt es keine projektive Verzerrung und die Homographie ist eine affine Transformation. Jedoch wenn die Epipole der Bilder ins Unendliche transformiert werden sollen, so können $H_p$ und $H_p'$ keine affine Homograhien sein. Sonst könnte man die Epipole nur innerhalb der affinen Ebenen, sprich den Bildebenen, verschieben. Also bildet der Versuch $H_p$ und $H_p'$ so affin wie möglich zu machen die Basis für die Minimierung. Im Realbeispiel werden alle Pixel des Bildes verwendet. Die Rektifizierung wurde im aufgeführten Beispiel anhand des erstellten Minimalbeispiels durchgeführt, somit wurden die Eckpunkte des Quaders des jeweiligen Bildes für die das Minimierungskriterium verwendet. Es wird eine Funktion nach dem Prinzip der Anpassung der kleinsten Quadrate aufgestellt, welche die Abweichung der Gewichtung der Punkte in Bezug auf die Gewichtung des Bildzentrums $p_c$ berechnet.$p_c$ ergibt sich aus der Mittelung aller verwendeten Punkte eines Bildes $p_c = \frac{1}{n} \sum_{i=1}^{n} p_i$, dessen Gewichtung ergibt sich aus $w_c= w^T p_c$. Die gesuchte Abweichung ausgedrückt in der Anpassung der kleinsten Quadreate ergibt dann die folgende Formel.\\
+transformiert werden. Dasselbe soll auch für die Punkte $p_j$ im zweiten Bild geschehen. Sind die Gewichtungen beider Bilder gleich, so ergibt sich keine projektive Verzerrung und sowohl $H_p$ also auch $H_p'$ sind in dem Fall affine Transformationen und die Epipole wären bereits im unendlichen. Angenommen beide Epipole befinden sich noch nicht im unendlichen, so können die Gewichtungen der Punkte beider Bilder nicht gleich sein\cite{ZZ}.\\
+
+Das Ziel ist, die Abweichung der Gewichtungen der Punkte beider Bilder zueinander so gering wie möglich zu machen. Die Rektifizierung wurde anhand des synthetischen Beispiels in Kapitel \ref{sec:minimal} implementiert. Dem entsprechend bilden die Abbildungen der Eckpunkte des Quaders auf den Sensoren der virtuellen Kameras, die Punkte in $p_i$ und $p_j$ anhand welcher die Rektifizierung durchgeführt werden soll. \\
+
+%Im Realbeispiel werden alle Pixel des Bildes verwendet. Die Rektifizierung wurde im aufgeführten Beispiel anhand des erstellten Minimalbeispiels durchgeführt, somit wurden die Eckpunkte des Quaders des jeweiligen Bildes für die das Minimierungskriterium verwendet.
+%
+% Es wird eine Funktion nach dem Prinzip der Anpassung der kleinsten Quadrate aufgestellt, welche die Abweichung der Gewichtung der Punkte in Bezug auf die Gewichtung des Bildzentrums $p_c$ berechnet.
+ 
+Der Wert $p_c$ ergibt sich aus der Mittelung aller verwendeten Punkte eines Bildes $p_c = \frac{1}{n} \sum_{i=1}^{n} p_i$ und gibt den Bildmittelpunkt an. $w_c$ ist die Gewichtung am Bildmittelpunkt und wird berechnet mit
+
+\begin{gather}
+	w_c = w^Tp_c
+\end{gather}
+
+
+Die Abweichung der Gewichtungen wird bezüglich der Gewichtung des Bildzentrums $w_c$ gemessen. 
 
 \begin{gather}
 	\sum_{i-1}^{n}\Big[\frac{w_i-w_c}{w_c} \Big]^2\\
@@ -251,35 +281,48 @@ Ist die Gewichtung der Punkte identisch gibt es keine projektive Verzerrung und 
 	\leadsto \sum_{i=1}^{n}\Big[\frac{w^T (p_i-p_c)(p_i-p_c)^Tw}{w^Tp_cp_c^Tw} \Big]
 \end{gather}\\
 
-Vereinfacht lässt sich das auch in einer Matrixgleichung angeben
+%dessen Gewichtung ergibt sich aus $w_c= w^T p_c$. Die gesuchte Abweichung ausgedrückt in der Anpassung der kleinsten Quadreate ergibt dann die folgende Formel.\\
+%
+%\begin{gather}
+%	\sum_{i-1}^{n}\Big[\frac{w_i-w_c}{w_c} \Big]^2\\
+%	\leadsto \sum_{i=1}^{n}\Big[\frac{w^T (p_i-p_c)}{w^Tp_c} \Big]^2
+%	\leadsto \sum_{i=1}^{n}\Big[\frac{w^T (p_i-p_c)(p_i-p_c)^Tw}{w^Tp_cp_c^Tw} \Big]
+%\end{gather}\\
+
+Vereinfacht lässt sich das auch in einer Matrixgleichung in Form von
 
 \begin{gather}
-	\frac{w^TPP^Tw}{w^Tp_cp_c^Tw}
+	\frac{w^TPP^Tw}{w^Tp_cp_c^Tw} \label{eq:MinimizationBild1}
 \end{gather}
 
-in welcher für $P$ gilt:
+angeben, in welcher für $P$ gilt:
 
 \begin{gather}
 	P=\begin{bmatrix}
 		p_{1,u}-p_{c,u}&p_{2,u}-p_{c,u}&...&p_{i,u}-p_{c,u}\\
-		p_{1,v}-p_{c,v}&p_{2,v}-p_{c,v}&...&p_{i,v}-p_{c,v}\\
+		p_{1,v}-p_{c,v}&p_{2,v}-p_{c,v}&...&p_{i,v}-p_{c,v}\\\label{eq:P}
 		0&0&...&0	
 	\end{bmatrix}
 \end{gather}
 
-die Gleichungen 4.79 bis 4.83 werden ebenfalls für die Punkte $p_j$ in Bild zwei aufgestellt. So ergibt sich für das zweite Bild die Matrixgleichung:
+Für die Punkte $p_j$ in Bild zwei ergibt sich dann entsprechend die Matrixgleichung:
 
 \begin{gather}
-	\frac{w'^TP'P'^Tw'}{w'^Tp_c'p_c'^Tw'}
+	\frac{w'^TP'P'^Tw'}{w'^Tp_c'p_c'^Tw'}\label{eq:MinimizationBild2}
 \end{gather} 
 
-Das Ziel ist es einen Wert für $z$ zu finden, welches bis jetzt noch nicht ersichtlich in den Gleichungen vorkommt. Also werden $w$ und $w^T$ noch mit ihren Definitionen aus den Gleichungen 4.75 und 4.76 ersetzt. Gleichzeitig werden die Gleichungen 4.82 und 4.84 summiert um die Gleichung zu erhalten, welche sich auf beide Bilder gleichzeitig bezieht und somit eine Lösung für $z$, das für beide Bilder gilt, gesucht werden kann.
+
+$w$ und $w^T$ werden nun noch mit ihren Definitionen aus den Gleichungen \ref{eq:w} und \ref{eq:w'} ersetzt und die Gleichungen \ref{eq:MinimizationBild1} und \ref{eq:MinimizationBild2} als Summiert und als eine Funktion von $z$ ausgedrückt\cite{ZZ}. 
+
+%Gleichzeitig werden die Gleichungen \ref{eq:w} und \ref{eq:w'} summiert um die Gleichung zu erhalten, welche sich auf beide Bilder gleichzeitig bezieht und somit eine Lösung für $z$, das für beide Bilder gilt, gesucht werden kann.
+%Das Ziel ist es einen Wert für $z$ zu finden, welches bis jetzt noch nicht ersichtlich in den Gleichungen vorkommt. Also werden
+%Um einen Wert für $z$ zu finden, werden nun die Gleichungen \ref{eq:MinimizationBild1} und \ref{eq:MinimizationBild2} entsprechend minimiert.
 
 \begin{gather}
-	\frac{z^T[e]_x^TPP^T[e]_xz}{z^T[e]_x^Tp_cp_c^T[e]_xz}+\frac{z^TF^TP'P'^TFz}{z^TF^Tp_c'p_c'^TFz}
+	\frac{z^T[e]_x^TPP^T[e]_xz}{z^T[e]_x^Tp_cp_c^T[e]_xz}+\frac{z^TF^TP'P'^TFz}{z^TF^Tp_c'p_c'^TFz} \label{eq:funcZLong}
 \end{gather}
 
-Für den weiteren Verlauf werden die Ausdrücke noch durch die Variablen $A,B,A'$ und $B'$ vereinfacht.
+Gleichung \ref{eq:funcZLong} wird noch vereinfach mit:
 
 \begin{gather}
 	A = [e]_x^TPP^T[e]_x\\
@@ -288,23 +331,19 @@ Für den weiteren Verlauf werden die Ausdrücke noch durch die Variablen $A,B,A'
 	B'= F^Tp_c'p_c'^TF\\
 	\leadsto 
 	\frac{z^TAz}{z^TBz}+\frac{z^TA'z}{z^TB'Fz}
-\end{gather}\\
+\end{gather}
+.
 
-Da die dritte Komponente von $z$ laut definition null sein soll, wird zu $z = \begin{pmatrix}
-\lambda\\ \mu\end{pmatrix}$ umgeschrieben. $A,B,A'$ und $B'$ sind 3x3-Matrizen, von welchen uns dann nur noch der erste 2x2-Block interessiert. Bei dem somit aufgestellten Minimalisierungs Kriterium, handelt es sich um ein nicht lineares optimierungs Problem. Die Gleichung 4.90 ist dann minimiert, wenn die erste Ableitung dieser Funktion nach $\lambda$ = gleich null ist. Es entsteht also ein Polynom mit dem Grad sieben, da die 4.90 die Summe zweier rationaler Funktionen ist, welche jeweil das Verhältnis von quadratischen Polynomen darstellt.
+Da bereits fest gesetzt ist dass die dritte Kompontente von $z$ gleich 0 sein wird, wird $z$ im Folgenden als zweidimensionaler vektor mit $z = \begin{pmatrix}
+\lambda\\ \mu\end{pmatrix}$ dargestellt. $A,B,A'$ und $B'$ sind 3x3-Matrizen, von denen dann nur noch der erste 2 $\times$ 2- Block wichtig ist.\\
 
-\begin{gather}
-	\textit{Hier soll das Polynom aufgestllt werden, ist aber nicht mehr klar wie das ging!!!}
-\end{gather}\\
-
-Für die nicht lineare Optimierung wird das gesamte Polynom aufgeteilt, so minimieren wir zunächst $\frac{z^TAz}{z^TBz}$ und danach $\frac{z^TA'z}{z^TB'z}$. So entstehen für $z$ zunächst zwei Lösungen 
-$\hat{z_1}$ und $\hat{z_2}$, welche über eine Mittelung eine ersten Schätzung für $z$ geben, welche schon ziemlich nah an den optimalen Wert heranreicht.
+Für eine nicht lineare Optimierung wird das gesamte Polynom aufgeteilt, so minimieren wir zunächst $\frac{z^TAz}{z^TBz}$ und danach $\frac{z^TA'z}{z^TB'z}$. So entstehen für $z$ zunächst zwei Lösungen $\hat{z_1}$ und $\hat{z_2}$, welche über eine Mittelung eine ersten Schätzung für $z$ geben\cite{ZZ}.
 
 \begin{gather}
 	z = \frac{\frac{\hat{z_1}}{\| z_1 \|}+\frac{\hat{z_2}}{\| z_2 \|}}{2}
 \end{gather}\\
 
-Da es sich um eine nicht lineare Optimierung handelt ist die Minimierung von  $\frac{z^TAz}{z^TBz}$ gleichzusetzen mit der Maximierung von  $\frac{z^TBz}{z^TAz}$. Beide als eine Funktion von $f(z)$. Matrix $A$ wird mit der Choleskyzerlegung in zwei höhere Dreiecksmatrizen zerlegt $A = D^TD$\cite{Fortran77}. Dies geht nur da $A$ nachweislich eine symmetrische und positiv-definite Matrix ist.\cite{Fortran77} positiv-Definite bedeutet, dass die Singulärwerte von $A$ immer positiv bleiben, egal mit welchem Vektor $z$ diese multipliziert wird. \textcolor{red}{(HIER NOCH LITERATUR FINDEN UND NOCHMAL PRÜFEN OB DEFINITION SO STIMMT)}.  Des Weiteren wir definiert, dass $y = Dz$ ist und $f(z)$ wird dann zu einen $\hat{f}(y)$
+Da es sich um eine nicht lineare Optimierung handelt ist die Minimierung von  $\frac{z^TAz}{z^TBz}$ gleichzusetzen mit der Maximierung von  $\frac{z^TBz}{z^TAz}$. Beide werden als eine Funktion von $f(z)$ definiert. Matrix $A$ wird mit der Choleskyzerlegung\cite{FormelsammlungMatrizen} in zwei höhere Dreiecksmatrizen zerlegt $A = D^TD$. Dies geht nur da $A$ nachweislich eine symmetrische und positiv-definite Matrix ist\cite{Fortran77,FormelsammlungMatrizen}. Des Weiteren wird definiert, dass $y = Dz$ ist und $f(z)$ wird dann zu $\hat{f}(y)$\cite{ZZ}.
 
 \begin{gather}
 	A = D^TD\\
@@ -315,29 +354,42 @@ Da es sich um eine nicht lineare Optimierung handelt ist die Minimierung von  $\
 	\hat{f}(y)= \frac{y^TD^{-T}BD^{-1}y}{y^Ty}
 \end{gather}
 
-Durch die Defintion von $y = Dz$ ist $y$ bis auf einen Skalierungsfaktor definiert. $\hat{f}(y)$ ist maximiert, wenn $y$ gleich dem Eigenvektor von $D^-TBD-1$ ist, welcher mit dem größten Eigenwert assoziert wird. Zum Schluss erhalten wir dann einen Wert für $\hat{z_1}$ mit $\hat{z_1} = D^{-1}y$. Exakt das selbe Verfahren wird für die Findung von $z_2$ mit  $\frac{z^TB'z}{z^TA'z}$ angewandt. \textcolor{red}{Sind $z_1, z_2$ und eine erste Schätzung für $z$ gefunden, so kann ein Wert für $z$ gesucht werden, welcher noch näher an ein optimales Ergebnis heranreicht. Beide Lösungen $z_1$ und $z_2$, werden in die Funktion $f(z)$ eingesetzt und es jeweils ein wert ermittelt, welcher am nächsten an einem Nullpunkt sich befindet. So kann iterativ eine optimale Lösung für $z$ gefunden werden.} Ist der Wert für $z$ bestimmt, so kann dieser die Gleichungen 4.75 und 4.76 eingesetzt werden und $w$ beziehungsweise $w'$ bestimmt werden, welche die Elemente für die Matritzen $H_p$ und $H_p'$ bereitstellen.
-Abbildung 4.7 zeigt in rot den Quader des Minimalbeispiels wie er in Kamera zwei abgebildet ist und in grün wie er in Kamera eins abgebildet ist. Kamera zwei ist horizontal zu Kamera eins verschoben und um $45\circ$ zu Kamera eins um die eigene vertikale Achse ein gedreht. Die Auflösungen beider Kameras sind identisch, sprich die intrinsischen Kameraparameter sind die selben. Abbildung 4.8 zeigt die momentanen Epipolarlinien. Die Epipolarlinien von Bild eins, also dem grünen Abbild, sind bereits Parallel, was aber keine Voraussetzung für die Funktion des Rektifizierungsalgorithmus ist. Der Schnittpunkt der Epipolarlinien von Bild zwei, also dem Roten Abbild, treffen sich in einem Punkt und bilden somit den Epipol von Bild zwei. 
+Da $y$ bis auf einen Skalierungsfaktor bestimmt ist, kann angenommen werden, dass $\parallel y \parallel = 1$ gilt. $\hat{f}(y)$ ist maximiert, wenn $y$ gleich dem Eigenvektor von $D^-TBD-1$ ist, welcher mit dem größten Eigenwert von $D^-TBD-1$ assoziiert wird\cite{ZZ}. Für $\hat{z_1}$ ergibt sich $\hat{z_1} = D^{-1}y$. Exakt das selbe Verfahren wird für die Bestimmung von $z_2$ mit  $\frac{z^TB'z}{z^TA'z}$ angewandt\cite{ZZ}.\\
+
+%Zum Schluss erhalten wir dann einen Wert für $\hat{z_1}$ mit $\hat{z_1} = D^{-1}y$. Exakt das selbe Verfahren wird für die Findung von $z_2$ mit  $\frac{z^TB'z}{z^TA'z}$ angewandt.\\
+
+Sind $z_1, z_2$ und durch Mittelung der beiden eine erste Schätzung für $z$ gefunden, so kann ein Wert für $z$ gesucht werden, welcher noch näher an ein optimales Ergebnis heranreicht. Beide Lösungen $z_1$ und $z_2$, werden in die Funktion $f(z)$ eingesetzt und es wird ein gemeinsames Minimum gesucht\cite{ZZ}. So kann iterativ eine optimale Lösung für $z$ gefunden werden. Ist der Wert für $z$ bestimmt, so kann dieser die Gleichungen \ref{eq:w} und \ref{eq:w'} eingesetzt werden und $w$ beziehungsweise $w'$ bestimmt werden. Die Einträge der Matrizen $H_p$ und $H_p'$ wären mit $w = (w_a,w_b,w_c)^T$ und $w' = (w_a',w_b',w_c')^T$ bestimmt\cite{ZZ}.\\
+
+Auf diese Weise wurden im synthetischen Beispiel die Matrizen $H_p$ und $H_p'$ bestimmt und auf die Abbildungen des Quaders angewandt. Abbildung \ref{fig:RectOriginal} zeigt die unrektifizierten Abbildungen der Quader in den Kameras. In grün ist die Abbildung des Quaders in $C$ zu sehen und in rot ist die Abbildung des Quaders in $C'$. Abbildung \ref{fig:RectOriginalELines} zeigt in blau die Epipolarlinien beider Abbildungen, welche sich in den jeweiligen Epipolen treffen. 
+
+
+%Abbildung 4.7 zeigt in rot den Quader des Minimalbeispiels wie er in Kamera zwei abgebildet ist und in grün wie er in Kamera eins abgebildet ist. Kamera zwei ist horizontal zu Kamera eins verschoben und um $45\circ$ zu Kamera eins um die eigene vertikale Achse ein gedreht. Die Auflösungen beider Kameras sind identisch, sprich die intrinsischen Kameraparameter sind die selben. Abbildung 4.8 zeigt die momentanen Epipolarlinien. Die Epipolarlinien von Bild eins, also dem grünen Abbild, sind bereits Parallel, was aber keine Voraussetzung für die Funktion des Rektifizierungsalgorithmus ist. Der Schnittpunkt der Epipolarlinien von Bild zwei, also dem Roten Abbild, treffen sich in einem Punkt und bilden somit den Epipol von Bild zwei. 
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{images/Rectification_one_same_Solutions.png}
-	\captionof{figure}{Aufnahmen zweier Kameras mit den selben Auflösungen, Kamera eins(Grün) und Kamera(rot) zwei gelten jeweils \ensuremath{\zeta =1}} 
+	\captionof{figure}{Aufnahmen zweier Kameras mit den selben Auflösungen, Kamera eins(Grün) und Kamera(rot) zwei gelten jeweils \ensuremath{\zeta =1}}
+	\label{fig:RectOriginal} 
 \end{minipage}\\ 
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{images/Rectification_two_same_Solutions.png}
 	\captionof{figure}{Epipole für Kamera eins und Kamera zwei vor der Rektifizierung } 
+	\label{fig:RectOriginalELines}
 \end{minipage}\\
 
 
-Werden nun die Matritzen $H_p$ und $H_p'$ auf die jeweiligen Punkte der Bilder, $p_i$ für Bild eins und $p_j$ für Bild zwei, angewandt, so kann man eine erste Veränderung beobachten. Abbildung 4.9 zeigt beide Quader aus Abbildung 4.7 nachdem die jeweiligen Bildpunkte mit den projektiven Matrizen multipliziert wurden. Der Epipol in Bild eins bleibt natürlich wie zuvor im unendlichen, jedoch kann man erkennen, dass der rote Quader aus Bild zwei sich verändert hat. Sein Epipol wurde ins Unendliche transformiert und parallele Linien sind nun auch auf dem Bild parallel. Das die Epipolarlinien bereits horizontal parallel zur x-Achse verlaufen ist Zufall und ist nach der Anwendung der projektiven Matrizen auch noch nicht verlangt. Das Anpassen der Epipolarlinien, dazu gehört sie zunächst von beiden Bilder aus parallel zur x-Achse verlaufen zu lassen und dann noch sie so zueinander anzupassen, dass sie zu Scanlinien über beide Bilder verlaufen, verlgeiche Abbildung 4.12, folgt im nächsten Schritt. \\
+Nach Transformieren der Abbildungspunkte mit den Matrizen $H_p$ und $H_p'$ wurden die Epipole ins unendliche Transformiert. Die Epipolarlinien verlaufen jetzt parallel zueinander, jedoch noch nicht zwingend parallel zur horizontalen Achse. In Abbildung \ref{fig:RectSameHp} ist das Ergebnis der mit $H_p$ und $H_p'$ transformierten Bildpunkte zu sehen.
+
+%Werden nun die Matritzen $H_p$ und $H_p'$ auf die jeweiligen Punkte der Bilder, $p_i$ für Bild eins und $p_j$ für Bild zwei, angewandt, so kann man eine erste Veränderung beobachten. Abbildung 4.9 zeigt beide Quader aus Abbildung 4.7 nachdem die jeweiligen Bildpunkte mit den projektiven Matrizen multipliziert wurden. Der Epipol in Bild eins bleibt natürlich wie zuvor im unendlichen, jedoch kann man erkennen, dass der rote Quader aus Bild zwei sich verändert hat. Sein Epipol wurde ins Unendliche transformiert und parallele Linien sind nun auch auf dem Bild parallel. Das die Epipolarlinien bereits horizontal parallel zur x-Achse verlaufen ist Zufall und ist nach der Anwendung der projektiven Matrizen auch noch nicht verlangt. Das Anpassen der Epipolarlinien, dazu gehört sie zunächst von beiden Bilder aus parallel zur x-Achse verlaufen zu lassen und dann noch sie so zueinander anzupassen, dass sie zu Scanlinien über beide Bilder verlaufen, verlgeiche Abbildung 4.12, folgt im nächsten Schritt. \\
 
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=1.\linewidth]{images/Rectification_Hp_same_Solutions.png}
-	\captionof{figure}{Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen. Das die enstehenden parallelen Epipolarlinien auch hier schon horizontal ausgerichtet sind ist Zufall. Die Epipolarlinien sind immer parallel nach dieser Transformation aber die Richtung ist nicht immer automatisch bereits i = [1,0,0].} 
+	\captionof{figure}{Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen.} 
+	\label{fig:RectSameHp}
 \end{minipage}\\ \\
 
 \subsection{Ähnlichkeitstransformation}
