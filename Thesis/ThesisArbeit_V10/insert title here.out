@@ -24,12 +24,13 @@
 \BOOKMARK [1][]{section.278}{6.4 Szenenrekonstruktion mit Sampson-Approximation}{chapter.258}% 24
 \BOOKMARK [1][]{section.362}{6.5 Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\366sung}{chapter.258}% 25
 \BOOKMARK [0][]{chapter.378}{7 Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen \(Matlab\)}{}% 26
-\BOOKMARK [1][]{section.414}{7.1 Projektive Transformation}{chapter.378}% 27
-\BOOKMARK [1][]{section.464}{7.2 \304hnlichkeitstransformation}{chapter.378}% 28
-\BOOKMARK [1][]{section.492}{7.3 Scherungstransformation}{chapter.378}% 29
-\BOOKMARK [0][]{chapter.520}{8 Punktesortierung in Schachbrettmustern}{}% 30
-\BOOKMARK [1][]{section.521}{8.1 Vorl\344ufiges Klassendiagramm}{chapter.520}% 31
-\BOOKMARK [1][]{section.532}{8.2 Beispiele}{chapter.520}% 32
-\BOOKMARK [0][]{chapter.538}{9 Fazit - Conclusion}{}% 33
-\BOOKMARK [0][]{chapter.539}{10 Alternativen}{}% 34
-\BOOKMARK [0][]{chapter.540}{11 Abk\374rzungsverzeichnis - List of Abbrevations}{}% 35
+\BOOKMARK [1][]{subsection.382}{7.0.1 eigens implementierter ansatz}{chapter.378}% 27
+\BOOKMARK [1][]{section.415}{7.1 Projektive Transformation}{chapter.378}% 28
+\BOOKMARK [1][]{section.465}{7.2 \304hnlichkeitstransformation}{chapter.378}% 29
+\BOOKMARK [1][]{section.493}{7.3 Scherungstransformation}{chapter.378}% 30
+\BOOKMARK [0][]{chapter.521}{8 Punktesortierung in Schachbrettmustern}{}% 31
+\BOOKMARK [1][]{section.522}{8.1 Vorl\344ufiges Klassendiagramm}{chapter.521}% 32
+\BOOKMARK [1][]{section.533}{8.2 Beispiele}{chapter.521}% 33
+\BOOKMARK [0][]{chapter.539}{9 Fazit - Conclusion}{}% 34
+\BOOKMARK [0][]{chapter.540}{10 Alternativen}{}% 35
+\BOOKMARK [0][]{chapter.541}{11 Abk\374rzungsverzeichnis - List of Abbrevations}{}% 36

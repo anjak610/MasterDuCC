@@ -25,12 +25,13 @@
 \contentsline {section}{\numberline {6.4}Szenenrekonstruktion mit Sampson-Approximation}{42}{section.278}
 \contentsline {section}{\numberline {6.5}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{47}{section.362}
 \contentsline {chapter}{\numberline {7}Vergleich entwickelter Rekonstruktions Algorithmus mit bereits vorhandenen (Matlab)}{52}{chapter.378}
-\contentsline {section}{\numberline {7.1}Projektive Transformation}{56}{section.414}
-\contentsline {section}{\numberline {7.2}\IeC {\"A}hnlichkeitstransformation}{61}{section.464}
-\contentsline {section}{\numberline {7.3}Scherungstransformation}{63}{section.492}
-\contentsline {chapter}{\numberline {8}Punktesortierung in Schachbrettmustern}{67}{chapter.520}
-\contentsline {section}{\numberline {8.1}Vorl\IeC {\"a}ufiges Klassendiagramm}{68}{section.521}
-\contentsline {section}{\numberline {8.2}Beispiele}{72}{section.532}
-\contentsline {chapter}{\numberline {9}Fazit - Conclusion}{75}{chapter.538}
-\contentsline {chapter}{\numberline {10}Alternativen}{76}{chapter.539}
-\contentsline {chapter}{\numberline {11}Abk\IeC {\"u}rzungsverzeichnis - List of Abbrevations}{77}{chapter.540}
+\contentsline {subsection}{\numberline {7.0.1}eigens implementierter ansatz}{55}{subsection.382}
+\contentsline {section}{\numberline {7.1}Projektive Transformation}{57}{section.415}
+\contentsline {section}{\numberline {7.2}\IeC {\"A}hnlichkeitstransformation}{62}{section.465}
+\contentsline {section}{\numberline {7.3}Scherungstransformation}{64}{section.493}
+\contentsline {chapter}{\numberline {8}Punktesortierung in Schachbrettmustern}{68}{chapter.521}
+\contentsline {section}{\numberline {8.1}Vorl\IeC {\"a}ufiges Klassendiagramm}{69}{section.522}
+\contentsline {section}{\numberline {8.2}Beispiele}{73}{section.533}
+\contentsline {chapter}{\numberline {9}Fazit - Conclusion}{76}{chapter.539}
+\contentsline {chapter}{\numberline {10}Alternativen}{77}{chapter.540}
+\contentsline {chapter}{\numberline {11}Abk\IeC {\"u}rzungsverzeichnis - List of Abbrevations}{78}{chapter.541}

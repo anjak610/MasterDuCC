@@ -64,37 +64,37 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces (\IeC {\"U}berarbeiten sie Abb \ref {fig:ArbeitsProzessVirtuell})Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt\relax }}{52}{figure.379}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Beipiel eines rektifizierten Bildes. Quelle: \cite {ZZ}\relax }}{53}{figure.380}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Beispiel einer einfachen Tiefenkarte eines Stereobildpaares nach der Rektifizierung. Quelle: \cite {Javier}\relax }}{53}{figure.381}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Aufnahmen zweier Kameras mit den selben Aufl\IeC {\"o}sungen, Kamera eins(Gr\IeC {\"u}n) und Kamera(rot) zwei gelten jeweils \ensuremath {\zeta =1}\relax }}{60}{figure.461}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Epipole f\IeC {\"u}r Kamera eins und Kamera zwei vor der Rektifizierung \relax }}{60}{figure.462}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen. Das die enstehenden parallelen Epipolarlinien auch hier schon horizontal ausgerichtet sind ist Zufall. Die Epipolarlinien sind immer parallel nach dieser Transformation aber die Richtung ist nicht immer automatisch bereits i = [1,0,0].\relax }}{61}{figure.463}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet\relax }}{63}{figure.491}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Die Abbildung verdeutlicht noch mal Schematisch, wie sich die Punkte ausrichten sollen. Bild a) zeigt die durch die Rektifizierung verschobenen Bildkantenmitten. Bild b= zeigt, wie sich die Bildkantenmitten durch die Scherungstransformation wieder ausrichten sollen.\relax }}{64}{figure.497}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.\relax }}{65}{figure.518}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{66}{figure.519}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Beispiel einer einfachen Tiefenkarte eines Stereobildpaares nach der Rektifizierung. Quelle: \cite {Javier}\relax }}{54}{figure.381}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Aufnahmen zweier Kameras mit den selben Aufl\IeC {\"o}sungen, Kamera eins(Gr\IeC {\"u}n) und Kamera(rot) zwei gelten jeweils \ensuremath {\zeta =1}\relax }}{60}{figure.462}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Epipole f\IeC {\"u}r Kamera eins und Kamera zwei vor der Rektifizierung \relax }}{61}{figure.463}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen. Das die enstehenden parallelen Epipolarlinien auch hier schon horizontal ausgerichtet sind ist Zufall. Die Epipolarlinien sind immer parallel nach dieser Transformation aber die Richtung ist nicht immer automatisch bereits i = [1,0,0].\relax }}{62}{figure.464}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet\relax }}{64}{figure.492}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Die Abbildung verdeutlicht noch mal Schematisch, wie sich die Punkte ausrichten sollen. Bild a) zeigt die durch die Rektifizierung verschobenen Bildkantenmitten. Bild b= zeigt, wie sich die Bildkantenmitten durch die Scherungstransformation wieder ausrichten sollen.\relax }}{65}{figure.498}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.\relax }}{66}{figure.519}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{67}{figure.520}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Klassendiagramm\relax }}{68}{figure.522}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Klassendiagramm\relax }}{68}{figure.523}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Klassendiagramm\relax }}{69}{figure.524}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Klassendiagramm\relax }}{69}{figure.525}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Klassendiagramm\relax }}{69}{figure.526}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces \relax }}{70}{figure.caption.527}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces \relax }}{70}{figure.caption.527}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces \relax }}{70}{figure.caption.528}
-\contentsline {figure}{\numberline {8.9}{\ignorespaces \relax }}{70}{figure.caption.528}
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Klassendiagramm\relax }}{71}{figure.529}
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Klassendiagramm\relax }}{71}{figure.530}
-\contentsline {figure}{\numberline {8.12}{\ignorespaces Klassendiagramm\relax }}{72}{figure.531}
-\contentsline {figure}{\numberline {8.13}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{72}{figure.caption.533}
-\contentsline {figure}{\numberline {8.14}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{72}{figure.caption.533}
-\contentsline {figure}{\numberline {8.15}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{73}{figure.caption.534}
-\contentsline {figure}{\numberline {8.16}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{73}{figure.caption.534}
-\contentsline {figure}{\numberline {8.17}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{73}{figure.caption.535}
-\contentsline {figure}{\numberline {8.18}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{73}{figure.caption.535}
-\contentsline {figure}{\numberline {8.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }}{74}{figure.caption.536}
-\contentsline {figure}{\numberline {8.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.536}
-\contentsline {figure}{\numberline {8.21}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{74}{figure.caption.537}
-\contentsline {figure}{\numberline {8.22}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.537}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Klassendiagramm\relax }}{69}{figure.523}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Klassendiagramm\relax }}{69}{figure.524}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Klassendiagramm\relax }}{70}{figure.525}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Klassendiagramm\relax }}{70}{figure.526}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Klassendiagramm\relax }}{70}{figure.527}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces \relax }}{71}{figure.caption.528}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces \relax }}{71}{figure.caption.528}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces \relax }}{71}{figure.caption.529}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces \relax }}{71}{figure.caption.529}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Klassendiagramm\relax }}{72}{figure.530}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Klassendiagramm\relax }}{72}{figure.531}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Klassendiagramm\relax }}{73}{figure.532}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{73}{figure.caption.534}
+\contentsline {figure}{\numberline {8.14}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{73}{figure.caption.534}
+\contentsline {figure}{\numberline {8.15}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{74}{figure.caption.535}
+\contentsline {figure}{\numberline {8.16}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.535}
+\contentsline {figure}{\numberline {8.17}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{74}{figure.caption.536}
+\contentsline {figure}{\numberline {8.18}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.536}
+\contentsline {figure}{\numberline {8.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }}{75}{figure.caption.537}
+\contentsline {figure}{\numberline {8.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.537}
+\contentsline {figure}{\numberline {8.21}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{75}{figure.caption.538}
+\contentsline {figure}{\numberline {8.22}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.538}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -20,6 +20,22 @@ Arbeitsprozess Matlab eifügen
 \end{minipage}\\ 
 
 
+Rektifizierung mit unterschiedlichen Aufnahme... warum funktioniert es in vielen Ansätzen nicht... was würde mit dem Bildpassieren? \\
+
+
+
+Für Disparity maps müssen die horizontalen werte auf die selbe reihe passen. Epipolar rectification is an important stage in dense stereo
+matching, as almost any stereo algorithm requires rectified
+images, i.e., images where epipolar lines are parallel and
+horizontal and corresponding points have the same vertical
+coordinates.  \cite{Javier,Fusiello,}\\
+
+standardvorgehen erklären\\
+
+Beispielhafte implementierung einer Image recitfication anhand korrespondierender Punkte und der FUndamentalmatrix\\
+
+
+Versuch unterschiedliche KAmeraauflösungen.. Bilder sind refkiifiziert aber Bild zwei ist komplett verzerrt... da Horizontale reiehn nicht übereinstimmen... 
 
 %
 %Im Minimalbeispiel ist die Triangulierung und Rekonstruktion der 3D-Weltpunkte ohne Kommunikationen durchführbar. Das liegt daran, dass mit reinen Werten gerechnet wird und Fehler wie Beispielsweise Bildrauschen nicht vorkommen. Im Minimalbeispiel kann davon ausgegangen werden ,dass die Linien zweier korrespondierender Punkte sich, welche durch die jeweilien Kamerazentren und Bildpunkte gehen, sich ziemlich sicher in einem Punkt treffen werden. In einem Beispiel mit realen Daten ist es nicht unwahrscheinlich, dass die herausgefilterten korrespondierenden Punkte, nicht zu hundert Prozent stimmen. Es kommt immer zu kleineren Abweichungen, was dazu führen kann, dass wenn die Linien der korrespondierenden Punkte im Realbild sich nicht treffen. Ein Grund dafür ist, dass sie nicht hundertprozentig auf der selben Höhe im Bild liegen und die Linien sich somit verfehlen\\
@@ -55,6 +71,10 @@ Rektifizierte Bilder müssen zwei Eigenschaften erfüllen. Zum einen müssen all
 Die Rektifizierung, allem voraus vor allem die Optimierung des Rektifizierungvorgangs, von Stereo- oder auch mulitplen- Kamerasystemen, wird heutzutage von vielen Entwicklergruppen der Computer Vision untersucht(Der satz ist mist!). Es gibt mittlerweile viele Ansätze, jedoch funktionieren nicht alle bei den selben Fällen. So setzten zum Beispiel manche Rektifizerungsalgorithmen voraus, dass die Bilder von Kameras mit selber Auflösung aufgenommen wurden. Ein Beispiel ist die Rektifizierung welche in \textit{Matlab} verwendet wird \cite{MatlabRec}. Die Rektifizierung wurde anhand einer Methode implementiert, welcher sich ähnlich verhält wie in \cite{FusielloSite} beschrieben. Die Grundidee hier hinter ist, dass die Kameramatrizen von zwei Kameras so aufgebaut sind dass die intrinsischen Parameter die selben sind, sie sich aber in ihren Rotationen und Translationen voneinander unterscheiden. Die extrinsischen Kameraparameter werden dann dementsprechend so manipuliert, dass die Bildebenen Achsenparallel zueinander stehen\cite{FusielloSite,Fusiello}. Um horizontale Epipolarlinien zu erhalten muss gleichzeitig die Basislinie zwischen den zwei Kamerazentren parallel zur neuen x-Achse beider Kameras sein. Zudem soll, um eine angemessene Rektifizierung zu gewährleisten, müssen konjugierende Punkte die selbe vertikale Koordinate haben. Dies wird hier durch die die Bedingung gewährleistet, dass beide Kameras die selben intrinsischen Parameter haben\cite{FusielloSite}. Eine Frage welche mit unter in dieser Arbeit beantwortet werden sollte, war, ob es möglich ist, ohne deutlich größeren Aufwand eine Kamerakalibrierung und Szenerekonstruktion mit Kameras unterschiedlicher Auflösung zu gewährleisten. Im Kapitel \nameref{sec:epipolar}, in welchem ausführlich die Epipolargeometrie vorgestellt wurde, wurde bereits bezug auf die unterschiedlichen Auflösungen genommen. Prinzipiell spielen unterschiedliche intrinsische Kameraparameter keine Rolle, wenn es um die Rekonstruktion der Kameraposen geht, da die Fundamental Matrix und die essentielle Matrix die Information über die intrinsischen und extrinsischen Kameraparameter besitzen und es klar gestellt wurde, dass die Bildkoordinatensysteme der Kameras nicht identisch sein müssen. \cite{Elements}. \\
 
 
+
+\subsection{eigens implementierter ansatz}
+
+erlären warum, erklären welches ziel verfolgt der Ansatz --> Rektifizeirung mit unterschiedlichen bildaufnahmen. vllt möglich??
 
 In dieser Arbeit wurde ein Rektifizierungsalgorithmus nach \textit{Zhang}\cite{ZZ} implementiert, welcher sich die Fundamentalmatrix zu nutzen macht. \textit{Loop} und \textit{Zhang} zerlegen jede Kollinearität in eine Ähnlichkeitstransformation, eine Schertransformation und eine projektive Transformation. Die projektive Komponenten wird dabei in einem nichtlinearen Optimierungsprozess so affin wie möglich gemacht.\cite{Fusiello,ZZ,phdextrinsicPara}. Im folgenden wird zunächst der genaue Vorgang des implementierten Algorithmus genauer erklärt und 
 \textcolor{red}{des Weiteren werden zwei Beispiele vorgestellt, welche die Bilder des Minimalbeispiels einmal mit gleichen intrinsischen Parametern und einmal mit unterschiedlichen intrinsischen Parametern der Kamera aufzeigt. Es wird sich Herausstellen, dass beide Beispiele eine gelungene Rektifizierung der Bilder aufweisen.(Nochmal genau nachprüfen ob das geht!!!)}. \\
