@@ -7,20 +7,21 @@ Der entwickelte Algorithmus ist sowohl in der Lage aus einem Stereobildpaar extr
 Im Folgenden soll der Algorithmus anhand eines virtuellen Beispiels erklärt werde. Dabei werden die einzelnen Schritte des Aufbaus der virtuellen Szene, der Bestimmung der extrinsischen Kameraparameter und der Rekonstruktion der virtuellen 3D-Szene beschrieben. Abbildung \ref{fig:ArbeitsProzessVirtuell} fasst den Arbeitsprozess des Szenenrekonstruktionsalgorithmus für das virtuelle Beispiel zusammen. \\
 
 
-% Da dies in einigen Sterokalibrierungs Applikationen nicht
-%Der Algorithmus wurde unter Berücksichtigung eines zuvor festgelegten Kriterien entwickelt werden. Zum einen sollten die Kameraparameter bestimmt werden können und zum anderen sollte es prinzipiell möglich sein, Szenen aus Bildern unterschiedlicher Auflösung zu rekonstruieren.
-%Aus diesem Grund wurde ein Ansatz entwickelt, welcher eine Szenenrekonstruktion 
-%
-%Für den entwickelten Ansatz des implementierten Szenenrekonstruktionsalgorithmus, wird davon ausgegangen, dass die intrinsischen Kameraparameter bekannt sind. Der Grund dafür ist, dass in dieser Arbeit ein Ansatz entwickelt werden sollte, welcher die Möglichkeit von unterschiedlichen Auflösungen der Kameras mit einbeziehen sollte. Aus diesem Grund wurde ein Ansatz für die Szenenrekonstruktion entwickelt, welcher keine Rektifizierung der Bilder mit einschließt. \\
-%
-%Im folgenden sollen die Funktionsweisen und Abläufe des entstandenen Szenenrekonstruktionsalgorithmus aufgezeigt werden. Hierzu wurde ein virtuelle Beispielszene gebaut mit einem 3D-Objekt und zwei simulierten zueinander rotierten und verschobenen Kameras. Das Objekt wird mathematisch auf die virtuellen Sensoren der beiden Kameras abgebildet. In Abblidung \ref{fig:ArbeitsProzessVirtuell} werden die einzelnen Schritte des Algorthmus nocheinmal schematisch kurz zusammengefasst. Die Schritte eins bis vier beschreiben den Aufbau der virtuellen Szene. In schritt drei der Einzelkalibrierung werden die intrinsischen Kameraparameter der beiden Kameras bestimmt. Ab hier setzt dann der Szenenrekonstruktionsalgorithmus an.
 
-\begin{minipage}{\linewidth}
+\begin{figure}[!htb]%{\linewidth}
 	\centering
 	\includegraphics[width=1.\linewidth]{images/NEU_Virtuel_Arbeitsprozess.png}
-	\captionof{figure}{Ablaufdiagramm für das synthetische Beispiel}
+	\caption[Ablaufdiagram]{Ablaufdiagramm für das synthetische Beispiel}
 	\label{fig:ArbeitsProzessVirtuell}
-\end{minipage}\\ \\
+\end{figure}
+
+%\begin{figure}%{\linewidth}
+%	\centering
+%	\includegraphics[width=0.8\linewidth]{images/NEU_Virtuel_Arbeitsprozess.png}
+%	\caption[Ablaufdiagram]{Ablaufdiagramm für das synthetische Beispiel}
+%	\label{fig:ArbeitsProzessVirtuell}
+%\end{figure}
+\pagebreak
 
 %
 %Für die Entwicklung des Ansatzes für den Szenenrekonstruktionsalgorithmus sind  des Algorithmus sind 
@@ -39,12 +40,12 @@ Als 3D-Objekt wurde ein Quader, in ein Weltkoordinatensystem $(O,\delta)$ mit $\
 \begin{figure}[!htb]
 	\minipage{0.52\textwidth}
 	\includegraphics[width=\linewidth]{images/SynthetischesBeispielAufbauTopDown_beschriftet.png}
-	\caption{In der Abbildung ist der vereinfachte Stereoaufbau in einer Top-Down-Ansicht zu sehen}
+	\caption[Synthetisches Beispiel Top-Down-Ansicht]{In der Abbildung ist der vereinfachte Stereoaufbau in einer Top-Down-Ansicht zu sehen}
 	\label{fig:aufbauMinimalTopDown}
 	\endminipage\hfill
 	\minipage{0.42\textwidth}
 	\includegraphics[width=\linewidth]{images/QuadrateMinimalBeispiel.png}
-	\caption{Simulierite Abbildung des Quaders auf die Kamera $C$ in Grün und auf $C'$ in rot}
+	\caption[Simulierte Abbildung eines Quaders auf zwei Kameras]{Simulierite Abbildung des Quaders auf die Kamera $C$ in Grün und auf $C'$ in rot}
 	\label{fig:AbbildungenMinimal}
 	\endminipage\hfill
 \end{figure}

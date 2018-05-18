@@ -1,69 +1,69 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: insert title here.aux
 The style file: unsrt.bst
 Database file #1: bibliography.bib
-You're missing a field name---line 13 of file bibliography.bib
+You're missing a field name---line 14 of file bibliography.bib
  :   
  :   %URL = {http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.475.456&rep=rep1&type=pdf},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 22 of file bibliography.bib
+You're missing a field name---line 23 of file bibliography.bib
  :   
  :   %URL = {http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.475.456&rep=rep1&type=pdf},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 29 of file bibliography.bib
+You're missing a field name---line 30 of file bibliography.bib
  :    
  :    % Volume  = {IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 18, NO. 7},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 38 of file bibliography.bib
+You're missing a field name---line 39 of file bibliography.bib
  : 
  : %Address={"https://doi.org/10.1002/bimj.19640060108"}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "MatlabRec" isn't style-file defined
---line 199 of file bibliography.bib
-You're missing a field name---line 202 of file bibliography.bib
+--line 200 of file bibliography.bib
+You're missing a field name---line 203 of file bibliography.bib
  :  
  :  % note   = {\url{"https://de.mathworks.com/help/vision/ref/rectifystereoimages.html"}},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 209 of file bibliography.bib
+You're missing a field name---line 210 of file bibliography.bib
  :  
  :  % note   = {\url{"https://de.mathworks.com/help/vision/stereo-camera-calibration.html"}},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 216 of file bibliography.bib
+You're missing a field name---line 217 of file bibliography.bib
  :  
  :  % note   = {\url{"https://de.mathworks.com/help/vision/ref/estimatecameraparameters.html"}},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 223 of file bibliography.bib
+You're missing a field name---line 224 of file bibliography.bib
  :  
  :  % note   = {\url{"https://de.mathworks.com/help/vision/ref/disparity.html"}},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 254 of file bibliography.bib
+You're missing a field name---line 255 of file bibliography.bib
  : 
  : %doi = {https://doi.org/10.1007/3-540-29708-1},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 264 of file bibliography.bib
+You're missing a field name---line 265 of file bibliography.bib
  : 
  : %doi = {https://doi.org/10.1007/978-3-662-45129-8},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 308 of file bibliography.bib
+You're missing a field name---line 309 of file bibliography.bib
  : 
  : %doi="10.1007/978-0-387-48998-8_804",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 328 of file bibliography.bib
+You're missing a field name---line 329 of file bibliography.bib
  : 
  : %doi="10.1007/978-0-387-31439-6_128",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 337 of file bibliography.bib
+I was expecting a `,' or a `}'---line 338 of file bibliography.bib
  :  
  :  doi ={10.1007/978-3-642-47866-6}
 (Error may have been on previous line)
