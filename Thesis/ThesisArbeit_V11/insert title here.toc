@@ -31,10 +31,10 @@
 \contentsline {subsection}{\numberline {7.2.2}\IeC {\"A}hnlichkeitstransformation}{62}{subsection.466}
 \contentsline {subsection}{\numberline {7.2.3}Scherungstransformation}{64}{subsection.496}
 \contentsline {section}{\numberline {7.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{66}{section.523}
-\contentsline {chapter}{\numberline {8}Punktesortierung in Schachbrettmustern}{69}{chapter.528}
-\contentsline {section}{\numberline {8.1}Vorl\IeC {\"a}ufiges Klassendiagramm}{70}{section.529}
-\contentsline {section}{\numberline {8.2}Beispiele}{74}{section.540}
-\contentsline {chapter}{\numberline {9}Fazit - Conclusion}{77}{chapter.546}
-\contentsline {chapter}{\numberline {10}Alternativen}{78}{chapter.547}
-\contentsline {chapter}{Abbildungsverzeichnis}{79}{chapter*.548}
-\contentsline {chapter}{Literaturverzeichnis}{83}{chapter*.549}
+\contentsline {chapter}{\numberline {8}Punktesortierung in Schachbrettmustern}{69}{chapter.534}
+\contentsline {section}{\numberline {8.1}Vorl\IeC {\"a}ufiges Klassendiagramm}{70}{section.535}
+\contentsline {section}{\numberline {8.2}Beispiele}{74}{section.546}
+\contentsline {chapter}{\numberline {9}Fazit - Conclusion}{77}{chapter.552}
+\contentsline {chapter}{\numberline {10}Alternativen}{78}{chapter.553}
+\contentsline {chapter}{Abbildungsverzeichnis}{79}{chapter*.554}
+\contentsline {chapter}{Literaturverzeichnis}{83}{chapter*.555}

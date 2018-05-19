@@ -74,35 +74,35 @@
 \contentsline {figure}{\numberline {7.10}{\ignorespaces Die Verbindungslinien $\overline {bd}$ und $\overline {ca}$ sollen so ausgerichtet werden, dass sie orthogonal zueinander stehen.\relax }}{65}{figure.501}
 \contentsline {figure}{\numberline {7.11}{\ignorespaces $H_sH_rH_p$ und $H_s'H_r'H_p'$ Transformation}}{66}{figure.caption.522}
 \contentsline {figure}{\numberline {7.12}{\ignorespaces $H_sH_rH_p$ und $H_s'H_r'H_p'$ Transformation mit Epipolarlinien}}{66}{figure.caption.522}
-\contentsline {figure}{\numberline {7.13}{\ignorespaces Aufnahmen zweier Kameras mit unterschiedlichen aufl\IeC {\"o}sungen, Kamera eins(Gr\IeC {\"u}n) besitzt f\IeC {\"u}r \ensuremath {\zeta } den Wert 1 und f\IeC {\"u}r Kamera zwei(rot) gilt jeweils \ensuremath {\zeta _x = 1.2} und \ensuremath {\zeta _y = 3.1}\relax }}{67}{figure.524}
-\contentsline {figure}{\numberline {7.14}{\ignorespaces Epipole f\IeC {\"u}r Kamera eins und Kamera zwei vor der Rektifizierung\relax }}{67}{figure.caption.525}
-\contentsline {figure}{\numberline {7.15}{\ignorespaces Nach dem die drei Homographien auf die Punkte angewandt sind die Eckpunkte des Quaders auf beiden Bilder auf den selben corres\IeC {\"u}ondierenden Epipolarlinien\relax }}{67}{figure.caption.525}
-\contentsline {figure}{\numberline {7.16}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{68}{figure.caption.526}
-\contentsline {figure}{\numberline {7.17}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{68}{figure.caption.526}
-\contentsline {figure}{\numberline {7.18}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{68}{figure.caption.527}
-\contentsline {figure}{\numberline {7.19}{\ignorespaces In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut\relax }}{68}{figure.caption.527}
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Aufnahmen zweier Kameras mit unterschiedlichen Aufl\IeC {\"o}sungen.F\IeC {\"u}r Kamera eins(Gr\IeC {\"u}n) gilt \ensuremath {\zeta _x = \zeta _y = 1} und f\IeC {\"u}r Kamera zwei(rot) gilt \ensuremath {\zeta '_x = \zeta '_y= 2}.\relax }}{67}{figure.528}
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Transformation $H_p$ und $H_p'$ angewandt auf Bilder unterschiedlicher Aufl\IeC {\"o}sungen}}{67}{figure.caption.529}
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Transformation $H_rH_p$ und $H_r'H_p'$ angewandt auf Bilder unterschiedlicher Aufl\IeC {\"o}sungen}}{67}{figure.caption.529}
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ angewandt auf Bilder unterschiedlicher Aufl\IeC {\"o}sungen}}{68}{figure.caption.530}
+\contentsline {figure}{\numberline {7.17}{\ignorespaces Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ angewandt auf Bilder unterschiedlicher Aufl\IeC {\"o}sungen mit Epipolarlinien}}{68}{figure.caption.530}
+\contentsline {figure}{\numberline {7.18}{\ignorespaces Rektifizierung mit $\zeta '_x = 2.3$ und $\zeta '_y = 3.2$}}{68}{figure.caption.533}
+\contentsline {figure}{\numberline {7.19}{\ignorespaces Rektifizierung mit $\zeta '_x = 2.3$ und $\zeta '_y = 3.2$}}{68}{figure.caption.533}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Klassendiagramm\relax }}{70}{figure.530}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Klassendiagramm\relax }}{70}{figure.531}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Klassendiagramm\relax }}{71}{figure.532}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Klassendiagramm\relax }}{71}{figure.533}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Klassendiagramm\relax }}{71}{figure.534}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces \relax }}{72}{figure.caption.535}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces \relax }}{72}{figure.caption.535}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces \relax }}{72}{figure.caption.536}
-\contentsline {figure}{\numberline {8.9}{\ignorespaces \relax }}{72}{figure.caption.536}
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Klassendiagramm\relax }}{73}{figure.537}
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Klassendiagramm\relax }}{73}{figure.538}
-\contentsline {figure}{\numberline {8.12}{\ignorespaces Klassendiagramm\relax }}{74}{figure.539}
-\contentsline {figure}{\numberline {8.13}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{74}{figure.caption.541}
-\contentsline {figure}{\numberline {8.14}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.541}
-\contentsline {figure}{\numberline {8.15}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{75}{figure.caption.542}
-\contentsline {figure}{\numberline {8.16}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.542}
-\contentsline {figure}{\numberline {8.17}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{75}{figure.caption.543}
-\contentsline {figure}{\numberline {8.18}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.543}
-\contentsline {figure}{\numberline {8.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }}{76}{figure.caption.544}
-\contentsline {figure}{\numberline {8.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{76}{figure.caption.544}
-\contentsline {figure}{\numberline {8.21}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{76}{figure.caption.545}
-\contentsline {figure}{\numberline {8.22}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{76}{figure.caption.545}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Klassendiagramm\relax }}{70}{figure.536}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Klassendiagramm\relax }}{70}{figure.537}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Klassendiagramm\relax }}{71}{figure.538}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Klassendiagramm\relax }}{71}{figure.539}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Klassendiagramm\relax }}{71}{figure.540}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces \relax }}{72}{figure.caption.541}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces \relax }}{72}{figure.caption.541}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces \relax }}{72}{figure.caption.542}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces \relax }}{72}{figure.caption.542}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Klassendiagramm\relax }}{73}{figure.543}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Klassendiagramm\relax }}{73}{figure.544}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Klassendiagramm\relax }}{74}{figure.545}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{74}{figure.caption.547}
+\contentsline {figure}{\numberline {8.14}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.547}
+\contentsline {figure}{\numberline {8.15}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{75}{figure.caption.548}
+\contentsline {figure}{\numberline {8.16}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.548}
+\contentsline {figure}{\numberline {8.17}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{75}{figure.caption.549}
+\contentsline {figure}{\numberline {8.18}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.549}
+\contentsline {figure}{\numberline {8.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }}{76}{figure.caption.550}
+\contentsline {figure}{\numberline {8.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{76}{figure.caption.550}
+\contentsline {figure}{\numberline {8.21}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{76}{figure.caption.551}
+\contentsline {figure}{\numberline {8.22}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{76}{figure.caption.551}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

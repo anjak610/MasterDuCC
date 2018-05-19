@@ -655,63 +655,101 @@ Die selben Gleichungen werden auch für $u'_a$ und $u'_b$ aufgestellt. Das Ergeb
 
 \section{Rektifizierung mit unterschiedlichen Kamerauflösungen}
 
+Nachdem der Rektofizierungsalgorithmus für das synthetische Beispiel anhand von Kameras gleicher Auflösung 
 
-Nachdem Rektifizerung mit gleichen Kamerauflösugnen funktioniert hat, soll getestet werden was bei unterschiedlichen passiert.
-
-
-Vielfaches der vorherigen: Bild wird vergrößert aber wird dadurch vllt ungenau\\
-
-unterschiedlich: die horzontalen Versätze stimmen nicht mehr und es kann keine disparity map erstellt werden \\
+Im Folgenden wird getesetet, welche Ergebnisse der zuvor entwickelte Rektifizierungsalgorithmus mit Bilder von Kameras unterschiedlicher erbringt. Im ersten Beispiel wird für $C$ die Auflösung $\zeta_x = \zeta_y =1$ gewählt. Die Kameramatrix $K$ lautet wie folgt
 
 
+\begin{gather}
+	K = 
+	\begin{bmatrix}
+	1&0&0\\
+	0&1&0\\
+	0&0&1
+	\end{bmatrix}
+\end{gather}
+
+Für $C'$ wurde eine kleinere Auflösung mit $\zeta'_x = \zeta'_y = 0.5$ gewählt. die Kameramatrix $K'$ lautet somit
+
+\begin{gather}
+	\begin{bmatrix}
+	0.5&0&0\\
+	0&0.5&0\\
+	0&0&1
+	\end{bmatrix}
+\end{gather} 
+
+
+Die entstehenden Bilder des Quaders sind in Abbildung \ref{fig:AbbRecDifRes} zu sehen. Da $K'$ nur eine halb so große Auflösung wie $K$ besitzt, ist das resultierende Bild des roten Quaders auch nur halb so groß. Der güne Quader zeigt das entstehende Bild von $C'$.
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=1.\linewidth]{images/Rectification_one_different_Solutions.png}
-	\captionof{figure}{Aufnahmen zweier Kameras mit unterschiedlichen auflösungen, Kamera eins(Grün) besitzt für \ensuremath{\zeta} den Wert 1 und für Kamera zwei(rot) gilt jeweils \ensuremath{\zeta_x = 1.2} und \ensuremath{\zeta_y = 3.1}} 
+	\captionof{figure}{Aufnahmen zweier Kameras mit unterschiedlichen Auflösungen.Für Kamera eins(Grün) gilt \ensuremath{\zeta_x = \zeta_y = 1}  und für Kamera zwei(rot) gilt \ensuremath{\zeta'_x = \zeta'_y= 2}.} 
+	\label{fig:AbbRecDifRes}
 \end{minipage}\\ \\
 
-(Normalerweise in realbildern wird das bild bei unterschiedlicher Auflösung nicht verzerrt sondern nur "Vergrößert" oder zurecht "geschnitten". Dadruch dass beide Quader in einem Koordinatensystem verbaut wurden sieht das so aus)
+Die folgenden Abbildungen zeigen die einzelnen Transformationen. Abbildung \ref{fig:AbbRecDifResHp} zeigt die projektive Transformation der beiden Bilder mit $H_p$ und $H_p'$. Die Epipolarlinien der beiden Bilder sind jetzt jeweils parallel zueinander. Abbildung \ref{fig:AbbRecDifResHrHp} zeigt Transformation mit $H_r$ und $H_r'$. Die Epipolarlinien sind jetzt parallel zur horizontalen Achse und die Epipolarlinien von Bild eins und Bild zwei sind auch zueinander ausgerichtet. Hier ist zu beobachten, dass das durch das Ausrichten der Epipolarlinien zueinander das Bild des roten Quaders stark horizontal und vertikal verzerrt wird. 
+%(Normalerweise in realbildern wird das bild bei unterschiedlicher Auflösung nicht verzerrt sondern nur "Vergrößert" oder zurecht "geschnitten". Dadruch dass beide Quader in einem Koordinatensystem verbaut wurden sieht das so aus)
 
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Rectification_Hp_different_Solutions.png}
-	\caption{Epipole für Kamera eins und Kamera zwei vor der Rektifizierung}
+	\caption[Transformation $H_p$ und $H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen]{}
+	\label{fig:AbbRecDifResHp}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Rectification_HrHp_different_Solutions.png}
-	\caption{Nach dem die drei Homographien auf die Punkte angewandt sind die Eckpunkte des Quaders auf beiden Bilder auf den selben corresüondierenden Epipolarlinien}
+	\caption[Transformation $H_rH_p$ und $H_r'H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen]{}
+	\label{fig:AbbRecDifResHrHp}
 	\endminipage\hfill
 	%\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
 	%\label{fig:RecT52}
 \end{figure}
 
+Die Abbildungen \ref{fig:AbbRecDifResHsHrHp} und \ref{fig:AbbRecDifResHsHrHpLines} zeigen die letzt Transformation mit $H_s$ und $H_s'$ einmal mit und einmal ohne Epipolarlinien. Die Bilder scheinen richtig rektifiziert geworden zu sein. Dieser Test wurde noch mit weiteren Vielfachen der Kameramatrix $K$ ausprbiert, immer mit dem selben Ergebnis wie in den Abbildungen \ref{fig:AbbRecDifResHsHrHp} und \ref{fig:AbbRecDifResHsHrHpLines} zu sehen. Somit ist es wohl prinzipiell möglich aus den Rektifizeriten Bilder eine Tiefenkarte zu erstellen und somit die 3D-Szene zu rekonstruieren.\\
+
+
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Rectification_HsHrHp_different_Solutions.png}
-	\caption{In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut}
-		\endminipage\hfill
-		\minipage{0.48\textwidth}
-		\includegraphics[width=\linewidth]{images/Rectification_four_different_Solutions.png}
-		\caption{In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut}
-		\endminipage\hfill
+	\caption[Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen]{}
+	\label{fig:AbbRecDifResHsHrHp}
+	\endminipage\hfill
+	\minipage{0.48\textwidth}		\includegraphics[width=\linewidth]{images/Rectification_four_different_Solutions.png}
+	\caption[Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen mit Epipolarlinien]{}
+	\label{fig:AbbRecDifResHsHrHpLines}
+	\endminipage\hfill
 		%\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
 		%\label{fig:RecT52}
 \end{figure}
 
 \pagebreak
 
-Unterschiedliche Auflösungsverhältnisse führen wiederrum zu fehlern
+Als nächstes wurden die Auflösung von $C'$ so verändert, dass $\zeta'_x \neq \zeta'_y$ gilt. Es werden $\zeta'_x = 2.3$  und $\zeta'_y = 3.2$ definiert. Somit folgt für $K'$ die folgende Matrix.
+
+\begin{gather}
+	K' = 
+	\begin{bmatrix}
+	2.3&0&0\\
+	0&3.2&0\\
+	0&0&1
+	\end{bmatrix}
+\end{gather}
+
+Für $K$ von $C$ gilt weiterhin $\zeta_x = \zeta_y = 1$. Die Entstehenden Bilder sind in Abbildung \ref{fig:7.18} zu sehen. Die horizontale Kantenlänge des Bildes in $C'$ mit dem roten Quader ist im Verhältnis kürzer als ihre vertikale Kantenlänge. Dieses Verhältnis wird nach der rektifizierung weiterhin beibehalten, weshalb der Horizontale Versatz der horizontalen Koordinaten in beiden Bilder nicht stimmt, wie in Abbildung \ref{fig:7.19} zu sehen ist. Dies könnte bei der Erstellung der Tiefenkarte Probleme dazu führen, dass die Tiefen falsch berechnet werden und es somit zu einer Fehlerhaften Rekonstruktion der 3D-Szene kommt.
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Rectification_Resolution_Abbild_verhaeltnisse.png}
-	\caption{In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut}
+	\caption[Rektifizierung mit $\zeta'_x = 2.3$ und $\zeta'_y = 3.2$]{Aufnahmen zweier Kameras mit unterschiedlichen Auflösungen.Für Kamera eins(grün) gilt \ensuremath{\zeta_x = \zeta_y = 1}  und für Kamera zwei(rot) gilt \ensuremath{\zeta'_x = 2.3} $\zeta'_y= 3.2$}
+	\label{fig:7.18}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Rectification_Resolution_verhaeltnisse.png}
-	\caption{In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut}
+	\caption[Rektifizierung mit $\zeta'_x = 2.3$ und $\zeta'_y = 3.2$]{Nach der Rektifizierung stimmen die horizontalen Koordinaten nicht überein, es würde zu Fehlern in der Tiefenkarte und somit in der gesamten 3D-Rekonstruktion geben.}
+	\label{fig:7.19}
 	\endminipage\hfill
 	%\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
 	%\label{fig:RecT52}
