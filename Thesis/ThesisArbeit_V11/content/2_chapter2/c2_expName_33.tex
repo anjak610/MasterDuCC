@@ -204,13 +204,13 @@ Des Weiteren gilt für $H_a$ und $H_a'$, dass jeweils nochmal in eine Rotationsm
 		v_b-v_cw_b&	v_a-v_cw_a&0\\
 		v_a-v_cw_a&v_b-v_cw_b&v_c\\
 		0&0&1
-	\end{bmatrix}\\
+	\end{bmatrix} \label{eq:DefHr}\\
 	H_s = 
 	\begin{bmatrix}
 		u_a&u_b&u_c\\
 		0&1&0\\
 		0&0&1
-	\end{bmatrix}
+	\end{bmatrix}\label{eq:DefHs}
 \end{gather}\\
 
 %$H_r$ und auch $H_r'$ definieren eine Rotation und auch eine Verschiebung, welche die bereits parallelen Epipolarlinien beider Bilder zueinander parallel und horizontal ausrichtet. Durch die Verschiebung werden die korrespondierenden Epipolarlinien noch auf die selbe Höhe verschoben. Somit entstehen die gewünschten Scanlinien in den Bildern. Die Matrix $H_s$ und $H_s'$ wirken sich nur auf die $u$-Elemente der Matrix $H$ und $H'$ aus und definieren eine Scherung. Sie haben keine Auswirkung auf die Rektifizierung an sich aber sorgen dafür, dass die horizontale Verzerrung der beiden Bilder zueinander reduziert wird.\\
@@ -388,23 +388,44 @@ Auf diese Weise wurden im synthetischen Beispiel die Matrizen $H_p$ und $H_p'$ b
 \end{minipage}\\
 
 
-Nach Transformieren der Abbildungspunkte mit den Matrizen $H_p$ und $H_p'$ wurden die Epipole ins unendliche Transformiert. Die Epipolarlinien verlaufen jetzt parallel zueinander, jedoch noch nicht zwingend parallel zur horizontalen Achse. In Abbildung \ref{fig:RectSameHp} ist das Ergebnis der mit $H_p$ und $H_p'$ transformierten Bildpunkte zu sehen.
+Nach Transformieren der Abbildungspunkte mit den Matrizen $H_p$ und $H_p'$ wurden die Epipole ins unendliche Transformiert. Die Epipolarlinien verlaufen jetzt parallel zueinander, jedoch noch nicht zwingend parallel zur horizontalen Achse. In den Abbildung en \ref{fig:RectSameHp1} und \ref{fig:RectSameHp2} ist das Ergebnis der mit $H_p$ und $H_p'$ transformierten Bildpunkte zu sehen.
 
 %Werden nun die Matritzen $H_p$ und $H_p'$ auf die jeweiligen Punkte der Bilder, $p_i$ für Bild eins und $p_j$ für Bild zwei, angewandt, so kann man eine erste Veränderung beobachten. Abbildung 4.9 zeigt beide Quader aus Abbildung 4.7 nachdem die jeweiligen Bildpunkte mit den projektiven Matrizen multipliziert wurden. Der Epipol in Bild eins bleibt natürlich wie zuvor im unendlichen, jedoch kann man erkennen, dass der rote Quader aus Bild zwei sich verändert hat. Sein Epipol wurde ins Unendliche transformiert und parallele Linien sind nun auch auf dem Bild parallel. Das die Epipolarlinien bereits horizontal parallel zur x-Achse verlaufen ist Zufall und ist nach der Anwendung der projektiven Matrizen auch noch nicht verlangt. Das Anpassen der Epipolarlinien, dazu gehört sie zunächst von beiden Bilder aus parallel zur x-Achse verlaufen zu lassen und dann noch sie so zueinander anzupassen, dass sie zu Scanlinien über beide Bilder verlaufen, verlgeiche Abbildung 4.12, folgt im nächsten Schritt. \\
 
 
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1.\linewidth]{images/Rectification_Hp_same_Solutions.png}
-	\captionof{figure}{Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen.} 
-	\label{fig:RectSameHp}
-\end{minipage}\\ \\
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=1.\linewidth]{images/Rectification_Hp_same_Solutions.png}
+%	\captionof{figure}{Abbildung beider Bilder nach anwenden der Matrizen $H_p$ und $H_p'$. Die Epipole beider Bilder sind nun im unendlichen.} 
+%	\label{fig:RectSameHp}
+%\end{minipage}\\ \\
+
+\begin{figure}[!htb]
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/Rectification_Hp_same_Solutions.png}
+	\caption[$H_p$ und $H_p'$ Transformation]{Abbildungen der Quader nach der Tranfromation mit $H_p$ und $H_p'$}
+	\label{fig:RectSameHp1}
+	\endminipage\hfill
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/Rectification_Hp_same_Solutions_Lines.png}
+	\caption[$H_p$ und $H_p'$ Transformation mit Epipolarlinien]{Abbildungen der Quader nach der Tranfromation mit $H_p$ und $H_p'$ mit eingezeichneten Epipolarlinien}
+	\label{fig:RectSameHp2}
+	\endminipage\hfill
+	%\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
+	%\label{fig:RecT52}
+\end{figure}
 
 \subsection{Ähnlichkeitstransformation}
 
 (HIER WEITER MACHEN)
 
-Nachdem die Epipole ins Unendliche verschoben wurden, müssen diese nun so rotiert und verschoben werden, dass die Epipolarlinien als Richtung $i = \begin{bmatrix}1&0&0\end{bmatrix}$ haben und die Epipolarlinien beider Bilder zu einheitlichen Scanlinien werden. Für die Ähnlichkeitstransformation wird davon ausgegangen, dass $w$ und $w'$ bereits bekannt sind.$H_r$ und $H_r'$ wurden bereits aus der Zerlegung von $H_a$ und $H_a'$ gewonnen.
+
+Die Epipole der jeweiligen Bilder befinden sich nach der projektiven Transformation im unendlichen. Die daraus resultierenden Epipolarlinien sind, wie in Abbildung \ref{fig:RectSameHp} zu sehen, parallel zueinander angeordnet. Im Folgenden sollen die Epipole rotiert werden, so dass sie ihre Richtungen $i = \begin{bmatrix}1&0&0\end{bmatrix}$ betragen. Die Epiplolarlinien würden dann parallel zur horizontalen Achse verlaufen\cite{ZZ}. $H_r$ und $H_r'$, welche aus der Zerlegung von $H_a$ und $H_a'$ resultieren, sollen die Rotation ausführen. Für $H_r$ und $H_r'$ gelten wie aus Gleichung \ref{eq:DefHr} bekannt folgende Gleichungen.
+
+% dass die Richtung der Epipolarlinien $i = \begin{bmatrix}1&0&0\end{bmatrix}$ beträgt und sie parallel zu den horizontalen Achse verlaufen. 
+
+
+%Nachdem die Epipole ins Unendliche verschoben wurden, müssen diese nun so rotiert und verschoben werden, dass die Epipolarlinien als Richtung $i = \begin{bmatrix}1&0&0\end{bmatrix}$ haben und die Epipolarlinien beider Bilder zu einheitlichen Scanlinien werden. Für die Ähnlichkeitstransformation wird davon ausgegangen, dass $w$ und $w'$ bereits bekannt sind.$H_r$ und $H_r'$ wurden bereits aus der Zerlegung von $H_a$ und $H_a'$ gewonnen. 
 
 \begin{gather}
 	H_r = 
@@ -418,28 +439,57 @@ Nachdem die Epipole ins Unendliche verschoben wurden, müssen diese nun so rotie
 		v_b'-v_c'w_b'&	v_a'-v_c'w_a'&0\\
 		v_a'-v_c'w_a'&v_b'-v_c'w_b'&v_c'\\
 		0&0&1
+	\end{bmatrix}
+\end{gather}
+
+$w$ und $w'$ sind bereits bekannt, Mit Hilfe von $F$, können $v_a$ und $v_b$ ersetzt werden. Zur Erinnerung eine Vorraussetzung für den hier aufgezeigten Rektifizierungsansatz ist, dass sowohl die Bildpunkte als auch die Fundamentalmatrix bekannt sein müssen. Die Fundamentalmatrix welche aus den rektifizierten Punkten entsteht hätte dann die Form 
+
+
+\begin{gather}
+	F = H'^T[i]_\times H\\
+	F=
+		\begin{bmatrix}
+	u_a'&v_a'&w_a'\\
+	u_b'&v_b'&w_b'\\
+	u_c'&v_c'&1
+	\end{bmatrix}
+	\begin{bmatrix}
+	0&0&0\\
+	0&0&-1\\
+	0&1&0
+	\end{bmatrix} 
+	\begin{bmatrix}
+	u_a&u_b&u_c\\
+	v_a&v_b&v_c\\
+	w_a&w_b&1
+	\end{bmatrix}\\
+		F=
+	\begin{bmatrix}
+	v_aw_a' - v_a'w_a&v_bw_a' - v_a'w_b&v_cw_a' - v_a'\\
+	v_aw_b' - v_b'w_a&v_bw_b' - v_b'w_b&v_cw_b' - v_b'\\
+	v_a - v_c'w_a&v_b - v_c'w_b&v_c-v_c'
 	\end{bmatrix}\\
 \end{gather}
 
-$w$ und $w'$ sind bereits bekannt, Mit Hilfe von $F$, können $v_a$ und $v_b$ ersetzt werden. Dazu kann die letzte Zeile von F nach $v_a, v_b$ und $v_c$ aufgelöst werden. Für $v_a', v_b'$ und $v_c'$ wird die letzte Spalte von F verwendet. So können folgende Gleichungen für $v_a, v_a',v_b, v_b', v_c$ und $v_c'$ gewonnen werden. 
+Da bisher nur $w$ und $w'$ bekannt sind und die Einträge der Fundamentalmatrix $F$ aus den nicht-rektifizierten Punkten, werden die Einträge so umgestellt. Für $v_a, v_b$ und $v_c$ werden jeweils die Einträge der letzten Zeile umgeformt. Für $v_a', v_b'$ und $v_c'$ dient die letzte Spalte von $F$.
+%Dazu kann die letzte Zeile von F nach $v_a, v_b$ und $v_c$ aufgelöst werden. Für $v_a', v_b'$ und $v_c'$ wird die letzte Spalte von F verwendet. So können folgende Gleichungen für $v_a, v_a',v_b, v_b', v_c$ und $v_c'$ gewonnen werden. 
+
 
 \begin{gather}
-	F = H'^T[i]_xH\\
-	F=
-	\begin{bmatrix}
-		v_aw_a' - v_a'w_a&v_bw_a' - v_a'w_b&v_cw_a' - v_a'\\
-		v_aw_b' - v_b'w_a&v_bw_b' - v_b'w_b&v_cw_b' - v_b'\\
-		v_a - v_c'w_a&v_b - v_c'w_b&v_c-v_c'
-	\end{bmatrix}\\
-	v_a = F_{31}+v_c'w_a\\
+	v_a = F_{31}+v_c'w_a\label{eq:va}\\
 	v_b = F_{32}+v_c'w_b\\
 	v_c = F_{33}+v_c'\\
 	v_a' = v_cw_a'-F_{13}\\
 	v_b' = v_cw_b'-F_{23}\\
-	v_c' = v_c -F_{33}
+	v_c' = v_c -F_{33}\label{eq:F33}
 \end{gather}
 
-Eingesetzt in die jeweiligen Matrizen $H_r$ und $H_r'$, entstehen die folgenden Matrizen in Gleichungen 4.114 und 4.115, welche nur noch die unbekannte $v_c'$ beinhalten. Die gemeinsame Variable $v_c'$ zeigt die geometrische Verbindung beider Bilder in ihrer Verschiebung entlang ihrer v-Richtung. Es wird also ein Offset von $F_33$ benötigt, um die Epipolarlinien horizontal zu Scanlinien auszurichten. \textcolor{red}{Den Wert für $v_c$ wird so ermittelt, dass das Minimum einer v-Koordinaten eines Pixel als minimum den Wert null besitzt }
+$F_{31},\, F_{32}, F_{33} ,F_{13}$ und  $F_{23}$ stehen für die Einträge der Matrix $F$, welche aus den nicht-rektifizierten Punkten bestimmt wurde. \\
+
+
+Werden die Gleichungen \ref{eq:va} bis \ref{eq:F33} in $H_r$ und $H_r'$ eingesetzt, so ergeben sich für $H_r$ und $H_r'$ 
+
+%Eingesetzt in die jeweiligen Matrizen $H_r$ und $H_r'$, entstehen die folgenden Matrizen in Gleichungen 4.114 und 4.115, welche nur noch die unbekannte $v_c'$ beinhalten. Die gemeinsame Variable $v_c'$ zeigt die geometrische Verbindung beider Bilder in ihrer Verschiebung entlang ihrer v-Richtung. Es wird also ein Offset von $F_33$ benötigt, um die Epipolarlinien horizontal zu Scanlinien auszurichten. \textcolor{red}{Den Wert für $v_c$ wird so ermittelt, dass das Minimum einer v-Koordinaten eines Pixel als minimum den Wert null besitzt }
 
 \begin{gather}
 	H_r = \begin{bmatrix}
@@ -455,17 +505,44 @@ Eingesetzt in die jeweiligen Matrizen $H_r$ und $H_r'$, entstehen die folgenden 
 	\end{bmatrix}
 \end{gather}\\
 
-Das Ergebnis der Bildpunkte $p_i$ und $p_j$ multipliziert mit den Matrizen $H_rH_p$ und $H_r'H_p'$ mit ist in Abbildung 4.10 zu sehen. Als letztes folgt noch die Scherungstransformation $H_s$ und $H_s'$ für die horizontale Entzerrung beider Bilder.\\ 
 
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1.\linewidth]{images/Rectification_HrHp_same_Solutions.png}
-	\captionof{figure}{Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet} 
-\end{minipage}\\ \\
+Die gemeinsame unbekannte Variable $v_c'$ beschreibt die geometrische Verbindung beider Bilder in ihrer Verschiebung entlang ihrer vertikalen Richtung\cite{ZZ}. $F_33$ ist somit der horizontale Versatz, welcher benötigt wird, um die horizontalen Epipolarlinien beider Bilder zueinander auszurichten, so dass die gewünschten Scanlinien über beide Bilder entstehen. $v'$ wird dabei so gewählt, dass die kleinste Koordinate der rektifizierten Bilder in vertikaler Achsenrichtung gleich null ist.\cite{ZZ}.\\
+
+
+%
+% Es wird also ein Offset von $F_33$ benötigt, um die Epipolarlinien horizontal zu Scanlinien auszurichten. \textcolor{red}{Den Wert für $v_c$ wird so ermittelt, dass das Minimum einer v-Koordinaten eines Pixel als minimum den Wert null besitzt }
+
+Die Abbilder des Quader sehen nach der Transformation mit $H_rH_p$ und $H_r'H_p'$ aus wie in den Abbildungen \ref{fig:RectSameHrHp1} und \ref{fig:RectSameHrHp2} dargestellt. Sollten die Epipolarlinien noch nicht parallel zur horizontalen Achse gewesen sein, so sind sie es nach der Transformation mit $H_p$ und $H_p'$. Des Weiteren wurden beide Bilder durch $v_c'$ so verschoben, dass der in vertikaler Richtung kleinste Punkt bei auf der Horizontalen Achse liegt. 
+%Das Ergebnis der Bildpunkte $p_i$ und $p_j$ multipliziert mit den Matrizen $H_rH_p$ und $H_r'H_p'$ mit ist in Abbildung 4.10 zu sehen. Als letztes folgt noch die Scherungstransformation $H_s$ und $H_s'$ für die horizontale Entzerrung beider Bilder.\\ 
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=1.\linewidth]{images/Rectification_HrHp_same_Solutions.png}
+%	\captionof{figure}{Abbildung beider Bilder nach anwenden der Matrizen $H_r \cdot H_p$ und $H_r' \cdot H_p'$. Die Epipolarlinien sind nun horizontal zueinander ausgerichtet} 
+%	\label{fig:RectSameHrHp}
+%\end{minipage}\\ \\
+
+\begin{figure}[!htb]
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/Rectification_HrHp_same_Solutions.png}
+	\caption[$H_rH_p$ und $H_r'H_p'$ Transformation]{Abbildungen der Quader nach der Tranfromation mit $H_rH_p$ und $H_r'H_p'$}
+	\label{fig:RectSameHrHp1}
+	\endminipage\hfill
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/Rectification_HrHp_same_Solutions_Lines.png}
+	\caption[$H_rH_p$ und $H_r'H_p'$ Transformation mit Epipolarlinien]{Abbildungen der Quader nach der Tranfromation mit $H_rH_p$ und $H_r'H_p'$ mit eingezeichneten Epipolarlinien}
+	\label{fig:RectSameHrHp2}
+	\endminipage\hfill
+	%\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
+	%\label{fig:RecT52}
+\end{figure}
+
 
 \subsection{Scherungstransformation}
 
-Die letzte Transformation, welche an den Bilder durchgeführt werden soll, ist die sogenannten Scherungstransformation. Sie soll vor allem dazu dienen, die horizontale Verzerrung der Bilder zueinander nochmal weiter zu minimieren. Die Matrizen $H_s$ und $H'_r$ wirken sich hauptsächlich auf die $u$ und $u'$ Komponenten aus. 
+Im letzten Schritt soll die durch die Transformation mit $H_p$ und $H_p'$ entstandene horizontale Verzerrung in beiden Bilder reduziert werden. Aus diesem Grund werden die Scherungsmatrizen $H_s$ und $H_s'$, aus der Zerlegung der affinen Matrix $H_a$ und $H_a'$ benötigt. Die Einträge der ersten zeile in $H_s$ und $H_s'$ haben nur noch Auswirkungen auf die horizontalen Koordinaten der Bildpunkte.
+
+%Die letzte Transformation, welche an den Bilder durchgeführt werden soll, ist die sogenannten Scherungstransformation. Sie soll vor allem dazu dienen, die horizontale Verzerrung der Bilder, zueinander nochmal weiter zu minimieren. Die Matrizen $H_s$ und $H'_r$ wirken sich hauptsächlich auf die $u$ und $u'$ Komponenten aus. 
 
 \begin{gather}
 	H_s =\begin{bmatrix}
@@ -480,15 +557,22 @@ Die letzte Transformation, welche an den Bilder durchgeführt werden soll, ist d
 	\end{bmatrix}
 \end{gather}
 
-Um die richtigen Werte für $a, a', b$ und $b'$ zu bekommen, werden zunächst Punkte an den jeweiligen gegenüberliegenden Kanten der Bilder definiert. Da die Bilder des Quaders nicht aus tausenden von Pixeln bestehen, wie ein reales Bild, sondern nur über dessen Eckpunkte bestimmt ist, wird eine Bildbreite $w$ und $w'$ und eine Bildhöhe $h$ und $h'$ definiert. Die Höhen und Breiten der Bilder rahmen die abgebildeten Quader ein, somit wurde quasi eine Bildgröße für beide Bilder definiert. Nun können die Punkte an den Kantenhalbierenden $a = [\frac{w-1}{2} \; 0 \; 1]^T, b = [w-1 \; \frac{h-1}{2}\; 1]^T, c = [\frac{w-1}{2} \; h-1 \; 1]^T, d = [0 \; \frac{h-1}{2} \; 1]^T$ gebildet werden. Der Gedanke, der damit verfolgt wird ist, dass die Punkte der jeweiligen gegenüberliegenden Kanten mit einander verbunden werden können und dann so ausgerichtet werden sollen, dass sie sich wieder direkt gegenüber liegen. Schematisch wird as in Abbildung ???? aufgezeigt.
+Um die richtigen Werte für $a, a', b$ und $b'$ zu bekommen, werden zunächst Punkte an den jeweiligen gegenüberliegenden Kanten der Bilder definiert. Da die Bilder des Quaders nicht aus tausenden von Pixeln bestehen, wie ein reales Bild, sondern nur über dessen Eckpunkte bestimmt ist, wird eine Bildbreite $w$ und $w'$ und eine Bildhöhe $h$ und $h'$ definiert. \\
+
+Da es nicht möglich ist die horizontale Verzerrung gänzlich zu reduzieren, wird stattdessen versucht die Orthogonalität und das Seitenverhältnis der Verbindungslinien $\overline{bd}$ und $\overline{ca}$ wieder herzustellen. In Abbildung \ref{fig:PreserveAspectRatio} ist das Ziel nochmal grafisch dargestellt.\\
+
+Für den nächsten Schritt werden im synthetischen Beispiel für die Abbildungen des Quaders jeweils Bildweite $w$ und Bildhöhe $h$ definiert. Da zunächst von gleichen Kameraauflösungen ausgegangen wird, sind die Bildbreiten und Höhen beider Kameras gleich. Danach werden die vier Mittelpunkte $a,b,c$ und $d$ der Bildkanten definiert mit $a = [\frac{w-1}{2} \; 0 \; 1]^T, b = [w-1 \; \frac{h-1}{2}\; 1]^T, c = [\frac{w-1}{2} \; h-1 \; 1]^T, d = [0 \; \frac{h-1}{2} \; 1]^T$.
 
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{images/Scherungstransformation.png}
-	\captionof{figure}{Die Abbildung verdeutlicht noch mal Schematisch, wie sich die Punkte ausrichten sollen. Bild a) zeigt die durch die Rektifizierung verschobenen Bildkantenmitten. Bild b= zeigt, wie sich die Bildkantenmitten durch die Scherungstransformation wieder ausrichten sollen.} 
+	\captionof{figure}{Die Verbindungslinien  $\overline{bd}$ und $\overline{ca}$ sollen so ausgerichtet werden, dass sie orthogonal zueinander stehen.} 
+	\label{fig:PreserveAspectRatio}
 \end{minipage}\\ \\
 
-Die Punkte $a,b,c,d$ und auch $a',b',c',d'$ geben die Bildbreiten der noch unberührten Bilder an. Nach der Rektifizierung sind die Bilder so verzerrt, dass die Kanten mitten sich meistens nicht mehr direkt gegenüber von einander befinden. Die Punkte $a,b,c,d$ und $a',b',c',d'$ werden mit den Matrizen $H_p, H'_p, H_r$ und $H'_r$ verrechnet, so dass man die genaue neue Position der Kanten Mitten nach der Rektifizierung hat. 
+Die Punkte $a,b,c,d$ und auch $a',b',c',d'$ sind die Mittelpunkte der noch nicht rektifizierten Bildkanten. Diese werden mit den Transformationsmatrizen $H_sH_rH_p$ und $H_s'H_r'H_p'$ verrechnet, um so die Position der Kantenmitten nach der Rektiizierung zu erhalten.
+
+%geben die Bildbreiten der noch unberührten Bilder an. Nach der Rektifizierung sind die Bilder so verzerrt, dass die Kanten mitten sich meistens nicht mehr direkt gegenüber von einander befinden. Die Punkte $a,b,c,d$ und $a',b',c',d'$ werden mit den Matrizen $H_p, H'_p, H_r$ und $H'_r$ verrechnet, so dass man die genaue neue Position der Kanten Mitten nach der Rektifizierung hat. 
 
 \begin{gather*}
 	\hat{a} = H_r\cdot H_p \cdot a\\
@@ -501,7 +585,9 @@ Die Punkte $a,b,c,d$ und auch $a',b',c',d'$ geben die Bildbreiten der noch unber
 	\hat{d'} = H'_r\cdot H'_p \cdot d'\\
 \end{gather*}
 
-Um aus $\hat{a},\hat{b},\hat{c},\hat{d}$ und auch $\hat{a}',\hat{b}',\hat{c}',\hat{d}'$ wieder Punkte der affinen Ebene zu machen werden sie jeweils durch ihre dritte Komponenten geteilt, so das $\hat{a}_w,\hat{b}_w,\hat{c}_w,\hat{d}_w$ und $\hat{a}'_w,\hat{b}'_w,\hat{c}'_w,\hat{d}'_w$ jeweils den Wert eins besitzen. Danach können die Vektoren $\vec{x}$ und $\vec{y}$ aus den Differenzen der sich ursprünglich gegenüberliegenden Punkte gebildet werden.
+%Um aus $\hat{a},\hat{b},\hat{c},\hat{d}$ und auch $\hat{a}',\hat{b}',\hat{c}',\hat{d}'$ wieder Punkte der affinen Ebene zu machen werden sie jeweils durch ihre dritte Komponenten geteilt, so das $\hat{a}_w,\hat{b}_w,\hat{c}_w,\hat{d}_w$ und $\hat{a}'_w,\hat{b}'_w,\hat{c}'_w,\hat{d}'_w$ jeweils den Wert eins besitzen. 
+
+Danach können die Vektoren $\vec{x}$ und $\vec{y}$ aus den Differenzen der sich ursprünglich gegenüberliegenden Punkte gebildet werden.
 
 \begin{gather}
 	x = \hat{b}-\hat{d}\\
@@ -510,43 +596,74 @@ Um aus $\hat{a},\hat{b},\hat{c},\hat{d}$ und auch $\hat{a}',\hat{b}',\hat{c}',\h
 	y' = \hat{c}'-\hat{a}'
 \end{gather}
 
-$x$ und $y$ sind Vektoren der euklidischen Bildebene. Die Rechwinkligkeit beider wird also erhalten, wenn gilt:
+$x$ und $y$ sind Vektoren der euklidischen Bildebene\cite{ZZ}. Das heißt, sie sind genau dann orthogonal zueinander wenn gilt:
 
 \begin{gather}
-	(H_sx)^T(H_sy)= 0 \\
-	(H'_sx')^T(H'_sy')= 0 
+	(H_sx)^T(H_sy)= 0 \label{eq:OrthoHs}\\
+	(H'_sx')^T(H'_sy')= 0 \label{eq:OrthoHs2}
 \end{gather}
 
-Die Seitenverhältnisse der Bilder werden beibehalten, wenn gilt:
+Für die Erhaltung der Seitenverhältnisse gilt dann:
 
 \begin{gather}
-	\frac{(H_sx)^T(H_sx)}{(H_sy)^T(H_sy)} = \frac{w^2}{h^2}\\
-	\frac{(H'_sx')^T(H'_sx')}{(H'_sy')^T(H'_sy')} = \frac{w'^2}{h'^2}	
+	\frac{(H_sx)^T(H_sx)}{(H_sy)^T(H_sy)} = \frac{w^2}{h^2} \label{eq:SeitenverhaeltnisHs}\\
+	\frac{(H'_sx')^T(H'_sx')}{(H'_sy')^T(H'_sy')} = \frac{w'^2}{h'^2}\label{eq:SeitenverhaeltnisHs2}	
 \end{gather}
 
-Für $u_a, u'_a, u_b$ und $u'_b$ jeweils Gleichungen auf Basis der jeweiligen Bild Höhen und Breiten $w,w',h,h'$ und $x,x',y$ und $y'$ und unter einhaltung der Aussagen der Gleichungen 5.118 bis 5.121, aufgestellt werden\cite{ZZ,ACM}. 
+Anhand der in den Gleichungen \ref{eq:OrthoHs}, \ref{eq:OrthoHs2}, \ref{eq:SeitenverhaeltnisHs} und \ref{eq:SeitenverhaeltnisHs2} können die folgenden Gleichungen für die Matirixeinträge für $H_s$ und $H_s'$ aufgestellt werden\cite{ZZ,ACM}.
+
 
 \begin{gather}
-	u_a = \frac{h^2x_v^2+w^2+y_v^2}{hw(x_vy_u-x_uy_v)}\\
-	u_b = \frac{h^2x_ux_v+w^2y_uy_v}{hw(x_uy_v-x_vy_u)}
+u_a = \frac{h^2x_v^2+w^2+y_v^2}{hw(x_vy_u-x_uy_v)}\\
+u_b = \frac{h^2x_ux_v+w^2y_uy_v}{hw(x_uy_v-x_vy_u)}
 \end{gather}
 
-Selbe Gleichungen werden auch für $u'_a$ und $u'_b$ aufgestellt. Das Ergebnis der Scherungstransformation ist in Abbildung 5.17 dargestellt. \textcolor{red}{ Wie zu sehen ist, ist die Minimierung noch nicht zu hindert prozent perfekt, hierfür müsste man noch ein paar mehr Interationsschritte bei finden von $z$ einfügen.}(ICH WEIß GANZ EHRLICH NICHT WORAN ES LIEGT...)
+%Für $u_a, u'_a, u_b$ und $u'_b$ jeweils Gleichungen auf Basis der jeweiligen Bild Höhen und Breiten $w,w',h,h'$ und $x,x',y$ und $y'$ und unter Einhaltung der Aussagen der Gleichungen 5.118 bis 5.121, aufgestellt werden\cite{ZZ,ACM}. 
+
+Die selben Gleichungen werden auch für $u'_a$ und $u'_b$ aufgestellt. Das Ergebnis der gesammten Transformation $H$ mit $H_sH_rH_p$ und $H'$ mit $H_s'H_r'H_p'$ ist in den Abbildungen \ref{fig:RectSameHsHrHp1} und \ref{fig:RectSameHsHrHp2} zu sehen.\\
+
+%Das Ergebnis der Scherungstransformation ist in Abbildung 5.17 dargestellt. \textcolor{red}{ Wie zu sehen ist, ist die Minimierung noch nicht zu hindert prozent perfekt, hierfür müsste man noch ein paar mehr Interationsschritte bei finden von $z$ einfügen.}(ICH WEIß GANZ EHRLICH NICHT WORAN ES LIEGT...)
 
 
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1.\linewidth]{images/Rectification_HsHrHp_same_Solutions.png}
-	\captionof{figure}{Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.} 
-\end{minipage}\\ \\
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=1.\linewidth]{images/Rectification_HsHrHp_same_Solutions.png}
+%	\captionof{figure}{Abbildung beider Bilder nach anwenden der Matrizen $H_s \cdot H_r \cdot H_p$ und $H_s' \cdot H_r' \cdot H_p'$. Die horizontale Verzerrung wurde reduziert.} 
+%\end{minipage}\\ \\
+%
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=1.\linewidth]{images/Rectification_four_same_Solutions.png}
+%	\captionof{figure}{In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut} 
+%\end{minipage}\\ \\
 
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1.\linewidth]{images/Rectification_four_same_Solutions.png}
-	\captionof{figure}{In dieser Abbildung wurden die Epipolarlinien noch in den Grafikplot mit eingebaut} 
-\end{minipage}\\ \\
+
+\begin{figure}[!htb]
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/Rectification_HsHrHp_same_Solutions.png}
+	\caption[$H_sH_rH_p$ und $H_s'H_r'H_p'$ Transformation]{Abbildungen der Quader nach der Tranfromation mit $H_sH_rH_p$ und $H_s'H_r'H_p'$}
+	\label{fig:RectSameHsHrHp1}
+	\endminipage\hfill
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/Rectification_HsHrHp_same_Solutions_Lines.png}
+	\caption[$H_sH_rH_p$ und $H_s'H_r'H_p'$ Transformation mit Epipolarlinien]{Abbildungen der Quader nach der Tranfromation mit $H_sH_rH_p$ und $H_s'H_r'H_p'$ mit eingezeichneten Epipolarlinien}
+	\label{fig:RectSameHsHrHp2}
+	\endminipage\hfill
+	%\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
+	%\label{fig:RecT52}
+\end{figure}
 
 \section{Rektifizierung mit unterschiedlichen Kamerauflösungen}
+
+
+Nachdem Rektifizerung mit gleichen Kamerauflösugnen funktioniert hat, soll getestet werden was bei unterschiedlichen passiert.
+
+
+Vielfaches der vorherigen: Bild wird vergrößert aber wird dadurch vllt ungenau\\
+
+unterschiedlich: die horzontalen Versätze stimmen nicht mehr und es kann keine disparity map erstellt werden \\
+
+
 
 \begin{minipage}{\linewidth}
 	\centering
