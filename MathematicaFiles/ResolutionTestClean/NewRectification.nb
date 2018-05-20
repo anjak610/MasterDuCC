@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    119991,       2883]
-NotebookOptionsPosition[    119680,       2869]
-NotebookOutlinePosition[    120025,       2884]
-CellTagsIndexPosition[    119982,       2881]
+NotebookDataLength[    121129,       2901]
+NotebookOptionsPosition[    120817,       2887]
+NotebookOutlinePosition[    121163,       2902]
+CellTagsIndexPosition[    121120,       2899]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1389,7 +1389,7 @@ criterion_______________________________________________\n\>\"", "]"}], ";",
        RowBox[{"\"\<e inf = \>\"", ",", " ", 
         RowBox[{"N", "[", "eInf", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
-      RowBox[{"Vc", "=", "1"}], ";", 
+      RowBox[{"Vc", "=", "0.705"}], ";", 
       RowBox[{"(*", 
        RowBox[{"Wie", " ", "bekomme", " ", "ich", " ", "Vc", " ", "raus", 
         RowBox[{"??", "?"}]}], "*)"}], "\[IndentingNewLine]", 
@@ -1861,9 +1861,9 @@ criterion_______________________________________________\n\>\"", "]"}], ";",
              RowBox[{"pjHeight", "-", "1"}], ")"}], "/", "2"}], ",", "1"}], 
           "}"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
       RowBox[{"pjWidth", " ", "=", " ", 
-       RowBox[{"pjWidth", " ", "*", "2.3"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"pjWidth", " ", "*", "1"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"pjHeight", " ", "=", " ", 
-       RowBox[{"pjHeight", " ", "*", "3.2"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"pjHeight", " ", "*", "1"}]}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"pjA", "=", " ", 
        RowBox[{"{", 
@@ -2173,7 +2173,9 @@ criterion_______________________________________________\n\>\"", "]"}], ";",
          RowBox[{
           RowBox[{"RecPointsC1", "[", 
            RowBox[{"[", "i", "]"}], "]"}], "=", 
-          RowBox[{"Hs", ".", "Hr", ".", "Hp", ".", 
+          RowBox[{"(*", 
+           RowBox[{"Hs", ".", "Hr", "."}], "*)"}], 
+          RowBox[{"Hp", ".", 
            RowBox[{"pi", "[", 
             RowBox[{"[", "i", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
          RowBox[{
@@ -2199,7 +2201,9 @@ criterion_______________________________________________\n\>\"", "]"}], ";",
          RowBox[{
           RowBox[{"RecPointsC2", "[", 
            RowBox[{"[", "i", "]"}], "]"}], "=", 
-          RowBox[{"HsPrime", ".", "HrPrime", ".", "HpPrime", ".", 
+          RowBox[{"(*", 
+           RowBox[{"HsPrime", ".", "HrPrime", "."}], "*)"}], 
+          RowBox[{"HpPrime", ".", 
            RowBox[{"pj", "[", 
             RowBox[{"[", "i", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
          RowBox[{
@@ -2435,9 +2439,9 @@ criterion_______________________________________________\n\>\"", "]"}], ";",
         RowBox[{"G1", ",", "G2", ",", 
          RowBox[{"PlotRange", "\[Rule]", " ", "All"}]}], "]"}], "]"}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"yAx", "=", "1"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"yAx", "=", "1.4"}], ";", "\[IndentingNewLine]", 
       RowBox[{"xAx", "=", 
-       RowBox[{"-", "1"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"-", "0.6"}]}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{"Show", "[", 
@@ -2863,12 +2867,26 @@ criterion_______________________________________________\n\>\"", "]"}],
    3.7356312644733667`*^9, 3.7356312670263395`*^9}, {3.735631428537399*^9, 
    3.735631428640408*^9}, {3.7356316039594326`*^9, 3.7356316097094336`*^9}, {
    3.735631699546802*^9, 3.735631701025818*^9}, {3.7356317880348125`*^9, 
-   3.7356317886248417`*^9}, {3.735632092791506*^9, 
-   3.7356320947034745`*^9}},ExpressionUUID->"a2a2edca-7860-431a-a75f-\
+   3.7356317886248417`*^9}, {3.735632092791506*^9, 3.7356320947034745`*^9}, {
+   3.7356525420150156`*^9, 3.735652545587016*^9}, {3.73570844999817*^9, 
+   3.7357084502741675`*^9}, {3.7357085118011847`*^9, 3.735708521958187*^9}, {
+   3.7357086313992176`*^9, 3.735708632014186*^9}, {3.7357086662202253`*^9, 
+   3.7357086663601985`*^9}, {3.7357087022892056`*^9, 
+   3.7357087025362062`*^9}, {3.735708818879118*^9, 3.7357088288401194`*^9}, {
+   3.7357088680831604`*^9, 3.73570887184813*^9}, {3.735708910688141*^9, 
+   3.735708910949141*^9}, {3.7357089483791513`*^9, 3.7357089575611534`*^9}, {
+   3.7357090014121976`*^9, 3.735709011368198*^9}, {3.73570904801521*^9, 
+   3.7357090482501793`*^9}, 3.735709078986214*^9, {3.7357091200868034`*^9, 
+   3.7357091253267746`*^9}, {3.735709683231958*^9, 3.7357096933389597`*^9}, {
+   3.7357097572176113`*^9, 3.7357097624316125`*^9}, {3.7357098144436584`*^9, 
+   3.7357098151756268`*^9}, 3.735709850722636*^9, {3.735709896365173*^9, 
+   3.7357099064101763`*^9}, {3.7357099370121813`*^9, 
+   3.7357099444161806`*^9}, {3.7357099768861966`*^9, 
+   3.7357100101942043`*^9}},ExpressionUUID->"a2a2edca-7860-431a-a75f-\
 8a70d82dc2b7"]
 },
-WindowSize->{931, 1003},
-WindowMargins->{{Automatic, -948}, {Automatic, 0}},
+WindowSize->{954, 1003},
+WindowMargins->{{Automatic, -1922}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2883,7 +2901,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 119118, 2847, 11007, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 120255, 2865, 10931, "Input", "ExpressionUUID" -> \
 "a2a2edca-7860-431a-a75f-8a70d82dc2b7"]
 }
 ]

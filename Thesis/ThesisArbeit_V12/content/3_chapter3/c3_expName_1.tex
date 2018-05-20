@@ -2,58 +2,52 @@
 \label{sec:schachbrettAlg} 
 
 
+Für die reelle Rekonstruktion, wie sie in Kapitel \ref{sec:real} beschrieben wird, sind die korrespondierenden Punkte
+
+
 In diesem Teil der Masterthesis soll am Ende ein Algorithmus entstehen, welcher durch einen bereits bestehenden Algorithmus zur Detektion von Eckpunkten eines Schachbretts, eine Liste an Eckpunkten bekommt und diese auf deren Nachbarschaftsverhältnisse prüft. Die Schachbretter können dabei sowohl Kissen- als auch Tonnennverzeichnungen aufweisen und oder perspektivisch verzerrt sein. Mit den Algorithmus sollen Punkte wissen in welchen Reihen sie sich sowohl in x- als auch y-Richtung befinden. Jeder Punkt bekommt also eine Indexnummer in x-, sowie y-Richtung beziehungsweise in unserem Beispiel wird die y-Koordinate als \textit{j} bezeichnet und die x-Koordinate als \textit{i}, zugewiesen. Jeder Punkt bekommt mit Hilfe von den Mathematica eigenen \textit{Associations} einen \textit{Key} mit \textit{NeighbourJ} und \textit{NeighbourI} zugeteilt. Mit Hilfe dieser \textit{Keys} kann dann später bei einem Stereobildpaar zum Beispiel die Korrespondierenden Eckpunkte der Schachbretter rausgesucht werden, was vielleicht genauere Ergebnisse liefert also die Suche von Hand. Des weiteren kann dieser Algorithmus in späteren Projekten vielleicht bei der Rausrechnung von Verzeichnungen hilfreich sein.\\
 
 
 
-Dieser Algorithmus nimmt die Liste mit den Koordinaten der Eckpunkte entgegen und sortiert und nummeriert diese Zeilen- und Spaltenweise durch.\\
+\section{Algorithmus}
+%
+%Dieser Algorithmus nimmt die Liste mit den Koordinaten der Eckpunkte entgegen und sortiert und nummeriert diese Zeilen- und Spaltenweise durch.\\
+%
+%Jeder Punkt ist somit über zwei Indizes codiert und enthält die Information, in welcher Zeile und in welcher Spalte des Schachbrettmusters er sich befindet.\\
+%
+%Da nicht immer garantiert ist, dass alle Punkte innerhalb des Schachbretts zuvor gefunden worden, enthält der Sortierungsalgorithmus eine Funktion, in welchem er Lücken des innerhalb ausfindig macht und synthetische Eckpunkte setzt. Diese synthetisch gesetzten Punkte, werden markiert, so dass sie nicht in die Liste der möglichen korrespondierenden Punkte fallen.
 
-Jeder Punkt ist somit über zwei Indizes codiert und enthält die Information, in welcher Zeile und in welcher Spalte des Schachbrettmusters er sich befindet.\\
+Definieren eines äußeren Rahmens um das SChacbrett durch sucher der Minimalsten und maximalsten Punkte sowohl in x- als auch in y-Richtung\\
 
-Da nicht immer garantiert ist, dass alle Punkte innerhalb des Schachbretts zuvor gefunden worden, enthält der Sortierungsalgorithmus eine Funktion, in welchem er Lücken des innerhalb ausfindig macht und synthetische Eckpunkte setzt. Diese synthetisch gesetzten Punkte, werden markiert, so dass sie nicht in die Liste der möglichen korrespondierenden Punkte fallen.
+Zellen werden in kleinere Suchfenster unterteilt\\
 
-\section{Vorläufiges Klassendiagramm}
+Die Suchfenster in x-Richtung werden mit dem Index $j$ gekennzeichnet die Suchfenster in y-Richtung mit werden mit dem Index $i$ bezeichnet. \\
 
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1\linewidth]{images/KD1.png}
-	\captionof{figure}{Klassendiagramm}
-\end{minipage}
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1\linewidth]{images/KD2.png}
-	\captionof{figure}{Klassendiagramm}
-\end{minipage}
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1\linewidth]{images/KD3.png}
-	\captionof{figure}{Klassendiagramm}
-\end{minipage}
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1\linewidth]{images/KD4.png}
-	\captionof{figure}{Klassendiagramm}
-\end{minipage}
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=1\linewidth]{images/KD5.png}
-	\captionof{figure}{Klassendiagramm}
-\end{minipage}\\
+Alle Punkte in der ersten Suchfenster Reihe von $j$ und von $i$ werden als mögliche Startpunkte gekennzeichnet. In Abbildung \ref{fig:7.1} befinden sich die möglichen Startpunkte innerhalb des blauen Bereichs. Die Suche nach einem Startpunkt und auch nach den ersten Punkten in zwei Richtungen vom Startpunkt aus, ist relativ komplex. Der Grund hierfür ist, dass sämtliche Schachbretter wie in \ref{sec:SchachAlgBeispiele} gezeigt, in Betracht gezogen werden müssen. Um Anhand des Algorithmus später korrespondierende Punkte in zwei Aufnahmen des Schachbretts finden kann, sollte gewährleistet sein, dass der Startpunkt immer an der selben Ecke eines Schachbretts platziert wird.\\
 
+Innerhalb der blau gefärbten Fläche wird nach einem Startpunkt gesucht. Die Suche nach einem Startpunkt wird pro $i$- und $j$-Richtung in zwei Abfragen unterteilt. In der ersten Abfrage wird innerhalb der ersten Suchfensterreihe in $i$-Richtung nach dem Punkt mit der kleinsten $i$-Koordinate gesucht.Dieser Punkt wird als möglicher erster Startpunkte in die Variablen $VecI$ gespeichert. Danach wird geprüft ob es innerhalb der ersten Suchfensterreihe in $i$-Richtung einen weiteren Punkt gibt dessen $j$-Koordinate kleiner ist als die des momentan gesetzten Punktes $VecI$, wird ein solcher Punkt gefunden, so wird dieser Punkt als neuer $VecI$ gesetzt, sofern seine $i$-Koordinate nicht größer ist als die des zuvorigen $VecI$ plus einem Pufferwert. Durch den Puffer wird verhindert, dass ein Punkt als $VecI$ gesetzt wird, welcher sich möglicherweise schon in der zweiten Reihe der Schachbrettpunkte befinden würde. In Abbildung \ref{fig:7.1} ist $VecI$ mit als oranger Punkt abgebildet.\\
 
+%\begin{figure}[!htb]
+%	\minipage{0.48\textwidth}
+%	\includegraphics[width=\linewidth]{images/VerzeichnetesSchachbrett_0.png}
+%	\caption{ }
+%	\label{fig:7.1}
+%\end{figure}
+%	\endminipage\hfill
 \begin{figure}[!htb]
-	\minipage{0.48\textwidth}
-	\includegraphics[width=\linewidth]{images/VerzeichnetesSchachbrett_0.png}
-	\caption{}
-	\label{fig:awesome_image1}
-	\endminipage\hfill
-	\minipage{0.48\textwidth}
-	\includegraphics[width=\linewidth]{images/VerzeichnetesSchachbrett_1.png}
-	\caption{}
-	\label{fig:awesome_image2}
-	\endminipage\hfill
-	%	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet}
+	\centering
+	\includegraphics[width=0.8\linewidth]{images/VerzeichnetesSchachbrett_1.png}
+	\caption[Startpunktsuche in Schachbrettpunkten]{Die in blau markierten Bereiche beinhalten die möglichen Startpunkte. Der Bereich entlang der horizontalen $j$- Achse bildet die erste Suchfensterreihe in $i$-Richtung. Der blaue Bereich entlang der vertikalen $i$-Achse bildet die erste Suchfensterreihe in $j$-Richtung. Der gelbe Punkt steht für den Punkt welcher als $VecJ$ bezeichnet wurde und der orange Punkt ist derjenige Punkt, welcher als $VecI$ bestimmt wurde}
+	\label{fig:7.1}
 \end{figure}
+
+
+
+
+Für die Punkte in der ersten Suchfensterreihe in $j$-Richtung wird nach dem Punt mit der 
+In der ersten Reihe der Suchfenster in $j$-Richtung wird nach dem Punkt mit der geringsten $j$-Koordinate gesucht.
+
+
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
@@ -88,9 +82,11 @@ Da nicht immer garantiert ist, dass alle Punkte innerhalb des Schachbretts zuvor
 \end{minipage}\\
 
 
-\section{Beispiele}
+\section{Extrembeispiele}
+\label{sec:SchachAlgBeispiele}
 
 In den folgenden Beispielen sieht man jeweils das Originalbild und ein Bild welches die durch den Algorithmus sortierten Punkte farbig ausgibt. Die grünen eingefärbten Punkte sind in den Bildern des Algorithmus die Nachbarn, welche sich in i-Richtung an der dritten Stelle befinden. Natürlich können auch andere Reihen oder auch einzelne Punkte abgefragt werden. 
+\pagebreak
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
@@ -105,18 +101,6 @@ In den folgenden Beispielen sieht man jeweils das Originalbild und ein Bild welc
 	\endminipage\hfill
 \end{figure}
 
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=1\linewidth]{images/Tonnenverzeichnung.png}
-%	\captionof{figure}{Bild eines Tonnenförmig verzeichneten Schachbretts}
-%\end{minipage}\\
-%
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=1\linewidth]{images/AlgTonnenverzeichnung.png}
-%	\captionof{figure}{Algorithmisch detektierte Linie der dritten i-Reihe}
-%\end{minipage}\\\\
-
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/perspektivisch.png}
@@ -130,17 +114,6 @@ In den folgenden Beispielen sieht man jeweils das Originalbild und ein Bild welc
 	\endminipage\hfill
 \end{figure}
 
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=1\linewidth]{images/perspektivisch.png}
-%	\captionof{figure}{Bild eines perspektivisch verzerrtem Schachbretts}
-%\end{minipage}\\
-%
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=1\linewidth]{images/AlgPerspektifisch.png}
-%	\captionof{figure}{Algorithmisch detektierte Linie der dritten i-Reihe}
-%\end{minipage}\\\\
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
@@ -155,30 +128,6 @@ In den folgenden Beispielen sieht man jeweils das Originalbild und ein Bild welc
 	\endminipage\hfill
 \end{figure}
 
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=.8\linewidth]{images/KissenVerzeichnung.png}
-%	\captionof{figure}{Bild eines Kissenförmig verzeichnetem Schachbretts}
-%\end{minipage}\\
-%
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=1\linewidth]{images/AlgKissen.png}
-%	\captionof{figure}{Algorithmisch detektierte Linie der dritten i-Reihe}
-%\end{minipage}\\\\
-
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=.8\linewidth]{images/TonnePers.png}
-%	\captionof{figure}{Bild eines Tonnenförmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts}
-%\end{minipage}\\
-%
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=1\linewidth]{images/AlgTonnePers.png}
-%	\captionof{figure}{Algorithmisch detektierte Linie der dritten i-Reihe}
-%\end{minipage}\\\\
-
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/TonnePers.png}
@@ -191,19 +140,6 @@ In den folgenden Beispielen sieht man jeweils das Originalbild und ein Bild welc
 	\label{fig:awesome_image2}
 	\endminipage\hfill
 \end{figure}
-
-%
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=.8\linewidth]{images/extrBsp.png}
-%	\captionof{figure}{Kissenverzeichnung start rotiert}
-%\end{minipage}\\
-%
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=1\linewidth]{images/AlgExtrBsp.png}
-%	\captionof{figure}{Kissenverzeichnung start rotiert bisher gefundene Punkte}
-%\end{minipage}\\\\
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
@@ -218,14 +154,39 @@ In den folgenden Beispielen sieht man jeweils das Originalbild und ein Bild welc
 	\endminipage\hfill
 \end{figure}
 
-%\pagebreak
-%\subsection{Weiteres Vorgehen/ Was fehlt noch}
-%
-%Was nun noch in den Algorithmus eingebaut werden muss ist eine \textit{Saftylist}-Funktion welche auch in i-Richtung wirkt. Des Weitern muss davon ausgeganegn werden, dass der voranlaufgende Algorithmus zu Auffindung der Punkte, nicht immer alle Punkte detektiert. Es muss also noch eine Funktion geschrieben werden, welche zunächst prüft, ob es noch einen nächsten Punkt gibt, wenn dies nicht der Fall ist wird ein vorläufiger Punkt an die Stelle gesetzt, an welcher der Punkt sich befinden sollte und von diesem aus weiter geprüft ob es noch einen gibt. Sollte dies der Fall sein, so wird ab dem nächsten real gefundenen Punkt weiter gesucht und der selbst erzeugte Punkt wird als ''fake'' Punkt eingesetzt. Sollte nach dem erstellten Punkt weiterhin keiner folgen, kann man überlegen den test nochmals vom selbst erstellten Punkt aus auszuführen, oder es dabei zu belassen. \\
-%
-%(VERBESSERN)
-%Des Weiteren muss nochmal genau ermittelt werden warum es bei einem sehr extremen Fall wie in der folgenden Abbildung noch nicht ganz funktioniert. Die Vermutung ist, dass hier noch mit SaftyFunktionen in i-Richtungen hantiert werden muss. 
-%
-%
-%
-%Als letztes werden die Pufferwerte momentan noch hart gecoded, diese sollen in Zukunft aus den Zahlenbereichen in welchen sich die Punkte aufhalten ausgerechnet werden.
+
+\section{Modulübersicht}
+
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=1\linewidth]{images/KD1.png}
+	\captionof{figure}{Klassendiagramm}
+\end{minipage}
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=1\linewidth]{images/KD2.png}
+	\captionof{figure}{Klassendiagramm}
+\end{minipage}
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=1\linewidth]{images/KD3.png}
+	\captionof{figure}{Klassendiagramm}
+\end{minipage}
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=1\linewidth]{images/KD4.png}
+	\captionof{figure}{Klassendiagramm}
+\end{minipage}
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=1\linewidth]{images/KD5.png}
+	\captionof{figure}{Klassendiagramm}
+\end{minipage}\\
+
+
+
+
+
+
+
