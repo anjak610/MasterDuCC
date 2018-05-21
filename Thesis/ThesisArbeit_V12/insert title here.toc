@@ -33,8 +33,8 @@
 \contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{64}{section.523}
 \contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{67}{chapter.534}
 \contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{67}{section.535}
-\contentsline {section}{\numberline {7.2}Extrembeispiele}{71}{section.541}
-\contentsline {section}{\numberline {7.3}Modul\IeC {\"u}bersicht}{74}{section.547}
-\contentsline {chapter}{\numberline {8}Fazit - Conclusion}{77}{chapter.553}
-\contentsline {chapter}{Abbildungsverzeichnis}{78}{chapter*.554}
-\contentsline {chapter}{Literaturverzeichnis}{82}{chapter*.555}
+\contentsline {section}{\numberline {7.2}Extrembeispiele}{73}{section.541}
+\contentsline {section}{\numberline {7.3}Modul\IeC {\"u}bersicht}{75}{section.547}
+\contentsline {chapter}{\numberline {8}Fazit - Conclusion}{78}{chapter.553}
+\contentsline {chapter}{Abbildungsverzeichnis}{79}{chapter*.554}
+\contentsline {chapter}{Literaturverzeichnis}{83}{chapter*.555}
