@@ -6,18 +6,22 @@ Zur Detektion von korrespondierenden Punkten in Bildaufnahmen von zwei zweidimen
 
 
 
-Als erstes wird initial ein Startwert gesetzt (HIER WEITER SCHREIBEN)
-
-
-(Hier Grafik der Funktionsübersicht)
+Das Bild des Schachbretts wird in ein zweidimensionales Koordinatensystem $(A,\alpha)$ mit $\alpha = (j,i)$ gelegt. Als erstes wird ein Startpunkt innerhalb des Schachbretts gesucht. Der Startpunkt wird so bestimmt, dass es immer die linke unterste Ecke des Schachbretts ist. Ist der Startpunkt bestimmt, werden der erste Punkt entlang der unteren Schachbrettkante in $j$-Richtung und der erste Punkt entlang der linken Randkante in $i$-Richtung gesucht. Anhand der ersten Punkte, können vom Startpunkt aus zwei Richtungsvektoren bestimmt werden. Die Richtungsvektoren ...\\
 
 
 
- Jeder Punkt bekommt also eine Indexnummer in x-, sowie y-Richtung beziehungsweise in unserem Beispiel wird die y-Koordinate als \textit{j} bezeichnet und die x-Koordinate als \textit{i}, zugewiesen. Jeder Punkt bekommt mit Hilfe von den Mathematica eigenen \textit{Associations} einen \textit{Key} mit \textit{NeighbourJ} und \textit{NeighbourI} zugeteilt. Mit Hilfe dieser \textit{Keys} kann dann später bei einem Stereobildpaar zum Beispiel die Korrespondierenden Eckpunkte der Schachbretter rausgesucht werden, was vielleicht genauere Ergebnisse liefert also die Suche von Hand. Des weiteren kann dieser Algorithmus in späteren Projekten vielleicht bei der Rausrechnung von Verzeichnungen hilfreich sein.\\
+(WEITER SCHREIBEN!!!!!)\\
 
-%Irgendwie noch definieren das x = i und y = j sein sollen. 
-%Bsp:
-%Für die Sortierung der Schachbrettpunkte, wird das Schachbrett in ein Koordinatensystem, mit vertikaler Achse $i$ und horizontaler Achse $j$, gelegt.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{images/VerzeichnetesSchachbretFunktion.png}
+	\caption[Funktionsübersicht des Sorieralgorithmus]{In der Abbildung ist die Vorgehensweise des Sortierungsalgorithmus schematisch zu sehen.}
+	\label{fig:UebersichtSortierungsAlg}
+\end{figure}
+
+
+
 
 \section{Sortierungsalgorithmus}
 
@@ -163,25 +167,59 @@ Zuvor wurde erwähnt, dass es neben $SaftyList$ noch eine andere Funktion, welch
 
 Um das zu verhindern, wurde eine Sicherheitsfunktion eingebaut. Sollte es vorerst kein Punkt im Suchbereich entdeckt, werden, so setzt die Sicherheitsfunktion einen synthetischen Punkt und sucht ausgehend von diesem synthetischen weiter nach Punkten. Sollte ein Punkt nach dem synthetischen Punkt gefunden werden, so bleibt der synthetische Punkt bestehen und die Suche wird normal fortgesetzt. Wird nach dem setzten des synthetischen Punkt kein weiterer Punkt gefunden, gilt die Suche in der Reihe beziehungsweise Spalte für beendet.\\
 
-(GRAFIK EINBAUEN FÜR SYNTHETISCHEN PUNKT)
+(GRAFIK EINBAUEN FÜR SYNTHETISCHEN PUNKT)\\
+
+
+In Abbildung \ref{fig:ChessBoardLeft} und \ref{fig:ChessBoardRight} wird ein Schachbrett aus zwei unterschiedlichen Blickwinkeln dargestellt. Die roten Punkte markieren die Eckpunkte, deren Koordinaten an den Sortierungsalgorithmus übergeben werden. In den Abbildungen \ref{fig:ChessBoardLeftAlg} und \ref{fig:ChessBoardRightAlg} werden alle Punkte, welche in der Liste $SortedPoints$ gespeichert wurden in einem Plot ausgegeben. Es wird gesagt, dass alle Punkte deren Schlüssel $NeighbourI = 3$ ist, in grün dargestellt werden sollen. Das Ergebnis dieser Abfrage ist ebenfalls in den Abbildungen \ref{fig:ChessBoardLeftAlg} und \ref{fig:ChessBoardRightAlg} zu sehen. Der entstandene Sortierungalgorithmus ist also in der Lage aus Bildern zweier Schachbretter gleiche Eckpunkte und somit korrespondierende Punkte zu detektieren. 
+
+
+\begin{figure}[!htb]
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/ChessBoardLeft.png}
+	\caption{Bild eines Tonnenförmig verzeichneten Schachbretts}
+	\label{fig:ChessBoardLeft}
+	\endminipage\hfill
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/ChessBoardRight.png}
+	\caption{Algorithmisch detektierte Linie der dritten i-Reihe}
+	\label{fig:ChessBoardRight}
+	\endminipage\hfill
+\end{figure}
+
+
+\begin{figure}[!htb]
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/ChessBoardLeftAlg.png}
+	\caption{Bild eines Tonnenförmig verzeichneten Schachbretts}
+	\label{fig:ChessBoardLeftAlg}
+	\endminipage\hfill
+	\minipage{0.48\textwidth}
+	\includegraphics[width=\linewidth]{images/ChessBoardRightAlg.png}
+	\caption{Algorithmisch detektierte Linie der dritten i-Reihe}
+	\label{fig:ChessBoardRightAlg}
+	\endminipage\hfill
+\end{figure}
 
 
 \section{Extrembeispiele}
 \label{sec:SchachAlgBeispiele}
 
-In den folgenden Beispielen sieht man jeweils das Originalbild und ein Bild welches die durch den Algorithmus sortierten Punkte farbig ausgibt. Die grünen eingefärbten Punkte sind in den Bildern des Algorithmus die Nachbarn, welche sich in i-Richtung an der dritten Stelle befinden. Natürlich können auch andere Reihen oder auch einzelne Punkte abgefragt werden. 
+Der entstandenen Sortierungsalgorithmus wird an stark perspektivisch Verzerrten oder durch Bildfehler wie Verzeichnungen betroffenen Schachbrettern getestet. Auch hier wird gesagt, dass sich die die Punkte deren Schlüssel $NeighbourI = 3$ ist grün einfärben sollen. Die Abbildungen \ref{fig:Extreme1} bis \ref{fig:Extreme2} zeigen die Resultate der Punktesortierung in start verzerrten Schachbrettgittern.
+
+
+%In den folgenden Beispielen sieht man jeweils das Originalbild und ein Bild welches die durch den Algorithmus sortierten Punkte farbig ausgibt. Die grünen eingefärbten Punkte sind in den Bildern des Algorithmus die Nachbarn, welche sich in i-Richtung an der dritten Stelle befinden. Natürlich können auch andere Reihen oder auch einzelne Punkte abgefragt werden. 
 
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Tonnenverzeichnung.png}
 	\caption{Bild eines Tonnenförmig verzeichneten Schachbretts}
-	\label{fig:awesome_image1}
+	\label{fig:Extreme1}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/AlgTonnenverzeichnung.png}
 	\caption{Algorithmisch detektierte Linie der dritten i-Reihe}
-	\label{fig:awesome_image2}
+	\label{fig:Extreme2}
 	\endminipage\hfill
 \end{figure}
 
@@ -189,12 +227,12 @@ In den folgenden Beispielen sieht man jeweils das Originalbild und ein Bild welc
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/perspektivisch.png}
 	\caption{Bild eines perspektivisch verzerrtem Schachbretts}
-	\label{fig:awesome_image1}
+	\label{fig:Extreme3}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/AlgPerspektifisch.png}
 	\caption{Algorithmisch detektierte Linie der dritten i-Reihe}
-	\label{fig:awesome_image2}
+	\label{fig:Extreme4}
 	\endminipage\hfill
 \end{figure}
 
@@ -203,25 +241,25 @@ In den folgenden Beispielen sieht man jeweils das Originalbild und ein Bild welc
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/KissenVerzeichnung.png}
 	\caption{Bild eines Kissenförmig verzeichnetem Schachbretts}
-	\label{fig:awesome_image1}
+	\label{fig:Extreme5}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/AlgKissen.png}
 	\caption{Algorithmisch detektierte Linie der dritten i-Reihe}
-	\label{fig:awesome_image2}
+	\label{fig:Extreme6}
 	\endminipage\hfill
 \end{figure}
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
-	\includegraphics[width=\linewidth]{images/TonnePers.png}
-	\caption{Bild eines Tonnenförmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)}
-	\label{fig:awesome_image1}
+	\includegraphics[width=\linewidth]{images/Tonnenverzeichnung_Perspektivisch.png}
+	\caption{Bild eines Tonnenförmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts}
+	\label{fig:Extreme7}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
-	\includegraphics[width=\linewidth]{images/AlgTonnePers.png}
+	\includegraphics[width=\linewidth]{images/Tonnenverzeichnung_Perspektivisch_Alg.png}
 	\caption{Algorithmisch detektierte Linie der dritten i-Reihe}
-	\label{fig:awesome_image2}
+	\label{fig:Extreme8}
 	\endminipage\hfill
 \end{figure}
 
@@ -229,12 +267,12 @@ In den folgenden Beispielen sieht man jeweils das Originalbild und ein Bild welc
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/extrBsp.png}
 	\caption{Bild eines Tonnenförmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts}
-	\label{fig:awesome_image1}
+	\label{fig:Extreme9}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/AlgExtrBsp.png}
 	\caption{Algorithmisch detektierte Linie der dritten i-Reihe}
-	\label{fig:awesome_image2}
+	\label{fig:Extreme10}
 	\endminipage\hfill
 \end{figure}
 

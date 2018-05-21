@@ -32,9 +32,9 @@
 \contentsline {subsection}{\numberline {6.2.3}Scherungstransformation}{62}{subsection.496}
 \contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{64}{section.523}
 \contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{67}{chapter.534}
-\contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{67}{section.535}
-\contentsline {section}{\numberline {7.2}Extrembeispiele}{73}{section.541}
-\contentsline {section}{\numberline {7.3}Modul\IeC {\"u}bersicht}{75}{section.547}
-\contentsline {chapter}{\numberline {8}Fazit - Conclusion}{78}{chapter.553}
-\contentsline {chapter}{Abbildungsverzeichnis}{79}{chapter*.554}
-\contentsline {chapter}{Literaturverzeichnis}{83}{chapter*.555}
+\contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{68}{section.536}
+\contentsline {section}{\numberline {7.2}Extrembeispiele}{74}{section.544}
+\contentsline {section}{\numberline {7.3}Modul\IeC {\"u}bersicht}{76}{section.550}
+\contentsline {chapter}{\numberline {8}Fazit - Conclusion}{79}{chapter.556}
+\contentsline {chapter}{Abbildungsverzeichnis}{80}{chapter*.557}
+\contentsline {chapter}{Literaturverzeichnis}{84}{chapter*.558}

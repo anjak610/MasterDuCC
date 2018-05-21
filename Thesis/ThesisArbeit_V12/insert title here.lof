@@ -81,24 +81,29 @@
 \contentsline {figure}{\numberline {6.18}{\ignorespaces Rektifizierung mit $\zeta '_x = 2.3$ und $\zeta '_y = 3.2$}}{66}{figure.caption.533}
 \contentsline {figure}{\numberline {6.19}{\ignorespaces Rektifizierung mit $\zeta '_x = 2.3$ und $\zeta '_y = 3.2$}}{66}{figure.caption.533}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Startpunktsuche in Schachbrettpunkten}}{68}{figure.caption.536}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Finden der Startvektoren in Schachbrettpunkten}}{70}{figure.caption.537}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Klassendiagramm\relax }}{71}{figure.538}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Funktions\IeC {\"u}bersicht des Sorieralgorithmus}}{67}{figure.caption.535}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Startpunktsuche in Schachbrettpunkten}}{69}{figure.caption.537}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Finden der Startvektoren in Schachbrettpunkten}}{71}{figure.caption.538}
 \contentsline {figure}{\numberline {7.4}{\ignorespaces Klassendiagramm\relax }}{72}{figure.539}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Klassendiagramm\relax }}{72}{figure.540}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{73}{figure.caption.542}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{73}{figure.caption.542}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{73}{figure.caption.543}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{73}{figure.caption.543}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{74}{figure.caption.544}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.544}
-\contentsline {figure}{\numberline {7.12}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts(GRFIK AUSTAUSCHEN BILD IS KACKE)\relax }}{74}{figure.caption.545}
-\contentsline {figure}{\numberline {7.13}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.545}
-\contentsline {figure}{\numberline {7.14}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{75}{figure.caption.546}
-\contentsline {figure}{\numberline {7.15}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.546}
-\contentsline {figure}{\numberline {7.16}{\ignorespaces Klassendiagramm\relax }}{75}{figure.548}
-\contentsline {figure}{\numberline {7.17}{\ignorespaces Klassendiagramm\relax }}{75}{figure.549}
-\contentsline {figure}{\numberline {7.18}{\ignorespaces Klassendiagramm\relax }}{76}{figure.550}
-\contentsline {figure}{\numberline {7.19}{\ignorespaces Klassendiagramm\relax }}{76}{figure.551}
-\contentsline {figure}{\numberline {7.20}{\ignorespaces Klassendiagramm\relax }}{76}{figure.552}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Klassendiagramm\relax }}{73}{figure.540}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Klassendiagramm\relax }}{73}{figure.541}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{74}{figure.caption.542}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.542}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{74}{figure.caption.543}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{74}{figure.caption.543}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichneten Schachbretts\relax }}{75}{figure.caption.545}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.545}
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Bild eines perspektivisch verzerrtem Schachbretts\relax }}{75}{figure.caption.546}
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.546}
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Bild eines Kissenf\IeC {\"o}rmig verzeichnetem Schachbretts\relax }}{75}{figure.caption.547}
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{75}{figure.caption.547}
+\contentsline {figure}{\numberline {7.17}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{76}{figure.caption.548}
+\contentsline {figure}{\numberline {7.18}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{76}{figure.caption.548}
+\contentsline {figure}{\numberline {7.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{76}{figure.caption.549}
+\contentsline {figure}{\numberline {7.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{76}{figure.caption.549}
+\contentsline {figure}{\numberline {7.21}{\ignorespaces Klassendiagramm\relax }}{76}{figure.551}
+\contentsline {figure}{\numberline {7.22}{\ignorespaces Klassendiagramm\relax }}{76}{figure.552}
+\contentsline {figure}{\numberline {7.23}{\ignorespaces Klassendiagramm\relax }}{77}{figure.553}
+\contentsline {figure}{\numberline {7.24}{\ignorespaces Klassendiagramm\relax }}{77}{figure.554}
+\contentsline {figure}{\numberline {7.25}{\ignorespaces Klassendiagramm\relax }}{77}{figure.555}
 \addvspace {10\p@ }

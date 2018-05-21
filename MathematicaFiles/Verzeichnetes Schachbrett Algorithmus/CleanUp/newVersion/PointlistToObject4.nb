@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     66264,       1970]
-NotebookOptionsPosition[     65321,       1944]
-NotebookOutlinePosition[     65664,       1959]
-CellTagsIndexPosition[     65621,       1956]
+NotebookDataLength[     88440,       2689]
+NotebookOptionsPosition[     87281,       2659]
+NotebookOutlinePosition[     87624,       2674]
+CellTagsIndexPosition[     87581,       2671]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1940,10 +1940,725 @@ Cell[BoxData[
  CellChangeTimes->{{3.726462131489565*^9, 3.7264621578695726`*^9}, 
    3.7265529072559376`*^9, {3.726919389510523*^9, 
    3.726919390775493*^9}},ExpressionUUID->"862dbdcb-7c3d-4937-b11a-\
-52e2b34fe716"]
+52e2b34fe716"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Test", " ", "Chess", " ", "Board", " ", "Left"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"b", "=", 
+     RowBox[{"{", 
+      RowBox[{"6.61", ",", "6.16"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"c", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.81", ",", "3.78"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"d", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.82", ",", "2.24"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"f", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.39", ",", "6.08"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"g", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.12", ",", "3.79"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"h", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.5", ",", "2.38"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"i", "=", 
+     RowBox[{"{", 
+      RowBox[{"2.95", ",", "8.21"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"j", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.13", ",", "6.03"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"k", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.4", ",", "3.76"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"l", "=", 
+     RowBox[{"{", 
+      RowBox[{"2.96", ",", "0.89"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"m", "=", 
+     RowBox[{"{", 
+      RowBox[{"3.96", ",", "8.08"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"n", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.82", ",", "6"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"o", "=", 
+     RowBox[{"{", 
+      RowBox[{"6.65", ",", "3.71"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"p", "=", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "1"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"q", "=", 
+     RowBox[{"{", 
+      RowBox[{"4.92", ",", "7.94"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"r", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.49", ",", "5.95"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"s", "=", 
+     RowBox[{"{", 
+      RowBox[{"5.79", ",", "3.72"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"t", "=", 
+     RowBox[{"{", 
+      RowBox[{"4.91", ",", "1.1"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"u", "=", 
+     RowBox[{"{", 
+      RowBox[{"5.78", ",", "7.81"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"v", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.49", ",", "5.24"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"w", "=", 
+     RowBox[{"{", 
+      RowBox[{"4.91", ",", "3.7"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"z", "=", 
+     RowBox[{"{", 
+      RowBox[{"5.78", ",", "1.22"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"a1", "=", 
+     RowBox[{"{", 
+      RowBox[{"6.63", ",", "7.73"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"b1", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.84", ",", "5.24"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"c1", "=", 
+     RowBox[{"{", 
+      RowBox[{"3.95", ",", "3.64"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"d1", "=", 
+     RowBox[{"{", 
+      RowBox[{"6.61", ",", "1.29"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"e1", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.43", ",", "7.62"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"f1", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.13", ",", "5.27"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"g1", "=", 
+     RowBox[{"{", 
+      RowBox[{"2.93", ",", "3.62"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"h1", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.4", ",", "1.39"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"i1", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.13", ",", "7.56"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"j1", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.37", ",", "5.31"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"k1", "=", 
+     RowBox[{"{", 
+      RowBox[{"2.98", ",", "2.72"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"l1", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.12", ",", "1.48"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"m1", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.82", ",", "7.46"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"n1", "=", 
+     RowBox[{"{", 
+      RowBox[{"6.63", ",", "5.33"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"o1", "=", 
+     RowBox[{"{", 
+      RowBox[{"3.93", ",", "2.72"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"p1", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.82", ",", "1.57"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"q1", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.48", ",", "7.34"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"r1", "=", 
+     RowBox[{"{", 
+      RowBox[{"5.8", ",", "5.36"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"s1", "=", 
+     RowBox[{"{", 
+      RowBox[{"4.92", ",", "2.82"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"t1", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.46", ",", "1.63"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"u1", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.46", ",", "6.68"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"v1", "=", 
+     RowBox[{"{", 
+      RowBox[{"4.92", ",", "5.41"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"w1", "=", 
+     RowBox[{"{", 
+      RowBox[{"5.75", ",", "2.83"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"z1", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.82", ",", "6.74"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"a2", "=", 
+     RowBox[{"{", 
+      RowBox[{"3.94", ",", "5.44"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"b2", "=", 
+     RowBox[{"{", 
+      RowBox[{"6.63", ",", "2.87"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"c2", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.15", ",", "6.8"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"d2", "=", 
+     RowBox[{"{", 
+      RowBox[{"2.98", ",", "5.44"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"e2", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.39", ",", "2.95"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"f2", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.4", ",", "6.84"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"g2", "=", 
+     RowBox[{"{", 
+      RowBox[{"2.97", ",", "4.56"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"h2", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.13", ",", "2.96"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"i2", "=", 
+     RowBox[{"{", 
+      RowBox[{"6.61", ",", "6.96"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"j2", "=", 
+     RowBox[{"{", 
+      RowBox[{"3.98", ",", "4.56"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"k2", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.8", ",", "3"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"l2", "=", 
+     RowBox[{"{", 
+      RowBox[{"5.81", ",", "7.03"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"m2", "=", 
+     RowBox[{"{", 
+      RowBox[{"4.88", ",", "4.52"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"n2", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.49", ",", "3.07"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"o2", "=", 
+     RowBox[{"{", 
+      RowBox[{"4.94", ",", "7.13"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"p2", "=", 
+     RowBox[{"{", 
+      RowBox[{"5.76", ",", "4.52"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"q2", "=", 
+     RowBox[{"{", 
+      RowBox[{"2.98", ",", "1.81"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"r2", "=", 
+     RowBox[{"{", 
+      RowBox[{"3.98", ",", "7.21"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"s2", "=", 
+     RowBox[{"{", 
+      RowBox[{"6.56", ",", "4.53"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"t2", "=", 
+     RowBox[{"{", 
+      RowBox[{"3.98", ",", "1.86"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"u2", "=", 
+     RowBox[{"{", 
+      RowBox[{"2.97", ",", "7.29"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"v2", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.4", ",", "4.49"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"w2", "=", 
+     RowBox[{"{", 
+      RowBox[{"4.91", ",", "1.95"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"z2", "=", 
+     RowBox[{"{", 
+      RowBox[{"2.95", ",", "6.4"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"a3", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.11", ",", "4.51"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"b3", "=", 
+     RowBox[{"{", 
+      RowBox[{"5.78", ",", "2.02"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"c3", "=", 
+     RowBox[{"{", 
+      RowBox[{"3.96", ",", "6.32"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"d3", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.8", ",", "4.52"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"e3", "=", 
+     RowBox[{"{", 
+      RowBox[{"6.63", ",", "2.07"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"f3", "=", 
+     RowBox[{"{", 
+      RowBox[{"4.91", ",", "6.27"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"g3", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.48", ",", "4.52"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"h3", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.39", ",", "2.22"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"i3", "=", 
+     RowBox[{"{", 
+      RowBox[{"5.8", ",", "6.17"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"j3", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.48", ",", "3.79"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"k3", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.14", ",", "2.22"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"splits", " ", "=", " ", "2"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"PointList", "=", 
+     RowBox[{"{", 
+      RowBox[{
+      "b", ",", "c", ",", "d", ",", "f", ",", "g", ",", "h", ",", "i", ",", 
+       "j", ",", "k", ",", "l", ",", "m", ",", "n", ",", "o", ",", "p", ",", 
+       "q", ",", "r", ",", "s", ",", "t", ",", "u", ",", "v", ",", "w", ",", 
+       "z", ",", "a1", ",", "b1", ",", "c1", ",", "d1", ",", "e1", ",", "f1", 
+       ",", "g1", ",", "h1", ",", "i1", ",", "j1", ",", "k1", ",", "l1", ",", 
+       "m1", ",", "n1", ",", "o1", ",", "p1", ",", "q1", ",", "r1", ",", "s1",
+        ",", "t1", ",", "u1", ",", "v1", ",", "w1", ",", "z1", ",", "a2", ",",
+        "b2", ",", "c2", ",", "d2", ",", "e2", ",", "f2", ",", "g2", ",", 
+       "h2", ",", "i2", ",", "j2", ",", "k2", ",", "l2", ",", "m2", ",", "n2",
+        ",", "o2", ",", "p2", ",", "q2", ",", "r2", ",", "s2", ",", "t2", ",",
+        "u2", ",", "v2", ",", "w2", ",", "z2", ",", "a3", ",", "b3", ",", 
+       "c3", ",", "d3", ",", "e3", ",", "f3", ",", "g3", ",", "h3", ",", "i3",
+        ",", "j3", ",", "k3"}], "}"}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.7358909971821404`*^9, 3.7358909971861677`*^9}, {
+  3.7358970531178527`*^9, 3.7358971099319725`*^9}, {3.735897306291874*^9, 
+  3.7358975898532133`*^9}, {3.7358976229652996`*^9, 3.73589774719783*^9}, {
+  3.7358978745659237`*^9, 
+  3.7358979275012145`*^9}},ExpressionUUID->"dea5a0d5-9867-434b-a177-\
+aaa4f3e64ca3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Test", " ", "Chess", " ", "Board", " ", "Right"}], "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"a", "=", 
+     RowBox[{"{", 
+      RowBox[{"10.73", ",", "6.81"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"b", "=", 
+     RowBox[{"{", 
+      RowBox[{"13.86", ",", "3.97"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"c", "=", 
+     RowBox[{"{", 
+      RowBox[{"13.85", ",", "1.91"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"d", "=", 
+     RowBox[{"{", 
+      RowBox[{"11.69", ",", "6.87"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"e", "=", 
+     RowBox[{"{", 
+      RowBox[{"12.76", ",", "4"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"f", "=", 
+     RowBox[{"{", 
+      RowBox[{"15.03", ",", "1.81"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"g", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.4", ",", "8.18"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"h", "=", 
+     RowBox[{"{", 
+      RowBox[{"12.77", ",", "6.93"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"i", "=", 
+     RowBox[{"{", 
+      RowBox[{"11.71", ",", "4"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"j", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.36", ",", "1.71"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"k", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.16", ",", "8.28"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"l", "=", 
+     RowBox[{"{", 
+      RowBox[{"13.83", ",", "7"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"m", "=", 
+     RowBox[{"{", 
+      RowBox[{"10.72", ",", "4.04"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"n", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.13", ",", "1.63"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"o", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.96", ",", "8.38"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"p", "=", 
+     RowBox[{"{", 
+      RowBox[{"15.02", ",", "7.09"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"q", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.79", ",", "4.04"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"r", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.94", ",", "1.49"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"s", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.83", ",", "8.5"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"t", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.4", ",", "5.78"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"u", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.97", ",", "4.07"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"v", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.8", ",", "1.44"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"w", "=", 
+     RowBox[{"{", 
+      RowBox[{"10.71", ",", "8.62"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"z", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.13", ",", "5.8"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"a1", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.13", ",", "4.12"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"b1", "=", 
+     RowBox[{"{", 
+      RowBox[{"10.72", ",", "1.3"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"c1", "=", 
+     RowBox[{"{", 
+      RowBox[{"11.68", ",", "8.74"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"d1", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.94", ",", "5.8"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"e1", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.38", ",", "4.1"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"f1", "=", 
+     RowBox[{"{", 
+      RowBox[{"11.69", ",", "1.19"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"g1", "=", 
+     RowBox[{"{", 
+      RowBox[{"12.72", ",", "8.85"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"h1", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.81", ",", "5.87"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"i1", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.38", ",", "3.34"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"j1", "=", 
+     RowBox[{"{", 
+      RowBox[{"12.71", ",", "1.07"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"k1", "=", 
+     RowBox[{"{", 
+      RowBox[{"13.83", ",", "8.99"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"l1", "=", 
+     RowBox[{"{", 
+      RowBox[{"10.73", ",", "5.89"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"m1", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.1", ",", "3.28"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"n1", "=", 
+     RowBox[{"{", 
+      RowBox[{"13.84", ",", "0.95"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"o1", "=", 
+     RowBox[{"{", 
+      RowBox[{"15.04", ",", "9.17"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"p1", "=", 
+     RowBox[{"{", 
+      RowBox[{"11.73", ",", "5.92"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"q1", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.95", ",", "3.24"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"r1", "=", 
+     RowBox[{"{", 
+      RowBox[{"15.07", ",", "0.8"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"s1", "=", 
+     RowBox[{"{", 
+      RowBox[{"15.03", ",", "8.14"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"t1", "=", 
+     RowBox[{"{", 
+      RowBox[{"12.75", ",", "5.95"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"u1", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.78", ",", "3.21"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"v1", "=", 
+     RowBox[{"{", 
+      RowBox[{"14", ",", "8"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"w1", "=", 
+     RowBox[{"{", 
+      RowBox[{"13.84", ",", "6"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"z1", "=", 
+     RowBox[{"{", 
+      RowBox[{"10.68", ",", "3.14"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"a2", "=", 
+     RowBox[{"{", 
+      RowBox[{"12.73", ",", "7.93"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"b2", "=", 
+     RowBox[{"{", 
+      RowBox[{"15", ",", "6"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"c2", "=", 
+     RowBox[{"{", 
+      RowBox[{"11.66", ",", "3.07"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"d2", "=", 
+     RowBox[{"{", 
+      RowBox[{"11.73", ",", "7.81"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"e2", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.36", ",", "4.95"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"f2", "=", 
+     RowBox[{"{", 
+      RowBox[{"12.72", ",", "3.04"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"g2", "=", 
+     RowBox[{"{", 
+      RowBox[{"10.72", ",", "7.72"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"h2", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.13", ",", "4.94"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"i2", "=", 
+     RowBox[{"{", 
+      RowBox[{"13.81", ",", "2.95"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"j2", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.81", ",", "7.61"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"k2", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.94", ",", "4.93"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"l2", "=", 
+     RowBox[{"{", 
+      RowBox[{"15.02", ",", "2.88"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"m2", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.93", ",", "7.53"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"n2", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.83", ",", "4.93"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"o2", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.4", ",", "2.5"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"p2", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.15", ",", "7.47"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"q2", "=", 
+     RowBox[{"{", 
+      RowBox[{"10.7", ",", "4.96"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"r2", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.11", ",", "2.44"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"s2", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.38", ",", "7.38"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"t2", "=", 
+     RowBox[{"{", 
+      RowBox[{"11.73", ",", "4.96"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"u2", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.95", ",", "2.41"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"v2", "=", 
+     RowBox[{"{", 
+      RowBox[{"7.4", ",", "6.57"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"w2", "=", 
+     RowBox[{"{", 
+      RowBox[{"12.75", ",", "4.96"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"z2", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.78", ",", "2.3"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"a3", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.15", ",", "6.61"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"b3", "=", 
+     RowBox[{"{", 
+      RowBox[{"13.84", ",", "4.95"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"c3", "=", 
+     RowBox[{"{", 
+      RowBox[{"10.7", ",", "2.22"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"d3", "=", 
+     RowBox[{"{", 
+      RowBox[{"8.94", ",", "6.7"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"e3", "=", 
+     RowBox[{"{", 
+      RowBox[{"15.07", ",", "4.97"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"f3", "=", 
+     RowBox[{"{", 
+      RowBox[{"11.64", ",", "2.13"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"g3", "=", 
+     RowBox[{"{", 
+      RowBox[{"9.81", ",", "6.74"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"h3", "=", 
+     RowBox[{"{", 
+      RowBox[{"15.05", ",", "3.91"}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"i3", "=", 
+     RowBox[{"{", 
+      RowBox[{"12.73", ",", "2.04"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"splits", " ", "=", " ", "2"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"PointList", "=", 
+     RowBox[{"{", 
+      RowBox[{
+      "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", 
+       "h", ",", "i", ",", "j", ",", "k", ",", "l", ",", "m", ",", "n", ",", 
+       "o", ",", "p", ",", "q", ",", "r", ",", "s", ",", "t", ",", "u", ",", 
+       "v", ",", "w", ",", "z", ",", "a1", ",", "b1", ",", "c1", ",", "d1", 
+       ",", "e1", ",", "f1", ",", "g1", ",", "h1", ",", "i1", ",", "j1", ",", 
+       "k1", ",", "l1", ",", "m1", ",", "n1", ",", "o1", ",", "p1", ",", "q1",
+        ",", "r1", ",", "s1", ",", "t1", ",", "u1", ",", "v1", ",", "w1", ",",
+        "z1", ",", "a2", ",", "b2", ",", "c2", ",", "d2", ",", "e2", ",", 
+       "f2", ",", "g2", ",", "h2", ",", "i2", ",", "j2", ",", "k2", ",", "l2",
+        ",", "m2", ",", "n2", ",", "o2", ",", "p2", ",", "q2", ",", "r2", ",",
+        "s2", ",", "t2", ",", "u2", ",", "v2", ",", "w2", ",", "z2", ",", 
+       "a3", ",", "b3", ",", "c3", ",", "d3", ",", "e3", ",", "f3", ",", "g3",
+        ",", "h3", ",", "i3"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.735898287036877*^9, 3.735898323829458*^9}, {
+  3.735898388567814*^9, 3.735898616396715*^9}, {3.735898770805458*^9, 
+  3.7358989797739763`*^9}},ExpressionUUID->"6c165b0b-db75-4f8a-a02a-\
+2d4de70403d7"]
 },
-WindowSize->{688, 479},
-WindowMargins->{{64, Automatic}, {Automatic, 41}},
+WindowSize->{918, 967},
+WindowMargins->{{Automatic, 33}, {-5, Automatic}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1958,20 +2673,24 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 15042, 428, 1893, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 15042, 428, 1855, "Input", "ExpressionUUID" -> \
 "15043134-e065-45a2-ab2e-b103e6c9de4d"],
-Cell[15603, 450, 10261, 294, 1342, "Input", "ExpressionUUID" -> \
+Cell[15603, 450, 10261, 294, 1323, "Input", "ExpressionUUID" -> \
 "80f5d281-b245-4718-a34e-7f09e40b920e"],
-Cell[25867, 746, 9381, 260, 1190, "Input", "ExpressionUUID" -> \
+Cell[25867, 746, 9381, 260, 1171, "Input", "ExpressionUUID" -> \
 "169eedd5-8474-4a8e-b32e-3aa9329c0248"],
-Cell[35251, 1008, 7569, 231, 1209, "Input", "ExpressionUUID" -> \
+Cell[35251, 1008, 7569, 231, 1133, "Input", "ExpressionUUID" -> \
 "34cd4469-162c-41cb-bb9d-b9c75fd3c5ff"],
-Cell[42823, 1241, 9424, 295, 1399, "Input", "ExpressionUUID" -> \
+Cell[42823, 1241, 9424, 295, 1380, "Input", "ExpressionUUID" -> \
 "ffa7bb38-2f99-427c-87a2-6b56e3c92e22"],
-Cell[52250, 1538, 12785, 397, 1931, "Input", "ExpressionUUID" -> \
+Cell[52250, 1538, 12785, 397, 1836, "Input", "ExpressionUUID" -> \
 "88609549-95f5-45b3-8907-a18ed29c6664"],
 Cell[65038, 1937, 279, 5, 47, "Input", "ExpressionUUID" -> \
-"862dbdcb-7c3d-4937-b11a-52e2b34fe716"]
+"862dbdcb-7c3d-4937-b11a-52e2b34fe716"],
+Cell[65320, 1944, 10983, 356, 1684, "Input", "ExpressionUUID" -> \
+"dea5a0d5-9867-434b-a177-aaa4f3e64ca3"],
+Cell[76306, 2302, 10971, 355, 1741, "Input", "ExpressionUUID" -> \
+"6c165b0b-db75-4f8a-a02a-2d4de70403d7"]
 }
 ]
 *)
