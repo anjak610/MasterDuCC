@@ -8,6 +8,7 @@ Im Folgenden soll der Algorithmus anhand eines virtuellen Beispiels erklärt wer
 
 
 
+
 \begin{figure}[!htb]%{\linewidth}
 	\centering
 	\includegraphics[width=1.\linewidth]{images/NEU_Virtuel_Arbeitsprozess.png}
@@ -50,12 +51,19 @@ Als 3D-Objekt wurde ein Quader, in ein Weltkoordinatensystem $(O,\delta)$ mit $\
 	\endminipage\hfill
 \end{figure}
 
-\begin{minipage}{\linewidth}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.6\linewidth]{images/KS_Minimalbeispiel_beschriftet.png}
-	\captionof{figure}{Abbildung der verschiedenen Kamerakoordinatensysteme, das Weltkoordinatensystem  $O$ ist zum Kamerakoordinatensystem $C$ deckungsgleich und $C'$  verschoben und rotiert.}
+	\caption[Koordinatensysteme von $C$ und $C'$]{Abbildung der verschiedenen Kamerakoordinatensysteme, das Weltkoordinatensystem  $O$ ist zum Kamerakoordinatensystem $C$ deckungsgleich und $C'$  verschoben und rotiert.}
 	\label{fig:KoordsystemeMinimal}
-\end{minipage}\\ \\
+\end{figure}
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=.6\linewidth]{images/KS_Minimalbeispiel_beschriftet.png}
+%	\captionof{figure}{Abbildung der verschiedenen Kamerakoordinatensysteme, das Weltkoordinatensystem  $O$ ist zum Kamerakoordinatensystem $C$ deckungsgleich und $C'$  verschoben und rotiert.}
+%	\label{fig:KoordsystemeMinimal}
+%\end{minipage}\\ \\
 
 %
 %Für die Stereokamerakalibrierung wird $C'$ relativ zur zu $C$ um einen Vektor \ensuremath{\vec{V'}} verschoben und anschließend um einen Winkel \ensuremath{\alpha} um die $b'_3$ Achse gedreht. Für die Rotation um \ensuremath{b'_3} wird eine Drehmatrix $D'$ aufgestellt.
@@ -330,33 +338,37 @@ T' = [UWV^T|+\lambda v] \;\;\; \text{oder} \;\;\;[UW^TV^T|+\lambda v]\\
 \textit{oder}\;\;\; [UWV^T|-\lambda v] \;\;\; \text{oder} \;\;\;[UW^TV^T|-\lambda v]
 \end{gather}
 
-Die Abbildungen \ref{fig:T_1}, \ref{fig:T_2}, \ref{fig:T_3} und \ref{fig:T_4} stellen schematisch die vier verschiedenen Transformationsmöglichkeiten von $T'$ dar.  Die Entscheidung welche Lösung $T$ die richtige für das implementierte Beispiel ist, fällt auf diejenige Lösung, bei welcher das Abbild des der Objekte vor den Kameras liegt.\\\\
+Die Abbildungen \ref{fig:T_1} und \ref{fig:T_2} stellen schematisch die vier verschiedenen Transformationsmöglichkeiten von $T'$ dar.  Die Entscheidung welche Lösung $T$ die richtige für das implementierte Beispiel ist, fällt auf diejenige Lösung, bei welcher das Abbild des der Objekte vor den Kameras liegt.\\\\
 
 
 \begin{figure}[!htb]
 	\minipage{0.5\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_one.png}
-	\caption{a)}
-	\label{fig:T_1}
+%	\caption[Bestimmung extrinsischer Kameraparameter erste Lösung]{a)}
+%	\label{fig:T_1}
 	\endminipage\hfill
 	\minipage{0.52\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_two.png}
-	\caption{b)}
-	\label{fig:T_2}
-	\endminipage\hfill
+	%\caption[Bestimmung extrinsischer Kameraparameter zweite Lösung]{b)}
+%	\label{fig:T_2}	
+	\endminipage\hfill	
+	\caption[Bestimmung extrinsischer Kameraparameter Lösung eins und zwei]{In den ersten beiden Abbildungen kommt es zu einer Umkehrung der Basisline.}
+	\label{fig:T_1}
 \end{figure}
 \begin{figure}[!htb]
 	\minipage{0.52\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_three.png}
-	\caption{c)}
-	\label{fig:T_3}
+%	\caption[Bestimmung extrinsischer Kameraparameter dritte Lösung]{c)}
+%	\label{fig:T_3}
 	\endminipage\hfill
 	\minipage{0.5\textwidth}
 	\includegraphics[width=\linewidth]{images/P_Solution_four.png}
-	\caption{d)}
-	\label{fig:T_4}
+	%\caption[Bestimmung extrinsischer Kameraparameter vierte Lösung]{d)}
+%	\label{fig:T_4}
 	\endminipage\hfill
-	\caption{Die Abbildungen a, b, c und d veranschaulichen, welche Bilder aus den vier Lösungen entstehen. In den Abbildungen a und b kommt es zu einer Umkehrung der Basisline. In den Abbildungen c und d wird $C'$ und $180^\circ$ gedreht}
+	\caption[Bestimmung extrinsischer Kameraparameter Lösung eins und zwei]{In den beiden Abbildungen wird $C'$ und $180^\circ$ gedreht}
+	\label{fig:T_2}
+%	\caption[Alle vier Lösungen im Überblick]{Die Abbildungen a, b, c und d veranschaulichen, welche Bilder aus den vier Lösungen entstehen. In den Abbildungen a und b kommt es zu einer Umkehrung der Basisline. In den Abbildungen c und d wird $C'$ und $180^\circ$ gedreht}
 \end{figure}
 \pagebreak
 
@@ -405,12 +417,19 @@ Als Triangulierung wird in der Computer Vision die Bestimmung eines 3D-Objektpun
 %wird das Rekonstruieren der Ursprünglichen 3D-Objektpunkte durch eine Rückprojektion vom jeweiligen Projektionszentrum der Kameras durch ihre Bildpunkte bezeichnet. Im synthetischen Beispiel wird durch einfache Schnittpunktberechnung derjenigen Geraden, welche durch die jeweiligen Projektionszentren und deren Bildpunkte auf deren Bildebenen gehen, der Ursprungspunkt im Raum rekonstruiert.\\
 
 
-\begin{minipage}{\linewidth}
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=0.8\linewidth]{images/optimaleTriangulierung.png}
+%	\captionof{figure}{Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum} 
+%	\label{fig:TriangulationOptimal}
+%\end{minipage}\\ \\
+
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/optimaleTriangulierung.png}
-	\captionof{figure}{Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum} 
+	\caption[Einfache Triangulation]{Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum} 
 	\label{fig:TriangulationOptimal}
-\end{minipage}\\ \\
+\end{figure}
 
 %bei der Szenenrekonstruktion realen Stereoaufnahmen kann eine Triangulation nicht so ohne weiteres durchgeführt werden. Bei einer Bildaufnahme mit Kameras, kommt es nicht selten vor, dass 
 %
@@ -508,7 +527,7 @@ g' := \vec{C'} + t \cdot
 %
 %Nun muss für jedes Linienpaar eine Lösung für $t$ und $t'$ gefunden werden und die Lösungen in die Gleichungen 4.65 und 4.66 eingesetzt werden. Es sollte für beide Gleichungen die selbe Lösung für den rekonstruierten Punkt $A$ im Raum ergeben. Die Lösung entspricht meist noch nicht exakt dem eigentlichen Ergebnis, das liegt an der zuvor erwähnten Skaleninvariants der Rekonstruktion der exterenen Kameraparameter. 
 
-Bei den zuvor ermittelten extrinsischen Kameraparametern, ist der Translationsvektor skaleninvariant. Dies führt dazu, dass der rekonstruierte Objektpunkt $M_{\delta,0}$ nach der Szenenrekonstruktion noch nicht dem Ursprünglichen $M_\delta$ entsprechen muss. Dementsprechend wird als letzter Schritt die rekonstruierte Szenen anhand einer bekannten Referenzgröße skaliert. Als Referenzgröße kann beispielsweise ein zuvor abgemessener Abstand zwischen zwei Punkten in der Szene dienen. Im synthetischen Aufbau sind beispielsweise die Abstände zwischen den Originalbildpunkten bekannt. Die Abbildungen \ref{fig:scale1},\ref{fig:scale2} und \ref{fig:scale3} zeigen die Szene des Quader mit unterschiedlichen Skalierungen. Die Abbildungen \ref{fig:Quader1} und \ref{fig:Quader2} zeigt die rekonstruierte Szene des synthetischen Beispiels. Die Abbildungen \ref{fig:Quader1} und \ref{fig:Quader2} zeigen die auf Ursprugsgröße skalierte rekonstruierte Szene des Quaders. \\
+Bei den zuvor ermittelten extrinsischen Kameraparametern, ist der Translationsvektor skaleninvariant. Dies führt dazu, dass der rekonstruierte Objektpunkt $M_{\delta,0}$ nach der Szenenrekonstruktion noch nicht dem Ursprünglichen $M_\delta$ entsprechen muss. Dementsprechend wird als letzter Schritt die rekonstruierte Szenen anhand einer bekannten Referenzgröße skaliert. Als Referenzgröße kann beispielsweise ein zuvor abgemessener Abstand zwischen zwei Punkten in der Szene dienen. Im synthetischen Aufbau sind beispielsweise die Abstände zwischen den Originalbildpunkten bekannt. Die Abbildung \ref{fig:scale3} zeigt die Szene des Quader mit unterschiedlichen Skalierungen. Die Abbildungen \ref{fig:Quader1} und \ref{fig:Quader2} zeigt die rekonstruierte Szene des synthetischen Beispiels. Die Abbildungen \ref{fig:Quader1} und \ref{fig:Quader2} zeigen die auf Ursprugsgröße skalierte rekonstruierte Szene des Quaders. \\
 
 
 %ihrer Originalgröße entsprechen. 
@@ -521,38 +540,48 @@ Bei den zuvor ermittelten extrinsischen Kameraparametern, ist der Translationsve
 \begin{figure}[!htb]
 	\minipage{0.42\textwidth}
 	\includegraphics[width=\linewidth]{images/ScaleInvariance_1.png}
-	\caption{}
-	\label{fig:scale1}
+%	\caption{}
+%	\label{fig:scale1}
 	\endminipage\hfill
 	\minipage{0.42\textwidth}
 	\includegraphics[width=\linewidth]{images/ScaleInvariance_2.png}
-	\caption{}
-	\label{fig:scale2}
+%	\caption{}
+%	\label{fig:scale2}
 	\endminipage\hfill
 \end{figure}
 \pagebreak
 
-\begin{minipage}{\linewidth}
+
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=0.42\linewidth]{images/ScaleInvariance_3.png}
+%	\captionof{figure}{Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form und Größe der Objekte} 
+%	\label{fig:scale3}
+%\end{minipage}\\\\
+
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.42\linewidth]{images/ScaleInvariance_3.png}
-	\captionof{figure}{Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form und Größe der Objekte} 
+	\caption[Skalierung der Rekonstruierten Szene]{Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form und Größe der Objekte} 
 	\label{fig:scale3}
-\end{minipage}\\\\
+\end{figure}
 
 
 
 \begin{figure}[!htb]
 	\minipage{0.42\textwidth}
 	\includegraphics[width=\linewidth]{images/MinimalBeispiel_reconstructed.png}
-	\caption{}
+	%\caption{}
 	\label{fig:Quader1}
 	\endminipage\hfill
 	\minipage{0.42\textwidth}
 	\includegraphics[width=\linewidth]{images/MinimalBeispiel_reconstructed_3.png}
-	\caption{}
+%	\caption{}
 	\label{fig:Quader2}
 	\endminipage\hfill
-	\captionof{figure}{Der rote Punkt stellt Die Postion von $C$ dar, der grüne steht für die Position von $C'$ relativ zu $C$. Die blauen Punkte stellen den rekonstruierten Quader und den extern platzierten neunten Punkt da. Die Abbildungen entstand aus dem in \textit{Mathematica}\cite{Mathematica} implementierten Algorithmus.}
+	\caption[Programmplot der rekonstruierten Szene]{Der rote Punkt stellt Die Postion von $C$ dar, der grüne steht für die Position von $C'$ relativ zu $C$. Die blauen Punkte stellen den rekonstruierten Quader und den extern platzierten neunten Punkt da. Die Abbildungen entstand aus dem in \textit{Mathematica}\cite{Mathematica} implementierten Algorithmus.}
 \end{figure}
+\pagebreak
 
 

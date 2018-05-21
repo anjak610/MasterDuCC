@@ -7,43 +7,50 @@ Der entstandene Szenenrekonstruktionsalforithmus wurde anhand von Kameras gleich
 \section{Geometrie eines Sensors}
 
 
-Die Geometrie eines Sensors kann als eine  $M \times N$ - Matrix, bestehend aus $M \times N$ Sensorelementen dargestellt werden\cite{Photonik}. Die Auflösung eines Sensors hängt von den horizontalen und vertikalen Abständen der Sensorelemente ab. Abbildung \ref{fig:Sensor} zeigt den schematischen Aufbau eines Sensors (CMOS). 
+Die Geometrie eines Sensors kann als eine  $M \times N$ - Matrix, bestehend aus $M \times N$ Sensorelementen dargestellt werden\cite{Photonik}. Die Auflösung eines Sensors hängt von den horizontalen und vertikalen Abständen der Sensorelemente ab. Abbildung \ref{fig:Sensor} zeigt den schematischen Aufbau eines Sensors (CMOS). \\
 
-\begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=.8\linewidth]{images/Bildsensor_mit_Pixel.png}
-	\captionof{figure}{Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Sensorelementen. Vergleiche \cite{Photonik}} 
-	\label{fig:Sensor}
-\end{minipage}\\\\
-
-
-%Ein Sensor hat eine maximale Auflösung. Bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}. Die Bildqualität ist abhängig von der Größe des Sensorchips und der Menge der sich darauf befindenden Sensorelemente. 
-%Wird eine Auflösung kleiner der maximal möglichen Auflösung eingestellt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen\cite{Photonik}. \\
 
 Ein Sensor hat eine maximale Auflösung. Die maximale Anzahl der Sensorelemente auf einem Sensor beschreit die maximale Auflösung. Verschiedene Kameras können aus diesem Grund verschiedenen Auflösungen besitzen. Die Anzahl und Größe der Einzelnen Sensorelemente variiert mit den Größen der Sensorchips. Je größer ein Sensor ist und je mehr Sensorelemente er besitzt, desto besser ist die Bildqualität\cite{Photonik}. Bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}. Auch ist es möglich die Auflösung eines Sensors digital zu verändern. Wird eine Auflöung kleiner der maximalen Auflösung eingesteltt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen. Benachbarte Pixel werden hier zu einem neuen Pixel definiert\cite{Photonik}. Ein neuer Pixel wird aus den benachbarten Pixeln berechnet.\\
 
-%
-%Dabei nehmen alle Pixel, die sich zu einem neuen Pixel zusammen schließen, die gleichen Farbwerte an. \\
 
-%In diesem Fall werden Pixel 
+Eine Veränderung der Auflösung kann auch eine Änderung der Seitenverhältnisse mit einschließen. Ändert sich das Seitenverhältnis so wird der Bereich der lichtempfindlichen Fläche auf dem Sensor beschränkt\cite{Photonik}. Dies führt dazu, dass sich die Bildausschnnitte ändern. Abbildung \ref{fig:SensorResolutions} stellt schematisch da wie sich die lichtempfindlichen Bereiche auf dem Sensor bei unterschiedlichen Auflösungen ändert.
+
+%\pagebreak
+
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.7\linewidth]{images/Bildsensor_mit_Pixel.png}
+	\caption[Aufbau CMOS Sensor]{Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Sensorelementen. Vergleiche \cite{Photonik}} 
+	\label{fig:Sensor}
+\end{figure}
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=.8\linewidth]{images/Bildsensor_mit_Pixel.png}
+%	\captionof{figure}{Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Sensorelementen. Vergleiche \cite{Photonik}} 
+%	\label{fig:Sensor}
+%\end{minipage}\\\\
+
 %
-% Auch ist es möglich die Auflösung eines Sensors digital zu verändern. 
-%
-% bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}.
-%
-%Die maximale Anzahl der Sensorelemente beschreibt die maximale Auflösung....
-%verschieden sensoren könne aus diesem Grund unterschiedliche Auflösungen besitzten. Auch ist es möglich die Auflösung digital zu verändern. In diesem Fall werden pixel
+%Ein Sensor hat eine maximale Auflösung. Die maximale Anzahl der Sensorelemente auf einem Sensor beschreit die maximale Auflösung. Verschiedene Kameras können aus diesem Grund verschiedenen Auflösungen besitzen. Die Anzahl und Größe der Einzelnen Sensorelemente variiert mit den Größen der Sensorchips. Je größer ein Sensor ist und je mehr Sensorelemente er besitzt, desto besser ist die Bildqualität\cite{Photonik}. Bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}. Auch ist es möglich die Auflösung eines Sensors digital zu verändern. Wird eine Auflöung kleiner der maximalen Auflösung eingesteltt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen. Benachbarte Pixel werden hier zu einem neuen Pixel definiert\cite{Photonik}. Ein neuer Pixel wird aus den benachbarten Pixeln berechnet.\\
+
+
 
 
 Eine Veränderung der Auflösung kann auch eine Änderung der Seitenverhältnisse mit einschließen. Ändert sich das Seitenverhältnis so wird der Bereich der lichtempfindlichen Fläche auf dem Sensor beschränkt\cite{Photonik}. Dies führt dazu, dass sich die Bildausschnnitte ändern. Abbildung \ref{fig:SensorResolutions} stellt schematisch da wie sich die lichtempfindlichen Bereiche auf dem Sensor bei unterschiedlichen Auflösungen ändert.
 
 
-\begin{minipage}{\linewidth}
+
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1.\linewidth]{images/AufloesungSensor.png}
-	\captionof{figure}{Bild a) zeigt die den Zusammenschluss mehrerer benachbarter Pixel zu einem neuen Pixel. Bild b) zeigt in gelb markiert, den aktiven lichtempfindlichen Bereich des Sensors, wenn sich das Seitenverhältnis geändert wird und nicht mehr der komplette Sensor genutzt wird.} 
+	\caption[Nachbarschaftsoperation auf Sensoren]{Bild a) zeigt die den Zusammenschluss mehrerer benachbarter Pixel zu einem neuen Pixel. Bild b) zeigt in gelb markiert, den aktiven lichtempfindlichen Bereich des Sensors, wenn sich das Seitenverhältnis geändert wird und nicht mehr der komplette Sensor genutzt wird.} 
 	\label{fig:SensorResolutions}
-\end{minipage}\\ \\
+\end{figure}
+
+\pagebreak
 
 \section{Auswirkungen auf die Szenenrekonstruktion}
 
@@ -66,12 +73,12 @@ Im Lochkameramodell hat eine Änderung der Kameraauflösung lediglich eine Auswi
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/SensorSelbeAufloesung_beschriftet.png}
-	\caption{$C$ und $C'$ haben die selbe Auflösung eingestellt}
+	\caption[Sensorkoordinatensystem bei Kameras gleicher Auflösung]{$C$ und $C'$ haben die selbe Auflösung eingestellt}
 	\label{fig:Aufl1}
 	\endminipage\hfill
 	\minipage{0.49\textwidth}
 	\includegraphics[width=\linewidth]{images/SensorUnterschiedlicheAufloesung_beschriftet.png}
-	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt}
+	\caption[Sensorkoordinatensystem bei Kameras unterschiedlicher Auflösung]{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt}
 	\label{fig:Aufl2}
 	\endminipage\hfill
 \end{figure}
@@ -183,12 +190,12 @@ Die Unterschiede der enstehenden Abbildungen in $C'$ sind in den Abbildungen \re
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Zeta1.png}
-	\caption{$C$ und $C'$ haben die selbe Auflösung eingestellt}
+	\caption[Abbildungen bei $K' = K$]{$C$ und $C'$ haben die selbe Auflösung eingestellt}
 	\label{fig:K}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Zeta2.png}
-	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt. $C$ mit $K$ und $C'$ mit $K_1'$}
+	\caption[Abbildung bei $K'_1$]{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt. $C$ mit $K$ und $C'$ mit $K_1'$}
 	\label{fig:K1}
 	\endminipage\hfill
 \end{figure}
@@ -196,12 +203,12 @@ Die Unterschiede der enstehenden Abbildungen in $C'$ sind in den Abbildungen \re
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Zeta32_12.png}
-	\caption{$C$ mit $K$ und $C'$ mit $K_2'$}
+	\caption[Abbildungen bei $K'_2$]{$C$ mit $K$ und $C'$ mit $K_2'$}
 	\label{fig:K2}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Zeta05_43.png}
-	\caption{$C$ mit $K$ und $C'$ mit $K_3'$}
+	\caption[Abbildungen bei $K'_3$]{$C$ mit $K$ und $C'$ mit $K_3'$}
 	\label{fig:K3}
 	\endminipage\hfill
 \end{figure}
@@ -281,12 +288,21 @@ Wie beobachtet werden kann, werden, trotz unterschiedlicher Kameraauflösungen f
 %Bei der Rekonstruktion der externen Kamerparameter ergibt sich daraus stehts die selbe Matrix für $P'$. Was wie gezeigt daran liegt, dass sich geometrisch nichts ändert, sondern lediglich die skalierung der Koordinatenwerte der Bildpunkte und somit auch eine Skalierung der Einträge in $F$ und $E$, welche aber ebenfalls als Skaleninvariant definiert sind\cite{HZ}. Die Ergebnisse der darauffolgenden Szenenrekonstruktionen, der einzelnen Szenen zeigt, dass sich immer die selbe Szene ergibt, welche mit der eigens aufgebauten Szene übereinstimmen.\\
 
 
-\begin{minipage}{\linewidth}
+
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.5\linewidth]{images/DifferentAufloesungRekonstructedScene.png}
-	\captionof{figure}{Die Abbildung zeigt die rekonstruierte Szenen des synthetischen Beispiels mit $K'_3$ als intrisische Parameter für $C'$.} 
+	\caption[Rekonstruierte Szene bei unterschiedlichen Kameraauflösungen]{Die Abbildung zeigt die rekonstruierte Szenen des synthetischen Beispiels mit $K'_3$ als intrisische Parameter für $C'$.} 
 	\label{fig: reconstructedDifferentResolutions}
-\end{minipage}\\ \\
+\end{figure}
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=0.5\linewidth]{images/DifferentAufloesungRekonstructedScene.png}
+%	\captionof{figure}{Die Abbildung zeigt die rekonstruierte Szenen des synthetischen Beispiels mit $K'_3$ als intrisische Parameter für $C'$.} 
+%	\label{fig: reconstructedDifferentResolutions}
+%\end{minipage}\\ \\
+
 
 %Die Behauptung, dass die Auflösung der Kamera bei dem in dieser Arbeit gewählten Workflow für die Rekonstruktion der Szene keine Auswirkung hat, kann für das Minimalbeispiel bestätigt werden. \\
 

@@ -3,13 +3,19 @@
 
 Der entwickelte Szenenrekonstrukionsalgorithmus wird im folgenden anhand eines realen Stereoaufbau getestet. Da das Arbeiten mit realen Bilddaten bestimmte Fehleranfälligkeiten aufweist, wird in diesem Kapitel Hauptsächlich drauf eingegangen, um welche Fehler es sich handelt, was ihre Auswirkungen sind und wie man ihnen entgegenwirken kann. Hierzu wurde der Ursprüngliche Algorithmus um bestimmte Funktionen erweitert, welche im Verlauf des Kapitels genau erläutert werden. Abbildung \ref{fig:ArbeitsProzessReell} zeigt den Ablauf für die Reelle Rekonstruktion. \\
 
-
-\begin{minipage}{\linewidth}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1.\linewidth]{images/NEU_real_Arbeitsprozess.png}
-	\captionof{figure}{Ablaufdiagramm für die reelle Rekonstruktion}
+	\caption[Ablaufdiagramm für die reelle Rekonstruktion]{Ablaufdiagramm für die reelle Rekonstruktion}
 	\label{fig:ArbeitsProzessReell}
-\end{minipage}\\ \\
+\end{figure}
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=1.\linewidth]{images/NEU_real_Arbeitsprozess.png}
+%	\captionof{figure}{Ablaufdiagramm für die reelle Rekonstruktion}
+%	\label{fig:ArbeitsProzessReell}
+%\end{minipage}\\ \\
 
 Zu aller erst wird der Stereoaufbau vorgestellt. Danach folgt die Korrespondenzanalyse, in welcher zwei Möglichkeiten aufgeführt werden, wie die Korrespondierenden Punkte aus den Bildern gewonnen werden. Der normierte-acht-Punkt-Algorithmus, stellt eine für reale Bilddaten leicht veränderte Fassung des bereits bekannten acht-Punkte-Algorithmus vor. Danach werden die Singulärwerte der aus realen Daten bestimmten Fundamentalmatrix und essentiellen Matrix analysiert und deren Auswirkung auf die Epipolargeometrie aufgezeigt. Als letztes wird das Triangulationsverfahren anhand abweichender Punktekorrespondenzen vorgeführt.
 
@@ -36,12 +42,22 @@ Für die Stereobildaufnahme, wurde eine Szene vor zwei nebeneinander platzierten
 
 % dass sie leicht zueinander hin gedreht waren. Da die Canon 60D eine halbformatkamera ist, wurde sie weiter hinten als die Canon 6D positioniert. Somit konnte ungefähr der selbe Bildausschnitt der Szene mit beiden Kameras aufgenommen werden.\\
 
-\begin{minipage}{\linewidth}
+
+
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.7\linewidth]{images/SetUpSameResolution.jpg}
-	\captionof{figure}{Szenenaufbau: Die Canon 60D befindet sich in dieser Abbildung auf der linken Seite, die Canon 60 D auf der rechten. Auf dem Tisch zwischen den Kameras ist die in den Abbildungen 6.1 und 6.1 abgebildete Szene zu sehen. Beide Kameras sind zu Szene hin gedreht.}
+	\caption[Stereoaufbau im Überblick]{Kamera eins $C$ befindet sich auf dem Bild links, Kamera zwei $C'$ befindet sich rechts im Bild. Auf dem Tisch zwischen den Kameras ist die in den Abbildungen \ref{fig:SurfLinks} und \ref{fig:SurfRechts} abgebildete Szene zu sehen. Beide Kameras sind zu Szene rotiert.}
 	\label{fig:StereoaufbauReal}
-\end{minipage}\\
+\end{figure}
+
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=.7\linewidth]{images/SetUpSameResolution.jpg}
+%	\captionof{figure}{Szenenaufbau: Die Canon 60D befindet sich in dieser Abbildung auf der linken Seite, die Canon 60 D auf der rechten. Auf dem Tisch zwischen den Kameras ist die in den Abbildungen 6.1 und 6.1 abgebildete Szene zu sehen. Beide Kameras sind zu Szene hin gedreht.}
+%	\label{fig:StereoaufbauReal}
+%\end{minipage}\\
 
 Die auf Abbildung \ref{fig:StereoaufbauReal} zu sehende linke Kamera wurde als Kamera eins definiert. Für Kamerakoordinatensystem $(C,\beta)$ wurde gleich dem Weltkoordinatensystem $(O,\delta)$ gesetzt. Kamera zwei mit $(C',\beta')$ befindet sich auf der Abbildung rechts. Für beide Kameras wurde in einem externen Programm die intrinsischen Kameraparameter $K$ und $K'$ bestimmt. An den Stereoaufnahmen der Szene wurde dann eine Korrespondenzanalyse gemacht.   
 
@@ -65,12 +81,12 @@ Für die Analyse der Korrespondierenden Punkte bei Stereoaufnahmen einer dreidim
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/PointsDetectedLeft.png}
-	\caption{a}
+	\caption[Aufnahme von Kamera $C$]{Aufnahme von Kamera $C$}
 	\label{fig:SurfRechts}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/PointsDetectedRight.png}
-	\caption{b}
+	\caption[Aufnahme von Kamera $C'$]{Aufnahme von Kamera $C'$}
 	\label{fig:SurfLinks}
 	\endminipage\hfill
 %	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet. Abbildung a zeigt das Bild von $C$, die Abbildung b zeigt das Bild von $C'$}
@@ -197,12 +213,12 @@ Eine Fundamentalmatrix ist im optimalen Fall eine singuläre Matrix mit Rang 2. 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/L_F_no_Constraint.png}
-	\caption{Epipolarlinien ohne \textit{Epipolar-constraint} im Bild der Canon 6D}
+	\caption[Epipolarlinien $C$ ohne Singularität]{Epipolarlinien ohne \textit{Epipolar-constraint} im Bild der Canon 6D}
 	\label{fig:NoEpipoleWithF1}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/LPrime_PC2_F_no_Constraint.png}
-	\caption{Epipolarlinien ohne \textit{Epipolar-constraint} im Bild der Canon 60D}
+	\caption[Epipolarlinien $C'$ ohne Singularität]{Epipolarlinien ohne \textit{Epipolar-constraint} im Bild der Canon 60D}
 	\label{fig:NoEpipoleWithF2}
 	\endminipage\hfill
 	%	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet}
@@ -221,16 +237,15 @@ Werden aus $\bar{F}$ der rechte und linke Kern bestimmt, so ergeben sich eindeut
 %Jetzt erst erfolgt die zuvor erwähnte denormierung von $\hat{F}$ durch $T$ und $T'$. Die Abbildungen 6.9 und 6.10 zeigen die Epipolarlinien im Originalbild mit denormierten Koordinaten.
 
 
-
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/L_PC1_F_Constraint.png}
-	\caption{Die Abbildung zeigt, dass die Epipolarlinien auf der Aufnahme von $C$, nach dem Erzwingen der singularität in der normierten $\hat{F}$, alle durch einen Epipol verlaufen}
+	\caption[Epipolarlinien in $C$ aus singulärer Fundamentalmatrix]{Die Abbildung zeigt, dass die Epipolarlinien auf der Aufnahme von $C$, nach dem Erzwingen der singularität in der normierten $\hat{F}$, alle durch einen Epipol verlaufen}
 	\label{fig:EpipoleWithF1}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/LPrime_PC2_F_Constraint.png}
-	\caption{Die Abbildung zeigt, dass die Epipolarlinien auf der Aufnahme von $C'$, nach dem Erzwingen der singularität in der normierten $\hat{F}$, alle durch einen Epipol verlaufen}
+	\caption[Epipolarlinien in $C'$ aus singulärer Fundamentalmatrix ]{Die Abbildung zeigt, dass die Epipolarlinien auf der Aufnahme von $C'$, nach dem Erzwingen der singularität in der normierten $\hat{F}$, alle durch einen Epipol verlaufen}
 	\label{fig:EpipoleWithF2}
 	\endminipage\hfill
 	%	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet}
@@ -239,12 +254,12 @@ Werden aus $\bar{F}$ der rechte und linke Kern bestimmt, so ergeben sich eindeut
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/L_PC1_F_Constraint_denormalized.png}
-	\caption{Die Abbildung zeigt die Epipolarlinien in $C$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormalisiert wurde}
+	\caption[Epipolarlinien in $C$ aus singulärer denormalisierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormalisiert wurde}
 	\label{fig:EpipoleWithF1Denorm}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/LPrime_PC2_F_Constraint_denormalized.png}
-	\caption{Die Abbildung zeigt die Epipolarlinien in $C'$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormalisiert wurde}
+	\caption[Epipolarlinien in $C$ aus singulärer denormalisierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C'$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormalisiert wurde}
 	\label{fig:EpipoleWithF2Denorm}
 	\endminipage\hfill
 	%	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet}
@@ -287,15 +302,15 @@ kommt ein Wert $\neq 0$ heraus. Je weiter der Wert von 0 abweicht, desto ungenau
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/problemTriangulation_beschriftet.png}
-	\caption{a)}
+	\caption[Windschiefe Geraden]{a) Windschiefe Geraden}
 	\label{fig:ProblemTraingulation}
 	\endminipage\hfill
 	\minipage{0.5\textwidth}
 	\includegraphics[width=\linewidth]{images/SampsAppx.png}
-	\caption{b)}
+	\caption[Epipolare Bedingung wird nicht erfüllt]{b) Epipolare Bedingungen werden nicht erfüllt}
 	\label{fig:lFm}
 	\endminipage\hfill
-	\caption{ a) Die rückprojizierten Strahlen der ungenauen korrespondierenden Punkte $m_\sigma$ und $m'_{\sigma'}$ sind Windschief zueinander und treffen sich nicht in einem Punkt $M_\delta$ im Raum. b) Die korrespondierenden Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ erfüllen nicht den \textit{Epipolar-Constraint}. Die Epipolarlinie $l' = Fm$ is die korrespondierende Epipolarlinie zu $m_\sigma$ und $l = F^Tm'$ ist die korrespondierende Epipolarlinie zu $m'_{\sigma}$. Da weder $m_\sigma$ noch $m'_{\sigma'}$ auf der Epipolarlinie zum jeweils korrespondierenden Punkt liegt, kommt es zu keinem Schnittpunkt der rückprojizierten Strahlen}
+	\caption[Problemstellung für die Triangulation im reellen Beispiel]{ a) Die rückprojizierten Strahlen der ungenauen korrespondierenden Punkte $m_\sigma$ und $m'_{\sigma'}$ sind Windschief zueinander und treffen sich nicht in einem Punkt $M_\delta$ im Raum. b) Die korrespondierenden Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ erfüllen nicht den \textit{Epipolar-Constraint}. Die Epipolarlinie $l' = Fm$ is die korrespondierende Epipolarlinie zu $m_\sigma$ und $l = F^Tm'$ ist die korrespondierende Epipolarlinie zu $m'_{\sigma}$. Da weder $m_\sigma$ noch $m'_{\sigma'}$ auf der Epipolarlinie zum jeweils korrespondierenden Punkt liegt, kommt es zu keinem Schnittpunkt der rückprojizierten Strahlen}
 \end{figure}
 
 Um trotz der ungenauen korrespondierenden Punkte eine Triangulation zu ermöglichen, wurde ein Verfahren voran geschaltet, welches zwei Punkte $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sucht, die möglichst nah an den ursprünglichen Punkten $m_\sigma$ und $m'_{\sigma'}$ liegen und gleichzeitig den \textit{Epipolar-Constraint} $\hat{m}'^T_{\sigma'}F\hat{m}_\sigma = 0$ erfüllen. $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sollen durch Minimierung einer Kostenfunktion $C$ bestimmt werden, welche die Distanz  $d$ zwischen $m_\sigma$ und $\hat{m}_\sigma$ und $m'_{\sigma'}$ und $\hat{m}'_{\sigma'}$ minimiert. Für die Minimierung wird das Verfahren der Sampson-Approximation gewählt\cite{HZ}. (Literatur zu Sampson approximation?? erklären wie??) Voraussetzung für die Triangulierung ist, dass die Projektionsmatrizen $P$ und $P'$, sowie die Fundamentalmatrix $F$ bekannt sein müssen\cite{HZ}.
@@ -309,11 +324,17 @@ Um trotz der ungenauen korrespondierenden Punkte eine Triangulation zu ermöglic
 Die optimalen $\hat{m}$ und $\hat{m}'$ liegen auf den korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l}'$ am Fuße des Lots, welches von den ursprünglich projizierten Punkten $m$ und $m'$ auf die Epipolarlinien $\hat{l}$ und $\hat{l'}$ gefällt wird\cite{HZ}. 
 
 
-\begin{minipage}{\linewidth}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/SampsAppxNewPoints.png}
-	\captionof{figure}{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\sigma}$ und $\hat{m'_{\sigma'}}$}
-\end{minipage}\\\\
+	\caption[Sampson Approximation aufstellen der Kostenfunktion]{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\sigma}$ und $\hat{m'_{\sigma'}}$}
+\end{figure}
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=.8\linewidth]{images/SampsAppxNewPoints.png}
+%	\captionof{figure}{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\sigma}$ und $\hat{m'_{\sigma'}}$}
+%\end{minipage}\\\\
 
 Jedes andere Punktepaar auf $\hat{l}$ und $\hat{l}'$ würde den \textit{Epipolar-Constraint} erfüllen, jedoch minimieren nur $m_{\sigma\bot}$ und $m'_{\sigma' \bot}$ die quadratischen Distanzen $d(m_\sigma,\hat{m}_\sigma)^2$ und $ d(m'_{\sigma'},\hat{m}'_{\sigma'})^2$ in der Kostenfunktion $C$. Gesucht wird also der geringste Abstand von $m_\sigma$ zu $\hat{l}$ und $m'_{\sigma'}$ zu $\hat{l}'$. Die Kostenfunktion $C$ kann dem entsprechend umformuliert werden in 
 
@@ -605,12 +626,12 @@ Die Abbildungen \ref{fig:reconstructedSampson3D} und \ref{fig:reconstructedSamps
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/reconstructed_Points_Same_Resolutions.png}
-	\caption{Rekonstruierte Szene, unskaliert in Pixeleinheiten}
+	\caption[Rekonstruierte Szene 3D]{Rekonstruierte Szene, unskaliert in Pixeleinheiten}
 	\label{fig:reconstructedSampson3D}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/reconstructed_Points_Same_Resolutions2D.png}
-	\caption{Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot angezeigt}
+	\caption[Rekonstruierte Szene 2D]{Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot angezeigt}
 	\label{fig:reconstructedSampson2D}
 	\endminipage\hfill
 	%	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet}

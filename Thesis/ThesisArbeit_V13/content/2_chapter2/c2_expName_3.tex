@@ -100,27 +100,29 @@ Der Szenenrekonstruktionsalgorithmus wurde für jede Kameraauflösung getestet. 
 %Als Beweise werden im folgenden vier Beispiele für die vier Lösungen der rekonstruierten Translationsmatrizen $R'$ aufgezeigt. Des Weiteren werden die 3D-Plots und 2D-Plots der rekonstruierten Szenen bei unterschiedlich Auflösungen im Vergleich mit der Szene bei gleichen Auflösungen gezeigt. Die Koordinaten sind in unskalierten Pixeleinheiten gegeben. Die Originalszene ist in Abbildung 7.15 und 7.16 zu sehen. Zu beachten ist, das die Ausgabe des 3D Plots in \textit{Mathematica} manchmal rechtsdrehend, manchmal linksdrehend dargestellt sind, weshalb der Eindruck aufkommt, die Szene und die Kameraposition seien gespiegelt dargestellt. Dies leider auf ein generellen Darstellungsproblem von 3D-Plots in Mathematica zurückzuführen. Dieses kann mit zusätzlichem Code bereinigt werden, wurde aber zu diesem Zeitpunkt noch nicht implementiert. 
 
 
+
+
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/R_11.png}
-	\caption{Zeigt die Die rekonstruierte Matrix $T'$ bei unveränderter Auflösung. Die Auflösungen von $C_\delta$ und $C'_\delta$ sind die selben.}
+	\caption[Vier Lösungen für $T$ bei gleicher Kameraauflösung]{Zeigt die Die rekonstruierte Matrix $T'$ bei unveränderter Auflösung. Die Auflösungen von $C_\delta$ und $C'_\delta$ sind die selben.}
 	\label{fig:T11}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/R_52.png}
-	\caption{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
+	\caption[Vier Lösungen für $T$ bei $K'$ mit 5:2]{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
 	\label{fig:T52}
 	\endminipage\hfill
 \end{figure}
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/R_12.png}
-	\caption{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[1:2]$ skaliert wurde}
+	\caption[Vier Lösungen für $T$ bei $K'$ mit 1:2]{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[1:2]$ skaliert wurde}
 	\label{fig:T12}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/R_12_23.png}
-	\caption{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[1.2:2.3]$ skaliert wurde}
+	\caption[Vier Lösungen für $T$ bei $K'$ mit 1.2 : 2.3]{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[1.2:2.3]$ skaliert wurde}
 	\label{fig:T1223}
 	\endminipage\hfill
 \end{figure}
@@ -128,7 +130,12 @@ Der Szenenrekonstruktionsalgorithmus wurde für jede Kameraauflösung getestet. 
 
 Die Abbildungen \ref{fig:RecT52}, \ref{fig:RecT12} und \ref{fig:RecT1223} zeigen einmal die Rekonstruierten Punkte in einem 3D-Plot und daneben den 2D-Plot. Auch hier kann beobachtet werden, dass es immer zu den gleichen Szenen. In Abbildung \ref{fig:RecT12} ist die Rekosntruktion in einem links drehendem Koordinatensystem geplottet, weshalb die Rekonstitution spiegelverkehrt wirkt. 
 
-
+%\begin{figure}[!htb]
+%	\centering
+%	\includegraphics[width=.7\linewidth]{images/Bildsensor_mit_Pixel.png}
+%	\caption[Aufbau CMOS Sensor]{Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Sensorelementen. Vergleiche \cite{Photonik}} 
+%	\label{fig:Sensor}
+%\end{figure}
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
@@ -139,7 +146,7 @@ Die Abbildungen \ref{fig:RecT52}, \ref{fig:RecT12} und \ref{fig:RecT1223} zeigen
 	\includegraphics[width=\linewidth]{images/Reconstrution2D_52.png}
 %	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt}
 	\endminipage\hfill
-	\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
+	\caption[Rekonstruierte Szene bei $K'$ = 5:2]{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
 	\label{fig:RecT52}
 \end{figure}
 \begin{figure}[!htb]
@@ -153,7 +160,7 @@ Die Abbildungen \ref{fig:RecT52}, \ref{fig:RecT12} und \ref{fig:RecT1223} zeigen
 	%	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt}
 	\label{fig:awesome_image2}
 	\endminipage\hfill
-	\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[1:2]$ skaliert wurde}
+	\caption[Rekonstruierte Szene bei $K'$ = 1:2]{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[1:2]$ skaliert wurde}
 	\label{fig:RecT12}
 \end{figure}
 \begin{figure}[!htb]
@@ -167,7 +174,7 @@ Die Abbildungen \ref{fig:RecT52}, \ref{fig:RecT12} und \ref{fig:RecT1223} zeigen
 	%	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt}
 	\label{fig:awesome_image2}
 	\endminipage\hfill
-	\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[1.2:2.3]$ skaliert wurde}
+	\caption[Rekonstruierte Szene bei $K'$ = 1.2:2.3]{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[1.2:2.3]$ skaliert wurde}
 	\label{fig:RecT1223}
 \end{figure}
 

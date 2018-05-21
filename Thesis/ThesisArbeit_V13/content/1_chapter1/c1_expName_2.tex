@@ -36,23 +36,40 @@ In den ersten beiden Abschnitten werden zwei Herleitungen der Abbildungsvorschri
 \section{Korrespondenzen planarer Punktmengen mit Homographien}
 
 Eine Abbildungsvorschrift kann in bestimmten Fällen eindeutig bestimmt werden. In diesen Fällen nennt man die Abbildung zwischen beiden zweidimensionalen Bildern Homographie\cite{HZ,Elements,Roser}. In diesem Kapitel wird der beispielhafte Fall behandelt, dass Punkte auf der $x,y$-Ebene im Weltkoordinatensystem auf zwei unterschiedlichen Kameras $C$ und $C'$ abgebildet werden. Dies ist in Abbildung \ref{fig:Homographie} dargestellt.
+\pagebreak
 
-\begin{minipage}{\linewidth}
+
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/HomographieDP_beschriftet.png}
-	\captionof{figure}{In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ befindet sich auf der Ebene $\pi$, welche durch die Achsen $\hat{d_1}$ und $\hat{d_2}$ aufgespannt wird. $M_\delta$ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $m_\tau$ und $m'_\tau$.}  
+	\caption[Abbildungsvorschrift in Homographien]{In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ befindet sich auf der Ebene $\pi$, welche durch die Achsen $\hat{d_1}$ und $\hat{d_2}$ aufgespannt wird. $M_\delta$ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $m_\tau$ und $m'_\tau$.}  
 	\label{fig:Homographie}
-\end{minipage}\\
+\end{figure}
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=0.8\linewidth]{images/HomographieDP_beschriftet.png}
+%	\captionof{figure}{In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ befindet sich auf der Ebene $\pi$, welche durch die Achsen $\hat{d_1}$ und $\hat{d_2}$ aufgespannt wird. $M_\delta$ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $m_\tau$ und $m'_\tau$.}  
+%	\label{fig:Homographie}
+%\end{minipage}\\
 
 Um die Abbildungsvorschrift herzuleiten beginnen wir bei dem Bildpunkt \ensuremath{m_{\tau} = (m_{\tau,1},m_{\tau,2},m'_{\tau,3})^T} mit $m_{\tau,3}=1$. Während in der Bildaufnahme ein Punkt $m_\beta$ durch Division mit der $m_{\beta,3}$-Komponenten eindeutig zu $m_{\tau}$ wird ist die Rückrichtung nicht eindeutig. Alle Punkte auf der Geraden von C und $m_{\tau}$, siehe Abbildung \ref{fig:gamma},werden auf denselben Bildpunkt projiziert. Die Projektion von $m_{\tau}$ auf $m_\beta$ ist demnach nicht eindeutig. Die Gerade mit allen möglichen Punkten $m_\beta$ kann als $\gamma m_{\tau}$, mit der freien Variablen $\gamma > 0$ ausgedrückt werden.  
 
 
-\begin{minipage}{\linewidth}
+
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/gamma.png}
-	\captionof{figure}{Auf der Geraden durch $C$ und $\vec{m}_\tau$, befinden sich alle möglichen Punkte für $m_\beta$. $m_\beta$ wird auf Grund seiner Unbestimmtheit als $\gamma m_\tau$ bezeichnet}  
+	\caption[Veranschaulichung der freien Variablen $\gamma$]{Auf der Geraden durch $C$ und $\vec{m}_\tau$, befinden sich alle möglichen Punkte für $m_\beta$. $m_\beta$ wird auf Grund seiner Unbestimmtheit als $\gamma m_\tau$ bezeichnet}  
 	\label{fig:gamma}
-\end{minipage}\\
+\end{figure}
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=0.8\linewidth]{images/gamma.png}
+%	\captionof{figure}{Auf der Geraden durch $C$ und $\vec{m}_\tau$, befinden sich alle möglichen Punkte für $m_\beta$. $m_\beta$ wird auf Grund seiner Unbestimmtheit als $\gamma m_\tau$ bezeichnet}  
+%	\label{fig:gamma}
+%\end{minipage}\\
 
 %Ein Punkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3},O)$, wird auf zwei Bildebenen $(I,\tau)$ und $(I',\tau')$ projiziert. 
 Für zwei korrespondierende Bildpunkte $m_\tau$ und $ m'_{\tau'}$ kann für alle möglichen Punkte $m_\beta$ und $m'_\beta$ die folgende Projektionsvorschrift hergeleitet werden \cite{Elements}.
@@ -217,28 +234,43 @@ Diese Homographiebedingung stellt ein Gleichungssystem mit 9 unbekannten, welche
 \section{Korrespondenzanalyse für beliebige Punkte im Raum (Epipolare Geometrie)}
 \label{sec:EpiolarContraints}
 
-Für Bilder von komplexeren dreidimensionalen Objekten, bei denen die Punkte auf verschiedenen Ebenen liegen können, kann keine Homographiebedingung hergestellt werden um die Kameraparameter zu bestimmen. Jedoch kann auf geometrische Bedingungen zurückgegriffen werden, um die Abbildungsvorschrift zwischen den Bildern auszunutzen, um die Kameraparameter beider Kameras zu bestimmen. Ein Ursprungspunkt $M_\delta$ wird wieder mit zwei Kameras $C$ und $C'$ aufgenommen. In Abbildung \ref{fig:Epipolargeometry} ist das stereoskopische System dargestellt . 
+Für Bilder von komplexeren dreidimensionalen Objekten, bei denen die Punkte auf verschiedenen Ebenen liegen können, kann keine Homographiebedingung hergestellt werden um die Kameraparameter zu bestimmen. Jedoch kann auf geometrische Bedingungen zurückgegriffen werden, um die Abbildungsvorschrift zwischen den Bildern auszunutzen, um die Kameraparameter beider Kameras zu bestimmen. Ein Ursprungspunkt $M_\delta$ wird wieder mit zwei Kameras $C$ und $C'$ aufgenommen. In Abbildung \ref{fig:Epipolargeometry} ist das stereoskopische System dargestellt.
+\pagebreak
 
 
-\begin{minipage}{\linewidth}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/EpipolarGeoemtrieGrafik_beschriftet.png}
-	\captionof{figure}{$C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinie verbindet die Projektionszentren der Kameras. Die Punkte an welchen die Basislinie die Bildebenen schneidet, werden als Epipole $e$ und $e'$ bezeichnet. Durch einen Epipol verlaufen alle Epipolarlinien des Bildes. $M_\delta$ ist der Objektpunkt im 3D-Raum und $m_\tau$ und $m'_{\tau'}$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M_\delta$ bilden die sogenannte Epipolarebene\cite{Hoffmann,phdTwoView,HZ,ZZGXr}.}  
+	\caption[Epipolar Geometrie]{$C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinie verbindet die Projektionszentren der Kameras. Die Punkte an welchen die Basislinie die Bildebenen schneidet, werden als Epipole $e$ und $e'$ bezeichnet. Durch einen Epipol verlaufen alle Epipolarlinien des Bildes. $M_\delta$ ist der Objektpunkt im 3D-Raum und $m_\tau$ und $m'_{\tau'}$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M_\delta$ bilden die sogenannte Epipolarebene\cite{Hoffmann,phdTwoView,HZ,ZZGXr}.}  
 	\label{fig:Epipolargeometry}
-\end{minipage}\\ \\
+\end{figure}
+
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=.8\linewidth]{images/EpipolarGeoemtrieGrafik_beschriftet.png}
+%	\captionof{figure}{$C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinie verbindet die Projektionszentren der Kameras. Die Punkte an welchen die Basislinie die Bildebenen schneidet, werden als Epipole $e$ und $e'$ bezeichnet. Durch einen Epipol verlaufen alle Epipolarlinien des Bildes. $M_\delta$ ist der Objektpunkt im 3D-Raum und $m_\tau$ und $m'_{\tau'}$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M_\delta$ bilden die sogenannte Epipolarebene\cite{Hoffmann,phdTwoView,HZ,ZZGXr}.}  
+%	\label{fig:Epipolargeometry}
+%\end{minipage}\\ \\
 
 Es werden hier einige geometrische Definitionen eingeführt um die danach folgende mathematische Herleitung genauer zu verstehen. Die Vektoren $\overline{CM} = (\vec{M}_\delta - \vec{C}_\delta),\, \overline{C'M} = (\vec{M}_\delta - \vec{C'}_\delta)$ und $\overline{CC'} = (\vec{C'}_\delta - \vec{C}_\delta)$ definieren die Epipolarebene, die durch das schwarze Dreieck in Abbildung \ref{fig:Epipolargeometry} gekennzeichnet ist. Die Schnittpunkte der Geraden zwischen $C$ und $C'$ mit der jeweiligen Bildebene $I$ und $I'$ werden als Epipole $e$ und $e'$ bezeichnet. Die Schnittgerade der Epipolarebene mit $I$ und $I'$ bilden die sogenannten Epipolarlinien $l$ und $l'$\cite{HZ,Zhang2014,ZZPaper,phdTwoView}.\\%Elements
 
 Ein Bildpunkt $m_i$ auf der Bildebene $I$ wird zuerst auf die Gerade, die durch $m_i$ und $C$ geht abgebildet. Die Gerade stellt alle möglichen Ursprungspunkte zu $m_i$ da. Dies ist durch die drei möglichen Punkte $M1$,$M2$,$M3$ in Figur \ref{fig:Epipolarconstraint} dargestellt. Jeder dieser Punkte wird nun wiederum auf $I'$ projiziert. Die so entstandenen Punkte liegen alle auf der Epipolarlinie $l'$\cite{HZ}. 
 
-\begin{minipage}{\linewidth}
+
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/EpipolarLinien.png}
-	\captionof{figure}{Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, während sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.}  
+	\caption[Abbildungsvorschrift]{Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, während sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.}  
 	\label{fig:Epipolarconstraint}
-\end{minipage}\\ \\
+\end{figure}
 
-
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=.8\linewidth]{images/EpipolarLinien.png}
+%	\captionof{figure}{Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, während sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.}  
+%	\label{fig:Epipolarconstraint}
+%\end{minipage}\\ \\
 
 Die hier gezeigte Abbildung von $m_i$ auf $l'$ wird nun genauer betrachtet. Es werden wieder die Gleichungen für $m_\tau$ und $m'_\tau$, wie in Gleichung \ref{eq:Homo}, aufgestellt    
 
