@@ -97,11 +97,11 @@ $StartPoint$ wird danach in zwei unterschiedliche Listen geschrieben. Die Liste 
 %
 %Die Schlüssel $ICoord$ und $JCoord$ werden noch in eine weitere Liste namens $CheckList$ gespeichert. Anhand der $CheckList$ wird überprüft, ob die Koordinatend und somit ein Punkt selbst bereits Sortiert wurde. Damit wird verhindert, dass ein Punkt mehrmals in einsortiert wird.\\
 % 
-Nachdem der Startpunkt gefunden ist werden die jeweils nächsten Punte in $i$- und $j$-Richtung gesucht. Diese Punkte werden dann in die Variablen $NextI$ und $NextJ$ gespeichert. In Abbildung \ref{fig:NextINextJ} ist $NextI$ der violette Punkte und $NextJ$ ist der rote Punkte. \\
+Nachdem der Startpunkt gefunden ist werden die jeweils nächsten Punkte in $i$- und $j$-Richtung gesucht. Diese Punkte werden dann in die Variablen $NextI$ und $NextJ$ gespeichert. In Abbildung \ref{fig:NextINextJ} ist $NextI$ der violette Punkte und $NextJ$ ist der rote Punkte. \\
 
-Für die Bestimmung von $NextI$ wird zu erst initial $NextI = <|Coordx \rightarrow 100 000, Coordy \rightarrow 100 000|>$ gesetzt. Für den Punkt $NextI$ der nächsten Reihe $i$
+Für die Bestimmung von $NextI$ wird zu erst initial $NextI = <|Coordx \rightarrow 100 000, Coordy \rightarrow 100 000|>$ gesetzt. Für den Punkt $NextI$ der nächsten Reihe $i$ wird die Zelle in welchem sich $StartPoint$ befindet und die jeweiligen Zellen eins darüber und darunter durchsucht. In Abbildung \ref{fig:NextINextJ} ist dieser Bereich um $StartPoint$ gelb hinterlegt. 
 
- Es werden Punkte gesucht, welche sich in der selben $CellI$ wie $StartPoint$ und in den Zellen eins darüber $CellI +1$ und eine darunter $CellI-1$ befinden. In Abbildung \ref{fig:NextINextJ} ist der Bereich gelb eingefärbt.\\
+%Es werden Punkte gesucht, welche sich in der selben $CellI$ wie $StartPoint$ und in den Zellen eins darüber $CellI +1$ und eine darunter $CellI-1$ befinden. In Abbildung \ref{fig:NextINextJ} ist der Bereich gelb eingefärbt.\\
 
 
 \begin{figure}[!htb]
@@ -112,7 +112,15 @@ Für die Bestimmung von $NextI$ wird zu erst initial $NextI = <|Coordx \rightarr
 \end{figure}
 
 
-Gibt es in diesem Bereich einen Punkt, dessen $i$-Koordinate größer ist als die $i$-Koordinate des $StartPoints$ und dessen $j$-Koordinate kleiner ist als die des momentan gesetzten $NextI$, so wird dieser Punkt als neues $NextI$ festgelegt. Danach wird geprüft, ob der neue $NextI$ schon der letztendliche $NextI$ ist. Um das zu prüfen wird zunächst überprüft ob es innerhalb des gelben Bereichs noch einen Punkt gibt, dessen $j$-Koordinatenabstand vom Startpunkt aus kleiner gleich dem $j$-Koordinatenabstand zwischen dem momentanen $NextI$ zum Startpunkt ist. Gleichzeitig wird auch noch geprüft, ob der $i$-Koordinatenabstand zwischen $StartPoint$ und $NextI$ größer ist als der $i$-Koordinatenabstand zwischen einem Punkt innerhalb des Bereichs und $StartPoint$. Ist dies der Fall, so wird der gefundenen Punkt als neues $NextI$ bestimmt. Für die Überprüfung mit $NextJ$ wird nach dem gleichen Schema verfahren. in Abbildung \ref{fig:FindNextIJ} ist die eben beschriebene Prüfung nochmal grafisch dargestellt. $NextI$ und $NextJ$ werden dann mit den selben Schlüssel aber anderen zugeteilten Werten wie $StartPoint$ in die Liste $SortedPoints$ geschrieben. Die $CheckList$ wird um die Punkte $NextI$ und $NextJ$ erweitert.
+%Gibt es in diesem Bereich einen Punkt, dessen $y$-Koordinate größer ist als die $y$-Koordinate von $StartPoint$ und
+%
+%Gibt es in diesem Bereich einen Punkt, dessen $y$-Koordinate größer als die von $StartPoint$ ist 
+
+Innerhalb des Bereichs wird der Punkt mit der zu $StartPoint$ nächst höheren $y$-Koordinate ermittelt. Dieser Punkt wird dann als vorläufiges $NextI$ festgelegt. Danach wird geprüft, ob das neu bestimmte $NextI$ bereits das letztendliche $NextI$ ist. Um das zu prüfen wird zunächst überprüft ob es innerhalb des gelben Bereichs noch einen Punkt gibt, dessen $x$-Koordinatenabstand vom Startpunkt aus kleiner gleich dem $x$-Koordinatenabstand zwischen dem momentanen $NextI$ zum Startpunkt ist. Gleichzeitig wird geprüft, ob der $y$-Koordinatenabstand zwischen $StartPoint$ und $NextI$ größer ist als der $y$-Koordinatenabstand zwischen einem anderen Punkt innerhalb des Suchbereichs und $StartPoint$. Ist dies der Fall, so wird der Punkt auf den beides zutrifft als neues $NextI$ bestimmt. In Abbildung \ref{fig:FindNextIJ} ist die Überprüfung on das erste $NextI$ bereits stimmt oder geändert werden muss nochmal grafisch veranschaulicht.\\
+
+Die Suche nach dem nächsten Punkt in $j$-Richtung erfolgt nach dem gleichen Prinzip. Für $NextJ$ wird der in Abbildung \ref{fig:FindNextIJ} rot hinterlegte Bereich untersucht. Innerhalb des Roten Bereichs, wird derjenige Punkt ermittelt der zu $StartPoint$ den nächst höheren $x$-Wert besitzt. Dieser wird dann als vorläufiger $NextJ$ gespeichert. Danach wird auch über Abstandsrechnungen überprüft, ob es sich bei $NextJ$ bereits um den finalen Punkt handelt oder ob er nochmal geändert wird.\\
+
+Die beiden Punkte $NextI$ und $NextJ$ werden dann wie $StartPoint$ um die zwei Schlüssel $NeighbourI$ und $NeighbourJ$ erweitert. Die Punkte sind dann wie folgt definiert und werden in die Liste $SortedPoints$ gespeichert. die auf die Koordinateninformation beschränkte Version der beiden Punkte, wird in die $CheckList$ gespeichert. Damit gelten $NextI$ und $NextJ$ als sortiert.
 
 
 \begin{gather*}
@@ -139,16 +147,28 @@ Gibt es in diesem Bereich einen Punkt, dessen $i$-Koordinate größer ist als di
 \end{figure}
 
 
-Mit den Punkten $StartPoint$, $NextI$ und $NextJ$ können die ersten Richtungsvektoren gebildet werden, anhand welcher das Schachbrett Gitter rekonstruiert werden kann. Für beide Richtungen wird die Anzahl der möglichen Punkte begrenzt. Es werden zwei Listen $IList$ und $JList$ angelegt. In $IList$ werden alle Punkte innerhalb der Zellen $CellI_{min}$ bis $CellI_{max}$ und $CellJ_1$ und $CellJ_2$ gespeichert. In Abbildung \ref{fig:IListJList} entspricht das dem Vertikalen blauen Bereich. In $JList$, kommen alle Punkte innerhalb von $CellJ_{min}$ bis $CellJ_{max}$ und $CellI_1$ und $CellI_2$. Was dem horizontalen blauen Bereich in Abbildung \ref{fig:IListJList} entspricht. \\
+Mit den Punkten $StartPoint$, $NextI$ und $NextJ$ können die ersten Richtungsvektoren in $i$-Richtung mit $NextIDir= NextI - StatPoint$ und $j$- Richtung mit $NextJDir =NextJ\,StatPoint$ gebildet werden. Anhand der Richtungsvektoren werden Suchbereiche definiert, in welchen der jeweils nächste Punkt in entsprechender Richtung $i$ oder $j$ gesucht werden soll.\\ 
 
-Zuerst wird die erste Kante in $j$-Richtung vervollständigt. Es wird ein Richtungsvektor $NextJDir$ aus $StartPoint$ und $NextJ$ gebildet. Des Weiteren wird ein Pufferwert $ProportionI$ deklariert, welcher den $i$-Koordinatenabstand zwischen $StartPoint$ und $NextJ$ beinhaltet. Anhand des Richtungsvektors $NextJDir$ und des Pufferwertes $ProportionI$ wird der nächste Punkt von $NextJ$ aus gesucht. \\
+% anhand welcher das Schachbrett Gitter rekonstruiert werden kann.
+
+Für beide Richtungen wird die Anzahl der möglichen Punkte begrenzt. Es werden zwei Listen $IList$ und $JList$ angelegt. In $IList$ werden alle Punkte gespeichert welche die Zeleen Schlüssel $CellI_{min}$ bis $CellI_{max}$ und $CellJ_1$ und $CellJ_2$ gespeichert haben. In Abbildung \ref{fig:IListJList} entspricht das dem Vertikalen blauen Bereich. In $JList$, kommen alle Punkte deren Zellen Schlüssen $CellJ_{min}$ bis $CellJ_{max}$ und $CellI_1$ und $CellI_2$ gespeichert haben. Was dem horizontalen blauen Bereich in Abbildung \ref{fig:IListJList} entspricht. \\
+
+Der Algorithmus dann nach folgendem Schema vor. Zu erst wird die Untere Schachbrettkante vervollständigt. Sprich alle Punkte de Später die Schlüssen $NeighbourI = 1$ und $NeighbourJ = j_{alle}$ haben sollen.\\
+
+%Zuerst wird die erste Kante in $j$-Richtung
+
+Neben dem Richtungsvekor $NextJDir$ wird noch ein Pufferwert $ProportionI$ deklariert, welcher den $i$-Koordinatenabstand zwischen $StartPoint$ und $NextJ$ beinhaltet. Dieser Pufferwert wird in positiver sowie in negativer Richtung um den Richtungsvektor definiert. In Abbildung \ref{fig:UebersichtSortierungsAlg} ist dieser Puffer als Blauer Kegel vor den Punkten zu sehen. Dieser Kegel definiert den Suchbereich von einem bereits bekannten Punkt zu einem noch unbekannten Punkt.
+
+%
+% 
+% wird ein Richtungsvektor $NextJDir$ aus $StartPoint$ und $NextJ$ gebildet. Des Weiteren wird ein Pufferwert $ProportionI$ deklariert, welcher den $i$-Koordinatenabstand zwischen $StartPoint$ und $NextJ$ beinhaltet. Anhand des Richtungsvektors $NextJDir$ und des Pufferwertes $ProportionI$ wird der nächste Punkt von $NextJ$ aus gesucht. \\
 
 \begin{gather*}
 	NextJDir = NextI - StartPoint\\
 	ProportionI = NextI[CoordI]-StartPoint[CoordI]
 \end{gather*}\\
 
-In Abbildung \ref{fig:IListJList} auf dem linken Bild wird der Richtungsvektor $NextJDir$ als Pfeil vom gelben $StartPoint$ zum roten $NextJ$ dargestellt, der Richtungsvektor wird noch um einen Pufferwert vergrößert, da durch Perspektive und Bildverzerrungen die Abstände zwischen den einzelnen Punkten nicht mehr einheitlich sein muss. Die Pfeile welche in $i$-Richtung von $NextJ$ aus ausgehen, ist der Abstand $ProporionI$, welcher auf die $i$-Koordinate von $NectJ$ einmal addiert und einmal subtrahiert wird. Der Bereich den die Vektoren aufspannen bildet den Suchbereich für den auf $NextJ$ folgenden Punkt.\\
+In Abbildung \ref{fig:IListJList} auf dem linken Bild wird der Richtungsvektor $NextJDir$ als Pfeil vom gelben $StartPoint$ zum roten $NextJ$ dargestellt, der Richtungsvektor wird noch um einen Pufferwert vergrößert. Die Pfeile welche in $i$-Richtung von $NextJ$ aus ausgehen, ist der Abstand $ProporionI$, welcher auf die $i$-Koordinate von $NextJ$ einmal addiert und einmal subtrahiert wird. Der Bereich den die Vektoren aufspannen bildet den Suchbereich für den auf $NextJ$ folgenden Punkt.\\
 
 %\begin{figure}[!htb]
 %	\minipage{0.48\textwidth}
@@ -166,11 +186,12 @@ In Abbildung \ref{fig:IListJList} auf dem linken Bild wird der Richtungsvektor $
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=1\linewidth]{images/VerzeichnetesSchachbrett_4.png}
+	\includegraphics[width=0.8\linewidth]{images/VerzeichnetesSchachbrett_4.png}
 	\caption[Suche nach $NextJ$]{Im linken Bild ist der Startpunkt in gelb dargestellt und der bereits gefundenen Punt $NextJ$ ist in rot eingefärbt. Anhand der beiden Punkte wird ein Richtungsvektor definiert und zwei Pufferwerte oberhalb und unterhalb. Diese bilden einen Suchbereich. Im rechten Bild wurde $NextJ$ als neuer Startwert festgelegt. Der zuvor definierte Suchbereich wird vor den neuen Startpunkt gesetzt und es wird nach einem potentiellen nächsten $NextJ$ gesucht.}
 	\label{fig:IListJList}
 \end{figure}
 
+(HIER WEITER SCHREIBEN)\\
 $NextJ$ wird zum neuen $StartPoint$. Vom neuen $StartPoint$ ausgehend, wird der zuvor definierte Suchbereich nach einem neuem $NextJ$ abgesucht. Wird ein Punkt in diesem Bereich entdeckt, so wird dieser zum neuen $NextJ$, sofern er sich noch nicht in der $CheckList$ befindet. Tritt der Fall ein, dass ein Punkt bereits in der $CheckList$ sich befindet, so wird dieser ignoriert. Die Position und der Platz im Schachbrettgitter werden dem neu entdeckten Punkt, wie die Punkten zuvor, durch Schlüsselwerte festgehalten und in die Liste $SortedList$ gespeichert. Des Weiteren wird auch dieser in die $CheckList$ aufgenommen.\\
 
 Anhand des neuen $StartPoints$ und des neuen $NextJ$ werden der Richtungsvektor $NextJDir$ und $ProportionI$ neu berechnet. $NextJ$ wird wieder zum neuen $StartPoint$ und die Suche wird dementsprechend weiter geführt, bis kein Punkt mehr gefunden wird. Alle Punkte werden als $Asssociation$ mit entpsrechenden Schlüsselwerten in $SortedList$ und $CheckList$ eingetragen.\\
