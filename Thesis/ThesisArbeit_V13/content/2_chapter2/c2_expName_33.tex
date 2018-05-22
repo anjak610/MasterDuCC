@@ -13,7 +13,7 @@ Ein weit verbreiteter Ansatz der Stereobildanalyse basiert auf zuvor Rektifizier
 
 % parallelen Epipolarlinien anschließend noch zu einheitlichen Scanlinien über beide Bilder entlang einer Koordinatendachse ausgerichtet werden.
  
-Anhand der so entstandenen Scanlinien, wird die Suche nach weiteren korrespondierenden Punkten auf eine eindimensionale Suche beschränkt, da nur noch entlang der entsprechenden korrespondierenden Epipolarlinie gesucht wird. Die Rektifizierung, macht es somit möglich die Bildpunkte kompletter Bilder mit realtiv geringem Rechenaufwand zu rekonstruieren\cite{ZZ,Fusiello,Javier}. Jedoch verlangen viele Rektifizierungsansätze als Vorraussetzung, dass das verwendetet Stereobildpaar die selbe Auflösung besitzt.\\
+Anhand der so entstandenen Scanlinien, wird die Suche nach weiteren korrespondierenden Punkten auf eine eindimensionale Suche beschränkt, da nur noch entlang der entsprechenden korrespondierenden Epipolarlinie gesucht wird. Die Rektifizierung, macht es somit möglich die Bildpunkte kompletter Bilder mit relativ geringem Rechenaufwand zu rekonstruieren\cite{ZZ,Fusiello,Javier}. Jedoch verlangen viele Rektifizierungsansätze als Voraussetzung, dass das verwendetet Stereobildpaar die selbe Auflösung besitzt.\\
 
 Der in dieser Arbeit entwickelte Szenenrekonstruktionsalgorithmus wurde so entwickelt, dass eine Rektifizierung der Bilder, nicht notwendig wird. Der Grund dafür ist, dass ein Algorithmus entsteht, welcher auch mit Bildern unterschiedlicher Kameraauflösungen eine erfolgreiche Rekonstruktion vollbringt.\\
 
@@ -400,19 +400,37 @@ Auf diese Weise wurden im synthetischen Beispiel die Matrizen $H_p$ und $H_p'$ b
 
 %Abbildung 4.7 zeigt in rot den Quader des Minimalbeispiels wie er in Kamera zwei abgebildet ist und in grün wie er in Kamera eins abgebildet ist. Kamera zwei ist horizontal zu Kamera eins verschoben und um $45\circ$ zu Kamera eins um die eigene vertikale Achse ein gedreht. Die Auflösungen beider Kameras sind identisch, sprich die intrinsischen Kameraparameter sind die selben. Abbildung 4.8 zeigt die momentanen Epipolarlinien. Die Epipolarlinien von Bild eins, also dem grünen Abbild, sind bereits Parallel, was aber keine Voraussetzung für die Funktion des Rektifizierungsalgorithmus ist. Der Schnittpunkt der Epipolarlinien von Bild zwei, also dem Roten Abbild, treffen sich in einem Punkt und bilden somit den Epipol von Bild zwei. 
 
-\begin{minipage}{\linewidth}
+
+
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/Rectification_one_same_Solutions.png}
-	\captionof{figure}{Aufnahmen zweier Kameras mit den selben Auflösungen, Kamera eins(Grün) und Kamera(rot) zwei gelten jeweils \ensuremath{\zeta =1}}
+	\caption[virtuelle Aufnahme eines Quaders für die Rektifizierung]{Aufnahmen zweier Kameras mit den selben Auflösungen, Kamera eins(Grün) und Kamera(rot) zwei gelten jeweils \ensuremath{\zeta =1}}
 	\label{fig:RectOriginal} 
-\end{minipage}\\ 
+\end{figure}
+\pagebreak
 
-\begin{minipage}{\linewidth}
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=.8\linewidth]{images/Rectification_one_same_Solutions.png}
+%	\captionof{figure}{Aufnahmen zweier Kameras mit den selben Auflösungen, Kamera eins(Grün) und Kamera(rot) zwei gelten jeweils \ensuremath{\zeta =1}}
+%	\label{fig:RectOriginal} 
+%\end{minipage}\\ 
+
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/Rectification_two_same_Solutions.png}
-	\captionof{figure}{Epipole für Kamera eins und Kamera zwei vor der Rektifizierung } 
+	\caption[Epipolarlinien und Epipole vor der Rektifizierung]{Epipole für Kamera eins und Kamera zwei vor der Rektifizierung } 
 	\label{fig:RectOriginalELines}
-\end{minipage}\\
+\end{figure}
+
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=.8\linewidth]{images/Rectification_two_same_Solutions.png}
+%	\captionof{figure}{Epipole für Kamera eins und Kamera zwei vor der Rektifizierung } 
+%	\label{fig:RectOriginalELines}
+%\end{minipage}\\
 
 
 Nach Transformieren der Abbildungspunkte mit den Matrizen $H_p$ und $H_p'$ wurden die Epipole ins unendliche Transformiert. Die Epipolarlinien verlaufen jetzt parallel zueinander, jedoch noch nicht zwingend parallel zur horizontalen Achse. In den Abbildung en \ref{fig:RectSameHp1} und \ref{fig:RectSameHp2} ist das Ergebnis der mit $H_p$ und $H_p'$ transformierten Bildpunkte zu sehen.
@@ -589,12 +607,14 @@ Da es nicht möglich ist die horizontale Verzerrung gänzlich zu reduzieren, wir
 
 Für den nächsten Schritt werden im synthetischen Beispiel für die Abbildungen des Quaders jeweils Bildweite $w$ und Bildhöhe $h$ definiert. Da zunächst von gleichen Kameraauflösungen ausgegangen wird, sind die Bildbreiten und Höhen beider Kameras gleich. Danach werden die vier Mittelpunkte $a,b,c$ und $d$ der Bildkanten definiert mit $a = [\frac{w-1}{2} \; 0 \; 1]^T, b = [w-1 \; \frac{h-1}{2}\; 1]^T, c = [\frac{w-1}{2} \; h-1 \; 1]^T, d = [0 \; \frac{h-1}{2} \; 1]^T$.
 
-\begin{minipage}{\linewidth}
+
+
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/Scherungstransformation.png}
-	\captionof{figure}{Die Verbindungslinien  $\overline{bd}$ und $\overline{ca}$ sollen so ausgerichtet werden, dass sie orthogonal zueinander stehen.} 
+	\caption[Wiederherstellung der Orthogonalität]{Die Verbindungslinien  $\overline{bd}$ und $\overline{ca}$ sollen so ausgerichtet werden, dass sie orthogonal zueinander stehen.} 
 	\label{fig:PreserveAspectRatio}
-\end{minipage}\\ \\
+\end{figure}
 
 Die Punkte $a,b,c,d$ und auch $a',b',c',d'$ sind die Mittelpunkte der noch nicht rektifizierten Bildkanten. Diese werden mit den Transformationsmatrizen $H_sH_rH_p$ und $H_s'H_r'H_p'$ verrechnet, um so die Position der Kantenmitten nach der Rektiizierung zu erhalten.
 
@@ -706,13 +726,22 @@ Für $C'$ wird eine kleinere Auflösung mit $\zeta'_x = \zeta'_y = 0.5$ definier
 
 
 Die entstehenden Bilder des Quaders sind in Abbildung \ref{fig:AbbRecDifRes} zu sehen. Da $K'$ nur eine halb so große Auflösung wie $K$ besitzt, ist das resultierende Bild des roten Quaders auch nur halb so groß. Der grüne Quader zeigt das entstehende Bild von $C'$.
+\pagebreak
 
-\begin{minipage}{\linewidth}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1.\linewidth]{images/Rectification_one_different_Solutions.png}
-	\captionof{figure}{Aufnahmen zweier Kameras mit unterschiedlichen Auflösungen.Für Kamera eins(Grün) gilt \ensuremath{\zeta_x = \zeta_y = 1}  und für Kamera zwei(rot) gilt \ensuremath{\zeta'_x = \zeta'_y= 2}.} 
+	\caption[virtuelle Aufnahme mit unterschiedlichen Auflösung für die Rektifizierung]{Aufnahmen zweier Kameras mit unterschiedlichen Auflösungen.Für Kamera eins(Grün) gilt \ensuremath{\zeta_x = \zeta_y = 1}  und für Kamera zwei(rot) gilt \ensuremath{\zeta'_x = \zeta'_y= 2}.} 
 	\label{fig:AbbRecDifRes}
-\end{minipage}\\ \\
+\end{figure}
+
+
+%\begin{minipage}{\linewidth}
+%	\centering
+%	\includegraphics[width=1.\linewidth]{images/Rectification_one_different_Solutions.png}
+%	\captionof{figure}{Aufnahmen zweier Kameras mit unterschiedlichen Auflösungen.Für Kamera eins(Grün) gilt \ensuremath{\zeta_x = \zeta_y = 1}  und für Kamera zwei(rot) gilt \ensuremath{\zeta'_x = \zeta'_y= 2}.} 
+%	\label{fig:AbbRecDifRes}
+%\end{minipage}\\ \\
 
 Abbildung \ref{fig:AbbRecDifResHp} zeigt die projektive Transformation der beiden Bilder mit $H_p$ und $H_p'$. Die Epipolarlinien der beiden Bilder sind nach dieser Transformation jeweils parallel zueinander. In Abbildung \ref{fig:AbbRecDifResHrHp} ist das Resultat zu sehen wenn die Transformation $H_r$ und $H_r'$ dazukommen. Die Epipolarlinien sind jetzt parallel zur horizontalen Achse und die Epipolarlinien von Bild eins und Bild zwei sind so zueinander ausgerichtet, dass sie zu einheitlichen Linien über zwei Bilder werden. Der rote Quader, welches das Bild mit der niedrigeren Auflösung repräsentiert, ist nach dieser Transformation stark horizontaler und vertikaler Richtung vergrößert wird. 
 %(Normalerweise in realbildern wird das bild bei unterschiedlicher Auflösung nicht verzerrt sondern nur "Vergrößert" oder zurecht "geschnitten". Dadruch dass beide Quader in einem Koordinatensystem verbaut wurden sieht das so aus)
@@ -721,12 +750,12 @@ Abbildung \ref{fig:AbbRecDifResHp} zeigt die projektive Transformation der beide
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Rectification_Hp_different_Solutions.png}
-	\caption[Transformation $H_p$ und $H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen]{}
+	\caption[Transformation $H_p$ und $H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen]{Transformation $H_p$ und $H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen}
 	\label{fig:AbbRecDifResHp}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Rectification_HrHp_different_Solutions.png}
-	\caption[Transformation $H_rH_p$ und $H_r'H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen]{}
+	\caption[Transformation $H_rH_p$ und $H_r'H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen]{Transformation $H_rH_p$ und $H_r'H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen}
 	\label{fig:AbbRecDifResHrHp}
 	\endminipage\hfill
 	%\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
@@ -739,18 +768,18 @@ Die Abbildungen \ref{fig:AbbRecDifResHsHrHp} und \ref{fig:AbbRecDifResHsHrHpLine
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Rectification_HsHrHp_different_Solutions.png}
-	\caption[Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen]{}
+	\caption[Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ bei unterschiedlicher Auflösungen]{Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen}
 	\label{fig:AbbRecDifResHsHrHp}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}		\includegraphics[width=\linewidth]{images/Rectification_four_different_Solutions.png}
-	\caption[Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen mit Epipolarlinien]{}
+	\caption[Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ mit Epipolarlinien]{[Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ angewandt auf Bilder unterschiedlicher Auflösungen mit Epipolarlinien}
 	\label{fig:AbbRecDifResHsHrHpLines}
 	\endminipage\hfill
 		%\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
 		%\label{fig:RecT52}
 \end{figure}
 
-\pagebreak
+
 
 Als nächstes wurden die Auflösung von $C'$ so verändert, dass $\zeta'_x \neq \zeta'_y$ gilt. Es werden $\zeta'_x = 2.3$  und $\zeta'_y = 3.2$ definiert. Somit folgt für $K'$ die folgende Matrix.
 
