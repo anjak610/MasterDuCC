@@ -10,15 +10,7 @@ Für die Detektion von korrespondierenden Punkten in Stereoskopischen Bildaufnah
 
 %Als erstes wird ein Startpunkt innerhalb des Schachbretts gesucht. 
 
-Aus den zuvor detektierten Eckpunkten des Schachbretts wird ein Startpunkt gesucht. Der Startpunkt wird so bestimmt, dass es immer die linke unterste Ecke des Schachbretts ist. Somit ist gewährleistet, dass die Indizes der Eckpunkte beider Bilder gleich sind. Ist der Startpunkt bestimmt, bekommt dieser die Indizes $i = 1$ und $j = 1$. $i$ steht für die jeweilige Reihen in welcher sich ein Punkt befindet und $j$ steht für die jeweilige Spalte. Ist der Startpunkt bestimmt, wird der erste Punkt entlang der unteren Schachbrettkante in $j$-Richtung und der erste Punkt entlang der linken Randkante in $i$-Richtung gesucht. Anhand dieser Punkte lassen sich vom Startpunkt aus Richtungsvektoren definieren. Mit Hilfe des Richtungsvektors, wird ein Suchbereich definiert, mit dessen Hilfe der nächste Punkt entlang der jeweiligen $i$-und $j$-Richtung 
-
-
-
-Anhand der ersten Punkte, können vom Startpunkt aus zwei Richtungsvektoren bestimmt werden. Die Richtungsvektoren ...\\
-
-
-
-(WEITER SCHREIBEN!!!!!)\\
+Aus den zuvor detektierten Eckpunkten des Schachbretts wird ein Startpunkt gesucht. Der Startpunkt wird so bestimmt, dass es immer die linke unterste Ecke des Schachbretts ist. Somit ist gewährleistet, dass die Indizes der Eckpunkte beider Bilder gleich sind. Ist der Startpunkt bestimmt, bekommt dieser die Indizes $i = 1$ und $j = 1$. $i$ steht für die jeweilige Reihen in welcher sich ein Punkt befindet und $j$ steht für die jeweilige Spalte. Ist der Startpunkt bestimmt, wird der erste Punkt entlang der unteren Schachbrettkante in $j$-Richtung und der erste Punkt entlang der linken Randkante in $i$-Richtung gesucht. Anhand dieser Punkte lassen sich vom Startpunkt aus Richtungsvektoren definieren. Entlang des Richtungsvektors wird ein Bereich definiert. In Abbildung \ref{fig:UebersichtSortierungsAlg} ist dieser Suchbereich als das blaue Dreieck dargestellt. Ist der nächste Punkt gefunden, so wird der Richtungsvektor anhand des zu vorigen und des neuen Punktes neu ausgerichtet. Der dynamische Suchbereich ermöglicht es somit, dass selbst bei stark verzerrten Schachbrettern, bei denen Punkte nicht mehr auf einer Gerade liegen, Punkte der einzelnen Reihen und Spalten des Schachbretts ausfindig gemacht werden können.
 
 
 \begin{figure}[!htb]
@@ -33,13 +25,11 @@ Anhand der ersten Punkte, können vom Startpunkt aus zwei Richtungsvektoren best
 
 \section{Sortierungsalgorithmus}
 
-Für die Sortierung der Schachbrettpunkte, wird das Schachbrett in ein Koordinatensystem, mit vertikaler Achse $i$ und horizontaler Achse $j$, gelegt. Um das Schachbrett herum wird ein Rahmen definiert. Die Punkte mit der maximale $i$-Koordinate und der minimalen $i$-Koordinate Begrenzen die oberen und unteren Kanten des Rahmens. Die Punkte mit der minimalen $j$-Koordinate und der Punkt mit der  maximalen $j$-Koordinate Begrenzen die vertikalen Kanten des Rahmens. In Abbildung \ref{fig:7.1} sind die roten Begrenzungskanten um das Schachbrett zu sehen.\\
+Im Folgenden soll der Ablauf des implementierten Sortierungsalgorithmus beschrieben werden und dessen Funktionsweise an Beipspielen von unterschiedlichen Schachbrettern demonstriert werden.\\
 
-Der durch den Rahmen begrenzte Bereich wird in gleich viele Reihen wie Spalten unterteilt, so dass eine Gitter entsteht. Die so entstehenden Zellen des Gitters werden in $i$-Richtung sowie in $j$-Richtung durchgezählt und bekommen somit jeweils zwei Indizes $(i_i,j_i)$, welche sie eindeutig identifizieren.\\
+Der Soritierungsalgorithmus nimmt eine Liste aus den unsortierten Eckpunkten des Schachbretts entgegen. Von den Punkten in dieser Liste wird eine grobe Vorsortierung vorgenommen.
 
-In den angelegten $ConstantArrays$ namens $JSplits$ und $ISplits$ werden die Begrenzungen Zellen in $i$- und $j$-Richtung gespeichert. Die Begrenzungen der Zellen werden über die Distanz des Punktes mit der minimalen $j$-Koordinate zum Punkt mit der maximalen $j$-Koordinate geteilt durch die gewünschte Anzahl der Zellen, definiert. Selbiges gilt für die Unterteilung der Zellen in $i$-Richtung. \\ 
-
-Alle Punkte in den Zellen mit den Indizes $i=1$ und $j \leq  j_{max}$ werden als mögliche Startpunkte gekennzeichnet. In Abbildung \ref{fig:7.1} befinden sich die möglichen Startpunkte innerhalb des blauen Bereichs. Die Suche nach einem Startpunkt und auch nach den ersten Punkten in zwei Richtungen vom Startpunkt aus, ist relativ komplex. Der Grund hierfür ist, dass sämtliche Schachbretter wie in \ref{sec:SchachAlgBeispiele} gezeigt, in Betracht gezogen werden müssen. Um Anhand des Algorithmus später korrespondierende Punkte in zwei Aufnahmen des Schachbretts finden kann, sollte gewährleistet sein, dass der Startpunkt immer an der selben Ecke eines Schachbretts platziert wird.\\
+Um das Schachbrett herum wird ein Rahmen definiert. Die Punkte mit der maximalen $y$-Koordinate und der minimalen $y$-Koordinate Begrenzen die oberen und unteren Kanten des Rahmens. Die Punkte mit der minimalen $x$-Koordinate und der Punkt mit der  maximalen $x$-Koordinate begrenzen die vertikalen Kanten des Rahmens. In Abbildung \ref{fig:7.1} sind die roten Begrenzungskanten um das Schachbrett zu sehen.\\
 
 \begin{figure}[!htb]
 	\centering
@@ -48,32 +38,46 @@ Alle Punkte in den Zellen mit den Indizes $i=1$ und $j \leq  j_{max}$ werden als
 	\label{fig:7.1}
 \end{figure}
 
-Innerhalb der blau gefärbten Fläche, wie sie in Abbildung \ref{fig:7.1} abgebildet ist, wird nach einem Startpunkt gesucht. Die Suche nach einem Startpunkt wird pro $i$- und $j$-Richtung in zwei Abfragen unterteilt.\\
+Der durch den Rahmen begrenzte Bereich, welcher das gesamte Schachbrett einschließt, wird in mehrere Zellen eingeteilt. Diese werden durchgezählt und mit den Indizes $i$ und $j$ eindeutig bestimmt. $i$ beschreibt die Reihennummer der Zelle und $j$ beschreibt die entsprechende Spalte. In Abbildung \ref{fig:7.1} hätte die Zelle links unten im Eck somit die Indizes $i = 1$ und $j = 1$, die zweite rechts daneben die Indizes $i = 1$ und $j= 2$.\\
 
+In zwei $ConstantArrays$ namens $JSplits$ und $ISplits$ werden die Begrenzungen de Zellen  in $x$- und $y$-Richtung gespeichert. Die Begrenzungen der Zellen werden berechnet, idem die  Distanz zischen den vertikalen und horizontalen Kanten des Rahmens durch die gewünschte Anzahl an Zellen geteilt wird.\\  
 
-In der ersten Abfrage für die $i$-Richtung, wird innerhalb der ersten Zellenreihe entlang der $j$- Koordinatenachse nach dem Punkt mit der kleinsten $i$-Koordinate gesucht.Dieser Punkt wird als möglicher erster Startpunkte in der Variablen $VecI$ gespeichert.\\
+Im nächsten Schritt wird überprüft welche Punkte innerhalb welcher Zellen liegen. Für jeden Punkt wird eine Liste Aus $Associations$ angelegt.  $Associations$ können Werten Schlüsselwörter zuweisen. Anhand dieser Schlüssel sind Werte eindeutig identifiziert\cite{Mathematica}. Pro Punkt werden die jeweils die $x$- und $y$-Koordinaten und die Indizes Zellen in Schlüssel gespeichert.
 
+\begin{gather*}
+	Punkt = \, <|Coordx \rightarrow x_i, Coordy \rightarrow y_i, CellI \rightarrow i_i, CellJ \rightarrow j_i |>
+\end{gather*} \\
 
-Danach wird geprüft ob es innerhalb der ersten Zellen in $i$-Richtung einen weiteren Punkt gibt dessen $j$-Koordinate kleiner ist als die des momentan gesetzten Punktes $VecI$, wird ein solcher Punkt gefunden, so wird dieser Punkt als neuer $VecI$ gesetzt, sofern seine $i$-Koordinate nicht größer ist als die des zuvorigen $VecI$ plus einem Pufferwert. Durch den Puffer wird verhindert, dass ein Punkt als $VecI$ gesetzt wird, welcher sich möglicherweise schon in der zweiten Reihe der Schachbrettpunkte befinden würde. In Abbildung \ref{fig:7.1} ist $VecI$ mit als oranger Punkt abgebildet.\\
+In Abbildung \ref{fig:7.1} sind die Zellen durch die grünen Linien begrenzt. Die Vorsortierung in Zellen macht es im weiteren Verlauf der Sortierung der Punkte in Zeilen un Spalten einfacher, wenn es darum geht nur bestimmte Bereiche des Schachbretts zu untersuchen.\\
 
-%\begin{figure}[!htb]
-%	\minipage{0.48\textwidth}
-%	\includegraphics[width=\linewidth]{images/VerzeichnetesSchachbrett_0.png}
-%	\caption{ }
-%	\label{fig:7.1}
-%\end{figure}
-%	\endminipage\hfill
+Nach der Vorsortierung wird der Punkt gesucht, von welchen aus das Schachbrettgitter rekonstruiert werden soll. Alle Punkte innerhalb den Zellen mit den Indizes $i=1$ und $j \leq  j_{max}$ und $i \leq i_{all}$ und $j = 1$ werden als mögliche Startpunkte gekennzeichnet. In Abbildung \ref{fig:7.1} befinden sich die möglichen Startpunkte innerhalb des blau hinterlegten Bereichs.\\
 
+%Die Suche nach einem Startpunkt und auch nach den ersten Punkten in zwei Richtungen vom Startpunkt aus, ist relativ komplex. Der Grund hierfür ist, dass sämtliche Schachbretter wie in \ref{sec:SchachAlgBeispiele} gezeigt, in Betracht gezogen werden müssen. 
 
-Für die erste Abfrage in $j$-Richtung, werden die Zellen entlang der vertikalen $i$-Koordinatenachse mit den Indizes $j=1$ und $i \leq i_{max}$, nach dem Punkt gesucht, welcher die geringste $j$-Koordinate besitzt. Dieser Punkt wird als vorläufiges $VecJ$ bestimmt.\\
+Um Anhand des Algorithmus später korrespondierende Punkte in zwei Aufnahmen des Schachbretts finden kann, sollte gewährleistet sein, dass der Startpunkt immer an der selben Ecke eines Schachbretts platziert wird.\\
 
-Danach wird auch hier geprüft, ob es innerhalb der ersten Suchfensterreihe in $j$-Richtung einen weiteren Punkt gibt, dessen $i$-Koordinate kleiner ist als die des momentan gesetzten Punktes $VecJ$. Trifft des Weiteren zu, dass die $j$-Koordinaten des neu gefundenen Punktes kleiner ist als die $j$-Koordinate plus einem Pufferwert des momentanen $VecJ$ , so wird dieser als neuer Punkt als $VecJ$ festgelegt. In Abbildung \ref{fig:7.1} ist $VecJ$ als gelber Punkt zu sehen.\\
+%Innerhalb der blau gefärbten Fläche, wie sie in Abbildung \ref{fig:7.1} abgebildet ist, wird nach einem Startpunkt gesucht. 
+%
+%
+%Die Suche nach einem Startpunkt wird pro $i$- und $j$-Richtung in zwei Abfragen unterteilt.\\
+Die jeweiligen horizontalen Zellen $i=1$ und $j \leq  j_{max}$ werden getrennt von den vertikalen $i \leq i_{all}$ und $j = 1$ untersucht. Innerhalb der horizontalen Zellen wird zunächst nach dem Punkt mit der kleinsten $y$-Koordinate gesucht und als erster möglicher Startpunkt in $VecI$ gespeichert. Danach wird überprüft, ob es einen Punkt gibt, dessen $x$-Koordinate kleiner ist als die des momentan gesetzten $VecI$. Ist dies der Fall so wird noch überprüft, ob dessen $y$-Koordinate kleiner gleich der von $VecI$ plus einem Pufferwert ist. Der Pufferwert wird so definiert, dass die $y$-Koordinate des neuen möglichen $VecI$ zwar größer als die des momentanen sein kann, jedoch eine bestimmte Schwelle nicht übertreten darf, da es sich sonst um einen Punkt der zweiten $i$-Reihe handeln könnte. In Abbildung \ref{fig:7.1} ist $VecI$ als oranger Punkt abgebildet.\\
 
-Je nachdem wie das Schachbrett liegt oder welche Verzerrungen es aufweist, kann es sein dass $VecI$ und $VecJ$ den selben Punkt ergeben haben, was den Startpunkt $StartPoint$ eindeutig identifiziert, wie es in Beispiel \ref{fig:Extreme1} oder auch \ref{fig:Extreme5} der Fall ist. Andererseits kann es auch wie in Abbildung \ref{fig:7.1} zu sehen ist, sein, dass $VecI$ und $VecJ$ sich unterscheiden. In solchen Fällen wird $VecJ$ als Startpunkt festgelegt wird. Somit ist gewährleistet, das je nach Lage des Schachbretts der linke obere oder die linke untere Ecke des Schachbretts als Startpunkt gesetzt werden\\
+Innerhalb des vertikalen Suchbereichs bestehend aus den Zellen  $i \leq i_{all}$ und $j = 1$ wird derjenige Punkt gesucht, dessen $x$-Koordinate minimal ist und wird als Punkt $VecJ$ gespeichert. Im nächsten Schritt wird ein Punkt innerhalb des Bereichs gesucht, dessen $y$-Koordinate kleiner ist als die des momentanen $VecJ$ und dessen $x$-Koordinaten kleiner gleich der $x$-Koordinate von $VecJ$ plus einem Pufferwert ist. Ist so ein Punkt gefunden, wird dieser als neues $VecJ$ bestimmt. $VecJ$ ist in Abbildung \ref{fig:7.1} als gelber Punkt dargestellt.\\
 
-Die Koordinaten des $Startpoint$ werden in eine Liste aus $Associations$ \cite{Mathematica} hinzugefügt. $Associations$ können Werten Schlüsselwörter zuweisen. Anhand dieser Schlüssel sind Werte eindeutig identifiziert. 
+%Für die erste Abfrage in $j$-Richtung, werden die Zellen entlang der vertikalen $i$-Koordinatenachse mit den Indizes $j=1$ und $i \leq i_{max}$, nach dem Punkt gesucht, welcher die geringste $j$-Koordinate besitzt. Dieser Punkt wird als vorläufiges $VecJ$ bestimmt.\\
+%
+%Danach wird auch hier geprüft, ob es innerhalb der ersten Suchfensterreihe in $j$-Richtung einen weiteren Punkt gibt, dessen $i$-Koordinate kleiner ist als die des momentan gesetzten Punktes $VecJ$. Trifft des Weiteren zu, dass die $j$-Koordinaten des neu gefundenen Punktes kleiner ist als die $j$-Koordinate plus einem Pufferwert des momentanen $VecJ$ , so wird dieser als neuer Punkt als $VecJ$ festgelegt. In Abbildung \ref{fig:7.1} ist $VecJ$ als gelber Punkt zu sehen.\\
 
-Die $Association$-Liste $SortedPoints$ beinhaltet die Schlüssel $CoordJ$ und $CoordI$, welche die jeweiligen $i$- und $j$- Koordinaten des Punktes speichern. Die Schlüssel $CellI$ und $CellJ$, speichern die Information in welcher Zelle sich der Startpunkt befindet und die Schlüssel $NeighbourI$ und $NeighbourJ$ speichern die Indizes $i$ und $j$ ab, die definieren, der wievielte Punkt $StartPoint$ in $i$-Richtung und in $j$-Richtung ist. Er bekommt als erster Sortierter Punkte die $NeighbourI = 1$ und $NeighbourJ = 1$ zugeordnet. Ein Eintrag für einen Punkt in der Liste $SortedPoints$ sieht wie folgt aus \\
+Je nachdem wie das Schachbrett rotiert ist oder welche Art der Verzerrungen es aufweist, kann es sein dass $VecI$ und $VecJ$ bereits den selben Punkt ergeben haben, was den Startpunkt $StartPoint$ eindeutig identifiziert, wie es in den  Beispielen \ref{fig:Extreme1} oder auch \ref{fig:Extreme5} der Fall ist. Andererseits kann es auch wie in Abbildung \ref{fig:7.1} zu sehen ist, sein, dass $VecI$ und $VecJ$ sich unterscheiden. In solchen Fällen wird $VecJ$ als Startpunkt festgelegt. Damit ist gewährleistet, dass je nach Lage des Schachbretts der linke obere oder die linke untere Ecke des Schachbretts als Startpunkt gesetzt werden\\
+
+Der die $Assiciation$-Liste des Startpunktes wird um zwei weitere Schlüssel erweitert. Die Schlüssel $NeighbourI$ und $NeighbourJ$
+(HIER WEITER MACHEN)
+
+% $Associations$ können Werten Schlüsselwörter zuweisen. Anhand dieser Schlüssel sind Werte eindeutig identifiziert. 
+
+Die $Association$-Liste $SortedPoints$ beinhaltet die Schlüssel $CoordJ$ und $CoordI$, welche die jeweiligen $i$- und $j$- Koordinaten des Punktes speichern. Die Schlüssel $CellI$ und $CellJ$, speichern 
+
+die Information in welcher Zelle sich der Startpunkt befindet und die Schlüssel $NeighbourI$ und $NeighbourJ$ speichern die Indizes $i$ und $j$ ab, die definieren, der wievielte Punkt $StartPoint$ in $i$-Richtung und in $j$-Richtung ist. Er bekommt als erster Sortierter Punkte die $NeighbourI = 1$ und $NeighbourJ = 1$ zugeordnet. Ein Eintrag für einen Punkt in der Liste $SortedPoints$ sieht wie folgt aus \\
 
 \begin{gather*}
 	\begin{split}
