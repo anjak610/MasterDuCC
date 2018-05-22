@@ -45,7 +45,7 @@ In zwei $ConstantArrays$ namens $JSplits$ und $ISplits$ werden die Begrenzungen 
 Im nächsten Schritt wird überprüft welche Punkte innerhalb welcher Zellen liegen. Für jeden Punkt wird eine Liste Aus $Associations$ angelegt.  $Associations$ können Werten Schlüsselwörter zuweisen. Anhand dieser Schlüssel sind Werte eindeutig identifiziert\cite{Mathematica}. Pro Punkt werden die jeweils die $x$- und $y$-Koordinaten und die Indizes Zellen in Schlüssel gespeichert.
 
 \begin{gather*}
-	Punkt = \, <|Coordx \rightarrow x_i, Coordy \rightarrow y_i, CellI \rightarrow i_i, CellJ \rightarrow j_i |>
+	Punkt = \, \{<|Coordx \rightarrow x_u, Coordy \rightarrow y_u, CellI \rightarrow i_u, CellJ \rightarrow j_u |>\}
 \end{gather*} \\
 
 In Abbildung \ref{fig:7.1} sind die Zellen durch die grünen Linien begrenzt. Die Vorsortierung in Zellen macht es im weiteren Verlauf der Sortierung der Punkte in Zeilen un Spalten einfacher, wenn es darum geht nur bestimmte Bereiche des Schachbretts zu untersuchen.\\
@@ -70,30 +70,38 @@ Innerhalb des vertikalen Suchbereichs bestehend aus den Zellen  $i \leq i_{all}$
 
 Je nachdem wie das Schachbrett rotiert ist oder welche Art der Verzerrungen es aufweist, kann es sein dass $VecI$ und $VecJ$ bereits den selben Punkt ergeben haben, was den Startpunkt $StartPoint$ eindeutig identifiziert, wie es in den  Beispielen \ref{fig:Extreme1} oder auch \ref{fig:Extreme5} der Fall ist. Andererseits kann es auch wie in Abbildung \ref{fig:7.1} zu sehen ist, sein, dass $VecI$ und $VecJ$ sich unterscheiden. In solchen Fällen wird $VecJ$ als Startpunkt festgelegt. Damit ist gewährleistet, dass je nach Lage des Schachbretts der linke obere oder die linke untere Ecke des Schachbretts als Startpunkt gesetzt werden\\
 
-Der die $Assiciation$-Liste des Startpunktes wird um zwei weitere Schlüssel erweitert. Die Schlüssel $NeighbourI$ und $NeighbourJ$
-(HIER WEITER MACHEN)
+Die $Assiciation$-Liste des Startpunktes wird um zwei weitere Schlüssel erweitert. Die Schlüssel $NeighbourI$ und $NeighbourJ$ speichern die Werte in welcher Reihe $i$ und welcher Spalte $j$ des Schachbrettgitters sich der gefundenen Punkt befindet. Der Startpunkt $StartPoint$ ist dann wie folgt definiert
+
 
 % $Associations$ können Werten Schlüsselwörter zuweisen. Anhand dieser Schlüssel sind Werte eindeutig identifiziert. 
 
-Die $Association$-Liste $SortedPoints$ beinhaltet die Schlüssel $CoordJ$ und $CoordI$, welche die jeweiligen $i$- und $j$- Koordinaten des Punktes speichern. Die Schlüssel $CellI$ und $CellJ$, speichern 
-
-die Information in welcher Zelle sich der Startpunkt befindet und die Schlüssel $NeighbourI$ und $NeighbourJ$ speichern die Indizes $i$ und $j$ ab, die definieren, der wievielte Punkt $StartPoint$ in $i$-Richtung und in $j$-Richtung ist. Er bekommt als erster Sortierter Punkte die $NeighbourI = 1$ und $NeighbourJ = 1$ zugeordnet. Ein Eintrag für einen Punkt in der Liste $SortedPoints$ sieht wie folgt aus \\
+%Die $Association$-Liste $SortedPoints$ beinhaltet die Schlüssel $CoordJ$ und $CoordI$, welche die jeweiligen $i$- und $j$- Koordinaten des Punktes speichern. Die Schlüssel $CellI$ und $CellJ$, speichern 
+%
+%die Information in welcher Zelle sich der Startpunkt befindet und die Schlüssel $NeighbourI$ und $NeighbourJ$ speichern die Indizes $i$ und $j$ ab, die definieren, der wievielte Punkt $StartPoint$ in $i$-Richtung und in $j$-Richtung ist. Er bekommt als erster Sortierter Punkte die $NeighbourI = 1$ und $NeighbourJ = 1$ zugeordnet. Ein Eintrag für einen Punkt in der Liste $SortedPoints$ sieht wie folgt aus \\
 
 \begin{gather*}
 	\begin{split}
-			StartPoint &= \{ <|CoordI \rightarrow i-\text{Koordinate},\, CoordJ \rightarrow j-\text{Koordinat},\, \\
-			&CellI \rightarrow i-\text{Zelle},\, CellJ \rightarrow j-\text{Zelle},\,
-			NeighbourI \rightarrow 1, \,NeighbourJ \rightarrow 1  |>\}
+			StartPoint &= \{ <|Coordx \rightarrow x-_u,\, Coordy \rightarrow y_u,\, \\
+			&CellI \rightarrow i_u,\, CellJ \rightarrow j_u,\,
+			NeighbourI \rightarrow 1, \,NeighbourJ \rightarrow 1 |>\}
 	\end{split}
 \end{gather*}
  
-Anhand der Schlüssel $NeighbourI$ und $NeighbourJ$, können Punkte eindeutig identfiziert werden, da die in den Schlüssel die Information steckt, in welcher Reihe von $i$ und in welcher Spalte von $j$ sich ein Punkt aufhält und welche Punkte sind mit ihm in der selben Reihe oder Spalte. In den Abbildungen \ref{fig:Extreme1} bis \ref{fig:Extreme10} wurden die Punkte angefragt welche sich in der dritten Reihe von $i$ befinden. Besagte Punkte sind in den Grafiken grün eingefärbt.\\
+Anhand der Schlüssel $NeighbourI$ und $NeighbourJ$, ist die Position des Punktes innerhalb des Schachbrettgitters eindeutig identifiziert. Somit können in einer Stereoskopischen Aufnahme die korresponierenden Eckpunkte von Schachbrettern identifiziert werden. In Abbildung \ref{fig:ChessBoardLeftAlg} und \ref{fig:ChessBoardRightAlg} wurde in beiden Bildern alle Punkte abgefragt, deren Schlüssel $NeighbourI = 3$ ist. Die grün gefärbten Punkte liefern das Ergebnis. \\
 
-Die Schlüssel $ICoord$ und $JCoord$ werden noch in eine weitere Liste namens $CheckList$ gespeichert. Anhand der $CheckList$ wird überprüft, ob die Koordinatend und somit ein Punkt selbst bereits Sortiert wurde. Damit wird verhindert, dass ein Punkt mehrmals in einsortiert wird.\\
- 
-Nachdem der Startpunkt gefunden ist werden die nächsten Punkte in $i$- und $j$-Richtung gesucht. Diese Punkte werden später in die Variablen $NextI$ und $NextJ$ gespeichert. In Abbildung \ref{fig:NextINextJ} ist $NextI$ der violette Punkte und $NextJ$ ist der rote Punkte. \\
+$StartPoint$ wird danach in zwei unterschiedliche Listen geschrieben. Die Liste $SortedPoints$ speichert alle fertig sortierten Punkte. Die Liste $CheckList$ speichert eine verkürzte $Associtaion$- Liste der Punkte, welche nur aus den Schlüsseln $Coordx$ und $Coordy$ besteht. Anhand der in $Checklist$ gespeicherten Koordinaten eines Punktes, soll bei der weiteren Suche verhindert werden, dass ein Punkt mehrmals als sortiert wird.\\
 
-Für die Bestimmung von $NextI$ wird zu erst initial $NextI = <|CoordI \rightarrow 100 000, CoordJ \rightarrow 100 000|>$ gesetzt. Es werden Punkte gesucht, welche sich in der selben $CellI$ wie $StartPoint$ und in den Zellen eins darüber $CellI +1$ und eine darunter $CellI-1$ befinden. In Abbildung \ref{fig:NextINextJ} ist der Bereich gelb eingefärbt.\\
+
+
+%In den Abbildungen \ref{fig:Extreme1} bis \ref{fig:Extreme10} wurden die Punkte angefragt welche sich in der dritten Reihe von $i$ befinden. Besagte Punkte sind in den Grafiken grün eingefärbt.\\
+%
+%Die Schlüssel $ICoord$ und $JCoord$ werden noch in eine weitere Liste namens $CheckList$ gespeichert. Anhand der $CheckList$ wird überprüft, ob die Koordinatend und somit ein Punkt selbst bereits Sortiert wurde. Damit wird verhindert, dass ein Punkt mehrmals in einsortiert wird.\\
+% 
+Nachdem der Startpunkt gefunden ist werden die jeweils nächsten Punte in $i$- und $j$-Richtung gesucht. Diese Punkte werden dann in die Variablen $NextI$ und $NextJ$ gespeichert. In Abbildung \ref{fig:NextINextJ} ist $NextI$ der violette Punkte und $NextJ$ ist der rote Punkte. \\
+
+Für die Bestimmung von $NextI$ wird zu erst initial $NextI = <|Coordx \rightarrow 100 000, Coordy \rightarrow 100 000|>$ gesetzt. Für den Punkt $NextI$ der nächsten Reihe $i$
+
+ Es werden Punkte gesucht, welche sich in der selben $CellI$ wie $StartPoint$ und in den Zellen eins darüber $CellI +1$ und eine darunter $CellI-1$ befinden. In Abbildung \ref{fig:NextINextJ} ist der Bereich gelb eingefärbt.\\
 
 
 \begin{figure}[!htb]
