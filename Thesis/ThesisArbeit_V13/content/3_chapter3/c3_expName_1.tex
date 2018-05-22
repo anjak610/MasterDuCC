@@ -2,11 +2,19 @@
 \label{sec:schachbrettAlg} 
 
 
-Zur Detektion von korrespondierenden Punkten in Bildaufnahmen von zwei zweidimensionalen Schachbrettern, ist ein Algorithmus entwickelt worden, welcher die zuvor Detektierten Eckpunkte eines Schachbretts sortiert und eindeutig identifiziert. Jeder Punkt beinhaltet nach der Sortierung die Information in welcher Reihe $j$ und in welcher Spalte $i$ er sich befindet. Jeder Punkt ist somit eindeutig durch die zwei indizes $i$ und $j$ identifiziert. Wird der Algorothmus auf die Stereoaufnahme zweier Schachbretter angewandt, so können korrespondierende Punkte anhand dieser Indizes ausgemacht werden. Die Schachbretter können dabei sowohl Kissen- als auch Tonnennverzeichnungen aufweisen und oder perspektivisch verzerrt sein.\\ 
+Für die Detektion von korrespondierenden Punkten in Stereoskopischen Bildaufnahmen von zweidimensionalen Schachbrettern, ist ein Algorithmus entwickelt worden, welcher die zuvor Detektierten Eckpunkte eines Schachbretts sortiert und eindeutig identifiziert. Jeder Punkt beinhaltet nach der Sortierung die Information in welcher Reihe $j$ und in welcher Spalte $i$ er sich befindet. Jeder Punkt ist somit eindeutig durch die zwei Indizes $i$ und $j$ identifiziert. Dem entstandenen Sorierungsalgorithmus ist ein Algorithmus zu Detektion der Eckpunkte eines Schacbretts voran geschaltet. Werden beide Algorithmen auf die Stereoaufnahme zweier Schachbretter angewandt, so können korrespondierende Punkte anhand dieser Indizes ausgemacht werden. Die Schachbretter können dabei sowohl Kissen- als auch Tonnennverzeichnungen aufweisen und oder perspektivisch verzerrt sein.\\ 
 
 
 
-Das Bild des Schachbretts wird in ein zweidimensionales Koordinatensystem $(A,\alpha)$ mit $\alpha = (j,i)$ gelegt. Als erstes wird ein Startpunkt innerhalb des Schachbretts gesucht. Der Startpunkt wird so bestimmt, dass es immer die linke unterste Ecke des Schachbretts ist. Ist der Startpunkt bestimmt, werden der erste Punkt entlang der unteren Schachbrettkante in $j$-Richtung und der erste Punkt entlang der linken Randkante in $i$-Richtung gesucht. Anhand der ersten Punkte, können vom Startpunkt aus zwei Richtungsvektoren bestimmt werden. Die Richtungsvektoren ...\\
+%Das Bild des Schachbretts wird in ein zweidimensionales Koordinatensystem $(A,\alpha)$ mit $\alpha = (j,i)$ gelegt. 
+
+%Als erstes wird ein Startpunkt innerhalb des Schachbretts gesucht. 
+
+Aus den zuvor detektierten Eckpunkten des Schachbretts wird ein Startpunkt gesucht. Der Startpunkt wird so bestimmt, dass es immer die linke unterste Ecke des Schachbretts ist. Somit ist gewährleistet, dass die Indizes der Eckpunkte beider Bilder gleich sind. Ist der Startpunkt bestimmt, bekommt dieser die Indizes $i = 1$ und $j = 1$. $i$ steht für die jeweilige Reihen in welcher sich ein Punkt befindet und $j$ steht für die jeweilige Spalte. Ist der Startpunkt bestimmt, wird der erste Punkt entlang der unteren Schachbrettkante in $j$-Richtung und der erste Punkt entlang der linken Randkante in $i$-Richtung gesucht. Anhand dieser Punkte lassen sich vom Startpunkt aus Richtungsvektoren definieren. Mit Hilfe des Richtungsvektors, wird ein Suchbereich definiert, mit dessen Hilfe der nächste Punkt entlang der jeweiligen $i$-und $j$-Richtung 
+
+
+
+Anhand der ersten Punkte, können vom Startpunkt aus zwei Richtungsvektoren bestimmt werden. Die Richtungsvektoren ...\\
 
 
 
@@ -209,6 +217,7 @@ In Abbildung \ref{fig:ChessBoardLeft} und \ref{fig:ChessBoardRight} wird ein Sch
 	\label{fig:ChessBoardRightAlg}
 	\endminipage\hfill
 \end{figure}
+\pagebreak
 
 
 \section{Resultate bei stark verzerrten Schachbrettern}
