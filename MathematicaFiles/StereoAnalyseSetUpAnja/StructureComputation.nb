@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     66519,       1411]
-NotebookOptionsPosition[     66108,       1395]
-NotebookOutlinePosition[     66453,       1410]
-CellTagsIndexPosition[     66410,       1407]
+NotebookDataLength[     68077,       1449]
+NotebookOptionsPosition[     67669,       1433]
+NotebookOutlinePosition[     68011,       1448]
+CellTagsIndexPosition[     67968,       1445]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -892,16 +892,51 @@ Cell[BoxData[
             RowBox[{"#", "[", 
              RowBox[{"[", "3", "]"}], "]"}]}], "}"}], "&"}], ",", 
          "SpacePointsMMNotScaled"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"plrange", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"Print", "[", 
        RowBox[{"ListPointPlot3D", "[", 
         RowBox[{"GraficPoints", ",", 
          RowBox[{"AxesLabel", "\[Rule]", 
           RowBox[{"{", 
            RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ",", 
-         RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+         RowBox[{"BoxRatios", "\[Rule]", "1"}], ",", 
+         RowBox[{"PlotRange", "\[Rule]", 
+          RowBox[{"(*", 
+           RowBox[{"{", 
+            RowBox[{"plrange", ",", "plrange", ",", "plrange"}], "}"}], 
+           "*)"}], "All"}], ",", 
          RowBox[{"PlotStyle", "\[Rule]", 
-          RowBox[{"PointSize", "[", "0.01", "]"}]}]}], "]"}], "]"}], ";", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"PointSize", "[", "0.023", "]"}]}]}], "]"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"plrange", "=", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ";", "\n", "\t", 
+        RowBox[{"Plot3D", "[", 
+         RowBox[{
+          RowBox[{"2", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"x", "^", "2"}], "+", 
+             RowBox[{"y", "^", "2"}]}], ")"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", 
+            RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"y", ",", 
+            RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+          RowBox[{"BoxRatios", "\[Rule]", "1"}], ",", 
+          RowBox[{"FaceGrids", "\[Rule]", "All"}], ",", 
+          RowBox[{"PlotRange", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"plrange", ",", "plrange", ",", 
+             RowBox[{"plrange", "+", "1"}]}], "}"}]}]}], "]"}]}], "*)"}], 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"(*", 
        RowBox[{
         RowBox[{"GraficPoints2", "=", 
@@ -1384,8 +1419,11 @@ Cell[BoxData[
    3.734584241929152*^9}, {3.7345842886572657`*^9, 3.7345842911752357`*^9}, {
    3.734584340841278*^9, 3.734584364367275*^9}, 3.734584399967289*^9, 
    3.73458449828831*^9, 3.7345845963053308`*^9, 3.7345853648174934`*^9, 
-   3.734585624954541*^9, 
-   3.7345858870905733`*^9},ExpressionUUID->"3c71aada-aec7-45d0-bebb-\
+   3.734585624954541*^9, 3.7345858870905733`*^9, {3.7359917234670315`*^9, 
+   3.735991744998046*^9}, 3.736008440106819*^9, {3.7360084920364094`*^9, 
+   3.7360085039641075`*^9}, {3.7360086449491987`*^9, 3.736008687582774*^9}, {
+   3.736008722341507*^9, 
+   3.736008813819703*^9}},ExpressionUUID->"3c71aada-aec7-45d0-bebb-\
 7c2bd1f771a7"],
 
 Cell[BoxData[""], "Input",
@@ -1394,7 +1432,7 @@ Cell[BoxData[""], "Input",
 5ef27583e0e5"]
 },
 WindowSize->{946, 980},
-WindowMargins->{{Automatic, -956}, {-4, Automatic}},
+WindowMargins->{{Automatic, 2}, {-3, Automatic}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1409,9 +1447,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 65391, 1368, 4816, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 66952, 1406, 4929, "Input", "ExpressionUUID" -> \
 "3c71aada-aec7-45d0-bebb-7c2bd1f771a7"],
-Cell[65952, 1390, 152, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[67513, 1428, 152, 3, 30, "Input", "ExpressionUUID" -> \
 "acbb2c60-6c2c-447e-a7c1-5ef27583e0e5"]
 }
 ]

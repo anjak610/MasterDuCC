@@ -1,7 +1,11 @@
 \chapter{Reelle Rekonstruktion}
 \label{sec:real} 
 
-Der entwickelte Szenenrekonstrukionsalgorithmus wird im folgenden anhand eines realen Stereoaufbau getestet. Da das Arbeiten mit realen Bilddaten bestimmte Fehleranfälligkeiten aufweist, wird in diesem Kapitel Hauptsächlich drauf eingegangen, um welche Fehler es sich handelt, was ihre Auswirkungen sind und wie man ihnen entgegenwirken kann. Hierzu wurde der Ursprüngliche Algorithmus um bestimmte Funktionen erweitert, welche im Verlauf des Kapitels genau erläutert werden. Abbildung \ref{fig:ArbeitsProzessReell} zeigt den Ablauf für die Reelle Rekonstruktion. \\
+Der entwickelte Szenenrekonstrukionsalgorithmus wird im folgenden anhand eines realen Stereoaufbau getestet. Da das Arbeiten mit realen Bilddaten bestimmte Fehleranfälligkeiten aufweist.  Liegt bei der Bestimmung von korrespondierenden Punkten eine Ecke zwischen zwei Pixel, so kann optisches Rauschen, welches in realen aufnahmen präsent ist, dazu führen dass die Ecke in gleichen Bildern an verschiedenen Pixel erkannt wird. Diese Abweichung führt dazu, dass der in Kapitel \ref{sec:EpiolarContraints} definierten epipolaren Bedingungen nicht mehr erfüllt werden. In diesem Kapitel wird Hauptsächlich darauf eingegangen, welche Auswirkungen diese Ungenauigkeiten auf die Bestimmung der Fundamentalmatrix, der essentiellen Matrix und der anschließenden Rekonstruktion der Szene durch Triangulierng haben und wie man ihnen entgegen wirken kann. 
+
+%Hierzu wurde der Ursprüngliche Algorithmus um bestimmte Funktionen erweitert, welche im Verlauf des Kapitels genau erläutert werden. Abbildung \ref{fig:ArbeitsProzessReell} zeigt den Ablauf für die Reelle Rekonstruktion. \\
+%
+%Bildfehler genauer beschreiben und lösungsansatz skizzieren
 
 \begin{figure}[!htb]
 	\centering
@@ -17,7 +21,9 @@ Der entwickelte Szenenrekonstrukionsalgorithmus wird im folgenden anhand eines r
 %	\label{fig:ArbeitsProzessReell}
 %\end{minipage}\\ \\
 
-Zu aller erst wird der Stereoaufbau vorgestellt. Danach folgt die Korrespondenzanalyse, in welcher zwei Möglichkeiten aufgeführt werden, wie die Korrespondierenden Punkte aus den Bildern gewonnen werden. Der normierte-acht-Punkt-Algorithmus, stellt eine für reale Bilddaten leicht veränderte Fassung des bereits bekannten acht-Punkte-Algorithmus vor. Danach werden die Singulärwerte der aus realen Daten bestimmten Fundamentalmatrix und essentiellen Matrix analysiert und deren Auswirkung auf die Epipolargeometrie aufgezeigt. Als letztes wird das Triangulationsverfahren anhand abweichender Punktekorrespondenzen vorgeführt.
+Zu aller erst wird der Stereoaufbau vorgestellt. Danach folgt die Korrespondenzanalyse, in welcher zwei Möglichkeiten aufgeführt werden, wie die Korrespondierenden Punkte aus den Bildern gewonnen werden. Der normierte-acht-Punkt-Algorithmus, stellt eine für reale Bilddaten leicht veränderte Fassung des bereits bekannten acht-Punkte-Algorithmus vor. Mit dessen Hilfe ist es möglich die Auswirkungen von nicht genauen Einhaltung der epipolaren Bedingung auf ein Minimum zu reduzieren. Nach der Bestimmung der Fundamentalmatrix durch den Normierten-Acht-Punkt-Algorithmus, wird überprüft, ob die Fundamentalmatrix die Bedingungen, welche sie zu einer Fundamentalmatrix machen weiterhin erfüllt. Hierzu werden vor allem die Singulärwerte der Fundamentalmatrix genauer beleuchtet und welche Auswirkungen sie auf die Epipolargeometrie haben. Als nächstet wird die aus der Fundamentalmatrix bestimmte essentielle Matrix überprüft. Auch hier wird auf die Eigenschaften, welche die Singulärwerte der essentiellen Matrix haben müssen eingegangen. Danach wird eine Triangulierungsmethode nach \cite{HZ} vorgestellt, die es ermöglicht über ein Näherungsverfahren eine Triangulation zwwischen ungenauen korrespondierenden Punkten ermöglicht. Der letzte Abschnitt des Kapitels befasst sich dann mit der reellen Rekonstruktion bei unterschiedlichen Kameraauflösungen. \\
+
+
 
 %Zunächst wird der Stereoskopische Aufbau kurz erläutert. 
 %
