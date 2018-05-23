@@ -1,8 +1,9 @@
-\chapter{Vergleich mit anderen Computer Vision Applikationen}
+\chapter{Prinzip Szenenrekonstruktion mit Rektifizierung}
 \label{sec:rectification}
 
 
-Ein weit verbreiteter Ansatz der Stereobildanalyse basiert auf zuvor Rektifizierten Bildern. Rektifizierte bilder zeichnen sich dadurch aus, dass die jeweiligen Epipole der Bilder ins unendliche projiziert werden, was dazu fürhrt, dass die jeweiligen Epipolarlinien der Bilder parallel zueinander verlaufen. Anschließend werden die Epipole noch so rotiert, dass die Epipolarlinien in einheitlichen Scanlinien über beide Bilder verlaufen. In Abbuldung \ref{fig:Scanlinien} ist das graphisch dargestellt\cite{Fusiello,Javier,ZZ,MatlabRec,phdextrinsicPara}.
+Ein verbreiteter Ansatz der Stereobildanalyse basiert auf zuvor Rektifizierten Bildern.
+Rektifizierte Bilder zeichnen sich durch ins unendlich projizierte Epipole aus. Dies hat zu Folge, dass die jeweiligen Epipolarlinien der Bilder parallel zueinander verlaufen. Anschließend werden die Epipole noch so rotiert, dass die Epipolarlinien in einheitlichen Scanlinien über beide Bilder verlaufen. In Abbildung \ref{fig:Scanlinien} ist das graphisch dargestellt\cite{Fusiello,Javier,ZZ,MatlabRec,phdextrinsicPara}.
 
 \begin{figure}[!htb]
 	\centering
@@ -13,11 +14,12 @@ Ein weit verbreiteter Ansatz der Stereobildanalyse basiert auf zuvor Rektifizier
 
 % parallelen Epipolarlinien anschließend noch zu einheitlichen Scanlinien über beide Bilder entlang einer Koordinatendachse ausgerichtet werden.
  
-Anhand der so entstandenen Scanlinien, wird die Suche nach weiteren korrespondierenden Punkten auf eine eindimensionale Suche beschränkt, da nur noch entlang der entsprechenden korrespondierenden Epipolarlinie gesucht wird. Die Rektifizierung, macht es somit möglich die Bildpunkte kompletter Bilder mit relativ geringem Rechenaufwand zu rekonstruieren\cite{ZZ,Fusiello,Javier}. Jedoch verlangen viele Rektifizierungsansätze als Voraussetzung, dass das verwendetet Stereobildpaar die selbe Auflösung besitzt.\\
+Anhand der so entstandenen Scanlinien, wird die Suche nach weiteren korrespondierenden Punkten auf eine eindimensionale Suche beschränkt. Der korrespondierende Punkt zu einem ausgewählten Punkt auf einem Bild, wird nur noch entlang der entlang der entsprechenden korrespondierenden Epipolarlinie gesucht. Die Rektifizierung ermöglicht eine effiziente Analyse von Punktekorrespondenzen ganzer Bilder mit geringstem Rechenaufwand\cite{ZZ,Fusiello,Javier}. Jedoch verlangen viele Rektifizierungsansätze als Voraussetzung, dass das verwendetet Stereobildpaar die selbe Auflösung besitzt.\\
 
-Der in dieser Arbeit entwickelte Szenenrekonstruktionsalgorithmus wurde so entwickelt, dass eine Rektifizierung der Bilder, nicht notwendig wird. Der Grund dafür ist, dass ein Algorithmus entsteht, welcher auch mit Bildern unterschiedlicher Kameraauflösungen eine erfolgreiche Rekonstruktion vollbringt.\\
+%Der in dieser Arbeit entwickelte Szenenrekonstruktionsalgorithmus wurde so entwickelt, dass eine Rektifizierung der Bilder nicht notwendig wird. Der Grund dafür ist, dass ein Algorithmus entsteht, welcher auch mit Bildern unterschiedlicher Kameraauflösungen eine erfolgreiche Rekonstruktion vollbringt.\\
 
-Im verlauf des Kapitels wird zunächst der Arbeitsprozess der Stereoanalyse auf Basis von Bildrektifizierungen erläutert. Anschließend wird ein Rektifizierungsalgorithmus nach \cite{ZZ} vorgestellt werden, welcher nur durch Vorwissen von 9 korrespondierenden Punkten und der daraus resuliterenden Fundamentalmatrix eine Rektifizierung zweier Bilder ermöglicht. Der Rektifizierungsalgorithmus wurde anhand des synthetischen Stereoaufbaus aus Kapitel \ref{sec:minimal} implementiert. Mit dem so entstandenen Algorithmus werden zunächst zwei Bilder gleicher Auflösung rektifiziert und danach werden zwei Tests mit Bildern unterschiedlicher Auflösung aufgezeigt und analysiert.
+Im Verlauf des Kapitels wird zunächst der Arbeitsprozess der Stereoanalyse auf Basis von Bildrektifizierungen erläutert. Anschließend wird ein Rektifizierungsalgorithmus nach \textit{Charles Loop \& Zhengyou Zhang}\cite{ZZ} vorgestellt, welcher nur durch Vorwissen von neun korrespondierenden Punkten und der daraus resultierenden Fundamentalmatrix eine Rektifizierung zweier Bilder ermöglicht. Zuerst werden zwei Bilder gleicher Auflösung rektifiziert, danach werden zwei Tests mit Bildern unterschiedlicher Auflösung durchgeführt. Die Resultate der rektifizierten Bilder mit unterschiedlichen Auflösungen werden im Anschluss analysiert
+
 
 
 %Eigener Ansatz implementierung eines Rektifizierungsalgorithmus zum test auf Funktionaliät unter schiedlicher Aflösungen \\
@@ -27,7 +29,7 @@ Im verlauf des Kapitels wird zunächst der Arbeitsprozess der Stereoanalyse auf 
 \section{Szenenrekonstruktion mit Rektifizierung}
 
 
-Da bestimmte Formen der Rektifizierung keine vorherige Kalibrierung der Kameras benötigen, wird diese Methode in den meisten gängigen Echtzeit-Szenenrekonstruktionen eingesetzt. \cite{Fusiello,Javier,R.H.}. Der Arbeitsprozess für die Szenenrekonstruktion auf Basis von rektifizierten Bildern, welcher in Abbildung \ref{fig:ArbeitsprozessRektifizierung} schematisch dargestellt ist, unterscheidet sich etwas zu den bereits bekannten Arbeitsprozessen, welche in den Abbildungen \ref{fig:ArbeitsProzessVirtuell} und \ref{fig:ArbeitsProzessReell} zusammengefasst sind.\\
+Bestimmte Formen der Rektifizierung benötigen keine vorherige Kalibrierung der Kameras und werden in den meisten gängigen Szenenrekonstruktionen eingesetzt. \cite{Fusiello,Javier,R.H.}. Der Arbeitsprozess für die Szenenrekonstruktion auf Basis von rektifizierten Bildern, welcher in Abbildung \ref{fig:ArbeitsprozessRektifizierung} schematisch dargestellt ist, unterscheidet sich etwas zu den bereits bekannten Arbeitsprozessen, welche in den Abbildungen \ref{fig:ArbeitsProzessVirtuell} und \ref{fig:ArbeitsProzessReell} zusammengefasst sind.\\
 
 
 \begin{figure}[!htb]
@@ -36,17 +38,26 @@ Da bestimmte Formen der Rektifizierung keine vorherige Kalibrierung der Kameras 
 	\caption[Arbeitsprozess der Szenenrekonstruktion mit Rektifizierung]{Ablaufdiagramm der Szenenrekonstruktion basierend auf einem Rektifizierungsansatz} 
 	\label{fig:ArbeitsprozessRektifizierung}
 \end{figure}
+\pagebreak
 
 
-Der entscheidende unterschied zwischen den beiden Ansätzen liegt im Abschnitt der Bildanalyse. Es wird davon ausgegangen, dass die intrinsischen Kameraparameter im einzelnen nicht bekannt sind. Der Ansatz beinhaltet auch keinen Kalibrierungsschritt, in welchem intrinsische oder extrinsische Kameraparameter bestimmt werden sollen. Das Ziel, des in Abbildug \ref{fig:ArbeitsprozessRektifizierung} gezeigten Ansatzes, ist es eine 3D-Szene mit möglichst wenig Informationen aus einem Stereobildpaar zu rekonstruieren \cite{ZZ,Javier,Fusiello,phdextrinsicPara}.\\
+Der entscheidende Unterschied zwischen den beiden Ansätzen liegt im Abschnitt der Bildanalyse. Die Bilder werden vor der Szenenrekonstruktion rektifiziert. Die Rektifizierung benötigt keine extrinsischen oder intrinsischen Kameraparameter und erlaubt eine Rekonstruktion einer Szene mit minimalen vorher bestimmten Informationen\cite{ZZ,Javier,Fusiello,phdextrinsicPara}.\\
 
-Zunächst werden acht bis neun korrespondierende Punkte in einem Stereobildpaar detektiert. Aus den zuvor noch, wie in Kapitel \ref{sec:real} beschriebenen, normierten korrespondierenden Punkten wird eine Fundamentalmatrix $F$ bestimmt. Aus den korrespondierenden Punkten und der Fundamentalmatrix $F$ wird ein Rektifizierungsalgorithmus, wie beispielsweise in Kapitel \ref{sec:Rektifizierungsalg}, angewandt, welcher zwei Stereobilder so transformiert, dass ihre Epipolarlinien zu horizontal ausgerichteten Scanlinien werden, wie in Abbildung \ref{fig:Scanlinien} zu sehen ist.\\
+%
+% Es wird davon ausgegangen, dass die intrinsischen Kameraparameter im einzelnen nicht bekannt sind. Der Ansatz beinhaltet auch keinen Kalibrierungsschritt, in welchem intrinsische oder extrinsische Kameraparameter bestimmt werden sollen. Das Ziel, des in Abbildug \ref{fig:ArbeitsprozessRektifizierung} gezeigten Ansatzes, ist es eine 3D-Szene mit möglichst wenig Informationen aus einem Stereobildpaar zu rekonstruieren \\
 
-Mit Hilfe dieser entstandenen Scanlinien, wird die Suche nach weiteren korrespondierenden Punkten von einer zweidimensionalen auf eine eindimensionale Suche runter gebrochen, da sich diese jeweils entlang der zum Punkte entsprechenden korrespondierenden Epipolarlinien befinden\cite{ZZ,Fusiello,Javier}. \\
+Zunächst werden acht bis neun korrespondierende Punkte in einem Stereobildpaar detektiert. Aus den zuvor noch normierten korrespondierenden Punkten wird eine Fundamentalmatrix $F$ bestimmt, wie in Kapitel \ref{sec:real} beschrieben. Aus den korrespondierenden Punkten und der Fundamentalmatrix $F$ wird ein Rektifizierungsalgorithmus angewandt, welcher zwei Stereobilder transformiert, sodass ihre Epipolarlinien zu horizontal ausgerichteten Scanlinien werden, wie in Abbildung \ref{fig:Scanlinien} zu sehen ist. Mit Hilfe dieser entstandenen Scanlinien, wird die Suche nach weiteren korrespondierenden Punkten von einer zweidimensionalen auf eine eindimensionale Suche vereinfacht.\cite{ZZ,Fusiello,Javier}.\\
 
-Es wird davon ausgegangen, dass die Bilder aus zwei verschiedenen Blickwinkeln aufgenommen wurden. Nach der Rektifizierung ist zwischen zwei korrespondierenden Punkten ein horizontaler Versatz zu verzeichnen, wie in Abbildung \ref{fig:DisparityMap} in den ersten beiden Bilder zu sehen ist. Dieser Versatz entsteht durch den Abstand der beiden Kameras zueinander. Der Versatz zwischen den beiden korrespondierenden Punkte wird als Disparität bezeichnet. Je weiter ein Objekt von den Kameras weg ist, desto geringer ist die zu verzeichnende Disparität\cite{Javier}.\\
+Nach der Rektifizierung ist zwischen zwei korrespondierenden Punkten ein horizontaler Versatz zu verzeichnen, welcher durch die unterschiedliche Perspektive der Bilder entsteht. Dieser Versatz entsteht durch den Abstand der beiden Kameras zueinander. Der Versatz zwischen den beiden korrespondierenden Punkte wird als Disparität bezeichnet und ist ein Maß für die Tiefe der Punkte in der Szene. Weit von den Kameras entfernte Punkte werden durch die unterschiedliche Perspektive der beiden weniger stark beeinflusst als Punkte welche sich nah an den Kameras befinden. Die Disparität lässt sich als Disparitätskarte oder Tiefenkarte für stereoskopische Bilder veranschaulichen\cite{Javier}. Der Disparität wird ein Grauwert zugeordnet. In Abbildung \ref{fig:DisparityMap} wurden Punkten mit einer kleinen Disparität ein dunkler Wert und Punkten mit einer großen Disparität ein heller Wert zugeordnet. Die Farbwerte geben somit ein Maß für die Tiefe der Tiefe der Punkte in der Szene\cite{Javier}. Die Rekonstruktion durch eine Disparitätskarte wird auch als \textit{dense rectification} bezeichnet und bietet eine schnelle und auch effiziente Möglichkeit ein Maß für die Tiefe einer Szene zu generieren.\cite{Javier,Fusiello,ZZ}\\
 
-Bei der Disparität handelt es sich um einen numerischen Wert. Diesem Wert kann je nach Größe ein Grauwert zugeordnet werden. Je größer eine Disparität zwischen zwei Punkten ist, desto heller wird der entsprechende Grauwert gewählt und je geringer die Disparität desto dunkler wird der Grauwert. Anhand der zugeordneten Grauwerte kann ein Bild generiert werden, welches auch als Disparitätskarte oder Tiefenkarte bezeichnet wird\cite{Javier,MatlabDisp}. Diese Disparitätskarte gibt ein Maß für die Tiefe der Objekte in der Szene an\cite{Javier,MatlabDisp}.
+% indem der Dispariät einen Grauwert zugeordnet wird. In Abbildung () wurde einer kleinen Disparität ein Dunklen und Punkte mit einer grossen Disparität ein hellen wert zugeordnet. 
+%
+%Weit entfernte Punkte werden durch die unterschiedliche Perspektive weniger stark beeinflusst als Punkte welche nah an der Kamera ist. 
+%
+%
+% Je weiter ein Objekt von den Kameras weg ist, desto geringer ist die zu verzeichnende Disparität\\
+%
+%Bei der Disparität handelt es sich um einen numerischen Wert. Diesem Wert kann je nach Größe ein Grauwert zugeordnet werden. Je größer eine Disparität zwischen zwei Punkten ist, desto heller wird der entsprechende Grauwert gewählt und je geringer die Disparität desto dunkler wird der Grauwert. Anhand der zugeordneten Grauwerte kann ein Bild generiert werden, welches auch als Disparitätskarte oder Tiefenkarte bezeichnet wird\cite{Javier,MatlabDisp}. Diese Disparitätskarte gibt ein Maß für die Tiefe der Objekte in der Szene an\cite{Javier,MatlabDisp}.
 
 \begin{figure}[!htb]
 	\centering
@@ -55,9 +66,14 @@ Bei der Disparität handelt es sich um einen numerischen Wert. Diesem Wert kann 
 	\label{fig:DisparityMap}
 \end{figure}
 
-Voraussetzung für dieses Verfahren ist es jedoch, dass beide Bilder mit Kameras gleicher Auflösung aufgenommen wurden. Bei unterschiedlichen Auflösungen ist es mit dem in \ref{sec:Rektifizierungsalg} aufgezeigten Rektifizierungsalgorithmus prinzipiell möglich Bilder unterschiedlicher Auflösung zu rektifizieren. Dabei wird je nach dem das größere Bild gestaucht oder das kleinere Bild aufgezogen, so dass die Epipolarlinien beider Bilder wieder zu einheitlichen Scanlinien werden.\\
+\pagebreak
 
-Jedoch kann es dadurch gerade bei starken Auflösungsunterschieden zu Ungenauigkeiten in der erweiterten Korrespondenzanalyse kommen, da ein Pixel in einem Bild je nach dem deutlich größer definiert ist als im anderen Bild. Mögliche Lösung hierfür wäre es zum Beispiel die Pixelgrößen vor der erweiterten Korrespondenzanalyse über Nachbarschaftsoperationen so anzugleichen, dass mehrere benachbarte Pixel des größeren Bildes mit einem Pixel des kleineren korrespondiert.
+Das Standard Rektifizierungsverfahren, welches im folgenden Kapitel eingeführt wird, ist für Bilder gleicher Auflösung definiert. Für den Fall ungleicher Auflösungen wird dieses Verfahren erweitert und anhand von Beispielen die Anwendbarkeit des Rektifizierungsalgorithmus überprüft. 
+
+%Voraussetzung für dieses Verfahren ist es jedoch, dass beide Bilder mit Kameras gleicher Auflösung aufgenommen wurden. Bei unterschiedlichen Auflösungen ist es mit dem in \ref{sec:Rektifizierungsalg} aufgezeigten Rektifizierungsalgorithmus prinzipiell möglich Bilder unterschiedlicher Auflösung zu rektifizieren. Dabei wird je nach dem das größere Bild gestaucht oder das kleinere Bild aufgezogen, so dass die Epipolarlinien beider Bilder wieder zu einheitlichen Scanlinien werden.\\
+%\pagebreak
+%
+%Jedoch kann es dadurch gerade bei starken Auflösungsunterschieden zu Ungenauigkeiten in der erweiterten Korrespondenzanalyse kommen, da ein Pixel in einem Bild je nach dem deutlich größer definiert ist als im anderen Bild. Mögliche Lösung hierfür wäre es zum Beispiel die Pixelgrößen vor der erweiterten Korrespondenzanalyse über Nachbarschaftsoperationen so anzugleichen, dass mehrere benachbarte Pixel des größeren Bildes mit einem Pixel des kleineren korrespondiert.
 
 
 
@@ -107,19 +123,20 @@ Jedoch kann es dadurch gerade bei starken Auflösungsunterschieden zu Ungenauigk
 \section{Rektifizierung mit Homographien}
 \label{sec:Rektifizierungsalg}
 
-Im Folgenden wird ein Rektifizierungsalgorithmus nach \textit{Zhang}\cite{ZZ} vorgestellt. Diese recht aufwendige Art der Rektifikation zeichnet sich durch minimale Voraussetzungen an die Ursprungsbilder aus. Alle notwendigen Informationen zur Rektifikation werden aus der Fundamentalmatrix gewonnen. Zusätzlich zur Fundamentalmatrix muss noch die Lage der jeweiligen Epipole bekannt sein\cite{phdextrinsicPara}. Anhand des entstandenen Algorithmus wird dann im Nachhinein getestet, ob Bilder unterschiedlicher Auflösung richtig rektifiziert werden können und was die Ergebnisse für den weiteren Verlauf der Szenenrekonstruktion bedeuten könnten.\\
+Im Folgenden wird ein Rektifizierungsalgorithmus nach \textit{Zhang}\cite{ZZ} vorgestellt. Diese Art der Rektifizierung zeichnet sich durch minimale Voraussetzungen an die Ursprungsbilder aus. Alle notwendigen Informationen zur Rektifizierung werden aus der Fundamentalmatrix gewonnen. Zusätzlich zur Fundamentalmatrix muss noch die Lage der jeweiligen Epipole bekannt sein\cite{phdextrinsicPara}. Anhand des entstandenen Algorithmus wird dann getestet, ob Bilder unterschiedlicher Auflösung richtig rektifiziert werden können und was die Ergebnisse für den weiteren Verlauf der Szenenrekonstruktion bedeuten könnten.\\
 
-Für den Rektifizierungsansatz wird pro Bild eine Homographiematrix $H$ und $H'$ aufgestellt. Die Rektifizierung aller Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ erfolgt durch Gleichung \ref{eq:rectifyPoints}
+Für den Rektifizierungsansatz wird pro Bild eine Homographiematrix $H$ und $H'$ aufgestellt. 
+%Die Rektifizierung aller Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ erfolgt durch Gleichung \ref{eq:rectifyPoints}
 
 %Die Homographien $H$ und $H$ transformieren die Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ zu rektifizierten Punkten $\bar{m}_\sigma$ und $\bar{m}'_{\sigma'}$
 
 \begin{gather}
 	\bar{m}_\sigma= H m_\sigma\\ \label{eq:rectifyPoints}
 	\bar{m}'_{\sigma'}= H'm'_{\sigma'}
-\end{gather}\\ 
+\end{gather}
 
 
-Die Fundamentalmatrix, welche aus den Rektifizierten korrespondierenden Punkte resultiert, wird mit $\bar{F}$ bezeichnet\cite{ZZ,phdextrinsicPara}:
+Die Fundamentalmatrix, welche aus den rektifizierten korrespondierenden Punkte resultiert, wird mit $\bar{F}$ bezeichnet\cite{ZZ,phdextrinsicPara}:
 
 
 \begin{gather}
@@ -138,10 +155,10 @@ Die Homographien $H$ und $H'$ werden in die projektiven Komponenten $H_p$ und $H
 \end{gather}
 
 
-$H_p$ bezeichnet die projektive Komponenten und $H_a$ steht für die affine Komponente. Die affine Komponenten wird wiederum in zwei weitere Komponenten unterteilt. $H_r$ steht für eine Ähnlichkeitstransformation und $H_s$ beinhaltet einen Scherungstransformation. $H_p$ beinhaltet sämtliche projektiven Transformationen, welche dafür sorgen, dass der Epipol $e$ ins Unendliche projiziert wird und die Epipolarlinien parallel zueinander, jedoch noch nicht parallel zur horizontalen Achse sind\cite{ZZ,phdextrinsicPara}. $H_r$ ist eine Rotationsmatrix, welche die Epipolarlinien parallel zu horizontalen Achse ausrichtet. $H_s$ ist eine Scherungsmatrix, welche durch Minimierung versucht die durch die Rektifizierung entstandenen projektiven Verzerrungen bestmöglich auszugleichen\cite{ZZ,phdextrinsicPara}. \\
+$H_p$ bezeichnet die projektive Komponenten und $H_a$ steht für die affine Komponente. Die affine Rotation und $H_s$ beinhaltet eine Scherungstransformation. $H_p$ beinhaltet mögliche projektive Transformationen, welche dafür sorgen, dass der Epipol $e$ ins Unendliche projiziert wird und die Epipolarlinien parallel zueinander ausgerichtet sind\cite{ZZ,phdextrinsicPara}. $H_r$ ist eine Rotationsmatrix, welche die Epipolarlinien parallel zu horizontalen Achse ausrichtet. $H_s$ ist eine Scherungsmatrix, welche durch Minimierung versucht die durch die vorherigen Transformationen $H_p$ und $H_r$ entstandenen projektiven Verzerrungen bestmöglich auszugleichen\cite{ZZ,phdextrinsicPara}.\\
 %Beim Prinzip der Rektifikation mittels Homographien wird eine projektive Abbildung zwischen zwei Ebenen verwendet\cite{phdextrinsicPara}. \\
 
-Die Reihen der Homographiematrizen $H$ und $H$ beschreiben drei Linien $u, \, v$ und $w$, welche jeweils durch den Epipol verlaufen. Die Linien $v$ und $v'$ sowie $w$ und $w'$ sind korrespondierende Epipolarlinien. Durch diese geometrische Bedingung wird eine Verbindung der beiden Bilder zueinander. 
+Die Reihen der Homographiematrizen $H$ beschreibt drei Linien $u, \, v$ und $w$ mit $u = (u_a,u_b,u_c)^T$, $(v_a,v_b,v_c)^T$ und $(w_a,w_b,w_c)^T$, welche jeweils durch den Epipol verlaufen. Selbiges gilt auch für $H'$ mit den Linien $u', \, v'$ und $w'$. Die Linien $v$ und $v'$ sowie $w$ und $w'$ sind korrespondierende Epipolarlinien. Es entsteht dadurch eine geometrische Beziehung zwischen den beiden Bildern\cite{ZZ}.
 %Diese Bedingung schafft eine geometrische Verbindung beider Bilder zueinander und ist gerade bei der Minimierung der durch die Rektifizierung entstehenden Bildverzerrung von Bedeutung.
 
 \begin{gather}
@@ -187,7 +204,7 @@ Bevor die Matrizen $H$ und $H'$ in ihre projektiven und affinen Komponenten zerl
 \end{gather}\\
 
 
-Die Matrizen $H_p$ und $H_p'$ beschreiben den projektiven Teil von $H$ und $H'$. Sie wirken sich sich auf den projektiven Teil eines Punktes aus und werden dazu verwendet die Epipole ins unendliche zu projizieren\cite{ZZ,phdextrinsicPara}.
+Die Matrizen $H_p$ und $H_p'$ beschreiben den projektiven Teil von $H$ und $H'$. Sie wirken sich auf den projektiven Teil eines Punktes aus und werden dazu verwendet die Epipole ins unendliche zu projizieren\cite{ZZ,phdextrinsicPara}.
 
 %
 %\begin{gather}
@@ -240,12 +257,17 @@ Des Weiteren gilt für $H_a$ und $H_a'$, dass jeweils nochmal in eine Rotationsm
 	\end{bmatrix}\label{eq:DefHs}
 \end{gather}\\
 
-%$H_r$ und auch $H_r'$ definieren eine Rotation und auch eine Verschiebung, welche die bereits parallelen Epipolarlinien beider Bilder zueinander parallel und horizontal ausrichtet. Durch die Verschiebung werden die korrespondierenden Epipolarlinien noch auf die selbe Höhe verschoben. Somit entstehen die gewünschten Scanlinien in den Bildern. Die Matrix $H_s$ und $H_s'$ wirken sich nur auf die $u$-Elemente der Matrix $H$ und $H'$ aus und definieren eine Scherung. Sie haben keine Auswirkung auf die Rektifizierung an sich aber sorgen dafür, dass die horizontale Verzerrung der beiden Bilder zueinander reduziert wird.\\
+$H_r$ und auch $H_r'$ definieren eine Rotation und auch eine Verschiebung, welche die bereits parallelen Epipolarlinien horizontal ausrichtet. Durch die Verschiebung $v_c$ wird der vertikale Versatz zwischen den Epipolarlinien beider Bilder ausgeglichen. Es entstehen die einheitlichen Scanlinien. Die Matrizen $H_s$ und $H_s'$ definieren eine Scherung. 
+Sie gehören nicht zum eigentlichen Rektifizierungsprozess aber dienen dazu die horizontale Verzerrung der Bilder wieder auszugleichen. 
+
+%haben keine Auswirkung auf die Rektifizierung an sich aber sorgen dafür, dass die horizontale Verzerrung der beiden Bilder zueinander reduziert wird.\\
+%
+% werden die korrespondierenden Epipolarlinien noch auf die selbe Höhe verschoben. Somit entstehen die gewünschten Scanlinien in den Bildern. 
 
 \subsection{Projektive Transformation}
 
-Im Folgenden wird die Herleitung der Matrizen $H_p$ und $H_p'$ beschrieben. Die projektiven Matrizen $H_p$ und $H_p'$ werden von den Linien $w$ und $w'$ , welche durch den Epipol verlaufen bestimmt. $w$ und $w'$ sind nicht willkürlich. Definiert werden sie durch eine Richtung $z = \begin{bmatrix}
-\lambda&\mu&0\end{bmatrix}^T$. $z$ soll dabei so gewählt werden, dass die durch die rektifizierung entstehenden Bildverzerrungen in beiden Bildern minimal bleibt. Die Linien $w$ und $w'$ werden wie folgt definiert.
+Im Folgenden wird die Herleitung der Matrizen $H_p$ und $H_p'$ beschrieben. Die projektiven Matrizen $H_p$ und $H_p'$ werden von den Linien $w$ und $w'$. $w$ und $w'$ werden nicht willkürlich gewählt. Definiert werden sie durch eine Richtung $z = \begin{bmatrix}
+\lambda&\mu&0\end{bmatrix}^T$. $z$ soll dabei so gewählt werden, dass die durch die Rektifizierung entstehenden Bildverzerrungen in beiden Bildern minimal bleibt. Die Linien $w$ und $w'$ werden wie folgt definiert.
 
 %, welche die, durch die Rektifizierung entstehende, Bildverzerrung minimieren soll. Für beide Bilder werden $w$ und $w'$ folgendermaßen gewählt
 
@@ -271,9 +293,9 @@ Unter der Minimierung versteht man in diesem Falle, dass versucht wird ein $z$ z
 
 %Jedoch sollen sie nicht ganz null werden, da die projektive Matrix dann keine projektive mehr wäre, sondern eine affine.  Deswegen heißt es auch sie soll so affin wie möglich gemacht werden. Das selbe gilt natürlich auch für $w_a'$ und $w_b'$ aus $H_p'$. 
 
-Sollte es der Fall sein, dass beispielsweise Epipole $e$ bereits im unendlichen wären, so wären $w_a = 0$ und $w_b = 0$. In diesem Fall wäre eine projektive Transformation für diesen Epipol nicht mehr nötig.\\
+Sollte es der Fall sein, dass der Epipole $e$ bereits im unendlichen wäre, so wären $w_a = 0$ und $w_b = 0$. In diesem Fall wäre eine projektive Transformation für diesen Epipol nicht mehr nötig.\\
 
-Für die Minimierung wird die Methode der kleinsten Quadrate auf angewandt. Die Methode der kleinsten Quadrate ist ein mathematisches Standardverfahren für eine Ausgleichsrechnung, mit deren Hilfe aus der Menge der Bildpunkten beider Bilder ein wert für $z$ ermittelt werden soll\cite{leastSquare}. Für $z$ gilt mit $z = \begin{bmatrix}\lambda&\mu&0\end{bmatrix}^T$ bereits die Bedingung, dass es sich um einen Punkt im unendlichen handeln soll. $\lambda$ und $\mu$, sollen dabei einen Wert annehmen, welcher am nächsten an den Punkteansammlungen beider Bilder ist. \\
+Für die Minimierung wird die Methode der kleinsten Quadrate angewandt. Die Methode der kleinsten Quadrate ist ein mathematisches Standardverfahren für eine Ausgleichsrechnung. Mit ihrer Hilfe soll aus der Menge der Bildpunkte beider Bilder ein Wert für $z$ ermittelt werden\cite{leastSquare}. Für $z$ gilt mit $z = \begin{bmatrix}\lambda&\mu&0\end{bmatrix}^T$ bereits die Bedingung, dass es sich um einen Punkt im unendlichen handeln soll. $\lambda$ und $\mu$, sollen dabei einen Wert annehmen, der sich nah an den Gewichtungen der Punkteansammlungen beider Bilder befindet\cite{ZZ}. \\
 
 
 
@@ -287,28 +309,28 @@ Für die Minimierung wird die Methode der kleinsten Quadrate auf angewandt. Die 
 %	e = \sum_{i=1}^{n}[f(x_i)-g(x_i)]^2
 %\end{gather}
 
-Um ein solchen $z$ zu ermitteln, werden zunächst die Gewichtungen der Punkte beider Bilder benötigt. $p_i$ beinhaltet alle Punkte von Bild eins und $p_j$ beinhaltet alle Punkte von Bild zwei. Ein Punkt  $p_{i1} = \begin{bmatrix}p_{i1,u}&p_{i1,v}&1\end{bmatrix}^T$ aus Bild eins soll zu einem Punkt $p_{i1} = \begin{bmatrix}\frac{p_{i1,u}}{w_i}&\frac{p_{i1,v}}{w_i}&1\end{bmatrix}^T$ mit $w_i$ gleich der Gewichtung 
+Um $z$ zu ermitteln, werden zunächst die Gewichtungen der Punkte beider Bilder benötigt. $p_i$ beinhaltet alle Punkte von Bild eins und $p_j$ beinhaltet alle Punkte von Bild zwei. Ein Punkt  $p_{i1} = \begin{bmatrix}p_{i1,u}&p_{i1,v}&1\end{bmatrix}^T$ aus Bild eins soll zu einem Punkt $p_{i1} = \begin{bmatrix}\frac{p_{i1,u}}{w_i}&\frac{p_{i1,v}}{w_i}&1\end{bmatrix}^T$ mit $w_i$ gleich der Gewichtung 
 
 \begin{gather}
 	w_i=w^Tp_i
 \end{gather} 
 
-transformiert werden. Dasselbe soll auch für die Punkte $p_j$ im zweiten Bild geschehen. Sind die Gewichtungen beider Bilder gleich, so ergibt sich keine projektive Verzerrung und sowohl $H_p$ also auch $H_p'$ sind in dem Fall affine Transformationen und die Epipole wären bereits im unendlichen. Angenommen beide Epipole befinden sich noch nicht im unendlichen, so können die Gewichtungen der Punkte beider Bilder nicht gleich sein\cite{ZZ}.\\
+transformiert werden. Dasselbe soll auch für die Punkte $p_j$ im zweiten Bild geschehen. Sind die Gewichtungen beider Bilder gleich, so ergibt sich keine projektive Verzerrung und die Epipole sind bereits im unendlichen. Befindet sich einer oder beide Epipole nicht im unendlichen, so können die Gewichtungen der Punkte beider Bilder nicht gleich sein\cite{ZZ}.\\
 
-Das Ziel ist, die Abweichung der Gewichtungen der Punkte beider Bilder zueinander so gering wie möglich zu machen. Die Rektifizierung wurde anhand des synthetischen Beispiels in Kapitel \ref{sec:minimal} implementiert. Dem entsprechend bilden die Abbildungen der Eckpunkte des Quaders auf den Sensoren der virtuellen Kameras, die Punkte in $p_i$ und $p_j$ anhand welcher die Rektifizierung durchgeführt werden soll. \\
+Das Ziel ist es einen Wert für $z$ zu finden, der die Abweichung der Gewichtungen beider Bilder zueinander so gering wie möglich zu hält. Die Rektifizierung wurde anhand des synthetischen Beispiels in Kapitel \ref{sec:minimal} implementiert. Dem entsprechend bilden die Abbildungen der Eckpunkte des Quaders auf den Sensoren der virtuellen Kameras, die Punkte in $p_i$ und $p_j$ anhand welcher die Rektifizierung durchgeführt werden soll. \\
 
 %Im Realbeispiel werden alle Pixel des Bildes verwendet. Die Rektifizierung wurde im aufgeführten Beispiel anhand des erstellten Minimalbeispiels durchgeführt, somit wurden die Eckpunkte des Quaders des jeweiligen Bildes für die das Minimierungskriterium verwendet.
 %
 % Es wird eine Funktion nach dem Prinzip der Anpassung der kleinsten Quadrate aufgestellt, welche die Abweichung der Gewichtung der Punkte in Bezug auf die Gewichtung des Bildzentrums $p_c$ berechnet.
  
-Der Wert $p_c$ ergibt sich aus der Mittelung aller verwendeten Punkte eines Bildes $p_c = \frac{1}{n} \sum_{i=1}^{n} p_i$ und gibt den Bildmittelpunkt an. $w_c$ ist die Gewichtung am Bildmittelpunkt und wird berechnet mit
+Der Wert $p_c$ mit  $p_c = \frac{1}{n} \sum_{i=1}^{n} p_i$ ergibt sich aus dem Durchschnittswert aller verwendeten Punkte eines Bildes und gibt den Bildmittelpunkt an. $w_c$ ist die Gewichtung am Bildmittelpunkt und wird berechnet mit
 
 \begin{gather}
 	w_c = w^Tp_c
-\end{gather}
+\end{gather}.
 
 
-Die Abweichung der Gewichtungen wird bezüglich der Gewichtung des Bildzentrums $w_c$ gemessen. 
+Die Abweichung der Gewichtungen wird bezüglich der Gewichtung am Bildzentrum $w_c$ gemessen. 
 
 \begin{gather}
 	\sum_{i-1}^{n}\Big[\frac{w_i-w_c}{w_c} \Big]^2\\
@@ -330,7 +352,7 @@ Vereinfacht lässt sich das auch in einer Matrixgleichung in Form von
 	\frac{w^TPP^Tw}{w^Tp_cp_c^Tw} \label{eq:MinimizationBild1}
 \end{gather}
 
-angeben, in welcher für $P$ gilt:
+angeben, in welcher für $P$ gilt
 
 \begin{gather}
 	P=\begin{bmatrix}
@@ -338,16 +360,16 @@ angeben, in welcher für $P$ gilt:
 		p_{1,v}-p_{c,v}&p_{2,v}-p_{c,v}&...&p_{i,v}-p_{c,v}\\\label{eq:P}
 		0&0&...&0	
 	\end{bmatrix}
-\end{gather}
+\end{gather}.
 
-Für die Punkte $p_j$ in Bild zwei ergibt sich dann entsprechend die Matrixgleichung:
+Für die Punkte $p_j$ in Bild zwei ergibt sich dann entsprechend die Matrixgleichung
 
 \begin{gather}
 	\frac{w'^TP'P'^Tw'}{w'^Tp_c'p_c'^Tw'}\label{eq:MinimizationBild2}
-\end{gather} 
+\end{gather} .
 
 
-$w$ und $w^T$ werden nun noch mit ihren Definitionen aus den Gleichungen \ref{eq:w} und \ref{eq:w'} ersetzt und die Gleichungen \ref{eq:MinimizationBild1} und \ref{eq:MinimizationBild2} als Summiert und als eine Funktion von $z$ ausgedrückt\cite{ZZ}. 
+$w$ und $w^T$ werden nun noch mit ihren Definitionen aus den Gleichungen \ref{eq:w} und \ref{eq:w'} ersetzt und die Gleichungen \ref{eq:MinimizationBild1} und \ref{eq:MinimizationBild2} als eine Funktion von $z$ ausgedrückt\cite{ZZ}. 
 
 %Gleichzeitig werden die Gleichungen \ref{eq:w} und \ref{eq:w'} summiert um die Gleichung zu erhalten, welche sich auf beide Bilder gleichzeitig bezieht und somit eine Lösung für $z$, das für beide Bilder gilt, gesucht werden kann.
 %Das Ziel ist es einen Wert für $z$ zu finden, welches bis jetzt noch nicht ersichtlich in den Gleichungen vorkommt. Also werden
@@ -357,7 +379,7 @@ $w$ und $w^T$ werden nun noch mit ihren Definitionen aus den Gleichungen \ref{eq
 	\frac{z^T[e]_x^TPP^T[e]_xz}{z^T[e]_x^Tp_cp_c^T[e]_xz}+\frac{z^TF^TP'P'^TFz}{z^TF^Tp_c'p_c'^TFz} \label{eq:funcZLong}
 \end{gather}
 
-Gleichung \ref{eq:funcZLong} wird noch vereinfach mit:
+Gleichung \ref{eq:funcZLong} wird noch vereinfach mit
 
 \begin{gather}
 	A = [e]_x^TPP^T[e]_x\\
@@ -365,20 +387,21 @@ Gleichung \ref{eq:funcZLong} wird noch vereinfach mit:
 	A'=F^TP'P'^TF\\
 	B'= F^Tp_c'p_c'^TF\\
 	\leadsto 
-	\frac{z^TAz}{z^TBz}+\frac{z^TA'z}{z^TB'Fz}
+	\frac{z^TAz}{z^TBz}+\frac{z^TA'z}{z^TB'Fz}\\
+	f(z) = \frac{z^TAz}{z^TBz}+\frac{z^TA'z}{z^TB'Fz}\label{eq:PolynomRec}
 \end{gather}
 .
 
-Da bereits fest gesetzt ist dass die dritte Kompontente von $z$ gleich 0 sein wird, wird $z$ im Folgenden als zweidimensionaler vektor mit $z = \begin{pmatrix}
+Da bereits fest gesetzt ist das die dritte Kompontente von $z$ Null ist, wird $z$ im Folgenden als zweidimensionaler Vektor mit $z = \begin{pmatrix}
 \lambda\\ \mu\end{pmatrix}$ dargestellt. $A,B,A'$ und $B'$ sind 3x3-Matrizen, von denen dann nur noch der erste 2 $\times$ 2- Block wichtig ist.\\
 
-Für eine nicht lineare Optimierung wird das gesamte Polynom aufgeteilt, so minimieren wir zunächst $\frac{z^TAz}{z^TBz}$ und danach $\frac{z^TA'z}{z^TB'z}$. So entstehen für $z$ zunächst zwei Lösungen $\hat{z_1}$ und $\hat{z_2}$, welche über eine Mittelung eine ersten Schätzung für $z$ geben\cite{ZZ}.
+Für eine nicht lineare Optimierung wird das gesamte Polynom \ref{eq:PolynomRec} aufgeteilt. Als erstes, wird $\frac{z^TAz}{z^TBz}$ minimiert und danach $\frac{z^TA'z}{z^TB'z}$. So entstehen zwei Lösungen $\hat{z_1}$ und $\hat{z_2}$, welche über eine Mittelung eine erste Schätzung für $z$ geben\cite{ZZ}.
 
 \begin{gather}
 	z = \frac{\frac{\hat{z_1}}{\| z_1 \|}+\frac{\hat{z_2}}{\| z_2 \|}}{2}
 \end{gather}\\
 
-Da es sich um eine nicht lineare Optimierung handelt ist die Minimierung von  $\frac{z^TAz}{z^TBz}$ gleichzusetzen mit der Maximierung von  $\frac{z^TBz}{z^TAz}$. Beide werden als eine Funktion von $f(z)$ definiert. Matrix $A$ wird mit der Choleskyzerlegung\cite{FormelsammlungMatrizen} in zwei höhere Dreiecksmatrizen zerlegt $A = D^TD$. Dies geht nur da $A$ nachweislich eine symmetrische und positiv-definite Matrix ist\cite{Fortran77,FormelsammlungMatrizen}. Des Weiteren wird definiert, dass $y = Dz$ ist und $f(z)$ wird dann zu $\hat{f}(y)$\cite{ZZ}.
+Da es sich um eine nicht lineare Optimierung handelt ist die Minimierung von  $\frac{z^TAz}{z^TBz}$ gleichzusetzen mit der Maximierung von  $\frac{z^TBz}{z^TAz}$. Beide werden als eine Funktion von $f(z)$ definiert. Matrix $A$ wird mit der Choleskyzerlegung\cite{FormelsammlungMatrizen} in zwei höhere Dreiecksmatrizen zerlegt $A = D^TD$. Dies geht nur da $A$ nachweislich eine symmetrische und positiv-definite Matrix ist\cite{Fortran77,FormelsammlungMatrizen}. Des Weiteren wird definiert, dass $y = Dz$ ist und $f(z)$ wird zu $\hat{f}(y)$\cite{ZZ}.
 
 \begin{gather}
 	A = D^TD\\
@@ -389,13 +412,13 @@ Da es sich um eine nicht lineare Optimierung handelt ist die Minimierung von  $\
 	\hat{f}(y)= \frac{y^TD^{-T}BD^{-1}y}{y^Ty}
 \end{gather}
 
-Da $y$ bis auf einen Skalierungsfaktor bestimmt ist, kann angenommen werden, dass $\parallel y \parallel = 1$ gilt. $\hat{f}(y)$ ist maximiert, wenn $y$ gleich dem Eigenvektor von $D^-TBD-1$ ist, welcher mit dem größten Eigenwert von $D^-TBD-1$ assoziiert wird\cite{ZZ}. Für $\hat{z_1}$ ergibt sich $\hat{z_1} = D^{-1}y$. Exakt das selbe Verfahren wird für die Bestimmung von $z_2$ mit  $\frac{z^TB'z}{z^TA'z}$ angewandt\cite{ZZ}.\\
+Da $y$ bis auf einen Skalierungsfaktor bestimmt ist, kann angenommen werden, dass $\parallel y \parallel = 1$ gilt. $\hat{f}(y)$ ist maximiert, wenn $y$ gleich dem Eigenvektor von $D^{-T}BD^{-1}$ ist, welcher mit dem größten Eigenwert von $D^-TBD-1$ assoziiert wird\cite{ZZ}. Für $\hat{z_1}$ ergibt sich $\hat{z_1} = D^{-1}y$. Exakt das selbe Verfahren wird für die Bestimmung von $z_2$ mit  $\frac{z^TB'z}{z^TA'z}$ angewandt\cite{ZZ}.\\
 
 %Zum Schluss erhalten wir dann einen Wert für $\hat{z_1}$ mit $\hat{z_1} = D^{-1}y$. Exakt das selbe Verfahren wird für die Findung von $z_2$ mit  $\frac{z^TB'z}{z^TA'z}$ angewandt.\\
 
-Sind $z_1, z_2$ und durch Mittelung der beiden eine erste Schätzung für $z$ gefunden, so kann ein Wert für $z$ gesucht werden, welcher noch näher an ein optimales Ergebnis heranreicht. Beide Lösungen $z_1$ und $z_2$, werden in die Funktion $f(z)$ eingesetzt und es wird ein gemeinsames Minimum gesucht\cite{ZZ}. So kann iterativ eine optimale Lösung für $z$ gefunden werden. Ist der Wert für $z$ bestimmt, so kann dieser die Gleichungen \ref{eq:w} und \ref{eq:w'} eingesetzt werden und $w$ beziehungsweise $w'$ bestimmt werden. Die Einträge der Matrizen $H_p$ und $H_p'$ wären mit $w = (w_a,w_b,w_c)^T$ und $w' = (w_a',w_b',w_c')^T$ bestimmt\cite{ZZ}.\\
+Die erste Schätzung von $z$ bietet bereits eine akzeptable Lösung. Um das Ergebnis für $z$ zu optimieren können die Werte $z_1$ und $z_2$ in Gleichung \ref{eq:PolynomRec} eingesetzt und ein gemeinsames Minimum gesucht werden. das Minimum ergibt den neuen Wert für $z$.$z$ wird in die Gleichungen \ref{eq:w} und \ref{eq:w'} eingesetzt und $w$ und $w'$ werden berechnet. Die Einträge der Matrizen $H_p$ und $H_p'$ sind mit $w = (w_a,w_b,w_c)^T$ und $w' = (w_a',w_b',w_c')^T$ bestimmt\cite{ZZ}.\\
 
-Auf diese Weise wurden im synthetischen Beispiel die Matrizen $H_p$ und $H_p'$ bestimmt und auf die Abbildungen des Quaders angewandt. Abbildung \ref{fig:RectOriginal} zeigt die unrektifizierten Abbildungen der Quader in den Kameras. In grün ist die Abbildung des Quaders in $C$ zu sehen und in rot ist die Abbildung des Quaders in $C'$. Abbildung \ref{fig:RectOriginalELines} zeigt in blau die Epipolarlinien beider Abbildungen, welche sich in den jeweiligen Epipolen treffen. 
+Im synthetischen Beispiel die Matrizen $H_p$ und $H_p'$ bestimmt und auf die Abbildungen des Quaders angewandt. Abbildung \ref{fig:RectOriginal} zeigt die unrektifizierten Abbildungen der Quader in den Kameras. In grün ist die Abbildung des Quaders in $C$ zu sehen und in rot ist die Abbildung des Quaders in $C'$. Abbildung \ref{fig:RectOriginalELines} zeigt in blau die Epipolarlinien beider Abbildungen. 
 
 
 %Abbildung 4.7 zeigt in rot den Quader des Minimalbeispiels wie er in Kamera zwei abgebildet ist und in grün wie er in Kamera eins abgebildet ist. Kamera zwei ist horizontal zu Kamera eins verschoben und um $45\circ$ zu Kamera eins um die eigene vertikale Achse ein gedreht. Die Auflösungen beider Kameras sind identisch, sprich die intrinsischen Kameraparameter sind die selben. Abbildung 4.8 zeigt die momentanen Epipolarlinien. Die Epipolarlinien von Bild eins, also dem grünen Abbild, sind bereits Parallel, was aber keine Voraussetzung für die Funktion des Rektifizierungsalgorithmus ist. Der Schnittpunkt der Epipolarlinien von Bild zwei, also dem Roten Abbild, treffen sich in einem Punkt und bilden somit den Epipol von Bild zwei. 
@@ -464,33 +487,51 @@ Nach Transformieren der Abbildungspunkte mit den Matrizen $H_p$ und $H_p'$ wurde
 
 
 
-Die Epipole der jeweiligen Bilder befinden sich nach der projektiven Transformation im unendlichen. Die daraus resultierenden Epipolarlinien sind, wie in Abbildung \ref{fig:RectSameHp} zu sehen, parallel zueinander angeordnet. Im Folgenden sollen die Epipole rotiert werden, so dass sie ihre Richtungen $i = \begin{bmatrix}1&0&0\end{bmatrix}$ betragen. Die Epiplolarlinien würden dann parallel zur horizontalen Achse verlaufen\cite{ZZ}. $H_r$ und $H_r'$, welche aus der Zerlegung von $H_a$ und $H_a'$ resultieren, sollen die Rotation ausführen. Für $H_r$ und $H_r'$ gelten wie aus Gleichung \ref{eq:DefHr} bekannt folgende Gleichungen.
+Die Epipole der jeweiligen Bilder befinden sich nach der projektiven Transformation im unendlichen. Die daraus resultierenden Epipolarlinien sind, wie in Abbildung \ref{fig:RectSameHp2} zu sehen, parallel zueinander angeordnet. Im Folgenden sollen die Epipole rotiert werden, so dass ihre Richtungen $i = \begin{bmatrix}1&0&0\end{bmatrix}$ betragen. $H_r$ und $H_r'$, welche aus der Zerlegung von $H_a$ und $H_a'$ resultieren, sollen die Rotation ausführen. 
+
+%Die Gleichungen für $H_r$ und $H'_r$ lassen sich wie folgt herleiten
+%Für $H_r$ und $H_r'$ gelten wie aus Gleichung \ref{eq:DefHr} bekannt folgende Gleichungen.
 
 % dass die Richtung der Epipolarlinien $i = \begin{bmatrix}1&0&0\end{bmatrix}$ beträgt und sie parallel zu den horizontalen Achse verlaufen. 
 
 
 %Nachdem die Epipole ins Unendliche verschoben wurden, müssen diese nun so rotiert und verschoben werden, dass die Epipolarlinien als Richtung $i = \begin{bmatrix}1&0&0\end{bmatrix}$ haben und die Epipolarlinien beider Bilder zu einheitlichen Scanlinien werden. Für die Ähnlichkeitstransformation wird davon ausgegangen, dass $w$ und $w'$ bereits bekannt sind.$H_r$ und $H_r'$ wurden bereits aus der Zerlegung von $H_a$ und $H_a'$ gewonnen. 
 
+
+
+
+%\begin{gather}
+%	H_r = 
+%	\begin{bmatrix}
+%		v_b-v_cw_b&	v_a-v_cw_a&0\\
+%		v_a-v_cw_a&v_b-v_cw_b&v_c\\
+%		0&0&1
+%	\end{bmatrix}\\
+%	H_r' = 
+%	\begin{bmatrix}
+%		v_b'-v_c'w_b'&	v_a'-v_c'w_a'&0\\
+%		v_a'-v_c'w_a'&v_b'-v_c'w_b'&v_c'\\
+%		0&0&1
+%	\end{bmatrix}
+%\end{gather}
+
+$w$ und $w'$ sind bereits bekannt, Mit Hilfe des bekannten $F$, können $v_a$ und $v_b$ ersetzt werden. Zur Erinnerung eine Voraussetzung für den hier aufgezeigten Rektifizierungsansatz ist, dass sowohl die Bildpunkte als auch die Fundamentalmatrix bekannt sein müssen. Die Epipole wurden ins unendliche projiziert und sollen nach der Rotation die Form $e = [1 \;0\;0]^T$. Das heißt das nach der Rektifizierung die Fundamentalmatrix $\bar{F}$ die folgende Form haben wird.
+
 \begin{gather}
-	H_r = 
-	\begin{bmatrix}
-		v_b-v_cw_b&	v_a-v_cw_a&0\\
-		v_a-v_cw_a&v_b-v_cw_b&v_c\\
-		0&0&1
-	\end{bmatrix}\\
-	H_r' = 
-	\begin{bmatrix}
-		v_b'-v_c'w_b'&	v_a'-v_c'w_a'&0\\
-		v_a'-v_c'w_a'&v_b'-v_c'w_b'&v_c'\\
-		0&0&1
+	\bar{F} = \begin{bmatrix}
+		0&0&0\\
+		0&0&-1\\
+		0&1&0
 	\end{bmatrix}
 \end{gather}
 
-$w$ und $w'$ sind bereits bekannt, Mit Hilfe von $F$, können $v_a$ und $v_b$ ersetzt werden. Zur Erinnerung eine Vorraussetzung für den hier aufgezeigten Rektifizierungsansatz ist, dass sowohl die Bildpunkte als auch die Fundamentalmatrix bekannt sein müssen. Die Fundamentalmatrix welche aus den rektifizierten Punkten entsteht hätte dann die Form 
+Des Weiteren ist bekannt, dass $F = H'^T \bar{F} H$ 
+%Die Fundamentalmatrix welche aus den rektifizierten Punkten entsteht hätte dann die Form 
 
 
 \begin{gather}
-	F = H'^T[i]_\times H\\
+	\bar{m}'^T\bar{F} \bar{m} = 0 \leadsto m'^T H'^T \bar{F} H m = 0\\
+	\leadsto F = H'^T[i]_\times H\\
 	F=
 		\begin{bmatrix}
 	u_a'&v_a'&w_a'\\
@@ -512,10 +553,10 @@ $w$ und $w'$ sind bereits bekannt, Mit Hilfe von $F$, können $v_a$ und $v_b$ er
 	v_aw_a' - v_a'w_a&v_bw_a' - v_a'w_b&v_cw_a' - v_a'\\
 	v_aw_b' - v_b'w_a&v_bw_b' - v_b'w_b&v_cw_b' - v_b'\\
 	v_a - v_c'w_a&v_b - v_c'w_b&v_c-v_c'
-	\end{bmatrix}\\
+	\end{bmatrix}\label{eq:6.45}
 \end{gather}
 
-Da bisher nur $w$ und $w'$ bekannt sind und die Einträge der Fundamentalmatrix $F$ aus den nicht-rektifizierten Punkten, werden die Einträge so umgestellt. Für $v_a, v_b$ und $v_c$ werden jeweils die Einträge der letzten Zeile umgeformt. Für $v_a', v_b'$ und $v_c'$ dient die letzte Spalte von $F$.
+Bisher sind $w$, $w'$ und die Fundamentalmatrix $F$ aus den nicht-rektifizierten Punkten bekannt. Um $v_a, v_b$ und $v_c$ zu erhalten, werden jeweils die Einträge der letzten Zeile in $F$ umgeformt. Für $v_a', v_b'$ und $v_c'$ dient die letzte Spalte von $F$.
 %Dazu kann die letzte Zeile von F nach $v_a, v_b$ und $v_c$ aufgelöst werden. Für $v_a', v_b'$ und $v_c'$ wird die letzte Spalte von F verwendet. So können folgende Gleichungen für $v_a, v_a',v_b, v_b', v_c$ und $v_c'$ gewonnen werden. 
 
 
@@ -528,20 +569,28 @@ Da bisher nur $w$ und $w'$ bekannt sind und die Einträge der Fundamentalmatrix 
 	v_c' = v_c -F_{33}\label{eq:F33}
 \end{gather}
 
-$F_{31},\, F_{32}, F_{33} ,F_{13}$ und  $F_{23}$ stehen für die Einträge der Matrix $F$, welche aus den nicht-rektifizierten Punkten bestimmt wurde. \\
-
-
-Werden die Gleichungen \ref{eq:va} bis \ref{eq:F33} in $H_r$ und $H_r'$ eingesetzt, so ergeben sich für $H_r$ und $H_r'$ 
+$F_{31},\, F_{32}, F_{33} ,F_{13}$ und  $F_{23}$ stehen für die Einträge der Matrix $F$, welche aus den nicht-rektifizierten Punkten bestimmt wurde. Werden die Gleichungen \ref{eq:va} bis \ref{eq:F33} in $H_r$ und $H_r'$ eingesetzt, so ergeben sich für $H_r$ und $H_r'$ 
 
 %Eingesetzt in die jeweiligen Matrizen $H_r$ und $H_r'$, entstehen die folgenden Matrizen in Gleichungen 4.114 und 4.115, welche nur noch die unbekannte $v_c'$ beinhalten. Die gemeinsame Variable $v_c'$ zeigt die geometrische Verbindung beider Bilder in ihrer Verschiebung entlang ihrer v-Richtung. Es wird also ein Offset von $F_33$ benötigt, um die Epipolarlinien horizontal zu Scanlinien auszurichten. \textcolor{red}{Den Wert für $v_c$ wird so ermittelt, dass das Minimum einer v-Koordinaten eines Pixel als minimum den Wert null besitzt }
 
 \begin{gather}
-	H_r = \begin{bmatrix}
+		H_r = 
+		\begin{bmatrix}
+			v_b-v_cw_b&	v_a-v_cw_a&0\\
+			v_a-v_cw_a&v_b-v_cw_b&v_c\\
+			0&0&1
+		\end{bmatrix} = 
+	\begin{bmatrix}
 		F_{32}-w_bF_{33}&w_aF_{33}-F_{31}&0\\
 		F_{31}-w_aF_{33}&F_{32}-w_bF_{33}&F_{33}+v_c'\\
 		0&0&1
 	\end{bmatrix}\\
 	H_r'=
+		\begin{bmatrix}
+		v_b'-v_c'w_b'&	v_a'-v_c'w_a'&0\\
+		v_a'-v_c'w_a'&v_b'-v_c'w_b'&v_c'\\
+		0&0&1
+	\end{bmatrix}=
 	\begin{bmatrix}
 		w_b'F_{33}-F_{23}&F_{13}-w_a'F_{33}&0\\
 		w_a'F_{33}-F_{13}&w_b'F_{33}-F_{23}&v_c'\\
@@ -556,7 +605,7 @@ Die gemeinsame unbekannte Variable $v_c'$ beschreibt die geometrische Verbindung
 %
 % Es wird also ein Offset von $F_33$ benötigt, um die Epipolarlinien horizontal zu Scanlinien auszurichten. \textcolor{red}{Den Wert für $v_c$ wird so ermittelt, dass das Minimum einer v-Koordinaten eines Pixel als minimum den Wert null besitzt }
 
-Die Abbilder des Quader sehen nach der Transformation mit $H_rH_p$ und $H_r'H_p'$ aus wie in den Abbildungen \ref{fig:RectSameHrHp1} und \ref{fig:RectSameHrHp2} dargestellt. Sollten die Epipolarlinien noch nicht parallel zur horizontalen Achse gewesen sein, so sind sie es nach der Transformation mit $H_p$ und $H_p'$. Des Weiteren wurden beide Bilder durch $v_c'$ so verschoben, dass der in vertikaler Richtung kleinste Punkt bei auf der Horizontalen Achse liegt. 
+Die Abbilder des Quader sehen nach der Transformation mit $H_rH_p$ und $H_r'H_p'$ aus wie in den Abbildungen \ref{fig:RectSameHrHp1} und \ref{fig:RectSameHrHp2} dargestellt. Sollten die Epipolarlinien noch nicht parallel zur horizontalen Achse sein, so sind sie es nach der Transformation mit $H_r$ und $H_r'$. Des Weiteren wurden beide Bilder durch $v_c'$ so verschoben, dass der in vertikaler Richtung kleinste Punkt auf der Horizontalen Achse liegt. 
 %Das Ergebnis der Bildpunkte $p_i$ und $p_j$ multipliziert mit den Matrizen $H_rH_p$ und $H_r'H_p'$ mit ist in Abbildung 4.10 zu sehen. Als letztes folgt noch die Scherungstransformation $H_s$ und $H_s'$ für die horizontale Entzerrung beider Bilder.\\ 
 
 %\begin{minipage}{\linewidth}
@@ -584,7 +633,9 @@ Die Abbilder des Quader sehen nach der Transformation mit $H_rH_p$ und $H_r'H_p'
 
 \subsection{Scherungstransformation}
 
-Im letzten Schritt soll die durch die Transformation mit $H_p$ und $H_p'$ entstandene horizontale Verzerrung in beiden Bilder reduziert werden. Aus diesem Grund werden die Scherungsmatrizen $H_s$ und $H_s'$, aus der Zerlegung der affinen Matrix $H_a$ und $H_a'$ benötigt. Die Einträge der ersten zeile in $H_s$ und $H_s'$ haben nur noch Auswirkungen auf die horizontalen Koordinaten der Bildpunkte.
+Im letzten Schritt soll die durch die Transformation mit $H_p$ und $H_p'$ entstandene horizontale Verzerrung in beiden Bilder reduziert werden. Unter der horizontalen Verzerrung versteht man die Verschiebung der gegenüberliegenden Bildkanten zueinander. Die Verbindungslinie der gegenüberliegenden Bildkantenmitten stehen nicht mehr orthogonal aufeinander, was eine Verzerrung des Bildes bewirkt. Abbildung \ref{fig:PreserveAspectRatio} stellt diese Verzerrung schematisch dar.\\
+
+Aus diesem Grund werden die Scherungsmatrizen $H_s$ und $H_s'$, aus der Zerlegung der affinen Matrix $H_a$ und $H_a'$ benötigt. Die Einträge der ersten zeile in $H_s$ und $H_s'$ haben nur noch Auswirkungen auf die horizontalen Koordinaten der Bildpunkte.
 
 %Die letzte Transformation, welche an den Bilder durchgeführt werden soll, ist die sogenannten Scherungstransformation. Sie soll vor allem dazu dienen, die horizontale Verzerrung der Bilder, zueinander nochmal weiter zu minimieren. Die Matrizen $H_s$ und $H'_r$ wirken sich hauptsächlich auf die $u$ und $u'$ Komponenten aus. 
 
@@ -601,13 +652,13 @@ Im letzten Schritt soll die durch die Transformation mit $H_p$ und $H_p'$ entsta
 	\end{bmatrix}
 \end{gather}
 
-Um die richtigen Werte für $a, a', b$ und $b'$ zu bekommen, werden zunächst Punkte an den jeweiligen gegenüberliegenden Kanten der Bilder definiert. Da die Bilder des Quaders nicht aus tausenden von Pixeln bestehen, wie ein reales Bild, sondern nur über dessen Eckpunkte bestimmt ist, wird eine Bildbreite $w$ und $w'$ und eine Bildhöhe $h$ und $h'$ definiert. \\
+Um die richtigen Werte für $u_a, u_a', u_b$ und $u_b'$ zu erhalten, werden zunächst Punkte an den jeweiligen gegenüberliegenden Kanten der Bilder definiert. Da die Bilder des Quaders nicht aus mehreren Pixeln bestehen, wie ein reales Bild, sondern nur über dessen Eckpunkte bestimmt ist, wird eine Bildbreite $w$ und $w'$ und eine Bildhöhe $h$ und $h'$ um die Abbildungen des Quaders definiert. \\
 
-Da es nicht möglich ist die horizontale Verzerrung gänzlich zu reduzieren, wird stattdessen versucht die Orthogonalität und das Seitenverhältnis der Verbindungslinien $\overline{bd}$ und $\overline{ca}$ wieder herzustellen. In Abbildung \ref{fig:PreserveAspectRatio} ist das Ziel nochmal grafisch dargestellt.\\
+Da es nicht möglich ist die horizontale Verzerrung gänzlich zu reduzieren, wird stattdessen die Orthogonalität der Verbindungslinien $\overline{bd}$ und $\overline{ca}$ wieder hergestellt. In Abbildung \ref{fig:PreserveAspectRatio} ist das Ziel grafisch dargestellt.\\
 
-Für den nächsten Schritt werden im synthetischen Beispiel für die Abbildungen des Quaders jeweils Bildweite $w$ und Bildhöhe $h$ definiert. Da zunächst von gleichen Kameraauflösungen ausgegangen wird, sind die Bildbreiten und Höhen beider Kameras gleich. Danach werden die vier Mittelpunkte $a,b,c$ und $d$ der Bildkanten definiert mit $a = [\frac{w-1}{2} \; 0 \; 1]^T, b = [w-1 \; \frac{h-1}{2}\; 1]^T, c = [\frac{w-1}{2} \; h-1 \; 1]^T, d = [0 \; \frac{h-1}{2} \; 1]^T$.
+Für den nächsten Schritt werden im synthetischen Beispiel für die Abbildungen des Quaders jeweils Bildweite $w$ und Bildhöhe $h$ definiert. Da zunächst von gleichen Kameraauflösungen ausgegangen wird, sind die Bildbreiten und Höhen beider Kameras gleich. Danach werden die vier Mittelpunkte $a,b,c$ und $d$ der Bildkanten definiert mit $a = [\frac{w}{2} \; 0 \; 1]^T, b = [w \; \frac{h}{2}\; 1]^T, c = [\frac{w}{2} \; h \; 1]^T, d = [0 \; \frac{h}{2} \; 1]^T$.
 
-
+\pagebreak
 
 \begin{figure}[!htb]
 	\centering
@@ -616,7 +667,7 @@ Für den nächsten Schritt werden im synthetischen Beispiel für die Abbildungen
 	\label{fig:PreserveAspectRatio}
 \end{figure}
 
-Die Punkte $a,b,c,d$ und auch $a',b',c',d'$ sind die Mittelpunkte der noch nicht rektifizierten Bildkanten. Diese werden mit den Transformationsmatrizen $H_sH_rH_p$ und $H_s'H_r'H_p'$ verrechnet, um so die Position der Kantenmitten nach der Rektiizierung zu erhalten.
+Die Punkte $a,b,c,d$ und auch $a',b',c',d'$ sind die Mittelpunkte der noch nicht rektifizierten Bildkanten. Diese werden mit den Matrizen $H_rH_p$ und $H_r'H_p'$ transformiert, um so die Position der Kantenmitten nach der Rektifizierung zu erhalten.
 
 %geben die Bildbreiten der noch unberührten Bilder an. Nach der Rektifizierung sind die Bilder so verzerrt, dass die Kanten mitten sich meistens nicht mehr direkt gegenüber von einander befinden. Die Punkte $a,b,c,d$ und $a',b',c',d'$ werden mit den Matrizen $H_p, H'_p, H_r$ und $H'_r$ verrechnet, so dass man die genaue neue Position der Kanten Mitten nach der Rektifizierung hat. 
 
@@ -633,7 +684,7 @@ Die Punkte $a,b,c,d$ und auch $a',b',c',d'$ sind die Mittelpunkte der noch nicht
 
 %Um aus $\hat{a},\hat{b},\hat{c},\hat{d}$ und auch $\hat{a}',\hat{b}',\hat{c}',\hat{d}'$ wieder Punkte der affinen Ebene zu machen werden sie jeweils durch ihre dritte Komponenten geteilt, so das $\hat{a}_w,\hat{b}_w,\hat{c}_w,\hat{d}_w$ und $\hat{a}'_w,\hat{b}'_w,\hat{c}'_w,\hat{d}'_w$ jeweils den Wert eins besitzen. 
 
-Danach können die Vektoren $\vec{x}$ und $\vec{y}$ aus den Differenzen der sich ursprünglich gegenüberliegenden Punkte gebildet werden.
+Danach können die Vektoren $\vec{x}$ und $\vec{y}$ der sich ursprünglich gegenüberliegenden Punkte gebildet werden.
 
 \begin{gather}
 	x = \hat{b}-\hat{d}\\
@@ -642,12 +693,12 @@ Danach können die Vektoren $\vec{x}$ und $\vec{y}$ aus den Differenzen der sich
 	y' = \hat{c}'-\hat{a}'
 \end{gather}
 
-$x$ und $y$ sind Vektoren der euklidischen Bildebene\cite{ZZ}. Das heißt, sie sind genau dann orthogonal zueinander wenn gilt:
+$x$ und $y$ sind Vektoren der euklidischen Bildebene\cite{ZZ}. Das heißt, sie sind genau dann orthogonal zueinander wenn gilt
 
 \begin{gather}
 	(H_sx)^T(H_sy)= 0 \label{eq:OrthoHs}\\
 	(H'_sx')^T(H'_sy')= 0 \label{eq:OrthoHs2}
-\end{gather}
+\end{gather}.
 
 Für die Erhaltung der Seitenverhältnisse gilt dann:
 
@@ -656,7 +707,7 @@ Für die Erhaltung der Seitenverhältnisse gilt dann:
 	\frac{(H'_sx')^T(H'_sx')}{(H'_sy')^T(H'_sy')} = \frac{w'^2}{h'^2}\label{eq:SeitenverhaeltnisHs2}	
 \end{gather}
 
-Anhand der in den Gleichungen \ref{eq:OrthoHs}, \ref{eq:OrthoHs2}, \ref{eq:SeitenverhaeltnisHs} und \ref{eq:SeitenverhaeltnisHs2} können die folgenden Gleichungen für die Matirixeinträge für $H_s$ und $H_s'$ aufgestellt werden\cite{ZZ,ACM}.
+Anhand der Gleichungen \ref{eq:OrthoHs}, \ref{eq:OrthoHs2}, \ref{eq:SeitenverhaeltnisHs} und \ref{eq:SeitenverhaeltnisHs2} können die folgenden Gleichungen für die Matrixeinträge $u_a$ und $u_b$ für $H_s$ und $H_s'$ aufgestellt werden\cite{ZZ,ACM}.
 
 
 \begin{gather}
@@ -730,7 +781,7 @@ Die entstehenden Bilder des Quaders sind in Abbildung \ref{fig:AbbRecDifRes} zu 
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=1.\linewidth]{images/Rectification_one_different_Solutions.png}
+	\includegraphics[width=.8\linewidth]{images/Rectification_one_different_Solutions.png}
 	\caption[virtuelle Aufnahme mit unterschiedlichen Auflösung für die Rektifizierung]{Aufnahmen zweier Kameras mit unterschiedlichen Auflösungen.Für Kamera eins(Grün) gilt \ensuremath{\zeta_x = \zeta_y = 1}  und für Kamera zwei(rot) gilt \ensuremath{\zeta'_x = \zeta'_y= 2}.} 
 	\label{fig:AbbRecDifRes}
 \end{figure}
@@ -743,7 +794,7 @@ Die entstehenden Bilder des Quaders sind in Abbildung \ref{fig:AbbRecDifRes} zu 
 %	\label{fig:AbbRecDifRes}
 %\end{minipage}\\ \\
 
-Abbildung \ref{fig:AbbRecDifResHp} zeigt die projektive Transformation der beiden Bilder mit $H_p$ und $H_p'$. Die Epipolarlinien der beiden Bilder sind nach dieser Transformation jeweils parallel zueinander. In Abbildung \ref{fig:AbbRecDifResHrHp} ist das Resultat zu sehen wenn die Transformation $H_r$ und $H_r'$ dazukommen. Die Epipolarlinien sind jetzt parallel zur horizontalen Achse und die Epipolarlinien von Bild eins und Bild zwei sind so zueinander ausgerichtet, dass sie zu einheitlichen Linien über zwei Bilder werden. Der rote Quader, welches das Bild mit der niedrigeren Auflösung repräsentiert, ist nach dieser Transformation stark horizontaler und vertikaler Richtung vergrößert wird. 
+Abbildung \ref{fig:AbbRecDifResHp} zeigt die projektive Transformation der beiden Bilder mit $H_p$ und $H_p'$. Die Epipolarlinien der beiden Bilder sind nach dieser Transformation jeweils parallel zueinander. In Abbildung \ref{fig:AbbRecDifResHrHp} ist das Resultat zu sehen wenn die Transformationen $H_r$ und $H_r'$ dazukommen. Die Epipolarlinien sind jetzt parallel zur horizontalen Achse und die Epipolarlinien von Bild eins und Bild zwei sind so zueinander ausgerichtet, dass sie zu einheitlichen Linien über zwei Bilder werden. Der rote Quader, welches das Bild mit der niedrigeren Auflösung repräsentiert, ist nach dieser Transformation vergrößert. 
 %(Normalerweise in realbildern wird das bild bei unterschiedlicher Auflösung nicht verzerrt sondern nur "Vergrößert" oder zurecht "geschnitten". Dadruch dass beide Quader in einem Koordinatensystem verbaut wurden sieht das so aus)
 
 
@@ -762,7 +813,9 @@ Abbildung \ref{fig:AbbRecDifResHp} zeigt die projektive Transformation der beide
 	%\label{fig:RecT52}
 \end{figure}
 
-Die Abbildungen \ref{fig:AbbRecDifResHsHrHp} und \ref{fig:AbbRecDifResHsHrHpLines} zeigen die letzt Transformation mit $H_s$ und $H_s'$ einmal mit und einmal ohne Epipolarlinien. Die Bilder scheinen richtig rektifiziert geworden zu sein. Dieser Test wurde noch mit weiteren Vielfachen der Kameramatrix $K$ ausprbiert, immer mit dem selben Ergebnis wie in den Abbildungen \ref{fig:AbbRecDifResHsHrHp} und \ref{fig:AbbRecDifResHsHrHpLines} zu sehen. Somit ist es wohl prinzipiell möglich aus den Rektifizeriten Bilder eine Tiefenkarte zu erstellen und somit die 3D-Szene zu rekonstruieren.\\
+Die Abbildungen \ref{fig:AbbRecDifResHsHrHp} und \ref{fig:AbbRecDifResHsHrHpLines} zeigen die letzte Transformation mit $H_s$ und $H_s'$. Die Bilder scheinen richtig rektifiziert geworden zu sein. Dies wurde noch mit weiteren Vielfachen der Kameramatrix $K$ ausprobiert. Für alle getesteten Fäller ergab sich dasselbe Ergebnis, wie es in den Abbildungen \ref{fig:AbbRecDifResHsHrHp} und \ref{fig:AbbRecDifResHsHrHpLines} zu sehen ist. Die Transformationen während der Rektifizierung können unterschiedliche Auflösungen ausgleichen und es ist folglich möglich eine Tiefenkarte zu erstellen um die 3D Szene zu rekonstruieren. 
+
+% immer mit dem selben Ergebnis wie in den Abbildungen \ref{fig:AbbRecDifResHsHrHp} und \ref{fig:AbbRecDifResHsHrHpLines} zu sehen ist. Somit ist es wohl prinzipiell möglich aus den Rektifizeriten Bilder eine Tiefenkarte zu erstellen und somit die 3D-Szene zu rekonstruieren.\\
 
 
 \begin{figure}[!htb]
@@ -778,10 +831,11 @@ Die Abbildungen \ref{fig:AbbRecDifResHsHrHp} und \ref{fig:AbbRecDifResHsHrHpLine
 		%\caption{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
 		%\label{fig:RecT52}
 \end{figure}
+\pagebreak
 
 
 
-Als nächstes wurden die Auflösung von $C'$ so verändert, dass $\zeta'_x \neq \zeta'_y$ gilt. Es werden $\zeta'_x = 2.3$  und $\zeta'_y = 3.2$ definiert. Somit folgt für $K'$ die folgende Matrix.
+Als nächstes wurden die Auflösung von $C'$ so verändert, dass $\zeta'_x \neq \zeta'_y$ gilt. Es werden $\zeta'_x = 2.3$  und $\zeta'_y = 3.2$ definiert. Somit folgt für $K'$ die folgende Matrix
 
 \begin{gather}
 	K' = 
@@ -790,9 +844,9 @@ Als nächstes wurden die Auflösung von $C'$ so verändert, dass $\zeta'_x \neq 
 	0&3.2&0\\
 	0&0&1
 	\end{bmatrix}
-\end{gather}
+\end{gather}.
 
-Für $K$ von $C$ gilt weiterhin $\zeta_x = \zeta_y = 1$. Die Entstehenden Bilder sind in Abbildung \ref{fig:7.18} zu sehen. Die horizontale Kantenlänge roten Quaders ist im Verhältnis kürzer als ihre vertikale Kantenlänge. Wie in Abbildung \ref{fig:7.19} zu sehen ist, bleibt ungleiche Veränderte Seitenverhältnis des roten Quaders nach der Rektifizierung erhalten, weshalb der Rote Quader schmäler ist als der der grüne.
+Für $K$ von $C$ gilt weiterhin $\zeta_x = \zeta_y = 1$. Die entstandenen Bilder sind in Abbildung \ref{fig:7.18} zu sehen. Die horizontale Kantenlänge des roten Quaders ist im Verhältnis kürzer als ihre vertikale Kantenlänge. Wie in Abbildung \ref{fig:7.19} zu sehen ist, bleibt ungleiche Veränderte Seitenverhältnis des roten Quaders nach der Rektifizierung erhalten, weshalb der Rote Quader schmäler ist als der der grüne.
 
 
 \begin{figure}[!htb]
@@ -811,3 +865,7 @@ Für $K$ von $C$ gilt weiterhin $\zeta_x = \zeta_y = 1$. Die Entstehenden Bilder
 \end{figure}
 
 Die Beispiele zeigen, dass es möglich ist Bilder unterschiedlicher Beispiele zu rektifizieren, jedoch müssen für die nachfolgende Erstellung der Tiefenmaps....(was wäre jetzt ein guter Abschluss??)
+
+Diese Beispiele zeigen, dass das hier vorgestellte Rektifizierungsverfahren auf Bilder verschiedener Auflösungen mit demselben Seitenverhältnis der Pixel anwendbar ist. Jedoch können Bilder mit verschiedenen Seitenverhältnissen mit dem Verfahren nicht rektifiziert werden. Eine mögliche Lösung wäre eine Erweiterung des Models, welche die Bildlängen bestimmt und schließlich die relativen Seitenverhältnisse ausgleicht.  
+
+

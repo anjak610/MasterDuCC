@@ -57,10 +57,10 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Beispiel eines Rektifizierten Bildes mit Scanlinien}}{52}{figure.caption.389}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Arbeitsprozess der Szenenrekonstruktion mit Rektifizierung}}{53}{figure.caption.391}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Entstehung einer Disparit\IeC {\"a}tskarte}}{54}{figure.caption.392}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces virtuelle Aufnahme eines Quaders f\IeC {\"u}r die Rektifizierung}}{59}{figure.caption.473}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Epipolarlinien und Epipole vor der Rektifizierung}}{60}{figure.caption.474}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces $H_p$ und $H_p'$ Transformation}}{60}{figure.caption.475}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces $H_p$ und $H_p'$ Transformation mit Epipolarlinien}}{60}{figure.caption.475}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces virtuelle Aufnahme eines Quaders f\IeC {\"u}r die Rektifizierung}}{59}{figure.caption.475}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Epipolarlinien und Epipole vor der Rektifizierung}}{60}{figure.caption.476}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces $H_p$ und $H_p'$ Transformation}}{60}{figure.caption.477}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces $H_p$ und $H_p'$ Transformation mit Epipolarlinien}}{60}{figure.caption.477}
 \contentsline {figure}{\numberline {6.8}{\ignorespaces $H_rH_p$ und $H_r'H_p'$ Transformation}}{62}{figure.caption.505}
 \contentsline {figure}{\numberline {6.9}{\ignorespaces $H_rH_p$ und $H_r'H_p'$ Transformation mit Epipolarlinien}}{62}{figure.caption.505}
 \contentsline {figure}{\numberline {6.10}{\ignorespaces Wiederherstellung der Orthogonalit\IeC {\"a}t}}{63}{figure.caption.511}

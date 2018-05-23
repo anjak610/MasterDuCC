@@ -23,11 +23,11 @@
 \BOOKMARK [2][]{subsection.279}{5.3.2 Singul\344rwerte der essentiellen Matrix}{section.266}% 23
 \BOOKMARK [1][]{section.280}{5.4 Szenenrekonstruktion mit Sampson-Approximation}{chapter.260}% 24
 \BOOKMARK [1][]{section.374}{5.5 Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\366sung}{chapter.260}% 25
-\BOOKMARK [0][]{chapter.388}{6 Vergleich mit anderen Computer Vision Applikationen}{}% 26
+\BOOKMARK [0][]{chapter.388}{6 Prinzip Szenenrekonstruktion mit Rektifizierung}{}% 26
 \BOOKMARK [1][]{section.390}{6.1 Szenenrekonstruktion mit Rektifizierung}{chapter.388}% 27
 \BOOKMARK [1][]{section.393}{6.2 Rektifizierung mit Homographien}{chapter.388}% 28
 \BOOKMARK [2][]{subsection.428}{6.2.1 Projektive Transformation}{section.393}% 29
-\BOOKMARK [2][]{subsection.476}{6.2.2 \304hnlichkeitstransformation}{section.393}% 30
+\BOOKMARK [2][]{subsection.478}{6.2.2 \304hnlichkeitstransformation}{section.393}% 30
 \BOOKMARK [2][]{subsection.506}{6.2.3 Scherungstransformation}{section.393}% 31
 \BOOKMARK [1][]{section.533}{6.3 Rektifizierung mit unterschiedlichen Kameraufl\366sungen}{chapter.388}% 32
 \BOOKMARK [0][]{chapter.544}{7 Punktesortierung in Schachbrettmustern}{}% 33
