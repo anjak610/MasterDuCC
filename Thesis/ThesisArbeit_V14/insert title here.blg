@@ -38,8 +38,6 @@ You're missing a field name---line 217 of file bibliography.bib
  :  % note   = {\url{"https://de.mathworks.com/help/vision/ref/estimatecameraparameters.html"}},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--entry type for "MatlabDisp" isn't style-file defined
---line 221 of file bibliography.bib
 You're missing a field name---line 224 of file bibliography.bib
  :  
  :  % note   = {\url{"https://de.mathworks.com/help/vision/ref/disparity.html"}},

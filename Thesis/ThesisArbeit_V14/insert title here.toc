@@ -1,39 +1,41 @@
 \select@language {ngerman}
-\contentsline {chapter}{\numberline {1}Einleitung}{4}{chapter.2}
-\contentsline {chapter}{\numberline {2}Model der Bildaufnahme mit einer Kamera}{5}{chapter.3}
-\contentsline {section}{\numberline {2.1}Lochkameramodell zur Abbildung eines Punktes auf die Bildebene}{5}{section.5}
-\contentsline {section}{\numberline {2.2}Koordinatentransformation}{6}{section.9}
-\contentsline {section}{\numberline {2.3}Aufname mit einer willk\IeC {\"u}rlichen Kameraorientierung}{9}{section.35}
-\contentsline {chapter}{\numberline {3}Geometrische Beziehungen zwischen Punktekorrespondenzen}{12}{chapter.50}
-\contentsline {section}{\numberline {3.1}Korrespondenzen planarer Punktmengen mit Homographien}{12}{section.59}
-\contentsline {section}{\numberline {3.2}Korrespondenzanalyse f\IeC {\"u}r beliebige Punkte im Raum (Epipolare Geometrie)}{14}{section.76}
-\contentsline {section}{\numberline {3.3}Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{17}{section.109}
-\contentsline {chapter}{\numberline {4}Synthetische Rekonstruktion}{21}{chapter.140}
-\contentsline {section}{\numberline {4.1}Simulierte Bildaufnahme einer virtuellen Szene}{22}{section.142}
-\contentsline {section}{\numberline {4.2}Bildanalyse}{24}{section.175}
-\contentsline {subsection}{\numberline {4.2.1}Bestimmung der extrinsischen Kameraparameter}{24}{subsection.176}
-\contentsline {subsection}{\numberline {4.2.2}Szenenrekonstruktion durch Triangulation}{26}{subsection.215}
-\contentsline {section}{\numberline {4.3}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{30}{section.230}
-\contentsline {section}{\numberline {4.4}Geometrie eines Sensors}{30}{section.231}
-\contentsline {section}{\numberline {4.5}Auswirkungen auf die Szenenrekonstruktion}{31}{section.234}
-\contentsline {chapter}{\numberline {5}Reelle Rekonstruktion}{36}{chapter.260}
-\contentsline {section}{\numberline {5.1}Stereoaufbau}{37}{section.262}
-\contentsline {section}{\numberline {5.2}Korrespondenzanalyse}{37}{section.264}
-\contentsline {section}{\numberline {5.3}Normierter acht-Punkt-Algorithmus}{38}{section.266}
-\contentsline {subsection}{\numberline {5.3.1}Singularit\IeC {\"a}t der Fundamentalmatrix}{39}{subsection.275}
-\contentsline {subsection}{\numberline {5.3.2}Singul\IeC {\"a}rwerte der essentiellen Matrix}{41}{subsection.279}
-\contentsline {section}{\numberline {5.4}Szenenrekonstruktion mit Sampson-Approximation}{42}{section.280}
-\contentsline {section}{\numberline {5.5}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{48}{section.374}
-\contentsline {chapter}{\numberline {6}Prinzip Szenenrekonstruktion mit Rektifizierung}{52}{chapter.388}
-\contentsline {section}{\numberline {6.1}Szenenrekonstruktion mit Rektifizierung}{52}{section.390}
-\contentsline {section}{\numberline {6.2}Rektifizierung mit Homographien}{54}{section.393}
-\contentsline {subsection}{\numberline {6.2.1}Projektive Transformation}{56}{subsection.428}
-\contentsline {subsection}{\numberline {6.2.2}\IeC {\"A}hnlichkeitstransformation}{60}{subsection.478}
-\contentsline {subsection}{\numberline {6.2.3}Scherungstransformation}{62}{subsection.506}
-\contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{64}{section.533}
-\contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{67}{chapter.544}
-\contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{68}{section.546}
-\contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{75}{section.555}
-\contentsline {chapter}{\numberline {8}Fazit - Conclusion}{78}{chapter.561}
-\contentsline {chapter}{Abbildungsverzeichnis}{79}{chapter*.562}
-\contentsline {chapter}{Literaturverzeichnis}{81}{chapter*.563}
+\contentsline {chapter}{\numberline {1}Einleitung}{5}{chapter.2}
+\contentsline {chapter}{\numberline {2}Model der Bildaufnahme mit einer Kamera}{6}{chapter.3}
+\contentsline {section}{\numberline {2.1}Lochkameramodell zur Abbildung eines Punktes auf die Bildebene}{6}{section.5}
+\contentsline {section}{\numberline {2.2}Koordinatentransformation}{7}{section.9}
+\contentsline {section}{\numberline {2.3}Aufname mit einer willk\IeC {\"u}rlichen Kameraorientierung}{10}{section.35}
+\contentsline {chapter}{\numberline {3}Geometrische Beziehungen zwischen Punktekorrespondenzen}{13}{chapter.50}
+\contentsline {section}{\numberline {3.1}Korrespondenzen planarer Punktmengen mit Homographien}{13}{section.59}
+\contentsline {section}{\numberline {3.2}Korrespondenzanalyse f\IeC {\"u}r beliebige Punkte im Raum (Epipolare Geometrie)}{15}{section.76}
+\contentsline {section}{\numberline {3.3}Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{18}{section.109}
+\contentsline {chapter}{\numberline {4}Synthetische Rekonstruktion}{22}{chapter.140}
+\contentsline {section}{\numberline {4.1}Simulierte Bildaufnahme einer virtuellen Szene}{23}{section.142}
+\contentsline {section}{\numberline {4.2}Bildanalyse}{25}{section.175}
+\contentsline {subsection}{\numberline {4.2.1}Bestimmung der extrinsischen Kameraparameter}{25}{subsection.176}
+\contentsline {subsection}{\numberline {4.2.2}Szenenrekonstruktion durch Triangulation}{27}{subsection.215}
+\contentsline {section}{\numberline {4.3}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{31}{section.230}
+\contentsline {section}{\numberline {4.4}Geometrie eines Sensors}{31}{section.231}
+\contentsline {section}{\numberline {4.5}Auswirkungen auf die Szenenrekonstruktion}{32}{section.234}
+\contentsline {chapter}{\numberline {5}Reelle Rekonstruktion}{37}{chapter.260}
+\contentsline {section}{\numberline {5.1}Stereoaufbau}{38}{section.262}
+\contentsline {section}{\numberline {5.2}Korrespondenzanalyse}{38}{section.264}
+\contentsline {section}{\numberline {5.3}Normierter acht-Punkt-Algorithmus}{39}{section.266}
+\contentsline {subsection}{\numberline {5.3.1}Singularit\IeC {\"a}t der Fundamentalmatrix}{40}{subsection.275}
+\contentsline {subsection}{\numberline {5.3.2}Singul\IeC {\"a}rwerte der essentiellen Matrix}{42}{subsection.279}
+\contentsline {section}{\numberline {5.4}Szenenrekonstruktion mit Sampson-Approximation}{43}{section.280}
+\contentsline {section}{\numberline {5.5}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{49}{section.374}
+\contentsline {chapter}{\numberline {6}Prinzip Szenenrekonstruktion mit Rektifizierung}{53}{chapter.388}
+\contentsline {section}{\numberline {6.1}Szenenrekonstruktion mit Rektifizierung}{53}{section.390}
+\contentsline {section}{\numberline {6.2}Rektifizierung mit Homographien}{55}{section.393}
+\contentsline {subsection}{\numberline {6.2.1}Projektive Transformation}{57}{subsection.428}
+\contentsline {subsection}{\numberline {6.2.2}\IeC {\"A}hnlichkeitstransformation}{61}{subsection.478}
+\contentsline {subsection}{\numberline {6.2.3}Scherungstransformation}{63}{subsection.506}
+\contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{65}{section.533}
+\contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{68}{chapter.544}
+\contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{69}{section.546}
+\contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{76}{section.555}
+\contentsline {chapter}{\numberline {8}Fazit}{79}{chapter.561}
+\contentsline {chapter}{\nonumberline Anhang}{80}{chapter*.562}
+\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{81}{chapter*.563}
+\contentsline {chapter}{Abbildungsverzeichnis}{82}{chapter*.564}
+\contentsline {chapter}{Literaturverzeichnis}{84}{chapter*.565}

@@ -150,6 +150,11 @@ James~Demmel Dinesh~Manocha.
 \newblock ACM Transactions on Graphics (TOG), Volume 13 Issue 1, Pages 73-100,
   1994.
 
+\bibitem{FormelsammlungMatrizen}
+Jürgen~Adamy Christian~Voigt.
+\newblock {\em Formelsammlung der Matrizenrechnung}.
+\newblock Oldenburg Verlag München Wien, 2007.
+
 \bibitem{Fusiello}
 Luca~Irsara Andrea~Fusiello.
 \newblock Euclidean epipolar rectification of uncalibrated images.
@@ -178,19 +183,10 @@ Richard~I. Hartley.
 \newblock Euclidean reconstruction from uncalibrated views.
 \newblock G.E. CRD, Schenectady, NY, 12301.
 
-\bibitem{MatlabDisp}
-MathWorks.
-\newblock Mathworks documentation, disparity.
-
 \bibitem{leastSquare}
 Dongqing Li, editor.
 \newblock {\em Encyclopedia of Microfluidics and Nanofluidics}, pages 999--999.
 \newblock Springer US, Boston, MA, 2008.
-
-\bibitem{FormelsammlungMatrizen}
-Jürgen~Adamy Christian~Voigt.
-\newblock {\em Formelsammlung der Matrizenrechnung}.
-\newblock Oldenburg Verlag München Wien, 2007.
 
 \bibitem{Fortran77}
 William T. Vetterling Brian P.~Flannery William H.~Press, Saul A.~Teukolsky.
