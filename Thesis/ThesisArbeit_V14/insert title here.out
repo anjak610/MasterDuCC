@@ -1,0 +1,38 @@
+\BOOKMARK [0][]{chapter.2}{1 Einleitung}{}% 1
+\BOOKMARK [0][]{chapter.3}{2 Model der Bildaufnahme mit einer Kamera}{}% 2
+\BOOKMARK [1][]{section.5}{2.1 Lochkameramodell zur Abbildung eines Punktes auf die Bildebene}{chapter.3}% 3
+\BOOKMARK [1][]{section.9}{2.2 Koordinatentransformation}{chapter.3}% 4
+\BOOKMARK [1][]{section.35}{2.3 Aufname mit einer willk\374rlichen Kameraorientierung}{chapter.3}% 5
+\BOOKMARK [0][]{chapter.50}{3 Geometrische Beziehungen zwischen Punktekorrespondenzen}{}% 6
+\BOOKMARK [1][]{section.59}{3.1 Korrespondenzen planarer Punktmengen mit Homographien}{chapter.50}% 7
+\BOOKMARK [1][]{section.76}{3.2 Korrespondenzanalyse f\374r beliebige Punkte im Raum \(Epipolare Geometrie\)}{chapter.50}% 8
+\BOOKMARK [1][]{section.109}{3.3 Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{chapter.50}% 9
+\BOOKMARK [0][]{chapter.140}{4 Synthetische Rekonstruktion}{}% 10
+\BOOKMARK [1][]{section.142}{4.1 Simulierte Bildaufnahme einer virtuellen Szene}{chapter.140}% 11
+\BOOKMARK [1][]{section.175}{4.2 Bildanalyse}{chapter.140}% 12
+\BOOKMARK [2][]{subsection.176}{4.2.1 Bestimmung der extrinsischen Kameraparameter}{section.175}% 13
+\BOOKMARK [2][]{subsection.215}{4.2.2 Szenenrekonstruktion durch Triangulation}{section.175}% 14
+\BOOKMARK [1][]{section.230}{4.3 Auswirkungen von unterschiedlichen Kameraaufl\366sungen}{chapter.140}% 15
+\BOOKMARK [1][]{section.231}{4.4 Geometrie eines Sensors}{chapter.140}% 16
+\BOOKMARK [1][]{section.234}{4.5 Auswirkungen auf die Szenenrekonstruktion}{chapter.140}% 17
+\BOOKMARK [0][]{chapter.260}{5 Reelle Rekonstruktion}{}% 18
+\BOOKMARK [1][]{section.262}{5.1 Stereoaufbau}{chapter.260}% 19
+\BOOKMARK [1][]{section.264}{5.2 Korrespondenzanalyse}{chapter.260}% 20
+\BOOKMARK [1][]{section.266}{5.3 Normierter acht-Punkt-Algorithmus}{chapter.260}% 21
+\BOOKMARK [2][]{subsection.275}{5.3.1 Singularit\344t der Fundamentalmatrix}{section.266}% 22
+\BOOKMARK [2][]{subsection.279}{5.3.2 Singul\344rwerte der essentiellen Matrix}{section.266}% 23
+\BOOKMARK [1][]{section.280}{5.4 Szenenrekonstruktion mit Sampson-Approximation}{chapter.260}% 24
+\BOOKMARK [1][]{section.374}{5.5 Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\366sung}{chapter.260}% 25
+\BOOKMARK [0][]{chapter.388}{6 Vergleich mit anderen Computer Vision Applikationen}{}% 26
+\BOOKMARK [1][]{section.390}{6.1 Szenenrekonstruktion mit Rektifizierung}{chapter.388}% 27
+\BOOKMARK [1][]{section.393}{6.2 Rektifizierung mit Homographien}{chapter.388}% 28
+\BOOKMARK [2][]{subsection.428}{6.2.1 Projektive Transformation}{section.393}% 29
+\BOOKMARK [2][]{subsection.476}{6.2.2 \304hnlichkeitstransformation}{section.393}% 30
+\BOOKMARK [2][]{subsection.506}{6.2.3 Scherungstransformation}{section.393}% 31
+\BOOKMARK [1][]{section.533}{6.3 Rektifizierung mit unterschiedlichen Kameraufl\366sungen}{chapter.388}% 32
+\BOOKMARK [0][]{chapter.544}{7 Punktesortierung in Schachbrettmustern}{}% 33
+\BOOKMARK [1][]{section.546}{7.1 Sortierungsalgorithmus}{chapter.544}% 34
+\BOOKMARK [1][]{section.555}{7.2 Resultate bei stark verzerrten Schachbrettern}{chapter.544}% 35
+\BOOKMARK [0][]{chapter.561}{8 Fazit - Conclusion}{}% 36
+\BOOKMARK [0][]{chapter*.562}{Abbildungsverzeichnis}{}% 37
+\BOOKMARK [0][]{chapter*.563}{Literaturverzeichnis}{}% 38
