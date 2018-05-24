@@ -1,8 +1,8 @@
-\chapter{Prinzip Szenenrekonstruktion mit Rektifizierung}
+\chapter{Szenenrekonstruktion durch Rektifizierung}
 \label{sec:rectification}
 
 
-Ein verbreiteter Ansatz der Stereobildanalyse basiert auf zuvor Rektifizierten Bildern.
+Ein verbreiteter Ansatz der Stereobildanalyse basiert auf zuvor rektifizierten Bildern.
 Rektifizierte Bilder zeichnen sich durch ins unendlich projizierte Epipole aus. Dies hat zu Folge, dass die jeweiligen Epipolarlinien der Bilder parallel zueinander verlaufen. Anschließend werden die Epipole noch so rotiert, dass die Epipolarlinien in einheitlichen Scanlinien über beide Bilder verlaufen. In Abbildung \ref{fig:Scanlinien} ist das graphisch dargestellt\cite{Fusiello,Javier,ZZ,MatlabRec,phdextrinsicPara}.
 
 \begin{figure}[!htb]
@@ -864,7 +864,7 @@ Für $K$ von $C$ gilt weiterhin $\zeta_x = \zeta_y = 1$. Die entstandenen Bilder
 	%\label{fig:RecT52}
 \end{figure}
 
-Die Beispiele zeigen, dass es möglich ist Bilder unterschiedlicher Beispiele zu rektifizieren, jedoch müssen für die nachfolgende Erstellung der Tiefenmaps....(was wäre jetzt ein guter Abschluss??)
+%Die Beispiele zeigen, dass es möglich ist Bilder unterschiedlicher Beispiele zu rektifizieren, jedoch müssen für die nachfolgende Erstellung der Tiefenmaps....(was wäre jetzt ein guter Abschluss??)
 
 Diese Beispiele zeigen, dass das hier vorgestellte Rektifizierungsverfahren auf Bilder verschiedener Auflösungen mit demselben Seitenverhältnis der Pixel anwendbar ist. Jedoch können Bilder mit verschiedenen Seitenverhältnissen mit dem Verfahren nicht rektifiziert werden. Eine mögliche Lösung wäre eine Erweiterung des Models, welche die Bildlängen bestimmt und schließlich die relativen Seitenverhältnisse ausgleicht.  
 

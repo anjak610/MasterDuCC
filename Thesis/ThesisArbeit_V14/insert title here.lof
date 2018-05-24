@@ -79,8 +79,8 @@
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Startpunktsuche in Schachbrettpunkten}}{69}{figure.caption.548}
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Finden der Startvektoren in Schachbrettpunkten}}{71}{figure.caption.549}
 \contentsline {figure}{\numberline {7.4}{\ignorespaces \IeC {\"U}berpr\IeC {\"u}fung des gefundenen $NextI$}}{72}{figure.caption.550}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Suche nach $NextJ$}}{74}{figure.caption.551}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Suche nach dem n\IeC {\"a}chsten $NextI$}}{74}{figure.caption.552}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Suche nach $NextJ$}}{73}{figure.caption.551}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Suche nach dem n\IeC {\"a}chsten $NextI$}}{75}{figure.caption.552}
 \contentsline {figure}{\numberline {7.7}{\ignorespaces Sicherheitsfunktion $SaftyList$}}{75}{figure.caption.553}
 \contentsline {figure}{\numberline {7.8}{\ignorespaces Korrespondezsuche mit Sortierungsalgorithmus. Schachbrett auf linker Seite}}{76}{figure.caption.554}
 \contentsline {figure}{\numberline {7.9}{\ignorespaces Korrespondezsuche mit Sortierungsalgorithmus. Schachbrett auf rechter Seite}}{76}{figure.caption.554}
@@ -90,8 +90,8 @@
 \contentsline {figure}{\numberline {7.13}{\ignorespaces Sortierte Punkte eines Schachbretts mit Tonnenverzeichnung}}{77}{figure.caption.557}
 \contentsline {figure}{\numberline {7.14}{\ignorespaces perspektivisch startk verzerrtes Schachbrett}}{77}{figure.caption.558}
 \contentsline {figure}{\numberline {7.15}{\ignorespaces Sortierte Punkte eines perspektivisch verzerrten Schachbretts}}{77}{figure.caption.558}
-\contentsline {figure}{\numberline {7.16}{\ignorespaces Schachbrett mit Kissenverzeichnung}}{77}{figure.caption.559}
-\contentsline {figure}{\numberline {7.17}{\ignorespaces Sortierte Punkte eines Schachbretts mit Kissenverzeichnung }}{77}{figure.caption.559}
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Schachbrett mit Kissenverzeichnung}}{78}{figure.caption.559}
+\contentsline {figure}{\numberline {7.17}{\ignorespaces Sortierte Punkte eines Schachbretts mit Kissenverzeichnung }}{78}{figure.caption.559}
 \contentsline {figure}{\numberline {7.18}{\ignorespaces Perspektivisch verzerrtes Schachbrett mit Tonnenverzeichnung}}{78}{figure.caption.560}
 \contentsline {figure}{\numberline {7.19}{\ignorespaces Sortieret Punkte eines perspektivisch verzerrten Schachbretts mit Tonnenverzeichnung}}{78}{figure.caption.560}
 \contentsline {figure}{\numberline {7.20}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{78}{figure.caption.561}

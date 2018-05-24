@@ -116,7 +116,7 @@ Für die Bestimmung von $NextI$ wird zu erst initial $NextI = \, <|Coordx \right
 %
 %Gibt es in diesem Bereich einen Punkt, dessen $y$-Koordinate größer als die von $StartPoint$ ist 
 
-Innerhalb des Bereichs wird der Punkt mit der zu $StartPoint$ nächst höheren $y$-Koordinate ermittelt. Dieser Punkt wird dann als vorläufiges $NextI$ festgelegt. Danach wird geprüft, ob das neu bestimmte $NextI$ bereits das letztendliche $NextI$ ist. Dazu werden im gelben Bereich alle Punkte nochmals durchgegangen um zu testen, ob ein Punkt einen kleineren $x$-Koordinatenabstand vom Startpunkt besitzt. Gleichzeitig wird geprüft, ob der $y$-Koordinatenabstand vom Startpunkt aus zum neu gefundenen Punkt kleiner ist als der $y$-Koordinatenabstand vom Startpunkt zum momentanen $NextI$.  Ist dies der Fall, so wird der Punkt auf den beides zutrifft als neues $NextI$ bestimmt. Ist $NextI$ bestimmt, kann dieser Wert nicht mehr als $NextJ$ bestimmt werden. Das kann in Situationen wie in Abbildung \ref{fig:FindNextIJ} verhindern, dass $NextI$ und $NexrJ$ den selben Punkt darstellen.
+Innerhalb des Bereichs wird der Punkt mit der zu $StartPoint$ nächst höheren $y$-Koordinate ermittelt. Dieser Punkt wird dann als vorläufiges $NextI$ festgelegt. Danach wird geprüft, ob das neu bestimmte $NextI$ bereits das letztendliche $NextI$ ist. Dazu werden im gelben Bereich alle Punkte nochmals durchgegangen um zu testen, ob ein Punkt einen kleineren $x$-Koordinatenabstand vom Startpunkt besitzt. Gleichzeitig wird geprüft, ob der $y$-Koordinatenabstand vom Startpunkt aus zum neu gefundenen Punkt kleiner ist als der $y$-Koordinatenabstand vom Startpunkt zum momentanen $NextI$.  Ist dies der Fall, so wird der Punkt auf den beides zutrifft als neues $NextI$ bestimmt. Ist $NextI$ bestimmt, kann dieser Wert nicht mehr als $NextJ$ bestimmt werden. Das kann in Situationen wie in Abbildung \ref{fig:FindNextIJ} verhindern, dass $NextI$ und $NexrJ$ den selben Punkt darstellen.\\
 %
 %Um das zu prüfen wird zunächst überprüft ob es innerhalb des gelben Bereichs noch einen Punkt gibt, dessen $x$-Koordinatenabstand vom Startpunkt aus kleiner gleich dem $x$-Koordinatenabstand zwischen dem momentanen $NextI$ zum Startpunkt ist. 
 
@@ -149,34 +149,28 @@ Die beiden Punkte $NextI$ und $NextJ$ werden dann wie $StartPoint$ um die zwei S
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.5\linewidth]{images/SearchNextI.png}
-	\caption[Überprüfung des gefundenen $NextI$]{Um zu überprüfen, ob der momentan $NextI$, in der Abbildung der orange Punkt, wirklich der nächste Punkt ist, wird sein Abstand zum Starpunkt in $j$- und  $i$- Richtung, mit den anderen noch möglichen Punkten verglichen. Gibt es einen dessen beide Abstände kleiner sind, wie beispielsweise der grüne Punkt, so wird dieser zum neuen $NextI$ bestimmt.}
+	\caption[Überprüfung des gefundenen $NextI$]{Um zu überprüfen, ob der momentan $NextI$, in der Abbildung der orange Punkt, wirklich der nächste Punkt ist, wird sein Abstand zum Startpunkt in $j$- und  $i$- Richtung, mit den anderen noch möglichen Punkten verglichen. Gibt es einen dessen beide Abstände kleiner sind, wie beispielsweise der grüne Punkt, so wird dieser zum neuen $NextI$ bestimmt.}
 	\label{fig:FindNextIJ}
 \end{figure}
 \pagebreak
 
 
-Mit den Punkten $StartPoint$, $NextI$ und $NextJ$ können die ersten Richtungsvektoren in $i$-Richtung mit $NextIDir= NextI - StatPoint$ und $j$- Richtung mit $NextJDir =NextJ\,StatPoint$ gebildet werden. Anhand der Richtungsvektoren werden Suchbereiche definiert, in welchen der jeweils nächste Punkt in entsprechender Richtung $i$ oder $j$ gesucht werden soll.\\ 
+Mit den Punkten $StartPoint$, $NextI$ und $NextJ$ können die ersten Richtungsvektoren in $i$-Richtung mit $NextIDir= NextI - StartPoint$ und $j$- Richtung mit $NextJDir =NextJ-StatPoint$ gebildet werden. Anhand der Richtungsvektoren werden Suchbereiche definiert, in welchen der jeweils nächste Punkt in entsprechender Richtung $i$ oder $j$ gesucht werden soll.\\ 
 
 % anhand welcher das Schachbrett Gitter rekonstruiert werden kann.
 
-Für beide Richtungen wird die Anzahl der möglichen Punkte begrenzt. Es werden zwei Listen $IList$ und $JList$ angelegt. In $IList$ werden alle Punkte gespeichert welche die Zeleen Schlüssel $CellI_{min}$ bis $CellI_{max}$ und $CellJ_1$ und $CellJ_2$ gespeichert haben. In Abbildung \ref{fig:IListJList} entspricht das dem Vertikalen blauen Bereich. In $JList$, kommen alle Punkte deren Zellen Schlüssen $CellJ_{min}$ bis $CellJ_{max}$ und $CellI_1$ und $CellI_2$ gespeichert haben. Was dem horizontalen blauen Bereich in Abbildung \ref{fig:IListJList} entspricht. \\
+Für beide Richtungen werden zwei Listen $IList$ und $JList$ angelegt. In den listen werden jeweils die Punkte der ersten beiden Zellen Reihen und Spalten gespeichert. In Abbildung \ref{fig:IListJList} entspricht das dem vertikalen und horizontalen blauen Bereich. \\
+%wird die Anzahl der möglichen Punkte begrenzt. Es werden zwei Listen $IList$ und $JList$ angelegt. In $IList$ werden alle Punkte gespeichert welche die Zeleen Schlüssel $CellI_{min}$ bis $CellI_{max}$ und $CellJ_1$ und $CellJ_2$ gespeichert haben. 
 
-Der Algorithmus dann nach folgendem Schema vor. Zu erst wird die Untere Schachbrettkante vervollständigt. Sprich alle Punkte de Später die Schlüssen $NeighbourI = 1$ und $NeighbourJ = j_{alle}$ haben sollen.\\
 
-%Zuerst wird die erste Kante in $j$-Richtung
+Der Algorithmus geht dann nach folgendem Schema vor. Zu erst wird die untere Schachbrettkante vervollständigt. Hierzu wird eine Schleife implementiert, welche im Folgenden beschriebenen Suchvorgang immer wiederholt, bis keine Punkte mehr gefunden werden. Danach wird der Nächste Punkt linken Randkante in $i$-Richtung gesucht, von welchem aus wieder die nächste Reihe in $j$-Richtung vervollständigt wird. 
 
-Neben dem Richtungsvekor $NextJDir$ wird noch ein Pufferwert $ProportionI$ deklariert, welcher den $i$-Koordinatenabstand zwischen $StartPoint$ und $NextJ$ beinhaltet. Dieser Pufferwert wird in positiver sowie in negativer Richtung um den Richtungsvektor definiert. In Abbildung \ref{fig:UebersichtSortierungsAlg} ist dieser Puffer als Blauer Kegel vor den Punkten zu sehen. Dieser Kegel definiert den Suchbereich von einem bereits bekannten Punkt zu einem noch unbekannten Punkt.
-
-%
-% 
-% wird ein Richtungsvektor $NextJDir$ aus $StartPoint$ und $NextJ$ gebildet. Des Weiteren wird ein Pufferwert $ProportionI$ deklariert, welcher den $i$-Koordinatenabstand zwischen $StartPoint$ und $NextJ$ beinhaltet. Anhand des Richtungsvektors $NextJDir$ und des Pufferwertes $ProportionI$ wird der nächste Punkt von $NextJ$ aus gesucht. \\
+Der Richtungsvektor $NectDirJ$ wird um einen Puffer erweitert. Dieser Puffer berechnet sich aus einem drittel der Länge von $NextIDir$. Neben dem Richtungsvektor $NextJDir$ wird noch ein Vektor $SearchAreaJ$ definiert, welcher den $i$-Koordinatenabstand zwischen $StartPoint$ und $NextJ$ beinhaltet und den Suchbereich um den Richtungsvektor aufspannt. $SearchAreaJ$ wird um einen selbst gesetzter Pufferwert erweitert. Dieser besteht aus einem drittel der Länge des $i$-Koordinatenabstands von $Startpoint$ zu $NextJ$. In Abbildung \ref{fig:UebersichtSortierungsAlg} ist dieser Puffer als Blauer Kegel vor den Punkten zu sehen. Dieser Kegel definiert den Suchbereich von einem bereits bekannten Punkt zu einem noch unbekannten Punkt. In Abbildung \ref{fig:IListJList} auf dem linken Bild wird der Richtungsvektor $NextJDir$ als Pfeil vom gelben $StartPoint$ zum roten $NextJ$ dargestellt. Die Pfeile welche in $i$-Richtung von $NextJ$ aus ausgehen, bilden die $SearchAreaJ$. Der Bereich den die Vektoren aufspannen bildet den Suchbereich für den auf $NextJ$ folgenden Punkt.
 
 \begin{gather*}
-	NextJDir = NextI - StartPoint\\
-	ProportionI = NextI[CoordI]-StartPoint[CoordI]
+	NextJDir = (NextI - StartPoint) + Puffer\\
+	SearchAreaJ = (NextI[CoordI]-StartPoint[CoordI]) + Puffer
 \end{gather*}\\
-
-In Abbildung \ref{fig:IListJList} auf dem linken Bild wird der Richtungsvektor $NextJDir$ als Pfeil vom gelben $StartPoint$ zum roten $NextJ$ dargestellt, der Richtungsvektor wird noch um einen Pufferwert vergrößert. Die Pfeile welche in $i$-Richtung von $NextJ$ aus ausgehen, ist der Abstand $ProporionI$, welcher auf die $i$-Koordinate von $NextJ$ einmal addiert und einmal subtrahiert wird. Der Bereich den die Vektoren aufspannen bildet den Suchbereich für den auf $NextJ$ folgenden Punkt.\\
 
 
 \begin{figure}[!htb]
@@ -186,15 +180,29 @@ In Abbildung \ref{fig:IListJList} auf dem linken Bild wird der Richtungsvektor $
 	\label{fig:IListJList}
 \end{figure}
 
-Für die weitere Such nach Punkten entlang der Kante wird in einer Schleife $NextJ$ zu neuen $StartPoint$. Der zuvor definierte Suchbereich wird vor den neuen $StatPoint$ definiert und nach einem neuen $NextJ$ gesucht. In Abbildung \ref{fig:FindNextIPoint} ist dieser Vorgang nochmal veranschaulicht. Wird ein Punkt in diesem Bereich entdeckt, so wird dieser zum neuen $NextJ$, sofern er sich noch nicht in der $CheckList$ befindet. Tritt der Fall ein, dass ein Punkt bereits in der $CheckList$ sich befindet, so wird dieser ignoriert. Der neu entdeckte Punkt wird zu $NextJ$. $NextJ $ wird dann wieder um die zwei Schlüssel $BeighbourI$ und $NeighbourJ$ erweitert und in die $SortedPoints$ Liste gespeichert und dessen verkürzte Fassung wird in die $CheckList$ geschrieben.\\
+Der Ablauf der Schleife zur Vervollständigung einer Reihe funktioniert wie folgt. Der definierte Suchbereich bestehend aus $NextJDir$ und der $SearchAreaJ$ wird vor $NextJ$ gesetzt. Es werden alle Punkte von $JList$ durchgegangen. Zunächst wird geprüft, ob es einen Punkte innerhalb der Liste gibt, der nicht $StartPoint$ ist und dessen $x$-Koordinate größer ist die $x$-Koordinate von $NextI$. Gleichzeitig wird abgefragt, ob dessen $y$-Koordinate kleiner gleich oder größer gleich der von $NextJ$ ist. Ein solcher Punkt wird als potentieller nächster Punkt weiter überprüft. Es wird sowohl die Distanz $distanceJ$ des Richtungsvektors $NextJDir$ also auch die Distanz von $NextJ$ zum potentiellen Punkt berechnet $distanceNextPotPointJ$. Um zu überprüfen, ob der gefundenen Punkt innerhalb des Suchbereiches liegt, welcher von $NextJ$ und $SearchArea$ aufgespannt ist, wird der potentielle Punkt auf folgendes getestet. Die $x$-Koordinatenposition des potentiellen Punktes soll zwischen der $x$-Koordinate von $NextJ$ plus dem Wert von $SearchArea$ und der $x$-Koordinate von $NextJ$ minus dem Wert der $SearchArea$ liegen. Des Weiteren darf seine Distanz $distanceNextPotPointJ$ nicht größer werden als $disntanceJ$ plus einem Puffer, welcher ein drittel von $distanceJ$ beinhaltet. Zudem darf seine Distanz aber auch nicht kleiner sein als die Hälfte von $dinstanceJ$. Als letztes wird mit der $CheckList$ noch sichergestellt, dass der gefundenen Punkt nicht bereits in der $SortedList$ gespeichert wurde.\\
 
-%Vom neuen $StartPoint$ ausgehend, wird der zuvor definierte Suchbereich nach einem neuem $NextJ$ abgesucht. 
+Ist ein solcher Punkt gefunden, so wird $NextJ$ zum neuen $Startpunkt$ umdeklariert und der potentielle Punkt wird zum neuen $NextJ$ umdeklariert. Es werden der neue Richtungsvektoren $NextJDir$ aus dem neuen $StartPoint$ und $NextJ$ berechnet, sowie ein neuer $SearchArea$- Wert aus der $i$-Koordinatendifferenz der beiden neuen Punkte $StartPoint$ und $NextJ$. $NextJ$ wird dann noch mit den neuen Schlüsseln $NeighourJ$ und $NeighbourI$ in die Liste $SortedPoints$ gespeichert. Danach beginnt die Schleife mit der Suche nach dem nächsten Punkt in $j$-Richtung. Für jeden weiteren Punkt entlang der Reihe, wird der Bereich der möglichen Punkte neu definiert. Es werden alle Punkte innerhalb der Zellen um den neuen $NextJ$ als neue Potentielle Punkte angesehen. Durch diese Begrenzung des Suchbereichs wird der Suchaufwand auf wenige Punkte reduziert. \\
+
+Sind alle Punkte in einer Reihe sortiert, so wird der nächste Punkt $NextI$ entlang der äußeren Kante gesucht. Von $NextI$ aus startet dann wieder die Schleife, welche die Reihe vervollständigt. Die Suche nach $NextI$ verfährt nach dem selben Verfahren wie $NextJ$ nur wird nach einem neuen gefundenen Punkt für $NextI$ die Funktion für die Vervollständigung der Reihe dazwischen geschaltet.\\
+%Die $y$-Position des potentiellen Punktes muss zwischen der $y$-Koordinate ob sioe
 %
-%Die Position und der Platz im Schachbrettgitter werden dem neu entdeckten Punkt, wie die Punkten zuvor, durch Schlüsselwerte festgehalten und in die Liste $SortedList$ gespeichert. Des Weiteren wird auch dieser in die $CheckList$ aufgenommen.\\
+%Zunächst muss die $x$-Korrdinate des potentielle Punktes 
 
-Anhand des neuen $StartPoints$ und des neuen $NextJ$ werden der Richtungsvektor $NextJDir$ und $ProportionI$ neu berechnet. $NextJ$ wird wieder zum neuen $StartPoint$ und die Suche wird dementsprechend weiter geführt, bis kein Punkt mehr gefunden wird. Alle Punkte werden als $Asssociation$ mit der entsprechenden Erweiterung der Schlüsselwerte in $SortedList$ und $CheckList$ eingetragen.\\
+% Es wird ein Richtungsvektor $PotNextDirJ$ und dessen Distanz $DistancenextPotPointJ$ berechnet
+%
+%
+%
+%
+%Für die weitere Such nach Punkten entlang der Kante wird in einer Schleife $NextJ$ zu neuen $StartPoint$. Der zuvor definierte Suchbereich wird vor den neuen $StatPoint$ definiert und nach einem neuen $NextJ$ gesucht. In Abbildung \ref{fig:FindNextIPoint} ist dieser Vorgang nochmal veranschaulicht. Wird ein Punkt in diesem Bereich entdeckt, so wird dieser zum neuen $NextJ$, sofern er sich noch nicht in der $CheckList$ befindet. Tritt der Fall ein, dass ein Punkt bereits in der $CheckList$ sich befindet, so wird dieser ignoriert. Der neu entdeckte Punkt wird zu $NextJ$. $NextJ $ wird dann wieder um die zwei Schlüssel $BeighbourI$ und $NeighbourJ$ erweitert und in die $SortedPoints$ Liste gespeichert und dessen verkürzte Fassung wird in die $CheckList$ geschrieben.\\
+%
+%%Vom neuen $StartPoint$ ausgehend, wird der zuvor definierte Suchbereich nach einem neuem $NextJ$ abgesucht. 
+%%
+%%Die Position und der Platz im Schachbrettgitter werden dem neu entdeckten Punkt, wie die Punkten zuvor, durch Schlüsselwerte festgehalten und in die Liste $SortedList$ gespeichert. Des Weiteren wird auch dieser in die $CheckList$ aufgenommen.\\
+%
+%Anhand des neuen $StartPoints$ und des neuen $NextJ$ werden der Richtungsvektor $NextJDir$ und $ProportionI$ neu berechnet. $NextJ$ wird wieder zum neuen $StartPoint$ und die Suche wird dementsprechend weiter geführt, bis kein Punkt mehr gefunden wird. Alle Punkte werden als $Asssociation$ mit der entsprechenden Erweiterung der Schlüsselwerte in $SortedList$ und $CheckList$ eingetragen.\\
 
-Bevor die Suche entlang der beiden außen Kanten als beendet gilt, treten noch zwei Sicherheitsfunktionen in Kraft. Die erste wird als $Saftylist$ bezeichnet. Wird beispielsweise kein weiterer Punkt bei der Detektierung der außen Kanten innerhalb von $JList$ oder $IList$ gefunden, so wird der Suchbereich kurzfristig erweitert. Um den letzten gefundenen Punkt $NextJ$ oder auch $NextI$ werden, sofern vorhanden alle noch nicht abgesuchten Zellen um die Punkte herum abgesucht. Gibt es in einer darum liegenden Zelle noch einen Punkt, der in den Suchbereich fällt, wird dieser noch mit aufgenommen. Die Funktion der $SaftyList$ kommt beispielsweise genau dann zum Einsatz, wenn die Punkte eines Schachbretts wie in \ref{fig:SaftyList} sortiert werden. In der linken Abbildung ist zu sehen, dass der Brreich der $IList$ endet, es aber noch weitere Punkte gibt. Auf der rechten Abbildung ist dann zu sehen, wie der rot hinterlegte Bereich noch hinzugenommen wird und die restlichen Punkte auch noch gefunden werden.\\
+Bevor die Suche entlang der einer Reihe oder auch der äußeren Kante als beendet gilt, treten noch zwei Sicherheitsfunktionen in Kraft. Die erste wird als $Saftylist$ bezeichnet. $Saftylist$ sorgt dafür, dass die untere und die linke Kante des Schachbretts vollständig detektiert wird. Wird beispielsweise kein weiterer Punkt bei der Detektierung der außen Kanten innerhalb von $JList$ oder $IList$ gefunden, so wird der Suchbereich kurzfristig erweitert. Um den letzten gefundenen Punkt $NextJ$ oder auch $NextI$ werden, sofern vorhanden alle noch nicht abgesuchten Zellen abgesucht. Gibt es in einer darum liegenden Zelle noch einen Punkt, der in den Suchbereich für den nächsten Punkt fällt, wird dieser noch mit aufgenommen. Die Funktion der $SaftyList$ kommt beispielsweise genau dann zum Einsatz, wenn die Punkte eines Schachbretts wie in \ref{fig:SaftyList} sortiert werden. In der linken Abbildung ist zu sehen, dass der Brreich der $IList$ endet, es aber noch weitere Punkte gibt. Auf der rechten Abbildung ist dann zu sehen, wie der rot hinterlegte Bereich noch hinzugenommen wird, sodass die restlichen Punkte auch noch gefunden werden.\\
 
 %erweitert $Saftylist$ den Suchbereich um den letzten noch detektierten $NextJ$ um alle Zellen um diesen Punkt herum und überprüft, dann nochmal, ob es einen weiteren Punkt innerhalb des letzten definierten Suchbereiches gibt.
 %
@@ -202,7 +210,7 @@ Bevor die Suche entlang der beiden außen Kanten als beendet gilt, treten noch z
 %
 %In Abbildung \ref{fig:SaftyList} auf dem rechten Bild ist ein Beispiel für den Einsatz der $SaftyList$-Funktion zu sehen. Der rote Bereich vom gelben Punkt aus gehend ist definiert als der Bereich potentieller weiterer Punkte außerhalb der $IList$.\\
 
-Ist die unterste Kante in $j$-Richtung bestimmt, so wird die nächste Reihe vervollständigt, beginnend am Punkt $NextI$. $NextI$ ist der neue $StartPoint$ von wo aus die nächste Reihe in $j$-Richtung vervollständigt wird. Bevor die nächste Reihe vervollstädnigt werden kann, muss zuerset der nächste Punkt $NextI$ auf der äußeren Kante bestimmt werden. Wie in den Abbildung \ref{fig:FindNextIPoint} und \ref{fig:SaftyList} zu sehen, basiert die Suche nach $NextI$ auf dem gleichen Verfahren wie die Suche nach $NextJ$.\\
+%Ist die unterste Kante in $j$-Richtung bestimmt, so wird die nächste Reihe vervollständigt, beginnend am Punkt $NextI$. $NextI$ ist der neue $StartPoint$ von wo aus die nächste Reihe in $j$-Richtung vervollständigt wird. Bevor die nächste Reihe vervollstädnigt werden kann, muss zuerset der nächste Punkt $NextI$ auf der äußeren Kante bestimmt werden. Wie in den Abbildung \ref{fig:FindNextIPoint} und \ref{fig:SaftyList} zu sehen, basiert die Suche nach $NextI$ auf dem gleichen Verfahren wie die Suche nach $NextJ$.\\
 
 
 \begin{figure}[!htb]
@@ -220,10 +228,15 @@ Ist die unterste Kante in $j$-Richtung bestimmt, so wird die nächste Reihe verv
 \end{figure}
 
 
-Zuvor wurde erwähnt, dass es neben $SaftyList$ noch eine andere Sicherheitsfunktion namens gibt. Hierzu sei nochmal erwähnt, dass der hier beschriebene Sortierungsalgorithmus auf einem bereits bestehenden Algorithmus aufbaut. Dieser Algorithmus detektiert Die Eckpunkte eines Schachbretts und speichert die Bildkoordinaten in eine Liste. Bei der Detektion kann es vorkommen, dass Punkte, durch beispielsweise Rauschen oder Bildunschärfen, nicht erkannt werden und somit Lücken im Schachbrettgitter entstehen. Ist dies der Fall würde der Sortierungsalgorithmus wie er bis jetzt ist, bei einer Lücke mit der Suche aufhören, da kein Punkt im definierten Suchbereich gefunden werden kann. Weitere Punkte welche sich je nach dem hinter der Lücke befinden, würde so nicht mehr gefunden und sortiert werden können. Diese Punkte würde nicht in der Liste $SortedList$ landen und der Algorithmus würde dich Nachricht ausgeben, dass die Sortierung unvollständig sei.\\
+Neben $SaftyList$ gibt es noch eine andere Sicherheitsfunktion namens $PlaceSyntheticPoint$ gibt. Der Sortierungsalgorithmus nimmt eine Punkteliste des voran geschalteten Eckpunktendetektionsalgorithmus entgegen. Bei der Detektion der Eckpunkte, kann es vorkommen, dass Punkte nicht erkannt wurden und somit Lücken im Schachbrettgitter vorhanden sind. Trifft der Sortierungsalgorithmus auf eine solche Lücke, könnte er keinen weiteren Punkt detektieren und würde mit der weiteren Suche in denoch hinter der Lücke befinden könnten, würde so nicht mehr gefunden und sortiert werden. Diese Punkte würden dem entsprechend nicht in der $SortedList$ gespeichert und der Algorithmus würde am Ende dich Nachricht ausgeben, dass die Sortierung unvollständig sei.\\
 
 Um dem entgegen zu wirken wurde die Sicherheitsfunktion $PlaceSyntheticPoint$ entwickelt. Sollte vorerst kein Punkt im Suchbereich entdeckt, werden, so setzt die Sicherheitsfunktion einen synthetischen Punkt und sucht ausgehend von diesem synthetischen weiter nach Punkten. Sollte ein Punkt nach dem synthetischen Punkt gefunden werden, so bleibt der synthetische Punkt bestehen und die Suche wird normal fortgesetzt. Der synthetische Punkt wird nicht in die Liste $SortedList$ mit aufgenommen, da er später nicht als möglicher korrespondierender Punkt in betrachtet gezogen werden soll. Er dient lediglich dazu alle real vorhandenen Punkte zu finden und richtig zu sortieren.
-Wird nach dem setzten des synthetischen Punkt kein weiterer Punkt gefunden, gilt die Suche in der Reihe beziehungsweise Spalte für beendet und der synthetische Punkt wieder wieder gelöscht. \\
+Wird nach dem setzten des synthetischen Punkts kein weiterer Punkt gefunden, gilt die Suche in der Reihe beziehungsweise Spalte für beendet und der synthetische Punkt wird wieder gelöscht. \\
+
+% Hierzu sei nochmal erwähnt, dass der hier beschriebene Sortierungsalgorithmus auf einem bereits bestehenden Algorithmus aufbaut. Dieser Algorithmus detektiert Die Eckpunkte eines Schachbretts und speichert die Bildkoordinaten in eine Liste. Bei der Detektion kann es vorkommen, dass Punkte, durch beispielsweise Rauschen oder Bildunschärfen, nicht erkannt werden und somit Lücken im Schachbrettgitter entstehen.
+%  Ist dies der Fall würde der Sortierungsalgorithmus wie er bis jetzt ist, bei einer Lücke mit der Suche aufhören, da kein Punkt im definierten Suchbereich gefunden werden kann. Diese Punkte würde nicht in der Liste $SortedList$ landen und der Algorithmus würde dich Nachricht ausgeben, dass die Sortierung unvollständig sei.\\
+
+
 
 
 % die Nachricht ausgeben, dass die Sortierung der
@@ -234,7 +247,11 @@ Wird nach dem setzten des synthetischen Punkt kein weiterer Punkt gefunden, gilt
 %Entspricht die Anzahl der Listeneinträge in $SortedPoints$ der Anzahl der vom Algorithmus entgegengenommenen Anzahl, sind alle Punkte sortiert worden.
 
 
-In Abbildung \ref{fig:ChessBoardLeft} und \ref{fig:ChessBoardRight} wird ein Schachbrett aus zwei unterschiedlichen Blickwinkeln dargestellt. Die roten Punkte markieren die Eckpunkte, deren Koordinaten an den Sortierungsalgorithmus übergeben werden. In den Abbildungen \ref{fig:ChessBoardLeftAlg} und \ref{fig:ChessBoardRightAlg} werden alle Punkte, welche in der Liste $SortedPoints$ gespeichert wurden in einem Plot ausgegeben. Es wird gesagt, dass alle Punkte deren Schlüssel $NeighbourI = 3$ ist, in grün dargestellt werden sollen. Das Ergebnis dieser Abfrage ist ebenfalls in den Abbildungen \ref{fig:ChessBoardLeftAlg} und \ref{fig:ChessBoardRightAlg} zu sehen. Der entstandene Sortierungalgorithmus ist also in der Lage aus Bildern zweier Schachbretter gleiche Eckpunkte und somit korrespondierende Punkte zu detektieren. Soll ein einzelner Punkt Abgefragt wollen, so für die Schlüssel $NeighbourI$ und $NeighbourJ$ jeweils ein Wert abgefragt werden.
+In Abbildung \ref{fig:ChessBoardLeft} und \ref{fig:ChessBoardRight} wird ein Schachbrett aus zwei unterschiedlichen Blickwinkeln dargestellt. Die roten Punkte markieren die Eckpunkte, deren Koordinaten an den Sortierungsalgorithmus übergeben werden. In den Abbildungen \ref{fig:ChessBoardLeftAlg} und \ref{fig:ChessBoardRightAlg} werden alle Punkte, welche in der Liste $SortedPoints$ gespeichert wurden in einem Plot ausgegeben. Alle Punkte deren Schlüssel $NeighbourI = 3$ ist, sind in grün dargestellt. Das Ergebnis dieser Abfrage ist ebenfalls in den Abbildungen \ref{fig:ChessBoardLeftAlg} und \ref{fig:ChessBoardRightAlg} zu sehen. Die dargestellten Bilder könnten zwei stereoskopische Abbildungen eines Schachbrettes sein. Der entwickelte Sortierungsalgorithmus kann auf diese Schachbretter angewendet werden und sortiert die Punkte im Schachbrett, sodass korrespondierende Punkte bestimmt werden können und die in den vorherigen Kapiteln beschriebene Szenenrekonstruktion angewandt werden kann. 
+
+
+
+%Der entstandene Sortierungsalgorithmus ist also in der Lage aus Bildern zweier Schachbretter gleiche Eckpunkte und somit korrespondierende Punkte zu detektieren. Soll ein einzelner Punkt Abgefragt wollen, so für die Schlüssel $NeighbourI$ und $NeighbourJ$ jeweils ein Wert abgefragt werden.
 
 
 \begin{figure}[!htb]
@@ -270,9 +287,11 @@ In Abbildung \ref{fig:ChessBoardLeft} und \ref{fig:ChessBoardRight} wird ein Sch
 \label{sec:SchachAlgBeispiele}
 
 
-Der entstandenen Sortierungsalgorithmus wird an stark perspektivisch Verzerrten oder durch Bildfehler wie Verzeichnungen betroffenen Schachbrettern getestet. Die Möglichkeit herauszufinden, welche Eckpunkte in einem stark verzerrten Bild eines Schachbretts in eine Reihe oder Spalte gehören, kann bei der mathematischen Entzerrung der Bilder von Nutzen sein. Dieser Vorteil war mit ein Grund warum der Algorithmus auf Grundlage von stark verzerrten Schachbrettbilder entwickelt wurde.\\
+Der entstandenen Sortierungsalgorithmus wird an stark perspektivisch Verzerrten oder durch Bildfehler, wie Verzeichnungen, betroffenen Schachbrettern getestet. Die Möglichkeit herauszufinden, welche Eckpunkte in einem stark verzerrten Bild eines Schachbretts in eine Reihe oder Spalte gehören, kann bei der mathematischen Korrektur von Bilder Anwendung finden. Dies war ein weiterer Grund für die Implementierung dieses Algorithmus und soll in Folgearbeiten weiter studiert werden. 
 
-In den folgenden Beispielen sieht man jeweils das Originalbild des Schachbretts und neben dran die Ausgabe des Algorithmus. Der Plot zeigt alle Punkte an, welche in $SortedPoints$ aufgenommen wurden. Alle Punkte, welche als Schlüssel $NeighbourI = 3$ haben, wurden im folgenden grün eingefärbt, die restlichen Punkte sind rot gefärbt.
+% der Bilder von Nutzen sein. Dieser Vorteil war mit ein Grund warum der Algorithmus auf Grundlage von stark verzerrten Schachbrettbilder entwickelt wurde.\\
+
+In den folgenden Beispielen ist jeweils das Originalbild des Schachbretts und neben dran die Ausgabe des Algorithmus zu sehen. Der Plot zeigt alle Punkte an, welche in $SortedPoints$ aufgenommen wurden. Alle Punkte, welche als Schlüssel $NeighbourI = 3$ haben, wurden im folgenden grün eingefärbt, die restlichen Punkte sind rot gefärbt.
 
 
 \begin{figure}[!htb]

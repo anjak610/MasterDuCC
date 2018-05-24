@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  23 MAY 2018 23:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  24 MAY 2018 12:51
 entering extended mode
 **"./insert title here.tex"
 ("insert title here.tex"
@@ -3023,11 +3023,16 @@ File: images/VerzeichnetesSchachbrett_2.png Graphic file (type png)
 Package pdftex.def Info: images/VerzeichnetesSchachbrett_2.png used on input li
 ne 109.
 (pdftex.def)             Requested size: 290.22107pt x 282.18492pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
+
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 130.
+(babel)             in language  on input line 126.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 130.
- [71 <./images/VerzeichnetesSchachbrett_2.png>]
+(babel)             in language  on input line 126.
+[71 <./images/VerzeichnetesSchachbrett_2.png>]
 Overfull \hbox (11.33734pt too wide) in paragraph at lines 130--131
 \OT1/cmr/m/n/10.95 und $\OML/cmm/m/it/10.95 NeighbourJ$ \OT1/cmr/m/n/10.95 er-w
 ei-tert. Die Punk-te sind dann wie folgt de-fi-niert und wer-den in die Lis-te 
@@ -3050,240 +3055,225 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--159
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
+Underfull \hbox (badness 10000) in paragraph at lines 162--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-
- []
-
-<images/VerzeichnetesSchachbrett_4.png, id=1406, 935.6556pt x 456.2646pt>
+<images/VerzeichnetesSchachbrett_4.png, id=1405, 935.6556pt x 456.2646pt>
 File: images/VerzeichnetesSchachbrett_4.png Graphic file (type png)
 
 <use images/VerzeichnetesSchachbrett_4.png>
 Package pdftex.def Info: images/VerzeichnetesSchachbrett_4.png used on input li
-ne 184.
+ne 178.
 (pdftex.def)             Requested size: 386.95897pt x 188.6988pt.
 
-Overfull \hbox (3.61107pt too wide) in paragraph at lines 189--190
-[]\OT1/cmr/m/n/10.95 F[]ur die wei-te-re Such nach Punk-ten ent-lang der Kan-te
- wird in ei-ner Schlei-fe $\OML/cmm/m/it/10.95 NextJ$ \OT1/cmr/m/n/10.95 zu neu
--en $\OML/cmm/m/it/10.95 StartPoint$\OT1/cmr/m/n/10.95 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 198.
+(babel)             in language  on input line 184.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 198.
-[73]
+(babel)             in language  on input line 184.
+[73 <./images/VerzeichnetesSchachbrett_4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--191
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
-<images/VerzeichnetesSchachbrett_5.png, id=1418, 1065.22969pt x 517.935pt>
+<images/VerzeichnetesSchachbrett_5.png, id=1414, 1065.22969pt x 517.935pt>
 File: images/VerzeichnetesSchachbrett_5.png Graphic file (type png)
 
 <use images/VerzeichnetesSchachbrett_5.png>
 Package pdftex.def Info: images/VerzeichnetesSchachbrett_5.png used on input li
-ne 210.
+ne 218.
 (pdftex.def)             Requested size: 386.95897pt x 188.14769pt.
 
-<images/VerzeichnetesSchachbrett_6.png, id=1419, 1063.72406pt x 517.18219pt>
+<images/VerzeichnetesSchachbrett_6.png, id=1415, 1063.72406pt x 517.18219pt>
 File: images/VerzeichnetesSchachbrett_6.png Graphic file (type png)
 
 <use images/VerzeichnetesSchachbrett_6.png>
 Package pdftex.def Info: images/VerzeichnetesSchachbrett_6.png used on input li
-ne 217.
+ne 225.
 (pdftex.def)             Requested size: 386.95897pt x 188.13466pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--235
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 224.
+(babel)             in language  on input line 235.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 224.
-[74 <./images/VerzeichnetesSchachbrett_4.png> <./images/VerzeichnetesSchachbret
-t_5.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
-
- []
-
-<images/ChessBoardLeft.png, id=1433, 1008.76875pt x 566.115pt>
+(babel)             in language  on input line 235.
+[74]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 251.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 251.
+ [75 <./images/VerzeichnetesSchachbrett_5.png> <./images/VerzeichnetesSchachbre
+tt_6.png>] <images/ChessBoardLeft.png, id=1435, 1008.76875pt x 566.115pt>
 File: images/ChessBoardLeft.png Graphic file (type png)
 
 <use images/ChessBoardLeft.png>
-Package pdftex.def Info: images/ChessBoardLeft.png used on input line 242.
+Package pdftex.def Info: images/ChessBoardLeft.png used on input line 259.
 (pdftex.def)             Requested size: 227.3381pt x 127.5777pt.
 
-<images/ChessBoardRight.png, id=1434, 902.6222pt x 504.38437pt>
+<images/ChessBoardRight.png, id=1436, 902.6222pt x 504.38437pt>
 File: images/ChessBoardRight.png Graphic file (type png)
 
 <use images/ChessBoardRight.png>
-Package pdftex.def Info: images/ChessBoardRight.png used on input line 247.
+Package pdftex.def Info: images/ChessBoardRight.png used on input line 264.
 (pdftex.def)             Requested size: 232.17242pt x 129.73611pt.
 
-<images/ChessBoardLeftAlg.png, id=1435, 721.69624pt x 446.66875pt>
+<images/ChessBoardLeftAlg.png, id=1437, 721.69624pt x 446.66875pt>
 File: images/ChessBoardLeftAlg.png Graphic file (type png)
 
 <use images/ChessBoardLeftAlg.png>
-Package pdftex.def Info: images/ChessBoardLeftAlg.png used on input line 256.
+Package pdftex.def Info: images/ChessBoardLeftAlg.png used on input line 273.
 (pdftex.def)             Requested size: 232.17242pt x 143.69345pt.
 
-Underfull \hbox (badness 1337) in paragraph at lines 257--257
+Underfull \hbox (badness 1337) in paragraph at lines 274--274
 [][][]|\OT1/cmr/m/n/10.95 Die Ab-bid-lung zeigt das Er-
  []
 
-<images/ChessBoardRightAlg.png, id=1436, 721.69624pt x 446.66875pt>
+<images/ChessBoardRightAlg.png, id=1438, 721.69624pt x 446.66875pt>
 File: images/ChessBoardRightAlg.png Graphic file (type png)
 
 <use images/ChessBoardRightAlg.png>
-Package pdftex.def Info: images/ChessBoardRightAlg.png used on input line 261.
+Package pdftex.def Info: images/ChessBoardRightAlg.png used on input line 278.
 (pdftex.def)             Requested size: 232.17242pt x 143.69345pt.
 
-Underfull \hbox (badness 1112) in paragraph at lines 262--262
+Underfull \hbox (badness 1112) in paragraph at lines 279--279
 \OT1/cmr/m/n/10.95 Schach-bretts. In gr[]un ist die
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 267.
+(babel)             in language  on input line 284.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 267.
-[75 <./images/VerzeichnetesSchachbrett_6.png>]
+(babel)             in language  on input line 284.
+[76 <./images/ChessBoardLeft.png> <./images/ChessBoardRight.png> <./images/Ches
+sBoardLeftAlg.png (PNG copy)> <./images/ChessBoardRightAlg.png (PNG copy)>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 269.
+(babel)             in language  on input line 286.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 269.
+(babel)             in language  on input line 286.
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
-
- []
-
-<images/Tonnenverzeichnung.png, id=1443, 733.23938pt x 462.22687pt>
+<images/Tonnenverzeichnung.png, id=1445, 733.23938pt x 462.22687pt>
 File: images/Tonnenverzeichnung.png Graphic file (type png)
 
 <use images/Tonnenverzeichnung.png>
-Package pdftex.def Info: images/Tonnenverzeichnung.png used on input line 280.
+Package pdftex.def Info: images/Tonnenverzeichnung.png used on input line 299.
 (pdftex.def)             Requested size: 232.17242pt x 146.3569pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--281
+Underfull \hbox (badness 10000) in paragraph at lines 300--300
 [][][]|\OT1/cmr/m/n/10.95 Schach-brett mit Ton-nen-ver-
  []
 
-<images/AlgTonnenverzeichnung.png, id=1444, 721.69624pt x 446.66875pt>
+<images/AlgTonnenverzeichnung.png, id=1446, 721.69624pt x 446.66875pt>
 File: images/AlgTonnenverzeichnung.png Graphic file (type png)
 
 <use images/AlgTonnenverzeichnung.png>
-Package pdftex.def Info: images/AlgTonnenverzeichnung.png used on input line 28
-5.
+Package pdftex.def Info: images/AlgTonnenverzeichnung.png used on input line 30
+4.
 (pdftex.def)             Requested size: 232.17242pt x 143.69345pt.
 
-Underfull \hbox (badness 2452) in paragraph at lines 286--286
+Underfull \hbox (badness 2452) in paragraph at lines 305--305
 [][][]|\OT1/cmr/m/n/10.95 Er-geb-nis des Sor-tie-rungs-al-go-
  []
 
-<images/perspektivisch.png, id=1445, 797.22844pt x 527.72156pt>
+<images/perspektivisch.png, id=1447, 797.22844pt x 527.72156pt>
 File: images/perspektivisch.png Graphic file (type png)
 
 <use images/perspektivisch.png>
-Package pdftex.def Info: images/perspektivisch.png used on input line 293.
+Package pdftex.def Info: images/perspektivisch.png used on input line 312.
 (pdftex.def)             Requested size: 217.66211pt x 144.08109pt.
 
-<images/AlgPerspektifisch.png, id=1446, 721.69624pt x 453.695pt>
+<images/AlgPerspektifisch.png, id=1448, 721.69624pt x 453.695pt>
 File: images/AlgPerspektifisch.png Graphic file (type png)
 
 <use images/AlgPerspektifisch.png>
-Package pdftex.def Info: images/AlgPerspektifisch.png used on input line 298.
+Package pdftex.def Info: images/AlgPerspektifisch.png used on input line 317.
 (pdftex.def)             Requested size: 237.01411pt x 148.99983pt.
 
-<images/KissenVerzeichnung.png, id=1447, 600.74437pt x 404.26031pt>
+<images/KissenVerzeichnung.png, id=1449, 600.74437pt x 404.26031pt>
 File: images/KissenVerzeichnung.png Graphic file (type png)
 
 <use images/KissenVerzeichnung.png>
-Package pdftex.def Info: images/KissenVerzeichnung.png used on input line 307.
+Package pdftex.def Info: images/KissenVerzeichnung.png used on input line 326.
 (pdftex.def)             Requested size: 232.17242pt x 156.23596pt.
 
-<images/AlgKissen.png, id=1448, 721.69624pt x 446.66875pt>
+<images/AlgKissen.png, id=1450, 721.69624pt x 446.66875pt>
 File: images/AlgKissen.png Graphic file (type png)
 
 <use images/AlgKissen.png>
-Package pdftex.def Info: images/AlgKissen.png used on input line 312.
+Package pdftex.def Info: images/AlgKissen.png used on input line 331.
 (pdftex.def)             Requested size: 241.84843pt x 149.68436pt.
 
-<images/Tonnenverzeichnung_Perspektivisch.png, id=1449, 623.32875pt x 424.58624
+<images/Tonnenverzeichnung_Perspektivisch.png, id=1451, 623.32875pt x 424.58624
 pt>
 File: images/Tonnenverzeichnung_Perspektivisch.png Graphic file (type png)
  <use images/Tonnenverzeichnung_Perspektivisch.png>
 Package pdftex.def Info: images/Tonnenverzeichnung_Perspektivisch.png used on i
-nput line 320.
+nput line 339.
 (pdftex.def)             Requested size: 232.17242pt x 158.14398pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--321
+Underfull \hbox (badness 10000) in paragraph at lines 340--340
 [][][]|\OT1/cmr/m/n/10.95 Per-spek-ti-visch ver-zerr-ten
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--321
+Underfull \hbox (badness 10000) in paragraph at lines 340--340
 \OT1/cmr/m/n/10.95 Schach-brett mit Ton-nen-ver-
  []
 
 
-<images/Tonnenverzeichnung_Perspektivisch_Alg.png, id=1450, 721.69624pt x 443.6
+<images/Tonnenverzeichnung_Perspektivisch_Alg.png, id=1452, 721.69624pt x 443.6
 575pt>
 File: images/Tonnenverzeichnung_Perspektivisch_Alg.png Graphic file (type png)
  <use images/Tonnenverzeichnung_Perspektivisch_Alg.png>
 Package pdftex.def Info: images/Tonnenverzeichnung_Perspektivisch_Alg.png used 
-on input line 325.
+on input line 344.
 (pdftex.def)             Requested size: 232.17242pt x 142.72472pt.
 
-Underfull \hbox (badness 2452) in paragraph at lines 326--326
+Underfull \hbox (badness 2452) in paragraph at lines 345--345
 [][][]|\OT1/cmr/m/n/10.95 Er-geb-nis des Sor-tie-rungs-al-go-
  []
 
-<images/extrBsp.png, id=1451, 847.66687pt x 566.86781pt>
+<images/extrBsp.png, id=1453, 847.66687pt x 566.86781pt>
 File: images/extrBsp.png Graphic file (type png)
 
 <use images/extrBsp.png>
-Package pdftex.def Info: images/extrBsp.png used on input line 333.
+Package pdftex.def Info: images/extrBsp.png used on input line 352.
 (pdftex.def)             Requested size: 232.17242pt x 155.26202pt.
 
-Underfull \hbox (badness 1496) in paragraph at lines 334--334
+Underfull \hbox (badness 1496) in paragraph at lines 353--353
 [][][]|\OT1/cmr/m/n/10.95 Bild ei-nes Ton-nenf[]ormig ver-
  []
 
-<images/AlgExtrBsp.png, id=1452, 721.69624pt x 453.695pt>
+<images/AlgExtrBsp.png, id=1454, 721.69624pt x 453.695pt>
 File: images/AlgExtrBsp.png Graphic file (type png)
 
 <use images/AlgExtrBsp.png>
-Package pdftex.def Info: images/AlgExtrBsp.png used on input line 338.
+Package pdftex.def Info: images/AlgExtrBsp.png used on input line 357.
 (pdftex.def)             Requested size: 232.17242pt x 145.9538pt.
 ) (content/3_chapter3/c3_expName_2.tex)
 (content/96_conclusion/conclusion.tex
@@ -3291,33 +3281,52 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
- [76 <./images/ChessBoardLeft.png> <./images/ChessBoardRight.png> <./images/Che
-ssBoardLeftAlg.png (PNG copy)> <./images/ChessBoardRightAlg.png (PNG copy)>]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 1.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 1.
  [77 <./images/Tonnenverzeichnung.png> <./images/AlgTonnenverzeichnung.png (PNG
  copy)> <./images/perspektivisch.png> <./images/AlgPerspektifisch.png (PNG copy
-)> <./images/KissenVerzeichnung.png> <./images/AlgKissen.png (PNG copy)>]
+)>]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
- [78 <./images/Tonnenverzeichnung_Perspektivisch.png> <./images/Tonnenverzeichn
-ung_Perspektivisch_Alg.png (PNG copy)> <./images/extrBsp.png> <./images/AlgExtr
-Bsp.png (PNG copy)>]
+ [78 <./images/KissenVerzeichnung.png> <./images/AlgKissen.png (PNG copy)> <./i
+mages/Tonnenverzeichnung_Perspektivisch.png> <./images/Tonnenverzeichnung_Persp
+ektivisch_Alg.png (PNG copy)> <./images/extrBsp.png> <./images/AlgExtrBsp.png (
+PNG copy)>]
 chapter 8.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
 ) (content/3_chapter3/Anhang.tex
+Underfull \hbox (badness 10000) in paragraph at lines 16--1
+
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
- [79
+[79
 
 ]
 chapter without number
@@ -3414,7 +3423,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
 Package rerunfilecheck Info: File `"insert title here".out' has not changed.
-(rerunfilecheck)             Checksum: F00AF8B061B63E0C196F6DF1CE52B593;3462.
+(rerunfilecheck)             Checksum: 6A321F6B41917714C973557FC7A91280;3456.
 
 
 LaTeX Warning: There were undefined references.
@@ -3427,7 +3436,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
 Here is how much of TeX's memory you used:
  14547 strings out of 493334
  234327 string characters out of 3142719
- 430661 words of memory out of 3000000
+ 430655 words of memory out of 3000000
  17232 multiletter control sequences out of 15000+200000
  13184 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3446,9 +3455,9 @@ c/amsfonts/cm/cmsy6.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cms
 y8.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><L:/Progr
 amme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><L:/Programme/MikTex
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "insert title here.pdf" (85 pages, 8956493 bytes).
+Output written on "insert title here.pdf" (85 pages, 8983405 bytes).
 PDF statistics:
- 1746 PDF objects out of 2073 (max. 8388607)
+ 1742 PDF objects out of 2073 (max. 8388607)
  461 named destinations out of 1000 (max. 500000)
  814 words of extra memory for PDF output out of 10000 (max. 10000000)
 
