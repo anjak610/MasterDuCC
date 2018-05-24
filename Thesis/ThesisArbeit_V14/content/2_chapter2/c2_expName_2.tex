@@ -280,13 +280,13 @@ Das Erzwingen der singulären Bedingungen für $F$ und $E$ sind Näherungsverfah
 \section{Szenenrekonstruktion mit Sampson-Approximation}
 \label{sec:sampson}
 
-Aufgrund der Ungenauigkeit der korrespondierenden Punkte ist es nicht möglich die 3D-Objektpunkte durch einfache Rückprojektion der Bildpunkte zu rekonstruieren. Liegt der zu $m_\sigma$ korrespondierende Bildpunkt $m'_{\sigma'}$ nicht ganz genau auf der zu $m_\sigma$ korrespondierenden Epipolarlinie, so ist die in Kapitel \ref{sec:HFE} aufgestellte epipolare Bedingung aus Gleichung \ref{eq:Ep6} nicht mehr erfüllt. Durch einsetzten der durch den SURF-Alggorithmus detektierten korrespondierenden Punkte $m_\sigma$ und $m'_{\sigma'}$ in die Gleichung 
+Aufgrund der Ungenauigkeit der korrespondierenden Punkte ist es nicht möglich die 3D-Objektpunkte durch einfache Rückprojektion der Bildpunkte zu rekonstruieren. Liegt der zu $m_\sigma$ korrespondierende Bildpunkt $m'_{\sigma'}$ nicht ganz genau auf der zu $m_\sigma$ korrespondierenden Epipolarlinie, so ist die in Kapitel \ref{sec:HFE} aufgestellte epipolare Bedingung aus Gleichung \ref{eq:Ep6} nicht mehr erfüllt. Durch einsetzten der detektierten korrespondierenden Punkte $m_\sigma$ und $m'_{\sigma'}$ in die Gleichung 
 
 \begin{gather}
 	m'^T_{\sigma'}Fm_\sigma = 0
 \end{gather}
 
-kommt ein Wert $\neq 0$ heraus. Je weiter der Wert von 0 abweicht, desto ungenauer ist die korrespondenz beider Bildpunkte. Dies führt dazu, dass bei der Rückprojektion der Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ sich die Linien nicht im Raum treffen, sondern windschief zueinander liegen. Die Abbildungen \ref{fig:ProblemTraingulation} und \ref{fig:lFm} veranschaulichen eine Konsequenz von ungenauen Punktekorrespondenzen.
+kommt ein Wert $\neq 0$ heraus. Je weiter der Wert von Null abweicht, desto ungenauer ist die Korrespondenz beider Bildpunkte. Dies führt dazu, dass sich bei der Rückprojektion die Linien der Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ nicht im Raum treffen, sondern windschief zueinander liegen. Die Abbildungen \ref{fig:ProblemTraingulation} und \ref{fig:lFm} veranschaulichen die Konsequenz von ungenauen Punktekorrespondenzen.
 %
 %ist es bei den Fehlerhaften Bildkooridinaten nicht möglich die 3D-Szenenpunkte durch eine einfache Rückprojektion der der Bildpunkte zu einem Punkt im 3D-Raum zu erhalten. 
 %
@@ -311,7 +311,9 @@ kommt ein Wert $\neq 0$ heraus. Je weiter der Wert von 0 abweicht, desto ungenau
 	\caption[Problemstellung für die Triangulation im reellen Beispiel]{ a) Die rückprojizierten Strahlen der ungenauen korrespondierenden Punkte $m_\sigma$ und $m'_{\sigma'}$ sind Windschief zueinander und treffen sich nicht in einem Punkt $M_{\delta,0}$ im Raum. b) Die korrespondierenden Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ erfüllen nicht die Epipolaren Bedingungen. Die Epipolarlinie $l' = Fm$ ist die korrespondierende Epipolarlinie zu $m_\sigma$ und $l = F^Tm'$ ist die korrespondierende Epipolarlinie zu $m'_{\sigma}$. Da weder $m_\sigma$ noch $m'_{\sigma'}$ auf der Epipolarlinie zum jeweils korrespondierenden Punkt liegen, kommt es zu keinem Schnittpunkt der rückprojizierten Strahlen}
 \end{figure}
 
-Um trotz der ungenauen korrespondierenden Punkte eine Triangulation zu ermöglichen, wurde ein Verfahren voran geschaltet, welches zwei Punkte $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sucht, die möglichst nah an den ursprünglichen Punkten $m_\sigma$ und $m'_{\sigma'}$ liegen und gleichzeitig die epipolare Bedingung $\hat{m}'^T_{\sigma'}F\hat{m}_\sigma = 0$ erfüllt. $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sollen durch Minimierung einer Funktion $C$ bestimmt werden, welche die Distanz  $d$ zwischen $m_\sigma$ und $\hat{m}_\sigma$ und $m'_{\sigma'}$ und $\hat{m}'_{\sigma'}$ minimiert. Für die Minimierung wird das Verfahren der Sampson-Approximation gewählt\cite{HZ}. Voraussetzung für die Triangulierung ist, dass die Projektionsmatrizen $P$ und $P'$, sowie die Fundamentalmatrix $F$ bekannt sein müssen\cite{HZ}.
+Um trotz der ungenauen korrespondierenden Punkte eine Triangulation zu ermöglichen, wird ein Verfahren voran geschaltet, welches zwei Punkte $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sucht, die möglichst nah an den ursprünglichen Punkten $m_\sigma$ und $m'_{\sigma'}$ liegen und gleichzeitig die epipolare Bedingung $\hat{m}'^T_{\sigma'}F\hat{m}_\sigma = 0$ erfüllen. $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sollen durch Minimierung einer Funktion $C$ bestimmt werden, welche die Distanz  $d$ zwischen $m_\sigma$ und $\hat{m}_\sigma$ und $m'_{\sigma'}$ und $\hat{m}'_{\sigma'}$ minimiert. Für die Minimierung wird das Verfahren der Sampson-Approximation gewählt\cite{HZ}. 
+
+%Voraussetzung für die auf die Minimierung folgende Triangulierung ist, dass die Projektionsmatrizen $P$ und $P'$, sowie die Fundamentalmatrix $F$ bekannt sein müssen\cite{HZ}.
 
 \begin{gather}
 	C(m,m') = d(m,\hat{m})^2 + d(m',\hat{m'})^2
@@ -319,7 +321,7 @@ Um trotz der ungenauen korrespondierenden Punkte eine Triangulation zu ermöglic
 
 %Jedes Punktepaar, welches den \textit{Epipolar-Constraint} erfüllt, liegt auf einem paar korrespondierender Epipolarlinien. 
 
-Die optimalen $\hat{m}$ und $\hat{m}'$ liegen auf den korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l}'$ am Fuße des Lots, welches von den ursprünglich projizierten Punkten $m$ und $m'$ auf die Epipolarlinien $\hat{l}$ und $\hat{l'}$ gefällt wird\cite{HZ}. 
+Die optimalen Punkte $\hat{m}$ und $\hat{m}'$ liegen auf den korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l}'$ am Fuße des Lots, welches von den ursprünglich projizierten Punkten $m$ und $m'$ auf die Epipolarlinien $\hat{l}$ und $\hat{l'}$ gefällt wird\cite{HZ}. 
 
 
 \begin{figure}[!htb]
@@ -343,11 +345,11 @@ Jedes andere Punktepaar auf $\hat{l}$ und $\hat{l}'$ würde die epipolare Beding
 
 Aus allen möglichen Epipolarlinien, welche $\hat{l}$ und $\hat{l}'$ annehmen können, entspricht immer der senkrechte Abstand von $m_\sigma$ und $m'_{\sigma'}$ zur jeweiligen Epipolarlinie der minimalen Distanz. Es soll jedoch genau das Epipolalinienpaar gewählt werden, welches die Funktion $C$ minimal werden lässt\cite{HZ}.\\
 
-Im ersten Schritt werden die Epipolarlinien Parametrisiert, so dass eine Linie als $\hat{l}(t)$ geschrieben werden kann. Durch die Parametrisierung der Epipolarlinien, kann die Funktion $C$ als Funktion von $t$ umformuliert werden.
+Im ersten Schritt werden die Epipolarlinien parametrisiert, so dass eine Linie als $\hat{l}(t)$ geschrieben werden kann. Durch die Parametrisierung der Epipolarlinien, kann die Funktion $C$ als eine Funktion von $t$ umformuliert werden.
 
 
 \begin{gather}
-	C(m_\sigma,m'_{\sigma'}) = d(m_\sigma,\hat{l}(t))^2 + d(m',\hat{l}'(t))^2
+	C(m_\sigma,m'_{\sigma'}) = d(m_\sigma,\hat{l}(t))^2 + d(m'_{\sigma'},\hat{l}'(t))^2
 \end{gather}
 
 
@@ -369,15 +371,15 @@ Um die Minimierung zu vereinfachen, werden zu Beginn die Bildpunkte $m_\sigma$ u
 
 \begin{gather}
 	T = \begin{bmatrix}
-	1&0&-m_{x\sigma}\\
-	0&1&-m_{y\sigma'}\\
+	1&0&-m_{\sigma x}\\
+	0&1&-m_{\sigma y}\\
 	0&0&1
-	\end{bmatrix} \leadsto \bar{m_\tau} = T\cdot m_\tau\\
+	\end{bmatrix} \leadsto \bar{m_\sigma} = T\cdot m_\sigma\\
 	T' = \begin{bmatrix}
-	1&0&-m'_{x\sigma'}\\
-	0&1&-m'_{y\sigma'}\\
+	1&0&-m'_{\sigma'x}\\
+	0&1&-m'_{\sigma'y}\\
 	0&0&1
-	\end{bmatrix} \leadsto 	\bar{m}'_{\tau'} = T' \cdot m'_{\tau'}
+	\end{bmatrix} \leadsto 	\bar{m}'_{\sigma'} = T' \cdot m'_{\sigma'}
 \end{gather} \\
 
 Die Fundamentalmatrix $F$ wird ebenfalls mit $T$ und $T'$ transformiert, sodass sie an die verschobenen Punkte $\bar{m}_{\sigma}$ und $\bar{m}'_{\sigma'}$ angepasst ist.
@@ -389,7 +391,7 @@ Die Fundamentalmatrix $F$ wird ebenfalls mit $T$ und $T'$ transformiert, sodass 
 \end{gather}
 
 %Als nächstes wird $F$ mit $T$ und $T$ so Transformiert, dass den \textit{Singularity-Constraint} zwischen 
-Der rechte und linke Kern von $\bar{F}$ ergeben die Epipole $\bar{e}$ und $\bar{e}'$. Angenommen $f$ und $f'$ seinen genau 0, so liegen die Epipole $e = (1,0,f)^T$ und $e' = (1,0,f')^T$ im unendlichen. Ist dies der Fall so hat $\bar{F}$ für welche dann gilt, dass $\bar{F}(1,0,f)^T = (1,0,f')\bar{F}=0$ eine spezielle Form\cite{HZ}.
+Der rechte und linke Kern von $\bar{F}$ ergeben die Epipole $\bar{e}$ und $\bar{e}'$. Angenommen $f$ und $f'$ seinen genau Null, so liegen die Epipole $e = (1,0,f)^T$ und $e' = (1,0,f')^T$ im unendlichen. Ist dies der Fall so hat $\bar{F}$ für welche dann gilt, dass $\bar{F}(1,0,f)^T = (1,0,f')\bar{F}=0$ eine spezielle Form\cite{HZ}.
 
 %Die entstehenden Epipole besitzen die Form $\hat{e}=(1,0,f)^T$ und $\hat{e'}=(1,0,f')^T$, wobei $f$ und $f'$ nahezu null sein wird. Sollten die $x$ und $y$ Werte der Epipole abweichen, so werden diese so skaliert, dass $\hat{e}^2_x + \hat{e}^2_y = 1$ ergeben, selbiges gilt auch für $\hat{e}'$.
 
@@ -440,7 +442,7 @@ Der rechte und linke Kern von $\bar{F}$ ergeben die Epipole $\bar{e}$ und $\bar{
 	\end{pmatrix}
 \end{gather}
 
-Im Realfall sind die Werte der Epipole $e$ und $e'$ nicht genau $e = (1,0,f)^T$ und $e' = (1,0,f')^T$, sondern weichen in ihren Richtungen leicht ab. Des Weiteren sind entprechen die $xy-$Komponenten der Epipole noch keinem normierten Richtungsvektor. Also werden sie zunächst einmal so normiert, das $e^2_1 + e^2_2 = 1$ und $e'^2_1 + e'^2_2 = 1$ gilt. Danach werden $e$ und $e'$ mit zwei Rotationsmatrizen $R$ und $R'$ auf $Re = (1,0,e_3) = (1,0,f)$ und $R'e' = (1,0,e'_3)=(1,0,f')$ rotiert.
+Im Realfall sind die Werte der Epipole $e$ und $e'$ nicht genau $e = (1,0,f)^T$ und $e' = (1,0,f')^T$, sondern weichen in ihren Richtungen leicht ab. Des Weiteren sind die Epipole auch noch nicht normiert. Es folgt zunächst die Normierung der Epipole, sodass $e^2_1 + e^2_2 = 1$ und $e'^2_1 + e'^2_2 = 1$ gilt. Danach werden $e$ und $e'$ mit zwei Rotationsmatrizen $R$ und $R'$ auf $Re = (1,0,e_3) = (1,0,f)$ und $R'e' = (1,0,e'_3)=(1,0,f')$ rotiert.
 
 \begin{gather}
 	R = \begin{bmatrix}
@@ -463,9 +465,9 @@ $\bar{F}$ wird dann mit $\bar{F}_{Rot} = R'FR^T$ ersetzt. Die Einträge in $\bar
 	e_3e'_3 \bar{F}_{Rot,33}&-e'_3 \bar{F}_{Rot,32}&-e'_3\bar{F}_{Rot,33}\\
 	-e_3 \bar{F}_{Rot,23} & \bar{F}_{Rot,22} &\bar{F}_{Rot,23}\\
 	-e_3 \bar{F}_{Rot,33}& \bar{F}_{Rot,32} &\bar{F}_{Rot,33} \label{eq:SampsonFRot}
-\end{pmatrix}\\
+\end{pmatrix}
 \end{gather}
-Verläuft eine Epipolarlinie durch einen Punkt $(0,t,1)^T$ und dem Epipol $e = (1,0,f)^T$, wird diese Epipolarlinie mit $l(t)$ bezeichnet. Das Kreuzprodukt dieser beiden Punkte beschreibt die Epipolarlinie $l(t)$\cite{HZ}. 
+Verläuft eine Epipolarlinie durch einen Punkt $(0,t,1)^T$ und dem Epipol $e = (1,0,f)^T$, wird diese Epipolarlinie mit $l(t)$ bezeichnet. Das Kreuzprodukt dieser beiden Punkte beschreibt die Epipolarlinie $l(t)$\cite{HZ}. %\pagebreak
 
 \begin{gather}
 \hat{l}(t)=
@@ -487,7 +489,7 @@ Die quadratische Distanz dieser Linie zum Ursprung wird dann bezeichnet mit:
 	d(\bar{m_\sigma},\hat{l}(t))^2 = \frac{t^2}{1+(tf)^2} \label{eq:quadraticDistance}
 \end{gather}
 
-Laut \textit{Hartley \& Zisserman} \cite{HZ} werden Linien durch Vektoren der Form $\vec{v} = \begin{pmatrix}
+Nach \textit{Hartley \& Zisserman} \cite{HZ} werden Linien durch Vektoren der Form $\vec{v} = \begin{pmatrix}
 A\\B\\C
 \end{pmatrix}$ dargestellt. Übersetzt in eine Koordinatengleichung ergibt sich
 
@@ -540,13 +542,13 @@ Um die zu $\hat{l}(t)$ korresponiderende Epipolarlinie $\hat{l}'(t)$ zu bestimme
 	l'(t) = \bar{F}_{Rot}(0,t,1)^T = (-f'(ct+d),at+b,ct+d)^T.
 \end{gather}
 
-Für die quadratische Distanz $d(m',l'(t))^2$ ergibt sich dann:
+Für die quadratische Distanz $d(\bar{m}'_{\sigma'},l'(t))^2$ ergibt sich dann:
 
 \begin{gather}
-	d(\bar{m_\sigma},\hat{l}(t))^2 = \frac{(ct + d)^2}{(at+b)^2+f'^2(ct+d)^2}
+	d(\bar{m}'_{\sigma'},l'(t))^2 = \frac{(ct + d)^2}{(at+b)^2+f'^2(ct+d)^2}
 \end{gather} \\
 
-Die Kostenfunktion $C$ kann jetzt in eine Funktion $s(t)$ umformuliert werden.
+Die Funktion $C$ kann jetzt in eine Funktion von $s(t)$ umformuliert werden.
 
 \begin{gather}
 %	C(m,m') = d(m,\hat{m})^2 + d(m',\hat{m'})^2 \\
@@ -566,14 +568,14 @@ Werden die beiden Terme in $s'(t)$ auf einen gemeinsamen Nenner gebracht und der
 	g(t) = t((at+b)^2+f'^2(ct+d)^2)^2-(ad-bc)(1+f^2t^2)^2(at+b)(ct+d)
 \end{gather}.
 
-Funktion $g(t)$ ist ein Polynom vom Grad 6. Das Minimum für $s(t)$ ergibt sich aus einer der sechs möglichen Lösungen für $t$ aus $g(t)$. Für die Bestimmung des Minimums werden nur die reellen Lösungen in Betracht gezogen. Die reellen Lösungen für $t$ aus $g(t)$, werden dann wieder in $s(t)$ eingesetzt. Das $t$, welches durch einsetzte in $s(t)$ den kleinsten Wert ergibt, ist das gesuchte Minimum $t_{min}$. \\
+Funktion $g(t)$ ist ein Polynom vom Grad 6. Das Minimum für $s(t)$ ergibt sich aus einer der sechs möglichen Lösungen für $t$ aus $g(t)$. Für die Bestimmung des Minimums werden nur die reellen Lösungen für $t$ in Betracht gezogen. Die reellen Lösungen für $t$ aus $g(t)$, werden dann wieder in $s(t)$ eingesetzt. Das $t$, welches durch einsetzten in $s(t)$ den kleinsten Wert ergibt, ist das gesuchte Minimum $t_{min}$. \\
 
-Mit $t_{min}$ können die Epipolarlinien $\hat{l}(t_{min})=(t_{min}f,1,-t)$ und $\hat{l}'(t_{min}) = F(0,t_{min},1)^T$ berechnet werden. Danach werden die zwei neuen Punkte $\hat{m}_{\sigma Rot}$ und $\hat{m}'_{\sigma' Rot}$ auf den Epipolarlinien $\hat{l}(t_{min}$ und $\hat{l}'(t_{min})$ bestimmt. $\hat{m}_{\sigma Rot}$ und $\hat{m}'_{\sigma' Rot}$ sind die Punkte auf der Epipolarlinie welche dem Ursprung am nächsten sind. Zur Erinnerung die Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ wurden zu Beginn in den Ursprung verschoben. Der Punkt, welcher vom Ursprung aus am nächsten auf einer Linien $(\lambda, \mu,\upsilon)$ liegt, kann mit $(-\lambda \cdot \upsilon, -\mu \cdot \upsilon, \lambda^2+ \mu^2)$ berechnet werden\cite{HZ}.
+Mit $t_{min}$ können die Epipolarlinien $\hat{l}(t_{min})=(t_{min}f,1,-t)$ und $\hat{l}'(t_{min}) = \bar{F}_{Rot}(0,t_{min},1)^T$ berechnet werden. Danach werden die zwei neuen Punkte $\hat{m}_{\sigma Rot}$ und $\hat{m}'_{\sigma' Rot}$ auf den Epipolarlinien $\hat{l}(t_{min})$ und $\hat{l}'(t_{min})$ bestimmt. $\hat{m}_{\sigma Rot}$ und $\hat{m}'_{\sigma' Rot}$ sind die Punkte auf der Epipolarlinie welche dem Ursprung am nächsten sind. Zur Erinnerung die Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ wurden zu Beginn in den Ursprung verschoben. Der Punkt, welcher vom Ursprung aus am nächsten auf einer Linien $(\lambda, \mu,\upsilon)$ liegt, kann mit $(-\lambda \cdot \upsilon, -\mu \cdot \upsilon, \lambda^2+ \mu^2)$ berechnet werden\cite{HZ}. Somi gilt
 
 \begin{gather}
-	\hat{l} = (tf, 1, -t)\
+	\hat{l} = (tf, 1, -t)\\
 	\hat{m}_{\sigma Rot} = (-(tf) \cdot \upsilon , - 1 \cdot \upsilon, (tf)^2 \cdot 1^2 )\\
-\end{gather}\\
+\end{gather}.
  
 Nachdem zu beiden Linien $\hat{l}$ und $\hat{l}'$ der jeweils nächste Punkte $\hat{m}_{Rot}$ und $\hat{m}'_{Rot}$ vom Ursprung aus gefunden wurden, werden diese nun mit $T$, $T'$, $R$ und $R'$ wieder an ihre Ausgangsposition zurück Transformiert. 
 
@@ -585,11 +587,11 @@ Nachdem zu beiden Linien $\hat{l}$ und $\hat{l}'$ der jeweils nächste Punkte $\
 %Vergleicht man die Punkte $m$ und $\hat{m}$ und die Punkte $m'$ und $\hat{m'}$, so kann die minimalen Abweichungen der Punkte voneinander sehen. 
 
 
-Für diese neu berechneten korrespondierenden Punkte ist die Epipolare Bedingung aus Gleichung \ref{eq:Ep6} erfüllt und es ist gewährleistest, dass sich ihre jeweiligen Rückprojektionen in einem Punkt im Raum treffen.\\
+Für diese neu berechneten korrespondierenden Punkte ist die epipolare Bedingung aus Gleichung \ref{eq:Ep6} erfüllt und es ist gewährleistest, dass sich ihre jeweiligen Rückprojektionen in einem Punkt im Raum treffen.\\
 
 Für die Rückprojektion der einzelnen Bildpunkte wurde ein lineares Triangulationsverfahren gewählt\cite{HZ}. Dieses ist für mehrere Punkte rechentechnisch günstiger als das geometrische Verfahren, welches im synthetischen Beispiel in Kapitel \ref{sec:minimal} genutzt wurde.\\
 
-Für die Rückprojektion werden pro korrespondierendem Punktepaar zunächst die Projektionsgleichungen  $\hat{m}_\sigma = P\hat{M}_\delta$ und $\hat{m}'_{\sigma'}  = P'\hat{M}_\delta$ aufgestellt. Diese werden so in eine Koeffizientenmatrix $A$ eingetragen dass gilt $A\cdot x = 0$. Durch die Verwendung des Kreuzproduktes, wird die Homogene Komponente eliminiert\cite{HZ}. 
+Für die Rückprojektion werden pro korrespondierendem Punktepaar zunächst die Projektionsgleichungen  $\hat{m}_\sigma = P\hat{M}_\delta$ und $\hat{m}'_{\sigma'}  = P'\hat{M}_\delta$ aufgestellt. Diese werden so in eine Koeffizientenmatrix $A$ eingetragen dass gilt $A\cdot x = 0$. Durch die Verwendung des Kreuzproduktes, wird die homogene Komponente eliminiert\cite{HZ}. 
 
 %(HIER WEITER MACHEN)
 %Nachdem nun gewährleistet ist, dass sich Rückprojektion der neuen Punkte $\hat{m}_\tau$ und $\hat{m}'_{\tau'}$
@@ -608,7 +610,7 @@ Was ausgeschrieben für $\hat{m}$ und $\hat{m}'$ zu den folgenden drei Gleichung
 m_{\sigma\,x}(p^{3T}M_\delta) - (p^{1T}M_\delta)=0\\
 m_{\sigma\,y}(p^{3T}M_\delta) - (p^{2T}M_\delta)=0\\
 m_{\sigma\,x}(p^{2T}M_\delta) - m_{\sigma\,y}(p^{1T}M_\delta)=0
-\end{gather}
+\end{gather}.
 
 und Für $\hat{m}'_{\sigma'} \times (PM_\delta) = 0$ gelten
 
@@ -617,7 +619,7 @@ und Für $\hat{m}'_{\sigma'} \times (PM_\delta) = 0$ gelten
 	m'_{\sigma'\,x}(p^{3T}M_\delta) - (p^{1T}M_\delta)=0\\
 	m'_{\sigma'\,y}(p^{3T}M_\delta) - (p^{2T}M_\delta)=0\\
 	m'_{\sigma'\,x}(p^{2T}M_\delta) - m'_{\sigma'\,y}(p^{1T}M_\delta)=0
-\end{gather}
+\end{gather}.
 
 $p^{iT}$ bezeichnet hier jeweils die Reihen der Projektionsmatrix $P$ beziehungsweise $P'$. Zwei der drei Gleichungen sind linear unabhängig und werden in die Koeffizietenmatrix $A$ geschrieben 
 
@@ -631,20 +633,17 @@ yp^{3T}-p^{2T}\\
 x'p'^{3T}-p'^{^T}\\
 y'p'^{3T}-p'^{2T}
 \end{bmatrix}\\
-A = \begin{bmatrix}
-	xp^{3T}-p^{1T}\\
-	yp^{3T}-p^{2T}\\
-	x'p'^{3T}-p'^{^T}\\
-	y'p'^{3T}-p'^{2T}
-\end{bmatrix} \cdot
-\begin{pmatrix}
-	X_1
-\end{pmatrix}
+%A = \begin{bmatrix}
+%	xp^{3T}-p^{1T}\\
+%	yp^{3T}-p^{2T}\\
+%	x'p'^{3T}-p'^{^T}\\
+%	y'p'^{3T}-p'^{2T}
+%\end{bmatrix}
 \end{gather}\\
 
-Die zwei Wege eine solche Matrix zu lösen wurden in Kapitel \ref{sec:HFE} vorgestellt. Zum einen kann die inhomogene Methode angewandt werden und der Kern dieser Koeffizientenmatrix bestimmt werden, oder es kann das homogene Verfahren angewandt werden, welches die Methode der Singulärwertzerlegung beinhaltet. \\
+Die zwei Wege eine solche Matrix zu lösen wurden in Kapitel \ref{sec:HFE} vorgestellt. Zum einen kann die inhomogene Methode angewandt werden in welcher die Bestimmung des Kerns das Ergebnis für $M_{\delta,0}$ bietet oder es kann das homogene Verfahren angewandt werden, welches die Methode der Singulärwertzerlegung beinhaltet. \\
 
-Die rekonstruierten Punkte $M_{\delta 0}$ sind wie in Kapitel \ref{sec:minimal} auch nur bis auf einen skalierungsfaktor genau bestimmt. Die Abbildungen \ref{fig:reconstructedSampson3D} und \ref{fig:reconstructedSampson3D} zeigen die aus den Bildern \ref{fig:SurfLinks} und \ref{fig:SurfRechts} rekonstruierten Punkte im Raum. Der rote Punkt steht für die Position von $C$, der grüne für die Position von $C'$. Die blauen Punkte sind die rekonstruierten Punkte, der beiden Bilder \ref{fig:SurfLinks} und \ref{fig:SurfRechts}. Somit wurde gezeigt, dass der Algorithmus, welcher für die synthetische Rekonstruktion entwickelt wurde mit gewissen Modifizierungen auch für ein reelles Stereobildpaar angewandt werden kann. Durch die Näherungen, sind gewissen Abweichungen von der Originalszene nicht zu vermeiden.
+Die rekonstruierten Punkte $M_{\delta 0}$ sind wie in Kapitel \ref{sec:minimal} auch nur bis auf einen skalierungsfaktor genau bestimmt. Die Abbildungen \ref{fig:reconstructedSampson3D} und \ref{fig:reconstructedSampson3D} zeigen die aus den Bildern \ref{fig:SurfLinks} und \ref{fig:SurfRechts} rekonstruierten Punkte im Raum. Der rote Punkt steht für die Position von $C$, der grüne für die Position von $C'$. Die blauen Punkte sind die rekonstruierten Punkte, der beiden Bilder \ref{fig:SurfLinks} und \ref{fig:SurfRechts}. Somit wurde gezeigt, dass der Algorithmus, welcher für die synthetische Rekonstruktion entwickelt wurde, mit gewissen Modifizierungen auch für ein reelles Stereobildpaar angewandt werden kann. Durch die Näherungen, sind gewissen Abweichungen von der Originalszene nicht zu vermeiden.
 
 %
 % Abbildung 7.15 zeigt die 3D Szene. Der Rote Punkt simbolisiert die Position von $C$ also der Canon 6D und der grüne Punkt symbolisiert die Position von $C'$ also der Canon 60D. Die Blauen Punkte sind die durch den \textit{SURF}-Algorithmus detektierten Punkte der Szene. Abbildung 7.16 zeigt die rekonstruierten Objektpunkte als 2D-Punkte, hierfür wurden ihre Koordinaten einfach durch ihren Tiefenwert geteilt. 

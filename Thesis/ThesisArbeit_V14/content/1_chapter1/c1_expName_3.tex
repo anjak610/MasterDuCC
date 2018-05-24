@@ -527,8 +527,7 @@ g' := \vec{C'} + t \cdot
 %
 %Nun muss für jedes Linienpaar eine Lösung für $t$ und $t'$ gefunden werden und die Lösungen in die Gleichungen 4.65 und 4.66 eingesetzt werden. Es sollte für beide Gleichungen die selbe Lösung für den rekonstruierten Punkt $A$ im Raum ergeben. Die Lösung entspricht meist noch nicht exakt dem eigentlichen Ergebnis, das liegt an der zuvor erwähnten Skaleninvariants der Rekonstruktion der exterenen Kameraparameter. 
 
-Bei den zuvor ermittelten extrinsischen Kameraparametern ist der Translationsvektor skaleninvariant. Dies führt dazu, dass der rekonstruierte Objektpunkt $M_{\delta,0}$ nach der Szenenrekonstruktion noch nicht dem Ursprünglichen $M_\delta$ entsprechen muss. Dementsprechend wird als letzter Schritt die rekonstruierte Szenen anhand einer bekannten Referenzgröße skaliert. Als Referenzgröße kann beispielsweise ein zuvor abgemessener Abstand zwischen zwei Punkten in der Szene dienen. Im synthetischen Aufbau sind beispielsweise die Abstände zwischen den Originalbildpunkten bekannt. Die Abbildung \ref{fig:scale3} zeigt die Szene des Quaders mit unterschiedlichen Skalierungen. Die Abbildungen \ref{fig:Quader1} und \ref{fig:Quader2} zeigt die rekonstruierte Szene des synthetischen Beispiels. Die Abbildungen \ref{fig:Quader1} und \ref{fig:Quader2} zeigen die auf Ursprugsgröße skalierte rekonstruierte Szene des Quaders. \\
-
+Bei den zuvor ermittelten extrinsischen Kameraparametern ist der Translationsvektor skaleninvariant. Dies führt dazu, dass der rekonstruierte Objektpunkt $M_{\delta,0}$ nach der Szenenrekonstruktion noch nicht dem Ursprünglichen $M_\delta$ entsprechen muss. Dementsprechend wird als letzter Schritt die rekonstruierte Szenen anhand einer bekannten Referenzgröße skaliert. Als Referenzgröße kann beispielsweise ein zuvor abgemessener Abstand zwischen zwei Punkten in der Szene dienen. Im synthetischen Aufbau sind beispielsweise die Abstände zwischen den Originalbildpunkten bekannt. Die Abbildung \ref{fig:scale3} zeigt die Szene des Quaders mit unterschiedlichen Skalierungen. Die Abbildung \ref{fig:Quader1} zeigt die rekonstruierte Szene des synthetischen Beispiels auf uhre Ursprungsgröße skaliert.
 
 %ihrer Originalgröße entsprechen. 
 %
@@ -538,34 +537,25 @@ Bei den zuvor ermittelten extrinsischen Kameraparametern ist der Translationsvek
 
 
 \begin{figure}[!htb]
-	\minipage{0.42\textwidth}
+	\minipage{0.40\textwidth}
 	\includegraphics[width=\linewidth]{images/ScaleInvariance_1.png}
 %	\caption{}
 %	\label{fig:scale1}
 	\endminipage\hfill
-	\minipage{0.42\textwidth}
+	\minipage{0.40\textwidth}
 	\includegraphics[width=\linewidth]{images/ScaleInvariance_2.png}
 %	\caption{}
 %	\label{fig:scale2}
 	\endminipage\hfill
 \end{figure}
-\pagebreak
-
-
-
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=0.42\linewidth]{images/ScaleInvariance_3.png}
-%	\captionof{figure}{Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form und Größe der Objekte} 
-%	\label{fig:scale3}
-%\end{minipage}\\\\
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.42\linewidth]{images/ScaleInvariance_3.png}
+	\includegraphics[width=0.40\linewidth]{images/ScaleInvariance_3.png}
 	\caption[Skalierung der Rekonstruierten Szene]{Veranschaulichung der Skaleninvarianz und dessen Auswirkung auf die geometrische Form und Größe der Objekte} 
 	\label{fig:scale3}
 \end{figure}
+\pagebreak
 
 
 
@@ -573,14 +563,13 @@ Bei den zuvor ermittelten extrinsischen Kameraparametern ist der Translationsvek
 	\minipage{0.42\textwidth}
 	\includegraphics[width=\linewidth]{images/MinimalBeispiel_reconstructed.png}
 	%\caption{}
-	\label{fig:Quader1}
 	\endminipage\hfill
 	\minipage{0.42\textwidth}
 	\includegraphics[width=\linewidth]{images/MinimalBeispiel_reconstructed_3.png}
 %	\caption{}
-	\label{fig:Quader2}
 	\endminipage\hfill
 	\caption[Programmplot der rekonstruierten Szene]{Der rote Punkt stellt die Postion von $C$ dar, der grüne steht für die Position von $C'$ relativ zu $C$. Die blauen Punkte stellen den rekonstruierten Quader und den extern platzierten neunten Punkt da. Die Abbildungen entstand aus dem in \textit{Mathematica}\cite{Mathematica} implementierten Algorithmus.}
+		\label{fig:Quader1}
 \end{figure}
 \pagebreak
 

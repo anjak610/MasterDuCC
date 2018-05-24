@@ -19,7 +19,7 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Bestimmung extrinsischer Kameraparameter L\IeC {\"o}sung eins und zwei}}{27}{figure.caption.214}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Bestimmung extrinsischer Kameraparameter L\IeC {\"o}sung eins und zwei}}{27}{figure.caption.215}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Einfache Triangulation}}{28}{figure.caption.217}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Skalierung der Rekonstruierten Szene}}{30}{figure.caption.229}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Skalierung der Rekonstruierten Szene}}{29}{figure.caption.229}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Programmplot der rekonstruierten Szene}}{30}{figure.caption.230}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Aufbau CMOS Sensor}}{32}{figure.caption.233}
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Nachbarschaftsoperation auf Sensoren}}{32}{figure.caption.234}
@@ -49,10 +49,10 @@
 \contentsline {figure}{\numberline {5.16}{\ignorespaces Rekonstruierte Szene 2D}}{50}{figure.caption.382}
 \contentsline {figure}{\numberline {5.17}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei gleicher Kameraaufl\IeC {\"o}sung}}{51}{figure.caption.392}
 \contentsline {figure}{\numberline {5.18}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 5:2}}{51}{figure.caption.392}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 1:2}}{52}{figure.caption.393}
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 1.2 : 2.3}}{52}{figure.caption.393}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 1:2}}{51}{figure.caption.393}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 1.2 : 2.3}}{51}{figure.caption.393}
 \contentsline {figure}{\numberline {5.21}{\ignorespaces Rekonstruierte Szene bei $K'$ = 5:2}}{52}{figure.caption.394}
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Rekonstruierte Szene bei $K'$ = 1:2}}{53}{figure.caption.395}
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Rekonstruierte Szene bei $K'$ = 1:2}}{52}{figure.caption.395}
 \contentsline {figure}{\numberline {5.23}{\ignorespaces Rekonstruierte Szene bei $K'$ = 1.2:2.3}}{53}{figure.caption.396}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Beispiel eines Rektifizierten Bildes mit Scanlinien}}{54}{figure.caption.398}

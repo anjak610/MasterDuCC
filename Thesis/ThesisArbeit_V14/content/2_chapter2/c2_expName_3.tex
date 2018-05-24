@@ -3,7 +3,7 @@
 
 \section{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}
 
-Für den Test, ob Szenerekonstruktion im Realbeispiel auch mit unterschiedlichen Kameraauflösungen funktioniert, wurde die Kameramatrix $K'$ von $C'$ künstlich skaliert. Wie aus Kapitel \ref{sec:CameraModels}, hat diese die Form
+Für den Test, ob die Szenerekonstruktion im Realbeispiel auch mit unterschiedlichen Kameraauflösungen funktioniert, wird die Kameramatrix $K'$ von $C'$ künstlich skaliert. Wie aus Kapitel \ref{sec:CameraModels}, hat diese die Form
 
 %mn Kapitel \nameref{sec:basisTransformation} wurden die einzelnen Bauteile der Kameramatrix genau beschrieben. Die Kameramatrix $K'$ aus Matlab für die Canon 60D gegeben.
 
@@ -19,7 +19,7 @@ k_x\zeta&s&V_{\sigma,x}\\
 
 %$\alpha_x$ und $\alpha_y$ setzen sich auch dem Abstand des Kamerazentrums zum Hauptpunkt zusammen, welcher in dieser Arbeit als mit $\zeta$ bezeichnet wurde, und den Kantenlängen der Pixel auf dem Sensor $m_x$ und $m_y$. 
 
-Um die Auflösung von $K'$ zu verändern, werden die Matrixeinträge $k_x \zeta$ und $k_y \zeta$ jeweils noch um eine beliebige Skalierung erweitert. Als Beispiel wurde $K'$ drei mal unterschiedlich skaliert und zwar mit den Verhältnissen $[5:2],\, [1:2]$ und $[1.2:2.3]$.  
+Um die Auflösung von $K'$ zu verändern, werden die Matrixeinträge $k_x \zeta$ und $k_y \zeta$ jeweils noch um eine beliebige Skalierung erweitert. Für den Test wird $K'$ drei mal unterschiedlich skaliert und zwar mit den Verhältnissen $[5:2],\, [1:2]$ und $[1.2:2.3]$.  
 
 %wird auf $\alpha_x$ und $\alpha_y$ jeweils ein beliebiger Faktor dazu multipliziert. Zum Beweis, dass die Rekonstruktion der externen Kameraparameter und die Szenerekonstruktion, bei egal welcher Skalierung, die ähnlichen Ergebnisse liefern, wurde die Kameramatrix $K'$ mit den Verhältnissen $[2:2], \, [5:2],\, [2:1], \, [1:2]$ und $[1.2:2.3]$ skaliert. 
 
@@ -58,7 +58,7 @@ k_x\zeta \cdot 1.2 &s&V_{\sigma,x} \cdot 1.2\\
 
 
 %Die Formulierung, dass die jeweils neu rekonstruierten Szenen ähnlich sind, wurde deshalb verwendet, da durch die zuvorigen Fehler der korrespondierenden Punkte und später, bei der Triangulierung, durch die \textit{Sampson-Approximation} Abweichungen auftreten können. 
-Von den detektierten korrespondierenden Bildpunkten des SURF-Algorithmus wurden die Bildunkte des zweiten Bildes von $C'$ auch um die selben Verhältnisse skaliert.
+Von den detektierten korrespondierenden Bildpunkten des SURF-Algorithmus werden die Bildpunkte des zweiten Bildes von $C'$ auch um die selben Verhältnisse skaliert.
 
 \begin{gather}
 %	m_{\sigma[2:2]}=
@@ -92,7 +92,7 @@ m_\sigma \cdot
 \end{gather}
 
 
-Der Szenenrekonstruktionsalgorithmus wurde für jede Kameraauflösung getestet. Die Abbildungen \ref{fig:RecT52}, \ref{fig:RecT52} und \ref{fig:RecT1223} zeigen jeweils die vier Lösungen für $T'$, welche sich bei der Bestimmung der extrinsischen Parameter bei den unterschiedlichen Kameraauflösungen ergaben. Zu beobachten ist, dass sich die Lösungen bei unterschiedlichen Auflösungen nicht unterscheiden. Die geringen Abweichungen in den Nachkommastellen sind auf die Ungenauigkeiten der Bilddaten zurückzuführen. Durch die skalierung der Bildkoordinaten in die neuen Sensorkoordinatensysteme werden auch deren Abweichungen mit skaliert. 
+Der Szenenrekonstruktionsalgorithmus wird für jede Kameraauflösung getestet. Die Abbildungen \ref{fig:RecT52}, \ref{fig:RecT52} und \ref{fig:RecT1223} zeigen jeweils die vier Lösungen für $T'$, welche sich bei der Bestimmung der extrinsischen Parameter bei unterschiedlichen Kameraauflösungen ergaben. Zu beobachten ist, dass sich die Lösungen bei unterschiedlichen Auflösungen nicht unterscheiden. Die geringen Abweichungen in den Nachkommastellen sind auf die Ungenauigkeiten der Bilddaten zurückzuführen. Durch die Skalierung der Bildkoordinaten in die neuen Sensorkoordinatensysteme werden auch deren Abweichungen mit skaliert. 
 
 %Mit den veränderten Bildpunkten und Kamermatrix $K'$ wurde 
 %
