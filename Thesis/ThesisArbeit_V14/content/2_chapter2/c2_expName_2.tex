@@ -1,7 +1,7 @@
 \chapter{Reelle Rekonstruktion}
 \label{sec:real} 
 
-Der entwickelte Szenenrekonstrukionsalgorithmus wird im folgenden anhand eines realen Stereoaufbaus getestet. Anders als bei den synthetischen Bilddaten im Beispiel zuvor, muss beim arbeiten mit reellen Stereobildern mit einer Fehleranfälligkeit der Bilddaten gerechnet werden. Liegt beispielsweise bei der Bestimmung von korrespondierenden Punkten eine Ecke zwischen zwei Pixel, so kann optisches Rauschen, welches in realen aufnahmen präsent ist, dazu führen dass die Ecke in gleichen Bildern an verschiedenen Pixel erkannt wird. Diese Abweichung der Punktekorrespondenz führt dazu, dass die in Kapitel \ref{sec:EpiolarContraints} definierten epipolaren Bedingungen nicht mehr erfüllt werden. In diesem Kapitel wird Hauptsächlich darauf eingegangen, welche Auswirkungen diese Ungenauigkeiten auf die Bestimmung der Fundamentalmatrix, der essentiellen Matrix und der anschließenden Rekonstruktion der Szene durch Triangulierng haben und wie man ihnen entgegen wirken kann. In Abbildung \ref{fig:ArbeitsProzessReell}, ist der Arbeitsprozess für den reellen Fall zu sehen. Der Ablauf im allgemeinen bleibt beständig.
+Der entwickelte Szenenrekonstrukionsalgorithmus wird im Folgenden anhand eines realen Stereoaufbaus getestet. Anders als bei den synthetischen Bilddaten im Beispiel zuvor, muss beim arbeiten mit reellen Stereobildern mit einer Fehleranfälligkeit der Bilddaten gerechnet werden. Liegt beispielsweise bei der Bestimmung von korrespondierenden Punkten eine Ecke zwischen zwei Pixel, so kann optisches Rauschen, welches in realen Aufnahmen präsent ist, dazu führen dass die Ecke in gleichen Bildern an verschiedenen Pixel erkannt wird. Diese Abweichung der Punktekorrespondenz führt dazu, dass die in Kapitel \ref{sec:EpiolarContraints} definierten epipolaren Bedingungen nicht zur Gänze mehr erfüllt werden. In diesem Kapitel wird Hauptsächlich darauf eingegangen, welche Auswirkungen diese Ungenauigkeiten auf die Bestimmung der Fundamentalmatrix, der essentiellen Matrix, der extrinsischen Kameraparameter und der anschließenden Rekonstruktion der Szene durch Triangulierng haben und wie man ihnen entgegenwirken kann. In Abbildung \ref{fig:ArbeitsProzessReell}, ist der Arbeitsprozess für den reellen Fall zu sehen. Der Ablauf im Allgemeinen bleibt beständig.
 
 %Hierzu wurde der Ursprüngliche Algorithmus um bestimmte Funktionen erweitert, welche im Verlauf des Kapitels genau erläutert werden. Abbildung \ref{fig:ArbeitsProzessReell} zeigt den Ablauf für die Reelle Rekonstruktion. \\
 %
@@ -21,7 +21,10 @@ Der entwickelte Szenenrekonstrukionsalgorithmus wird im folgenden anhand eines r
 %	\label{fig:ArbeitsProzessReell}
 %\end{minipage}\\ \\
 
-Zu Beginn wird der Stereoaufbau vorgestellt. Danach folgt die Korrespondenzanalyse, in welcher zwei Möglichkeiten aufgeführt werden, wie die Korrespondierenden Punkte aus den Bildern gewonnen werden können. Der Normierte-Acht-Punkt-Algorithmus, stellt eine für reale Bilddaten leicht veränderte Fassung des bereits bekannten Acht-Punkt-Algorithmus vor. Mit dessen Hilfe ist es möglich die Auswirkungen der Abweichungen in den Punktekorrespondenzen auf ein Minimum zu reduzieren. Nach der Bestimmung der Fundamentalmatrix durch den Normierten-Acht-Punkt-Algorithmus, wird diese auf ihre Gültigkeit kontrolliert. Hierzu werden vor allem die Singulärwerte der Fundamentalmatrix genauer betrachtet und welche Auswirkungen sie auf die Epipolargeometrie haben. Als nächstes wird die aus der Fundamentalmatrix bestimmte essentielle Matrix überprüft. Auch hier wird auf die Eigenschaften, welche die Singulärwerte der essentiellen Matrix haben müssen eingegangen. Danach wird eine Triangulierungsmethode nach \cite{HZ} vorgestellt, die über ein Näherungsverfahren eine Triangulation zwischen ungenauen korrespondierenden Punkten ermöglicht. Der letzte Abschnitt des Kapitels befasst sich dann mit der reellen Rekonstruktion bei unterschiedlichen Kameraauflösungen. \\
+Zu Beginn wird der Stereoaufbau vorgestellt. Danach folgt die Korrespondenzanalyse, in welcher zwei Möglichkeiten aufgeführt werden, wie Punktekorrespondenzen aus den Stereoaufnahmen gewonnen werden können. Der Normierte-Acht-Punkt-Algorithmus, stellt eine für reale Bilddaten leicht veränderte Fassung des bereits bekannten Acht-Punkt-Algorithmus vor. Mit dessen Hilfe ist es möglich die Auswirkungen der Abweichungen in den Punktekorrespondenzen auf ein Minimum zu reduzieren. Nach der Bestimmung der Fundamentalmatrix durch den Normierten-Acht-Punkt-Algorithmus, wird diese auf ihre Gültigkeit kontrolliert. Hierzu werden vor allem die Singulärwerte der Fundamentalmatrix genauer betrachtet und welche Auswirkungen sie auf die Epipolargeometrie haben. Als nächstes wird die aus der Fundamentalmatrix bestimmte essentielle Matrix überprüft. Auch hier wird auf die Eigenschaften der Singulärwerte der essentiellen Matrix eingegangen.
+\pagebreak
+
+Danach wird eine Triangulierungsmethode nach \textit{Hartley \& Zisserman} \cite{HZ} vorgestellt, die über ein Näherungsverfahren eine Triangulation zwischen ungenauen korrespondierenden Punkten ermöglicht. Der letzte Abschnitt des Kapitels befasst sich dann mit der reellen Rekonstruktion bei unterschiedlichen Kameraauflösungen. \\
 
 
 
@@ -42,7 +45,7 @@ Zu Beginn wird der Stereoaufbau vorgestellt. Danach folgt die Korrespondenzanaly
 \section{Stereoaufbau}
 
 
-Für die Stereobildaufnahme, wurde eine Szene vor zwei nebeneinander platzierten Kameras aufgebaut. Beide Kameras wurden zur Szene gerichtet. Abbildung \ref{fig:StereoaufbauReal} zeigt den Stereoaufbau.\\
+Für die Stereobildaufnahme wurde eine Szene vor zwei nebeneinander platzierten Kameras aufgebaut. Beide Kameras wurden auf die Szene gerichtet. Abbildung \ref{fig:StereoaufbauReal} zeigt den entstandenen Stereoaufbau.\\
 
 %Die räumliche Orientierung und Position von $C'$ wird also relativ zu $C$ berechnet und auch die Szene wird davon ausgehend, dass $C$ als Projektionsmatrix $P=[I|0]$ besitzt.
 
@@ -65,12 +68,15 @@ Für die Stereobildaufnahme, wurde eine Szene vor zwei nebeneinander platzierten
 %	\label{fig:StereoaufbauReal}
 %\end{minipage}\\
 
-Die auf Abbildung \ref{fig:StereoaufbauReal} zu sehende linke Kamera wurde als Kamera eins definiert. Das Kamerakoordinatensystem $(C,\beta)$ wurde gleich dem Weltkoordinatensystem $(O,\delta)$ gesetzt. Kamera zwei mit $(C',\beta')$ befindet sich auf der Abbildung rechts. Für beide Kameras wurden in einem externen Programm die intrinsischen Kameraparameter $K$ und $K'$ bestimmt. An den Stereoaufnahmen der Szene wurde dann eine Korrespondenzanalyse durchgeführt.   
+Die auf Abbildung \ref{fig:StereoaufbauReal} zu sehende linke Kamera wurde als primäre Kamera definiert. Die extrinsischen Kameraparameter für $C'$, werden dahingehend realiv zu $C$ bestimmt werden. Das Kamerakoordinatensystem $(C,\beta)$ entspricht somit gleich dem Weltkoordinatensystem $(O,\delta)$. Kamera zwei mit $(C',\beta')$ befindet sich auf der Abbildung rechts. Für beide Kameras wurden in einem externen Programm die intrinsischen Kameraparameter $K$ und $K'$ bestimmt. An den Stereoaufnahmen der Szene wird dann eine Korrespondenzanalyse durchgeführt.   
 
 \section{Korrespondenzanalyse}
 
 
-Für die Detektion von Punktekorrespondenzen bei Stereoaufnahmen einer dreidimensionalen Szene wurde eine existierende Funktion von Mathematica genutzt\cite{Mathematica}. Die Funktion basiert auf dem Prinzip eines SURF-Algoruthmus. SURF ist die Kurzform für \textit{Speeded Up Robust Features} und ist ein Rotations- und Skaleninvarianter Punkte Detektor und Deskriptor\cite{SURF,SIFTSURF}. Es werden Punkte an markanten Stellen in beiden Bildern detektiert, wie beispielsweise Eckpunkte oder Kanten. Die Umgebung eines jeden gefundenen Punktes wird durch einen Merkmalsvektor, dem Deskriptor, beschrieben. Die Deskriptoren beider Bilder werden abgeglichen und gleiche Punkte werden als korrespondierende Punkte gekennzeichnet\cite{SURF,SIFTSURF}. Die Abbildungen \ref{fig:SurfLinks} und \ref{fig:SurfRechts} zeigen die Ergebnisse nach der Anwendung des SURF-Algorithmus auf das Stereobildpaar. Eine eigens implementierte alternative für die Korrespondenzanalyse zwischen Stereoaufnahmen eines zweidimensionalen Schachbretts wird in Kapitel \ref{sec:schachbrettAlg} vorgestellt.  
+Für die Detektion von Punktekorrespondenzen bei Stereoaufnahmen einer dreidimensionalen Szene wurde eine bereits existierende Funktion von Mathematica genutzt\cite{Mathematica}. Die Funktion basiert auf dem Prinzip eines SURF-Algorithmus. SURF ist die Kurzform für \textit{Speeded Up Robust Features} und ist ein Rotations- und Skaleninvarianter Punkte Detektor und Deskriptor\cite{SURF,SIFTSURF}. Es werden Punkte an markanten Stellen in beiden Bildern detektiert, wie beispielsweise Eckpunkte oder Kanten. Die Umgebung eines jeden gefundenen Punktes wird durch einen Merkmalsvektor, dem Deskriptor, beschrieben. Die Deskriptoren beider Bilder werden abgeglichen und gleiche Punkte werden als korrespondierende Punkte gekennzeichnet\cite{SURF,SIFTSURF}. Die Abbildungen \ref{fig:SurfLinks} und \ref{fig:SurfRechts} zeigen die Ergebnisse nach der Anwendung des SURF-Algorithmus auf das Stereobildpaar. 
+\pagebreak
+
+Eine eigens implementierte alternative für die Korrespondenzanalyse zwischen Stereoaufnahmen eines zweidimensionalen Schachbretts wird in Kapitel \ref{sec:schachbrettAlg} vorgestellt.  
 
 
 %	\minipage{0.48\textwidth}
@@ -97,76 +103,54 @@ Für die Detektion von Punktekorrespondenzen bei Stereoaufnahmen einer dreidimen
 	\endminipage\hfill
 %	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet. Abbildung a zeigt das Bild von $C$, die Abbildung b zeigt das Bild von $C'$}
 \end{figure}
-\pagebreak
+%\pagebreak
 
-Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern in den Abbildungen \ref{fig:SurfLinks} und \ref{fig:SurfRechts} gekennzeichnet. Abbildung \ref{fig:SurfLinks} zeigt das Bild von $C$, die Abbildung \ref{fig:SurfRechts} zeigt das Bild von $C'$.\\
+Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern in den Abbildungen \ref{fig:SurfLinks} und \ref{fig:SurfRechts} gekennzeichnet. Die Abbildung \ref{fig:SurfLinks} zeigt das Bild von $C$, die Abbildung \ref{fig:SurfRechts} zeigt das Bild von $C'$.\\
 
-Die Detektion von korrespondierenden Punkten mit Detektionsalgorithmen, wie Beispielsweise dem angewendeten SURF-Algorithmus, können immer Fehler und Abweichungen mit sich bringen. Die Ursprünge der Fehler können sowohl durch den Algorithmus als auch durch Fehler, wie Bildrauschen, in den Aufnahmen selbst entstehen. Diese Fehler wirken sich sowohl auf die Bestimmung der Abildungsvorschriften $F$ und $E$ aus und somit auch auf die Genauigkeit der Szenenrekonstruktion\cite{HZ}. Im folgenden werden sowohl die Fehler als auch Methoden für deren Minimierung vorgestellt.
+Die Detektion von Punktekorrespondenzen mit Detektionsalgorithmen, wie beispielsweise dem angewendeten SURF-Algorithmus, können immer Fehler und Abweichungen mit sich bringen. Die Ursprünge der Fehler können sowohl durch den Algorithmus als auch durch Fehler, wie Bildrauschen, in den Aufnahmen selbst entstehen. Diese Fehler wirken sich sowohl auf die Bestimmung der Abbildungsvorschriften $F$ und $E$ aus und somit auch auf die Genauigkeit der Szenenrekonstruktion\cite{HZ}. Im Folgenden werden sowohl die Fehler als auch Methoden für deren Minimierung vorgestellt.
 
-\section{Normierter acht-Punkt-Algorithmus}
+\section{Normierter-Acht-Punkt-Algorithmus}
 
-Trotz das der acht-Punkt-Algorithmus eine einfache Methode zur Bestimmung der Fundamentalmatrix bietet, ist er sehr instabil sobald Fehler wie Ungenauigkeiten in Punktekorrespondenzen  auftreten\cite{HZ,Brooks}.\\
+Trotz das der Acht-Punkt-Algorithmus eine einfache Methode zur Bestimmung der Fundamentalmatrix bietet, ist er sehr instabil sobald Fehler wie Ungenauigkeiten in Punktekorrespondenzen  auftreten\cite{HZ,Brooks}.\\
 
-Die Ausmaße der  Fehler lässt sich anhand der Kondition der Koeffizientenmatrix $A$ genauer feststellen. Als Kondition wird die Abhängigkeit der Lösung eines Problems von der Störung der Eingangsdaten beschrieben\cite{HZ8,ConditionNumber,Manocha}. Die Kondition lässt sich durch Bestimmung des kleinsten Eigenvektors der Matrixmultiplikation der Koeffizientenmatrix $A$ mit ihrer Transponierten $A^T$ herausfinden. Die Matrix $AA^T$ wird in die Matrizen $UDU^T$ zerlegt, wobei $U$ eine orthogonale und $D$ eine diagonale Matrix ist. Die Diagonaleinträge von $D$ sind in einer nicht ansteigenden Reihenfolge, woraus resultiert, dass der kleinste Singulärwert von $D$ mit der letzten Spalte von $U$ korrespondiert und somit ist die letzte Spalte von $U$ gleich dem kleinsten Eigenvektor von $AA^T$\cite{HZ8,ConditionNumber}. Wird angenommen, dass $AA^T$ eine 9 $\times$ 9- Matrix ist, so ergeben die Diagonaleinträge $d_1/d_9$ den Wert der Kondition. Je größer die Kondition ist, desto größer wirken sich schon kleinste Abweichungen der reinkommenden Bilddaten, auf die aus $A$ bestimmten Matrix $F$ aus.\\
+Die Ausmaße der Fehler lässt sich anhand der Kondition der Koeffizientenmatrix $A$ genauer feststellen. Als Kondition wird die Abhängigkeit der Lösung eines Problems von der Störung der Eingangsdaten beschrieben\cite{HZ8,ConditionNumber,Manocha}. Die Kondition lässt sich durch Bestimmung des kleinsten Eigenvektors der Matrixmultiplikation der Koeffizientenmatrix $A$ mit ihrer Transponierten $A^T$ herausfinden. Die Matrix $AA^T$ wird in die Matrizen $UDU^T$ zerlegt, wobei $U$ eine orthogonale und $D$ eine diagonale Matrix ist. Die Diagonaleinträge von $D$ sind in einer nicht ansteigenden Reihenfolge, woraus resultiert, dass der kleinste Singulärwert von $D$ mit der letzten Spalte von $U$ korrespondiert. Die letzte Spalte von $U$ is gleich dem kleinsten Eigenvektor von $AA^T$\cite{HZ8,ConditionNumber}. Wird angenommen, dass $AA^T$ eine 9 $\times$ 9- Matrix ist, so ergeben die Diagonaleinträge $d_1/d_9$ den Wert der Kondition. Je größer die Kondition ist, desto größer wirken sich schon kleinste Abweichungen der reinkommenden Bilddaten, auf die aus $A$ bestimmte Matrix $F$ aus. Erkenntlich wird eine schlechte Kondition dann zum Beispiel an einem Ungleichgewicht der Matrixeinträge von $F$\cite{HZ8}. Das bedeutet, dass sich die Matrixeinträge stark in ihren Größeneinheiten unterscheidet. \\
 
+\begin{gather}
+	F = \begin{pmatrix}
+		10^{-8}&10^{-6}&10^{-4}\\
+		10^{-7}&10^{-8}&10^{-3}\\
+		10^{-4}&10^{-3}&10^{-2}\\
+	\end{pmatrix}
+\end{gather}.
 
-%Angenommen die korrespondierenden Koordinaten behalten ihre originalen Pixelwerte, dann  
+Die epipolare Bedingung mit $m'^T_{\sigma'}Fm_\sigma = 0$ errechnet schon bei kleinste Abweichungen der Punktekorrespondenzen große Fehler. Die schlechte Kondition liegt laut $Hartley \& Zisserman$ an der weitflächigen Verteilung der homogenen Bildkoordinaten im Raum. Die heutigen Kameras können Bilder mit bis zu mehreren tausend Pixel aufnehmen. Ein Bildpunkt kann somit beispielsweise wie folgt aussehen.
 
-Um die Kondition möglichst klein zu halten, werden die Bildkoordinaten beider Bilder normiert.
-Die in Literaturquellen, vorgeschlagene Normierung beinhaltet pro Bild eine Translation und Skalierung, so dass der Schwerpunkt aller Punktekorrespondenzen auf einem Bild im Ursprung des Sensorkoordinatensystems liegt und der durchschnittliche Abstand der Punkte zum Ursprung $\sqrt{2}$ beträgt\cite{HZ,Ferid,Brooks}.\\
+\begin{gather}
+	m_\sigma = \begin{pmatrix}
+		1150\\2193\\1
+	\end{pmatrix}
+\end{gather}
 
-%Die Normierung der Koordinaten führt dazu, dass die Größenordnungen der Einträge der Fundamentalmatrix ausgeglichener sind. Wird angenommen, dass die Koordinaten ihre ursprünglichen Größeneinheiten behalten, so haben sie beispielsweise die Form
-%
-%\begin{gather}
-%	m\sigma = \begin{pmatrix}
-%		150\\1193\\1
-%	\end{pmatrix}
-%\end{gather}.
-%
-%Eine Fundamentalmatrix basierend auf diesen Koordinatenverhältnissen, hätte starke Größenunterschiede in ihren Einträgen
-%
-%\begin{gather}
-%	F = \begin{pmatrix}
-%		10^{-8}&10^{-6}&10^{-4}\\
-%		10^{-7}&10^{-8}&10^{-3}\\
-%		10^{-4}&10^{-3}&10^{-2}\\
-%	\end{pmatrix}
-%\end{gather}.
-%
-%Sind jedoch die Koordinaten in einer Form, bei welcher die drei Koordinateneinträge sich in einer ähnlichen Größenordnung befinden wie beispielsweise
-%
-% \begin{gather}
-% 	m\sigma = \begin{pmatrix}
-% 		1.5\\1.193\\1
-% 	\end{pmatrix}
-% \end{gather}
-%
-%so wären die Einträge der Fundamentalmatrix in ihren Größenordnungen ausgeglichener\cite{HZ8}
-%
-%\begin{gather}
-%	F = \begin{pmatrix}
-%		10^{-4}&10^{-4}&10^{-2}\\
-%		10^{-4}&10^{-4}&10^{-2}\\
-%		10^{-2}&10^{-2}&10^{-2}\\
-%	\end{pmatrix}
-%\end{gather}
-% 
-%Hier schreiben was die Augeglicheneheit genau bewirkt\\
-%
-%The most important entries in the fundamental
-%matrix are precisely those that are subject
-%to the largest relative perturbation when
-%enforcing the singularity constraint without
-%prior normalization.
-%
-%The method described above of enforcing the singularity
-%constraint gives the singular matrix ˆ F nearest to
-%F in Frobenius norm.The trouble with this method is
-%that it treats all entries of the matrix equally, regardless
-%of their magnitude.T hus, entries of F small in
-%absolute value may be expected to undergo a perturbation
-%much greater relative to their magnitude than
-%the large entries.
+$m_{\sigma\, x}$ und $m_{\sigma\, y}$ liegen in einem Bereich der sich um mehr als 1000 Pixel unterscheidet. Das bedeutet, dass sich die ersten beiden Koordinateneinträge um einen viel größeren Zahlenbereich befinden als ihre dritte Komponente. Um die Kondition möglichst klein zu halten, werden die Bildkoordinaten beider Bilder normiert\cite{HZ8,Brooks}. Normierte Koordinaten befinden sich in einem ausgeglicheneren Wertebereich und liegen nicht mehr weit verteilt im Raum\cite{HZ8}. Ihre Einträge entsprechen dem Folgenden Beispiel
+
+ \begin{gather}
+ 	m_\sigma = \begin{pmatrix}
+ 		1.5\\1.193\\1
+ 	\end{pmatrix}
+ \end{gather}.
+
+Die Einträge der entstehende Fundamentalmatrix haben dann die Form
+
+\begin{gather}
+	F = \begin{pmatrix}
+		10^{-3}&10^{-2}&10^{-2}\\
+		10^{-2}&10^{-3}&10^{-2}\\
+		10^{-2}&10^{-2}&10^{-2}\\
+	\end{pmatrix}
+\end{gather}.
+
+Das hat zur Folge, dass die epipolare Bedingung  weniger stark auf ungenaue Punktekorrespondenzen reagiert. Die in Literaturquellen, vorgeschlagene Methode zur Normierung besteht darin den Schwerpunkt aller Punkte in den Ursprung des Sensorkoordinatensystems zu verschieben und die Bildpunkt so zu skalieren, dass ihr durchschnittlicher Abstand zum Ursprung $\sqrt{2}$ beträgt\cite{HZ,Ferid,Brooks}.\\
+
 
 Für die Normierung wird pro Bild eine Transformationsmatrix $T$ und $T'$ definiert. Die Matrizen beinhalten sowohl eine Skalierung als auch eine Translation. Die Bestimmung der Matrix $T$ wird im Folgenden aufgezeigt. Zuerst wird der Schwerpunkt $s$ mit $s=\begin{pmatrix}
 s_x\\
@@ -201,71 +185,20 @@ Danach wird $s$ in den Ursprung verschoben. Die Punkte $x_n$ werden ebenfalls um
 \end{pmatrix}
 \end{gather}
 
-Die originalen Bildpunkte des Stereobildpaares, werden mit den Matrizen $T$ und $T'$ verrechnet. Mit den Normierten Bildkoordinaten wird dann wieder nach dem in Kapitel \ref{sec:8pointAlg} beschriebenen acht-Punkte-Algorithmus eine Fundamentalmatrix $\hat{F}$ bestimmt\cite{HZ,HZ8,Ferid,Brooks}. Nachdem $\hat{F}$ aus den normierten Koordinaten bestimmt wurde, wird sie mit $T$ und $T'$ wieder denormalisiert.
+Die originalen Bildpunkte des Stereobildpaares, werden mit den Matrizen $T$ und $T'$ verrechnet. Mit den Normierten Bildkoordinaten wird dann mit dem Acht-Punkte-Algorithmus eine Fundamentalmatrix $\hat{F}$ bestimmt\cite{HZ,HZ8,Ferid,Brooks}. Ist $\hat{F}$ aus den normierten Koordinaten bestimmt, wird sie mit $T$ und $T'$ wieder denormalisiert.
 
 \begin{gather}
 	F = T'^T\hat{F}T
 \end{gather}
 
-%Nachdem die korrespondierenden Punkte in den Bilder gefunden wurden, wird nun der Arbeitsprozess wie in den Abbildungen ??? und ??? in der Einleitung und wie bereits aus dem Minimalbespiel bekannt, weiterverfolgt. In den einzelnen Schritten müssen jedoch ein paar Änderungen vorgenommen werde, um die durch die ungenauen Bilddaten entstehenden Fehler im Verlauf des Arbeitsprozesses zu minimieren. 
-
-%
-%Als erstes erfolgt die Schätzung der Fundamentalmatrix. Für die Schätzung wurde eine leicht abgeänderte Form des \textit{eight-point-algorithms} namens \textit{normalized-eight-point-algorithm} angewandt\cite{HZ,HZ8,Ferid}.\\ 
-
-%
-%Zur Durchführung des \textit{normalized-eight-point-algorithm} wird eine vorherige Normierung der eingehenden Bildpunkte pro Bild verlangt. Diese sollen so normiert werde, dass ihr durchschnittlicher Abstand zu ihrem den Koordiantenursprung verschobenenen Schwerpunktes $\sqrt{2}$ beträgt\cite{HZ,HZ8,Ferid}. \\
-
-%Zu aller erst werden die jeweiligen Schwerpunkte der Punkte in den einzelnen Bildern gesucht und dieser dann in den jeweiligen Sensorkoordinatenursprung verschoben. Die Bildpunkte werden unter Beibehaltung ihres momentanen Abstandes zum Schwerpunkt mit verschoben. Danach werden die Anbständer der Bildpunkten zum Schwerpunkt so skaliert, dass der Durchschnittsabstand der Punkte zu Schwerpunkt $\sqrt{2}$ beträgt. Die so skalierten Bildpunkte befinden sich nun in einem deutlich kleineren Zahlenbereich von circa $-1$ bis $1$\cite{HZ,HZ8,Ferid,Brooks}. Die transformation der Bilddpunkte für beide Bilder wird jeweils einer Matrix $T$ und $T'$ vollzogen\cite{HZ,Brooks}.
-
-%
-% Diese Matrix ist wichtig, um nach dem schätzen einer auf den normalisierten Koordinaten basierten Fundamentalmatrix $\hat{F}$ wieder eine denormalisierte $F$ zu generieren. Die Normierung der Bildkoordinaten ist wichtig, um die Auswirkung der Bildfehler auf das Endergebnis zu minimieren.  Die Entscheidung den normalized-8-Point-Algorithm  zu benutzen fiel als festgestellt wurde, dass ohne vorherige Normalisierung der ausgelesenen Punkte es zu größeren Fehlern in den weiteren Berechnungen kam. \\
-%
-%
-%Zur Erklärung dieser Fehler kann zum einen die \textit{Condition-Number} betrachten. Als \textit{Condition Number}, Kondition im deutschen, wird die Abhängigkeit der Lösung eines Problems von der Störung der Eingangsdaten beschrieben. 
-
-%Die Kondition lässt sich durch Bestimmung des kleinsten Eigenvektors der Matrixmultiplikation der Koeffizientenmatrix $A$ mit ihrer Transponierten $A^T$ herausfinden. Die Matrix $AA^T$ wird in die Matrizen $UDU^T$, wobei $U$ eine orthogonale und $D$ eine diagonale Matrix ist, zerlegt. Die diagonaleinträge von $D$ sind in einen nicht ansteigenden Reihenfolge, woraus resultiert, dass der kleinste Singulärwert von $D$ mit der letzten Spalte von $U$ korrespondiert und somit ist die letzte Spalte von $U$ gleich dem kleinsten Eigenvektor von $AAt$\cite{HZ8}. Wird angenommen, dass $AA^T$ eine 9 $\times$ 9- Matrix ist, so ergeben die Einträge $d_1/d_9$ die gesuchte \textit{Condition Number}. je größer die \textit{Condition-Number} ist, desto größer wirken sich auch kleinste Abweichungen, wie Bildrauschen, auf die Resultate aus.
-
-%Da sich die original Bildkoordinaten in diesem Beispiel in einem Zahlenbereich von 0 bis 5478 befinden, sind auch die Werte innerhalb der Koeffizientenmatrix in einem sehr großen Zahlenbereich, was zu Folge hat, das schon kleinste Abweichungen in den Bilddaten, große Auswirkungen auf die daraus resultierende Fundamentalmatrix haben kann, in Bezug darauf, dass die Werte der Einträge innerhalb von $F$, sehr große Ungleichgewichte aufweisen. Anders im Fall von Normierten Koordinaten, deren Zahlen sich in einem Bereich zwischen circa -1 und 1 befinden.  
-%
-%\begin{gather}
-%	F = \begin{pmatrix}
-%		10^{-4}&10^{-4}&10^{-2}\\
-%	10^{-4}	&10^{-4}&10^{-2}\\
-%		10^{-2}&10^{-2}&1
-%	\end{pmatrix}\\
-%	F = \begin{pmatrix}
-%	-10^{-9}&10^{-6}&-10^{-4}\\
-%	-10^{-7}&10^{-4}&10^{-3}\\
-%	10^{-4}&-10^{-3}&-10^{-2}
-%\end{pmatrix}
-%\end{gather}
-%
-%Gleichung 6.2 zeigt schematisch was unter einer Gleichgewichtigen Fundamentalmatrix zu verstehen ist, welche bei einer sehr gereingen \textit{Condition-number} resultieren kann. Gleichung 6.3 wiederum zeigt schematisch das Resultat einer Ungleichgewichteten Fundamentalmatrix, dessen \textit{Condition-Number} sehr groß ausfällt\cite{HZ8}. 
-
-%
-%Durch normieren der Bildkoordinaten, kann die \textit{Condition-Number} kleiner und damit einhergehend die entstehenden Fehler minimiert werden.\\
-%
-%
-%Nachdem die Fundamentalmatrix aus den normierten Koordinaten geschätzt wurde, wird sie anschließend mit den beiden aufgestellten Matrizen $T$
-%und $T'$ wieder denormalisiert, so dass sie wieder als $epipolar-contraint$ zwischen die original Koordinaten geschallten werden kann. \\
-%
-%Für normierte Koordinaten $\hat{m}$ und $\hat{m}'$ gilt $\hat{m}'^T \cdot \hat{F} \cdot \hat{m} = 0$ und für die ursprünglichen Bildkoordinaten gilt, dass $m'^T \cdot T'^T \cdot \hat{F} \cdot T\cdot m = 0$ und somit wieder $m'^T \cdot F\cdot m = 0$ \cite{HZ,HZ8,Ferid}.\\
-
-%Die Normierung der Koordinaten für die Verwendung des \textit{eight-point-algorithms} darf auf keinen Fall mit der Normierung der Koordinaten für die essentielle Matrix $E$ verglichen werden. Die Normierung der Koordinaten für die Schätzung von $F$, soll die Auswirkungen von Fehler auf die Resultate minimieren, während die Normierung der Koordinaten durch deren Verrechnung mit den Kameramatrizen $K$ und $K'$ dafür sorgt, dass daraus normierte Bildkoordinaten entstehen, dess Koordinatenursprung nicht mehr in einer Bildecke sondern in der Bildmitte sich befindet\cite{HZ}. 
-%
-%Um zurück zum Arbeitsprozess zu kommen, sind die Koordinaten normiert, so wird der im Kapitel \nameref{sec:einleitung} aufgezeigte Verfahren zur Schätzung der Fundamentalmatrix gleichermaßen wie in den Gleichungen 4.29 bis 4.34 aufgebaut.
-
-%Durch die möglichen Ungenauigkeiten wie Bildrauschen oder dem detektieren der korrespondierenden Punkte, ist der Rang der aufgestellten Koeffizientenmatrix $A$ in den meisten Fällen größer als acht, was bedeutet, dass hier nicht einfach der Kern mit $A\cdot f = 0$ gesucht werden kann, um eine Lösung zu finden. (Einfach auf Kapitel verweisen sollte jetzt langsam klar sein)
-%
-%Im Falle eines höhren Ranges als 8 muss ein Verfahren, ähnlich wie dem, welches angewandt wurde um überbestimmte Systeme zu Lösen um eine Homographiematrix zu erhalten. Es wird also derjenige Vektor für $f$ gesucht, welcher $||A\cdot f||$ minimiert. Hierzu wird eine Singulärwertszerlegung von $A$ in $A  = UDV^T$ durchgeführt. die Lösung für $f$, welche $||A\cdot f||$ minimiert ist dann diejenige Spalte von $V^T$, welche mit dem kleinsten Singulärwert von $D$ korrespondiert. Da die Singulärwerte eine absteigende Reihenfolge besitzen, bildet die letzte Spalte von $V^T$ den Vektor $f$\cite{HZ}.\\
 
 
 \subsection{Singularität der Fundamentalmatrix}
 \label{sec:SingularityOfF}
 
-Die aus den Punktekorrespondenzen bestimmte Fundamentalmatrix muss eine singuläre Matrix mit Rang 2 sein\cite{HZ,ZZGXr,Ferid}. Die singularität der Fundamentalmatrix sorgt zum einen dafür das ihr rechter und linker Kern jeweils eine eindeutige Lösung für den Epipol des jeweilgen Bildes ergibt und die Epipolarlinien, welche mit $l = Fm_simga$ und $l' = F^Tm'_{\sigma'}$ berechnet werden, auch alle durch diese Epipole verlaufen\cite{HZ}. Durch Ungenauigkeiten in korrespondierenden Bildpunkten kann es dazu kommen, dass die aus dem Normierten-Acht-Punkt-Algorithmus bestimmte Fundamentalmatrix $\hat{F}$ in ihrem Rang steigt und somit keine singuläre Matrix mehr ist. Matrizen sind singulär, falls sie keine Inverse besitzen, was durch as verschwinden der Determinante nachgewiesen werden kann\cite{FormelsammlungMatrizen}. Die Determinanten von $\hat{F}$ muss Null sein, damit sie eine singuläre Matrix von Rang 2 ist.\\
+Die aus den Punktekorrespondenzen bestimmte Fundamentalmatrix muss eine singuläre Matrix mit Rang 2 sein\cite{HZ,ZZGXr,Ferid}. Die Singularität der Fundamentalmatrix sorgt zum einen dafür das ihr rechter und linker Kern jeweils eine eindeutige Lösung für den Epipol des jeweiligen Bildes ergibt und die Epipolarlinien, welche mit $l = Fm_\sigma$ und $l' = F^Tm'_{\sigma'}$ berechnet werden, auch alle durch diese Epipole verlaufen\cite{HZ}. Durch Ungenauigkeiten in korrespondierenden Bildpunkten kann es dazu kommen, dass die aus dem Normierten-Acht-Punkt-Algorithmus bestimmte Fundamentalmatrix $\hat{F}$ in ihrem Rang steigt und somit keine singuläre Matrix mehr ist. Matrizen sind singulär, wenn sie keine Inverse besitzen, was durch as verschwinden der Determinante nachgewiesen werden kann\cite{FormelsammlungMatrizen}. Die Determinanten von $\hat{F}$ muss Null sein, damit sie eine singuläre Matrix ist.\\
 
-Ist $\hat{F}$ durch den erhöhten Rang keine singuläre Matrix, so ergeben der linke und der Rechte Kern von $\hat{F}$ keine eindeutigen Lösungen mehr für $e$ und $e'$ und die Epipolarlinien in beiden Bildern gehen dem enstprechend auch nicht mehr durch genau einen Punkt, wie man in den Abbildungen \ref{fig:NoEpipoleWithF1} und \ref{fig:NoEpipoleWithF2} erkennen kann. Die Abbildungen bilden Epipolarlinien aus dem Stereobildpaar \ref{fig:SurfRechts} und \ref{fig:SurfLinks} ab. Die Ursache des erhöhten Ranges von $\hat{F}$ ist in ihren Singulärwerten von $F$ zu finden.\\
+Ist $\hat{F}$ durch den erhöhten Rang keine singuläre Matrix, so ergeben der linke und der rechte Kern von $\hat{F}$ keine eindeutigen Lösungen mehr für $e$ und $e'$ und die Epipolarlinien in beiden Bildern verlaufen dementsprechend auch nicht mehr durch genau einen Punkt, wie man in den Abbildungen \ref{fig:NoEpipoleWithF1} und \ref{fig:NoEpipoleWithF2} erkennen kann. Die Abbildungen bilden Epipolarlinien aus dem Stereobildpaar \ref{fig:SurfRechts} und \ref{fig:SurfLinks} ab. Die Ursache des erhöhten Ranges von $\hat{F}$ ist in ihren Singulärwerten von $F$ zu finden.\\
 
 \pagebreak
 %
@@ -291,9 +224,9 @@ Ist $\hat{F}$ durch den erhöhten Rang keine singuläre Matrix, so ergeben der l
 
 %Um eine gültige Fundamentalmatrix für den weiteren Arbeitsprozess zu generieren, kommt hier ein sogenannter \textit{singularity constraint} zum Einsatz.
 
-Um mit dem Algorithmus weiter verfahren zu können, muss die Singularität in der noch normierten Fundamentalmatrix $\hat{F}$ erzwungen werden\cite{HZ}. Hierfür wird eine Singulärwertzerlegung an $\hat{F}$ durchgeführt, so dass $\hat{F}$ in $\hat{F} = U\Sigma V^T$ zerlegt wird. $\Sigma$ beinhaltet in einer Diagonalmatrix die Singulärwerte $D = \text{diag}(r,s,t)$. Die Diagonaleinträge erfüllen die Bedingung, dass $r \geq s \geq t $ gilt. Damit $\hat{F}$ zu einer singulären Matrix wird, muss für die Diagonaleinträge jedoch gelten, dass  $\Sigma = \text{diag}(r,s,0)$ ist. Diese Bedingung wird erzwungen, indem der letzte Eintrag $t$ auf $t = 0$ gesetzt wird. Die so modifizierte Fundamentalmatrix mit $\bar{F} = U\text{diag}(r,s,0)V^T$ wird dann wieder zusammengesetzt. Die resultierende Fundamentalmatrix $\bar{F}$ besitzt jetzt einen Rang 2 und ist somit singulär\cite{HZ}. $\bar{F}$ minimiert die Frobenius Norm $\parallel F -\bar{F} \parallel$ und ist somit die nächste zum ursprünglichen $F$ liegende singuläre Matrix von Rang 2\cite{HZ,HZ8,FormelsammlungMatrizen}. \\
+Um mit dem Algorithmus weiter verfahren zu können, muss die Singularität in der noch normierten Fundamentalmatrix $\hat{F}$ erzwungen werden\cite{HZ}. Hierfür wird eine Singulärwertzerlegung an $\hat{F}$ durchgeführt, so dass $\hat{F}$ in $\hat{F} = U\Sigma V^T$ zerlegt wird. $\Sigma$ beinhaltet in einer Diagonalmatrix die Singulärwerte $D = \text{diag}(r,s,t)$. Die Diagonaleinträge erfüllen die Bedingung, dass $r \geq s \geq t $ gilt. Damit $\hat{F}$ zu einer singulären Matrix wird, muss für die Diagonaleinträge jedoch gelten, dass  $\Sigma = \text{diag}(r,s,0)$ ist. Diese Bedingung wird erzwungen, indem der letzte Eintrag $t$ auf $t = 0$ gesetzt wird. Die so modifizierte Fundamentalmatrix mit $\bar{F} = U\text{diag}(r,s,0)V^T$ wird dann wieder zusammengesetzt. Die Fundamentalmatrix $\bar{F}$ besitzt jetzt einen Rang 2 und ist singulär\cite{HZ}. $\bar{F}$ minimiert die Frobenius Norm $\parallel \hat{F} -\bar{F} \parallel$ und ist die nächste zum ursprünglichen $F$ liegende singuläre Matrix von Rang 2\cite{HZ,HZ8,FormelsammlungMatrizen}. \\
 
-Werden aus $\bar{F}$ der rechte und linke Kern bestimmt, so ergeben sich eindeutige Lösungen für $e$ und $e'$ und die Epipolarlinien $l$ und $l'$ verlaufen jeweils durch ihre entsprechenden Epipole\cite{HZ}. Die Abbildungen \ref{fig:EpipoleWithF1} und \ref{fig:EpipoleWithF2} zeigen die Auswirkung der erzwungenen Singularität von $F$ auf dem Stereobildpaar \ref{fig:SurfRechts} und \ref{fig:SurfLinks}. Die Abbildungen \ref{fig:EpipoleWithF1Denorm} und \ref{fig:EpipoleWithF2Denorm} die selben Epipolarlinien nur ist $\bar{F}$ mit $T$ und $T'$ denormalisiert worden.\\
+Werden aus $\bar{F}$ der rechte und linke Kern bestimmt, so ergeben sich eindeutige Lösungen für $e$ und $e'$ und die Epipolarlinien $l$ und $l'$ verlaufen jeweils durch ihre entsprechenden Epipole\cite{HZ}. Die Abbildungen \ref{fig:EpipoleWithF1} und \ref{fig:EpipoleWithF2} zeigen die Auswirkung der erzwungenen Singularität von $F$ auf dem Stereobildpaar \ref{fig:SurfRechts} und \ref{fig:SurfLinks}. Die Abbildungen \ref{fig:EpipoleWithF1Denorm} und \ref{fig:EpipoleWithF2Denorm} zeigen die selben Epipolarlinien nur ist $\bar{F}$ mit $T$ und $T'$ denormalisiert worden.\\
 
 
 
@@ -336,17 +269,13 @@ Werden aus $\bar{F}$ der rechte und linke Kern bestimmt, so ergeben sich eindeut
 
 \subsection{Singulärwerte der essentiellen Matrix}
 
-Die essentielle Matrix wird im entwickelten Algorithmus aus der Fundamentalmatrix $F$ bestimmt. Da zuvor die singularität von $F$ erzwungen wurde, ist die essentielle Matrix ebenfalls eine Matrix von Rang 2\cite{HZ}. Im synthetischen Beispiel wurde gezeigt, dass für die Bestimmung der extrinsischen Kameraparameter für $E$ gelten muss, dass für ihre Singulärwerte $\Sigma = \text{diag}(1,1,0)$ gelten muss. \\
+Die essentielle Matrix wird im entwickelten Algorithmus aus der Fundamentalmatrix $F$ bestimmt. Da zuvor die singularität von $F$ erzwungen wurde, ist die essentielle Matrix ebenfalls eine Matrix von Rang 2\cite{HZ}. Im synthetischen Beispiel wurde gezeigt, dass für die Bestimmung der extrinsischen Kameraparameter für $E$ gelten muss, dass für ihre Singulärwerte $\Sigma = \text{diag}(1,1,0)$ sind. \\
 
-Die Ungenauigkeit der Punktekorrespondenzen, kann auf $E$ die Auswirkung haben, dass ihre Singulärwerte die Form $\Sigma = \text{diag}(a,b,c)$ mit $a \geq b \geq c$ annehmen. Eine Matrix gilt nur dann als gültige essentielle Matrix, wenn zwei ihrer Singulärwerte gleich sind $(a = b)$ und für den dritten gilt $(c=0)$. Um diese Bedingung zu erzwingen, wird diejenige essentielle Matirix $\hat{E}$ gesucht, welche sich laut der Frobenius Norm am nächsten an der Ursprünglichen $E$ befindet\cite{HZ,Ferid}. Diese Matrix lässt sich aus $E = U \Sigma V^T$ bestimmen, indem eine neue essentiellem Matrix $\hat{E}$ mit $\hat{E} = U \hat{\Sigma}V^T$ mit $\hat{\Sigma} = \text{diag}(\frac{a+b}{2},\frac{a+b}{2},0)$\cite{HZ} bestimmt wird.\\
+Die Ungenauigkeit der Punktekorrespondenzen, kann auf $E$ die Auswirkung haben, dass ihre Singulärwerte die Form $\Sigma = \text{diag}(a,b,c)$ mit $a \geq b \geq c$ annehmen. Eine Matrix gilt nur dann als essentielle Matrix, wenn zwei ihrer Singulärwerte gleich sind $(a = b)$ und für den dritten gilt $(c=0)$. Um diese Bedingung zu erzwingen, wird diejenige essentielle Matirix $\hat{E}$ gesucht, welche sich laut der Frobenius Norm am nächsten an der ursprünglichen $E$ befindet\cite{HZ,Ferid}. Diese Matrix lässt sich aus $E = U \Sigma V^T$ bestimmen, indem eine neue essentielle Matrix $\hat{E} = U \hat{\Sigma}V^T$ mit $\hat{\Sigma} = \text{diag}(\frac{a+b}{2},\frac{a+b}{2},0)$\cite{HZ} gebildet wird.\\
 
-Nach erzwingen der Bedingung $\hat{E} = U \hat{\Sigma}V^T$ mit $\hat{\Sigma} = \text{diag}(\frac{a+b}{2},\frac{a+b}{2},0)$, ist $E$ wieder eine gültige essentielle Matrix und der Algorithmus kann mit der Bestimmung der extrinsischen Kameraparameter, wie in Kapitel \ref{sec:minimal} gezeigt, fortfahren.\\
+Nach erzwingen der singulären Bedingung $\hat{\Sigma} = \text{diag}(\frac{a+b}{2},\frac{a+b}{2},0)$, ist $E$ wieder eine gültige essentielle Matrix und der Algorithmus kann mit der Bestimmung der extrinsischen Kameraparameter, wie in Kapitel \ref{sec:minimal} gezeigt, fortfahren.\\
 
-Das Erzwingen der singulären Bedingungen für $F$ und $E$ sind Näherungsverfahren, in welchen die Auswirkungen der Fehlerhaften Punktekorrespondenzen minimiert werden. Nur wenn $F$ und $E$ die ihre singulären Bedingungen erfüllen, können die extrinsichen Kameraparameter bestimmt und die Szene rekonstruiert werden\cite{HZ}.
-
-% wenn sie durch eine Singulärwertszerlegung in $E = U\Sigma V^T$ zerlegt wird, f
-
-%Die essentielle Matrix $E$ kann wenn sie über den \textit{eight-point-algorithm} ermittelt wird, auch eine Rang 3 Matrix anstelle einer Rang 2 Matrix sein. Eine essentielle Matrix wird darüber definiert, dass sie eine Matrix mit Rang 2 ist und ihre Singulärwerte in $D$ von $E = UDV^T$ die Eigenschaft besitzen, dass $ D = diag(a,b,c)$ mit $a=b$ und $c=0$. Sind die Singulärwerte nicht in der gezeigten Form vorhanden und $E$ hat den Rang 3, so ist sie keine gültige essenetielle Matrix\cite{HZ}. Im implementierten Algorithmus, welcher in dieser Arbeit vorgestellt wird, wird die essentielle Matrix über die Fundamentalmatrix $F$ und den intrinsischen Kameraparameter $K$ und $K'$ gewonnen. Da im vorherigen Schritt für die Matrix $F$ schon der \textit{singularity-constraint} erwirkt wurde, ist dadurch dass $F$ nun eine MAtrix von Ran 2 ist auch versichert, dass $E$ ebenfalls von Rang 2 ist. Jedoch bedeutet das nicht gleichzeitig, dass auch die Bedingungen für die Singulärwerte von $E$ erfüllt sind. Wird $E$ in $UDV^T$ zerlegt und die Singulärwerte in D haben beispielsweise die Form $D= diag(a,b,c)$ mit $a \geq b \geq c $, so muss auch hier die für $E$ typische singularität erzwungen werden. Die laut Frobenuis Norm nächste Matrix $E$ zur momentanen $E$ kann durch modifizieren der Singulärwerte von $D$ mit $D=diag(\frac{a+b}{2},\frac{a+b}{2},0)$ erzwungen werden\cite{HZ}. Mit der neuen essentiellen Matrix können dann genau wie im Kapitel \nameref{sec:minimal} auch wieder die vier möglichen Lösungen der externen Kameraparameter ermittelt werden. 
+Das Erzwingen der singulären Bedingungen für $F$ und $E$ sind Näherungsverfahren, in welchen die Auswirkungen der Fehlerhaften Punktekorrespondenzen minimiert werden. Nur wenn $F$ und $E$ ihre singulären Bedingungen erfüllen, können die extrinsischen Kameraparameter bestimmt und die Szene rekonstruiert werden\cite{HZ}.
 
 \section{Szenenrekonstruktion mit Sampson-Approximation}
 \label{sec:sampson}

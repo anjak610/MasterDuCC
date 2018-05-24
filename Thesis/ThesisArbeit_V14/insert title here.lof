@@ -35,67 +35,67 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Stereoaufbau im \IeC {\"U}berblick}}{38}{figure.caption.264}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Aufnahme von Kamera $C$}}{39}{figure.caption.266}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Aufnahme von Kamera $C'$}}{39}{figure.caption.266}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Epipolarlinien $C$ ohne Singularit\IeC {\"a}t}}{41}{figure.caption.277}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Epipolarlinien $C'$ ohne Singularit\IeC {\"a}t}}{41}{figure.caption.277}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Epipolarlinien in $C$ aus singul\IeC {\"a}rer Fundamentalmatrix}}{42}{figure.caption.278}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Epipolarlinien in $C'$ aus singul\IeC {\"a}rer Fundamentalmatrix }}{42}{figure.caption.278}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Epipolarlinien in $C$ aus singul\IeC {\"a}rer denormalisierter Fundamentalmatrix}}{42}{figure.caption.279}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Epipolarlinien in $C$ aus singul\IeC {\"a}rer denormalisierter Fundamentalmatrix}}{42}{figure.caption.279}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Windschiefe Geraden}}{43}{figure.caption.284}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Epipolare Bedingung wird nicht erf\IeC {\"u}llt}}{43}{figure.caption.284}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Problemstellung f\IeC {\"u}r die Triangulation im reellen Beispiel}}{43}{figure.caption.284}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Sampson Approximation aufstellen der Kostenfunktion}}{44}{figure.caption.287}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Rekonstruierte Szene 3D}}{49}{figure.caption.374}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Rekonstruierte Szene 2D}}{49}{figure.caption.374}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei gleicher Kameraaufl\IeC {\"o}sung}}{50}{figure.caption.384}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 5:2}}{50}{figure.caption.384}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 1:2}}{51}{figure.caption.385}
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 1.2 : 2.3}}{51}{figure.caption.385}
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Rekonstruierte Szene bei $K'$ = 5:2}}{51}{figure.caption.386}
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Rekonstruierte Szene bei $K'$ = 1:2}}{52}{figure.caption.387}
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Rekonstruierte Szene bei $K'$ = 1.2:2.3}}{52}{figure.caption.388}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Epipolarlinien $C$ ohne Singularit\IeC {\"a}t}}{42}{figure.caption.285}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Epipolarlinien $C'$ ohne Singularit\IeC {\"a}t}}{42}{figure.caption.285}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Epipolarlinien in $C$ aus singul\IeC {\"a}rer Fundamentalmatrix}}{43}{figure.caption.286}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Epipolarlinien in $C'$ aus singul\IeC {\"a}rer Fundamentalmatrix }}{43}{figure.caption.286}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Epipolarlinien in $C$ aus singul\IeC {\"a}rer denormalisierter Fundamentalmatrix}}{43}{figure.caption.287}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Epipolarlinien in $C$ aus singul\IeC {\"a}rer denormalisierter Fundamentalmatrix}}{43}{figure.caption.287}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Windschiefe Geraden}}{44}{figure.caption.292}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Epipolare Bedingung wird nicht erf\IeC {\"u}llt}}{44}{figure.caption.292}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Problemstellung f\IeC {\"u}r die Triangulation im reellen Beispiel}}{44}{figure.caption.292}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Sampson Approximation aufstellen der Kostenfunktion}}{45}{figure.caption.295}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Rekonstruierte Szene 3D}}{50}{figure.caption.382}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Rekonstruierte Szene 2D}}{50}{figure.caption.382}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei gleicher Kameraaufl\IeC {\"o}sung}}{51}{figure.caption.392}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 5:2}}{51}{figure.caption.392}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 1:2}}{52}{figure.caption.393}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 1.2 : 2.3}}{52}{figure.caption.393}
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Rekonstruierte Szene bei $K'$ = 5:2}}{52}{figure.caption.394}
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Rekonstruierte Szene bei $K'$ = 1:2}}{53}{figure.caption.395}
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Rekonstruierte Szene bei $K'$ = 1.2:2.3}}{53}{figure.caption.396}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Beispiel eines Rektifizierten Bildes mit Scanlinien}}{53}{figure.caption.390}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Arbeitsprozess der Szenenrekonstruktion mit Rektifizierung}}{54}{figure.caption.392}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Entstehung einer Disparit\IeC {\"a}tskarte}}{55}{figure.caption.393}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces virtuelle Aufnahme eines Quaders f\IeC {\"u}r die Rektifizierung}}{60}{figure.caption.476}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Epipolarlinien und Epipole vor der Rektifizierung}}{61}{figure.caption.477}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces $H_p$ und $H_p'$ Transformation}}{61}{figure.caption.478}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces $H_p$ und $H_p'$ Transformation mit Epipolarlinien}}{61}{figure.caption.478}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces $H_rH_p$ und $H_r'H_p'$ Transformation}}{63}{figure.caption.506}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces $H_rH_p$ und $H_r'H_p'$ Transformation mit Epipolarlinien}}{63}{figure.caption.506}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Wiederherstellung der Orthogonalit\IeC {\"a}t}}{64}{figure.caption.512}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces $H_sH_rH_p$ und $H_s'H_r'H_p'$ Transformation}}{65}{figure.caption.533}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces $H_sH_rH_p$ und $H_s'H_r'H_p'$ Transformation mit Epipolarlinien}}{65}{figure.caption.533}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces virtuelle Aufnahme mit unterschiedlichen Aufl\IeC {\"o}sung f\IeC {\"u}r die Rektifizierung}}{66}{figure.caption.539}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Transformation $H_p$ und $H_p'$ angewandt auf Bilder unterschiedlicher Aufl\IeC {\"o}sungen}}{66}{figure.caption.540}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Transformation $H_rH_p$ und $H_r'H_p'$ angewandt auf Bilder unterschiedlicher Aufl\IeC {\"o}sungen}}{66}{figure.caption.540}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ bei unterschiedlicher Aufl\IeC {\"o}sungen}}{67}{figure.caption.541}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ mit Epipolarlinien}}{67}{figure.caption.541}
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Rektifizierung mit $\zeta '_x = 2.3$ und $\zeta '_y = 3.2$}}{67}{figure.caption.544}
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Rektifizierung mit $\zeta '_x = 2.3$ und $\zeta '_y = 3.2$}}{67}{figure.caption.544}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Beispiel eines Rektifizierten Bildes mit Scanlinien}}{54}{figure.caption.398}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Arbeitsprozess der Szenenrekonstruktion mit Rektifizierung}}{55}{figure.caption.400}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Entstehung einer Disparit\IeC {\"a}tskarte}}{56}{figure.caption.401}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces virtuelle Aufnahme eines Quaders f\IeC {\"u}r die Rektifizierung}}{61}{figure.caption.484}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Epipolarlinien und Epipole vor der Rektifizierung}}{62}{figure.caption.485}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces $H_p$ und $H_p'$ Transformation}}{62}{figure.caption.486}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces $H_p$ und $H_p'$ Transformation mit Epipolarlinien}}{62}{figure.caption.486}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces $H_rH_p$ und $H_r'H_p'$ Transformation}}{64}{figure.caption.514}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces $H_rH_p$ und $H_r'H_p'$ Transformation mit Epipolarlinien}}{64}{figure.caption.514}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Wiederherstellung der Orthogonalit\IeC {\"a}t}}{65}{figure.caption.520}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces $H_sH_rH_p$ und $H_s'H_r'H_p'$ Transformation}}{66}{figure.caption.541}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces $H_sH_rH_p$ und $H_s'H_r'H_p'$ Transformation mit Epipolarlinien}}{66}{figure.caption.541}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces virtuelle Aufnahme mit unterschiedlichen Aufl\IeC {\"o}sung f\IeC {\"u}r die Rektifizierung}}{67}{figure.caption.547}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Transformation $H_p$ und $H_p'$ angewandt auf Bilder unterschiedlicher Aufl\IeC {\"o}sungen}}{67}{figure.caption.548}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Transformation $H_rH_p$ und $H_r'H_p'$ angewandt auf Bilder unterschiedlicher Aufl\IeC {\"o}sungen}}{67}{figure.caption.548}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ bei unterschiedlicher Aufl\IeC {\"o}sungen}}{68}{figure.caption.549}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Transformation $H_sH_rH_p$ und $H_s'H_r'H_p'$ mit Epipolarlinien}}{68}{figure.caption.549}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Rektifizierung mit $\zeta '_x = 2.3$ und $\zeta '_y = 3.2$}}{68}{figure.caption.552}
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Rektifizierung mit $\zeta '_x = 2.3$ und $\zeta '_y = 3.2$}}{68}{figure.caption.552}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Funktions\IeC {\"u}bersicht des Sorieralgorithmus}}{68}{figure.caption.546}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Startpunktsuche in Schachbrettpunkten}}{69}{figure.caption.548}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Finden der Startvektoren in Schachbrettpunkten}}{71}{figure.caption.549}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces \IeC {\"U}berpr\IeC {\"u}fung des gefundenen $NextI$}}{72}{figure.caption.550}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Suche nach $NextJ$}}{73}{figure.caption.551}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Suche nach dem n\IeC {\"a}chsten $NextI$}}{75}{figure.caption.552}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Sicherheitsfunktion $SaftyList$}}{75}{figure.caption.553}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Korrespondezsuche mit Sortierungsalgorithmus. Schachbrett auf linker Seite}}{76}{figure.caption.554}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Korrespondezsuche mit Sortierungsalgorithmus. Schachbrett auf rechter Seite}}{76}{figure.caption.554}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Ergebnis des Sortierungsalgorithmus. Schachbrett auf linker Seite}}{76}{figure.caption.555}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Ergebnis des Sortierungsalgorithmus. Schachbrett auf linker Seite}}{76}{figure.caption.555}
-\contentsline {figure}{\numberline {7.12}{\ignorespaces Schachbrett mit Tonnenverzeichnung}}{77}{figure.caption.557}
-\contentsline {figure}{\numberline {7.13}{\ignorespaces Sortierte Punkte eines Schachbretts mit Tonnenverzeichnung}}{77}{figure.caption.557}
-\contentsline {figure}{\numberline {7.14}{\ignorespaces perspektivisch startk verzerrtes Schachbrett}}{77}{figure.caption.558}
-\contentsline {figure}{\numberline {7.15}{\ignorespaces Sortierte Punkte eines perspektivisch verzerrten Schachbretts}}{77}{figure.caption.558}
-\contentsline {figure}{\numberline {7.16}{\ignorespaces Schachbrett mit Kissenverzeichnung}}{78}{figure.caption.559}
-\contentsline {figure}{\numberline {7.17}{\ignorespaces Sortierte Punkte eines Schachbretts mit Kissenverzeichnung }}{78}{figure.caption.559}
-\contentsline {figure}{\numberline {7.18}{\ignorespaces Perspektivisch verzerrtes Schachbrett mit Tonnenverzeichnung}}{78}{figure.caption.560}
-\contentsline {figure}{\numberline {7.19}{\ignorespaces Sortieret Punkte eines perspektivisch verzerrten Schachbretts mit Tonnenverzeichnung}}{78}{figure.caption.560}
-\contentsline {figure}{\numberline {7.20}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{78}{figure.caption.561}
-\contentsline {figure}{\numberline {7.21}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{78}{figure.caption.561}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Funktions\IeC {\"u}bersicht des Sorieralgorithmus}}{69}{figure.caption.554}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Startpunktsuche in Schachbrettpunkten}}{70}{figure.caption.556}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Finden der Startvektoren in Schachbrettpunkten}}{72}{figure.caption.557}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces \IeC {\"U}berpr\IeC {\"u}fung des gefundenen $NextI$}}{73}{figure.caption.558}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Suche nach $NextJ$}}{74}{figure.caption.559}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Suche nach dem n\IeC {\"a}chsten $NextI$}}{76}{figure.caption.560}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Sicherheitsfunktion $SaftyList$}}{76}{figure.caption.561}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Korrespondezsuche mit Sortierungsalgorithmus. Schachbrett auf linker Seite}}{77}{figure.caption.562}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Korrespondezsuche mit Sortierungsalgorithmus. Schachbrett auf rechter Seite}}{77}{figure.caption.562}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Ergebnis des Sortierungsalgorithmus. Schachbrett auf linker Seite}}{77}{figure.caption.563}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Ergebnis des Sortierungsalgorithmus. Schachbrett auf linker Seite}}{77}{figure.caption.563}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Schachbrett mit Tonnenverzeichnung}}{78}{figure.caption.565}
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Sortierte Punkte eines Schachbretts mit Tonnenverzeichnung}}{78}{figure.caption.565}
+\contentsline {figure}{\numberline {7.14}{\ignorespaces perspektivisch startk verzerrtes Schachbrett}}{78}{figure.caption.566}
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Sortierte Punkte eines perspektivisch verzerrten Schachbretts}}{78}{figure.caption.566}
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Schachbrett mit Kissenverzeichnung}}{79}{figure.caption.567}
+\contentsline {figure}{\numberline {7.17}{\ignorespaces Sortierte Punkte eines Schachbretts mit Kissenverzeichnung }}{79}{figure.caption.567}
+\contentsline {figure}{\numberline {7.18}{\ignorespaces Perspektivisch verzerrtes Schachbrett mit Tonnenverzeichnung}}{79}{figure.caption.568}
+\contentsline {figure}{\numberline {7.19}{\ignorespaces Sortieret Punkte eines perspektivisch verzerrten Schachbretts mit Tonnenverzeichnung}}{79}{figure.caption.568}
+\contentsline {figure}{\numberline {7.20}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{79}{figure.caption.569}
+\contentsline {figure}{\numberline {7.21}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{79}{figure.caption.569}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

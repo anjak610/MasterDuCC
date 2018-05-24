@@ -1,7 +1,77 @@
 \addchap{Abstract}
- 
- Over the last decades computer vision scientist have taken a new approach to vision. They build different computational models of what shoud be computed, what can really be computed, and how these computations can be realized by computer programs, and they use computers to test their models are correct. The result is a better understandung of vision from a different point of view, and at the same time some working artificial vision systems are built that can be used in idustry, medicine, etc. The knowledge obtained on neirophysiology and psychophysics have given hints to and influenced computer vision scientists, helping find solutions to the design of specific algorithms and implementation of vision systems. On the other Hand coputational vision has also given nerophysiologists and psychophysicsist a mathematical framework for modeling vision processes.\cite{ZZGXr}
- 
- 
- Abstract: wichtigkeit/aktualität von szenenrekonstruktion...  In dieser arbeit wurde ein szenenenrekonstruktionsalgorithnus implementiert und getestet... der implemtierte algorithmus wurde implementiert um bilder verschiedene Kamera-Auflösung zu rekonstruieren...
- Ergebniss: algorithmus funktionier, mit einigen problemen, wobei erste lösungsvorschläge aufgezeigt werden
+
+
+Die 3D-Szenenrekonstruktion ist ein Teilgebiet der Computer Vision und beschäftigt sich mit der Rekonstruktion von 3D-Szenen aus 2D-Bildquellen. Gerade durch die aktuellen Forschungsbereiche wie autonomes Fahren oder im Bereich Medizin um 3D-Szenen aus endoskopisch erzeigten Bildern, wird heutzutage ein sehr hoher Forschungsaufwand betrieben. Das Ziel ist es mit möglichst effizienten Algorithmen 3D-Bildinformationen aus zweidimensionalen Bilddaten zu erhalten.\\
+
+In dieser Arbeit wurde ein Szenenrekonstruktionsalgorithmus entwickelt, welcher sowohl in der Lage sein soll die extrinsischen Kameraparameter zu bestimmen als auch 3D-Szenen aus Bildquellen unterschiedlicher Auflösung zu rekonstruieren. Voraussetzung für die Verwendung des Algorithmus ist, dass intrinsische Kameraparameter bekannt sein müssen. Der Algorithmus wurde anhand eines synthetisch erstellten Stereoaufbaus entwickelt und validiert. Das Ergebnis wurde dann an reellen Stereoaufnahmen zweier Kameras getestet und entsprechend erweitert. Das Resultat ist ein funktionsfähiger Algorithmus, welcher aus Punktekorrespondenzen in einem Stereobildpaar mit unterschiedlichen Auflösungen extrinsische Kameraparameter bestimmen und eine 3D-Szenen rekonstruieren kann. Bei den Ergebnissen der Rekonstrukion ist mit Ungenauigkeiten zu rechnen, da Auswirkungen von Bildfehlern, wie Rauschen, durch Näherungsverfahren minimiert wurden.\\
+
+Für die Detektion von Punktekorrespondenzen zwischen den Bildern wurde eine bereits vorhandene Funktion in Mathematica angewandt. Im Verlauf der Arbeit ist jedoch auch der Ansatz eines Algorithmus entwickelt worden, welcher im Stande ist Punktekorrespondenzen aus Bilder von zweidimensionalen Schachbrettmustern zu detektieren. \\ 
+
+%In der Rekonstruktion mit reellen Bilddaten ist mit Ungenauigkeiten in den Ergebnissen zu rechnen.
+%
+% ...(keine ahnung, weil es keinen einblick in den Surf Algorithmus gibt, Bildfehler etc... noch schauen)\\
+
+Abschließend wurde ein Verfahren der schnellen Rekonstruktion durch Rektifizierung eines Stereobildpaares, wie es in vielen Computer-Vision-Applikationen angewandt wird, analysiert und getestet. Dabei wurde ein Rektifizierungsansatz nach \textit{Zhengyou Zhang} implementiert und die Auswirkung von unterschiedlichen Kameraauflösungen auf die Ergebnisse der Rektifizierung beobachtet.  
+
+%wie sich unterschiedliche Kameraauflösungen auf die Ergebnisse der Rektifizierung auswirken und welche möglichen Lösungen es gibt.
+
+
+%Die Grundlagen der Rekonstruktion bilden die Bildaufnahme und die Bildanalyse.  
+%
+%Gerade im heutigen technischen Zeitalter wird die Entwicklung von ..... vorangetrieben \\
+%
+%
+%Der in dieser Masterarbeit entstandenen Szenenrekonstruktionsalgorithmus ist in der Lage die aus einem stereobildpaar die extrinsischen Kameraparameter zu bestimmen und  zu bestimmen und 
+%
+%
+%In dieser Masterarbeit wird ein Szenenrekonstruktionsalgorithmus vorgestellt, welcher in der Lage ist extrinsische Kameraparameter zu bestimmen aus stereoskopischen Bildquellen unterschiedlicher Auflösung eine 3D-Szene zu rekonstruieren.\\
+
+
+%
+%In dieser Masterarbeit ist ein Szenenrekonstruktionsalgorithmus entstanden, welcher 3D-Szenen aus Stereobildquellen zu rekonstruieren kann. Der implementierte Algorithmussollte dabei zusätzlich in der Lage sein Szenen aus Bildern unterschiedlicher Auflösung zu rekonstruieren.\\
+
+
+%Ein Algorithmus zur Sortierung von Eckpunkten in einem Schachbrett
+%
+%Des Weiteren wurde ein Rektifizierungsansatz implementiert, welcher Bilder unterschiedlicher Auflösung rektifiezieren sollte.
+%
+%Die genauen geometrischen Beziehungen wurden analysiert
+%
+%Rekonstruktion gelingt mit unterschiedlichen Kameraauflösungen 
+%
+%Wie wurde gearbeitet:
+%
+%virtuelle Tesetumgebung wurde geschaffen, die Ergebnisse der synthetischen Tests wurden in einem realen Beispiel überprüft
+%
+%Probleme auf welche in der rellen Rekonstruktion gestoßen wurde, konnten im synthetischen Beispiel rekonstruiert und Lösungsansätze gefunden werden.
+
+
+
+
+
+%
+% 
+% Abstract: wichtigkeit/aktualität von szenenrekonstruktion...  In dieser arbeit wurde ein szenenenrekonstruktionsalgorithnus implementiert und getestet... der implemtierte algorithmus wurde implementiert um bilder verschiedene Kamera-Auflösung zu rekonstruieren...
+% Ergebniss: algorithmus funktionier, mit einigen problemen, wobei erste lösungsvorschläge aufgezeigt werden
+% 
+% 
+% Thema und Zielsetzung: Stellen Sie zunächst Thema und Zielstellung der Arbeit vor.\\
+% 
+%  Von der Computergrafik über die soziale Robotik bis hin zu autonomen Fahrzeugen - Computer Vision ermöglicht neue Technologien, die die Welt verändern.\\
+% 
+% Szenenrekonstruktion aus Stereobildquellen\\
+% 
+% 
+% 
+% Theorie: Vermitteln Sie Ihre Theorie(n) über das Thema und geben Sie an, auf was sich Ihre Theorie\\ stützt.
+% 
+% Fragestellung: Teilen Sie mit, welche Fragen in der folgenden Arbeit beantwortet werden.\\
+% 
+% Quellen: Welche Quellen haben Sie für Ihre Arbeit genutzt bzw. wie haben Sie Ihre Frage(n) beantwortet?\\
+% 
+% Ergebnis: Führen Sie Ihre Ergebnisse auf, also teilen Sie mit, was Sie herausgefunden haben.\\
+% 
+% Fazit: Stellen Sie am Ende des Abstracts eine Quintessenz auf. Sie können Ihr Fazit auch mit einer Zukunftsprognose verbinden.\\
+% 
+% Thema und Zielsetzung:
+
