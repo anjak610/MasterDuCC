@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     66353,       1518]
-NotebookOptionsPosition[     65942,       1502]
-NotebookOutlinePosition[     66287,       1517]
-CellTagsIndexPosition[     66244,       1514]
+NotebookDataLength[     63717,       1451]
+NotebookOptionsPosition[     63307,       1435]
+NotebookOutlinePosition[     63651,       1450]
+CellTagsIndexPosition[     63608,       1447]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,10 +22,19 @@ Cell[BoxData[
  RowBox[{"\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
-   "Help", " ", "functions___", "___", "___", "___", "___", "___", "___", 
+   "Define", " ", "synthetic", " ", "stereo", " ", "setup", " ", "and", " ", 
+    "computation", " ", "of", " ", "Fundamentalmatrix"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "___", "___", "___", "___", "___", "___", "___", "___", "___", "___", 
     "___", "___", "___", "___", "___", "___", "___", "___", "___", "___", 
-    "___", "___", "___", "___", "___", "___", "___", "___", "___", "___", 
-    "___", "___", "___", "___", "___", "___"}], "*)"}], "\[IndentingNewLine]", 
+    "___", "__"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Moduls", " ", "for", " ", "camera", " ", "orientation", "__", "___", 
+    "___", "___", "___", "___", "___", "___", "___", "__"}], "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{
@@ -116,10 +125,9 @@ Cell[BoxData[
       "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
-    "Computation", " ", "starts", " ", "here___", "___", "___", "___", "___", 
-     "___", "___", "___", "___", "___", "___", "___", "___", "___", "___", 
-     "___", "___", "___", "___", "___", "___", "___", "___", "___", "___", 
-     "___", "___", "___", "___", "___"}], "*)"}], "\[IndentingNewLine]", 
+    "Start", " ", "of", " ", "Computation___", "___", "___", "___", "___", 
+     "___", "___", "___", "___", "___", "___", "__"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"StartComputation", "[", "]"}], ":=", 
@@ -131,6 +139,11 @@ Cell[BoxData[
          RowBox[{"Rot1", ",", "Rot2", ",", "Oc2", ",", "zeta2"}], "]"}], 
         ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]",
     "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Place", " ", "Cameras", " ", "in", " ", "3", "D", " ", "Scene___", "___",
+      "___", "___", "___", "___", "___", "___", "___", "___", "_"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ComputeTranslationAndRotation", "[", 
@@ -345,6 +358,10 @@ Cell[BoxData[
           ",", "M", ",", "PM1", ",", "PM2", ",", "M2"}], "]"}], ";"}]}], 
       "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Compute", " ", "Projectionmatrices___", "___", "___", "___", "___", 
+     "___", "___", "___", "___", "__"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ComputeProjectionMtx", "[", 
@@ -377,6 +394,10 @@ Cell[BoxData[
          RowBox[{"ProjectionMtxCamera1", ",", "ProjectionMtxCamera2"}], "]"}],
          ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}], 
     ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Project", " ", "Points", " ", "to", " ", "Imageplanes", " ", "in", " ", 
+     "cameracoordinates___", "___", "___"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ComputeProjectedPointsCamera1And2", "[", 
@@ -418,26 +439,7 @@ Cell[BoxData[
          RowBox[{"\"\<CameraProjectedPointsK2 = \>\"", ",", " ", 
           RowBox[{"MatrixForm", "[", 
            RowBox[{"N", "[", "CameraProjectedPointsK2", "]"}], "]"}]}], "]"}],
-         ";", "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{"CameraProjectedPointsK2", "=", 
-           RowBox[{"Map", "[", 
-            RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"{", 
-                  RowBox[{"5", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
-                 RowBox[{"{", 
-                  RowBox[{"0", ",", "5", ",", "0", ",", "0"}], "}"}], ",", 
-                 RowBox[{"{", 
-                  RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
-                 RowBox[{"{", 
-                  RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}]}], "}"}],
-                ".", "#"}], "&"}], ",", "CameraProjectedPointsK2"}], "]"}]}], 
-          ";"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"For", "[", 
          RowBox[{
           RowBox[{"i", "=", "1"}], ",", 
@@ -464,12 +466,7 @@ Cell[BoxData[
               RowBox[{"[", 
                RowBox[{"i", ",", "4"}], "]"}], "]"}]}]}], ";"}]}], 
          "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{"CameraProjectedPointsK2", "=", 
-           RowBox[{"A", ".", "CameraProjectedPointsK2"}]}], ";"}], "*)"}], 
-        "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"Print", "[", 
          RowBox[{"\"\<homogene CameraProjectedPointsK1 = \>\"", ",", " ", 
           RowBox[{"MatrixForm", "[", "CameraProjectedPointsK1", "]"}]}], 
@@ -497,12 +494,6 @@ Epipol_______________________________________________\>\"", "]"}], ";",
         "Print", "[", 
          "\"\<End construct \
 Epipol_______________________________________________\>\"", "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-         "Grapics___", "___", "___", "___", "___", "___", "___", "___", "___",
-           "___", "___", "___", "___", "___", "___", "___", "___", "___", 
-          "___", "___", "___", "___", "___", "___", "__"}], "*)"}], 
         "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"GraphicPointsC1", " ", "=", " ", 
          RowBox[{"Map", "[", 
@@ -709,7 +700,12 @@ Epipol_______________________________________________\>\"", "]"}], ";",
          RowBox[{
          "CameraProjectedPointsK1", ",", "CameraProjectedPointsK2", ",", "G1",
            ",", "G2"}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}],
-    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Norm", " ", "Points", " ", "to", " ", "Imageplanes___", "___", "___", 
+     "___", "___", "___", "___", "___", "___", "__"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ComputeProjectedPointsOnImagePlane1And2", "[", 
@@ -741,36 +737,6 @@ Epipol_______________________________________________\>\"", "]"}], ";",
        RowBox[{
         RowBox[{"PixelPitch", "=", "100"}], ";", "\[IndentingNewLine]", 
         "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{"SensorProjectionMtx1", " ", "=", " ", 
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"-", "zeta1"}], "/", "PixelPitch"}], ",", "0", ",", 
-               "0"}], "}"}], ",", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", 
-               RowBox[{"zeta1", "/", "PixelPitch"}], ",", "0"}], "}"}], ",", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";", 
-          "\[IndentingNewLine]", 
-          RowBox[{"SensorProjectionMtx1", " ", "=", " ", 
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"-", "zeta2"}], "/", "PixelPitch"}], ",", "0", ",", 
-               "0"}], "}"}], ",", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", 
-               RowBox[{"zeta2", "/", "PixelPitch"}], ",", "0"}], "}"}], ",", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";"}], 
-         "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"ImagePlaneC1Points", "=", 
          RowBox[{"Map", "[", 
           RowBox[{
@@ -798,23 +764,7 @@ Epipol_______________________________________________\>\"", "]"}], ";",
               RowBox[{"#", "[", 
                RowBox[{"[", "4", "]"}], "]"}]}], "}"}], "&"}], ",", 
            "CameraProjectedPointsK2"}], " ", "]"}]}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{"ImagePlaneC2Points", "=", 
-           RowBox[{"Map", "[", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"A", ".", "#"}], "&"}], ",", "ImagePlaneC2Points"}], 
-            "]"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{"ImagePlaneC1Points", "=", 
-           RowBox[{"ImagePlaneC1Points", ".", "SensorProjectionMtx2"}]}], ";",
-           "\[IndentingNewLine]", 
-          RowBox[{"ImagePlaneC2Points", "=", 
-           RowBox[{"ImagePlaneC1Points", ".", "SensorProjectionMtx2"}]}], " ",
-           ";"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"Print", "[", 
          RowBox[{"\"\<ImagePlaneC1Points = \>\"", ",", " ", 
           RowBox[{"MatrixForm", "[", 
@@ -825,41 +775,17 @@ Epipol_______________________________________________\>\"", "]"}], ";",
           RowBox[{"MatrixForm", "[", 
            RowBox[{"N", "[", "ImagePlaneC2Points", "]"}], "]"}]}], "]"}], ";",
          "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{
-          "If", " ", "PixelPitch", " ", "is", " ", "for", " ", "example", " ",
-            "100", " ", "width", " ", "and", " ", "100", " ", "height"}], ",",
-           " ", 
-          RowBox[{
-           RowBox[{
-           "then", " ", "it", " ", "is", " ", "nessecary", " ", "to", " ", 
-            "create", " ", "a", " ", "new", " ", "ProjectionMatrix", 
-            "\[IndentingNewLine]", "\[IndentingNewLine]", 
-            "SensorProjectionMtx"}], " ", "=", " ", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"-", "zeta"}], "/", "PixelPitch"}], ",", "0", ",", 
-                 "0"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"0", ",", 
-                 RowBox[{"zeta", "/", "PixelPitch"}], ",", "0"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], 
-             "\[IndentingNewLine]", "SensorPoints"}], " ", "=", " ", 
-            RowBox[{"SensorProjectionMtx", ".", "ImagePlanePoints"}]}]}]}], 
-         "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"ComputeFundamentalMatrix", "[", 
          RowBox[{
          "ImagePlaneC1Points", ",", "ImagePlaneC2Points", ",", "G1", ",", 
           "G2"}], "]"}], ";"}]}], "\[IndentingNewLine]", 
       "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Compute", " ", "Fundamentalmatrix", " ", "with", " ", "8"}], 
+     "-", "Point", "-", 
+     RowBox[{"Algorithm___", "___", "_"}]}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ComputeFundamentalMatrix", "[", 
@@ -1080,8 +1006,7 @@ Epipol_______________________________________________\>\"", "]"}], ";",
          RowBox[{"\"\<EpipoleLines = \>\"", ",", " ", 
           RowBox[{"MatrixForm", "[", 
            RowBox[{"N", "[", "EpipoleLines", "]"}], "]"}]}], "]"}], ";", 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"Print", "[", 
          RowBox[{"Show", "[", 
           RowBox[{"G2", ",", 
@@ -1491,8 +1416,16 @@ Epipol_______________________________________________\>\"", "]"}], ";",
    3.7341834068552136`*^9, 3.734183463273181*^9}, {3.734183533025812*^9, 
    3.7341835809058185`*^9}, {3.7341837266278353`*^9, 3.734183726801817*^9}, {
    3.73418378856921*^9, 3.7341838365201893`*^9}, {3.734189122129545*^9, 
-   3.734189122588517*^9}, {3.7356526167400365`*^9, 
-   3.735652666342019*^9}},ExpressionUUID->"39c15e3f-e3ea-40a2-813b-\
+   3.734189122588517*^9}, {3.7356526167400365`*^9, 3.735652666342019*^9}, {
+   3.7362561253706903`*^9, 3.7362561841056967`*^9}, {3.736256229957984*^9, 
+   3.7362562697145452`*^9}, {3.7362563026421385`*^9, 3.736256336240359*^9}, {
+   3.736256474538393*^9, 3.736256548058352*^9}, {3.736256605164443*^9, 
+   3.736256626479814*^9}, {3.736260139309803*^9, 3.7362601636705465`*^9}, {
+   3.736263882517822*^9, 3.736263905944422*^9}, {3.7362639760112576`*^9, 
+   3.736263994128383*^9}, {3.7362640534820695`*^9, 3.7362640882397594`*^9}, {
+   3.7362644259185205`*^9, 3.736264456886073*^9}, {3.7362647383035913`*^9, 
+   3.73626475288124*^9}, 3.736264933754318*^9, {3.736265045234285*^9, 
+   3.736265047705742*^9}},ExpressionUUID->"39c15e3f-e3ea-40a2-813b-\
 9a9898e6c8f7"],
 
 Cell[BoxData[""], "Input",
@@ -1500,8 +1433,8 @@ Cell[BoxData[""], "Input",
   3.7307826916187973`*^9}},ExpressionUUID->"d087d435-e370-472a-8959-\
 9a2e6665abe2"]
 },
-WindowSize->{958, 987},
-WindowMargins->{{Automatic, -1928}, {Automatic, 0}},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1516,9 +1449,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 65223, 1475, 5749, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 62588, 1408, 4871, "Input", "ExpressionUUID" -> \
 "39c15e3f-e3ea-40a2-813b-9a9898e6c8f7"],
-Cell[65784, 1497, 154, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[63149, 1430, 154, 3, 30, "Input", "ExpressionUUID" -> \
 "d087d435-e370-472a-8959-9a2e6665abe2"]
 }
 ]
