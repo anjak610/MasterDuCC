@@ -34,9 +34,9 @@
 \contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{66}{section.542}
 \contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{69}{chapter.553}
 \contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{70}{section.555}
-\contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{78}{section.564}
-\contentsline {chapter}{\numberline {8}Fazit}{80}{chapter.570}
-\contentsline {chapter}{\nonumberline Anhang}{81}{chapter*.571}
-\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{82}{chapter*.572}
-\contentsline {chapter}{Abbildungsverzeichnis}{83}{chapter*.573}
-\contentsline {chapter}{Literaturverzeichnis}{85}{chapter*.574}
+\contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{77}{section.563}
+\contentsline {chapter}{\numberline {8}Fazit}{80}{chapter.569}
+\contentsline {chapter}{\nonumberline Anhang}{81}{chapter*.570}
+\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{82}{chapter*.571}
+\contentsline {chapter}{Abbildungsverzeichnis}{83}{chapter*.572}
+\contentsline {chapter}{Literaturverzeichnis}{85}{chapter*.573}
