@@ -21,12 +21,12 @@
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Einfache Triangulation}}{29}{figure.caption.217}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Skalierung der Rekonstruierten Szene}}{30}{figure.caption.229}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Programmplot der rekonstruierten Szene}}{31}{figure.caption.230}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Aufbau CMOS Sensor}}{33}{figure.caption.233}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Aufbau CMOS Sensor}}{32}{figure.caption.233}
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Nachbarschaftsoperation auf Sensoren}}{33}{figure.caption.234}
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Sensorkoordinatensystem bei Kameras gleicher Aufl\IeC {\"o}sung}}{34}{figure.caption.236}
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Sensorkoordinatensystem bei Kameras unterschiedlicher Aufl\IeC {\"o}sung}}{34}{figure.caption.236}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Abbildungen bei $K' = K$}}{35}{figure.caption.258}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Abbildung bei $K'_1$}}{35}{figure.caption.258}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Abbildungen bei $K' = K$}}{36}{figure.caption.258}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Abbildung bei $K'_1$}}{36}{figure.caption.258}
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Abbildungen bei $K'_2$}}{36}{figure.caption.259}
 \contentsline {figure}{\numberline {4.17}{\ignorespaces Abbildungen bei $K'_3$}}{36}{figure.caption.259}
 \contentsline {figure}{\numberline {4.18}{\ignorespaces Rekonstruierte Szene bei unterschiedlichen Kameraaufl\IeC {\"o}sungen}}{37}{figure.caption.260}
@@ -35,18 +35,18 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Stereoaufbau im \IeC {\"U}berblick}}{39}{figure.caption.264}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Aufnahme von Kamera $C$}}{40}{figure.caption.266}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Aufnahme von Kamera $C'$}}{40}{figure.caption.266}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Epipolarlinien $C$ ohne Singularit\IeC {\"a}t}}{43}{figure.caption.285}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Epipolarlinien $C'$ ohne Singularit\IeC {\"a}t}}{43}{figure.caption.285}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Epipolarlinien in $C$ aus singul\IeC {\"a}rer Fundamentalmatrix}}{44}{figure.caption.286}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Epipolarlinien in $C'$ aus singul\IeC {\"a}rer Fundamentalmatrix }}{44}{figure.caption.286}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Epipolarlinien $C$ ohne Singularit\IeC {\"a}t}}{42}{figure.caption.285}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Epipolarlinien $C'$ ohne Singularit\IeC {\"a}t}}{42}{figure.caption.285}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Epipolarlinien in $C$ aus singul\IeC {\"a}rer Fundamentalmatrix}}{43}{figure.caption.286}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Epipolarlinien in $C'$ aus singul\IeC {\"a}rer Fundamentalmatrix }}{43}{figure.caption.286}
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Epipolarlinien in $C$ aus singul\IeC {\"a}rer denormalisierter Fundamentalmatrix}}{44}{figure.caption.287}
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Epipolarlinien in $C$ aus singul\IeC {\"a}rer denormalisierter Fundamentalmatrix}}{44}{figure.caption.287}
 \contentsline {figure}{\numberline {5.11}{\ignorespaces Windschiefe Geraden}}{45}{figure.caption.292}
 \contentsline {figure}{\numberline {5.12}{\ignorespaces Epipolare Bedingung wird nicht erf\IeC {\"u}llt}}{45}{figure.caption.292}
 \contentsline {figure}{\numberline {5.13}{\ignorespaces Problemstellung f\IeC {\"u}r die Triangulation im reellen Beispiel}}{45}{figure.caption.292}
 \contentsline {figure}{\numberline {5.14}{\ignorespaces Sampson Approximation aufstellen der Kostenfunktion}}{46}{figure.caption.295}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Rekonstruierte Szene 3D}}{51}{figure.caption.382}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Rekonstruierte Szene 2D}}{51}{figure.caption.382}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Rekonstruierte Szene 3D}}{50}{figure.caption.382}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Rekonstruierte Szene 2D}}{50}{figure.caption.382}
 \contentsline {figure}{\numberline {5.17}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei gleicher Kameraaufl\IeC {\"o}sung}}{52}{figure.caption.392}
 \contentsline {figure}{\numberline {5.18}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 5:2}}{52}{figure.caption.392}
 \contentsline {figure}{\numberline {5.19}{\ignorespaces Vier L\IeC {\"o}sungen f\IeC {\"u}r $T$ bei $K'$ mit 1:2}}{52}{figure.caption.393}
@@ -95,7 +95,6 @@
 \contentsline {figure}{\numberline {7.18}{\ignorespaces Sortieret Punkte eines perspektivisch verzerrten Schachbretts mit Tonnenverzeichnung}}{80}{figure.caption.567}
 \contentsline {figure}{\numberline {7.19}{\ignorespaces Bild eines Tonnenf\IeC {\"o}rmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts\relax }}{80}{figure.caption.568}
 \contentsline {figure}{\numberline {7.20}{\ignorespaces Algorithmisch detektierte Linie der dritten i-Reihe\relax }}{80}{figure.caption.568}
-\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

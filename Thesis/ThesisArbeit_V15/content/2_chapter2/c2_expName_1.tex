@@ -12,6 +12,13 @@ Die Geometrie eines Sensors kann als eine  $M \times N$ - Matrix, bestehend aus 
 
 Ein Sensor hat eine maximale Auflösung. Die maximale Anzahl der Sensorelemente auf einem Sensor beschreit die maximale Auflösung. Verschiedene Kameras können aus diesem Grund verschiedenen Auflösungen besitzen. Die Anzahl und Größe der Einzelnen Sensorelemente variiert mit den Größen der Sensorchips. Je größer ein Sensor ist und je mehr Sensorelemente er besitzt, desto besser ist die Bildqualität\cite{Photonik}. Bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}. Auch ist es möglich die Auflösung eines Sensors digital zu verändern. Wird eine Auflöung kleiner der maximalen Auflösung eingesteltt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen. Benachbarte Pixel werden hier zu einem neuen Pixel definiert\cite{Photonik}. Ein neuer Pixel wird aus den benachbarten Pixeln berechnet.\\
 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\linewidth]{images/Bildsensor_mit_Pixel.png}
+	\caption[Aufbau CMOS Sensor]{Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Sensorelementen. Vergleiche \cite{Photonik}} 
+	\label{fig:Sensor}
+\end{figure}
+\pagebreak
 
 Eine Veränderung der Auflösung kann auch eine Änderung der Seitenverhältnisse mit einschließen. Ändert sich das Seitenverhältnis so wird der Bereich der lichtempfindlichen Fläche auf dem Sensor beschränkt\cite{Photonik}. Dies führt dazu, dass sich die Bildausschnnitte ändern. Abbildung \ref{fig:SensorResolutions} stellt schematisch da wie sich die lichtempfindlichen Bereiche auf dem Sensor bei unterschiedlichen Auflösungen ändert.
 
@@ -19,12 +26,7 @@ Eine Veränderung der Auflösung kann auch eine Änderung der Seitenverhältniss
 
 
 
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=.7\linewidth]{images/Bildsensor_mit_Pixel.png}
-	\caption[Aufbau CMOS Sensor]{Rechteckiger Bildsensor mit darauf sich befindendenden quadratischen Sensorelementen. Vergleiche \cite{Photonik}} 
-	\label{fig:Sensor}
-\end{figure}
+
 
 %\begin{minipage}{\linewidth}
 %	\centering
@@ -35,20 +37,20 @@ Eine Veränderung der Auflösung kann auch eine Änderung der Seitenverhältniss
 
 %
 %Ein Sensor hat eine maximale Auflösung. Die maximale Anzahl der Sensorelemente auf einem Sensor beschreit die maximale Auflösung. Verschiedene Kameras können aus diesem Grund verschiedenen Auflösungen besitzen. Die Anzahl und Größe der Einzelnen Sensorelemente variiert mit den Größen der Sensorchips. Je größer ein Sensor ist und je mehr Sensorelemente er besitzt, desto besser ist die Bildqualität\cite{Photonik}. Bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}. Auch ist es möglich die Auflösung eines Sensors digital zu verändern. Wird eine Auflöung kleiner der maximalen Auflösung eingesteltt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen. Benachbarte Pixel werden hier zu einem neuen Pixel definiert\cite{Photonik}. Ein neuer Pixel wird aus den benachbarten Pixeln berechnet.\\
-
-
-
-
-Eine Veränderung der Auflösung kann auch eine Änderung der Seitenverhältnisse mit einschließen. Ändert sich das Seitenverhältnis so wird der Bereich der lichtempfindlichen Fläche auf dem Sensor beschränkt\cite{Photonik}. Dies führt dazu, dass sich die Bildausschnnitte ändern. Abbildung \ref{fig:SensorResolutions} stellt schematisch da wie sich die lichtempfindlichen Bereiche auf dem Sensor bei unterschiedlichen Auflösungen ändert.
-
-
-
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1.\linewidth]{images/AufloesungSensor.png}
 	\caption[Nachbarschaftsoperation auf Sensoren]{Bild a) zeigt die den Zusammenschluss mehrerer benachbarter Pixel zu einem neuen Pixel. Bild b) zeigt in gelb markiert, den aktiven lichtempfindlichen Bereich des Sensors, wenn sich das Seitenverhältnis geändert wird und nicht mehr der komplette Sensor genutzt wird.} 
 	\label{fig:SensorResolutions}
 \end{figure}
+
+
+%
+%Eine Veränderung der Auflösung kann auch eine Änderung der Seitenverhältnisse mit einschließen. Ändert sich das Seitenverhältnis so wird der Bereich der lichtempfindlichen Fläche auf dem Sensor beschränkt\cite{Photonik}. Dies führt dazu, dass sich die Bildausschnnitte ändern. Abbildung \ref{fig:SensorResolutions} stellt schematisch da wie sich die lichtempfindlichen Bereiche auf dem Sensor bei unterschiedlichen Auflösungen ändert.
+
+
+
+
 
 \pagebreak
 

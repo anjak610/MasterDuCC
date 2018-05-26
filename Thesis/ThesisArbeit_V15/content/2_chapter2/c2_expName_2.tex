@@ -200,7 +200,7 @@ Die aus den Punktekorrespondenzen bestimmte Fundamentalmatrix muss eine singulä
 
 Ist $\hat{F}$ durch den erhöhten Rang keine singuläre Matrix, so ergeben der linke und der rechte Kern von $\hat{F}$ keine eindeutigen Lösungen mehr für $e$ und $e'$ und die Epipolarlinien in beiden Bildern verlaufen dementsprechend auch nicht mehr durch genau einen Punkt, wie man in den Abbildungen \ref{fig:NoEpipoleWithF1} und \ref{fig:NoEpipoleWithF2} erkennen kann. Die Abbildungen bilden Epipolarlinien aus dem Stereobildpaar \ref{fig:SurfRechts} und \ref{fig:SurfLinks} ab. Die Ursache des erhöhten Ranges von $\hat{F}$ ist in ihren Singulärwerten von $F$ zu finden.\\
 
-\pagebreak
+
 %
 %irgendwie sagen dass es durch verunreinigte daten zu fehlern im constraint kommt und die Fundamentalmatrix im Rang steigt.
 %
@@ -209,12 +209,12 @@ Ist $\hat{F}$ durch den erhöhten Rang keine singuläre Matrix, so ergeben der l
 %wird die Fundamentalmatrix durch eine Singulärwertszerlung von $A$ geschätzt, ist die Chance sehr hoch, dass das Ergebnis für $\hat{F}$ eine Matrix von Rang 3 ist. Sollte dies der Fall sein gehen die Epipolarlinien der Bilder nicht mehr durch genau einen Punkt, wie man in den Abbildungen 6.5 und 6.6 erkennen kann. Diese bilden Epipolarlinien in einem Stereobildpaar ab.\\
 
 \begin{figure}[!htb]
-	\minipage{0.48\textwidth}
+	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/L_F_no_Constraint.png}
 	\caption[Epipolarlinien $C$ ohne Singularität]{Epipolarlinien ohne \textit{Epipolar-constraint} im Bild der Canon 6D}
 	\label{fig:NoEpipoleWithF1}
 	\endminipage\hfill
-	\minipage{0.48\textwidth}
+	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/LPrime_PC2_F_no_Constraint.png}
 	\caption[Epipolarlinien $C'$ ohne Singularität]{Epipolarlinien ohne \textit{Epipolar-constraint} im Bild der Canon 60D}
 	\label{fig:NoEpipoleWithF2}
@@ -238,12 +238,12 @@ Werden aus $\bar{F}$ der rechte und linke Kern bestimmt, so ergeben sich eindeut
 
 
 \begin{figure}[!htb]
-	\minipage{0.48\textwidth}
+	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/L_PC1_F_Constraint.png}
 	\caption[Epipolarlinien in $C$ aus singulärer Fundamentalmatrix]{Die Abbildung zeigt, dass die Epipolarlinien auf der Aufnahme von $C$, nach dem Erzwingen der singularität in der normierten $\hat{F}$, alle durch den Epipol $e$ verlaufen}
 	\label{fig:EpipoleWithF1}
 	\endminipage\hfill
-	\minipage{0.48\textwidth}
+	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/LPrime_PC2_F_Constraint.png}
 	\caption[Epipolarlinien in $C'$ aus singulärer Fundamentalmatrix ]{Die Abbildung zeigt, dass die Epipolarlinien auf der Aufnahme von $C'$, nach dem Erzwingen der singularität in der normierten $\hat{F}$, alle durch den Epipol $e'$ verlaufen}
 	\label{fig:EpipoleWithF2}
@@ -252,12 +252,12 @@ Werden aus $\bar{F}$ der rechte und linke Kern bestimmt, so ergeben sich eindeut
 \end{figure}
 
 \begin{figure}[!htb]
-	\minipage{0.48\textwidth}
+	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/L_PC1_F_Constraint_denormalized.png}
 	\caption[Epipolarlinien in $C$ aus singulärer denormalisierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormalisiert wurde}
 	\label{fig:EpipoleWithF1Denorm}
 	\endminipage\hfill
-	\minipage{0.48\textwidth}
+	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/LPrime_PC2_F_Constraint_denormalized.png}
 	\caption[Epipolarlinien in $C$ aus singulärer denormalisierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C'$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormalisiert wurde}
 	\label{fig:EpipoleWithF2Denorm}

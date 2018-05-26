@@ -1,51 +1,39 @@
 \addchap{Abstract}
 
-Das Erkennen und rekonstruieren von dreidimensionalen Objekten aus zweidimensionalen Bildquellen ist Kern aktueller Forschungsbereiche wie dem autonomen Fahren oder der Entwicklung von hochpräzisen medizinische Navigationsystemen. Das Ziel ist es mit Hilfe weniger Kamerabilder einer Szene eine möglichst präzise, dreidimensionale Rekonstruktion dieser Szene zu erhalten.\\
+Das Erkennen von dreidimensionalen Objekten ist Kern aktueller Forschungsbereiche wie dem autonomen Fahren, der Entwicklung von hochpräzisen medizinische Navigationssystemen oder der Landvermessung mittels Drohnen. Ziel ist es mit Hilfe weniger Kamerabilder einer Szene eine möglichst präzise, dreidimensionale Rekonstruktion dieser Szene zu erhalten. Kamerabilder mit gleicher Auflösung werden in vielen Rekonstruktionsalgorithmen vorausgesetzt, obwohl bestimmte Maschinen wie Drohnen oft mit verschiedenen Kameras, wie zum Beispiel einer RGB-Kamera und einer Infrarotkamera mit unterschiedlichen Auflösungen, ausgestattet sind.   \\
 
-In dieser Arbeit wurde ein Szenenrekonstruktionsalgorithmen für stereoskopische Bildaufnahmen implementiert. Dabei sollte die Frage geklärt werden, ob eine Szenenrekonstruktion mit Kameras unterschiedlicher Auflösungen möglich ist. Somit könnten beispielsweise Applikationen zur Szenenrekonstruktion für Drohnen geschrieben werden, welche mit einer hochauflösenden rgb Kamera und einer Standard Infrarotkamera ausgestattet sind. Des Weiteren soll der Algorithmus die extrinsischen Kameraparameter bestimmen können. Der unter diesen Bedingungen entstandene Algorithmus ist in der Lage bei bekannten intrinsischen Kameraparametern aus Punktekorrespondenzen zweier Bildern unterschiedlicher Auflösung extrinsische Kameraparameter zu bestimmen und die 3D-Szene über ein Triangulationsverfahren zu rekonstruieren. Der Schwerpunkt dieser Arbeit liegt auf der Entwicklung und Umsetzung des prototypischen Programms. Die Grundlegenden Funktionen des Algorithmus wurden in einem synthetischen Beispiel implementiert und später für die Verwendung von reellen Bilddaten entsprechend erweitert. \\
+In dieser Arbeit wurde ein Szenenrekonstuktionsalgorithmen für stereoskopische Bildaufnahmen mit unterschiedlichen Kameraauflösungen implementiert und analysiert. Der entwickelte Algorithmus besitzt eine eingebaute Kamerakalibrierung, welche die extrinsischen Kameraparameter bestimmt und gemeinsam mit den zuvor bestimmten intrinsischen Kameraparametern eine genaue Rekonstruktion der Szene durchführt. Mit bekannten intrinsischen Kameraparameter, welche die Auflösung der Kameras berücksichtigt, kann der Algorithmus durch Triangulation eine dreidimensionale Szene exakt rekonstruieren. Der Algorithmus wurde an einem synthetischen Beispiel überprüft und erweitert um somit mit reellen Bilddaten eine Szene zu rekonstruieren. Der entstandene Algorithmus kann eine Szene bis auf eine Skaleninvarianz genau wiederherstellen. Jedoch ist die Rekonstruktion durch Triangulation anfällig auf Bildfehler und muss mit Näherungsverfahren korrigiert werden.\\
 
-Des Weiteren ist ein Ansatz für einen zweiten Algorithmus entstanden, welcher das Ziel verfolgt mit wenig vorab Informationen eine Szene Rekonstruieren zu können. Der Ansatz basiert auf einer zuvorigen Rektifizierung des Stereobildpaares, welche die Suche nach korrespondierenden Punkten erleichtert. Anhand dieser Punkte kann eine Tiefenkarte erstellt werden, welche relaitv schnell und ohne großen rechenaufwand ein Maß für die Tiefe der 3D-Szene gibt.\\
+Viele kommerziellen Szenenrekonstruktions-Applikationen verwenden einen effizienteren Ansatz zur Szenenrekonstruktion. Dieser bestimmt die Bildtiefe näherungsweise durch Rektifizierung. Jedoch werden hier meist gleiche Kameraauflösungen vorausgesetzt. Aus diesem Grund wurden die ersten Schritte für einen zweiten Algorithmus basierend auf einem Rektifizierungsverfahren implementiert. In den ersten Analysen wurde die Funktionsweise der Rektifizierung überprüft und es konnte festgestellt werden, dass der implementierte Algorithmus für Bildquellen mit unterschiedlicher Auflösungen und gleicher Pixelproportionen geeignet ist.\\
 
-Als Zusatz ist in dieser Arbeit noch ein Algorithmus für die Ermittlung der Punktekorrespondenzen zwischen den Stereoaufnahmen zweidimensionaler Schachbretter entwickelt worden. Dieser ist im Stande aus einer Liste aus Schachbretteckpunkten die Reihen und Spalten des Schachbretts zu rekonstruieren und die Eckpunkte eindeutig zu identifizieren.
+In einem zusätzlichen Projekt dieser Masterarbeit wurde ein Ansatz zur Sortierung von detektierten Punkten in stereoskopischen Bildern von stark optisch verzerrten Schachbrettern entwickelt. Es wurde ein Algorithmus implementiert, welcher alle zuvor detektierten Eckpunkte eines Schachbrettes sortiert und eindeutig identifiziert. Der Algorithmus kann bei Stereoaufnahmen von zweidimensionalen Schachbrettern genutzt werden um Punktekorrespondenzen zu ermitteln um danach die extrinsischen Kameraparameter zu bestimmen. Der Algorithmus kann zudem auch für  Kamerakalibierungsalgorithmen zur Bestimmung von intrinsischen Kameraparametern verwendet werden um Bildverzerrungen zu korrigieren.  
 
-
-
-
-%die 3D-Szene durch Erstellen einer Tiefenkarte 
-%
-%Der Ansatz basiert auf der vorherigen Rektifizierung des Stereobildpaares für eine korresponde
-%
-% Der zweite Algorithmus beinhaltet den Ansatz eine Szene basierend auf einer zuvorigen Rektifizierung der Stereoaufnahmen zu rekonstruieren. Vorteil dieser Methode sind die wenigen benötigten Informationen. Lediglich die Punktekorrespondenzen und die Fundamentalmatrix müssen bekannt sein. Des Weiteren bietet er die Möglichkeit über eine Tiefenkarte die 3D Szene zu rekonstruieren. Jedoch müssen Bilder unterschiedlicher Auflösungen zuvor algorithmisch angepasst werden.\\
-% 
+%Diese Punkte können verwendet werden um die extrinsischen Kameraparameter zu bestimmen und das Schachbrett zu rekonstruieren. 
 
 
 
+%In einem zusätzlichen Projekt dieser Masterarbeit wurde ein Ansatz zur Detektion derselben Punkten in stereoskopischen Bildern in stark optisch verzerrten Bildern entwickelt. Da in diesen Fällen die in den Rekonstruktionsalgorithmen verwendeten Detektionsfunktion zu Problemen führen können, wurde ein Algorithmus entwickelt, welcher alle Punkte eines Schachbrettes erkennt. Mit Hilfe dieser Punkte ist es möglich die extrinsischen Kameraparameter zu bestimmen und auch in stark verzerrten Bildern eine Rekonstruktion durchzuführen.  
 %
 %
-%Rekonstruktion durch Rektifizierung eines Stereobildpaares, wie es in vielen Computer-Vision-Applikationen angewandt wird, analysiert und getestet. Dabei wurde ein Rektifizierungsansatz nach \textit{Zhengyou Zhang} implementiert und die Auswirkung von unterschiedlichen Kameraauflösungen auf die Ergebnisse der Rektifizierung beobachtet.  
+%Alternative zu letzten Passage: 
+%In einem zusätzlichen Projekt dieser Masterarbeit wurde ein Ansatz zur Detektion derselben Punkten in stereoskopischen Bildern in stark optisch verzerrten Bildern entwickelt. Es wurde ein Algorithmus entwickelt, welcher alle Punkte eines Schachbrettes erkennt. Diese Punkte können verwendet werden um die extrinsischen Kameraparameter zu bestimmen und das Schachbrett zu rekonstruieren. 
 %
-%
-%
-%Die Szene wird in diesem Ansatz über ein Triangulationsverfahren 
+%Der algorithmus kann zudem auch für die Kamerakalibieralgorithmen für die Bestimmung von intrinsischen Kameraparametern verwendet werden um Bildverzerrungen zu korrigieren.  
 
 
 
 
 
+
+
+%Das Erkennen und rekonstruieren von dreidimensionalen Objekten aus zweidimensionalen Bildquellen ist Kern aktueller Forschungsbereiche wie dem autonomen Fahren oder der Entwicklung von hochpräzisen medizinische Navigationsystemen. Das Ziel ist es mit Hilfe weniger Kamerabilder einer Szene eine möglichst präzise, dreidimensionale Rekonstruktion dieser Szene zu erhalten.\\
 %
-%Der Algorithmus wurde anhand eines synthetisch erstellten Stereoaufbaus entwickelt und validiert. 
+%In dieser Arbeit wurde ein Szenenrekonstruktionsalgorithmen für stereoskopische Bildaufnahmen implementiert. Dabei sollte die Frage geklärt werden, ob eine Szenenrekonstruktion mit Kameras unterschiedlicher Auflösungen möglich ist. Somit könnten beispielsweise Applikationen zur Szenenrekonstruktion für Drohnen geschrieben werden, welche mit einer hochauflösenden rgb Kamera und einer Standard Infrarotkamera ausgestattet sind. Des Weiteren soll der Algorithmus die extrinsischen Kameraparameter bestimmen können. Der unter diesen Bedingungen entstandene Algorithmus ist in der Lage bei bekannten intrinsischen Kameraparametern aus Punktekorrespondenzen zweier Bildern unterschiedlicher Auflösung extrinsische Kameraparameter zu bestimmen und die 3D-Szene über ein Triangulationsverfahren zu rekonstruieren. Der Schwerpunkt dieser Arbeit liegt auf der Entwicklung und Umsetzung des prototypischen Programms. Die Grundlegenden Funktionen des Algorithmus wurden in einem synthetischen Beispiel implementiert und später für die Verwendung von reellen Bilddaten entsprechend erweitert. \\
 %
+%Des Weiteren ist ein Ansatz für einen zweiten Algorithmus entstanden, welcher das Ziel verfolgt mit wenig vorab Informationen eine Szene Rekonstruieren zu können. Der Ansatz basiert auf einer zuvorigen Rektifizierung des Stereobildpaares, welche die Suche nach korrespondierenden Punkten erleichtert. Anhand dieser Punkte kann eine Tiefenkarte erstellt werden, welche relaitv schnell und ohne großen rechenaufwand ein Maß für die Tiefe der 3D-Szene gibt.\\
 %
-% Das Ergebnis wurde dann an reellen Stereoaufnahmen zweier Kameras getestet und entsprechend erweitert. Das Resultat ist ein funktionsfähiger Algorithmus, welcher aus Punktekorrespondenzen in einem Stereobildpaar mit unterschiedlichen Auflösungen extrinsische Kameraparameter bestimmen und eine 3D-Szenen rekonstruieren kann. 
-%
-%
-%
-%Bei den Ergebnissen der Rekonstrukion ist mit Ungenauigkeiten zu rechnen, da Auswirkungen von Bildfehlern, wie Rauschen, durch Näherungsverfahren minimiert wurden.\\
-%
-%%In dieser Arbeit wurde ein Szenenrekonstruktionsalgorithmus entwickelt, welcher sowohl in der Lage sein soll die extrinsischen Kameraparameter zu bestimmen als auch 3D-Szenen aus Bildquellen unterschiedlicher Auflösung zu rekonstruieren. 
-%
-%
-%Abschließend wurde ein Verfahren der schnellen Rekonstruktion durch Rektifizierung eines Stereobildpaares, wie es in vielen Computer-Vision-Applikationen angewandt wird, analysiert und getestet. Dabei wurde ein Rektifizierungsansatz nach \textit{Zhengyou Zhang} implementiert und die Auswirkung von unterschiedlichen Kameraauflösungen auf die Ergebnisse der Rektifizierung beobachtet.  
-%
+%Als Zusatz ist in dieser Arbeit noch ein Algorithmus für die Ermittlung der Punktekorrespondenzen zwischen den Stereoaufnahmen zweidimensionaler Schachbretter entwickelt worden. Dieser ist im Stande aus einer Liste aus Schachbretteckpunkten die Reihen und Spalten des Schachbretts zu rekonstruieren und die Eckpunkte eindeutig zu identifizieren.
+
+
 
 
