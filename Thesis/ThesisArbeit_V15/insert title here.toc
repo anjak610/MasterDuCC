@@ -35,8 +35,9 @@
 \contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{70}{chapter.553}
 \contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{71}{section.555}
 \contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{78}{section.563}
-\contentsline {chapter}{\numberline {8}Fazit}{81}{chapter.569}
-\contentsline {chapter}{\nonumberline Anhang}{82}{chapter*.570}
-\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{149}{chapter*.575}
-\contentsline {chapter}{Abbildungsverzeichnis}{150}{chapter*.576}
-\contentsline {chapter}{Literaturverzeichnis}{152}{chapter*.577}
+\contentsline {chapter}{\nonumberline Zusammenfassung}{81}{chapter*.569}
+\contentsline {chapter}{\nonumberline Ausblick}{82}{chapter*.570}
+\contentsline {chapter}{\nonumberline Anhang}{83}{chapter*.571}
+\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{150}{chapter*.576}
+\contentsline {chapter}{Abbildungsverzeichnis}{151}{chapter*.577}
+\contentsline {chapter}{Literaturverzeichnis}{153}{chapter*.578}

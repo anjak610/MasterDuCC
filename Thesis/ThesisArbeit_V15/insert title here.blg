@@ -68,7 +68,6 @@ I was expecting a `,' or a `}'---line 338 of file bibliography.bib
  :  doi ={10.1007/978-3-642-47866-6}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--empty publisher in Elements
 Warning--empty publisher in Heipke
 Too many commas in name 1 of "R.Sturm,S,Ramalingam,Tardif,S.Gasparini,J.Barreto" for entry CamerModels.
 while executing---line 944 of file unsrt.bst
