@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  25 MAY 2018 23:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  26 MAY 2018 09:18
 entering extended mode
 **"./insert title here.tex"
 ("insert title here.tex"
@@ -1162,12 +1162,12 @@ Package babel Info: Redefining ngerman shorthand "~
 {C:/Users/Anja/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/hfu
 _logo.png>]) ("insert title here.toc"
 Overfull \hbox (1.095pt too wide) detected at line 40
- []\OT1/cmss/bx/n/10.95 138
+ []\OT1/cmss/bx/n/10.95 149
  []
 
 
 Overfull \hbox (1.095pt too wide) detected at line 41
- []\OT1/cmss/bx/n/10.95 139
+ []\OT1/cmss/bx/n/10.95 150
  []
 
 Package babel Info: Redefining ngerman shorthand "|
@@ -1178,7 +1178,7 @@ Package babel Info: Redefining ngerman shorthand "~
 
 ]
 Overfull \hbox (1.095pt too wide) detected at line 42
- []\OT1/cmss/bx/n/10.95 141
+ []\OT1/cmss/bx/n/10.95 152
  []
 
 )
@@ -5190,11 +5190,17 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--24
+[]\OT1/cmr/m/n/10.95 Tomas Pa-jd-la.  \OT1/cmr/m/it/10.95 Ele-ments of Geo-me-t
+ry for Com-pu-ter Vi-si-on\OT1/cmr/m/n/10.95 .
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 112.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 112.
- [152
+[152
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 151.
@@ -5202,8 +5208,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 151.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 151.
-
-[153]
+ [153]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
  ("insert title here.aux")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
@@ -5220,10 +5225,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
  ) 
 Here is how much of TeX's memory you used:
- 14858 strings out of 493334
- 245145 string characters out of 3142719
+ 14851 strings out of 493334
+ 245052 string characters out of 3142719
  430450 words of memory out of 3000000
- 17450 multiletter control sequences out of 15000+200000
+ 17443 multiletter control sequences out of 15000+200000
  13184 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,22n,68p,8860b,560s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -5241,7 +5246,7 @@ c/amsfonts/cm/cmsy6.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cms
 y8.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><L:/Progr
 amme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><L:/Programme/MikTex
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "insert title here.pdf" (153 pages, 22905401 bytes).
+Output written on "insert title here.pdf" (153 pages, 22906072 bytes).
 PDF statistics:
  2730 PDF objects out of 2984 (max. 8388607)
  536 named destinations out of 1000 (max. 500000)
