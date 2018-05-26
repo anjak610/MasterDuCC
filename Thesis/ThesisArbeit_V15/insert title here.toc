@@ -37,6 +37,6 @@
 \contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{78}{section.563}
 \contentsline {chapter}{\nonumberline Zusammenfassung und Ausblick}{81}{chapter*.569}
 \contentsline {chapter}{\nonumberline Anhang}{82}{chapter*.570}
-\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{149}{chapter*.575}
-\contentsline {chapter}{Abbildungsverzeichnis}{150}{chapter*.576}
-\contentsline {chapter}{Literaturverzeichnis}{152}{chapter*.577}
+\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{151}{chapter*.576}
+\contentsline {chapter}{Abbildungsverzeichnis}{152}{chapter*.577}
+\contentsline {chapter}{Literaturverzeichnis}{154}{chapter*.578}

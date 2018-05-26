@@ -321,22 +321,7 @@ Um trotz der ungenauen korrespondierenden Punkte eine Triangulation zu ermöglic
 
 %Jedes Punktepaar, welches den \textit{Epipolar-Constraint} erfüllt, liegt auf einem paar korrespondierender Epipolarlinien. 
 
-Die optimalen Punkte $\hat{m}$ und $\hat{m}'$ liegen auf den korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l}'$ am Fuße des Lots, welches von den ursprünglich projizierten Punkten $m$ und $m'$ auf die Epipolarlinien $\hat{l}$ und $\hat{l'}$ gefällt wird\cite{HZ}. 
-
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=.8\linewidth]{images/SampsAppxNewPoints.png}
-	\caption[Sampson Approximation aufstellen der Kostenfunktion]{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\sigma}$ und $\hat{m'_{\sigma'}}$}
-\end{figure}
-
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=.8\linewidth]{images/SampsAppxNewPoints.png}
-%	\captionof{figure}{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\sigma}$ und $\hat{m'_{\sigma'}}$}
-%\end{minipage}\\\\
-
-Jedes andere Punktepaar auf $\hat{l}$ und $\hat{l}'$ würde die epipolare Bedingung erfüllen, jedoch minimieren nur $m_{\sigma\bot}$ und $m'_{\sigma' \bot}$ die quadratischen Distanzen $d(m_\sigma,\hat{m}_\sigma)^2$ und $ d(m'_{\sigma'},\hat{m}'_{\sigma'})^2$ in der Funktion $C$. Gesucht wird also der geringste Abstand von $m_\sigma$ zu $\hat{l}$ und $m'_{\sigma'}$ zu $\hat{l}'$. Die Funktion $C$ kann dem entsprechend umformuliert werden in 
+Die optimalen Punkte $\hat{m}$ und $\hat{m}'$ liegen auf den korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l}'$ am Fuße des Lots, welches von den ursprünglich projizierten Punkten $m$ und $m'$ auf die Epipolarlinien $\hat{l}$ und $\hat{l'}$ gefällt wird\cite{HZ}, wie in Abbildung \ref{fig:Lot} zu sehen ist. Jedes andere Punktepaar auf $\hat{l}$ und $\hat{l}'$ würde die epipolare Bedingung erfüllen, jedoch minimieren nur $m_{\sigma\bot}$ und $m'_{\sigma' \bot}$ die quadratischen Distanzen $d(m_\sigma,\hat{m}_\sigma)^2$ und $ d(m'_{\sigma'},\hat{m}'_{\sigma'})^2$ in der Funktion $C$. Gesucht wird also der geringste Abstand von $m_\sigma$ zu $\hat{l}$ und $m'_{\sigma'}$ zu $\hat{l}'$. Die Funktion $C$ kann dem entsprechend umformuliert werden in 
 
 \begin{gather}
 	C(m,m') = d(\hat{m}_\sigma,\hat{l})^2 + d(\hat{m}'_{\sigma'},\hat{l}')^2
@@ -344,6 +329,15 @@ Jedes andere Punktepaar auf $\hat{l}$ und $\hat{l}'$ würde die epipolare Beding
 .
 
 Aus allen möglichen Epipolarlinien, welche $\hat{l}$ und $\hat{l}'$ annehmen können, entspricht immer der senkrechte Abstand von $m_\sigma$ und $m'_{\sigma'}$ zur jeweiligen Epipolarlinie der minimalen Distanz. Es soll jedoch genau das Epipolalinienpaar gewählt werden, welches die Funktion $C$ minimal werden lässt\cite{HZ}.\\
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\linewidth]{images/SampsAppxNewPoints.png}
+	\caption[Sampson Approximation aufstellen der Kostenfunktion]{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\sigma}$ und $\hat{m'_{\sigma'}}$}\label{fig:Lot}
+\end{figure}
+
+
 
 Im ersten Schritt werden die Epipolarlinien parametrisiert, so dass eine Linie als $\hat{l}(t)$ geschrieben werden kann. Durch die Parametrisierung der Epipolarlinien, kann die Funktion $C$ als eine Funktion von $t$ umformuliert werden.
 

@@ -96,26 +96,26 @@ Zunächst wird eine Koordinatisierung von Punkten im Weltkoordinatensystem vorge
 
 
 \begin{gather}
-	P_\delta = O + p_{1\delta}\hat{d_1} + p_{2\delta}\hat{d_2} + p_{3\delta}\hat{d_3}\label{eq:eq2.2}\\
+	P_\delta = O + p_{1\delta}\,\hat{d_1} + p_{2\delta}\,\hat{d_2} + p_{3\delta}\,\hat{d_3}\label{eq:eq2.2}\\
 	\leadsto P_\delta = (p_{1\delta},p_{2\delta},p_{3\delta})^T = \begin{pmatrix} p_{1\delta} \\ p_{2\delta} \\ p_{3\delta} \end{pmatrix}.
 \end{gather}
 
 Zwischen den beiden Koordinatensystemen	$(O,\delta)$  und $(C,\beta)$ gelten die folgenden Beziehungen:
 
 \begin{gather}
-	C_\beta = O_\delta + C_{\beta,1}\hat{d_1} +C_{\beta,2}\hat{d_2} + C_{\beta,3}\hat{d_3}\\
-	\hat{b_1} = b_{11}\hat{d_1} +  b_{12}\hat{d_2} +  b_{13}\hat{d_3}\\
-	\hat{b_2} = b_{21}\hat{d_1} +  b_{22}\hat{d_2} +  b_{23}\hat{d_3}\\
-	\hat{b_3} = b_{31}\hat{d_1} +  b_{32}\hat{d_2} +  b_{33}\hat{d_3}.
+	C_\beta = O_\delta + C_{\beta,1}\,\hat{d_1} +C_{\beta,2}\,\hat{d_2} + C_{\beta,3}\,\hat{d_3}\\
+	\hat{b_1} = b_{11}\,\hat{d_1} +  b_{12}\,\hat{d_2} +  b_{13}\,\hat{d_3}\\
+	\hat{b_2} = b_{21}\,\hat{d_1} +  b_{22}\,\hat{d_2} +  b_{23}\,\hat{d_3}\\
+	\hat{b_3} = b_{31}\,\hat{d_1} +  b_{32}\,\hat{d_2} +  b_{33}\,\hat{d_3}.
 \end{gather}
 
 Diese Beziehungsgleichungen werden in Gleichung \ref{eq:eq2.2} eingesetzt.
 
 \begin{gather}
 	\begin{split}
-		P_\delta = O + (C_{\beta,1} + p_{1\beta}b_{11} +  p_{2\beta}b_{21} + p_{3\beta}b_{31}) \cdot \hat{d_1}\\
-		+(C_{\beta,2} + p_{1\beta}b_{21} +  p_{2\beta}b_{22} + p_{3\beta}b_{32} )\cdot \hat{d_2}\\
-		+ (C_{\beta,3} + p_{1\beta}b_{31} +  p_{2\beta}b_{23} + p_{3\beta}b_{33} )\cdot \hat{d_3}\label{eq:2.8}
+		P_\delta = O + (C_{\beta,1} + p_{1\beta}\,b_{11} +  p_{2\beta}\,b_{21} + p_{3\beta}\,b_{31}) \cdot \hat{d_1}\\
+		+(C_{\beta,2} + p_{1\beta}\,b_{21} +  p_{2\beta}\,b_{22} + p_{3\beta}\,b_{32} )\cdot \hat{d_2}\\
+		+ (C_{\beta,3} + p_{1\beta}\,b_{31} +  p_{2\beta}\,b_{23} + p_{3\beta}\,b_{33} )\cdot \hat{d_3}\label{eq:2.8}
 	\end{split}
 \end{gather}
 
@@ -123,8 +123,8 @@ Aus Gleichung \ref{eq:2.8} wird ein Gleichungssystem in der Form von Gleichung \
 
 \begin{gather}
 	\begin{split}
-		p_{1\delta} = C_{\beta,1} + (C_{\beta,1} + p_{1\beta}b_{11} +  p_{2\beta}b_{21} + p_{3\beta}b_{31} \\
-		\leadsto \: p_{1\delta} - C_{\beta,1} =  (C_{\beta,1} + p_{1\beta}b_{11} +  p_{2\beta}b_{21} + p_{3\beta}b_{31})\label{eq:2.9}
+		p_{1\delta} = C_{\beta,1} + (C_{\beta,1} + p_{1\beta}\,b_{11} +  p_{2\beta}\,b_{21} + p_{3\beta}\,b_{31} \\
+		\leadsto \: p_{1\delta} - C_{\beta,1} =  (C_{\beta,1} + p_{1\beta}\,b_{11} +  p_{2\beta}\,b_{21} + p_{3\beta}\,b_{31})\label{eq:2.9}
 	\end{split}
 \end{gather}
 
@@ -300,7 +300,7 @@ Das Weltkoordinatensystem $(O,\delta)$ mit $\delta =(\hat{d_1}, \hat{d_2},\hat{d
 %	\label{fig:KoordinatensystemeUeberblick}
 %\end{minipage}\\ \\ 
 
-Für die Projektion eines Punktes $M_\delta=({M_{x \delta}}\,{M_{y \delta}}\,{M_{z \delta}})^T$ bezüglich des Weltkoordinatensystems in einen Punkt $m_\tau=({m_{x \tau}}\,{m_{y \tau}}\,{m_{z \tau}})^T$ bezüglich des Bildebenenkoordinatensystems kann eine Projektionsmatrix $P$ definiert werden.\\
+Für die Projektion eines Punktes $M_\delta=({M_{\delta x}}\,{M_{\delta y}}\,{M_{\delta z}})^T$ bezüglich des Weltkoordinatensystems in einen Punkt $m_\tau=({m_{\tau x}}\,{m_{\tau y}}\,{m_{\tau z}})^T$ bezüglich des Bildebenenkoordinatensystems kann eine Projektionsmatrix $P$ definiert werden.\\
 
 Zuerst muss der Punkt im Weltkoordinatensystem in das Kamerakoordinatensystem transformiert werden. Für die Transformation der Weltkoordinaten in Kamerakoordinaten gilt Gleichung \ref{eq:trafo}:
 \begin{equation}
@@ -313,7 +313,7 @@ Zuerst muss der Punkt im Weltkoordinatensystem in das Kamerakoordinatensystem tr
 0 & 0 & 1 & - C_{\beta,3}
 \end{bmatrix} 
 \begin{pmatrix}
-M_{x \delta}\\M_{y \delta}\\ M_{z \delta}\\1
+M_{\delta x}\\M_{\delta y}\\ M_{\delta z}\\1
 \end{pmatrix}
 =R	[I -C] \begin{bmatrix}
 \vec{M_\delta}\\
@@ -325,14 +325,14 @@ M_{x \delta}\\M_{y \delta}\\ M_{z \delta}\\1
 Nach der Transformation eines Punkts $\vec{M_\delta}$ zu $\vec{M_\beta}$ in das Kamerakoordinatensystem erfolgt die Kameraprojektion von $M_\beta$ auf $m_\beta$ wie in Gleichung \ref{eq:2.1} beschrieben. %Die Kameramatrix lässt den Ursprung eines Koordinatensystems unverändert und die Kameramatrix $K_0$ lässt sich erweitern:
 \begin{equation}
 \begin{bmatrix}
-m_{x \beta}\\m_{y \beta}\\m_{z \beta}
+m_{\beta x}\\m_{\beta y}\\m_{\beta z}
 \end{bmatrix} = \begin{bmatrix}
 \zeta&0&0\\
 0&\zeta&0\\
 0&0&1
 \end{bmatrix}
 \begin{bmatrix}
-M_{x \beta}\\M_{y \beta}\\M_{z \beta}
+M_{\beta x}\\M_{\beta y}\\M_{\beta z}
 \end{bmatrix}
 =K_0\vec{M_{\beta}}\label{mbeta1}
 \end{equation}
@@ -355,16 +355,16 @@ Um den Bildpunkt $\vec{m_{\beta}}$ bezüglich eines zweidimensionalen Bildebenen
 \begin{equation}
 \vec{m_\tau} =
 \begin{bmatrix}
-m_{x \beta}/m_{z \beta}\\m_{y \beta}/m_{z \beta}\\1
+m_{\beta x}/m_{\beta z}\\m_{\beta y}/m_{\beta z}\\1
 \end{bmatrix}
 \end{equation}
 .
 
-Zuletzt folgt die Transformation der Bildebenenkoordinaten auf den Sensorchip. Der Sensorchip besteht aus einer Ansammlung von Sensorelementen. Diese Sensorelemente können verschiedene Formen annehmen. Die meisten Sensorchips bestehen aus rechtwinkligen, rechteckigen Sensorelementen. Aus diesem Grund wird ein rechtwinkliges Sensorelement mit einer Größe $lx$ $ly$ angenommen. Diese Sensorelementgröße $lx$ $ly$ definiert auch die Pixelgröße und bildet die Längenskalierung des Sensorkoordinatensystems. Neben der unterschiedlichen Skalierung wird der Ursprung des Sensorkoordinatensystems in der Regel an einer Ecke des Sensorchips definiert, sodass die Transformation von Bildebenenkoordinaten in Sensorkoordinaten auch eine Translation $(V_{x\sigma},V_{y\sigma})$ aufweist\cite{HZ,Photonik}. Für einen Punkt $m_\sigma = ({u},{v},1)$ auf dem Sensorkoordinatensystem lassen sich die folgenden Bedingungen herleiten %.$w$ ist die z Koordinate des Sensorsystems, welches hier gleich der z-Achse des Kamerasystems angenommen wird. Zudem wird angenommen, dass das Sensorsystem aus rechteckigen Pixel handelt und durch ein kartesische Koordinatensystem angenommen werden kann. Für die Transformation wird eine Matrix $R_\sigma$ aufgestellt, welche eine Koordinatentransformation mit einer Translation des Koordinatenursprungs und eine Skalierung der Koordinaten beinhaltet.
+Zuletzt folgt die Transformation der Bildebenenkoordinaten auf den Sensorchip. Der Sensorchip besteht aus einer Ansammlung von Sensorelementen. Diese Sensorelemente können verschiedene Formen annehmen. Die meisten Sensorchips bestehen aus rechtwinkligen, rechteckigen Sensorelementen. Aus diesem Grund wird ein rechtwinkliges Sensorelement mit einer Größe $lx$ $ly$ angenommen. Diese Sensorelementgröße $lx$ $ly$ definiert auch die Pixelgröße und bildet die Längenskalierung des Sensorkoordinatensystems. Neben der unterschiedlichen Skalierung wird der Ursprung des Sensorkoordinatensystems in der Regel an einer Ecke des Sensorchips definiert, sodass die Transformation von Bildebenenkoordinaten in Sensorkoordinaten auch eine Translation $(V_{\sigma x},V_{\sigma y})$ aufweist\cite{HZ,Photonik}. Für einen Punkt $m_\sigma = ({u},{v},1)$ auf dem Sensorkoordinatensystem lassen sich die folgenden Bedingungen herleiten %.$w$ ist die z Koordinate des Sensorsystems, welches hier gleich der z-Achse des Kamerasystems angenommen wird. Zudem wird angenommen, dass das Sensorsystem aus rechteckigen Pixel handelt und durch ein kartesische Koordinatensystem angenommen werden kann. Für die Transformation wird eine Matrix $R_\sigma$ aufgestellt, welche eine Koordinatentransformation mit einer Translation des Koordinatenursprungs und eine Skalierung der Koordinaten beinhaltet.
 
 \begin{gather}	
-	{u}=m_{\tau x} k_x - V_{x\sigma}\\
-	{v}=m_{\tau y} k_y - V_{y\sigma}\\
+	{u}=m_{\tau x} \, k_x - V_{\sigma x}\\
+	{v}=m_{\tau y} \, k_y - V_{\sigma y}\\
 	1=1
 \end{gather}
 .
@@ -374,11 +374,11 @@ $k_x=1/lx$ und $k_y=1/ly$ ist die Pixeldichte in $\frac{pixel}{m}$. Es wird ange
 \begin{gather}
 	\vec{m_\sigma}=\begin{bmatrix}u \\v\\1 \end{bmatrix}=
 	\begin{bmatrix}
-		k_x&0&V_{\sigma,x}\\
-		0&k_y&V_{\sigma,y}\\
+		k_x&0&V_{\sigma x}\\
+		0&k_y&V_{\sigma y}\\
 		0&0&1&\\
 	\end{bmatrix}
-	\begin{bmatrix}m_{x \tau}\\ m_{y \tau}\\ 1\end{bmatrix}= R_\sigma \vec{m_\tau}
+	\begin{bmatrix}m_{\tau x}\\ m_{\tau y}\\ 1\end{bmatrix}= R_\sigma \vec{m_\tau}
 \end{gather}
 
 Mit Hilfe der Transformationsmatrix $R_\sigma$ kann ein Punkt von der Bildebene auf das Sensorelement projiziert werden.\\
@@ -387,8 +387,8 @@ Der hier skizzierte Lösungsweg beschreibt die Bildaufnahme eines Punktes im Loc
 
 \begin{equation}
 K=	R_\sigma K_0=  \begin{bmatrix}
-k_x \zeta & 0 & V_{\sigma,x}\\
-0 & k_y \zeta & V_{\sigma,y}\\
+k_x \zeta & 0 & V_{\sigma x}\\
+0 & k_y \zeta & V_{\sigma y}\\
 0 & 0   & 1 &\\
 \end{bmatrix}
 \end{equation}
