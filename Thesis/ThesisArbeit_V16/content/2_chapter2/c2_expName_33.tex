@@ -3,7 +3,7 @@
 
 
 Ein verbreiteter Ansatz der Stereobildanalyse basiert auf zuvor rektifizierten Bildern.
-Rektifizierte Bilder zeichnen sich durch ins unendliche projizierte Epipole aus. Dies hat zu Folge, dass die jeweiligen Epipolarlinien der Bilder parallel zueinander verlaufen. Anschließend werden die Epipole noch so rotiert, dass die Epipolarlinien in einheitlichen Scanlinien über beide Bilder verlaufen. In Abbildung \ref{fig:Scanlinien} ist das graphisch dargestellt\cite{Fusiello,Javier,ZZ,MatlabRec,phdextrinsicPara}.
+Rektifizierte Bilder zeichnen sich durch ins unendliche projizierte Epipole aus. Dies hat zu Folge, dass die jeweiligen Epipolarlinien der Bilder parallel zueinander verlaufen. Anschließend werden die Epipole noch so rotiert, dass die Epipolarlinien in einheitlichen Scanlinien über beide Bilder verlaufen\cite{Fusiello,Javier,ZZ,MatlabRec,phdextrinsicPara}. In Abbildung \ref{fig:Scanlinien} ist das graphisch dargestellt.
 
 \begin{figure}[!htb]
 	\centering
@@ -48,7 +48,7 @@ Der entscheidende Unterschied zwischen den Ansätzen liegt im Abschnitt der Bild
 
 Zunächst werden acht bis neun korrespondierende Punkte in einem Stereobildpaar detektiert. Aus den zuvor noch normierten korrespondierenden Punkten wird eine Fundamentalmatrix $F$ bestimmt, wie in Kapitel \ref{sec:real} beschrieben. Mit den korrespondierenden Punkten und der Fundamentalmatrix $F$ wird ein Rektifizierungsalgorithmus implementiert, welcher zwei Stereobilder transformiert, sodass ihre Epipolarlinien zu horizontal ausgerichteten Scanlinien werden, wie in Abbildung \ref{fig:Scanlinien} zu sehen ist. Mit Hilfe dieser entstandenen Scanlinien, wird die Suche nach weiteren korrespondierenden Punkten von einer zweidimensionalen auf eine eindimensionale Suche vereinfacht.\cite{ZZ,Fusiello,Javier}.\\
 
-Nach der Rektifizierung ist zwischen zwei korrespondierenden Punkten ein horizontaler Versatz zu verzeichnen, welcher durch die unterschiedlichen Perspektiven der Bilder entsteht. Dieser Versatz entsteht durch den Abstand der beiden Kameras zueinander. Der Versatz zwischen den beiden korrespondierenden Punkte wird als Disparität bezeichnet und ist ein Maß für die Tiefe der Punkte in der Szene\cite{Javier,Fusiello}. Weit von den Kameras entfernte Punkte werden durch die unterschiedliche Perspektive der beiden weniger stark beeinflusst als Punkte, welche sich nah an den Kameras befinden. Die Disparität lässt sich als Disparitätskarte oder Tiefenkarte für stereoskopische Bilder veranschaulichen\cite{Javier}. Der Disparität wird ein Grauwert zugeordnet. In Abbildung \ref{fig:DisparityMap} werden Punkten mit einer kleinen Disparität ein dunkler Wert und Punkten mit einer großen Disparität ein heller Wert zugeordnet. Die Rekonstruktion durch eine Disparitätskarte wird auch als \textit{dense rectification} bezeichnet und bietet eine schnelle und auch effiziente Möglichkeit ein Maß für die Tiefe einer Szene zu generieren.\cite{Javier,Fusiello,ZZ}. Eine weitere Möglichkeit für eine Szenenrekonstrukion auf Basis einer Rektifizierung ist, wie bereits bekannt anhand der korrespondierenden Punkte eine Triangulation durchzuführen\cite{Javier}.\\
+Nach der Rektifizierung ist zwischen zwei korrespondierenden Punkten ein horizontaler Versatz zu verzeichnen, welcher durch die unterschiedlichen Perspektiven der Bilder entsteht. Dieser Versatz entsteht durch den Abstand der beiden Kameras zueinander. Der Versatz zwischen den beiden korrespondierenden Punkte wird als Disparität bezeichnet und ist ein Maß für die Tiefe der Punkte in der Szene\cite{Javier,Fusiello}. Weit von den Kameras entfernte Punkte werden durch die unterschiedliche Perspektive der beiden weniger stark beeinflusst als Punkte, welche sich nah an den Kameras befinden. Die Disparität lässt sich als Disparitätskarte oder Tiefenkarte für stereoskopische Bilder veranschaulichen\cite{Javier}. Der Disparität wird ein Grauwert zugeordnet. In Abbildung \ref{fig:DisparityMap} werden Punkten mit einer kleinen Disparität ein dunkler Wert und Punkten mit einer großen Disparität ein heller Wert zugeordnet. Die Rekonstruktion durch eine Disparitätskarte wird auch als \textit{dense rectification} bezeichnet und bietet eine schnelle und auch effiziente Möglichkeit ein Maß für die Tiefe einer Szene zu generieren.\cite{Javier,Fusiello,ZZ}. Eine weitere Möglichkeit für eine Szenenrekonstrukion auf Basis einer Rektifizierung ist, wie bereits bekannt, anhand der korrespondierenden Punkte eine Triangulation durchzuführen\cite{Javier}.\\
 
 % indem der Dispariät einen Grauwert zugeordnet wird. In Abbildung () wurde einer kleinen Disparität ein Dunklen und Punkte mit einer grossen Disparität ein hellen wert zugeordnet. 
 %
@@ -74,42 +74,42 @@ Das standard Rektifizierungsverfahren, welches im folgenden Kapitel eingeführt 
 \section{Rektifizierung mit Homographien}
 \label{sec:Rektifizierungsalg}
 
-Im Folgenden wird ein Rektifizierungsalgorithmus nach \textit{Zhang}\cite{ZZ} vorgestellt. Diese Art der Rektifizierung zeichnet sich durch minimale Voraussetzungen an die Ursprungsbilder aus. Alle notwendigen Informationen zur Rektifizierung werden aus der Fundamentalmatrix gewonnen. Zusätzlich zur Fundamentalmatrix muss noch die Lage der jeweiligen Epipole bekannt sein\cite{phdextrinsicPara}. Anhand des entstandenen Algorithmus wird dann getestet, ob Bilder unterschiedlicher Auflösung richtig rektifiziert werden können und was die Ergebnisse für den weiteren Verlauf der Szenenrekonstruktion bedeuten könnten.\\
+Im Folgenden wird ein Rektifizierungsalgorithmus nach \textit{Charles Loop \& Zhengyou Zhang}\cite{ZZ} vorgestellt. Diese Art der Rektifizierung zeichnet sich durch minimale Voraussetzungen an die Ursprungsbilder aus. Alle notwendigen Informationen zur Rektifizierung werden aus der Fundamentalmatrix gewonnen. Zusätzlich zur Fundamentalmatrix muss noch die Lage der jeweiligen Epipole bekannt sein\cite{phdextrinsicPara}. Anhand des entstandenen Algorithmus wird dann getestet, ob Bilder unterschiedlicher Auflösung richtig rektifiziert werden können und was die Ergebnisse für den weiteren Verlauf der Szenenrekonstruktion bedeuten könnten.\\
 
-Für den Rektifizierungsansatz wird pro Bild eine Homographiematrix $H$ und $H'$ aufgestellt. 
+Für den Rektifizierungsansatz wird pro Bild eine Homographiematrix $H$ und $H'$ aufgestellt
 %Die Rektifizierung aller Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ erfolgt durch Gleichung \ref{eq:rectifyPoints}
 
 %Die Homographien $H$ und $H$ transformieren die Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ zu rektifizierten Punkten $\bar{m}_\sigma$ und $\bar{m}'_{\sigma'}$
 
 \begin{gather}
 	\bar{m}_\sigma= H m_\sigma\\ \label{eq:rectifyPoints}
-	\bar{m}'_{\sigma'}= H'm'_{\sigma'}
+	\bar{m}'_{\sigma'}= H'm'_{\sigma'}\, .
 \end{gather}
 
 
-Die Fundamentalmatrix, welche aus den rektifizierten korrespondierenden Punkte resultiert, wird mit $\bar{F}$ bezeichnet\cite{ZZ,phdextrinsicPara}:
+Die Fundamentalmatrix, welche aus den rektifizierten korrespondierenden Punkte resultiert, wird mit $\bar{F}$ bezeichnet\cite{ZZ,phdextrinsicPara}
 
 
 \begin{gather}
 	\bar{m}'^T_{\sigma'}\bar{F}\bar{m}_\sigma = 0\\
 	\leadsto m'^T_{\sigma'}H'^T\bar{F}Hm_\sigma=0\\	
-	\leadsto F = H'^T[i]_\times H	
+	\leadsto F = H'^T[i]_\times H	\, .
 \end{gather}\\
 
 
-Die Homographien $H$ und $H'$ werden in die projektiven Komponenten $H_p$ und $H_p'$ und die affinen Komponente $H_a$ und $H_a'$ unterteilt. Die affine Komponente wird wiederum in zwei weitere Komponenten unterteilt. $H_r$ steht für eine Ähnlichkeitstransformation und $H_s$ bezeichnet eine Scherungstransformation \cite{ZZ,phdextrinsicPara}.
+Die Homographien $H$ und $H'$ werden in die projektiven Komponenten $H_p$ und $H_p'$ und die affinen Komponenten $H_a$ und $H_a'$ unterteilt. Die affine Komponente wird wiederum in zwei weitere Komponenten unterteilt. $H_r$ steht für eine Ähnlichkeitstransformation und $H_s$ bezeichnet eine Scherungstransformation \cite{ZZ,phdextrinsicPara}.
 
 
 \begin{gather}
 	H = H_a H_p  \;\;\;\; \leadsto	H = H_s H_r H_p \\
-	H' = H_a'H_p'\;\;\;\; \leadsto 	H' = H_s'H_r' H_p'\\
+	H' = H_a'H_p'\;\;\;\; \leadsto 	H' = H_s'H_r' H_p'\, .
 \end{gather}
 
 
-$H_p$ und $H_p'$ beinhalten eine projektive Transformationen, welche dafür sorgt, dass der Epipol $e$ und der Epipol $e'$ ins Unendliche projiziert wird und die Epipolarlinien parallel zueinander ausgerichtet sind\cite{ZZ,phdextrinsicPara}. $H_r$ und $H_r'$ sind Rotationsmatrizen, welche die Epipolarlinien parallel zur horizontalen Achse ausrichtet. $H_s$ und $H_s'$ sind Scherungsmatrizen, welche durch Minimierung versuchen die durch die vorherigen Transformationen $H_p$ und $H_r$ entstandenen projektiven Verzerrungen in den Bildern bestmöglich auszugleichen\cite{ZZ,phdextrinsicPara}.\\
+$H_p$ und $H_p'$ beinhalten eine projektive Transformationen, welche dafür sorgt, dass der Epipol $e$ und der Epipol $e'$ ins Unendliche projiziert werden und die Epipolarlinien jeweils parallel zueinander ausgerichtet sind\cite{ZZ,phdextrinsicPara}. $H_r$ und $H_r'$ sind Rotationsmatrizen, welche die Epipolarlinien parallel zur horizontalen Achse ausrichtet. $H_s$ und $H_s'$ sind Scherungsmatrizen, welche durch Minimierung versuchen die durch die vorherigen Transformationen $H_p$ und $H_r$ entstandenen projektiven Verzerrungen in den Bildern bestmöglich auszugleichen\cite{ZZ,phdextrinsicPara}.\\
 %Beim Prinzip der Rektifikation mittels Homographien wird eine projektive Abbildung zwischen zwei Ebenen verwendet\cite{phdextrinsicPara}. \\
 
-Die Reihen der Homographiematrix $H$ beschreibt drei Linien $u, \, v$ und $w$ mit $u = (u_a,u_b,u_c)^T$, $(v_a,v_b,v_c)^T$ und $(w_a,w_b,w_c)^T$, welche jeweils durch den Epipol verlaufen. Selbiges gilt auch für $H'$ mit den Linien $u', \, v'$ und $w'$. Die Linien $v$ und $v'$ sowie $w$ und $w'$ sind korrespondierende Epipolarlinien. Dadurch entsteht eine geometrische Beziehung zwischen den beiden Bildern\cite{ZZ}.
+Die Reihen der Homographiematrix $H$ beschreiben drei Linien $u, \, v$ und $w$ mit $u = (u_a,u_b,u_c)^T$, $(v_a,v_b,v_c)^T$ und $(w_a,w_b,w_c)^T$, welche jeweils durch den Epipol verlaufen. Selbiges gilt auch für $H'$ mit den Linien $u', \, v'$ und $w'$. Die Linien $v$ und $v'$ sowie $w$ und $w'$ sind korrespondierende Epipolarlinien. Dadurch entsteht eine geometrische Beziehung zwischen den beiden Bildern\cite{ZZ}.
 %Diese Bedingung schafft eine geometrische Verbindung beider Bilder zueinander und ist gerade bei der Minimierung der durch die Rektifizierung entstehenden Bildverzerrung von Bedeutung.
 
 \begin{gather}
@@ -128,7 +128,7 @@ Die Reihen der Homographiematrix $H$ beschreibt drei Linien $u, \, v$ und $w$ mi
 		u'_a&u'_b&u'_c\\
 		v'_a&v'_b&v'_c\\
 		w'_a&w'_b&w'_c
-	\end{bmatrix}	
+	\end{bmatrix}\, .
 \end{gather}\\
 
 Bevor die Matrizen $H$ und $H'$ in ihre projektiven und affinen Komponenten zerlegt werden, wird die letzte Komponenten $w_c$ und $w_c'$ durch Division eliminiert um somit skaleninvariante Matrizen $H$ und $H'$ zu erhalten\cite{ZZ,phdextrinsicPara}. 
@@ -151,11 +151,11 @@ Bevor die Matrizen $H$ und $H'$ in ihre projektiven und affinen Komponenten zerl
 		u'_a&u'_b&u'_c\\
 		v'_a&v'_b&v'_c\\
 		w'_a&w'_b&1
-	\end{bmatrix}	
-\end{gather}\\
+	\end{bmatrix}	\,.
+\end{gather}
 
 
-Die Matrizen $H_p$ und $H_p'$ beschreiben den projektiven Teil von $H$ und $H'$ und wirken sich auf den projektiven Teil eines Punktes aus. Sie werden dazu verwendet die Epipole ins unendliche zu projizieren\cite{ZZ,phdextrinsicPara}.
+Die Matrizen $H_p$ und $H_p'$ beschreiben den projektiven Teil von $H$ und $H'$ und wirken sich auf den projektiven Komponenten eines Punktes aus. Sie werden dazu verwendet die Epipole ins unendliche zu projizieren\cite{ZZ,phdextrinsicPara}.
 
 
 \begin{gather}
@@ -165,7 +165,7 @@ Die Matrizen $H_p$ und $H_p'$ beschreiben den projektiven Teil von $H$ und $H'$ 
 		0&1&0\\
 		w_a&w_b&1
 	\end{bmatrix}
-\end{gather}\\
+\end{gather}
 
 Für die affinen Komponenten $H_a$ und $H_a'$ gilt
 
@@ -175,12 +175,12 @@ Für die affinen Komponenten $H_a$ und $H_a'$ gilt
 		u_a-v_cw_b&v_cw_a-v_a&0\\
 		v_a-v_cw_a&v_b-v_cw_b&v_c\\
 		0&0&1
-	\end{bmatrix}
+	\end{bmatrix} \, .
 \end{gather}
-.
 
 
-Des Weiteren gilt für $H_a$ und $H_a'$, dass sie jeweils nochmal in eine Rotationsmatrix $H_r$ und $H_r'$ und eine Scherungsmatrix $H_s$ und $H_s'$ zerlegt werden\cite{ZZ,phdextrinsicPara}.
+
+Des Weiteren gilt für $H_a$ und $H_a'$, dass sie jeweils nochmal in eine Rotationsmatrix $H_r$ und $H_r'$ und eine Scherungsmatrix $H_s$ und $H_s'$ zerlegt werden\cite{ZZ,phdextrinsicPara}
 
 
 \begin{gather}
@@ -196,7 +196,7 @@ Des Weiteren gilt für $H_a$ und $H_a'$, dass sie jeweils nochmal in eine Rotati
 		u_a&u_b&u_c\\
 		0&1&0\\
 		0&0&1
-	\end{bmatrix}\label{eq:DefHs}
+	\end{bmatrix}\label{eq:DefHs} \, .
 \end{gather}\\
 
 $H_r$ und auch $H_r'$ definieren eine Rotation und auch eine Verschiebung, welche die bereits parallelen Epipolarlinien horizontal ausrichtet. Durch die Verschiebung $v_c$ wird der vertikale Versatz zwischen den Epipolarlinien beider Bilder ausgeglichen. Es entstehen die einheitlichen Scanlinien. Die Matrizen $H_s$ und $H_s'$ definieren eine Scherung. 

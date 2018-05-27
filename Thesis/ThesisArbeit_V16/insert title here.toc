@@ -28,15 +28,15 @@
 \contentsline {chapter}{\numberline {6}Szenenrekonstruktion durch Rektifizierung}{53}{chapter.393}
 \contentsline {section}{\numberline {6.1}Szenenrekonstruktion mit Rektifizierung}{53}{section.395}
 \contentsline {section}{\numberline {6.2}Rektifizierung mit Homographien}{55}{section.398}
-\contentsline {subsection}{\numberline {6.2.1}Projektive Transformation}{57}{subsection.433}
-\contentsline {subsection}{\numberline {6.2.2}\IeC {\"A}hnlichkeitstransformation}{61}{subsection.483}
-\contentsline {subsection}{\numberline {6.2.3}Scherungstransformation}{63}{subsection.511}
-\contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{65}{section.538}
-\contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{68}{chapter.549}
-\contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{69}{section.551}
-\contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{76}{section.559}
-\contentsline {chapter}{\nonumberline Zusammenfassung und Ausblick}{79}{chapter*.565}
-\contentsline {chapter}{\nonumberline Anhang}{80}{chapter*.566}
-\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{149}{chapter*.572}
-\contentsline {chapter}{Abbildungsverzeichnis}{150}{chapter*.573}
-\contentsline {chapter}{Literaturverzeichnis}{152}{chapter*.574}
+\contentsline {subsection}{\numberline {6.2.1}Projektive Transformation}{57}{subsection.431}
+\contentsline {subsection}{\numberline {6.2.2}\IeC {\"A}hnlichkeitstransformation}{61}{subsection.481}
+\contentsline {subsection}{\numberline {6.2.3}Scherungstransformation}{63}{subsection.509}
+\contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{65}{section.536}
+\contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{68}{chapter.547}
+\contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{69}{section.549}
+\contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{76}{section.557}
+\contentsline {chapter}{\nonumberline Zusammenfassung und Ausblick}{79}{chapter*.563}
+\contentsline {chapter}{\nonumberline Anhang}{80}{chapter*.564}
+\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{149}{chapter*.570}
+\contentsline {chapter}{Abbildungsverzeichnis}{150}{chapter*.571}
+\contentsline {chapter}{Literaturverzeichnis}{152}{chapter*.572}
