@@ -1,7 +1,8 @@
 %\chapter{3D-Stereokalibrierung und Szenenrekonstruktion mit reellen Daten und Kameras unterschiedlicher Auflösung}
-\label{sec:realAuf} 
+
 
 \section{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}
+\label{sec:realAuf} 
 
 Für den Test, ob die Szenerekonstruktion im Realbeispiel auch mit unterschiedlichen Kameraauflösungen funktioniert, wird die Kameramatrix $K'$ von $C'$ künstlich skaliert. Wie aus Kapitel \ref{sec:CameraModels}, hat diese die Form
 
@@ -10,12 +11,12 @@ Für den Test, ob die Szenerekonstruktion im Realbeispiel auch mit unterschiedli
 
 \begin{gather}
 K'_{[1:1]}=\begin{bmatrix}
-k_x\zeta&s&V_{\sigma,x}\\
-0&k_y\zeta&V_{\sigma,y}\\
+k_x\zeta&s&V_{\sigma x}\\
+0&k_y\zeta&V_{\sigma y}\\
 0&0&1
-\end{bmatrix}
-\end{gather} \\
-.
+\end{bmatrix} \, .
+\end{gather} 
+
 
 %$\alpha_x$ und $\alpha_y$ setzen sich auch dem Abstand des Kamerazentrums zum Hauptpunkt zusammen, welcher in dieser Arbeit als mit $\zeta$ bezeichnet wurde, und den Kantenlängen der Pixel auf dem Sensor $m_x$ und $m_y$. 
 
@@ -32,26 +33,26 @@ Um die Auflösung von $K'$ zu verändern, werden die Matrixeinträge $k_x \zeta$
 %\end{bmatrix}\\
 K'_{[5:2]}=	
 \begin{bmatrix}
-k_x\zeta \cdot 5 &s&V_{\sigma,x} \cdot 5\\
-0&k_y\zeta \cdot 2&V_{\sigma,y} \cdot 2\\
+k_x\zeta \cdot 5 &s&V_{\sigma x} \cdot 5\\
+0&k_y\zeta \cdot 2&V_{\sigma y} \cdot 2\\
 0&0&1
 \end{bmatrix}\\
 %K'_{[2:1]}=	
 %\begin{bmatrix}
-%k_x\zeta \cdot 2 &s&V_{\sigma,x} \cdot 2\\
+%k_x\zeta \cdot 2 &s&V_{\sigma x} \cdot 2\\
 %0&k_y\zeta \cdot 1&V_{\sigma,y} \cdot 1\\
 %0&0&1
 %\end{bmatrix}\\
 K'_{[1:2]}=	
 \begin{bmatrix}
-k_x\zeta \cdot 1 &s&V_{\sigma,x} \cdot 1\\
-0&k_y\zeta\cdot 2&V_{\sigma,y} \cdot 2\\
+k_x\zeta \cdot 1 &s&V_{\sigma x} \cdot 1\\
+0&k_y\zeta\cdot 2&V_{\sigma y} \cdot 2\\
 0&0&1
 \end{bmatrix}\\
 K'_{[1.2:2.3]}=	
 \begin{bmatrix}
-k_x\zeta \cdot 1.2 &s&V_{\sigma,x} \cdot 1.2\\
-0&k_y\zeta \cdot 2.3&V_{\sigma,y} \cdot 2.3\\
+k_x\zeta \cdot 1.2 &s&V_{\sigma x} \cdot 1.2\\
+0&k_y\zeta \cdot 2.3&V_{\sigma y} \cdot 2.3\\
 0&0&1
 \end{bmatrix}\\
 \end{gather*}
@@ -128,7 +129,7 @@ Der Szenenrekonstruktionsalgorithmus wird für jede Kameraauflösung getestet. D
 \end{figure}
 \pagebreak
 
-Die Abbildungen \ref{fig:RecT52}, \ref{fig:RecT12} und \ref{fig:RecT1223} zeigen einmal die Rekonstruierten Punkte in einem 3D-Plot und daneben den 2D-Plot. Auch hier kann beobachtet werden, dass es immer zu den gleichen rekonstruierten Szenen kommt. In Abbildung \ref{fig:RecT12} ist die Rekonstruktion in einem links drehendem Koordinatensystem geplottet, weshalb die Rekonstitution spiegelverkehrt wirkt. 
+Die Abbildungen \ref{fig:RecT52}, \ref{fig:RecT12} und \ref{fig:RecT1223} zeigen einmal die Rekonstruierten Punkte in einem 3D-Plot und daneben den 2D-Plot. Auch hier kann beobachtet werden, dass es immer zu den gleichen rekonstruierten Szenen kommt. In Abbildung \ref{fig:RecT12} ist die Rekonstruktion in einem links drehendem Koordinatensystem geplottet, weshalb die Rekonstruktion spiegelverkehrt wirkt. 
 
 %\begin{figure}[!htb]
 %	\centering

@@ -1,7 +1,7 @@
 \section{Auswirkungen von unterschiedlichen Kameraauflösungen}
 \label{sec:minimalAuf} 
 
-Der entstandene Szenenrekonstruktionsalforithmus wurde anhand von Kameras gleicher Auflösung implementiert und bereits validiert. Im folgenden soll nun getestet werden, ob der entwickelte Algorithmus auch im Stande ist für Kameras unterschiedlicher Auflösung eine Szene richtig zu Rekonstruieren. Zunächst wird beschrieben, welche Modifizierungen auf einem Sensor bei veränderung Der Auflösung stattfinden. Anschließend wird analysiert, wie sich die Auflösungsänderung auf das in Kapitel \ref{sec:CameraModels} beschriebene Kameramodell ändert und welche Einflüsse sie auf die in Kapitel \ref{sec:HFE} hergeleiteten Epipolaren Bedingungen und somit auf die Bestimmung der extrinsischen Kameraparameter und der folgenden Szenenrekonstruktion hat. Zum Schluss werden die Ergebnisse der synthetischen Rekonstruktion mit unterschiedlichen Kameraauflösungen präsentiert und validiert.
+Der entstandene Szenenrekonstruktionsalforithmus wurde anhand von Kameras gleicher Auflösung implementiert und bereits validiert. Im folgenden soll nun getestet werden, ob der entwickelte Algorithmus auch im Stande ist für Kameras unterschiedlicher Auflösung eine Szene richtig zu Rekonstruieren. Zunächst wird beschrieben, welche Modifizierungen auf einem Sensor bei Veränderung der Auflösung stattfinden. Anschließend wird analysiert, wie sich die Auflösungsänderung auf das in Kapitel \ref{sec:CameraModels} beschriebene Kameramodell ändert und welche Einflüsse sie auf die in Kapitel \ref{sec:HFE} hergeleiteten Epipolaren Bedingungen und somit auf die Bestimmung der extrinsischen Kameraparameter und der folgenden Szenenrekonstruktion hat. Zum Schluss werden die Ergebnisse der synthetischen Rekonstruktion mit unterschiedlichen Kameraauflösungen präsentiert und validiert.
  
 
 \section{Geometrie eines Sensors}
@@ -10,7 +10,7 @@ Der entstandene Szenenrekonstruktionsalforithmus wurde anhand von Kameras gleich
 Die Geometrie eines Sensors kann als eine  $M \times N$ - Matrix, bestehend aus $M \times N$ Sensorelementen dargestellt werden\cite{Photonik}. Die Auflösung eines Sensors hängt von den horizontalen und vertikalen Abständen der Sensorelemente ab. Abbildung \ref{fig:Sensor} zeigt den schematischen Aufbau eines Sensors (CMOS). \\
 
 
-Ein Sensor hat eine maximale Auflösung. Die maximale Anzahl der Sensorelemente auf einem Sensor beschreit die maximale Auflösung. Verschiedene Kameras können aus diesem Grund verschiedenen Auflösungen besitzen. Die Anzahl und Größe der Einzelnen Sensorelemente variiert mit den Größen der Sensorchips. Je größer ein Sensor ist und je mehr Sensorelemente er besitzt, desto besser ist die Bildqualität\cite{Photonik}. Bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}. Auch ist es möglich die Auflösung eines Sensors digital zu verändern. Wird eine Auflöung kleiner der maximalen Auflösung eingesteltt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen. Benachbarte Pixel werden hier zu einem neuen Pixel definiert\cite{Photonik}. Ein neuer Pixel wird aus den benachbarten Pixeln berechnet.\\
+Ein Sensor hat eine maximale Auflösung. Die maximale Anzahl der Sensorelemente auf einem Sensor beschreit die maximale Auflösung. Verschiedene Kameras können aus diesem Grund verschiedene Auflösungen besitzen. Die Anzahl und Größe der Einzelnen Sensorelemente variiert mit den Größen der Sensorchips. Je größer ein Sensor ist und je mehr Sensorelemente er besitzt, desto besser ist die Bildqualität\cite{Photonik}. Bei maximaler Auflösung definiert genau ein Sensorelement einen Pixel. Ein Pixel wiederum entspricht einem Bildpunkt\cite{Photonik}. Auch ist es möglich die Auflösung eines Sensors digital zu verändern. Wird eine Auflöung kleiner der maximalen Auflösung eingestellt, desto geringer wird die Anzahl der Pixel. Der Prozess, welcher hier stattfindet, gehört zu den Nachbarschaftsoperationen. Benachbarte Pixel werden hier zu einem neuen Pixel definiert\cite{Photonik}.\\
 
 \begin{figure}[!htb]
 	\centering
@@ -40,7 +40,7 @@ Eine Veränderung der Auflösung kann auch eine Änderung der Seitenverhältniss
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1.\linewidth]{images/AufloesungSensor.png}
-	\caption[Nachbarschaftsoperation auf Sensoren]{Bild a) zeigt die den Zusammenschluss mehrerer benachbarter Pixel zu einem neuen Pixel. Bild b) zeigt in gelb markiert, den aktiven lichtempfindlichen Bereich des Sensors, wenn sich das Seitenverhältnis geändert wird und nicht mehr der komplette Sensor genutzt wird.} 
+	\caption[Nachbarschaftsoperation auf Sensoren]{Bild a) zeigt den Zusammenschluss mehrerer benachbarter Pixel zu einem neuen Pixel. Bild b) zeigt in gelb markiert, den aktiven lichtempfindlichen Bereich des Sensors, wenn das Seitenverhältnis geändert wird und nicht mehr der komplette Sensor genutzt wird.} 
 	\label{fig:SensorResolutions}
 \end{figure}
 
@@ -52,15 +52,13 @@ Eine Veränderung der Auflösung kann auch eine Änderung der Seitenverhältniss
 
 
 
-\pagebreak
+%\pagebreak
 
 \section{Auswirkungen auf die Szenenrekonstruktion}
 
 Im folgenden wird zunächst analysiert, welche Änderungen sich im Lochkameramodell bei veränderter Auflösung ergeben und was für Auswirkungen diese auf die in Kapitel \ref{sec:HFE} aufgestellten Epipolaren Bedingungen hat.\\
 
-Im Lochkameramodell hat eine Änderung der Kameraauflösung lediglich eine Auswirkung auf die Skalierung der Sensorkoordinatenachsen. Mit der Auflösung, ändern sich die Anzahl und die Größe der Pixel. Die Längeneinheiten des Sensorkoordinatensystems orientieren sich, wie in Kapitel \ref{sec:CameraModels} beschrieben, an genau diesen Längenskalierung der Pixelkanten $l_x$ und $l_y$. Folglich kommt es zu einer Skalierung des Sensorkoordinatensystems.Alle anderen Koordinatensysteme bleiben unverändert. Durch Nachbarschaftsopterationen werden aus mehreren benachbarten Pixel ein neuer, jedoch bleibt der Ort des Pixel der gleiche\cite{Doessel}. Die Abbildungen \ref{fig:Aufl1} und \ref{fig:Aufl2} zeigen, dass sich zwar die Projektion von Bildebenenkoordinatensystem auf das Sensorkoordinatensystem für den Punkt $m_\sigma$ ändert, 
-
-%Jedoch wird der Bildpunkt $m_{\tau'}$ an der selben Position des Sensors wie zuvor auch abgebildet.\\
+Im Lochkameramodell hat eine Änderung der Kameraauflösung lediglich eine Auswirkung auf die Skalierung der Sensorkoordinatenachsen. Mit der Auflösung, ändern sich die Anzahl und die Größe der Pixel. Die Längeneinheiten des Sensorkoordinatensystems orientieren sich, wie in Kapitel \ref{sec:CameraModels} beschrieben, an genau diesen Längenskalierung der Pixelkanten $l_x$ und $l_y$. Folglich kommt es zu einer Skalierung des Sensorkoordinatensystems. Alle anderen Koordinatensysteme bleiben unverändert. Durch Nachbarschaftsopterationen werden aus mehreren benachbarten Pixel ein neuer, jedoch bleibt der Ort des Pixel der gleiche\cite{Doessel}. Die Abbildungen \ref{fig:Aufl1} und \ref{fig:Aufl2} zeigen, dass sich zwar die Projektion von Bildebenenkoordinatensystem auf das Sensorkoordinatensystem für den Punkt $m_\sigma$ ändert, jedoch wird der Bildpunkt $m_{\tau'}$ an der selben Position des Sensors wie zuvor auch abgebildet.\\
 
 
 %Eine Änderung der Kameraauflösung hat im Lochkameramodell lediglich eine Auswirkung auf die skalierung der Längeneinheiten des Sensorkoordinatensystems.
@@ -86,7 +84,7 @@ Im Lochkameramodell hat eine Änderung der Kameraauflösung lediglich eine Auswi
 \end{figure}
 
 
-Eine Skalierung der Sensorkoordinaten bedeutet, dass sich die Brennweite in Pixeleinheiten gegeben ändert, jedoch ändert sich nicht die effektive Brennweite in Millimeter. Anhand des Aufbau der Kameramatrix aus Kapitel \ref{sec:CameraModels} kann das nochmal verdeutlicht werden. 
+Eine Skalierung der Sensorkoordinaten bedeutet, dass sich die Brennweite in Pixeleinheiten gegeben ändert, jedoch ändert sich nicht die effektive Brennweite in Millimeter. Anhand des Aufbaus der Kameramatrix aus Kapitel \ref{sec:CameraModels} kann das nochmal verdeutlicht werden
 %gezeigt, setzt sich die erweiterte Kameramatrix $K$ wie folgt zusammen:
 
 \begin{equation}
@@ -94,10 +92,10 @@ K=  \begin{bmatrix}
 k_x \zeta & 0 & V_{\sigma x}\\
 0 & k_y \zeta & V_{\sigma y}\\
 0 & 0   & 1 \\
-\end{bmatrix}
+\end{bmatrix} \, .
 \end{equation}
 
-Wie bereits bekannt wird kommt es bei der Transformation von Bildebenenkoordinaten $m_\tau$ auf Sensorkoordinaten $m_\sigma$ zu einer Skalierung der Bildebenenkoordinaten in Millimeter auf Sensorkoordinaten in Pixel. $\zeta_x$ und $\zeta_y$ stehen für die Brennweite. Durch die Multiplikation mit $k_x$ und $k_y$ wird die Brennweite auf Pixeleinheiten skaliert. Die ursprüngliche Brennweite beträgt $\zeta_x = \zeta_y = 1$. Kommt jetzt eine skalierung von $k_x = k_y = 2$ dazu. 
+Wie bereits bekannt, kommt es bei der Transformation von Bildebenenkoordinaten $m_\tau$ auf Sensorkoordinaten $m_\sigma$ zu einer Skalierung der Bildebenenkoordinaten in Millimeter auf Sensorkoordinaten in Pixel. $\zeta_x$ und $\zeta_y$ stehen für die Brennweite. Durch die Multiplikation mit $k_x$ und $k_y$ wird die Brennweite auf Pixeleinheiten skaliert. Die ursprüngliche Brennweite beträgt $\zeta_x = \zeta_y = 1$. Kommt jetzt eine skalierung von $k_x = k_y = 2$ dazu, ergibt sich die folgende Matrix
 
 
 \begin{gather}
@@ -125,21 +123,21 @@ Wie bereits bekannt wird kommt es bei der Transformation von Bildebenenkoordinat
 	2 & 0 & V_{\sigma x}\\
 	0 & 2 & V_{\sigma y}\\
 	0 & 0 & 1 
-\end{bmatrix}
+\end{bmatrix} \, .
 \end{gather}
 
 Die Veränderung der Kameraauflösung hat in diesem Beispiel zur Folge, dass es so wirkt, als wäre die Brennweite verdoppelt worden. Das würde bedeuten, dass sich die Kamera von der Bildebene entfernt hätte, jedoch verändert weder Kamera noch Bildebene ihre Position. Dennoch vergrößert oder verkleinert sich durch die Skalierung der Pixel effektiv die Bildgröße. Um zu überprüfen. ob die Änderung der Kameraauflösung auch eine Änderung der Epipolaren Bedingungen mit sich führt, werden wieder die Gleichungen der Epipolaren Bedingungen in Kapitel \ref{sec:HFE} genauer betrachtet.\\
 
-Die Fundamentalmatrix beinhaltet, sowohl die intrinsischen als auch die extrinsischen Parameter, um von $F$ auf $E$ zu kommen, müssen die intrinsischen Kameraparameter bekannt sein. Mit bekannten $K$ und $K'$ gilt, dass:
+Die Fundamentalmatrix beinhaltet, sowohl die intrinsischen als auch die extrinsischen Parameter, um von $F$ auf $E$ zu kommen, müssen die intrinsischen Kameraparameter bekannt sein. Mit bekannten $K$ und $K'$ gilt, dass
 
 \begin{gather}
-	F = K'^{-T}R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\\
+	F = K'^{-T}R' \left[ \overrightarrow{C}'_\delta-\overrightarrow{C}_\delta\right]_\times R^TK^{-1}\\
 	E = K'^{T}FK\\
-	E= K'^T (K'^{-T}R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}) K\\
-	\leadsto E = R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^T		
+	E= K'^T (K'^{-T}R' \left[ \overrightarrow{C}'_\delta-\overrightarrow{C}_\delta\right]_\times R^TK^{-1}) K\\
+	\leadsto E = R' \left[ \overrightarrow{C}'_\delta-\overrightarrow{C}_\delta\right]_\times R^T	\, .	
 \end{gather}
 
-Da bei der Bestimmung von $E$ aus $F$ die intrinsischen Kameraparameter eliminiert werden, haben unterschiedliche Auflösungen keine Auswirkung auf die essentielle Matrix. Folglich sollte das Ergebnis bei der Bestimmung der extrinsischen Kameraparameter unverändert sein. Um die Aufgestellte Theorie zu überprüfen, wurde im synthetischen Beispiel die Kameramatrix $K'$ von $C'$ modifiziert. Für $C$ wurde $\zeta_x = \zeta_y = 1$ definiert, so das für Kameramatrix $K$ gilt:  
+Da bei der Bestimmung von $E$ aus $F$ die intrinsischen Kameraparameter eliminiert werden, haben unterschiedliche Auflösungen keine Auswirkung auf die essentielle Matrix. Folglich sollte das Ergebnis bei der Bestimmung der extrinsischen Kameraparameter unverändert sein. Um die Aufgestellte Theorie zu überprüfen, wurde im synthetischen Beispiel die Kameramatrix $K'$ von $C'$ modifiziert. Für $C$ wurde $\zeta_x = \zeta_y = 1$ definiert, so das für Kameramatrix $K$ gilt
 
 %Wird die Kameraauflösung verändert so bleibt die Brennweite $\zeta_x$ und $\zeta_y$ effektiv die gleiche, da sich aber die skalierung der Pixel mit $k_x$ und $k_y$ ändert, ist die Brennweite in Pixeln ausgedrückt verändert. Im synthetischen Beispiel wurde die Auflösung von $K'$ verändert indem, die Werte $\zeta'_x$ und $\zeta'_y$ durch multiplikation mit einem Salierungsfaktor verändert wurden.\\
 
@@ -151,13 +149,13 @@ Da bei der Bestimmung von $E$ aus $F$ die intrinsischen Kameraparameter eliminie
 		0&1&0&0\\
 		0&0&1&0\\
 		%0&0&1&0
-	\end{bmatrix}
+	\end{bmatrix} \, .
 \end{gather}
 
 
 Für die Kamermatrix $K'$ von $C'$ galt ursprünglich, dass $K = K'$. Die Auflösung von $C'$ wird geändert indem die Skalierungsfaktoren $k_x$ und $k_y$ mit $\zeta'_x$ und $\zeta_y$ multipliziert werden. 
 
-Für das Beispiel wurden drei verschiedenen Auflösungen getestet.  $K'_1$ mit $\zeta'_x \cdot 2$ und $\zeta'_y \cdot 2$, $K'_2$ mit $\zeta'_x \cdot 3.2$ und $\zeta'_y \cdot 1.2$ und $K'_e$ mit $\zeta'_x \cdot 0.5$ und $\zeta'_y \cdot 4.3$. Da ursprünglich galt, dass $\zeta'_x =\zeta'_y = 1$ ergeben sich die folgenden Kameramatrizen für $K'$.
+Für das Beispiel wurden drei verschiedenen Auflösungen getestet.  $K'_1$ mit $\zeta'_x \cdot 2$ und $\zeta'_y \cdot 2$, $K'_2$ mit $\zeta'_x \cdot 3.2$ und $\zeta'_y \cdot 1.2$ und $K'_e$ mit $\zeta'_x \cdot 0.5$ und $\zeta'_y \cdot 4.3$. Da ursprünglich galt, dass $\zeta'_x =\zeta'_y = 1$, ergeben sich die folgenden Kameramatrizen für $K'$.
 %Während für die Kameramatrix von $C$ der Wert  $\zeta_x = \zeta_y = 1$ ist, wird in der Kamermatrix $K$ ist, wird das $\zeta$ in $C'$ verändert, so dass drei verschiedene neue Kameramatrizen $K'_1, K'_2$ und $K'_3$ ergeben. 
 
 
@@ -180,10 +178,10 @@ Für das Beispiel wurden drei verschiedenen Auflösungen getestet.  $K'_1$ mit $
 		0&4.3&0&0\\
 		0&0&1&0\\
 		%0&0&1&0
-	\end{bmatrix}
+	\end{bmatrix} \, .
 \end{gather}\\
 
-Die Unterschiede der enstehenden Abbildungen in $C'$ sind in den Abbildungen \ref{fig:K}, \ref{fig:K1},\ref{fig:K2} und \ref{fig:K3} zu sehen.  \\
+Die Unterschiede der entstehenden Abbildungen in $C'$ sind in den Abbildungen \ref{fig:K}, \ref{fig:K1},\ref{fig:K2} und \ref{fig:K3} zu sehen.  \\
  
  
 \begin{figure}[!htb]
@@ -259,10 +257,10 @@ Wird das synthetische Beispiel jeweils mit den drei verschiedenen modifizierten 
 		0&-1&0\\
 		0&0&-\sqrt{2}\\
 		0&1&0
-	\end{pmatrix}\\
+	\end{pmatrix} \, . 
 \end{gather*}
 
-Wie beobachtet werden kann, werden, trotz unterschiedlicher Kameraauflösungen für $K'$, immer die selbe essentielle Matrix im Algorithmus bestimmt. Zu Erinnerung, in Kapitel \ref{sec:HFE} wurde gezeigt, dass jedes Vielfache von $E$ ist eine gültige Lösung ist. Somit gilt die Behauptung, dass die Kameraauflösung keine Auswirkung auf die Bestimmung der extrinsischen Kameraparameter hat, im synthetischen Beispiel, als bestätigt. Als Vergleich kann die Abbildung \ref{fig: reconstructedDifferentResolutions}, welche das Ergebnis der Rekonstruktion der Szene mit $K'_3$ als Kameramatrix für $C'$ veranschaulicht, mit der Rekonstruierten Szene in Abbildung 	\ref{fig:Quader1} aus dem ersten Beispiel, betrachtet werden. Für die anderen Varianten von $K'$ wurden ebenfals die selbe 3D-Szene rekonstruiert.\\ 
+Wie beobachtet werden kann, werden trotz unterschiedlicher Kameraauflösungen für $K'$, immer die selbe essentielle Matrix im Algorithmus bestimmt. Zu Erinnerung, in Kapitel \ref{sec:HFE} wurde gezeigt, dass jedes Vielfache von $E$ ist eine gültige Lösung ist. Somit gilt die Behauptung, dass die Kameraauflösung keine Auswirkung auf die Bestimmung der extrinsischen Kameraparameter hat, im synthetischen Beispiel als bestätigt. Als Vergleich kann die Abbildung \ref{fig:reconstructedDifferentResolutions}, welche das Ergebnis der Szenenrekonstrukion mit $K'_3$ als Kameramatrix für $C'$ veranschaulicht, mit der rekonstruierten Szene in Abbildung \ref{fig:Quader1} aus dem ersten Beispiel, betrachtet werden. Für die anderen Varianten von $K'$ wurden ebenfalls die selbe 3D-Szene rekonstruiert.\\ 
 
 
 
@@ -272,7 +270,7 @@ Wie beobachtet werden kann, werden, trotz unterschiedlicher Kameraauflösungen f
 	\centering
 	\includegraphics[width=0.5\linewidth]{images/DifferentAufloesungRekonstructedScene.png}
 	\caption[Rekonstruierte Szene bei unterschiedlichen Kameraauflösungen]{Die Abbildung zeigt die rekonstruierte Szenen des synthetischen Beispiels mit $K'_3$ als intrisische Parameter für $C'$.} 
-	\label{fig: reconstructedDifferentResolutions}
+	\label{fig:reconstructedDifferentResolutions}
 \end{figure}
 
 

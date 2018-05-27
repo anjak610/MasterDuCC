@@ -23,19 +23,19 @@
 \BOOKMARK [2][]{subsection.284}{5.3.1 Singularit\344t der Fundamentalmatrix}{section.267}% 23
 \BOOKMARK [2][]{subsection.288}{5.3.2 Singul\344rwerte der essentiellen Matrix}{section.267}% 24
 \BOOKMARK [1][]{section.289}{5.4 Szenenrekonstruktion mit Sampson-Approximation}{chapter.261}% 25
-\BOOKMARK [1][]{section.383}{5.5 Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\366sung}{chapter.261}% 26
-\BOOKMARK [0][]{chapter.397}{6 Szenenrekonstruktion durch Rektifizierung}{}% 27
-\BOOKMARK [1][]{section.399}{6.1 Szenenrekonstruktion mit Rektifizierung}{chapter.397}% 28
-\BOOKMARK [1][]{section.402}{6.2 Rektifizierung mit Homographien}{chapter.397}% 29
-\BOOKMARK [2][]{subsection.437}{6.2.1 Projektive Transformation}{section.402}% 30
-\BOOKMARK [2][]{subsection.487}{6.2.2 \304hnlichkeitstransformation}{section.402}% 31
-\BOOKMARK [2][]{subsection.515}{6.2.3 Scherungstransformation}{section.402}% 32
-\BOOKMARK [1][]{section.542}{6.3 Rektifizierung mit unterschiedlichen Kameraufl\366sungen}{chapter.397}% 33
-\BOOKMARK [0][]{chapter.553}{7 Punktesortierung in Schachbrettmustern}{}% 34
-\BOOKMARK [1][]{section.555}{7.1 Sortierungsalgorithmus}{chapter.553}% 35
-\BOOKMARK [1][]{section.563}{7.2 Resultate bei stark verzerrten Schachbrettern}{chapter.553}% 36
-\BOOKMARK [0][]{chapter*.569}{Zusammenfassung und Ausblick}{}% 37
-\BOOKMARK [0][]{chapter*.570}{Anhang}{}% 38
-\BOOKMARK [0][]{chapter*.576}{Eidesstattliche Erkl\344rung}{}% 39
-\BOOKMARK [0][]{chapter*.577}{Abbildungsverzeichnis}{}% 40
-\BOOKMARK [0][]{chapter*.578}{Literaturverzeichnis}{}% 41
+\BOOKMARK [1][]{section.379}{5.5 Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\366sung}{chapter.261}% 26
+\BOOKMARK [0][]{chapter.393}{6 Szenenrekonstruktion durch Rektifizierung}{}% 27
+\BOOKMARK [1][]{section.395}{6.1 Szenenrekonstruktion mit Rektifizierung}{chapter.393}% 28
+\BOOKMARK [1][]{section.398}{6.2 Rektifizierung mit Homographien}{chapter.393}% 29
+\BOOKMARK [2][]{subsection.433}{6.2.1 Projektive Transformation}{section.398}% 30
+\BOOKMARK [2][]{subsection.483}{6.2.2 \304hnlichkeitstransformation}{section.398}% 31
+\BOOKMARK [2][]{subsection.511}{6.2.3 Scherungstransformation}{section.398}% 32
+\BOOKMARK [1][]{section.538}{6.3 Rektifizierung mit unterschiedlichen Kameraufl\366sungen}{chapter.393}% 33
+\BOOKMARK [0][]{chapter.549}{7 Punktesortierung in Schachbrettmustern}{}% 34
+\BOOKMARK [1][]{section.551}{7.1 Sortierungsalgorithmus}{chapter.549}% 35
+\BOOKMARK [1][]{section.559}{7.2 Resultate bei stark verzerrten Schachbrettern}{chapter.549}% 36
+\BOOKMARK [0][]{chapter*.565}{Zusammenfassung und Ausblick}{}% 37
+\BOOKMARK [0][]{chapter*.566}{Anhang}{}% 38
+\BOOKMARK [0][]{chapter*.572}{Eidesstattliche Erkl\344rung}{}% 39
+\BOOKMARK [0][]{chapter*.573}{Abbildungsverzeichnis}{}% 40
+\BOOKMARK [0][]{chapter*.574}{Literaturverzeichnis}{}% 41

@@ -362,11 +362,11 @@ Zuletzt folgt die Transformation der Bildebenenkoordinaten auf den Sensorchip. D
 \begin{gather}	
 	{u}=m_{\tau x} \, k_x - V_{\sigma x}\\
 	{v}=m_{\tau y} \, k_y - V_{\sigma y}\\
-	1=1.
+	1=1\,.
 \end{gather}
 
 
-$k_x=1/lx$ und $k_y=1/ly$ ist die Pixeldichte in $\frac{pixel}{mm}$. Es wird angemerkt, dass in der Bildebene und der Sensorebene die Punkte ausschließlich im zweidimensionalen Raum definiert sind. Aus den normierten Bildkoordinaten lässt sich somit folgende Sensormatrix bilden:
+$k_x=1/lx$ und $k_y=1/ly$ ist die Pixeldichte in $\frac{pixel}{mm}$. Es wird angemerkt, dass in der Bildebene und der Sensorebene die Punkte ausschließlich im zweidimensionalen Raum definiert sind. Aus den normierten Bildkoordinaten lässt sich somit folgende Sensormatrix bilden
 
 \begin{gather}
 	\overrightarrow{m_\sigma}=\begin{bmatrix}u \\v\\1 \end{bmatrix}=
@@ -375,7 +375,7 @@ $k_x=1/lx$ und $k_y=1/ly$ ist die Pixeldichte in $\frac{pixel}{mm}$. Es wird ang
 		0&k_y&V_{\sigma y}\\
 		0&0&1&\\
 	\end{bmatrix}
-	\begin{bmatrix}m_{\tau x}\\ m_{\tau y}\\ 1\end{bmatrix}= R_\sigma \vec{m_\tau}
+	\begin{bmatrix}m_{\tau x}\\ m_{\tau y}\\ 1\end{bmatrix}= R_\sigma \vec{m_\tau}\,.
 \end{gather}
 
 Mit Hilfe der Transformationsmatrix $R_\sigma$ kann ein Punkt von der Bildebene auf das Sensorelement projiziert werden.\\
@@ -387,7 +387,7 @@ K=	R_\sigma K_0=  \begin{bmatrix}
 k_x \zeta & 0 & V_{\sigma x}\\
 0 & k_y \zeta & V_{\sigma y}\\
 0 & 0   & 1 &\\
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 
 Mit dieser Kameramatrix wird eine neue Projektionsmatrix mit $P=KR[I -C]$ gebildet, die einen Objektpunkt auf einen Bildpunkt im Sensorkoordinatensystem abbildet. Durch die Normierung dieses Punktes kann auf den direkten Sensorpunkt geschlossen werden.  Ein weiterer Vorteil der erweiterten Kameramatrix $K$ ist, dass sie die Pixeldichte $k_x,k_y$ und die Brennweite $\zeta$ beinhaltet. Diese Parameter werden im Folgenden als intrinsische Kameraparameter bezeichnet. Die Koordinatentransformationsmatrix $R$ wird im Gegensatz aus den sogenannten extrinsischen Kameraparameter, der Kameraposition und Orientierung, definiert. Sind sowohl die intrinsischen wie auch extrinsischen Kameraparameter vorbestimmt kann $P$ bestimmt und mit dem hier beschriebenen Lösungsweg das Bild konstruiert werden. % ein Punkt auf die Sensorebene der entsprechenden Kamera projeziert werden. 

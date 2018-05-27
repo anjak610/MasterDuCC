@@ -16,27 +16,27 @@
 \contentsline {subsection}{\numberline {4.2.2}Szenenrekonstruktion durch Triangulation}{28}{subsection.216}
 \contentsline {section}{\numberline {4.3}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{32}{section.231}
 \contentsline {section}{\numberline {4.4}Geometrie eines Sensors}{32}{section.232}
-\contentsline {section}{\numberline {4.5}Auswirkungen auf die Szenenrekonstruktion}{34}{section.235}
-\contentsline {chapter}{\numberline {5}Reelle Rekonstruktion}{38}{chapter.261}
-\contentsline {section}{\numberline {5.1}Stereoaufbau}{39}{section.263}
-\contentsline {section}{\numberline {5.2}Korrespondenzanalyse}{39}{section.265}
-\contentsline {section}{\numberline {5.3}Normierter-Acht-Punkt-Algorithmus}{40}{section.267}
-\contentsline {subsection}{\numberline {5.3.1}Singularit\IeC {\"a}t der Fundamentalmatrix}{42}{subsection.284}
-\contentsline {subsection}{\numberline {5.3.2}Singul\IeC {\"a}rwerte der essentiellen Matrix}{44}{subsection.288}
-\contentsline {section}{\numberline {5.4}Szenenrekonstruktion mit Sampson-Approximation}{44}{section.289}
-\contentsline {section}{\numberline {5.5}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{51}{section.383}
-\contentsline {chapter}{\numberline {6}Szenenrekonstruktion durch Rektifizierung}{55}{chapter.397}
-\contentsline {section}{\numberline {6.1}Szenenrekonstruktion mit Rektifizierung}{55}{section.399}
-\contentsline {section}{\numberline {6.2}Rektifizierung mit Homographien}{57}{section.402}
-\contentsline {subsection}{\numberline {6.2.1}Projektive Transformation}{59}{subsection.437}
-\contentsline {subsection}{\numberline {6.2.2}\IeC {\"A}hnlichkeitstransformation}{63}{subsection.487}
-\contentsline {subsection}{\numberline {6.2.3}Scherungstransformation}{65}{subsection.515}
-\contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{67}{section.542}
-\contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{70}{chapter.553}
-\contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{71}{section.555}
-\contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{78}{section.563}
-\contentsline {chapter}{\nonumberline Zusammenfassung und Ausblick}{81}{chapter*.569}
-\contentsline {chapter}{\nonumberline Anhang}{82}{chapter*.570}
-\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{151}{chapter*.576}
-\contentsline {chapter}{Abbildungsverzeichnis}{152}{chapter*.577}
-\contentsline {chapter}{Literaturverzeichnis}{154}{chapter*.578}
+\contentsline {section}{\numberline {4.5}Auswirkungen auf die Szenenrekonstruktion}{33}{section.235}
+\contentsline {chapter}{\numberline {5}Reelle Rekonstruktion}{37}{chapter.261}
+\contentsline {section}{\numberline {5.1}Stereoaufbau}{38}{section.263}
+\contentsline {section}{\numberline {5.2}Korrespondenzanalyse}{38}{section.265}
+\contentsline {section}{\numberline {5.3}Normierter-Acht-Punkt-Algorithmus}{39}{section.267}
+\contentsline {subsection}{\numberline {5.3.1}Singularit\IeC {\"a}t der Fundamentalmatrix}{41}{subsection.284}
+\contentsline {subsection}{\numberline {5.3.2}Singul\IeC {\"a}rwerte der essentiellen Matrix}{43}{subsection.288}
+\contentsline {section}{\numberline {5.4}Szenenrekonstruktion mit Sampson-Approximation}{43}{section.289}
+\contentsline {section}{\numberline {5.5}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{49}{section.379}
+\contentsline {chapter}{\numberline {6}Szenenrekonstruktion durch Rektifizierung}{53}{chapter.393}
+\contentsline {section}{\numberline {6.1}Szenenrekonstruktion mit Rektifizierung}{53}{section.395}
+\contentsline {section}{\numberline {6.2}Rektifizierung mit Homographien}{55}{section.398}
+\contentsline {subsection}{\numberline {6.2.1}Projektive Transformation}{57}{subsection.433}
+\contentsline {subsection}{\numberline {6.2.2}\IeC {\"A}hnlichkeitstransformation}{61}{subsection.483}
+\contentsline {subsection}{\numberline {6.2.3}Scherungstransformation}{63}{subsection.511}
+\contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{65}{section.538}
+\contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{68}{chapter.549}
+\contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{69}{section.551}
+\contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{76}{section.559}
+\contentsline {chapter}{\nonumberline Zusammenfassung und Ausblick}{79}{chapter*.565}
+\contentsline {chapter}{\nonumberline Anhang}{80}{chapter*.566}
+\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{149}{chapter*.572}
+\contentsline {chapter}{Abbildungsverzeichnis}{150}{chapter*.573}
+\contentsline {chapter}{Literaturverzeichnis}{152}{chapter*.574}

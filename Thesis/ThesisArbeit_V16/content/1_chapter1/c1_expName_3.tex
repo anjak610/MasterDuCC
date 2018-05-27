@@ -1,9 +1,9 @@
 \chapter{Synthetische Rekonstruktion}
 \label{sec:minimal} 
 
-Anhand der erarbeiteten mathematischen Grundlagen ist ein Algorithmus für die Rekonstruktion einer Szene aus einer Stereobildaufnahme entstanden. Der Algorithmus wurde mit dem Ziel der Kamerakalibrierung und der Szenenrekonstruktion aus Bildquellen unterschiedlicher Auflösungen entwickelt, da Stereokalibrierungsverfahren einiger Computer Vision Applikationen keine unterschiedlichen Auflösungen von Kameras berücksichtigen. Der entwickelte Algorithmus ist in der Lage aus einem Stereobildpaar extrinsische Kameraparameter zu bestimmen und anhand dessen die 3D-Szene zu rekonstruieren, jedoch unter der Voraussetzung, dass die intrinsischen Kameraparameter beider Kameras bekannt sind.\\
+Anhand der erarbeiteten mathematischen Grundlagen ist ein Algorithmus für die Rekonstruktion einer Szene aus einer Stereobildaufnahme entstanden. Der Algorithmus wurde mit dem Ziel der Kamerakalibrierung und der Szenenrekonstruktion aus Bildquellen unterschiedlicher Auflösungen entwickelt, da Stereokalibrierungsverfahren einiger Computer-Vision-Applikationen keine unterschiedlichen Auflösungen von Kameras berücksichtigen. Der entwickelte Algorithmus ist in der Lage aus einem Stereobildpaar extrinsische Kameraparameter zu bestimmen und anhand dessen die 3D-Szene zu rekonstruieren, jedoch unter der Voraussetzung, dass die intrinsischen Kameraparameter beider Kameras bekannt sind.\\
 
-Im Folgenden wird der Algorithmus anhand eines virtuellen Beispiels erklärt. Dabei werden die einzelnen Schritte des Aufbaus der virtuellen Szene, der Bestimmung der extrinsischen Kameraparameter und der Rekonstruktion der virtuellen 3D-Szene beschrieben. Abbildung \ref{fig:ArbeitsProzessVirtuell} fasst den Arbeitsprozess des Szenenrekonstruktionsalgorithmus für das virtuelle Beispiel zusammen. \\
+Im Folgenden wird der Algorithmus anhand eines synthetischen Beispiels erklärt. Dabei werden die einzelnen Schritte des Aufbaus einer virtuellen 3D-Szene, der Bestimmung der extrinsischen Kameraparameter und der Rekonstruktion der virtuellen 3D-Szene beschrieben. Abbildung \ref{fig:ArbeitsProzessVirtuell} fasst den Arbeitsprozess des Szenenrekonstruktionsalgorithmus für das virtuelle Beispiel zusammen. \\
 
 
 
@@ -79,11 +79,11 @@ C=\begin{pmatrix}
 \end{pmatrix}\\
 T = R[I|-C]\\
 T = \begin{bmatrix}
-1&&0&&0&&C_1\\
-0&&1&&0&&C_2\\
-0&&0&&1&&C_3
-\end{bmatrix}
-\end{gather}. 
+1&&0&&0&&C_x\\
+0&&1&&0&&C_y\\
+0&&0&&1&&C_z
+\end{bmatrix} \, .
+\end{gather}
 
 $C'$ dagegen ist gegenüber $C$ verschoben und rotiert. Als Beispiel wird eine Rotation um die $\hat{b_2}'$ Achse für $C'$ bestimmt. Somit gilt für $P'$:
 %entlang $\hat{d_1}$ verschoben und um $\hat{b_2}$ rotiert. Somit ergibt sich für $T=[R|V]$ von $C$:
@@ -107,9 +107,9 @@ $C'$ dagegen ist gegenüber $C$ verschoben und rotiert. Als Beispiel wird eine R
 	\end{pmatrix}\\
 	\vec{C'}= 
 	\begin{pmatrix}
-		1&0&0&-C'_1\\
-		0&1&0&-C'_2\\
-		0&0&1&-C'_3			
+		1&0&0&-C'_x\\
+		0&1&0&-C'_y\\
+		0&0&1&-C'_z			
 	\end{pmatrix}\\
 	T'=R'[I|-C]\\
 	T'=		\begin{pmatrix}
@@ -119,15 +119,15 @@ $C'$ dagegen ist gegenüber $C$ verschoben und rotiert. Als Beispiel wird eine R
 	\end{pmatrix} 
 	\cdot
 	\begin{pmatrix}
-		1&0&0&-C'_1\\
-		0&1&0&-C'_2\\
-		0&0&1&-C'_3			
+		1&0&0&-C'_x\\
+		0&1&0&-C'_y\\
+		0&0&1&-C'_z			
 	\end{pmatrix}\\
 	T'=
 	\begin{pmatrix}
-		\cos(\alpha)&0&-\sin(\alpha)&-C'_1\cos(\alpha)+C'_3\sin(\alpha)\\
-		0&1&0&-C'_2\\
-		\sin(\alpha)&0&\cos(\alpha)&-C'_1\sin(\alpha)-C'_3\cos(\alpha)\\
+		\cos(\alpha)&0&-\sin(\alpha)&-C'_x\cos(\alpha)+C'_z\sin(\alpha)\\
+		0&1&0&-C'_y\\
+		\sin(\alpha)&0&\cos(\alpha)&-C'_x\sin(\alpha)-C'_z\cos(\alpha)\\
 	\end{pmatrix}
 \end{gather}\\
 
@@ -136,7 +136,7 @@ $C'$ dagegen ist gegenüber $C$ verschoben und rotiert. Als Beispiel wird eine R
 %Neben den Eckpunkten des Quaders wird noch ein neunter Punkt $E_\delta$ außerhalb des Quaders platziert und zwar so, dass es zu keinen linearen Abhängigkeiten zwischen $E_\delta$ und den anderen Punkten kommt. 
 
 
-Der Quader hat insgesamt acht Punkte, welche auf die Bildebenen der Kameras projiziert werden. Neben den Punkte des Quaders wird noch ein weiterer Punkt außerhalb des Quaders platziert und ebenfalls auf die Bildebenen projiziert. Mit insgesamt neun Punkten bei der Bestimmung der Fundamentalmatrix, wird die Wahrscheinlichkeit ein unterbestimmtes System aus der Koeffizientenmatrix $A$ zu bekommen minimiert. Ist $A$ unterbestimmt so besitzt sie Rang 7 und $F$ kann nicht eindeutig durch einen Sieben-Punkte-Algorithmus bestimmt werden\cite{HZ,LongQuan}. In dem hier berechneten Beispiel werden deswegen neun Punkte benutzt um sicherzugehen, dass $A$ Rang 8 besitzt und somit eindeutig bestimmt werden kann. Zur Bestimmung von $F$, wird der in Kapitel \ref{sec:HFE} aufgeführte Acht-Punkte Algorithmus angewandt.\\
+Der Quader hat insgesamt acht Punkte, welche auf die Bildebenen der Kameras projiziert werden. Neben den Punkten des Quaders wird noch ein weiterer Punkt außerhalb des Quaders platziert und ebenfalls auf die Bildebenen projiziert. Mit insgesamt neun Punkten bei der Bestimmung der Fundamentalmatrix, wird die Wahrscheinlichkeit ein unterbestimmtes System aus der Koeffizientenmatrix $A$ zu bekommen minimiert. Ist $A$ unterbestimmt so besitzt sie Rang 7 und $F$ kann nicht eindeutig durch einen Sieben-Punkte-Algorithmus bestimmt werden\cite{HZ,LongQuan}. In dem hier berechneten Beispiel werden deswegen neun Punkte benutzt um sicherzugehen, dass $A$ Rang 8 besitzt und somit eindeutig bestimmt werden kann. Zur Bestimmung von $F$, wird der in Kapitel \ref{sec:HFE} aufgeführte Acht-Punkte-Algorithmus angewandt.\\
 
 
 
@@ -167,7 +167,7 @@ K_0' =
 0&\zeta_{C'}&0\\
 0&0&1\\
 %0&0&1&0
-\end{bmatrix}\label{eq:eq4.10}
+\end{bmatrix}\, .\label{eq:eq4.10}
 \end{gather}
 
 Da zunächst von gleichen Kameraauflösungen ausgegangen wird, gilt $\zeta = \zeta'$. Sind $R,R',K_0$ und $K'_0$ bekannt, können die Projektionsmatrizen gebildet und anschließend die Punkte auf die Bildebene projiziert werden. Die entstandenen Bilder sind in Abbildung \ref{fig:AbbildungenMinimal} zu sehen.  
@@ -196,7 +196,7 @@ P' =
 0&1&0&\zeta_{C'}-v'_2\\
 \zeta_{C'}\sin(\alpha)&0&\zeta_{C'}\cos(\alpha)&-\zeta_{C'}(v'_1\sin(\alpha)+v'_3\cos(\alpha))\\
 %0&0&0&0&1
-\end{bmatrix}
+\end{bmatrix} \, .
 \end{gather}
 
 
@@ -218,29 +218,28 @@ Der Szenenrekonstruktionsalgorithmus für das synthetische Beispiel ist in drei 
 %\subsection{Bestimmung der Abbildungsvorschriften}
 \subsection{Bestimmung der extrinsischen Kameraparameter}
 
-Zur Bestimmung der extrinsischen Kameraparameter werden in dem hier berechneten Beispiel neun korrespondierende Punkte bestimmt. Mittels des \textit{Epipolar-Constraint} aus Gleichung \ref{eq:Ep6} wird der Acht-Punkt-Algorithmus wie in Kapitel \ref{sec:8pointAlg} beschrieben angewandt, um die Fundamentalmatrix zu bestimmen.
+Zur Bestimmung der extrinsischen Kameraparameter werden in dem hier berechneten Beispiel neun korrespondierende Punkte bestimmt. Mittels der epipolaren Bedingung aus Gleichung \ref{eq:Ep6} wird der Acht-Punkt-Algorithmus angewandt um die Fundamentalmatrix zu bestimmen.
 
 \begin{gather}
-	0=\vec{m'_\tau}^TK'^{-T}R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\vec{m_\tau}\\
-	=\vec{m'_\tau}F\vec{m_\tau}
-	%0=\vec{m'_\tau}F\vec{m_\tau}
+	0=\overrightarrow{m}'^T_{\tau'} \, K'^{-T} \,R' \left[ \overrightarrow{C'}_\delta-\overrightarrow{C}_\delta \right]_\times R^T \, K^{-1}\overrightarrow{m}_\tau\\
+	=\overrightarrow{m}'^T_{\tau'} F \overrightarrow{m}_\tau \, .
 \end{gather}
 
 
-Wie in Kapitel \ref{sec:EpiolarContraints} hergeleitet, bildet sich die essentielle Matrix aus:
+Wie in Kapitel \ref{sec:EpiolarContraints} hergeleitet, bildet sich die essentielle Matrix aus
 \begin{gather}
-	\vec{m'_\tau}^TK'^{-T}R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\vec{m_\tau}=0\\
-	\leadsto E = R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^T		
+	\overrightarrow{m}'^T_{\tau'}K'^{-T}R' \left[ \overrightarrow{C}'_\delta-\overrightarrow{C}_\delta\right]_\times R^TK^{-1}\overrightarrow{m}_\tau=0\\
+	\leadsto E = R' \left[ \overrightarrow{C}'_\delta-\overrightarrow{C}_\delta\right]_\times R^T	\, .	
 \end{gather}
 
-Um also $E$ aus $F$ zu bestimmen, gilt:
+Um also $E$ aus $F$ zu bestimmen, gilt
 %Aus der Fundamentalmatrix und den bekannten intrinsischen Kameraparametern, wird die essentielle Matrix berechnet $E$, vergleiche Hierzu Gleichung \ref{eq:Ep8}
 
 
 \begin{gather}
 	 E= K'^T F K\\
-    E= K'^T (K'^{-T}R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}) K\\
-	E = R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^T	
+    E= K'^T (K'^{-T}R' \left[ \overrightarrow{C}'_\delta-\overrightarrow{C}_\delta\right]_\times R^TK^{-1}) K\\
+	E = R' \left[ \overrightarrow{C}'_\delta-\overrightarrow{C}_\delta\right]_\times R^T	\, .
 \end{gather}
 
 %Tessentielle Matrix aus den normierten Bildebenenkoordinaten zu bestimmen.
@@ -256,19 +255,19 @@ Um also $E$ aus $F$ zu bestimmen, gilt:
 %		\vec{m'_\tau}^TK'^{-T}R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\vec{m_\tau}=0\\
 %		\leadsto E = R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^T		
 %\end{gather}
-Es wird davon ausgegangen, dass für $T = [R|-RC]$ von $C$ gilt, dass $T = [I|-0]$ ist. Die aus $E$ zu ermittelnde Matrix $T'$ beschreibt dann die Transformation von $C'$ relativ zu $C$\cite{HZ,Ferid}. Somit kann $E$ umformuliert werden zu:
+Es wird davon ausgegangen, dass für $T = [R|-RC]$ von $C$ gilt, dass $T = [I|-0]$ ist. Die aus $E$ zu ermittelnde Matrix $T'$ beschreibt dann die Transformation von $C'$ relativ zu $C$\cite{HZ,Ferid}. Somit kann $E$ umformuliert werden zu
 
 \begin{gather}
-	E = R'[\vec{C'_\delta} - \vec{C_\delta}]_\times R^T\\
-	E = R'[\vec{C'_\delta} - 0]_\times I^T\\
-	E = R'[\vec{C'_\delta}]_\times
+	E = R'[\overrightarrow{C}'_\delta - \overrightarrow{C}_\delta]_\times R^T\\
+	E = R'[\overrightarrow{C}'_\delta - 0]_\times I^T\\
+	E = R'[\overrightarrow{C}'_\delta]_\times \, .
 \end{gather}
 
 
-Um $R'$ und $[\vec{C'}_\delta]_\times$ zu bestimmen wird zunächst die essentielle Matrix \ensuremath{E}, mit Hilfe der Singulärwertszerlegung, in drei Matrizen zerlegt. 
+Um $R'$ und $[\overrightarrow{C}'_\delta]_\times$ zu bestimmen wird zunächst die essentielle Matrix \ensuremath{E}, mit Hilfe der Singulärwertszerlegung, in drei Matrizen zerlegt. 
 
 \begin{gather}
-E = U\Sigma V^T
+E = U\Sigma V^T \, .
 \end{gather}
 
 %Die Singulärwerte befinden sich in der mittleren Matrix $S = \text{diag}(\sigma_1,\sigma_2,\sigma_3)$ wieder.
@@ -276,7 +275,7 @@ E = U\Sigma V^T
 Die Singulärwerte $\text{diag}(\sigma_1,\sigma_2,\sigma_3)$ der Matrix $\Sigma$ müssen die Bedingung erfüllen, dass $\Sigma = \text{diag}(1,1,0)$\cite{HZ,Ferid}. Wenn diese Bedingung nicht erfüllt ist, so wird sie erzwungen. Dazu wird Matrix $\Sigma$ aus der Sigulärwertszerlegung aus $E$ modifiziert\cite{HZ,Ferid}. 
 
 \begin{gather}
-	E' = U\text{diag}(1,1,0)V^T
+	E' = U\text{diag}(1,1,0)V^T \, .
 \end{gather}  
 
 
@@ -289,7 +288,7 @@ Die Singulärwerte $\text{diag}(\sigma_1,\sigma_2,\sigma_3)$ der Matrix $\Sigma$
 %E=SR'
 %\end{gather}
 
-$[C'_\delta]_\times$ ist schiefsymmetrisch und kann in $UZU^T$ zerlegt werden, wobei $U$ eine orthogonale Matrix ist und $Z$ eine block-diagonale Matrix\cite{HZ}. $R'$ wird in $UWV^T$ und $UW^TV^T$ zerlegt, wobei $W$ eine schiefsymmetrische Matrix ist\cite{Ferid,HZ,phdextrinsicPara}.%Zur Schätzung von $S$ und $R$ werden die schiefsymmetrische Matrix \ensuremath{W} und die Blockdiagonale Matrix \ensuremath{Z} eingeführt
+$[\overrightarrow{C}'_\delta]_\times$ ist schiefsymmetrisch und kann in $UZU^T$ zerlegt werden, wobei $U$ eine orthogonale Matrix ist und $Z$ eine block-diagonale Matrix\cite{HZ}. $R'$ wird in $UWV^T$ und $UW^TV^T$ zerlegt, wobei $W$ eine schiefsymmetrische Matrix ist\cite{Ferid,HZ,phdextrinsicPara}.%Zur Schätzung von $S$ und $R$ werden die schiefsymmetrische Matrix \ensuremath{W} und die Blockdiagonale Matrix \ensuremath{Z} eingeführt
 
 
 
@@ -304,32 +303,32 @@ Z=
 0&1&0\\
 -1&0&0\\
 0&0&0
-\end{pmatrix}
+\end{pmatrix} \, .
 \end{gather}
 
 %Mit dem Ergebnis der SVD von $E$ mit \ensuremath{\text{SVD}(E) = USV^T} lassen 
 
-Somit lassen sich die folgenden Lösungmöglichkeiten für $[C'_\delta]_\times$ und $R_1$ und $R_2$ aufstellen\cite{HZ,Ferid}.
+Somit lassen sich die folgenden Lösungmöglichkeiten für $[\overrightarrow{C}'_\delta]_\times$ und $R_1$ und $R_2$ aufstellen\cite{HZ,Ferid}.
 
 
 \begin{gather}
-[C'_\delta]_\times = \pm \,UZU^T \\
-R_1' = UW^TV^T \;\;\;\; R_2' = UWV^T
+[\overrightarrow{C}'_\delta]_\times = \pm \,UZU^T \\
+R_1' = UW^TV^T \;\;\;\; R_2' = UWV^T \, .
 \end{gather}\\
 
 
 %Um sicher zu gehen, dass es sich bei \ensuremath{R_1}' und \ensuremath{R_2}' auch um gültige Rotationsmatrizen handelt, kann eine Probe durchgeführt werden.  \ensuremath{R\cdot R^T=I_{3\times3}} sein. \ensuremath{I_{3\times3}} steht für die 3$\times$3-Einheitsmatrix.
 
-$[C'_\delta]_\times$ ist eine schiefsymmetrische Matrix, welche die Information für den noch gesuchten Translationsanteil $v = -R'C'$ beinhaltet. Ohne zusätzliche Informationen kann $v$ nur bis zu einer Skaleninvarianz genau bestimmt werden\cite{HZ,Ferid,phdextrinsicPara}. Durch die Modifizierung der Singulärwerte von $E$ gilt für $\parallel v \parallel = 1$\cite{HZ,Ferid}. Das bedeutet, dass es sich bei dem Translationsvektor $v$ lediglich um den normierten Richtungsvektor zwischen $C$ und $C'$ handelt\cite{KIT}. Um $v$ aus $[C'_\delta]_\times$ zu extrahieren, wird der Kern von $[C'_\delta]_\times$ bestimmt
+$[\overrightarrow{C}'_\delta]_\times$ ist eine schiefsymmetrische Matrix, welche die Information für den noch gesuchten Translationsanteil $v = -R'C'$ beinhaltet. Ohne zusätzliche Informationen kann $v$ nur bis zu einer Skaleninvarianz genau bestimmt werden\cite{HZ,Ferid,phdextrinsicPara}. Durch die Modifizierung der Singulärwerte von $E$ gilt für $\parallel v \parallel = 1$\cite{HZ,Ferid}. Das bedeutet, dass es sich bei dem Translationsvektor $v$ lediglich um den normierten Richtungsvektor zwischen $C$ und $C'$ handelt\cite{KIT}. Um $v$ aus $[\overrightarrow{C}'_\delta]_\times$ zu extrahieren, wird der Kern von $[\overrightarrow{C}'_\delta]_\times$ bestimmt.
 
 %Aufgrund der Tatsache, dass die essentielle Matrix eine Größe des projektiven Raumes darstellt und deshalb nur bis auf einen Skalierungsfaktor definiert ist, kann lediglich die Richtung, nicht aber die Läange des Translationsvektors bestimmt werden\cite{KIT}
 
 \begin{gather}
-[C'_\delta]_\times \cdot v = v \times v = 0
+[\overrightarrow{C}'_\delta]_\times \cdot v = v \times v = 0 \, .
 \end{gather} 
-.
 
-Die Skaleninvarianz bewirkt, dass es bei der Rekonstruktion die Größe der Objekte von ihrer Originalgröße abweichen, da es sich bei $v$ nur um den normierten Richtungsvektor der Ursprünglichen Strecke handelt. Die Abbildung \ref{fig:scale3} zeigt die Auswirkungen der Skaleninvarianz auf die später rekonstruierte Szene. \\
+
+Die Skaleninvarianz bewirkt, dass es bei der Rekonstruktion die Größe der Objekte von ihrer Originalgröße abweichen, da es sich bei $v$ nur um den normierten Richtungsvektor der ursprünglichen Strecke handelt. Die Abbildung \ref{fig:scale3} zeigt die Auswirkungen der Skaleninvarianz auf die später rekonstruierte Szene. \\
 
 Letztendlich können für die Rekonstruktion der extrinsischen Kameraparameter vier mögliche Lösungen für $T$ in Form von $T = R[I|-C]$, wie in Gleichung \ref{eq:trafo} in Kapitel \ref{sec:CameraModels} definiert, gefunden werden\cite{HZ,Ferid,phdextrinsicPara}. $\lambda v$ heißt dabei, dass sowohl $v$ also auch alle Vielfache von $v$ Lösungen sein können, was durch die Skaleninvarianz der Resultate bedingt ist\cite{HZ,Ferid,phdextrinsicPara}. 
 
@@ -368,92 +367,28 @@ Die Abbildungen \ref{fig:T_1} und \ref{fig:T_2} stellen schematisch die vier ver
 	\endminipage\hfill
 	\caption[Bestimmung extrinsischer Kameraparameter Lösung eins und zwei]{In den beiden Abbildungen wird $C'$ und $180^\circ$ gedreht}
 	\label{fig:T_2}
-%	\caption[Alle vier Lösungen im Überblick]{Die Abbildungen a, b, c und d veranschaulichen, welche Bilder aus den vier Lösungen entstehen. In den Abbildungen a und b kommt es zu einer Umkehrung der Basisline. In den Abbildungen c und d wird $C'$ und $180^\circ$ gedreht}
 \end{figure}
 \pagebreak
 
-%Zur Bestimmung der Abbildungsvorschrift wird die Fundamentalmatrix $F$ aus den korrespondierenden Punkten bestimmt. Die korrespondierenden Punkte sind Bildpunkte auf den verschiedenen Bildebenen eines gleichen Ursprungspunktes. Anhand des in Kapitel \ref{sec:HFE} beschriebenen 8-Punkte-Algorithmus, wird $F$ bestimmt. Über $F$ wird die essentielle Matrix $E$, mit den aus Kapitel \ref{sec:HFE} ermittelt Bedingung aus Gleichung \ref{eq:Ep7}, bestimmt.\\
-%
-%In dieser Arbeit wird angenommen, dass die Kameras zuvor einzeln Kalibriert wurden und die intrinsischen Kameraparameter bereits bekannt sind. Für die Bestimmung der extrinsischen Kameraparameter wird ein Ansatz verfolgt, in welchen die essentielle Matrix zum Einsatz kommt. Die essentielle Matrix ist eine Spezialform der Fundamentalmatrix und beschreibt den \textit{Epipolar-Constraint}, vlg \ref{eq:Ep7}, zwischen den normierten Bildebenenkoordinaten\cite{HZ,Elements,ZZGXr,Zhang2014,Ferid}. 
-%
-%\begin{gather}
-%\hat{m}'^T_{\tau'}.E.\hat{m}_\tau = 0 
-%\end{gather}
-%
-%Sind $F$ und Kameramatrizen $K$ und $K'$ bekannt, kann die essentielle Matrix wie in Kapitel \ref{eq:Ep7} gezeigt aus $F$ bestimmt werden. Die essentielle Matrix ist eine Fundamentalmatrix, welche zu einem paar normierter Projektionsmatrizen $\hat{P}$ mit $\hat{P} = [I|0]$ und $\hat{P}'$ mit $\hat{P}'= [R'|V']$ korrespondierend ist\cite{HZ,Zhang2014,ZZGXr,Ferid}. Um die Projektionsmatrix $P'=K'[R'|V']$ auf die normierte Form zu bringen, müssen die intrinsischen Parameter für $K'$ bekannt sein\cite{HZ}. 
-%
-%\begin{gather}
-%	m'_{\tau} = P' \cdot M_\delta\\
-%	m'_{\tau} = K'[R'|C'] \cdot M_\delta\;\; | \cdot K'^{-1}\\
-%	\end{gather}
-%	
-%Die Inverse $K^{-1}$ wird auf beiden Seiten der Gleichung von links multipliziert\cite{HZ}.
-%
-%\begin{gather}
-%	K'^{-1} \cdot m'_{\tau} = K'^{-1} \cdot K'[R'|C'] \cdot M_\delta\\
-%	\hat{m}'_{\tau} = [R'|C'] M_\delta
-%\end{gather}
-%
-%$M_\delta$ ist ein Objektpunkt im 3D-Raum, welcher mit $P'$ zum Bildebenenpunkt $m'_{\tau'}$ abgebildet wird. Nach der Normierung, wird $\hat{m}'_{\tau}$ als normierte Bildebenenkoordinate bezeichnet und die entstandene Projektionsmatrix $P' = [R'|C']$ als normierte Projektionsmatrix\cite{HZ,Ferid}. $E$ wird aus $F$ bestimmt mit:
-
-%\begin{gather}
-%E = K'^TFK
-%\end{gather}
-
-%det(E) = det(t×) det(R) = 0. Somit enth¨alt die Essentialmatrix
-%nur zwei linear unabh¨angige Zeilen- oder Spaltenvektoren und hat den
-%Rang4 Rg(E) = 2.
-%Wie die Fundamentalmatrix muss auch die essentielle Matrix einen Rang von 2 haben. Des Weiteren darf eine 3 $\times$ 3-Matrix nur dann als essentielle Matrix bezeichnet werden, wenn die Singulärwerte, bestimmte Merkmale aufweisen. So müssen zwei der drei Singulärwerte gleich und die dritte null sein\cite{HZ}. Des Weiteren muss für die Determintante gelten, dass $det(E) = 0$ ist und die Quadratwurzel der Eigenwerte müssen wieder die Singulärwerte ergeben\cite{Ferid}. 
-
-%\subsection{Bestimmung der extrinsischen Kameraparameter}
-
-%(Noch einen Ansatz einbauen wie man die richtige Lösung algorithmisch auswertet? Im implementierte Algorithmus der arbeit wurden die Vier Lösungen jeweils rekonstruiert und alle ergebnisse ausgegeben.)
 
 \subsection{Szenenrekonstruktion durch Triangulation}
 
-Als Triangulierung wird in der Computer Vision die Bestimmung eines 3D-Objektpunktes aus korrespondierenden Bildpunkten bezeichnet. Als Voraussetzung für die Rekonstruktion müssen die jeweiligen korrespondierenden Bildpunkte und die Kameraparameter der einzelnen Kameras bekannt sein. Die Triangulierung funktioniert wie eine umgekehrte Projektion der Bildpunkte auf der Bildebene in einen Objektpunktes im Raum. Zwei Geraden, welche jeweils durch die Projektionszentren und den zu rekonstruierenden Bildpunkten gehen,  treffen sich im Raum. Der Schnittpunkt beider Geraden bildet den zu den Bildpunkten gehörenden Ursprungspunkt, wie in Abbildung \ref{fig:TriangulationOptimal} schematisch dargestellt ist.  \\\\
+Als Triangulierung wird in der Computer Vision die Bestimmung eines 3D-Objektpunktes aus korrespondierenden Bildpunkten bezeichnet. Als Voraussetzung für die Rekonstruktion müssen die jeweiligen korrespondierenden Bildpunkte und die Kameraparameter der einzelnen Kameras bekannt sein. Die Triangulierung funktioniert wie eine umgekehrte Projektion der Bildpunkte auf der Bildebene in einen Objektpunkt im Raum. Zwei Geraden, welche jeweils durch die Projektionszentren und den zu rekonstruierenden Bildpunkten gehen,  treffen sich im Raum. Der Schnittpunkt beider Geraden bildet den zu den Bildpunkten gehörenden Ursprungspunkt, wie in Abbildung \ref{fig:TriangulationOptimal} schematisch dargestellt ist.  \\\\
 
 
-%wird das Rekonstruieren der Ursprünglichen 3D-Objektpunkte durch eine Rückprojektion vom jeweiligen Projektionszentrum der Kameras durch ihre Bildpunkte bezeichnet. Im synthetischen Beispiel wird durch einfache Schnittpunktberechnung derjenigen Geraden, welche durch die jeweiligen Projektionszentren und deren Bildpunkte auf deren Bildebenen gehen, der Ursprungspunkt im Raum rekonstruiert.\\
 
-
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=0.8\linewidth]{images/optimaleTriangulierung.png}
-%	\captionof{figure}{Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum} 
-%	\label{fig:TriangulationOptimal}
-%\end{minipage}\\ \\
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\linewidth]{images/optimaleTriangulierung.png}
+	\includegraphics[width=0.7\linewidth]{images/optimaleTriangulierung.png}
 	\caption[Einfache Triangulation]{Optimale Triangulierung: Beide Geraden Treffen sich in einem Punkt im 3D-Raum} 
 	\label{fig:TriangulationOptimal}
 \end{figure}
 
-%bei der Szenenrekonstruktion realen Stereoaufnahmen kann eine Triangulation nicht so ohne weiteres durchgeführt werden. Bei einer Bildaufnahme mit Kameras, kommt es nicht selten vor, dass 
-%
-%In Realbildern, können Bildfehler wie beispielsweise Rauschen nicht vermieden werden, des Weiteren können korrespondierende Punkte nicht immer exakt auf den Pixel genau bestimmt werden.
-% 
-%Anders hingegen wäre es in einem realen Beispiel mit korrespondierenden Punkten, welche Beispielsweise über einen \textit{SURF}- Algorithmus detektiert wurden\cite{Mandun}. Diese Fehler führen dazu, dass wenn ein Schnittpunkt der Geraden durch die vermeintlichen korresponiderenden Punkte nicht gefunden werden kann, da die Geraden sich sehr wahrscheinlich nicht in einem Punkt treffen werden\cite{Mandun,HZ}. 
-%
-%
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=0.8\linewidth]{images/problemTriangulation.png}
-%	\captionof{figure}{Durch Ungenauigkeiten in der korrespondierenden Punkte, verfehlen sich die Linien und es kommt zu keinem Schnittpunkt} 
-%\end{minipage}\\ 
-%
-%Für diese Fälle gibt es mehrere Näherungsverfahren, wovon eines, im Kapitel \nameref{sec:sampson}, im Realbeispiel eingeführt wird\cite{HZ}. In diesem Minimalbeispiel tritt der optimale Fall ein. Das bedeutet, dass ein zu Bildpunkt $m$ korrespondierender Bildpunkt $m'$ auf der zu $m$ korrespondierenden Epipolarlinie $l'$ liegt und somit garantiert ist, dass sich die Geraden $\overline{mM}$ und $\overline{m'M}$ auf jedenfall in einem gemeinsamen Punkt schneiden.
-%
-% Um den Schnittpunkt beider Geraden zu berechnen, werden zum einen die Bildpunkte  $A_\tau,B_\tau,C_\tau,D_\tau,A2_\tau,B2_\tau,C2_\tau,D2_\tau$ und $A_{\tau'},B_{\tau'},C_{\tau'},D_{\tau'},A2_{\tau'},B2_{\tau'},C2_{\tau'},D2_{\tau'}$, sowie die korrekt ermittelte Projektionsmatrix $P'$ von zuvor benötigt. 
 
-Im synthetischen Beispiel wird mit reinen Daten gearbeitet. Das heißt, die Bildpunkte wurden mathematisch von ihrem Ursprungspunkt im Raum berechnet und sind somit frei von Verfälschungen durch äußere Einflüsse. Ein zum Bildpunkt $m_\tau$ korrespondierender Bildpunkt $m'_{\tau'}$ liegt genau auf der zu $m_\tau$ korrespondierenden Epipolarlinien $l'$. Somit ist garantiert, dass sich die Bildpunkte $m_\tau$ und $m'_{\tau'}$ bei einer Rückprojektion in einem Punkt $M_{0,\delta}$ im Raum treffen. Durch die zuvor erwähnte Skaleninvarianz der extrinsischen Kameraparameter handelt es sich bei $M_{0,\delta}$ jedoch noch nicht um den eigentlichen Ursprungspunkt $M_\delta$. \\
+Im synthetischen Beispiel wird mit reinen Daten gearbeitet. Das heißt, die Bildpunkte wurden mathematisch von ihrem Ursprungspunkt im Raum berechnet und sind somit frei von Verfälschungen durch äußere Einflüsse. Ein zum Bildpunkt $m_\tau$ korrespondierender Bildpunkt $m'_{\tau'}$ liegt genau auf der zu $m_\tau$ korrespondierenden Epipolarlinien $l'$. Somit ist garantiert, dass sich die Bildpunkte $m_\tau$ und $m'_{\tau'}$ bei einer Rückprojektion in einem Punkt $M_{\delta,0}$ im Raum treffen. Durch die zuvor erwähnte Skaleninvarianz der extrinsischen Kameraparameter handelt es sich bei $M_{\delta,0}$ jedoch noch nicht um den eigentlichen Ursprungspunkt $M_\delta$. \\
 
-%Um die Rekonstruktion im synthetischen Beispiel so nah wie möglich an einem realen Beispiel zu halten, wird davon ausgegangen, dass nur die Kameraparameter und die jeweiligen Bildkoordinaten bekannt sind.\\
-
-
-Vor der Bestimmung der extrinsischen Kameraparameter wurde festgesetzt, dass $T = [I|-0]$ die Translationsmatrix von $C$ ist. Somit gilt für die Projektionsmatrix von $C$, dass $P= K_0T =K_0[I|-0]$ ist. Die Projektionsmatrix $P'$ für $C'$ setzt sich aus einer der Lösungen von $T'$ und der Kameramatrix $K_0'$ zusammen, sodass gilt $P'=K_0'T' = K[R'|-RC]$.\\
+Vor der Bestimmung der extrinsischen Kameraparameter wurde festgesetzt, dass $T = [I|-0]$ die Translationsmatrix von $C$ ist. Somit gilt für die Projektionsmatrix von $C$, dass $P= K_0T =K_0[I|-0]$. Die Projektionsmatrix $P'$ für $C'$ setzt sich aus einer der Lösungen von $T'$ und der Kameramatrix $K_0'$ zusammen, sodass gilt $P'=K_0'T' = K[R'|-RC]$.\\
 
 Um eine Gerade von den Projektionszentren $C$ und $C'$ durch die jeweiligen Bildpunkte bilden zu können, müssen die Positionen von $C$ und $C'$ bekannt sein. Da die Koordinatensysteme $(C,\beta)$ und $(O,\delta)$ deckungsgleich sind, und $P = K_0[I|-0]$ ist, gilt $C = (0,0,0)^T$.  Um $C'$ aus $T' = R'[R'|-R'C']$ zu bestimmen wird der Translationsvektor $-R'C'$ aus $T'$ mit dem transponierten Rotationsmatrix $R'^T$ aus $T'$ multipliziert.
 
@@ -527,7 +462,7 @@ g' := \vec{C'} + t \cdot
 %
 %Nun muss für jedes Linienpaar eine Lösung für $t$ und $t'$ gefunden werden und die Lösungen in die Gleichungen 4.65 und 4.66 eingesetzt werden. Es sollte für beide Gleichungen die selbe Lösung für den rekonstruierten Punkt $A$ im Raum ergeben. Die Lösung entspricht meist noch nicht exakt dem eigentlichen Ergebnis, das liegt an der zuvor erwähnten Skaleninvariants der Rekonstruktion der exterenen Kameraparameter. 
 
-Bei den zuvor ermittelten extrinsischen Kameraparametern ist der Translationsvektor skaleninvariant. Dies führt dazu, dass der rekonstruierte Objektpunkt $M_{\delta,0}$ nach der Szenenrekonstruktion noch nicht dem Ursprünglichen $M_\delta$ entsprechen muss. Dementsprechend wird als letzter Schritt die rekonstruierte Szenen anhand einer bekannten Referenzgröße skaliert. Als Referenzgröße kann beispielsweise ein zuvor abgemessener Abstand zwischen zwei Punkten in der Szene dienen. Im synthetischen Aufbau sind beispielsweise die Abstände zwischen den Originalbildpunkten bekannt. Die Abbildung \ref{fig:scale3} zeigt die Szene des Quaders mit unterschiedlichen Skalierungen. Die Abbildung \ref{fig:Quader1} zeigt die rekonstruierte Szene des synthetischen Beispiels auf uhre Ursprungsgröße skaliert.
+Bei den zuvor ermittelten extrinsischen Kameraparametern ist der Translationsvektor skaleninvariant. Dies führt dazu, dass der rekonstruierte Objektpunkt $M_{\delta,0}$ nach der Szenenrekonstruktion noch nicht dem Ursprünglichen $M_\delta$ entsprechen muss. Dementsprechend wird als letzter Schritt die rekonstruierte Szenen anhand einer bekannten Referenzgröße skaliert. Als Referenzgröße kann beispielsweise ein zuvor abgemessener Abstand zwischen zwei Punkten in der Szene dienen. Im synthetischen Aufbau sind beispielsweise die Abstände zwischen den Originalbildpunkten bekannt. Die Abbildung \ref{fig:scale3} zeigt die Szene des Quaders mit unterschiedlichen Skalierungen. Die Abbildung \ref{fig:Quader1} zeigt die rekonstruierte Szene des synthetischen Beispiels auf ihre Ursprungsgröße skaliert.
 
 %ihrer Originalgröße entsprechen. 
 %

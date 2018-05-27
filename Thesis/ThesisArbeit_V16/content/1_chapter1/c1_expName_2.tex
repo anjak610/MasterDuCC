@@ -7,7 +7,7 @@ Das Ziel dieser Masterarbeit ist eine 3D Szene im dreidimensionalen Raum aus ein
 %
 %Über die Abbildungsvorschrift können dann Schlüsse auf die Kameraparameter der beiden Kameras gezogen werden. Im ersten Schritt wird eine Abbildungsvorschrift für die Korrespondenzanalyse von Punkten auf einer Ebene aufgestellt. Im zweiten Schritt wird diese Abbildungsvorschrift für die Korrespondenz zwischen willkürlichen Punkten im Raum entsprechend erweitert. \\
 
-Es seien \ensuremath{m_{\tau} =(m_{\tau x},m_{\tau y},m_{\tau z})^T} die homogenen Koordinaten eines Punktes auf der Bildebene$(I,\tau)$ und \ensuremath{m'_{\tau'} = (m'_{\tau'x},m'_{\tau'y},m'_{\tau'z})^T} der dazu korrespondierende Punkt der Bildebene $(I',\tau')$, vergleiche hierzu Abbildung \ref{fig:Homographie}. Gesucht wird eine Abbildungsvorschrift welche als Matrix $H$ ausgedrückt wird:
+Es seien \ensuremath{m_{\tau} =(m_{\tau x},m_{\tau y},m_{\tau z})^T} die homogenen Koordinaten eines Punktes auf der Bildebene$(I,\tau)$ und \ensuremath{m'_{\tau'} = (m'_{\tau'x},m'_{\tau'y},m'_{\tau'z})^T} der dazu korrespondierende Punkt der Bildebene $(I',\tau')$, vergleiche hierzu Abbildung \ref{fig:Homographie}. Gesucht wird eine Abbildungsvorschrift welche als Matrix $H$ ausgedrückt wird
 
 \begin{gather}
 	m'_{\tau'} = Hm_{\tau}\\
@@ -25,7 +25,7 @@ Es seien \ensuremath{m_{\tau} =(m_{\tau x},m_{\tau y},m_{\tau z})^T} die homogen
 		h_{11}&h_{12}&h_{13}\\
 		h_{21}&h_{22}&h_{23}\\
 		h_{31}&h_{32}&h_{33}
-	\end{bmatrix}
+	\end{bmatrix}.
 \end{gather}
 
 %Im folgenden werden zunächst zwei Fälle für die Herleitung von Abbildungsvorschriften unterschieden.
@@ -78,42 +78,9 @@ Für zwei korrespondierende Bildpunkte $m_\tau$ und $ m'_{\tau'}$ kann für alle
 	\gamma \overrightarrow{m}_\tau = P \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = 
 	\begin{bmatrix}KR|-KR\overrightarrow{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = KR(\overrightarrow{M}_\delta - \overrightarrow{C}_\delta)\\
 	\gamma' \overrightarrow{m'_{\tau'}} = P' \begin{bmatrix}\overrightarrow{M'}_\delta\\1\end{bmatrix} = 
-	\begin{bmatrix}K'R'|-K'R'\overrightarrow{C'}_\delta\end{bmatrix}\cdot \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = K'R'(\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta)\label{eq:Homo}
+	\begin{bmatrix}K'R'|-K'R'\overrightarrow{C'}_\delta\end{bmatrix}\cdot \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = K'R'(\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta).\label{eq:Homo}
 \end{gather}\\
 
-
-%$\gamma m_\tau$ und $\gamma m'_{\tau'}$ stehen für die nicht-normierten Kamerakoordinaten mit einer willkürlichen Tiefe $\gamma$.Zur Erinnerung in Kapitel ?? wurde in Gleichung \ref{eq:21} ein 3D-Punkt $M_\delta$ auf eine Bildebene projiziert. Der entstandene Punkt $m_\tau$ hatte bei einer bekannten Tiefe $Z$ die Form $	m_\tau = \begin{pmatrix}
-%\zeta X\\ \zeta Y\\Z
-%\end{pmatrix} $, man spricht hier von einer nicht-normierten Bildebenenkoordinate. Durch normierung wird aus $m_\tau$ eine zweidimensionale Bildebenkoordinate mit $m_\tau = \begin{pmatrix}
-%\frac{\zeta X}{Z}\\ \frac{\zeta Y}{Z}
-%\end{pmatrix}$.Für die Rücktransformation der normierten auf die nicht-normierten Bildebenkooridnaten wurde eifnach wieder mit $Z$ erweitert.\\
-
-%Für die Herleitung der Abbildungsvorschriften, wird in beiden Fällen davon ausgegangen dass die Tiefe $Z$ willkürlich ist und so wird der nicht normierte Bildebenpunkt $m_\tau$ mit einer undefinierten Tiefe $\gamma$ eweitert\cite{Elements}. So das gilt:
-
-%\begin{gather}
-%	\begin{pmatrix}
-%		\frac{\zeta X}{\gamma}\\ \frac{\zeta Y}{\gamma}
-%	\end{pmatrix}
-% \leadsto 
-% \begin{pmatrix}
-%		\zeta X\\ \zeta Y\\\gamma
-%	\end{pmatrix}
-%\end{gather}\\
-
-
-%Für den F gilt der ein bestimmter Szenenaufbau. Es existiert eine Ebene $\pi$ im Raum, auf welcher sich ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatesystems $(O,\delta)$ befindet. Die Achsen $\hat{d_1}$ und $\hat{d_2}$ von $O$ spannen die Ebene $\pi$ auf. Der Punkt $M_\delta$ wird nun mit den Projektionsmatrizen $P = [KR|-KR\vec{C}_\delta]$ und $P'=	[K'R'|-K'R'\vec{C}_\delta]$ in einen Punkt bezüglich der Bildebenen $(I,\tau)$ mit $\tau = (\hat{t_1}, \hat{t_2},I)$ und $(I',\tau')$ mit $\tau' = (\hat{t_1}', \hat{t_2}',I')$ projiziert. Es entstehen zunächst die nicht-normierten Bildebenkoordinaten $\gamma m_\tau$ und $\gamma m'_{\tau'}$.  Da der Ursprung des Weltkoordinatensystem $(O,\delta)$ auf der Ebene $\pi$ liegt, gilt für den Punt $M_\delta$ auf $\pi$ $M_\delta = \begin{pmatrix}
-%x_{\hat{d_1}}\\
-%y_{\hat{d_2}}\\
-%0
-%\end{pmatrix}$. Abbildung \ref{fig:Homographie} veranschaulicht den eben beschrieben Aufbau noch einmal grafisch.
-
-%(GRAFIK NOCH AKTUALISIEREN)\\
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=0.8\linewidth]{images/HomographieDP_beschriftet.png}
-%	\captionof{figure}{In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ befindet sich auf der Ebene $\pi$, welche durch die Achsen $\hat{d_1}$ und $\hat{d_2}$ aufgespannt wird. $M_\delta$ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $\gamma m_\tau$ und $\gamma' m'_\tau$.}  
-%	\label{fig:Homographie}
-%\end{minipage}\\
 
 Mit einem Ursprungspunkt $M_\delta=(x_\delta,y_\delta,0)^T$ auf der $x,y$- Ebene im Weltkoordinatensystem und einer unbekannten Projektionsmatrix P mit
 
@@ -125,7 +92,7 @@ Mit einem Ursprungspunkt $M_\delta=(x_\delta,y_\delta,0)^T$ auf der $x,y$- Ebene
 		p_{13}&p_{23}&p_{33}&p_{43}
 	\end{bmatrix}=	\begin{bmatrix}
 		p_1&p_2&p_3&p_4
-	\end{bmatrix}
+	\end{bmatrix},
 \end{gather} 
 
 kann die folgende Gleichung aufgestellt werden \cite{Elements}
@@ -165,20 +132,20 @@ kann die folgende Gleichung aufgestellt werden \cite{Elements}
 	\begin{bmatrix}
 		x_\delta\\y_\delta\\1
 	\end{bmatrix}=
-	G' \vec{m}_{\delta}. 
+	G' \vec{m}_{\delta} \, . 
 \end{gather}\\
 
 
-Aus $\gamma m_\tau = G\cdot m_\delta$ und $\gamma' m'_{\tau'} = G'\cdot m_{\delta}$ kann dann Folgendes abgeleitet werden\cite{Elements}.
+Aus $\gamma m_\tau = G\cdot m_\delta$ und $\gamma' m'_{\tau'} = G'\cdot m_{\delta}$ kann dann Folgendes abgeleitet werden\cite{Elements}
 
 \begin{gather}
-	\gamma' m'_{\tau'} = G' G^{-1} \gamma m_\tau \label{eq:gammaTau}
+	\gamma' m'_{\tau'} = G' G^{-1} \gamma m_\tau \, .\label{eq:gammaTau}
 \end{gather}
 
-Mit $\lambda= \frac{\gamma'}{\gamma}$, kann Gleichung \ref{eq:gammaTau} dann wieder umformuliert und in die Bedienungsgleichung der Homographie mit $H=G' G^{-1}$ umgeformt werden:
+Mit $\lambda= \frac{\gamma'}{\gamma}$, kann Gleichung \ref{eq:gammaTau} dann wieder umformuliert und in die Bedienungsgleichung der Homographie mit $H=G' G^{-1}$ umgeformt werden
 
 \begin{gather}
-	\lambda m'_{\tau'} = H m_\tau\label{eq:H}
+	\lambda m'_{\tau'} = H m_\tau \, .\label{eq:H}
 	%\leadsto m'_{\tau'} = H m_\tau, 
 \end{gather} 
 
@@ -235,41 +202,41 @@ Die hier gezeigte Abbildung von $m_i$ auf $l'$ wird nun genauer betrachtet. Es w
 	\gamma \overrightarrow{m}_\tau = P \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = 
 	\begin{bmatrix}KR|-KR\overrightarrow{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = KR(\overrightarrow{M}_\delta - \overrightarrow{C}_\delta) \label{eq:Ep1} \\
 	\gamma' \overrightarrow{m'_{\tau'}} = P' \begin{bmatrix}\overrightarrow{M'}_\delta\\1\end{bmatrix} = 
-	\begin{bmatrix}K'R'|-K'R'\overrightarrow{C'}_\delta\end{bmatrix}\cdot \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = K'R'(\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta)\label{eq:Ep2}
-\end{gather}.
+	\begin{bmatrix}K'R'|-K'R'\overrightarrow{C'}_\delta\end{bmatrix}\cdot \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = K'R'(\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta)\label{eq:Ep2} \, .
+\end{gather}
 
 
 Die Gleichungen \ref{eq:Ep1} und \ref{eq:Ep2} werden nach $(\overrightarrow{M}_\delta-\overrightarrow{C}_\delta)$ und $(\overrightarrow{M}_\delta-\overrightarrow{C'}_\delta)$ aufgelöst.
 
 \begin{gather}
 	\gamma R^TK^{-1}\overrightarrow{m}_\tau = (\overrightarrow{M}_\delta-\overrightarrow{C}_\delta)\label{eq:Ep3}\\
-	\gamma' R'^TK'^{-1}\overrightarrow{m'}_{\tau'} = (\overrightarrow{M}_\delta-\overrightarrow{C'}_\delta)\label{eq:Ep4}
+	\gamma' R'^TK'^{-1}\overrightarrow{m'}_{\tau'} = (\overrightarrow{M}_\delta-\overrightarrow{C'}_\delta) \, .\label{eq:Ep4}
 \end{gather}
 
 
-Wie in Abbildung \ref{fig:Epipolargeometry} gezeigt bilden die Vektoren $(\overrightarrow{M}_\delta - \overrightarrow{C}_\delta),\, (\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta)$ und $(\overrightarrow{C'}_\delta - \overrightarrow{C}_\delta)$ ein Dreieck. Für dieses Dreieck kann die folgende Gleichung aufgestellt werden. 
+Wie in Abbildung \ref{fig:Epipolargeometry} gezeigt bilden die Vektoren $(\overrightarrow{M}_\delta - \overrightarrow{C}_\delta),\, (\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta)$ und $(\overrightarrow{C'}_\delta - \overrightarrow{C}_\delta)$ ein Dreieck. Für dieses Dreieck kann die folgende Gleichung aufgestellt werden
 
 \begin{gather}
-	(\overrightarrow{C'}_\delta - \overrightarrow{C}_\delta) = (\overrightarrow{M}_\delta - \overrightarrow{C}_\delta) - (\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta)
+	(\overrightarrow{C'}_\delta - \overrightarrow{C}_\delta) = (\overrightarrow{M}_\delta - \overrightarrow{C}_\delta) - (\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta) \, .
 \end{gather}
 
 $(\overrightarrow{M}-\overrightarrow{C}_\delta)$ und $(\overrightarrow{M} - \overrightarrow{C'}_\delta)$ können durch die Ausdrücke in den Gleichungen \ref{eq:Ep3} und \ref{eq:Ep4} ersetzt werden um folgende Gleichung zu erhalten
 
 \begin{gather}
-	(\vec{C'}_\delta - \vec{C}_\delta) = \gamma' R^TK^{-1}\vec{m}_\tau - \gamma R'^TK'^{-1}\vec{m'}_{\tau'}. \label{eq:Ep5}
+	(\overrightarrow{C'}_\delta - \overrightarrow{C}_\delta) = \gamma' R^TK^{-1}\overrightarrow{m}_\tau - \gamma R'^TK'^{-1}\overrightarrow{m'}_{\tau'} \, . \label{eq:Ep5}
 \end{gather}
 
 Durch Vektoridentitäten können $\gamma$ und $\gamma'$ eliminiert und folgende Bedingung aus Gleichung \ref{eq:Ep5} hergeleitet werden \cite{Bronstein,Elements} %Elements
 
 \begin{gather}
-	\vec{m'_\tau}^TK'^{-T}TR' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\vec{m_\tau}=\vec{m'_\tau}F\vec{m_\tau} = 0\label{eq:Ep6}
+	\overrightarrow{m'_\tau}^TK'^{-T}TR' \left[ \overrightarrow{C'_\delta}-\overrightarrow{C_\delta}\right]_\times R^TK^{-1}\overrightarrow{m_\tau}=\overrightarrow{m'_\tau}F\overrightarrow{m_\tau} = 0 \, ,\label{eq:Ep6}
 	%0=\vec{m'_\tau}F\vec{m_\tau}
 \end{gather}
 
 mit  
 
 \begin{gather}
-	\left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times=
+	\left[\overrightarrow{C'_\delta}-\overrightarrow{C_\delta}\right]_\times=
 	\begin{bmatrix}0&-(C'_{z\delta}-C_{z\delta})&C'_{y\delta}-C_{y\delta}\\
 		C'_{z\delta}-C_{z\delta}&0&-(C'_{x\delta}-C_{x\delta})\\
 		-(C'_{y\delta}-C_{y\delta})&C'_{x \delta}-C_{x\delta}&0\\
@@ -277,17 +244,17 @@ mit
 	%0=\vec{m'_\tau}F\vec{m_\tau}
 \end{gather}
 
-In Gleichung \ref{eq:Ep6} wurde die Bedingungsgleichung für die sogenannte Fundamentalmatrix $F$ definiert \cite{Hoffmann}. Sind die Kameraparameter und dadurch die Kameramatrix $K$ bekannt, so wird die essentielle Matrix $E$  mit $E=R' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^T$ definiert. Gleichung \ref{eq:Ep6} kann zu einer Bedingung für $E$ umgeformt werden.
+In Gleichung \ref{eq:Ep6} wurde die Bedingungsgleichung für die sogenannte Fundamentalmatrix $F$ definiert \cite{Hoffmann}. Sind die Kameraparameter und dadurch die Kameramatrix $K$ bekannt, so wird die essentielle Matrix $E$  mit $E=R' \left[ \overrightarrow{C'_\delta}-\overrightarrow{C_\delta}\right]_\times R^T$ definiert. Gleichung \ref{eq:Ep6} kann zu einer Bedingung für $E$ umgeformt werden.
 
 \begin{gather}
-	\vec{m'_\tau}^TK'^{-T}EK^{-1}\vec{m_\tau} = 0\label{eq:Ep7}
+	\overrightarrow{m'_\tau}^TK'^{-T}EK^{-1}\overrightarrow{m_\tau} = 0 \, .\label{eq:Ep7}
 \end{gather}
 
 Die Gleichungen \ref{eq:Ep6} und \ref{eq:Ep7} definieren die sogenannte epipolare Bedingung\cite{HZ,Hoffmann} und können verwendet werden um die Fundamentalmatrix oder die essentielle Matrix aus bekannten Korrespondierenden Punkten zu bestimmen. Für die essentielle Matrix müssen zuvor noch die Koordinaten in der Form
 
 \begin{gather}
-	\vec{\hat{m}}'_\tau = \vec{m'_\tau}^TK'^{-T}\\
-	\vec{\hat{m}}_\tau = K^{-1}\vec{m_\tau}\label{eq:equ8}
+	\overrightarrow{\hat{m}}'_\tau = \overrightarrow{m'_\tau}^TK'^{-T}\\
+	\overrightarrow{\hat{m}}_\tau = K^{-1}\overrightarrow{m_\tau} \, ,\label{eq:equ8}
 \end{gather}
 
 zu normierten Bildebenenkoordinaten umgerechnet werden\cite{HZ,phdextrinsicPara}.  Der verwendete Algorithmus zur Bestimmung von $F$ wird in Kapitel 3.3 näher beschrieben.\\
@@ -319,15 +286,15 @@ Wenn die Fundamentalmatrix bekannt ist können auch die Epipole $e$ und $e'$ und
 
 \begin{gather}
 	Fe = 0\\
-	F^Te' = 0
-\end{gather}.
+	F^Te' = 0 \, .
+\end{gather}
 
 Um die zu $m$ oder $m'$ korrespondierende Epipolarlinie $l'$ oder $l$ zu bestimmten kann die folgende Transformation verwendet werden\cite{HZ,phdTwoView,HZ8,ZZGXr,phdextrinsicPara}%Elements
 
 \begin{gather}
 	l' = Fm\\
-	l = F^Tm'
-\end{gather}. 
+	l = F^Tm' \, .
+\end{gather}
 
 Die Matrizen $F$ und $E$ sind mit diesen Eigenschaften wichtige Instrumente für die Bestimmung der extrinsischen und intrinsischen Kameraparameter und ihre Eigenschaften werden in den folgenden Kapiteln ausgenutzt um effiziente Rekonstruktionalgorithmen für die Szene zu implementieren. 
 
@@ -390,10 +357,10 @@ Um eine Homographiematrix mit
 		h_{11}&h_{12}&h_{13}\\
 		h_{21}&h_{22}&h_{23}\\
 		h_{31}&h_{32}&h_{33}
-	\end{bmatrix}
+	\end{bmatrix} \, ,
 \end{gather}
 
-zu erhalten werden die Punkte beider Kameras in eine Koeffizientenmatrix $A$ eingetragen, welche sich nach dem folgenden Schema aufstellen lässt\cite{HZ,Elements}. Ausgehend von der Abbildungsvorschrift aus Gleichung \ref{eq:H} gilt:
+zu erhalten werden die Punkte beider Kameras in eine Koeffizientenmatrix $A$ eingetragen, welche sich nach dem folgenden Schema aufstellen lässt\cite{HZ,Elements}. Ausgehend von der Abbildungsvorschrift aus Gleichung \ref{eq:H} gilt
 
 \begin{gather}
 	 H m_\tau = \lambda \,m'_{\tau'}\\
@@ -422,7 +389,7 @@ zu erhalten werden die Punkte beider Kameras in eine Koeffizientenmatrix $A$ ein
 	=
 	\begin{bmatrix}
 		\lambda\, m'_{\tau' x}\\\lambda\, m'_{\tau' y}\\\lambda \,m'_{\tau' z}\label{eq:eq9}
-	\end{bmatrix}
+	\end{bmatrix} \, .
 \end{gather}
 
 Aus Gleichung \ref{eq:eq9} lässt sich das folgende Gleichungssystem aufstellen.  
@@ -430,16 +397,16 @@ Aus Gleichung \ref{eq:eq9} lässt sich das folgende Gleichungssystem aufstellen.
 \begin{gather}
 	h_{11}\,m_{x \tau}+h_{12}\,m_{y \tau}+h_{13}\,m_{z \tau}= \lambda \,m'_{x\tau'}\\
 	h_{21}\,m_{x\tau}+h_{22}\,m_{y\tau}+h_{23}\,m_{z\tau}= \lambda\, m'_{y\tau'}\\
-	h_{31}\,m_{x\tau}+h_{32}\,m_{y\tau}+h_{33}\,m_{z\tau}= \lambda \,m'_{z\tau'}
+	h_{31}\,m_{x\tau}+h_{32}\,m_{y\tau}+h_{33}\,m_{z\tau}= \lambda \,m'_{z\tau'} \, .
 \end{gather}
 
-Da mit zweidimensionalen homogenen Bildkoordinaten gearbeitet wird und somit $m_{\tau z}$ und $m'_{\tau' z}$ = 1 ist, ergibt sich für die letzte Zeile $h_{31}\,m_{\tau x}+h_{32}\,m_{\tau y}+h_{33}\,m_{\tau z}= \lambda$. Setzt man diesen Ausdruck anstelle von $\lambda$ in die anderen beiden Gleichungen ein, so ergeben sich:
+Da mit zweidimensionalen homogenen Bildkoordinaten gearbeitet wird und somit $m_{\tau z}$ und $m'_{\tau' z}$ = 1 ist, ergibt sich für die letzte Zeile $h_{31}\,m_{\tau x}+h_{32}\,m_{\tau y}+h_{33}\,m_{\tau z}= \lambda$. Setzt man diesen Ausdruck anstelle von $\lambda$ in die anderen beiden Gleichungen ein, so ergeben sich
 
 %Dieser Ausdruck kann in den ersten beiden Gleichungen für $\lambda$ eingesetzt werden. Pro Punktepaar $m_\tau$ und $m'_{\tau'}$ ergeben sich somit zwei Gleichungen. 
 
 \begin{gather}
 	h_{11}\,m_{\tau x}+h_{12}\,m_{\tau y}+h_{13}\,m_{\tau z}= (h_{31}\,m_{\tau x}+h_{32}\,m_{\tau y}+h_{33}\,m_{\tau z}) \cdot m'_{\tau' x}\\
-	h_{21}\,m_{\tau x}+h_{22}\,m_{\tau y}+h_{23}\,m_{\tau z}= (h_{31}\,m_{\tau x}+h_{32}\,m_{\tau y}+h_{33}\,m_{\tau z}) \cdot m'_{\tau' y}
+	h_{21}\,m_{\tau x}+h_{22}\,m_{\tau y}+h_{23}\,m_{\tau z}= (h_{31}\,m_{\tau x}+h_{32}\,m_{\tau y}+h_{33}\,m_{\tau z}) \cdot m'_{\tau' y} \, .
 \end{gather}
 
 Für den Aufbau von $A$ werden beide Ausdrücke nach Null aufgelöst, sodass sich pro korrespondierendem Punktepaar zwei Gleichungen nach \ref{eq:eq10} und \ref{eq:eq11} ergeben.
@@ -449,10 +416,10 @@ Für den Aufbau von $A$ werden beide Ausdrücke nach Null aufgelöst, sodass sic
 \end{gather*}
 \begin{gather}
 	\leadsto h_{11}\,m_{\tau x}+h_{12}\,m_{\tau y}+h_{13}\,m_{\tau z} -h_{31}\,m_{\tau x}\cdot m'_{\tau' x} - h_{32}\,m_{\tau y} \cdot m'_{\tau' x}-h_{33}\,m_{\tau z}\cdot m'_{\tau' x}= 0 \label{eq:eq10}\\
-	\leadsto h_{21}\,m_{\tau x}+h_{22}\,m_{\tau y}+h_{23}\,m_{\tau z}-h_{31}\,m_{\tau x}\cdot m'_{\tau' y} -h_{32}\,m_{\tau x} \cdot m'_{\tau' y} -h_{33}\,m_{\tau z}) \cdot m'_{\tau' z}=0 \label{eq:eq11}
+	\leadsto h_{21}\,m_{\tau x}+h_{22}\,m_{\tau y}+h_{23}\,m_{\tau z}-h_{31}\,m_{\tau x}\cdot m'_{\tau' y} -h_{32}\,m_{\tau x} \cdot m'_{\tau' y} -h_{33}\,m_{\tau z}) \cdot m'_{\tau' z}=0 \, .\label{eq:eq11}
 \end{gather}
 
-Die entstandenen Gleichungen werden dann nach folgendem Schema in die Koeffizientmatrix $A$ eingetragen.\cite{Elements,HZ,Schwarz,Heipke}
+Die entstandenen Gleichungen werden dann nach folgendem Schema in die Koeffizientmatrix $A$ eingetragen\cite{Elements,HZ,Schwarz,Heipke}
 
 \begin{gather}
 		A\cdot x = 0\\
@@ -469,7 +436,7 @@ Die entstandenen Gleichungen werden dann nach folgendem Schema in die Koeffizien
 	\begin{pmatrix}
 		h_1\\h_2\\.\\.\\.\\h_i
 	\end{pmatrix}
-	=0
+	=0 \, .
 \end{gather}
 
 Gesucht wird ein Vektor $\vec{x}$, für den gilt, dass $A \cdot x = 0$. Besitzt Matrix $A$ einen Rang von 8, so entspricht der gesuchte Vektor $\vec{x}$ dem Kern der Koeffizientenmatrix und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Homographiematrix eingetragen werden können\cite{HZ,Schwarz}.\\
@@ -527,13 +494,13 @@ Das Verfahren mit welchem sowohl $F$ als auch $E$ geschätzt werden können ähn
 \end{gather*}\\
 
 
-Gesucht wird nun ein Vektor $\vec{f}$, für den gilt, dass $A \cdot f = 0$. Besitzt Matrix $A$ einen Rang von 8, so entspricht der gesuchte Vektor $\vec{x}$ auch hier dem Kern von A und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Fundamentalmatrix eingetragen werden können\cite{HZ,ZZGXr}.\\
+Gesucht wird ein Vektor $\vec{f}$, für den gilt, dass $A \cdot f = 0$. Besitzt Matrix $A$ einen Rang von 8, so entspricht der gesuchte Vektor $\vec{x}$ auch hier dem Kern von A und ist ein Spaltenvektor mit insgesamt neun Einträgen, welche in die 3x3-Fundamentalmatrix eingetragen werden können\cite{HZ,ZZGXr}.\\
 
 
 Bei der Homographie, wie auch bei der Fundamentalmatrix, kann es zu überbestimmten Systemen kommen. Ein System gilt als überbestimmt, wenn es durch mehr Gleichungen als Unbekannte beschrieben wird\cite{Schwarz,Scholz}. Für die Koeffizientenmatrix für $F$ und $H$ hätte das zur Folge, dass sie in ihrem Rang steigt. Die Bestimmung des Kerns würde in beiden Fällen kein eindeutiges Ergebnis mehr liefern\cite{HZ,Schwarz}.\\
 
 
-Für die Lösung überbestimmter Systeme wird durch ein \textit{Least-Square}-Verfahren, mit Hilfe der Singulärwertszerlegung einer Matrix $A$, eine Lösung für einen Vektor $\vec{x}$ gesucht, so dass $\parallel A \cdot x \parallel$ minimal wird \cite{HZ,Scholz,Schwarz}. Die Singulärwertzerlegung von $A$ ist eine Faktorisierung der Matrix \ensuremath{A \in \mathbb{R}^{m \times n}} der Form \ensuremath{A = U \cdot \Sigma \cdot V^T} mit orthogonalen Matrizen \ensuremath{U \in \mathbb{R}^{m \times n}} und \ensuremath{V \in \mathbb{R}^{m \times n}} sowie mit einer Diagonalmatrix $\Sigma$. 
+Für die Lösung überbestimmter Systeme wird durch ein \textit{Least-Square}-Verfahren, mit Hilfe der Singulärwertszerlegung einer Matrix $A$, eine Lösung für einen Vektor $\vec{x}$ gesucht, so dass $\parallel A \cdot x \parallel$ minimal wird \cite{HZ,Scholz,Schwarz}. Die Singulärwertzerlegung von $A$ ist eine Faktorisierung der Matrix \ensuremath{A \in \mathbb{R}^{m \times n}} der Form \ensuremath{A = U \cdot \Sigma \cdot V^T} mit orthogonalen Matrizen \ensuremath{U \in \mathbb{R}^{m \times n}} und \ensuremath{V \in \mathbb{R}^{m \times n}} sowie mit einer Diagonalmatrix $\Sigma$ 
 
 
 \begin{gather}
@@ -548,7 +515,7 @@ Für die Lösung überbestimmter Systeme wird durch ein \textit{Least-Square}-Ve
 		.&&&&.&.&&&&.\\	
 		.&&&&.&.&&&&.\\	
 		0&&...&&0&0&&...&&0\\	
-	\end{pmatrix}
+	\end{pmatrix} \, .
 \end{gather}
 
 Die  Diagonalmatrix $\Sigma$ beinhaltet die Singulärwerte der Matrix. Dabei soll für die diagonalen Singulärwerte in $\Sigma$ mit $s_1$ bis $s_r$ gelten, dass \ensuremath{s_1 \geq s_2 \geq ... \geq s_r \ge 0 }\cite{Scholz}. Die Spalte der Matrix $V^T$, welche mit dem kleinsten Singulärwert von $\Sigma$ korrespondiert, ergibt den Vektor $\vec{x}$, für den \ensuremath{\parallel A \cdot x\parallel} minimal wird. \\
