@@ -209,13 +209,13 @@ Sie gehören nicht zum eigentlichen Rektifizierungsprozess aber dienen dazu die 
 \subsection{Projektive Transformation}
 
 Im Folgenden wird die Herleitung der Matrizen $H_p$ und $H_p'$ beschrieben. Die projektiven Matrizen $H_p$ und $H_p'$ werden aus den Linien $w$ und $w'$ gebildet. $w$ und $w'$ werden nicht willkürlich gewählt. Definiert werden sie durch eine Richtung $z = \begin{bmatrix}
-\lambda&\mu&0\end{bmatrix}^T$. $z$ soll dabei so gewählt werden, dass die durch die Rektifizierung entstehenden Bildverzerrungen in beiden Bildern minimal bleibt. Die Linien $w$ und $w'$ werden wie folgt definiert.
+\lambda&\mu&0\end{bmatrix}^T$. $z$ soll dabei so gewählt werden, dass die durch die Rektifizierung entstehenden Bildverzerrungen in beiden Bildern minimal bleibt. Die Linien $w$ und $w'$ werden wie folgt definiert
 
 %, welche die, durch die Rektifizierung entstehende, Bildverzerrung minimieren soll. Für beide Bilder werden $w$ und $w'$ folgendermaßen gewählt
 
 \begin{gather}
 	w = [e]_x \cdot z \label{eq:w}\\ 
-	w'= F\cdot z \label{eq:w'}
+	w'= F\cdot z \label{eq:w'} \, .
 \end{gather}\\
 
 
@@ -235,12 +235,12 @@ Die Minimierung beinhaltet den Versuch ein $z$ zu finden, welches $w = (w_a,w_b,
 
 %Jedoch sollen sie nicht ganz null werden, da die projektive Matrix dann keine projektive mehr wäre, sondern eine affine.  Deswegen heißt es auch sie soll so affin wie möglich gemacht werden. Das selbe gilt natürlich auch für $w_a'$ und $w_b'$ aus $H_p'$. 
 
-Sollte es der Fall sein, dass der Epipole $e$ bereits im unendlichen ist, so sind $w_a = 0$ und $w_b = 0$. In diesem Fall ist eine projektive Transformation für diesen Epipol nicht mehr nötig.\\
+Sollte es der Fall sein, dass der Epipole $e$ bereits im unendlichen ist, so sind $w_a = 0$ und $w_b = 0$. In diesem Fall ist eine projektive Transformation für diesen Epipol nicht mehr nötig. Selbiges gilt auch für den Epipol $e'$.\\
 
-Für die Minimierung wird die Methode des Rayleigh-Verfahren angewandt. Die Methode der kleinsten Quadrate ist ein mathematisches Standardverfahren für eine Ausgleichsrechnung. Mit ihrer Hilfe soll aus der Menge der Bildpunkte beider Bilder ein Wert für $z$ ermittelt werden\cite{leastSquare}. Für $z$ gilt mit $z = \begin{bmatrix}\lambda&\mu&0\end{bmatrix}^T$ bereits die Bedingung, dass es sich um einen Punkt im unendlichen handeln soll. $\lambda$ und $\mu$, sollen dabei einen Wert annehmen, der sich nah an den Gewichtungen der Punkteansammlungen beider Bilder befindet\cite{ZZ}. \\
+Für die Minimierung wird das Verfahren des Rayleigh-Quotienten angewandt. Mit dessen Hilfe soll aus der Menge der Bildpunkte beider Bilder ein Wert für $z$ ermittelt werden\cite{rayleigh}. Für $z$ gilt mit $z = \begin{bmatrix}\lambda&\mu&0\end{bmatrix}^T$ bereits die Bedingung, dass es sich um einen Punkt im unendlichen handeln soll. $\lambda$ und $\mu$, sollen dabei einen Wert annehmen, der sich nah an den Gewichtungen der Punkteansammlungen beider Bilder befindet\cite{ZZ}. \\
 
-
-
+%
+% Die Methode der kleinsten Quadrate ist ein mathematisches Standardverfahren für eine Ausgleichsrechnung.
 
 %Es werden also die Gewichtungen der Punkte in beiden Bildern in der Methode der Anpassung der kleinsten Quadrate verbaut, welche versucht eine Funktion zu finden, die einen Wert für $z$ berechnen soll welcher die Bildverzerrung minimal hält. \textcolor{red}{Anders ausgedrückt man sucht einen Wert für $z$, welcher am nächsten an den gegebenen Punktesammlungen der jeweiligen Bildern dran liegt, wobei für $z$ bereits gilt, dass es sich um einen Punkt im Unendlichen handeln soll}\cite{ZZ,leastSquare}.
 
@@ -254,12 +254,12 @@ Für die Minimierung wird die Methode des Rayleigh-Verfahren angewandt. Die Meth
 Um $z$ zu ermitteln, werden zunächst die Gewichtungen der Punkte beider Bilder benötigt. $p_i$ beinhaltet alle Punkte von Bild eins und $p_j$ beinhaltet alle Punkte von Bild zwei. Ein Punkt  $p_{i1} = \begin{bmatrix}p_{i1,u}&p_{i1,v}&1\end{bmatrix}^T$ aus Bild eins soll zu einem Punkt $p_{i1} = \begin{bmatrix}\frac{p_{i1,u}}{w_i}&\frac{p_{i1,v}}{w_i}&1\end{bmatrix}^T$ mit $w_i$ gleich der Gewichtung 
 
 \begin{gather}
-	w_i=w^Tp_i
+	w_i=w^Tp_i  \, ,
 \end{gather} 
 
 transformiert werden. Dasselbe soll auch für die Punkte $p_j$ im zweiten Bild geschehen. Sind die Gewichtungen beider Bilder gleich, so ergibt sich keine projektive Verzerrung und die Epipole sind bereits im unendlichen. Befindet sich einer oder beide Epipole nicht im unendlichen, so können die Gewichtungen der Punkte beider Bilder nicht gleich sein\cite{ZZ}.\\
 
-Das Ziel ist es einen Wert für $z$ zu finden, der die Abweichung der Gewichtungen beider Bilder zueinander so gering wie möglich zu hält. Die Rektifizierung wurde anhand des synthetischen Beispiels in Kapitel \ref{sec:minimal} implementiert. Dem entsprechend bilden die Abbildungen der Eckpunkte des Quaders auf den Sensoren der virtuellen Kameras, die Punkte in $p_i$ und $p_j$ anhand welcher die Rektifizierung durchgeführt werden soll. \\
+Das Ziel ist es einen Wert für $z$ zu finden, der die Abweichung der Gewichtungen beider Bilder zueinander so gering wie möglich hält. Die Rektifizierung wurde anhand des synthetischen Beispiels in Kapitel \ref{sec:minimal} implementiert. Dem entsprechend bilden die Abbildungen der Eckpunkte des Quaders auf den Sensoren der virtuellen Kameras, die Punkte in $p_i$ und $p_j$ anhand welcher die Rektifizierung durchgeführt werden soll. \\
 
 %Im Realbeispiel werden alle Pixel des Bildes verwendet. Die Rektifizierung wurde im aufgeführten Beispiel anhand des erstellten Minimalbeispiels durchgeführt, somit wurden die Eckpunkte des Quaders des jeweiligen Bildes für die das Minimierungskriterium verwendet.
 %
@@ -268,8 +268,8 @@ Das Ziel ist es einen Wert für $z$ zu finden, der die Abweichung der Gewichtung
 Der Wert $p_c$ mit  $p_c = \frac{1}{n} \sum_{i=1}^{n} p_i$ ergibt sich aus dem Durchschnittswert aller Punkte eines Bildes und gibt den Bildmittelpunkt an. $w_c$ ist die Gewichtung am Bildmittelpunkt und wird berechnet mit
 
 \begin{gather}
-	w_c = w^Tp_c
-\end{gather}.
+	w_c = w^Tp_c \, .
+\end{gather}
 
 
 Die Abweichung der Gewichtungen wird bezüglich der Gewichtung am Bildzentrum $w_c$ gemessen. 
@@ -277,7 +277,7 @@ Die Abweichung der Gewichtungen wird bezüglich der Gewichtung am Bildzentrum $w
 \begin{gather}
 	\sum_{i-1}^{n}\Big[\frac{w_i-w_c}{w_c} \Big]^2\\
 	\leadsto \sum_{i=1}^{n}\Big[\frac{w^T (p_i-p_c)}{w^Tp_c} \Big]^2
-	\leadsto \sum_{i=1}^{n}\Big[\frac{w^T (p_i-p_c)(p_i-p_c)^Tw}{w^Tp_cp_c^Tw} \Big]
+	\leadsto \sum_{i=1}^{n}\Big[\frac{w^T (p_i-p_c)(p_i-p_c)^Tw}{w^Tp_c \, p_c^Tw} \Big]\, .
 \end{gather}\\
 
 %dessen Gewichtung ergibt sich aus $w_c= w^T p_c$. Die gesuchte Abweichung ausgedrückt in der Anpassung der kleinsten Quadreate ergibt dann die folgende Formel.\\
@@ -291,7 +291,7 @@ Die Abweichung der Gewichtungen wird bezüglich der Gewichtung am Bildzentrum $w
 Vereinfacht lässt sich das auch in einer Matrixgleichung in Form von
 
 \begin{gather}
-	\frac{w^TPP^Tw}{w^Tp_cp_c^Tw} \label{eq:MinimizationBild1}
+	\frac{w^TP \, P^Tw}{w^Tp_c \, p_c^Tw} \, , \label{eq:MinimizationBild1}
 \end{gather}
 
 angeben, in welcher für $P$ gilt
@@ -301,46 +301,42 @@ angeben, in welcher für $P$ gilt
 		p_{1,u}-p_{c,u}&p_{2,u}-p_{c,u}&...&p_{i,u}-p_{c,u}\\
 		p_{1,v}-p_{c,v}&p_{2,v}-p_{c,v}&...&p_{i,v}-p_{c,v}\\\label{eq:P}
 		0&0&...&0	
-	\end{bmatrix}
-\end{gather}.
+	\end{bmatrix} \, .
+\end{gather}
 
 Für die Punkte $p_j$ in Bild zwei ergibt sich dann entsprechend die Matrixgleichung
 
 \begin{gather}
-	\frac{w'^TP'P'^Tw'}{w'^Tp_c'p_c'^Tw'}\label{eq:MinimizationBild2}
-\end{gather} .
+	\frac{w'^TP'P'^Tw'}{w'^Tp_c' \, p_c'^Tw'}\label{eq:MinimizationBild2}\, .
+\end{gather} 
 
 
 $w$ und $w^T$ werden nun noch mit ihren Definitionen aus den Gleichungen \ref{eq:w} und \ref{eq:w'} ersetzt. Die Gleichungen \ref{eq:MinimizationBild1} und \ref{eq:MinimizationBild2} werden somit als eine Funktion von $z$ ausgedrückt\cite{ZZ}. 
 
-%Gleichzeitig werden die Gleichungen \ref{eq:w} und \ref{eq:w'} summiert um die Gleichung zu erhalten, welche sich auf beide Bilder gleichzeitig bezieht und somit eine Lösung für $z$, das für beide Bilder gilt, gesucht werden kann.
-%Das Ziel ist es einen Wert für $z$ zu finden, welches bis jetzt noch nicht ersichtlich in den Gleichungen vorkommt. Also werden
-%Um einen Wert für $z$ zu finden, werden nun die Gleichungen \ref{eq:MinimizationBild1} und \ref{eq:MinimizationBild2} entsprechend minimiert.
-
 \begin{gather}
-	\frac{z^T[e]_x^TPP^T[e]_xz}{z^T[e]_x^Tp_cp_c^T[e]_xz}+\frac{z^TF^TP'P'^TFz}{z^TF^Tp_c'p_c'^TFz} \label{eq:funcZLong}
+	\frac{z^T[e]_x^TP \, P^T[e]_xz}{z^T[e]_x^Tp_c \, p_c^T[e]_xz}+\frac{z^TF^TP'P'^TFz}{z^TF^Tp_c' \, p_c'^TFz} \, . \label{eq:funcZLong}
 \end{gather}
 
-Gleichung \ref{eq:funcZLong} wird noch vereinfach mit
+Gleichung \ref{eq:funcZLong} wird noch vereinfacht mit
 
 \begin{gather}
-	A = [e]_x^TPP^T[e]_x\\
-	B=[e]_x^Tp_cp_c^T[e]_x\\
+	A = [e]_x^TP \ ,P^T[e]_x\\
+	B=[e]_x^Tp_c \, p_c^T[e]_x\\
 	A'=F^TP'P'^TF\\
-	B'= F^Tp_c'p_c'^TF\\
+	B'= F^Tp_c' \, p_c'^TF\\
 	\leadsto 
 	\frac{z^TAz}{z^TBz}+\frac{z^TA'z}{z^TB'Fz}\\
-	f(z) = \frac{z^TAz}{z^TBz}+\frac{z^TA'z}{z^TB'Fz}\label{eq:PolynomRec}
+	f(z) = \frac{z^TAz}{z^TBz}+\frac{z^TA'z}{z^TB'Fz}\, .\label{eq:PolynomRec}
 \end{gather}
-.
+
 
 Da bereits fest gesetzt ist das die dritte Kompontente von $z$ Null ist, wird $z$ im Folgenden als zweidimensionaler Vektor mit $z = \begin{pmatrix}
 \lambda\\ \mu\end{pmatrix}$ dargestellt. $A,B,A'$ und $B'$ sind 3x3-Matrizen, von denen dann nur noch der erste 2 $\times$ 2- Block wichtig ist.\\
 
-Für eine nicht lineare Optimierung wird das gesamte Polynom \ref{eq:PolynomRec} aufgeteilt. Als erstes, wird $\frac{z^TAz}{z^TBz}$ minimiert und danach $\frac{z^TA'z}{z^TB'z}$. So entstehen zwei Lösungen $\hat{z_1}$ und $\hat{z_2}$, welche über eine Mittelung eine erste Schätzung für $z$ geben\cite{ZZ}.
+Für eine nicht lineare Optimierung wird das gesamte Polynom \ref{eq:PolynomRec} aufgeteilt. Als erstes, wird $\frac{z^TAz}{z^TBz}$ minimiert und danach $\frac{z^TA'z}{z^TB'z}$. So entstehen zwei Lösungen $\hat{z_1}$ und $\hat{z_2}$, welche über eine Mittelung eine erste Schätzung für $z$ ergeben\cite{ZZ}.
 
 \begin{gather}
-	z = \frac{\frac{\hat{z_1}}{\| z_1 \|}+\frac{\hat{z_2}}{\| z_2 \|}}{2}
+	z = \frac{\frac{\hat{z_1}}{\| z_1 \|}+\frac{\hat{z_2}}{\| z_2 \|}}{2} \, .
 \end{gather}\\
 
 Da es sich um eine nicht lineare Optimierung handelt ist die Minimierung von  $\frac{z^TAz}{z^TBz}$ gleichzusetzen mit der Maximierung von  $\frac{z^TBz}{z^TAz}$. Beide werden als eine Funktion von $f(z)$ definiert. Matrix $A$ wird mit der Choleskyzerlegung\cite{FormelsammlungMatrizen} in zwei höhere Dreiecksmatrizen zerlegt $A = D^TD$. Dies geht nur da $A$ nachweislich eine symmetrische und positiv-definite Matrix ist\cite{Fortran77,FormelsammlungMatrizen}. Des Weiteren wird definiert, dass $y = Dz$ ist und $f(z)$ wird zu $\hat{f}(y)$\cite{ZZ}.
@@ -351,8 +347,8 @@ Da es sich um eine nicht lineare Optimierung handelt ist die Minimierung von  $\
 	f(z)= \frac{z^TBz}{z^TAz}\\
 	\leadsto 
 	f(z)=\frac{z^TBz}{z^TD^TDz}\\
-	\hat{f}(y)= \frac{y^TD^{-T}BD^{-1}y}{y^Ty}
-\end{gather}
+	\hat{f}(y)= \frac{y^TD^{-T}BD^{-1}y}{y^Ty} \, .
+\end{gather} 
 
 Da $y$ bis auf einen Skalierungsfaktor bestimmt ist, kann angenommen werden, dass $\parallel y \parallel = 1$ gilt. $\hat{f}(y)$ ist maximiert, wenn $y$ gleich dem Eigenvektor von $D^{-T}BD^{-1}$ ist, welcher mit dem größten Eigenwert von $D^{-T}BD^{-1}$ assoziiert wird\cite{ZZ}. Für $\hat{z_1}$ ergibt sich $\hat{z_1} = D^{-1}y$. Exakt das selbe Verfahren wird für die Bestimmung von $z_2$ mit  $\frac{z^TB'z}{z^TA'z}$ angewandt\cite{ZZ}.\\
 
@@ -431,15 +427,15 @@ Nach der Transformation der Abbildungspunkte mit den Matrizen $H_p$ und $H_p'$ b
 
 Die Epipole der jeweiligen Bilder befinden sich nach der projektiven Transformation im Unendlichen. Die daraus resultierenden Epipolarlinien sind, wie in Abbildung \ref{fig:RectSameHp2} zu sehen, parallel zueinander angeordnet. Im Folgenden sollen die Epipole rotiert werden, sodass ihre Richtungen $i = \begin{bmatrix}1&0&0\end{bmatrix}$ betragen. $H_r$ und $H_r'$, welche aus der Zerlegung von $H_a$ und $H_a'$ resultieren, sollen die Rotation ausführen.\\
 
-$w$ und $w'$ sind bereits bekannt, Mit Hilfe des bekannten $F$, können $v_a$ und $v_b$ ersetzt werden. Zur Erinnerung eine Voraussetzung für den hier aufgezeigten Rektifizierungsansatz ist, dass sowohl die Bildpunkte als auch die Fundamentalmatrix bekannt sein müssen. Die Epipole wurden ins unendliche projiziert und sollen nach der Rotation die Form $e = [1 \;0\;0]^T$ haben. Das heißt das die Fundamentalmatrix $\bar{F}$ die folgende Form haben wird.
+$w$ und $w'$ sind bereits bekannt, Mit Hilfe des bekannten $F$ können $v_a$ und $v_b$ ersetzt werden. Zur Erinnerung eine Voraussetzung für den hier aufgezeigten Rektifizierungsansatz ist, dass sowohl die Bildpunkte als auch die Fundamentalmatrix bekannt sein müssen. Die Epipole wurden ins unendliche projiziert und sollen nach der Rotation die Form $e = [1 \;0\;0]^T$ haben. Das heißt das die Fundamentalmatrix $\bar{F}$ die folgende Form haben wird
 
 \begin{gather}
 	\bar{F} = \begin{bmatrix}
 		0&0&0\\
 		0&0&-1\\
 		0&1&0
-	\end{bmatrix}
-\end{gather}
+	\end{bmatrix} \, .
+\end{gather} 
 
 Des Weiteren ist bekannt, dass $F = H'^T \bar{F} H$ 
 %Die Fundamentalmatrix welche aus den rektifizierten Punkten entsteht hätte dann die Form 
@@ -469,10 +465,10 @@ Des Weiteren ist bekannt, dass $F = H'^T \bar{F} H$
 	v_aw_a' - v_a'w_a&v_bw_a' - v_a'w_b&v_cw_a' - v_a'\\
 	v_aw_b' - v_b'w_a&v_bw_b' - v_b'w_b&v_cw_b' - v_b'\\
 	v_a - v_c'w_a&v_b - v_c'w_b&v_c-v_c'
-	\end{bmatrix}\label{eq:6.45}
+	\end{bmatrix} \, .\label{eq:6.45}
 \end{gather}
 
-Bisher sind $w$, $w'$ und die Fundamentalmatrix $F$ aus den nicht-rektifizierten Punkten bekannt. Um $v_a, v_b$ und $v_c$ zu erhalten, werden jeweils die Einträge der letzten Zeile in $F$ umgeformt. Für $v_a', v_b'$ und $v_c'$ dient die letzte Spalte von $F$.
+Bisher sind $w$, $w'$ und die Fundamentalmatrix $F$ aus den nicht-rektifizierten Punkten bekannt. Um $v_a, v_b$ und $v_c$ zu erhalten, werden jeweils die Einträge der letzten Zeile in $F$ umgeformt. Für $v_a', v_b'$ und $v_c'$ dient die letzte Spalte von $F$
 %Dazu kann die letzte Zeile von F nach $v_a, v_b$ und $v_c$ aufgelöst werden. Für $v_a', v_b'$ und $v_c'$ wird die letzte Spalte von F verwendet. So können folgende Gleichungen für $v_a, v_a',v_b, v_b', v_c$ und $v_c'$ gewonnen werden. 
 
 
@@ -482,7 +478,7 @@ Bisher sind $w$, $w'$ und die Fundamentalmatrix $F$ aus den nicht-rektifizierten
 	v_c = F_{33}+v_c'\\
 	v_a' = v_cw_a'-F_{13}\\
 	v_b' = v_cw_b'-F_{23}\\
-	v_c' = v_c -F_{33}\label{eq:F33}
+	v_c' = v_c -F_{33} \, .\label{eq:F33}
 \end{gather}
 
 $F_{31},\, F_{32}, F_{33} ,F_{13}$ und  $F_{23}$ stehen für die Einträge der Matrix $F$. Werden die Gleichungen \ref{eq:va} bis \ref{eq:F33} in $H_r$ und $H_r'$ eingesetzt, so ergeben sich für $H_r$ und $H_r'$ 
@@ -511,7 +507,7 @@ $F_{31},\, F_{32}, F_{33} ,F_{13}$ und  $F_{23}$ stehen für die Einträge der M
 		w_b'F_{33}-F_{23}&F_{13}-w_a'F_{33}&0\\
 		w_a'F_{33}-F_{13}&w_b'F_{33}-F_{23}&v_c'\\
 		0&0&1
-	\end{bmatrix}
+	\end{bmatrix} \, .
 \end{gather}\\
 
 
@@ -678,17 +674,18 @@ Im Folgenden wird der entstandene Rektifizierungsalgorithmus auf Bilder untersch
 	1&0&0\\
 	0&1&0\\
 	0&0&1
-	\end{bmatrix}
+	\end{bmatrix} \, .
 \end{gather}
 
 Für $C'$ wird eine kleinere Auflösung mit $\zeta'_x = \zeta'_y = 0.5$ definiert. Die Kameramatrix $K'$ lautet somit
 
 \begin{gather}
+K' = 
 	\begin{bmatrix}
 	0.5&0&0\\
 	0&0.5&0\\
 	0&0&1
-	\end{bmatrix}
+	\end{bmatrix} \, .
 \end{gather} 
 
 
@@ -759,10 +756,10 @@ Als nächstes wurden die Auflösung von $C'$ so verändert, dass $\zeta'_x \neq 
 	2.3&0&0\\
 	0&3.2&0\\
 	0&0&1
-	\end{bmatrix}
-\end{gather}.
+	\end{bmatrix} \, .
+\end{gather}
 
-Für $K$ von $C$ gilt weiterhin $\zeta_x = \zeta_y = 1$. Die entstandenen Bilder sind in Abbildung \ref{fig:7.18} zu sehen. Die horizontale Kantenlänge des roten Quaders ist im Verhältnis kürzer als ihre vertikale Kantenlänge. Wie in Abbildung \ref{fig:7.19} zu sehen ist, bleibt das ungleiche veränderte Seitenverhältnis des roten Quaders nach der Rektifizierung erhalten, weshalb der rote Quader schmäler ist als der der grüne.
+Für $K$ von $C$ gilt weiterhin $\zeta_x = \zeta_y = 1$. Die entstandenen Bilder sind in Abbildung \ref{fig:7.18} zu sehen. Die horizontale Kantenlänge des roten Quaders ist im Verhältnis kürzer als ihre vertikale Kantenlänge. Wie in Abbildung \ref{fig:7.19} zu sehen ist, bleibt das ungleiche veränderte Seitenverhältnis des roten Quaders nach der Rektifizierung erhalten, weshalb der rote Quader schmäler ist als der grüne.
 
 
 \begin{figure}[!htb]
@@ -782,6 +779,6 @@ Für $K$ von $C$ gilt weiterhin $\zeta_x = \zeta_y = 1$. Die entstandenen Bilder
 
 %Die Beispiele zeigen, dass es möglich ist Bilder unterschiedlicher Beispiele zu rektifizieren, jedoch müssen für die nachfolgende Erstellung der Tiefenmaps....(was wäre jetzt ein guter Abschluss??)
 
-Diese Beispiele zeigen, dass das hier vorgestellte Rektifizierungsverfahren auf Bilder verschiedener Auflösungen mit demselben Seitenverhältnis der Pixel anwendbar ist. Jedoch können Bilder mit verschiedenen Seitenverhältnissen mit dem Verfahren nicht rektifiziert werden. Eine mögliche Lösung wäre eine Erweiterung des Models, welche die Bildlängen bestimmt und schließlich die relativen Seitenverhältnisse ausgleicht.  
+Diese Beispiele zeigen, dass das hier vorgestellte Rektifizierungsverfahren auf Bilder verschiedener Auflösungen mit dem selben Seitenverhältnis der Pixel anwendbar ist. Jedoch können Bilder mit verschiedenen Seitenverhältnissen mit diesem Verfahren nicht rektifiziert werden. Eine mögliche Lösung wäre eine Erweiterung des Models, welche die Bildlängen bestimmt und schließlich die relativen Seitenverhältnisse ausgleicht.  
 
 

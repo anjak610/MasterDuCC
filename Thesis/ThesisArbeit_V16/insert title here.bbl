@@ -183,10 +183,12 @@ Richard~I. Hartley.
 \newblock Euclidean reconstruction from uncalibrated views.
 \newblock G.E. CRD, Schenectady, NY, 12301.
 
-\bibitem{leastSquare}
-Dongqing Li, editor.
-\newblock {\em Encyclopedia of Microfluidics and Nanofluidics}, pages 999--999.
-\newblock Springer US, Boston, MA, 2008.
+\bibitem{rayleigh}
+L.M. Surhone, M.T. Timpledon, and S.F. Marseken.
+\newblock {\em Rayleigh Quotient: Mathematics, Hermitian Matrix, Conjugate
+  Transpose, Eigenvalue, Eigenvector and Eeigenspace, Min-Max Theorem, Rayleigh
+  Quotient Iteration, Numerical Range, Euclidean Vector}.
+\newblock Betascript Publishing, 2010.
 
 \bibitem{Fortran77}
 William T. Vetterling Brian P.~Flannery William H.~Press, Saul A.~Teukolsky.
