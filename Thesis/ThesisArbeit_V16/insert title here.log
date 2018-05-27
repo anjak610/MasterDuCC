@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  27 MAY 2018 13:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  27 MAY 2018 15:43
 entering extended mode
 **"./insert title here.tex"
 ("insert title here.tex"
@@ -1320,15 +1320,19 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 145.
  [9 <./images/WeltKordSys.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 279.
+(babel)             in language  on input line 278.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 279.
- [10]
+(babel)             in language  on input line 278.
+[10]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 281.
+(babel)             in language  on input line 280.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 281.
+(babel)             in language  on input line 280.
 
 <images/UebersichtKoordinatensysteme_beschriftet.png, id=321, 621.07031pt x 411
 .03563pt>
@@ -1336,26 +1340,26 @@ File: images/UebersichtKoordinatensysteme_beschriftet.png Graphic file (type pn
 g)
  <use images/UebersichtKoordinatensysteme_beschriftet.png>
 Package pdftex.def Info: images/UebersichtKoordinatensysteme_beschriftet.png us
-ed on input line 289.
+ed on input line 288.
 (pdftex.def)             Requested size: 386.95897pt x 256.09383pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--302
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 338.
+(babel)             in language  on input line 337.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 338.
+(babel)             in language  on input line 337.
 [11 <./images/UebersichtKoordinatensysteme_beschriftet.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 396.
+(babel)             in language  on input line 394.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 396.
+(babel)             in language  on input line 394.
 [12]) (content/1_chapter1/c1_expName_2.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
@@ -1411,106 +1415,102 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--170
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 234.
+(babel)             in language  on input line 191.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 234.
+(babel)             in language  on input line 191.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 239.
+(babel)             in language  on input line 196.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 239.
+(babel)             in language  on input line 196.
 [16]
 <images/EpipolarGeoemtrieGrafik_beschriftet.png, id=398, 636.12656pt x 251.4393
 8pt>
 File: images/EpipolarGeoemtrieGrafik_beschriftet.png Graphic file (type png)
  <use images/EpipolarGeoemtrieGrafik_beschriftet.png>
 Package pdftex.def Info: images/EpipolarGeoemtrieGrafik_beschriftet.png used on
- input line 243.
+ input line 200.
 (pdftex.def)             Requested size: 386.95897pt x 152.94807pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
-<images/EpipolarLinien.png, id=414, 923.70094pt x 597.73312pt>
+<images/EpipolarLinien.png, id=415, 923.70094pt x 597.73312pt>
 File: images/EpipolarLinien.png Graphic file (type png)
 
 <use images/EpipolarLinien.png>
-Package pdftex.def Info: images/EpipolarLinien.png used on input line 263.
+Package pdftex.def Info: images/EpipolarLinien.png used on input line 220.
 (pdftex.def)             Requested size: 386.95897pt x 250.39862pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 276.
+(babel)             in language  on input line 233.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 276.
+(babel)             in language  on input line 233.
  [17 <./images/EpipolarGeoemtrieGrafik_beschriftet.png> <./images/EpipolarLinie
 n.png>]
-
-LaTeX Warning: Citation `Elements ' on page 18 undefined on input line 306.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 337--338
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 363.
+(babel)             in language  on input line 319.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 363.
+(babel)             in language  on input line 319.
 [18]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 421.
+(babel)             in language  on input line 377.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 421.
+(babel)             in language  on input line 377.
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--425
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 426--427
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 470.
+(babel)             in language  on input line 426.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 470.
+(babel)             in language  on input line 426.
 [19]
-Overfull \hbox (31.33392pt too wide) in paragraph at lines 499--500
+Overfull \hbox (31.33392pt too wide) in paragraph at lines 455--456
 []\OT1/cmr/m/n/10.95 Die ent-stan-de-nen Glei-chun-gen wer-den dann nach fol-ge
 n-dem Sche-ma in die Ko-ef-fi-zi-ent-ma-trix $\OML/cmm/m/it/10.95 A$ \OT1/cmr/m
 /n/10.95 eingetragen.[[],
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 519--520
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 524.
+(babel)             in language  on input line 480.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 524.
+(babel)             in language  on input line 480.
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 571--572
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--575
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 577--578
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 596.
+(babel)             in language  on input line 552.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 596.
+(babel)             in language  on input line 552.
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 598--599
+Underfull \hbox (badness 10000) in paragraph at lines 554--555
 
  []
 
@@ -1536,7 +1536,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-<images/NEU_Virtuel_Arbeitsprozess.png, id=549, 963.6pt x 542.025pt>
+<images/NEU_Virtuel_Arbeitsprozess.png, id=550, 963.6pt x 542.025pt>
 File: images/NEU_Virtuel_Arbeitsprozess.png Graphic file (type png)
 
 <use images/NEU_Virtuel_Arbeitsprozess.png>
@@ -1555,7 +1555,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 31.
 
-<images/SynthetischesBeispielAufbauTopDown_beschriftet.png, id=559, 640.64343pt
+<images/SynthetischesBeispielAufbauTopDown_beschriftet.png, id=560, 640.64343pt
  x 315.42844pt>
 File: images/SynthetischesBeispielAufbauTopDown_beschriftet.png Graphic file (t
 ype png)
@@ -1565,7 +1565,7 @@ Package pdftex.def Info: images/SynthetischesBeispielAufbauTopDown_beschriftet.
 png used on input line 42.
 (pdftex.def)             Requested size: 251.52443pt x 123.83961pt.
 
-<images/QuadrateMinimalBeispiel.png, id=560, 509.65407pt x 325.96782pt>
+<images/QuadrateMinimalBeispiel.png, id=561, 509.65407pt x 325.96782pt>
 File: images/QuadrateMinimalBeispiel.png Graphic file (type png)
 
 <use images/QuadrateMinimalBeispiel.png>
@@ -1573,7 +1573,7 @@ Package pdftex.def Info: images/QuadrateMinimalBeispiel.png used on input line
 47.
 (pdftex.def)             Requested size: 203.1518pt x 129.93219pt.
 
-<images/KS_Minimalbeispiel_beschriftet.png, id=561, 851.43094pt x 458.46281pt>
+<images/KS_Minimalbeispiel_beschriftet.png, id=562, 851.43094pt x 458.46281pt>
 File: images/KS_Minimalbeispiel_beschriftet.png Graphic file (type png)
 
 <use images/KS_Minimalbeispiel_beschriftet.png>
@@ -1645,14 +1645,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
-<images/P_Solution_one.png, id=642, 615.0478pt x 469.755pt>
+<images/P_Solution_one.png, id=643, 615.0478pt x 469.755pt>
 File: images/P_Solution_one.png Graphic file (type png)
 
 <use images/P_Solution_one.png>
 Package pdftex.def Info: images/P_Solution_one.png used on input line 346.
 (pdftex.def)             Requested size: 241.84843pt x 184.71613pt.
 
-<images/P_Solution_two.png, id=643, 700.11563pt x 509.65407pt>
+<images/P_Solution_two.png, id=644, 700.11563pt x 509.65407pt>
 File: images/P_Solution_two.png Graphic file (type png)
 
 <use images/P_Solution_two.png>
@@ -1663,14 +1663,14 @@ Overfull \hbox (9.676pt too wide) in paragraph at lines 345--355
 []$[]$ $[]$ 
  []
 
-<images/P_Solution_three.png, id=644, 733.23938pt x 572.1375pt>
+<images/P_Solution_three.png, id=645, 733.23938pt x 572.1375pt>
 File: images/P_Solution_three.png Graphic file (type png)
 
 <use images/P_Solution_three.png>
 Package pdftex.def Info: images/P_Solution_three.png used on input line 360.
 (pdftex.def)             Requested size: 251.52443pt x 196.26146pt.
 
-<images/P_Solution_four.png, id=645, 656.4525pt x 510.40688pt>
+<images/P_Solution_four.png, id=646, 656.4525pt x 510.40688pt>
 File: images/P_Solution_four.png Graphic file (type png)
 
 <use images/P_Solution_four.png>
@@ -1700,7 +1700,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 414--415
 
  []
 
-<images/optimaleTriangulierung.png, id=663, 692.5875pt x 475.02469pt>
+<images/optimaleTriangulierung.png, id=664, 692.5875pt x 475.02469pt>
 File: images/optimaleTriangulierung.png Graphic file (type png)
 
 <use images/optimaleTriangulierung.png>
@@ -1728,21 +1728,21 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 523.
  [29 <./images/optimaleTriangulierung.png>] <images/ScaleInvariance_1.png, id=6
-83, 510.40688pt x 517.935pt>
+84, 510.40688pt x 517.935pt>
 File: images/ScaleInvariance_1.png Graphic file (type png)
 
 <use images/ScaleInvariance_1.png>
 Package pdftex.def Info: images/ScaleInvariance_1.png used on input line 541.
 (pdftex.def)             Requested size: 193.47578pt x 196.32735pt.
 
-<images/ScaleInvariance_2.png, id=684, 423.83344pt x 478.03593pt>
+<images/ScaleInvariance_2.png, id=685, 423.83344pt x 478.03593pt>
 File: images/ScaleInvariance_2.png Graphic file (type png)
 
 <use images/ScaleInvariance_2.png>
 Package pdftex.def Info: images/ScaleInvariance_2.png used on input line 546.
 (pdftex.def)             Requested size: 193.47578pt x 218.21422pt.
 
-<images/ScaleInvariance_3.png, id=685, 633.86812pt x 582.67688pt>
+<images/ScaleInvariance_3.png, id=686, 633.86812pt x 582.67688pt>
 File: images/ScaleInvariance_3.png Graphic file (type png)
 
 <use images/ScaleInvariance_3.png>
@@ -1754,7 +1754,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 559.
  [30 <./images/ScaleInvariance_1.png> <./images/ScaleInvariance_2.png> <./image
 s/ScaleInvariance_3.png>]
-<images/MinimalBeispiel_reconstructed.png, id=697, 608.2725pt x 522.45187pt>
+<images/MinimalBeispiel_reconstructed.png, id=698, 608.2725pt x 522.45187pt>
 File: images/MinimalBeispiel_reconstructed.png Graphic file (type png)
 
 <use images/MinimalBeispiel_reconstructed.png>
@@ -1762,7 +1762,7 @@ Package pdftex.def Info: images/MinimalBeispiel_reconstructed.png used on input
  line 564.
 (pdftex.def)             Requested size: 203.1518pt x 174.49033pt.
 
-<images/MinimalBeispiel_reconstructed_3.png, id=698, 536.0025pt x 503.63156pt>
+<images/MinimalBeispiel_reconstructed_3.png, id=699, 536.0025pt x 503.63156pt>
 File: images/MinimalBeispiel_reconstructed_3.png Graphic file (type png)
 
 <use images/MinimalBeispiel_reconstructed_3.png>
@@ -1794,7 +1794,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
-<images/Bildsensor_mit_Pixel.png, id=716, 847.66687pt x 590.205pt>
+<images/Bildsensor_mit_Pixel.png, id=717, 847.66687pt x 590.205pt>
 File: images/Bildsensor_mit_Pixel.png Graphic file (type png)
 
 <use images/Bildsensor_mit_Pixel.png>
@@ -1806,7 +1806,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 22.
  [32 <./images/Bildsensor_mit_Pixel.png>]
-<images/AufloesungSensor.png, id=727, 946.28531pt x 351.56343pt>
+<images/AufloesungSensor.png, id=728, 946.28531pt x 351.56343pt>
 File: images/AufloesungSensor.png Graphic file (type png)
 
 <use images/AufloesungSensor.png>
@@ -1827,7 +1827,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--60
  []
 
 
-<images/SensorSelbeAufloesung_beschriftet.png, id=739, 892.83563pt x 465.23813p
+<images/SensorSelbeAufloesung_beschriftet.png, id=740, 892.83563pt x 465.23813p
 t>
 File: images/SensorSelbeAufloesung_beschriftet.png Graphic file (type png)
  <use images/SensorSelbeAufloesung_beschriftet.png>
@@ -1841,7 +1841,7 @@ Underfull \hbox (badness 3302) in paragraph at lines 78--78
  []
 
 
-<images/SensorUnterschiedlicheAufloesung_beschriftet.png, id=740, 959.83594pt x
+<images/SensorUnterschiedlicheAufloesung_beschriftet.png, id=741, 959.83594pt x
  496.85625pt>
 File: images/SensorUnterschiedlicheAufloesung_beschriftet.png Graphic file (typ
 e png)
@@ -1869,7 +1869,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
-<images/Zeta1.png, id=758, 898.35625pt x 556.0775pt>
+<images/Zeta1.png, id=759, 898.35625pt x 556.0775pt>
 File: images/Zeta1.png Graphic file (type png)
  <use images/Zeta1.png>
 Package pdftex.def Info: images/Zeta1.png used on input line 191.
@@ -1880,20 +1880,20 @@ Underfull \hbox (badness 3302) in paragraph at lines 192--192
  \OT1/cmr/m/n/10.95 ha-ben die sel-be
  []
 
-<images/Zeta2.png, id=759, 898.35625pt x 556.0775pt>
+<images/Zeta2.png, id=760, 898.35625pt x 556.0775pt>
 File: images/Zeta2.png Graphic file (type png)
  <use images/Zeta2.png>
 Package pdftex.def Info: images/Zeta2.png used on input line 196.
 (pdftex.def)             Requested size: 232.17242pt x 143.71126pt.
 
-<images/Zeta32_12.png, id=760, 898.35625pt x 556.0775pt>
+<images/Zeta32_12.png, id=761, 898.35625pt x 556.0775pt>
 File: images/Zeta32_12.png Graphic file (type png)
 
 <use images/Zeta32_12.png>
 Package pdftex.def Info: images/Zeta32_12.png used on input line 204.
 (pdftex.def)             Requested size: 232.17242pt x 143.71126pt.
 
-<images/Zeta05_43.png, id=761, 898.35625pt x 556.0775pt>
+<images/Zeta05_43.png, id=762, 898.35625pt x 556.0775pt>
 File: images/Zeta05_43.png Graphic file (type png)
 
 <use images/Zeta05_43.png>
@@ -1919,7 +1919,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 266.
 [36 <./images/Zeta1.png (PNG copy)> <./images/Zeta2.png (PNG copy)> <./images/Z
 eta32_12.png (PNG copy)> <./images/Zeta05_43.png (PNG copy)>]
-<images/DifferentAufloesungRekonstructedScene.png, id=784, 292.84406pt x 303.38
+<images/DifferentAufloesungRekonstructedScene.png, id=785, 292.84406pt x 303.38
 344pt>
 File: images/DifferentAufloesungRekonstructedScene.png Graphic file (type png)
  <use images/DifferentAufloesungRekonstructedScene.png>
@@ -1938,7 +1938,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
-<images/NEU_real_Arbeitsprozess.png, id=793, 963.6pt x 542.025pt>
+<images/NEU_real_Arbeitsprozess.png, id=794, 963.6pt x 542.025pt>
 File: images/NEU_real_Arbeitsprozess.png Graphic file (type png)
 
 <use images/NEU_real_Arbeitsprozess.png>
@@ -1965,7 +1965,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-<images/SetUpSameResolution.jpg, id=802, 4625.28pt x 3468.96pt>
+<images/SetUpSameResolution.jpg, id=803, 4625.28pt x 3468.96pt>
 File: images/SetUpSameResolution.jpg Graphic file (type jpg)
 
 <use images/SetUpSameResolution.jpg>
@@ -1980,14 +1980,14 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 78.
  [39 <./images/SetUpSameResolution.jpg>]
-<images/PointsDetectedLeft.png, id=823, 641.39626pt x 427.5975pt>
+<images/PointsDetectedLeft.png, id=824, 641.39626pt x 427.5975pt>
 File: images/PointsDetectedLeft.png Graphic file (type png)
 
 <use images/PointsDetectedLeft.png>
 Package pdftex.def Info: images/PointsDetectedLeft.png used on input line 95.
 (pdftex.def)             Requested size: 232.17242pt x 154.77666pt.
 
-<images/PointsDetectedRight.png, id=824, 601.24625pt x 398.48875pt>
+<images/PointsDetectedRight.png, id=825, 601.24625pt x 398.48875pt>
 File: images/PointsDetectedRight.png Graphic file (type png)
 
 <use images/PointsDetectedRight.png>
@@ -2048,14 +2048,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
-<images/L_F_no_Constraint.png, id=875, 361.35pt x 362.35374pt>
+<images/L_F_no_Constraint.png, id=876, 361.35pt x 362.35374pt>
 File: images/L_F_no_Constraint.png Graphic file (type png)
 
 <use images/L_F_no_Constraint.png>
 Package pdftex.def Info: images/L_F_no_Constraint.png used on input line 213.
 (pdftex.def)             Requested size: 222.5038pt x 223.11992pt.
 
-<images/LPrime_PC2_F_no_Constraint.png, id=876, 361.35pt x 362.35374pt>
+<images/LPrime_PC2_F_no_Constraint.png, id=877, 361.35pt x 362.35374pt>
 File: images/LPrime_PC2_F_no_Constraint.png Graphic file (type png)
 
 <use images/LPrime_PC2_F_no_Constraint.png>
@@ -2077,14 +2077,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
-<images/L_PC1_F_Constraint.png, id=896, 361.35pt x 362.35374pt>
+<images/L_PC1_F_Constraint.png, id=897, 361.35pt x 362.35374pt>
 File: images/L_PC1_F_Constraint.png Graphic file (type png)
 
 <use images/L_PC1_F_Constraint.png>
 Package pdftex.def Info: images/L_PC1_F_Constraint.png used on input line 242.
 (pdftex.def)             Requested size: 222.5038pt x 223.11992pt.
 
-<images/LPrime_PC2_F_Constraint.png, id=897, 361.35pt x 364.36125pt>
+<images/LPrime_PC2_F_Constraint.png, id=898, 361.35pt x 364.36125pt>
 File: images/LPrime_PC2_F_Constraint.png Graphic file (type png)
 
 <use images/LPrime_PC2_F_Constraint.png>
@@ -2092,7 +2092,7 @@ Package pdftex.def Info: images/LPrime_PC2_F_Constraint.png used on input line
 247.
 (pdftex.def)             Requested size: 222.5038pt x 224.35603pt.
 
-<images/L_PC1_F_Constraint_denormalized.png, id=898, 361.35pt x 342.27875pt>
+<images/L_PC1_F_Constraint_denormalized.png, id=899, 361.35pt x 342.27875pt>
 File: images/L_PC1_F_Constraint_denormalized.png Graphic file (type png)
 
 <use images/L_PC1_F_Constraint_denormalized.png>
@@ -2100,7 +2100,7 @@ Package pdftex.def Info: images/L_PC1_F_Constraint_denormalized.png used on inp
 ut line 256.
 (pdftex.def)             Requested size: 222.5038pt x 210.7587pt.
 
-<images/LPrime_PC2_F_Constraint_denormalized.png, id=899, 361.35pt x 348.30125p
+<images/LPrime_PC2_F_Constraint_denormalized.png, id=900, 361.35pt x 348.30125p
 t>
 File: images/LPrime_PC2_F_Constraint_denormalized.png Graphic file (type png)
  <use images/LPrime_PC2_F_Constraint_denormalized.png>
@@ -2154,7 +2154,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 287.
 [44 <./images/L_PC1_F_Constraint_denormalized.png (PNG copy)> <./images/LPrime_
 PC2_F_Constraint_denormalized.png (PNG copy)>]
-<images/problemTriangulation_beschriftet.png, id=921, 781.41937pt x 409.53pt>
+<images/problemTriangulation_beschriftet.png, id=922, 781.41937pt x 409.53pt>
 File: images/problemTriangulation_beschriftet.png Graphic file (type png)
 
 <use images/problemTriangulation_beschriftet.png>
@@ -2162,7 +2162,7 @@ Package pdftex.def Info: images/problemTriangulation_beschriftet.png used on in
 put line 302.
 (pdftex.def)             Requested size: 232.17242pt x 121.6789pt.
 
-<images/SampsAppx.png, id=922, 1023.825pt x 497.60907pt>
+<images/SampsAppx.png, id=923, 1023.825pt x 497.60907pt>
 File: images/SampsAppx.png Graphic file (type png)
 
 <use images/SampsAppx.png>
@@ -2173,7 +2173,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
-<images/SampsAppxNewPoints.png, id=927, 1166.85938pt x 515.67656pt>
+<images/SampsAppxNewPoints.png, id=928, 1166.85938pt x 515.67656pt>
 File: images/SampsAppxNewPoints.png Graphic file (type png)
 
 <use images/SampsAppxNewPoints.png>
@@ -2251,7 +2251,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 638--639
  []
 
 
-<images/reconstructed_Points_Same_Resolutions.png, id=1017, 791.95876pt x 754.8
+<images/reconstructed_Points_Same_Resolutions.png, id=1018, 791.95876pt x 754.8
 2pt>
 File: images/reconstructed_Points_Same_Resolutions.png Graphic file (type png)
  <use images/reconstructed_Points_Same_Resolutions.png>
@@ -2259,7 +2259,7 @@ Package pdftex.def Info: images/reconstructed_Points_Same_Resolutions.png used
 on input line 649.
 (pdftex.def)             Requested size: 232.17242pt x 221.27634pt.
 
-<images/reconstructed_Points_Same_Resolutions2D.png, id=1018, 1092.08pt x 685.5
+<images/reconstructed_Points_Same_Resolutions2D.png, id=1019, 1092.08pt x 685.5
 6125pt>
 File: images/reconstructed_Points_Same_Resolutions2D.png Graphic file (type png
 )
@@ -2289,7 +2289,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 7.
 [50 <./images/reconstructed_Points_Same_Resolutions.png (PNG copy)> <./images/r
 econstructed_Points_Same_Resolutions2D.png (PNG copy)>]
-<images/R_11.png, id=1034, 281.55188pt x 149.05687pt>
+<images/R_11.png, id=1035, 281.55188pt x 149.05687pt>
 File: images/R_11.png Graphic file (type png)
  <use images/R_11.png>
 Package pdftex.def Info: images/R_11.png used on input line 107.
@@ -2305,7 +2305,7 @@ Underfull \hbox (badness 2790) in paragraph at lines 108--108
 ver[]anderter
  []
 
-<images/R_52.png, id=1035, 279.29344pt x 152.06813pt>
+<images/R_52.png, id=1036, 279.29344pt x 152.06813pt>
 File: images/R_52.png Graphic file (type png)
  <use images/R_52.png>
 Package pdftex.def Info: images/R_52.png used on input line 112.
@@ -2321,7 +2321,7 @@ Underfull \hbox (badness 1789) in paragraph at lines 113--113
 /cmm/m/it/10.95 K[]$ \OT1/cmr/m/n/10.95 mit ei-nem
  []
 
-<images/R_12.png, id=1036, 276.28218pt x 154.32657pt>
+<images/R_12.png, id=1037, 276.28218pt x 154.32657pt>
 File: images/R_12.png Graphic file (type png)
  <use images/R_12.png>
 Package pdftex.def Info: images/R_12.png used on input line 119.
@@ -2337,7 +2337,7 @@ Underfull \hbox (badness 1789) in paragraph at lines 120--120
 /cmm/m/it/10.95 K[]$ \OT1/cmr/m/n/10.95 mit ei-nem
  []
 
-<images/R_12_23.png, id=1037, 268.00125pt x 154.32657pt>
+<images/R_12_23.png, id=1038, 268.00125pt x 154.32657pt>
 File: images/R_12_23.png Graphic file (type png)
 
 <use images/R_12_23.png>
@@ -2358,35 +2358,35 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 130.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 130.
-[51] <images/Reconstrution3D_52.png, id=1052, 564.1075pt x 537.00626pt>
+[51] <images/Reconstrution3D_52.png, id=1053, 564.1075pt x 537.00626pt>
 File: images/Reconstrution3D_52.png Graphic file (type png)
 
 <use images/Reconstrution3D_52.png>
 Package pdftex.def Info: images/Reconstrution3D_52.png used on input line 142.
 (pdftex.def)             Requested size: 232.17242pt x 221.01797pt.
 
-<images/Reconstrution2D_52.png, id=1053, 657.45625pt x 415.5525pt>
+<images/Reconstrution2D_52.png, id=1054, 657.45625pt x 415.5525pt>
 File: images/Reconstrution2D_52.png Graphic file (type png)
 
 <use images/Reconstrution2D_52.png>
 Package pdftex.def Info: images/Reconstrution2D_52.png used on input line 146.
 (pdftex.def)             Requested size: 232.17242pt x 146.7454pt.
 
-<images/Reconstrution3D_12.png, id=1054, 556.0775pt x 527.9725pt>
+<images/Reconstrution3D_12.png, id=1055, 556.0775pt x 527.9725pt>
 File: images/Reconstrution3D_12.png Graphic file (type png)
 
 <use images/Reconstrution3D_12.png>
 Package pdftex.def Info: images/Reconstrution3D_12.png used on input line 154.
 (pdftex.def)             Requested size: 232.17242pt x 220.44183pt.
 
-<images/Reconstrution2D_12.png, id=1055, 608.2725pt x 385.44pt>
+<images/Reconstrution2D_12.png, id=1056, 608.2725pt x 385.44pt>
 File: images/Reconstrution2D_12.png Graphic file (type png)
 
 <use images/Reconstrution2D_12.png>
 Package pdftex.def Info: images/Reconstrution2D_12.png used on input line 159.
 (pdftex.def)             Requested size: 232.17242pt x 147.11566pt.
 
-<images/Reconstrution3D_12_23.png, id=1056, 643.40375pt x 610.28pt>
+<images/Reconstrution3D_12_23.png, id=1057, 643.40375pt x 610.28pt>
 File: images/Reconstrution3D_12_23.png Graphic file (type png)
 
 <use images/Reconstrution3D_12_23.png>
@@ -2394,7 +2394,7 @@ Package pdftex.def Info: images/Reconstrution3D_12_23.png used on input line 16
 8.
 (pdftex.def)             Requested size: 232.17242pt x 220.2221pt.
 
-<images/Reconstrution2D_12_23.png, id=1057, 698.61pt x 442.65375pt>
+<images/Reconstrution2D_12_23.png, id=1058, 698.61pt x 442.65375pt>
 File: images/Reconstrution2D_12_23.png Graphic file (type png)
 
 <use images/Reconstrution2D_12_23.png>
@@ -2427,7 +2427,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
-<images/rectifiziertesBildAusZZ.png, id=1083, 429.10312pt x 178.41656pt>
+<images/rectifiziertesBildAusZZ.png, id=1084, 429.10312pt x 178.41656pt>
 File: images/rectifiziertesBildAusZZ.png Graphic file (type png)
 
 <use images/rectifiziertesBildAusZZ.png>
@@ -2448,7 +2448,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-<images/NEU_Rektifizierung_Arbeitsprozess.png, id=1096, 963.6pt x 542.025pt>
+<images/NEU_Rektifizierung_Arbeitsprozess.png, id=1097, 963.6pt x 542.025pt>
 File: images/NEU_Rektifizierung_Arbeitsprozess.png Graphic file (type png)
 
 <use images/NEU_Rektifizierung_Arbeitsprozess.png>
@@ -2476,7 +2476,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
-<images/Disparity.png, id=1127, 295.85532pt x 254.45062pt>
+<images/Disparity.png, id=1128, 295.85532pt x 254.45062pt>
 File: images/Disparity.png Graphic file (type png)
 
 <use images/Disparity.png>
@@ -2606,7 +2606,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 361--362
  []
 
 
-<images/Rectification_one_same_Solutions.png, id=1238, 909.3975pt x 567.11874pt
+<images/Rectification_one_same_Solutions.png, id=1239, 909.3975pt x 567.11874pt
 >
 File: images/Rectification_one_same_Solutions.png Graphic file (type png)
  <use images/Rectification_one_same_Solutions.png>
@@ -2618,7 +2618,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 377.
  [62 <./images/Rectification_one_same_Solutions.png (PNG copy)>]
-<images/Rectification_two_same_Solutions.png, id=1250, 909.3975pt x 563.10374pt
+<images/Rectification_two_same_Solutions.png, id=1251, 909.3975pt x 563.10374pt
 >
 File: images/Rectification_two_same_Solutions.png Graphic file (type png)
  <use images/Rectification_two_same_Solutions.png>
@@ -2626,7 +2626,7 @@ Package pdftex.def Info: images/Rectification_two_same_Solutions.png used on in
 put line 387.
 (pdftex.def)             Requested size: 386.95897pt x 239.61235pt.
 
-<images/Rectification_Hp_same_Solutions.png, id=1253, 909.3975pt x 567.11874pt>
+<images/Rectification_Hp_same_Solutions.png, id=1254, 909.3975pt x 567.11874pt>
 File: images/Rectification_Hp_same_Solutions.png Graphic file (type png)
 <use images/Rectification_Hp_same_Solutions.png>
 Package pdftex.def Info: images/Rectification_Hp_same_Solutions.png used on inp
@@ -2638,7 +2638,7 @@ Underfull \hbox (badness 1275) in paragraph at lines 416--416
  []
 
 
-<images/Rectification_Hp_same_Solutions_Lines.png, id=1254, 909.3975pt x 567.11
+<images/Rectification_Hp_same_Solutions_Lines.png, id=1255, 909.3975pt x 567.11
 874pt>
 File: images/Rectification_Hp_same_Solutions_Lines.png Graphic file (type png)
  <use images/Rectification_Hp_same_Solutions_Lines.png>
@@ -2676,7 +2676,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 518--519
  []
 
 
-<images/Rectification_HrHp_same_Solutions.png, id=1267, 909.3975pt x 567.11874p
+<images/Rectification_HrHp_same_Solutions.png, id=1268, 909.3975pt x 567.11874p
 t>
 File: images/Rectification_HrHp_same_Solutions.png Graphic file (type png)
  <use images/Rectification_HrHp_same_Solutions.png>
@@ -2689,7 +2689,7 @@ Underfull \hbox (badness 1275) in paragraph at lines 537--537
  []
 
 
-<images/Rectification_HrHp_same_Solutions_Lines.png, id=1268, 909.3975pt x 567.
+<images/Rectification_HrHp_same_Solutions_Lines.png, id=1269, 909.3975pt x 567.
 11874pt>
 File: images/Rectification_HrHp_same_Solutions_Lines.png Graphic file (type png
 )
@@ -2731,7 +2731,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 578.
 [65 <./images/Rectification_HrHp_same_Solutions.png (PNG copy)> <./images/Recti
 fication_HrHp_same_Solutions_Lines.png (PNG copy)>]
-<images/Scherungstransformation.png, id=1296, 724.20563pt x 246.1697pt>
+<images/Scherungstransformation.png, id=1297, 724.20563pt x 246.1697pt>
 File: images/Scherungstransformation.png Graphic file (type png)
 
 <use images/Scherungstransformation.png>
@@ -2748,7 +2748,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 636--637
  []
 
 
-<images/Rectification_HsHrHp_same_Solutions.png, id=1319, 909.3975pt x 567.1187
+<images/Rectification_HsHrHp_same_Solutions.png, id=1320, 909.3975pt x 567.1187
 4pt>
 File: images/Rectification_HsHrHp_same_Solutions.png Graphic file (type png)
  <use images/Rectification_HsHrHp_same_Solutions.png>
@@ -2756,7 +2756,7 @@ Package pdftex.def Info: images/Rectification_HsHrHp_same_Solutions.png used on
  input line 656.
 (pdftex.def)             Requested size: 232.17242pt x 144.7821pt.
 
-<images/Rectification_HsHrHp_same_Solutions_Lines.png, id=1320, 710.655pt x 446
+<images/Rectification_HsHrHp_same_Solutions_Lines.png, id=1321, 710.655pt x 446
 .66875pt>
 File: images/Rectification_HsHrHp_same_Solutions_Lines.png Graphic file (type p
 ng)
@@ -2774,7 +2774,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 697.
  [67 <./images/Rectification_HsHrHp_same_Solutions.png (PNG copy)> <./images/Re
 ctification_HsHrHp_same_Solutions_Lines.png (PNG copy)>]
-<images/Rectification_one_different_Solutions.png, id=1334, 909.3975pt x 567.11
+<images/Rectification_one_different_Solutions.png, id=1335, 909.3975pt x 567.11
 874pt>
 File: images/Rectification_one_different_Solutions.png Graphic file (type png)
  <use images/Rectification_one_different_Solutions.png>
@@ -2788,7 +2788,7 @@ en Aufl[]osungen. F[]ur Ka-me-ra
  []
 
 
-<images/Rectification_Hp_different_Solutions.png, id=1337, 909.3975pt x 567.118
+<images/Rectification_Hp_different_Solutions.png, id=1338, 909.3975pt x 567.118
 74pt>
 File: images/Rectification_Hp_different_Solutions.png Graphic file (type png)
  <use images/Rectification_Hp_different_Solutions.png>
@@ -2796,7 +2796,7 @@ Package pdftex.def Info: images/Rectification_Hp_different_Solutions.png used o
 n input line 719.
 (pdftex.def)             Requested size: 232.17242pt x 144.7821pt.
 
-<images/Rectification_HrHp_different_Solutions.png, id=1338, 909.3975pt x 563.1
+<images/Rectification_HrHp_different_Solutions.png, id=1339, 909.3975pt x 563.1
 0374pt>
 File: images/Rectification_HrHp_different_Solutions.png Graphic file (type png)
 
@@ -2816,7 +2816,7 @@ Underfull \hbox (badness 3713) in paragraph at lines 725--725
  []
 
 
-<images/Rectification_HsHrHp_different_Solutions.png, id=1343, 909.3975pt x 567
+<images/Rectification_HsHrHp_different_Solutions.png, id=1344, 909.3975pt x 567
 .11874pt>
 File: images/Rectification_HsHrHp_different_Solutions.png Graphic file (type pn
 g)
@@ -2831,7 +2831,7 @@ T1/cmr/m/n/10.95 und
  []
 
 
-<images/Rectification_four_different_Solutions.png, id=1344, 909.3975pt x 567.1
+<images/Rectification_four_different_Solutions.png, id=1345, 909.3975pt x 567.1
 1874pt>
 File: images/Rectification_four_different_Solutions.png Graphic file (type png)
 
@@ -2857,7 +2857,7 @@ Package babel Info: Redefining ngerman shorthand "~
 [68 <./images/Rectification_one_different_Solutions.png (PNG copy)> <./images/R
 ectification_Hp_different_Solutions.png (PNG copy)> <./images/Rectification_HrH
 p_different_Solutions.png (PNG copy)>]
-<images/Rectification_Resolution_Abbild_verhaeltnisse.png, id=1353, 909.3975pt 
+<images/Rectification_Resolution_Abbild_verhaeltnisse.png, id=1354, 909.3975pt 
 x 566.115pt>
 File: images/Rectification_Resolution_Abbild_verhaeltnisse.png Graphic file (ty
 pe png)
@@ -2881,7 +2881,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 771--771
  []
 
 
-<images/Rectification_Resolution_verhaeltnisse.png, id=1354, 909.3975pt x 567.1
+<images/Rectification_Resolution_verhaeltnisse.png, id=1355, 909.3975pt x 567.1
 1874pt>
 File: images/Rectification_Resolution_verhaeltnisse.png Graphic file (type png)
 
@@ -2910,7 +2910,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
  []
 
 
-<images/VerzeichnetesSchachbretFunktion.png, id=1362, 776.9025pt x 571.38469pt>
+<images/VerzeichnetesSchachbretFunktion.png, id=1363, 776.9025pt x 571.38469pt>
 File: images/VerzeichnetesSchachbretFunktion.png Graphic file (type png)
 <use images/VerzeichnetesSchachbretFunktion.png>
 Package pdftex.def Info: images/VerzeichnetesSchachbretFunktion.png used on inp
@@ -2936,7 +2936,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-<images/VerzeichnetesSchachbrett_1.png, id=1370, 468.3096pt x 456.2646pt>
+<images/VerzeichnetesSchachbrett_1.png, id=1371, 468.3096pt x 456.2646pt>
 File: images/VerzeichnetesSchachbrett_1.png Graphic file (type png)
 
 <use images/VerzeichnetesSchachbrett_1.png>
@@ -3010,7 +3010,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
-<images/VerzeichnetesSchachbrett_2.png, id=1396, 469.2732pt x 456.2646pt>
+<images/VerzeichnetesSchachbrett_2.png, id=1397, 469.2732pt x 456.2646pt>
 File: images/VerzeichnetesSchachbrett_2.png Graphic file (type png)
 
 <use images/VerzeichnetesSchachbrett_2.png>
@@ -3033,7 +3033,7 @@ ei-tert. Die Punk-te sind dann wie folgt de-fi-niert und wer-den in die Lis-te
 $\OML/cmm/m/it/10.95 SortedPoints$
  []
 
-<images/SearchNextI.png, id=1408, 319.1925pt x 469.00218pt>
+<images/SearchNextI.png, id=1409, 319.1925pt x 469.00218pt>
 File: images/SearchNextI.png Graphic file (type png)
 
 <use images/SearchNextI.png>
@@ -3058,7 +3058,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
-<images/VerzeichnetesSchachbrett_4.png, id=1417, 935.6556pt x 456.2646pt>
+<images/VerzeichnetesSchachbrett_4.png, id=1418, 935.6556pt x 456.2646pt>
 File: images/VerzeichnetesSchachbrett_4.png Graphic file (type png)
 
 <use images/VerzeichnetesSchachbrett_4.png>
@@ -3094,7 +3094,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
-<images/VerzeichnetesSchachbrett_6.png, id=1425, 1063.72406pt x 517.18219pt>
+<images/VerzeichnetesSchachbrett_6.png, id=1426, 1063.72406pt x 517.18219pt>
 File: images/VerzeichnetesSchachbrett_6.png Graphic file (type png)
 
 <use images/VerzeichnetesSchachbrett_6.png>
@@ -3115,28 +3115,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
-<images/ChessBoardLeft.png, id=1437, 1008.76875pt x 566.115pt>
+<images/ChessBoardLeft.png, id=1438, 1008.76875pt x 566.115pt>
 File: images/ChessBoardLeft.png Graphic file (type png)
 
 <use images/ChessBoardLeft.png>
 Package pdftex.def Info: images/ChessBoardLeft.png used on input line 198.
 (pdftex.def)             Requested size: 227.3381pt x 127.5777pt.
 
-<images/ChessBoardRight.png, id=1438, 902.6222pt x 504.38437pt>
+<images/ChessBoardRight.png, id=1439, 902.6222pt x 504.38437pt>
 File: images/ChessBoardRight.png Graphic file (type png)
 
 <use images/ChessBoardRight.png>
 Package pdftex.def Info: images/ChessBoardRight.png used on input line 203.
 (pdftex.def)             Requested size: 232.17242pt x 129.73611pt.
 
-<images/ChessBoardLeftAlg.png, id=1439, 721.69624pt x 446.66875pt>
+<images/ChessBoardLeftAlg.png, id=1440, 721.69624pt x 446.66875pt>
 File: images/ChessBoardLeftAlg.png Graphic file (type png)
 
 <use images/ChessBoardLeftAlg.png>
 Package pdftex.def Info: images/ChessBoardLeftAlg.png used on input line 212.
 (pdftex.def)             Requested size: 232.17242pt x 143.69345pt.
 
-<images/ChessBoardRightAlg.png, id=1440, 721.69624pt x 446.66875pt>
+<images/ChessBoardRightAlg.png, id=1441, 721.69624pt x 446.66875pt>
 File: images/ChessBoardRightAlg.png Graphic file (type png)
 
 <use images/ChessBoardRightAlg.png>
@@ -3161,7 +3161,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
-<images/Tonnenverzeichnung.png, id=1447, 733.23938pt x 462.22687pt>
+<images/Tonnenverzeichnung.png, id=1448, 733.23938pt x 462.22687pt>
 File: images/Tonnenverzeichnung.png Graphic file (type png)
 
 <use images/Tonnenverzeichnung.png>
@@ -3172,7 +3172,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 239--239
 [][][]|\OT1/cmr/m/n/10.95 Schach-brett mit Ton-nen-ver-
  []
 
-<images/AlgTonnenverzeichnung.png, id=1448, 721.69624pt x 446.66875pt>
+<images/AlgTonnenverzeichnung.png, id=1449, 721.69624pt x 446.66875pt>
 File: images/AlgTonnenverzeichnung.png Graphic file (type png)
 
 <use images/AlgTonnenverzeichnung.png>
@@ -3184,35 +3184,35 @@ Underfull \hbox (badness 2452) in paragraph at lines 244--244
 [][][]|\OT1/cmr/m/n/10.95 Er-geb-nis des Sor-tie-rungs-al-go-
  []
 
-<images/perspektivisch.png, id=1449, 797.22844pt x 527.72156pt>
+<images/perspektivisch.png, id=1450, 797.22844pt x 527.72156pt>
 File: images/perspektivisch.png Graphic file (type png)
 
 <use images/perspektivisch.png>
 Package pdftex.def Info: images/perspektivisch.png used on input line 251.
 (pdftex.def)             Requested size: 217.66211pt x 144.08109pt.
 
-<images/AlgPerspektifisch.png, id=1450, 721.69624pt x 453.695pt>
+<images/AlgPerspektifisch.png, id=1451, 721.69624pt x 453.695pt>
 File: images/AlgPerspektifisch.png Graphic file (type png)
 
 <use images/AlgPerspektifisch.png>
 Package pdftex.def Info: images/AlgPerspektifisch.png used on input line 256.
 (pdftex.def)             Requested size: 237.01411pt x 148.99983pt.
 
-<images/KissenVerzeichnung.png, id=1451, 600.74437pt x 404.26031pt>
+<images/KissenVerzeichnung.png, id=1452, 600.74437pt x 404.26031pt>
 File: images/KissenVerzeichnung.png Graphic file (type png)
 
 <use images/KissenVerzeichnung.png>
 Package pdftex.def Info: images/KissenVerzeichnung.png used on input line 265.
 (pdftex.def)             Requested size: 232.17242pt x 156.23596pt.
 
-<images/AlgKissen.png, id=1452, 721.69624pt x 446.66875pt>
+<images/AlgKissen.png, id=1453, 721.69624pt x 446.66875pt>
 File: images/AlgKissen.png Graphic file (type png)
 
 <use images/AlgKissen.png>
 Package pdftex.def Info: images/AlgKissen.png used on input line 270.
 (pdftex.def)             Requested size: 241.84843pt x 149.68436pt.
 
-<images/Tonnenverzeichnung_Perspektivisch.png, id=1453, 623.32875pt x 424.58624
+<images/Tonnenverzeichnung_Perspektivisch.png, id=1454, 623.32875pt x 424.58624
 pt>
 File: images/Tonnenverzeichnung_Perspektivisch.png Graphic file (type png)
  <use images/Tonnenverzeichnung_Perspektivisch.png>
@@ -3230,7 +3230,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 279--279
  []
 
 
-<images/Tonnenverzeichnung_Perspektivisch_Alg.png, id=1454, 721.69624pt x 443.6
+<images/Tonnenverzeichnung_Perspektivisch_Alg.png, id=1455, 721.69624pt x 443.6
 575pt>
 File: images/Tonnenverzeichnung_Perspektivisch_Alg.png Graphic file (type png)
  <use images/Tonnenverzeichnung_Perspektivisch_Alg.png>
@@ -3242,7 +3242,7 @@ Underfull \hbox (badness 2452) in paragraph at lines 284--284
 [][][]|\OT1/cmr/m/n/10.95 Er-geb-nis des Sor-tie-rungs-al-go-
  []
 
-<images/extrBsp.png, id=1455, 847.66687pt x 566.86781pt>
+<images/extrBsp.png, id=1456, 847.66687pt x 566.86781pt>
 File: images/extrBsp.png Graphic file (type png)
 
 <use images/extrBsp.png>
@@ -3253,7 +3253,7 @@ Underfull \hbox (badness 1496) in paragraph at lines 292--292
 [][][]|\OT1/cmr/m/n/10.95 Bild ei-nes Ton-nenf[]ormig ver-
  []
 
-<images/AlgExtrBsp.png, id=1456, 721.69624pt x 453.695pt>
+<images/AlgExtrBsp.png, id=1457, 721.69624pt x 453.695pt>
 File: images/AlgExtrBsp.png Graphic file (type png)
 
 <use images/AlgExtrBsp.png>
@@ -3320,7 +3320,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
 
-<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1484, 598.235pt x 845
+<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1485, 598.235pt x 845
 .1575pt>
 File: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf Graphic file (type p
 df)
@@ -3336,7 +3336,7 @@ Package pdftex.def Info: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf u
 sed on input line 5.
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1487, page=1, 598.235
+<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1488, page=1, 598.235
 pt x 845.1575pt>
 File: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf Graphic file (type p
 df)
@@ -3400,7 +3400,7 @@ Package pdftex.def Info: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf u
 sed on input line 7.
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1526, page=2, 598.235
+<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1527, page=2, 598.235
 pt x 845.1575pt>
 File: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf Graphic file (type p
 df)
@@ -3442,7 +3442,7 @@ Package pdftex.def Info: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf,
 page2 used on input line 7.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [84 <./images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf>]
-<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1557, page=3, 598.235
+<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1558, page=3, 598.235
 pt x 845.1575pt>
 File: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf Graphic file (type p
 df)
@@ -3470,7 +3470,7 @@ Package pdftex.def Info: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf,
 page3 used on input line 7.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [85 <./images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf>]
-<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1570, page=4, 598.235
+<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1571, page=4, 598.235
 pt x 845.1575pt>
 File: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf Graphic file (type p
 df)
@@ -3498,7 +3498,7 @@ Package pdftex.def Info: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf,
 page4 used on input line 7.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [86 <./images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf>]
-<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1576, page=5, 598.235
+<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1577, page=5, 598.235
 pt x 845.1575pt>
 File: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf Graphic file (type p
 df)
@@ -3526,7 +3526,7 @@ Package pdftex.def Info: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf,
 page5 used on input line 7.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [87 <./images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf>]
-<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1582, page=6, 598.235
+<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1583, page=6, 598.235
 pt x 845.1575pt>
 File: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf Graphic file (type p
 df)
@@ -3554,7 +3554,7 @@ Package pdftex.def Info: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf,
 page6 used on input line 7.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [88 <./images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf>]
-<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1588, page=7, 598.235
+<images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf, id=1589, page=7, 598.235
 pt x 845.1575pt>
 File: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf Graphic file (type p
 df)
@@ -3582,7 +3582,7 @@ Package pdftex.def Info: images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf,
 page7 used on input line 7.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [89 <./images/Anhang/Stereo_SetUp_and_Fundamentalmatrix.pdf>]
-<images/Anhang/EssentialMtxAlgorithm.pdf, id=1594, 598.235pt x 845.1575pt>
+<images/Anhang/EssentialMtxAlgorithm.pdf, id=1595, 598.235pt x 845.1575pt>
 File: images/Anhang/EssentialMtxAlgorithm.pdf Graphic file (type pdf)
 
 <use images/Anhang/EssentialMtxAlgorithm.pdf>
@@ -3596,7 +3596,7 @@ Package pdftex.def Info: images/Anhang/EssentialMtxAlgorithm.pdf used on input
 line 9.
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/EssentialMtxAlgorithm.pdf, id=1597, page=1, 598.235pt x 845.1575
+<images/Anhang/EssentialMtxAlgorithm.pdf, id=1598, page=1, 598.235pt x 845.1575
 pt>
 File: images/Anhang/EssentialMtxAlgorithm.pdf Graphic file (type pdf)
  <use images/Anhang/EssentialMtxAlgorithm.pdf, page 1>
@@ -3632,7 +3632,7 @@ Package pdftex.def Info: images/Anhang/EssentialMtxAlgorithm.pdf, page1 used on
  input line 9.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [90 <./images/Anhang/EssentialMtxAlgorithm.pdf>]
-<images/Anhang/EssentialMtxAlgorithm.pdf, id=1642, page=2, 598.235pt x 845.1575
+<images/Anhang/EssentialMtxAlgorithm.pdf, id=1643, page=2, 598.235pt x 845.1575
 pt>
 File: images/Anhang/EssentialMtxAlgorithm.pdf Graphic file (type pdf)
  <use images/Anhang/EssentialMtxAlgorithm.pdf, page 2>
@@ -3656,7 +3656,7 @@ Package pdftex.def Info: images/Anhang/EssentialMtxAlgorithm.pdf, page2 used on
  input line 9.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [91 <./images/Anhang/EssentialMtxAlgorithm.pdf>]
-<images/Anhang/EssentialMtxAlgorithm.pdf, id=1667, page=3, 598.235pt x 845.1575
+<images/Anhang/EssentialMtxAlgorithm.pdf, id=1668, page=3, 598.235pt x 845.1575
 pt>
 File: images/Anhang/EssentialMtxAlgorithm.pdf Graphic file (type pdf)
  <use images/Anhang/EssentialMtxAlgorithm.pdf, page 3>
@@ -3680,7 +3680,7 @@ Package pdftex.def Info: images/Anhang/EssentialMtxAlgorithm.pdf, page3 used on
  input line 9.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [92 <./images/Anhang/EssentialMtxAlgorithm.pdf>]
-<images/Anhang/EssentialMtxAlgorithm.pdf, id=1673, page=4, 598.235pt x 845.1575
+<images/Anhang/EssentialMtxAlgorithm.pdf, id=1674, page=4, 598.235pt x 845.1575
 pt>
 File: images/Anhang/EssentialMtxAlgorithm.pdf Graphic file (type pdf)
  <use images/Anhang/EssentialMtxAlgorithm.pdf, page 4>
@@ -3704,7 +3704,7 @@ Package pdftex.def Info: images/Anhang/EssentialMtxAlgorithm.pdf, page4 used on
  input line 9.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [93 <./images/Anhang/EssentialMtxAlgorithm.pdf>]
-<images/Anhang/EssentialMtxAlgorithm.pdf, id=1679, page=5, 598.235pt x 845.1575
+<images/Anhang/EssentialMtxAlgorithm.pdf, id=1680, page=5, 598.235pt x 845.1575
 pt>
 File: images/Anhang/EssentialMtxAlgorithm.pdf Graphic file (type pdf)
  <use images/Anhang/EssentialMtxAlgorithm.pdf, page 5>
@@ -3728,7 +3728,7 @@ Package pdftex.def Info: images/Anhang/EssentialMtxAlgorithm.pdf, page5 used on
  input line 9.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [94 <./images/Anhang/EssentialMtxAlgorithm.pdf>]
-<images/Anhang/geometric_Triangulation.pdf, id=1685, 598.235pt x 845.1575pt>
+<images/Anhang/geometric_Triangulation.pdf, id=1686, 598.235pt x 845.1575pt>
 File: images/Anhang/geometric_Triangulation.pdf Graphic file (type pdf)
 
 <use images/Anhang/geometric_Triangulation.pdf>
@@ -3742,7 +3742,7 @@ Package pdftex.def Info: images/Anhang/geometric_Triangulation.pdf used on inpu
 t line 11.
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/geometric_Triangulation.pdf, id=1688, page=1, 598.235pt x 845.15
+<images/Anhang/geometric_Triangulation.pdf, id=1689, page=1, 598.235pt x 845.15
 75pt>
 File: images/Anhang/geometric_Triangulation.pdf Graphic file (type pdf)
  <use images/Anhang/geometric_Triangulation.pdf, page 1>
@@ -3778,7 +3778,7 @@ Package pdftex.def Info: images/Anhang/geometric_Triangulation.pdf, page1 used
 on input line 11.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [95 <./images/Anhang/geometric_Triangulation.pdf>]
-<images/Anhang/geometric_Triangulation.pdf, id=1726, page=2, 598.235pt x 845.15
+<images/Anhang/geometric_Triangulation.pdf, id=1727, page=2, 598.235pt x 845.15
 75pt>
 File: images/Anhang/geometric_Triangulation.pdf Graphic file (type pdf)
  <use images/Anhang/geometric_Triangulation.pdf, page 2>
@@ -3802,7 +3802,7 @@ Package pdftex.def Info: images/Anhang/geometric_Triangulation.pdf, page2 used
 on input line 11.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [96 <./images/Anhang/geometric_Triangulation.pdf>]
-<images/Anhang/geometric_Triangulation.pdf, id=1750, page=3, 598.235pt x 845.15
+<images/Anhang/geometric_Triangulation.pdf, id=1751, page=3, 598.235pt x 845.15
 75pt>
 File: images/Anhang/geometric_Triangulation.pdf Graphic file (type pdf)
  <use images/Anhang/geometric_Triangulation.pdf, page 3>
@@ -3826,7 +3826,7 @@ Package pdftex.def Info: images/Anhang/geometric_Triangulation.pdf, page3 used
 on input line 11.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [97 <./images/Anhang/geometric_Triangulation.pdf>]
-<images/Anhang/geometric_Triangulation.pdf, id=1764, page=4, 598.235pt x 845.15
+<images/Anhang/geometric_Triangulation.pdf, id=1765, page=4, 598.235pt x 845.15
 75pt>
 File: images/Anhang/geometric_Triangulation.pdf Graphic file (type pdf)
  <use images/Anhang/geometric_Triangulation.pdf, page 4>
@@ -3850,7 +3850,7 @@ Package pdftex.def Info: images/Anhang/geometric_Triangulation.pdf, page4 used
 on input line 11.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [98 <./images/Anhang/geometric_Triangulation.pdf>]
-<images/Anhang/SurfAlgoithmus.pdf, id=1770, 598.235pt x 845.1575pt>
+<images/Anhang/SurfAlgoithmus.pdf, id=1771, 598.235pt x 845.1575pt>
 File: images/Anhang/SurfAlgoithmus.pdf Graphic file (type pdf)
 
 <use images/Anhang/SurfAlgoithmus.pdf>
@@ -3863,7 +3863,7 @@ Package pdftex.def Info: images/Anhang/SurfAlgoithmus.pdf used on input line 15
 .
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/SurfAlgoithmus.pdf, id=1773, page=1, 598.235pt x 845.1575pt>
+<images/Anhang/SurfAlgoithmus.pdf, id=1774, page=1, 598.235pt x 845.1575pt>
 File: images/Anhang/SurfAlgoithmus.pdf Graphic file (type pdf)
 
 <use images/Anhang/SurfAlgoithmus.pdf, page 1>
@@ -3911,7 +3911,7 @@ Package pdftex.def Info: images/Anhang/SurfAlgoithmus.pdf used on input line 17
 .
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/SurfAlgoithmus.pdf, id=1823, page=2, 598.235pt x 845.1575pt>
+<images/Anhang/SurfAlgoithmus.pdf, id=1824, page=2, 598.235pt x 845.1575pt>
 File: images/Anhang/SurfAlgoithmus.pdf Graphic file (type pdf)
 
 <use images/Anhang/SurfAlgoithmus.pdf, page 2>
@@ -3947,7 +3947,7 @@ Package pdftex.def Info: images/Anhang/SurfAlgoithmus.pdf, page2 used on input
 line 17.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [100 <./images/Anhang/SurfAlgoithmus.pdf>] <images/Anhang/StereoAnalyse.pdf, i
-d=1864, 598.235pt x 845.1575pt>
+d=1865, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf>
@@ -3960,7 +3960,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf used on input line 19.
 
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/StereoAnalyse.pdf, id=1867, page=1, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1868, page=1, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 1>
@@ -3996,7 +3996,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page1 used on input l
 ine 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [101 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1906, page=2, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1907, page=2, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 2>
@@ -4020,7 +4020,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page2 used on input l
 ine 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [102 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1930, page=3, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1931, page=3, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 3>
@@ -4044,7 +4044,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page3 used on input l
 ine 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [103 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1943, page=4, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1944, page=4, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 4>
@@ -4068,7 +4068,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page4 used on input l
 ine 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [104 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1949, page=5, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1950, page=5, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 5>
@@ -4092,7 +4092,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page5 used on input l
 ine 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [105 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1955, page=6, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1956, page=6, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 6>
@@ -4116,7 +4116,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page6 used on input l
 ine 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [106 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1961, page=7, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1962, page=7, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 7>
@@ -4140,7 +4140,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page7 used on input l
 ine 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [107 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1967, page=8, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1968, page=8, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 8>
@@ -4164,7 +4164,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page8 used on input l
 ine 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [108 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1973, page=9, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1974, page=9, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 9>
@@ -4188,7 +4188,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page9 used on input l
 ine 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [109 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1980, page=10, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1981, page=10, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 10>
@@ -4212,7 +4212,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page10 used on input
 line 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [110 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1986, page=11, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1987, page=11, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 11>
@@ -4236,7 +4236,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page11 used on input
 line 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [111 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1992, page=12, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1993, page=12, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 12>
@@ -4260,7 +4260,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page12 used on input
 line 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [112 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=1998, page=13, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=1999, page=13, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 13>
@@ -4284,7 +4284,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page13 used on input
 line 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [113 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StereoAnalyse.pdf, id=2004, page=14, 598.235pt x 845.1575pt>
+<images/Anhang/StereoAnalyse.pdf, id=2005, page=14, 598.235pt x 845.1575pt>
 File: images/Anhang/StereoAnalyse.pdf Graphic file (type pdf)
 
 <use images/Anhang/StereoAnalyse.pdf, page 14>
@@ -4308,7 +4308,7 @@ Package pdftex.def Info: images/Anhang/StereoAnalyse.pdf, page14 used on input
 line 19.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [114 <./images/Anhang/StereoAnalyse.pdf>]
-<images/Anhang/StructureComputation.pdf, id=2010, 598.235pt x 845.1575pt>
+<images/Anhang/StructureComputation.pdf, id=2011, 598.235pt x 845.1575pt>
 File: images/Anhang/StructureComputation.pdf Graphic file (type pdf)
 
 <use images/Anhang/StructureComputation.pdf>
@@ -4322,7 +4322,7 @@ Package pdftex.def Info: images/Anhang/StructureComputation.pdf used on input l
 ine 21.
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/StructureComputation.pdf, id=2013, page=1, 598.235pt x 845.1575p
+<images/Anhang/StructureComputation.pdf, id=2014, page=1, 598.235pt x 845.1575p
 t>
 File: images/Anhang/StructureComputation.pdf Graphic file (type pdf)
  <use images/Anhang/StructureComputation.pdf, page 1>
@@ -4358,7 +4358,7 @@ Package pdftex.def Info: images/Anhang/StructureComputation.pdf, page1 used on
 input line 21.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [115 <./images/Anhang/StructureComputation.pdf>]
-<images/Anhang/StructureComputation.pdf, id=2052, page=2, 598.235pt x 845.1575p
+<images/Anhang/StructureComputation.pdf, id=2053, page=2, 598.235pt x 845.1575p
 t>
 File: images/Anhang/StructureComputation.pdf Graphic file (type pdf)
  <use images/Anhang/StructureComputation.pdf, page 2>
@@ -4382,7 +4382,7 @@ Package pdftex.def Info: images/Anhang/StructureComputation.pdf, page2 used on
 input line 21.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [116 <./images/Anhang/StructureComputation.pdf>]
-<images/Anhang/StructureComputation.pdf, id=2076, page=3, 598.235pt x 845.1575p
+<images/Anhang/StructureComputation.pdf, id=2077, page=3, 598.235pt x 845.1575p
 t>
 File: images/Anhang/StructureComputation.pdf Graphic file (type pdf)
  <use images/Anhang/StructureComputation.pdf, page 3>
@@ -4406,7 +4406,7 @@ Package pdftex.def Info: images/Anhang/StructureComputation.pdf, page3 used on
 input line 21.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [117 <./images/Anhang/StructureComputation.pdf>]
-<images/Anhang/StructureComputation.pdf, id=2082, page=4, 598.235pt x 845.1575p
+<images/Anhang/StructureComputation.pdf, id=2083, page=4, 598.235pt x 845.1575p
 t>
 File: images/Anhang/StructureComputation.pdf Graphic file (type pdf)
  <use images/Anhang/StructureComputation.pdf, page 4>
@@ -4430,7 +4430,7 @@ Package pdftex.def Info: images/Anhang/StructureComputation.pdf, page4 used on
 input line 21.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [118 <./images/Anhang/StructureComputation.pdf>]
-<images/Anhang/Rectification.pdf, id=2095, 598.235pt x 845.1575pt>
+<images/Anhang/Rectification.pdf, id=2096, 598.235pt x 845.1575pt>
 File: images/Anhang/Rectification.pdf Graphic file (type pdf)
 
 <use images/Anhang/Rectification.pdf>
@@ -4443,7 +4443,7 @@ Package pdftex.def Info: images/Anhang/Rectification.pdf used on input line 24.
 
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/Rectification.pdf, id=2098, page=1, 598.235pt x 845.1575pt>
+<images/Anhang/Rectification.pdf, id=2099, page=1, 598.235pt x 845.1575pt>
 File: images/Anhang/Rectification.pdf Graphic file (type pdf)
 
 <use images/Anhang/Rectification.pdf, page 1>
@@ -4491,7 +4491,7 @@ Package pdftex.def Info: images/Anhang/Rectification.pdf used on input line 26.
 
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/Rectification.pdf, id=2146, page=2, 598.235pt x 845.1575pt>
+<images/Anhang/Rectification.pdf, id=2147, page=2, 598.235pt x 845.1575pt>
 File: images/Anhang/Rectification.pdf Graphic file (type pdf)
 
 <use images/Anhang/Rectification.pdf, page 2>
@@ -4527,7 +4527,7 @@ Package pdftex.def Info: images/Anhang/Rectification.pdf, page2 used on input l
 ine 26.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [120 <./images/Anhang/Rectification.pdf>]
-<images/Anhang/Rectification.pdf, id=2170, page=3, 598.235pt x 845.1575pt>
+<images/Anhang/Rectification.pdf, id=2171, page=3, 598.235pt x 845.1575pt>
 File: images/Anhang/Rectification.pdf Graphic file (type pdf)
 
 <use images/Anhang/Rectification.pdf, page 3>
@@ -4551,7 +4551,7 @@ Package pdftex.def Info: images/Anhang/Rectification.pdf, page3 used on input l
 ine 26.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [121 <./images/Anhang/Rectification.pdf>]
-<images/Anhang/Rectification.pdf, id=2177, page=4, 598.235pt x 845.1575pt>
+<images/Anhang/Rectification.pdf, id=2178, page=4, 598.235pt x 845.1575pt>
 File: images/Anhang/Rectification.pdf Graphic file (type pdf)
 
 <use images/Anhang/Rectification.pdf, page 4>
@@ -4575,7 +4575,7 @@ Package pdftex.def Info: images/Anhang/Rectification.pdf, page4 used on input l
 ine 26.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [122 <./images/Anhang/Rectification.pdf>]
-<images/Anhang/Rectification.pdf, id=2183, page=5, 598.235pt x 845.1575pt>
+<images/Anhang/Rectification.pdf, id=2184, page=5, 598.235pt x 845.1575pt>
 File: images/Anhang/Rectification.pdf Graphic file (type pdf)
 
 <use images/Anhang/Rectification.pdf, page 5>
@@ -4599,7 +4599,7 @@ Package pdftex.def Info: images/Anhang/Rectification.pdf, page5 used on input l
 ine 26.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [123 <./images/Anhang/Rectification.pdf>]
-<images/Anhang/Rectification.pdf, id=2189, page=6, 598.235pt x 845.1575pt>
+<images/Anhang/Rectification.pdf, id=2190, page=6, 598.235pt x 845.1575pt>
 File: images/Anhang/Rectification.pdf Graphic file (type pdf)
 
 <use images/Anhang/Rectification.pdf, page 6>
@@ -4623,7 +4623,7 @@ Package pdftex.def Info: images/Anhang/Rectification.pdf, page6 used on input l
 ine 26.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [124 <./images/Anhang/Rectification.pdf>]
-<images/Anhang/Rectification.pdf, id=2195, page=7, 598.235pt x 845.1575pt>
+<images/Anhang/Rectification.pdf, id=2196, page=7, 598.235pt x 845.1575pt>
 File: images/Anhang/Rectification.pdf Graphic file (type pdf)
 
 <use images/Anhang/Rectification.pdf, page 7>
@@ -4647,7 +4647,7 @@ Package pdftex.def Info: images/Anhang/Rectification.pdf, page7 used on input l
 ine 26.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [125 <./images/Anhang/Rectification.pdf>]
-<images/Anhang/Rectification.pdf, id=2201, page=8, 598.235pt x 845.1575pt>
+<images/Anhang/Rectification.pdf, id=2202, page=8, 598.235pt x 845.1575pt>
 File: images/Anhang/Rectification.pdf Graphic file (type pdf)
 
 <use images/Anhang/Rectification.pdf, page 8>
@@ -4671,7 +4671,7 @@ Package pdftex.def Info: images/Anhang/Rectification.pdf, page8 used on input l
 ine 26.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [126 <./images/Anhang/Rectification.pdf>]
-<images/Anhang/Rectification.pdf, id=2207, page=9, 598.235pt x 845.1575pt>
+<images/Anhang/Rectification.pdf, id=2208, page=9, 598.235pt x 845.1575pt>
 File: images/Anhang/Rectification.pdf Graphic file (type pdf)
 
 <use images/Anhang/Rectification.pdf, page 9>
@@ -4695,7 +4695,7 @@ Package pdftex.def Info: images/Anhang/Rectification.pdf, page9 used on input l
 ine 26.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [127 <./images/Anhang/Rectification.pdf>]
-<images/Anhang/Rectification.pdf, id=2214, page=10, 598.235pt x 845.1575pt>
+<images/Anhang/Rectification.pdf, id=2215, page=10, 598.235pt x 845.1575pt>
 File: images/Anhang/Rectification.pdf Graphic file (type pdf)
 
 <use images/Anhang/Rectification.pdf, page 10>
@@ -4719,7 +4719,7 @@ Package pdftex.def Info: images/Anhang/Rectification.pdf, page10 used on input
 line 26.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [128 <./images/Anhang/Rectification.pdf>]
-<images/Anhang/SortedPointsAlgorithm.pdf, id=2220, 598.235pt x 845.1575pt>
+<images/Anhang/SortedPointsAlgorithm.pdf, id=2221, 598.235pt x 845.1575pt>
 File: images/Anhang/SortedPointsAlgorithm.pdf Graphic file (type pdf)
 
 <use images/Anhang/SortedPointsAlgorithm.pdf>
@@ -4733,7 +4733,7 @@ Package pdftex.def Info: images/Anhang/SortedPointsAlgorithm.pdf used on input
 line 31.
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/SortedPointsAlgorithm.pdf, id=2223, page=1, 598.235pt x 845.1575
+<images/Anhang/SortedPointsAlgorithm.pdf, id=2224, page=1, 598.235pt x 845.1575
 pt>
 File: images/Anhang/SortedPointsAlgorithm.pdf Graphic file (type pdf)
  <use images/Anhang/SortedPointsAlgorithm.pdf, page 1>
@@ -4781,7 +4781,7 @@ Package pdftex.def Info: images/Anhang/SortedPointsAlgorithm.pdf used on input
 line 33.
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/SortedPointsAlgorithm.pdf, id=2264, page=2, 598.235pt x 845.1575
+<images/Anhang/SortedPointsAlgorithm.pdf, id=2265, page=2, 598.235pt x 845.1575
 pt>
 File: images/Anhang/SortedPointsAlgorithm.pdf Graphic file (type pdf)
  <use images/Anhang/SortedPointsAlgorithm.pdf, page 2>
@@ -4817,7 +4817,7 @@ Package pdftex.def Info: images/Anhang/SortedPointsAlgorithm.pdf, page2 used on
  input line 33.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [130 <./images/Anhang/SortedPointsAlgorithm.pdf>]
-<images/Anhang/SortedPointsAlgorithm.pdf, id=2288, page=3, 598.235pt x 845.1575
+<images/Anhang/SortedPointsAlgorithm.pdf, id=2289, page=3, 598.235pt x 845.1575
 pt>
 File: images/Anhang/SortedPointsAlgorithm.pdf Graphic file (type pdf)
  <use images/Anhang/SortedPointsAlgorithm.pdf, page 3>
@@ -4841,7 +4841,7 @@ Package pdftex.def Info: images/Anhang/SortedPointsAlgorithm.pdf, page3 used on
  input line 33.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [131 <./images/Anhang/SortedPointsAlgorithm.pdf>]
-<images/Anhang/SortedPointsAlgorithm.pdf, id=2301, page=4, 598.235pt x 845.1575
+<images/Anhang/SortedPointsAlgorithm.pdf, id=2302, page=4, 598.235pt x 845.1575
 pt>
 File: images/Anhang/SortedPointsAlgorithm.pdf Graphic file (type pdf)
  <use images/Anhang/SortedPointsAlgorithm.pdf, page 4>
@@ -4865,7 +4865,7 @@ Package pdftex.def Info: images/Anhang/SortedPointsAlgorithm.pdf, page4 used on
  input line 33.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [132 <./images/Anhang/SortedPointsAlgorithm.pdf>]
-<images/Anhang/SortedPointsAlgorithm.pdf, id=2307, page=5, 598.235pt x 845.1575
+<images/Anhang/SortedPointsAlgorithm.pdf, id=2308, page=5, 598.235pt x 845.1575
 pt>
 File: images/Anhang/SortedPointsAlgorithm.pdf Graphic file (type pdf)
  <use images/Anhang/SortedPointsAlgorithm.pdf, page 5>
@@ -4889,7 +4889,7 @@ Package pdftex.def Info: images/Anhang/SortedPointsAlgorithm.pdf, page5 used on
  input line 33.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [133 <./images/Anhang/SortedPointsAlgorithm.pdf>]
-<images/Anhang/SortedPointsAlgorithm.pdf, id=2314, page=6, 598.235pt x 845.1575
+<images/Anhang/SortedPointsAlgorithm.pdf, id=2315, page=6, 598.235pt x 845.1575
 pt>
 File: images/Anhang/SortedPointsAlgorithm.pdf Graphic file (type pdf)
  <use images/Anhang/SortedPointsAlgorithm.pdf, page 6>
@@ -4913,7 +4913,7 @@ Package pdftex.def Info: images/Anhang/SortedPointsAlgorithm.pdf, page6 used on
  input line 33.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [134 <./images/Anhang/SortedPointsAlgorithm.pdf>]
-<images/Anhang/BuildTheGrid.pdf, id=2320, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2321, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf>
@@ -4924,7 +4924,7 @@ File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/Anhang/BuildTheGrid.pdf used on input line 35.
 (pdftex.def)             Requested size: 598.23354pt x 845.15544pt.
 
-<images/Anhang/BuildTheGrid.pdf, id=2323, page=1, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2324, page=1, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf, page 1>
@@ -4960,7 +4960,7 @@ Package pdftex.def Info: images/Anhang/BuildTheGrid.pdf, page1 used on input li
 ne 35.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [135 <./images/Anhang/BuildTheGrid.pdf>]
-<images/Anhang/BuildTheGrid.pdf, id=2362, page=2, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2363, page=2, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf, page 2>
@@ -4984,7 +4984,7 @@ Package pdftex.def Info: images/Anhang/BuildTheGrid.pdf, page2 used on input li
 ne 35.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [136 <./images/Anhang/BuildTheGrid.pdf>]
-<images/Anhang/BuildTheGrid.pdf, id=2392, page=3, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2393, page=3, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf, page 3>
@@ -5008,7 +5008,7 @@ Package pdftex.def Info: images/Anhang/BuildTheGrid.pdf, page3 used on input li
 ne 35.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [137 <./images/Anhang/BuildTheGrid.pdf>]
-<images/Anhang/BuildTheGrid.pdf, id=2398, page=4, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2399, page=4, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf, page 4>
@@ -5032,7 +5032,7 @@ Package pdftex.def Info: images/Anhang/BuildTheGrid.pdf, page4 used on input li
 ne 35.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [138 <./images/Anhang/BuildTheGrid.pdf>]
-<images/Anhang/BuildTheGrid.pdf, id=2404, page=5, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2405, page=5, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf, page 5>
@@ -5056,7 +5056,7 @@ Package pdftex.def Info: images/Anhang/BuildTheGrid.pdf, page5 used on input li
 ne 35.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [139 <./images/Anhang/BuildTheGrid.pdf>]
-<images/Anhang/BuildTheGrid.pdf, id=2411, page=6, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2412, page=6, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf, page 6>
@@ -5080,7 +5080,7 @@ Package pdftex.def Info: images/Anhang/BuildTheGrid.pdf, page6 used on input li
 ne 35.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [140 <./images/Anhang/BuildTheGrid.pdf>]
-<images/Anhang/BuildTheGrid.pdf, id=2417, page=7, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2418, page=7, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf, page 7>
@@ -5104,7 +5104,7 @@ Package pdftex.def Info: images/Anhang/BuildTheGrid.pdf, page7 used on input li
 ne 35.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [141 <./images/Anhang/BuildTheGrid.pdf>]
-<images/Anhang/BuildTheGrid.pdf, id=2423, page=8, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2424, page=8, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf, page 8>
@@ -5128,7 +5128,7 @@ Package pdftex.def Info: images/Anhang/BuildTheGrid.pdf, page8 used on input li
 ne 35.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [142 <./images/Anhang/BuildTheGrid.pdf>]
-<images/Anhang/BuildTheGrid.pdf, id=2429, page=9, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2430, page=9, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf, page 9>
@@ -5152,7 +5152,7 @@ Package pdftex.def Info: images/Anhang/BuildTheGrid.pdf, page9 used on input li
 ne 35.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [143 <./images/Anhang/BuildTheGrid.pdf>]
-<images/Anhang/BuildTheGrid.pdf, id=2435, page=10, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2436, page=10, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf, page 10>
@@ -5176,7 +5176,7 @@ Package pdftex.def Info: images/Anhang/BuildTheGrid.pdf, page10 used on input l
 ine 35.
 (pdftex.def)             Requested size: 597.7406pt x 844.45905pt.
  [144 <./images/Anhang/BuildTheGrid.pdf>]
-<images/Anhang/BuildTheGrid.pdf, id=2441, page=11, 598.235pt x 845.1575pt>
+<images/Anhang/BuildTheGrid.pdf, id=2442, page=11, 598.235pt x 845.1575pt>
 File: images/Anhang/BuildTheGrid.pdf Graphic file (type pdf)
 
 <use images/Anhang/BuildTheGrid.pdf, page 11>
@@ -5203,7 +5203,7 @@ ine 35.
 
 pdfTeX warning: pdflatex.exe (file ./images/Klassendiagramm.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<images/Klassendiagramm.pdf, id=2448, 845.07718pt x 597.55246pt>
+<images/Klassendiagramm.pdf, id=2449, 845.07718pt x 597.55246pt>
 File: images/Klassendiagramm.pdf Graphic file (type pdf)
 
 <use images/Klassendiagramm.pdf>
@@ -5225,7 +5225,7 @@ pdfTeX warning: pdflatex.exe (file ./images/Klassendiagramm.pdf): PDF inclusion
 
 pdfTeX warning: pdflatex.exe (file ./images/Klassendiagramm.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<images/Klassendiagramm.pdf, id=2451, page=1, 845.07718pt x 597.55246pt>
+<images/Klassendiagramm.pdf, id=2452, page=1, 845.07718pt x 597.55246pt>
 File: images/Klassendiagramm.pdf Graphic file (type pdf)
 
 <use images/Klassendiagramm.pdf, page 1>
@@ -5282,7 +5282,7 @@ pdfTeX warning: pdflatex.exe (file ./images/Klassendiagramm.pdf): PDF inclusion
 
 pdfTeX warning: pdflatex.exe (file ./images/Klassendiagramm.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<images/Klassendiagramm.pdf, id=2485, page=2, 845.07718pt x 597.55246pt>
+<images/Klassendiagramm.pdf, id=2486, page=2, 845.07718pt x 597.55246pt>
 File: images/Klassendiagramm.pdf Graphic file (type pdf)
 
 <use images/Klassendiagramm.pdf, page 2>
@@ -5321,7 +5321,7 @@ Package pdftex.def Info: images/Klassendiagramm.pdf, page2 used on input line 3
 
 pdfTeX warning: pdflatex.exe (file ./images/Klassendiagramm.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<images/Klassendiagramm.pdf, id=2491, page=3, 845.07718pt x 597.55246pt>
+<images/Klassendiagramm.pdf, id=2492, page=3, 845.07718pt x 597.55246pt>
 File: images/Klassendiagramm.pdf Graphic file (type pdf)
 
 <use images/Klassendiagramm.pdf, page 3>
@@ -5348,7 +5348,7 @@ Package pdftex.def Info: images/Klassendiagramm.pdf, page3 used on input line 3
 
 pdfTeX warning: pdflatex.exe (file ./images/Klassendiagramm.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<images/Klassendiagramm.pdf, id=2517, page=4, 845.07718pt x 597.55246pt>
+<images/Klassendiagramm.pdf, id=2518, page=4, 845.07718pt x 597.55246pt>
 File: images/Klassendiagramm.pdf Graphic file (type pdf)
 
 <use images/Klassendiagramm.pdf, page 4>
@@ -5375,7 +5375,7 @@ Package pdftex.def Info: images/Klassendiagramm.pdf, page4 used on input line 3
 
 pdfTeX warning: pdflatex.exe (file ./images/Klassendiagramm.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<images/Klassendiagramm.pdf, id=2523, page=5, 845.07718pt x 597.55246pt>
+<images/Klassendiagramm.pdf, id=2524, page=5, 845.07718pt x 597.55246pt>
 File: images/Klassendiagramm.pdf Graphic file (type pdf)
 
 <use images/Klassendiagramm.pdf, page 5>
@@ -5484,38 +5484,34 @@ Package rerunfilecheck Info: File `"insert title here".out' has not changed.
 (rerunfilecheck)             Checksum: 9FE7E37B2BE756F591DA12C80C523B84;3479.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
  ) 
 Here is how much of TeX's memory you used:
- 14882 strings out of 493334
- 245858 string characters out of 3142719
- 430539 words of memory out of 3000000
- 17469 multiletter control sequences out of 15000+200000
- 13184 words of font info for 48 fonts, out of 3000000 for 9000
+ 14879 strings out of 493334
+ 245823 string characters out of 3142719
+ 431539 words of memory out of 3000000
+ 17467 multiletter control sequences out of 15000+200000
+ 12876 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,22n,68p,8860b,560s stack positions out of 5000i,500n,10000p,200000b,50000s
-<L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><L:/Programme/
-MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><L:/Programme/MikTex/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb><L:/Programme/MikTex/fonts/type1/public/amsfon
-ts/cm/cmmi10.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
-<L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><L:/Programme/Mik
-Tex/fonts/type1/public/amsfonts/cm/cmr10.pfb><L:/Programme/MikTex/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm
-/cmr6.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmr8.pfb><L:/Prog
-ramme/MikTex/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><L:/Programme/MikTex/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb><L:/Programme/MikTex/fonts/type1/publi
-c/amsfonts/cm/cmsy6.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cms
-y8.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><L:/Progr
-amme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><L:/Programme/MikTex
-/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "insert title here.pdf" (155 pages, 23085787 bytes).
+ 45i,27n,68p,8860b,560s stack positions out of 5000i,500n,10000p,200000b,50000s
+<L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><L:/Programme/
+MikTex/fonts/type1/public/amsfonts/cm/cmex10.pfb><L:/Programme/MikTex/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb><L:/Programme/MikTex/fonts/type1/public/amsfon
+ts/cm/cmmi6.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmr10.pfb><L:/Programme/MikT
+ex/fonts/type1/public/amsfonts/cm/cmr12.pfb><L:/Programme/MikTex/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/c
+mr8.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><L:/Pr
+ogramme/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><L:/Programme/MikTex/f
+onts/type1/public/amsfonts/cm/cmsy6.pfb><L:/Programme/MikTex/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmti
+10.pfb><L:/Programme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><L:/
+Programme/MikTex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "insert title here.pdf" (155 pages, 23070659 bytes).
 PDF statistics:
- 2807 PDF objects out of 2984 (max. 8388607)
+ 2805 PDF objects out of 2984 (max. 8388607)
  539 named destinations out of 1000 (max. 500000)
  1349 words of extra memory for PDF output out of 10000 (max. 10000000)
 

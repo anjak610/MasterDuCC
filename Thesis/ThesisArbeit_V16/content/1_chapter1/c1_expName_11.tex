@@ -91,7 +91,7 @@ Um einen Punkt von einem übergeordneten Weltkoordinatensystem in ein bestimmtes
 %	\label{fig:Koordinatensysteme1}
 %\end{minipage}\\ \\
 
-Zunächst wird eine Koordinatisierung von Punkten im Weltkoordinatensystem vorgenommen. Ein Punkt $P_\delta$ bezüglich des Weltkoordinatensystems wird wie folgt beschrieben:
+Zunächst wird eine Koordinatisierung von Punkten im Weltkoordinatensystem vorgenommen. Ein Punkt $P_\delta$ bezüglich des Weltkoordinatensystems wird wie folgt beschrieben
 
 
 \begin{gather}
@@ -99,7 +99,7 @@ Zunächst wird eine Koordinatisierung von Punkten im Weltkoordinatensystem vorge
 	\leadsto P_\delta = (p_{\delta x},p_{2\delta y},p_{\delta z})^T = \begin{pmatrix} p_{\delta x} \\ p_{\delta y} \\ p_{\delta z} \end{pmatrix}.
 \end{gather}
 
-Zwischen den beiden Koordinatensystemen	$(O,\delta)$  und $(C,\beta)$ gelten die folgenden Beziehungen:
+Zwischen den beiden Koordinatensystemen	$(O,\delta)$  und $(C,\beta)$ gelten die folgenden Beziehungen
 
 \begin{gather}
 	C_\beta = O_\delta + C_{\beta,1}\,\hat{d_1} +C_{\beta,2}\,\hat{d_2} + C_{\beta,3}\,\hat{d_3}\\
@@ -114,7 +114,7 @@ Diese Beziehungsgleichungen werden in Gleichung \ref{eq:eq2.2} eingesetzt.
 	\begin{split}
 		P_\delta = O + (C_{\beta,1} + p_{\beta x}\,b_{11} +  p_{\beta y}\,b_{21} + p_{\beta z}\,b_{31}) \cdot \hat{d_1}\\
 		+(C_{\beta,2} + p_{\beta x}\,b_{21} +  p_{\beta y}\,b_{22} + p_{\beta z}\,b_{32} )\cdot \hat{d_2}\\
-		+ (C_{\beta,3} + p_{\beta x}\,b_{31} +  p_{\beta y}\,b_{23} + p_{\beta z}\,b_{33} )\cdot \hat{d_3}\label{eq:2.8}
+		+ (C_{\beta,3} + p_{\beta x}\,b_{31} +  p_{\beta y}\,b_{23} + p_{\beta z}\,b_{33} )\cdot \hat{d_3}.\label{eq:2.8}
 	\end{split}
 \end{gather}
 
@@ -123,7 +123,7 @@ Aus Gleichung \ref{eq:2.8} wird ein Gleichungssystem in der Form von Gleichung \
 \begin{gather}
 	\begin{split}
 		p_{\delta x} = C_{\beta,1} + (C_{\beta,1} + p_{\beta x}\,b_{11} +  p_{\beta y}\,b_{21} + p_{\beta z}\,b_{31} \\
-		\leadsto \: p_{\delta x} - C_{\beta,1} =  (C_{\beta,1} + p_{\beta x}\,b_{11} +  p_{\beta y}\,b_{21} + p_{\beta z}\,b_{31})\label{eq:2.9}
+		\leadsto \: p_{\delta x} - C_{\beta,1} =  (C_{\beta,1} + p_{\beta x}\,b_{11} +  p_{\beta y}\,b_{21} + p_{\beta z}\,b_{31}).\label{eq:2.9}
 	\end{split}
 \end{gather}
 
@@ -141,9 +141,8 @@ Das Gleichungssystem lässt sich in Matrixform darstellen als
 		p_{\delta x} - C_{\beta,1}\\
 		p_{\delta y} - C_{\beta,2}\\
 		p_{\delta z} - C_{\beta,3}
-	\end{pmatrix}
+	\end{pmatrix}.
 \end{gather}\\
-.
 
 Wenn $P_\beta$ gegeben ist, erhält man auf diese Weise direkt $P_\delta$. Die inverse Matrix $\ensuremath{D_\beta^{-1}}$ kann verwendet werden um  $P_\beta$ aus $P_\delta$ zu berechnen.
 
@@ -162,7 +161,7 @@ Wenn $P_\beta$ gegeben ist, erhält man auf diese Weise direkt $P_\delta$. Die i
 			p_{\delta x} - C_{\beta,1}\\
 			p_{\delta y} - C_{\beta,2}\\
 			p_{\delta z} - C_{\beta,3}
-		\end{pmatrix}\label{eq:2.12}
+		\end{pmatrix}.\label{eq:2.12}
 	\end{split} 
 \end{gather}
 
@@ -185,8 +184,8 @@ Handelt es sich um ein kartesisches Koordinatensystem, so gilt $\ensuremath{D_\b
 	\end{pmatrix}
 	= T	\begin{pmatrix}
 		\vec{p_\delta}\\1
-	\end{pmatrix}	 \label{eq:trafo}
-\end{gather}.
+	\end{pmatrix}.	 \label{eq:trafo}
+\end{gather}
 
 Die Transformationsmatrix $T$ setzt sich aus der Rotationsmatrix $R$ und der Translationsmatrix  $[I |-C]$ zusammen und wirkt auf den neu definierten vierdimensionalen Vektor. Wichtig dabei ist, dass $[I| -C]$ eine symbolische Schreibweise für eine $3 \times 4$ Matrix ist.   
 
@@ -302,9 +301,9 @@ Für die Projektion eines Punktes $M_\delta=({M_{\delta x}}\,{M_{\delta y}}\,{M_
 
 Zuerst muss der Punkt im Weltkoordinatensystem in das Kamerakoordinatensystem transformiert werden. Für die Transformation der Weltkoordinaten in Kamerakoordinaten gilt die Gleichung \ref{eq:trafo}
 \begin{equation}
-\vec{M_\beta}=T
+\overrightarrow{M_\beta}=T
 \begin{bmatrix}
-\vec{M_\delta}\\
+\overrightarrow{M_\delta}\\
 1\\
 \end{bmatrix}=R \begin{bmatrix}1 & 0 & 0 & - C_{\beta x}\\
 0 & 1 & 0& - C_{\beta y}\\
@@ -316,11 +315,11 @@ M_{\delta x}\\M_{\delta y}\\ M_{\delta z}\\1
 =R	[I -C] \begin{bmatrix}
 \vec{M_\delta}\\
 1\\
-\end{bmatrix} \label{mbeta}
+\end{bmatrix}. \label{mbeta}
 % ({M_{Cx}}\,{M_{Cy}}\, {M_{Cz}}\, C_{\beta})=({M_{Ox}}\,{M_{Oy}}\,{M_{Oz}}\,O_{\delta}) \cdot R
-\end{equation}.
+\end{equation}
 
-Nach der Transformation eines Punkts $\vec{M_\delta}$ zu $\vec{M_\beta}$ in das Kamerakoordinatensystem erfolgt die Kameraprojektion von $M_\beta$ auf $m_\beta$ wie in Gleichung \ref{eq:2.1} beschrieben. %Die Kameramatrix lässt den Ursprung eines Koordinatensystems unverändert und die Kameramatrix $K_0$ lässt sich erweitern:
+Nach der Transformation eines Punkts $\overrightarrow{M_\delta}$ zu $\overrightarrow{M_\beta}$ in das Kamerakoordinatensystem erfolgt die Kameraprojektion von $M_\beta$ auf $m_\beta$ wie in Gleichung \ref{eq:2.1} beschrieben. %Die Kameramatrix lässt den Ursprung eines Koordinatensystems unverändert und die Kameramatrix $K_0$ lässt sich erweitern:
 \begin{equation}
 \begin{bmatrix}
 m_{\beta x}\\m_{\beta y}\\m_{\beta z}
@@ -332,46 +331,45 @@ m_{\beta x}\\m_{\beta y}\\m_{\beta z}
 \begin{bmatrix}
 M_{\beta x}\\M_{\beta y}\\M_{\beta z}
 \end{bmatrix}
-=K_0\vec{M_{\beta}}\label{mbeta1}
+=K_0\overrightarrow{M_{\beta}}\label{mbeta1}.
 \end{equation}
 \pagebreak
 
-Die Projektion eines Punktes $\vec{M_\delta}$ auf den Bildpunkt $\vec{m_{\beta}}$ kann durch Gleichung \ref{mbeta} und \ref{mbeta1} zusammengefasst werden
+Die Projektion eines Punktes $\overrightarrow{M_\delta}$ auf den Bildpunkt $\overrightarrow{m_{\beta}}$ kann durch Gleichung \ref{mbeta} und \ref{mbeta1} zusammengefasst werden
 
 \begin{equation}
-\vec{m_\beta}
+\overrightarrow{m_\beta}
 =K_0 R	[I -C] \begin{bmatrix}
-\vec{M_\delta}\\
+\overrightarrow{M_\delta}\\
 1\\
-\end{bmatrix} 
+\end{bmatrix} .
 % ({M_{Cx}}\,{M_{Cy}}\, {M_{Cz}}\, C_{\beta})=({M_{Ox}}\,{M_{Oy}}\,{M_{Oz}}\,O_{\delta}) \cdot R
 \end{equation}
-.
 
 
 Um den Bildpunkt $\overrightarrow{m_{\beta}}$ bezüglich eines zweidimensionalen Bildebenenkoordinatensystemes anzugeben, wird die Bildebene mit der Tiefkomponente $m_{\beta z}$ normiert, sodass $m_{\beta z}$ auf den zweidimensionalen Raum der Bildebene abgebildet wird. Diese Projektion wird durch folgende Gleichung beschrieben
 
 \begin{equation}
-\vec{m_\tau} =
+\overrightarrow{m_\tau} =
 \begin{bmatrix}
 m_{\beta x}/m_{\beta z}\\m_{\beta y}/m_{\beta z}\\1
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
-.
 
-Zuletzt folgt die Transformation der Bildebenenkoordinaten auf den Sensorchip. Der Sensorchip besteht aus einer Ansammlung von Sensorelementen. Diese Sensorelemente können verschiedene Formen annehmen. Die meisten Sensorchips bestehen aus rechtwinkligen, rechteckigen Sensorelementen. Aus diesem Grund wird ein rechtwinkliges Sensorelement mit einer Größe $lx$ $ly$ angenommen. Diese Sensorelementgröße $lx$ $ly$ definiert auch die Pixelgröße und bildet die Längenskalierung des Sensorkoordinatensystems. Neben der unterschiedlichen Skalierung wird der Ursprung des Sensorkoordinatensystems in der Regel an einer Ecke des Sensorchips definiert, sodass die Transformation von Bildebenenkoordinaten in Sensorkoordinaten auch eine Translation $(V_{\sigma x},V_{\sigma y})$ aufweist\cite{HZ,Photonik}. Für einen Punkt $m_\sigma = ({u},{v},1)$ auf dem Sensorkoordinatensystem lassen sich die folgenden Bedingungen herleiten %.$w$ ist die z Koordinate des Sensorsystems, welches hier gleich der z-Achse des Kamerasystems angenommen wird. Zudem wird angenommen, dass das Sensorsystem aus rechteckigen Pixel handelt und durch ein kartesische Koordinatensystem angenommen werden kann. Für die Transformation wird eine Matrix $R_\sigma$ aufgestellt, welche eine Koordinatentransformation mit einer Translation des Koordinatenursprungs und eine Skalierung der Koordinaten beinhaltet.
+
+Zuletzt folgt die Transformation der Bildebenenkoordinaten auf den Sensorchip. Der Sensorchip besteht aus einer Ansammlung von Sensorelementen. Diese Sensorelemente können verschiedene Formen annehmen. Die meisten Sensorchips bestehen aus rechtwinkligen, rechteckigen Sensorelementen. Aus diesem Grund wird ein rechtwinkliges Sensorelement mit einer Größe $lx$ $ly$ angenommen. Diese Sensorelementgröße $lx$ $ly$ definiert auch die Pixelgröße und bildet die Längenskalierung des Sensorkoordinatensystems. Neben der unterschiedlichen Skalierung wird der Ursprung des Sensorkoordinatensystems in der Regel an einer Ecke des Sensorchips definiert, sodass die Transformation von Bildebenenkoordinaten in Sensorkoordinaten auch eine Translation $(V_{\sigma x},V_{\sigma y})$ aufweist\cite{HZ,Photonik}. Für einen Punkt $m_\sigma = ({u},{v},1)$ auf dem Sensorkoordinatensystem lassen sich die folgenden Bedingungen herleiten 
 
 \begin{gather}	
 	{u}=m_{\tau x} \, k_x - V_{\sigma x}\\
 	{v}=m_{\tau y} \, k_y - V_{\sigma y}\\
-	1=1
+	1=1.
 \end{gather}
-.
 
-$k_x=1/lx$ und $k_y=1/ly$ ist die Pixeldichte in $\frac{pixel}{m}$. Es wird angemerkt, dass in der Bildebene und der Sensorebene die Punkte ausschließlich im zweidimensionalen Raum definiert sind. Aus den normierten Bildkoordinaten lässt sich somit folgende Sensormatrix bilden:
+
+$k_x=1/lx$ und $k_y=1/ly$ ist die Pixeldichte in $\frac{pixel}{mm}$. Es wird angemerkt, dass in der Bildebene und der Sensorebene die Punkte ausschließlich im zweidimensionalen Raum definiert sind. Aus den normierten Bildkoordinaten lässt sich somit folgende Sensormatrix bilden:
 
 \begin{gather}
-	\vec{m_\sigma}=\begin{bmatrix}u \\v\\1 \end{bmatrix}=
+	\overrightarrow{m_\sigma}=\begin{bmatrix}u \\v\\1 \end{bmatrix}=
 	\begin{bmatrix}
 		k_x&0&V_{\sigma x}\\
 		0&k_y&V_{\sigma y}\\
@@ -392,7 +390,7 @@ k_x \zeta & 0 & V_{\sigma x}\\
 \end{bmatrix}
 \end{equation}
 
-Mit dieser Kameramatrix wird eine neue Projektionsmatrix mit $P=KR[I -C]$ gebildet, die einen Objektpunkt auf einen Bildpunkt im Sensorkoordinatensystem abbildet. Durch die Normierung dieses Punktes kann auf den direkten Sensorpunkt geschlossen werden.  Ein weiterer Vorteil der erweiterten Kameramatrix $K$ ist, dass sie die Pixeldichte $k_x,k_y$ und die Brennweite $\zeta$ beinhaltet. Diese Parameter werden im Folgenden als intrinsische Kameraparameter bezeichnet. Die Koordinatentransformationsmatrix $R$ wird im Gegensatz aus den sogenannten extrinsischen Kameraparameter, der Kameraposition und Orientierung, definiert. Sind sowohl die intrinsischen wie auch extrinsischen Kameraparameter vorbestimmt kann somit $P$ bestimmt werden und mit dem hier beschriebenen Lösungsweg das Bild konstruiert werden. % ein Punkt auf die Sensorebene der entsprechenden Kamera projeziert werden. 
+Mit dieser Kameramatrix wird eine neue Projektionsmatrix mit $P=KR[I -C]$ gebildet, die einen Objektpunkt auf einen Bildpunkt im Sensorkoordinatensystem abbildet. Durch die Normierung dieses Punktes kann auf den direkten Sensorpunkt geschlossen werden.  Ein weiterer Vorteil der erweiterten Kameramatrix $K$ ist, dass sie die Pixeldichte $k_x,k_y$ und die Brennweite $\zeta$ beinhaltet. Diese Parameter werden im Folgenden als intrinsische Kameraparameter bezeichnet. Die Koordinatentransformationsmatrix $R$ wird im Gegensatz aus den sogenannten extrinsischen Kameraparameter, der Kameraposition und Orientierung, definiert. Sind sowohl die intrinsischen wie auch extrinsischen Kameraparameter vorbestimmt kann $P$ bestimmt und mit dem hier beschriebenen Lösungsweg das Bild konstruiert werden. % ein Punkt auf die Sensorebene der entsprechenden Kamera projeziert werden. 
 
 
 %Die Prokjektionsmatrix $P=RK_0R_\sigma$ setzt sich aus einer Koordinatentransformationsmatirx $R$, der Kameramatrix $K_0$ und einer weiteren Transformation zusammen. Häufig werdend die letzten beiden Matrizen zu einer erweiterten Kameramatrix $K=K_0R_\sigma$ zusammengefasst. Die erweiterte Kameramatrix beinhaltet die Pixeldichte $k_x,k_y$ und die Brennweite $\zeta$. Diese Parameter werden im folgenden als intrinsische Kameraparameter bezeichnet. Die Koordinatentransformationsmatrix $R$ wird im gegensatz aus den sogenannten extrinsischen Kameraparameter, der Kameraposition und Orientierung, definiert. Sind sowohl die intrinsischen wie auch extrinsischen Kameraparameter vorbestimmt kann somit $P$ bestimmt werden und ein Punkt auf die Sensorebene der entsprechenden Kamera projeziert werden. 

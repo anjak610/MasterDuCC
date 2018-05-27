@@ -1,7 +1,7 @@
 \chapter{Geometrische Beziehungen zwischen Punktekorrespondenzen}
 \label{sec:HFE}
 
-Das Ziel dieser Masterarbeit ist eine 3D Szene im dreidimensionalen Raum aus einer stereoskopischen Aufnahme zweier Kameras zu rekonstruieren. Bisher wurde die Bildaufnahme einer einzigen Kamera betrachtet. Jedoch kann eine Kamera allein nicht räumlich sehen. Um dreidimensionale Szenen aus Bilder zu rekonstruieren, müssen mindestens zwei Aufnahmen der gleichen Szene aus unterschiedlichen Blickwinkeln aufgenommen werden. Innerhalb dieser Aufnahmen müssen Punktekorrespondenzen gesucht werden. Korrespondierende Punkte zeichnen sich dadurch aus, dass sie die Abbildungen desselben Ursprungspunktes im Raum sind. Für diese Punkte muss eine gemeinsame Abbildungsvorschrift aufgestellt werden. Die Abbildungsvorschrift wird in einer $3 \times 3$-Matrix $H$ ausgedrückt, welche die Transformationsmatrizen sowie die Kameramatrizen zusammenfasst. Die $3 \times 3$-Matrix, kann aus gegebenen Punktekorrespondenzen abgeleitet werden. Aus $H$ können Rückschlüssen auf die Kameraparameter der beiden Kameras gezogen werden.  \\
+Das Ziel dieser Masterarbeit ist eine 3D Szene im dreidimensionalen Raum aus einer stereoskopischen Aufnahme zweier Kameras zu rekonstruieren. Bisher wurde die Bildaufnahme einer einzigen Kamera betrachtet. Jedoch kann eine Kamera allein nicht räumlich sehen. Um dreidimensionale Szenen aus Bildern zu rekonstruieren, müssen mindestens zwei Aufnahmen der gleichen Szene aus unterschiedlichen Blickwinkeln aufgenommen werden. Innerhalb dieser Aufnahmen müssen Punktekorrespondenzen gesucht werden. Korrespondierende Punkte zeichnen sich dadurch aus, dass sie die Abbildungen desselben Ursprungspunktes im Raum sind. Für diese Punkte muss eine gemeinsame Abbildungsvorschrift aufgestellt werden. Die Abbildungsvorschrift wird in einer $3 \times 3$-Matrix $H$ ausgedrückt, welche die Transformationsmatrizen sowie die Kameramatrizen zusammenfasst. Die $3 \times 3$-Matrix, kann aus gegebenen Punktekorrespondenzen abgeleitet werden. Aus $H$ können Rückschlüsse auf die Kameraparameter der beiden Kameras gezogen werden.  \\
 
 
 %
@@ -53,14 +53,14 @@ Eine Abbildungsvorschrift kann in bestimmten Fällen eindeutig bestimmt werden. 
 %	\label{fig:Homographie}
 %\end{minipage}\\
 
-Um die Abbildungsvorschrift herzuleiten wird bei  Bildpunkt \ensuremath{m_{\tau} = (m_{\tau1},m_{\tau2},m_{\tau3})^T} mit $m_{\tau3}=1$ begonnen. Während in der Bildaufnahme ein Punkt $m_\beta$ durch Division mit der $m_{\beta,3}$-Komponenten eindeutig zu $m_{\tau}$ wird ist die Rückrichtung nicht eindeutig. Alle Punkte auf der Geraden von C und $m_{\tau}$, siehe Abbildung \ref{fig:gamma},werden auf denselben Bildpunkt projiziert. Die Projektion von $m_{\tau}$ auf $m_\beta$ ist demnach nicht eindeutig. Die Gerade mit allen möglichen Punkten $m_\beta$ kann als $\gamma m_{\tau}$ mit der freien Variablen $\gamma > 0$ ausgedrückt werden.  
+Um die Abbildungsvorschrift herzuleiten wird bei  Bildpunkt \ensuremath{m_{\tau} = (m_{\tau x},m_{\tau y},m_{\tau z})^T} mit $m_{\tau z}=1$ begonnen. Während in der Bildaufnahme ein Punkt $m_\beta$ durch Division mit der $m_{\beta,z}$-Komponenten eindeutig zu $m_{\tau}$ wird ist die Rückrichtung nicht eindeutig. Alle Punkte auf der Geraden von C und $m_{\tau}$, siehe Abbildung \ref{fig:gamma}, werden auf denselben Bildpunkt projiziert. Die Projektion von $m_{\tau}$ auf $m_\beta$ ist demnach nicht eindeutig. Die Gerade mit allen möglichen Punkten $m_\beta$ kann als $\gamma m_{\tau}$ mit der freien Variablen $\gamma > 0$ ausgedrückt werden.  
 
 
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/gamma.png}
-	\caption[Veranschaulichung der freien Variablen $\gamma$]{Auf der Geraden durch $C$ und $\vec{m}_\tau$, befinden sich alle möglichen Punkte für $m_\beta$. $m_\beta$ wird auf Grund seiner Unbestimmtheit als $\gamma m_\tau$ bezeichnet}  
+	\caption[Veranschaulichung der freien Variablen $\gamma$]{Auf der Geraden durch $C$ und $\overrightarrow{m}_\tau$, befinden sich alle möglichen Punkte für $m_\beta$. $m_\beta$ wird auf Grund seiner Unbestimmtheit als $\gamma m_\tau$ bezeichnet}  
 	\label{fig:gamma}
 \end{figure}
 
@@ -75,10 +75,10 @@ Um die Abbildungsvorschrift herzuleiten wird bei  Bildpunkt \ensuremath{m_{\tau}
 Für zwei korrespondierende Bildpunkte $m_\tau$ und $ m'_{\tau'}$ kann für alle möglichen Punkte $m_\beta$ und $m'_\beta$ die folgende Projektionsvorschrift hergeleitet werden \cite{Elements}.
 
 \begin{gather}
-	\gamma \vec{m}_\tau = P \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix} = 
-	\begin{bmatrix}KR|-KR\vec{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = KR(\vec{M}\delta - \vec{C}_\delta)\\
-	\gamma' \vec{m'_{\tau'}} = P' \begin{bmatrix}\vec{M'}_\delta\\1\end{bmatrix} = 
-	\begin{bmatrix}K'R'|-K'R'\vec{C'}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = K'R'(\vec{M}\delta - \vec{C'}_\delta)\label{eq:Homo}
+	\gamma \overrightarrow{m}_\tau = P \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = 
+	\begin{bmatrix}KR|-KR\overrightarrow{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = KR(\overrightarrow{M}_\delta - \overrightarrow{C}_\delta)\\
+	\gamma' \overrightarrow{m'_{\tau'}} = P' \begin{bmatrix}\overrightarrow{M'}_\delta\\1\end{bmatrix} = 
+	\begin{bmatrix}K'R'|-K'R'\overrightarrow{C'}_\delta\end{bmatrix}\cdot \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = K'R'(\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta)\label{eq:Homo}
 \end{gather}\\
 
 
@@ -186,55 +186,12 @@ Mit $\lambda= \frac{\gamma'}{\gamma}$, kann Gleichung \ref{eq:gammaTau} dann wie
 Die entstandene Homographie $H$ ist somit eine Abbildungsvorschrift welche zwei korrespondierende Punkte in Verbindung setzt. %$\lambda= \frac{\gamma'}{\gamma}$ ist ein Mass für den Relativen unterschied der Distanz zwischen beiden Kameras zum Bildpunkt.
 Diese Homographiebedingung stellt ein Gleichungssystem mit neun unbekannten, welche in Kapitel \ref{sec:8pointAlg} gelöst wird\cite{HZ}.
 
-% (WO ist die verbindung zur rektifizierung, wie stell ich verbindung von H zur projektionsmatrix her?) 
-
-
-% %Ein Punkt auf der normierten Bildebene m_{n,\tau}=(m_{n,\tau x},m_{n,\tau y},1, I) lässt sich somit eindeutig zurücktransformieren indem die Gerade $\g=vec(C)+t\vec(Cm)
-% 
-% Ein Punkt auf der normierten Bildebene $m_{n,\tau}=(m_{n,\tau x},m_{n,\tau y},1, I)$ lässt sich somit eindeutig auf die Bildebene erweitern mit 
-% 
-% \begin{gather}
-% 	m_{\tau}=(m_{\tau x},m_{\tau y},m_{\tau z}, I) = M_{\delta z}(m_{n,\tau x},m_{n,\tau y},1, I)=M_{\delta z}m_{n,\tau}
-% \end{gather}\\
-% 
-% Für 2 korrespondierende Punkte $m_{\tau}$ und $m'_{\tau}$ auf 2 unterschiedlichen Bildebenen gilt der folgende Zusammenhang
-% 
-% 
-% \begin{gather}
-% 	m_{\tau}=M_{\delta z}m_{n,\tau} = M_{\delta} \cdot P \\
-% 	m'_{\tau}=M_{\delta z}m'_{n,\tau} = M_{\delta} \cdot P'
-% \end{gather}\\
-% 
-% Die Projektionsmatirx $P$ beschriebt in diesem Fall nur die Abbildung auf die Bildebene und wird durch $P=K_0R$ mit der Kameramatrix $K_0$ und der Transformationsmatrix $R$ aus Kapitel 2 zusammen. Durch das Anwenden der inversen von $P$ und $P'$ von rechts auf die gleichung, werden diese zu
-% 
-% 
-% \begin{gather}
-% 	m_{\tau}\cdot P^{-1}=M_{\delta z}m_{n,\tau}P^{-1} = M_{\delta} \\
-% 	m'_{\tau}P'^{-1}=M_{\delta z}m'_{n,\tau}P'^{-1} = M_{\delta}.
-% \end{gather}\\
-% 
-% Auf der rechten Seite der Gleichung steht schließlich derselbe Ursprungspunkt, sodass wir beide gleichung zusammenfassen können. 
-% 
-% \begin{gather}
-% 	m_{\tau}\cdot P^{-1} = m'_{\tau}P'^{-1} \\
-% 	m_{n,\tau}P^{-1}=m'_{n,\tau}P'^{-1}
-% \end{gather}\\
-% 
-% Multiplizieren wir nun P von rechts auf die Gleichung erhalten wir 
-% \begin{gather}
-% 	m_{n,\tau}=m'_{n,\tau}P'^{-1}P=m'_{n,\tau}H
-% \end{gather}\\
-% 
-%die sogenannte Homographiematirx $H=P'^{-1}P$. Diese Matrix beschreibt die direkte, eindeutige Abbildung von einem Bildpunkt auf der 2 dimensionalen Bildebene I' auf den Bildpunkt auf der Bildebene I. Mittels der inversen $Hi$ kann diese Abbildung auch rückwerts gemacht werden. 
-% \\
-% Mann könnte das gleichungssystem hier ausformulieren um auf die bestimmung der Kameraparameter einzugehn, wenn du willst (denke das hilft hier zwar nicht aber schaden tut warhscheinlich auch nicht so sehr)
-% 
 
 
 \section{Korrespondenzanalyse für beliebige Punkte im Raum (Epipolare Geometrie)}
 \label{sec:EpiolarContraints}
 
-Für Bilder von komplexeren, dreidimensionalen Objekten, bei denen die Punkte auf verschiedenen Ebenen liegen können, kann keine Homographiebedingung hergestellt werden um die Kameraparameter zu bestimmen. Jedoch kann auf geometrische Bedingungen zurückgegriffen werden, um die Abbildungsvorschrift zwischen den Bildern auszunutzen und die Kameraparameter beider Kameras zu bestimmen. Ein Ursprungspunkt $M_\delta$ wird wieder mit zwei Kameras $C$ und $C'$ aufgenommen. In Abbildung \ref{fig:Epipolargeometry} ist das stereoskopische System dargestellt.
+Für Bilder von komplexeren, dreidimensionalen Objekten, bei denen die Punkte auf verschiedenen Ebenen im Raum liegen können, kann keine Homographiebedingung hergestellt werden um die Kameraparameter zu bestimmen. Jedoch kann auf geometrische Bedingungen zurückgegriffen werden, um die Abbildungsvorschrift zwischen den Bildern auszunutzen und die Kameraparameter beider Kameras zu bestimmen. Ein Ursprungspunkt $M_\delta$ wird wieder mit zwei Kameras $C$ und $C'$ aufgenommen. In Abbildung \ref{fig:Epipolargeometry} ist das stereoskopische System dargestellt.
 \pagebreak
 
 
@@ -253,9 +210,9 @@ Für Bilder von komplexeren, dreidimensionalen Objekten, bei denen die Punkte au
 %	\label{fig:Epipolargeometry}
 %\end{minipage}\\ \\
 
-Es werden hier einige geometrische Definitionen eingeführt um die danach folgende mathematische Herleitung genauer zu verstehen. Die Vektoren $\overline{CM} = (\vec{M}_\delta - \vec{C}_\delta),\, \overline{C'M} = (\vec{M}_\delta - \vec{C'}_\delta)$ und $\overline{CC'} = (\vec{C'}_\delta - \vec{C}_\delta)$ definieren die Epipolarebene, die durch das schwarze Dreieck in Abbildung \ref{fig:Epipolargeometry} gekennzeichnet ist. Die Schnittpunkte der Geraden zwischen $C$ und $C'$ mit der jeweiligen Bildebene $I$ und $I'$ werden als Epipole $e$ und $e'$ bezeichnet. Die Schnittgerade der Epipolarebene mit $I$ und $I'$ bilden die sogenannten Epipolarlinien $l$ und $l'$\cite{HZ,Zhang2014,ZZPaper,phdTwoView}.\\%Elements
+Es werden hier einige geometrische Definitionen eingeführt um die danach folgende mathematische Herleitung genauer zu verstehen. Die Vektoren $\overline{CM} = (\overrightarrow{M}_\delta - \overrightarrow{C}_\delta),\, \overline{C'M} = (\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta)$ und $\overline{CC'} = (\overrightarrow{C'}_\delta - \overrightarrow{C}_\delta)$ definieren die Epipolarebene, die durch das schwarze Dreieck in Abbildung \ref{fig:Epipolargeometry} gekennzeichnet ist. Die Schnittpunkte der Geraden zwischen $C$ und $C'$ mit der jeweiligen Bildebene $I$ und $I'$ werden als Epipole $e$ und $e'$ bezeichnet. Die Schnittgerade der Epipolarebene mit $I$ und $I'$ bilden die sogenannten Epipolarlinien $l$ und $l'$\cite{HZ,Zhang2014,ZZPaper,phdTwoView,Elements}.\\%Elements
 
-Ein Bildpunkt $m_i$ auf der Bildebene $I$ wird zuerst auf die Gerade, die durch $m_i$ und $C$ geht abgebildet. Die Gerade stellt alle möglichen Ursprungspunkte zu $m_i$ dar. Dies ist durch die drei möglichen Punkte $M1$,$M2$,$M3$ in Abbildung \ref{fig:Epipolarconstraint} dargestellt. Jeder dieser Punkte wird nun wiederum auf $I'$ projiziert. Die so entstandenen Punkte liegen alle auf der Epipolarlinie $l'$\cite{HZ}. 
+Ein Bildpunkt $m_i$ auf der Bildebene $I$ wird zuerst auf die Gerade, die durch $m_i$ und $C$ geht abgebildet. Die Gerade stellt alle möglichen Ursprungspunkte zu $m_i$ dar. Dies ist durch die drei möglichen Punkte $M_1$,$M_2$,$M_3$ in Abbildung \ref{fig:Epipolarconstraint} dargestellt. Jeder dieser Punkte wird nun wiederum auf $I'$ projiziert. Die so entstandenen Punkte liegen alle auf der Epipolarlinie $l'$\cite{HZ}. 
 
 
 \begin{figure}[!htb]
@@ -275,35 +232,34 @@ Ein Bildpunkt $m_i$ auf der Bildebene $I$ wird zuerst auf die Gerade, die durch 
 Die hier gezeigte Abbildung von $m_i$ auf $l'$ wird nun genauer betrachtet. Es werden wieder die Gleichungen für $m_\tau$ und $m'_\tau$, wie in Gleichung \ref{eq:Homo}, aufgestellt    
 
 \begin{gather}
-	\gamma \vec{m}_\tau = P \begin{bmatrix}\vec{M}_\delta\\1\end{bmatrix} = 
-	\begin{bmatrix}KR|-KR\vec{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = KR(\vec{M}\delta - \vec{C}_\delta) \label{eq:Ep1} \\
-	\gamma' \vec{m'_{\tau'}} = P' \begin{bmatrix}\vec{M'}_\delta\\1\end{bmatrix} = 
-	\begin{bmatrix}K'R'|-K'R'\vec{C'}_\delta\end{bmatrix}\cdot \begin{bmatrix}\vec{M}\delta\\1\end{bmatrix} = K'R'(\vec{M}\delta - \vec{C'}_\delta)\label{eq:Ep2}
-\end{gather}
+	\gamma \overrightarrow{m}_\tau = P \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = 
+	\begin{bmatrix}KR|-KR\overrightarrow{C}_\delta\end{bmatrix}\cdot \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = KR(\overrightarrow{M}_\delta - \overrightarrow{C}_\delta) \label{eq:Ep1} \\
+	\gamma' \overrightarrow{m'_{\tau'}} = P' \begin{bmatrix}\overrightarrow{M'}_\delta\\1\end{bmatrix} = 
+	\begin{bmatrix}K'R'|-K'R'\overrightarrow{C'}_\delta\end{bmatrix}\cdot \begin{bmatrix}\overrightarrow{M}_\delta\\1\end{bmatrix} = K'R'(\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta)\label{eq:Ep2}
+\end{gather}.
 
 
-Die Gleichungen \ref{eq:Ep1} und \ref{eq:Ep2} werden nach $(\vec{M}-\vec{C}_\delta)$ und $(\vec{M}-\vec{C'}_\delta)$ aufgelöst.
-
-\begin{gather}
-	\gamma R^TK^{-1}\vec{m}_\tau = (\vec{M}-\vec{C}_\delta)\label{eq:Ep3}\\
-	\gamma' R'^TK'^{-1}\vec{m'}_{\tau'} = (\vec{M}-\vec{C'}_\delta)\label{eq:Ep4}
-\end{gather}
-
-
-Wie in Abbildung \ref{fig:Epipolargeometry} gezeigt bilden die Vektoren $(\vec{M}_\delta - \vec{C}_\delta),\, (\vec{M}_\delta - \vec{C'}_\delta)$ und $(\vec{C'}_\delta - \vec{C}_\delta)$ ein Dreieck. Für dieses Dreieck kann die folgende Gleichung aufgestellt werden. 
+Die Gleichungen \ref{eq:Ep1} und \ref{eq:Ep2} werden nach $(\overrightarrow{M}_\delta-\overrightarrow{C}_\delta)$ und $(\overrightarrow{M}_\delta-\overrightarrow{C'}_\delta)$ aufgelöst.
 
 \begin{gather}
-	(\vec{C'}_\delta - \vec{C}_\delta) = (\vec{M}_\delta - \vec{C}_\delta) - (\vec{M}_\delta - \vec{C'}_\delta)
+	\gamma R^TK^{-1}\overrightarrow{m}_\tau = (\overrightarrow{M}_\delta-\overrightarrow{C}_\delta)\label{eq:Ep3}\\
+	\gamma' R'^TK'^{-1}\overrightarrow{m'}_{\tau'} = (\overrightarrow{M}_\delta-\overrightarrow{C'}_\delta)\label{eq:Ep4}
 \end{gather}
 
-$(\vec{M}-\vec{C}_\delta)$ und $(\vec{M} - \vec{C'}_\delta)$ können durch die Ausdrücke in den Gleichungen \ref{eq:Ep3} und \ref{eq:Ep4} ersetzt werden um folgende Gleichung zu erhalten
+
+Wie in Abbildung \ref{fig:Epipolargeometry} gezeigt bilden die Vektoren $(\overrightarrow{M}_\delta - \overrightarrow{C}_\delta),\, (\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta)$ und $(\overrightarrow{C'}_\delta - \overrightarrow{C}_\delta)$ ein Dreieck. Für dieses Dreieck kann die folgende Gleichung aufgestellt werden. 
+
+\begin{gather}
+	(\overrightarrow{C'}_\delta - \overrightarrow{C}_\delta) = (\overrightarrow{M}_\delta - \overrightarrow{C}_\delta) - (\overrightarrow{M}_\delta - \overrightarrow{C'}_\delta)
+\end{gather}
+
+$(\overrightarrow{M}-\overrightarrow{C}_\delta)$ und $(\overrightarrow{M} - \overrightarrow{C'}_\delta)$ können durch die Ausdrücke in den Gleichungen \ref{eq:Ep3} und \ref{eq:Ep4} ersetzt werden um folgende Gleichung zu erhalten
 
 \begin{gather}
 	(\vec{C'}_\delta - \vec{C}_\delta) = \gamma' R^TK^{-1}\vec{m}_\tau - \gamma R'^TK'^{-1}\vec{m'}_{\tau'}. \label{eq:Ep5}
 \end{gather}
 
-Durch Vektoridentitäten können $\gamma$ und $\gamma'$ eliminiert und folgende Bedingung aus Gleichung \ref{eq:Ep5} hergeleitet werden \cite{Bronstein,Elements
-}: %Elements
+Durch Vektoridentitäten können $\gamma$ und $\gamma'$ eliminiert und folgende Bedingung aus Gleichung \ref{eq:Ep5} hergeleitet werden \cite{Bronstein,Elements} %Elements
 
 \begin{gather}
 	\vec{m'_\tau}^TK'^{-T}TR' \left[ \vec{C'_\delta}-\vec{C_\delta}\right]_\times R^TK^{-1}\vec{m_\tau}=\vec{m'_\tau}F\vec{m_\tau} = 0\label{eq:Ep6}
