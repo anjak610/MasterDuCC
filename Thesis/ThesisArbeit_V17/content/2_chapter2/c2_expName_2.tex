@@ -10,7 +10,7 @@ Der entwickelte Szenenrekonstrukionsalgorithmus wird im Folgenden anhand eines r
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1.\linewidth]{images/NEU_real_Arbeitsprozess.png}
-	\caption[Ablaufdiagramm für die reelle Rekonstruktion]{Ablaufdiagramm für die reelle Rekonstruktion}
+	\caption[Ablaufdiagramm für die reale Rekonstruktion]{Ablaufdiagramm für die reale Rekonstruktion.}
 	\label{fig:ArbeitsProzessReell}
 \end{figure}
 
@@ -37,7 +37,7 @@ Für die Stereobildaufnahme wurde eine Szene vor zwei nebeneinander platzierten 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.7\linewidth]{images/SetUpSameResolution.jpg}
-	\caption[Stereoaufbau im Überblick]{Kamera eins $C$ befindet im Bild links, Kamera zwei $C'$ befindet sich rechts im Bild. Auf dem Tisch zwischen den Kameras ist die in den Abbildungen \ref{fig:SurfLinks} und \ref{fig:SurfRechts} abgebildete Szene zu sehen. Beide Kameras sind auf die Szene gerichtet.}
+	\caption[Stereoaufbau im Überblick]{Kamera eins $C$ befindet sich im Bild links, Kamera zwei $C'$ befindet sich rechts im Bild. Auf dem Tisch zwischen den Kameras ist die in den Abbildungen \ref{fig:SurfLinks} und \ref{fig:SurfRechts} abgebildete Szene zu sehen. Beide Kameras sind auf die Szene gerichtet.}
 	\label{fig:StereoaufbauReal}
 \end{figure}
 
@@ -54,12 +54,12 @@ Für die Detektion von Punktekorrespondenzen bei Stereoaufnahmen einer dreidimen
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/PointsDetectedLeft.png}
-	\caption[Aufnahme von Kamera $C$]{Aufnahme von Kamera $C$}
+	\caption[Aufnahme von Kamera $C$]{Aufnahme der Kamera $C$.}
 	\label{fig:SurfRechts}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/PointsDetectedRight.png}
-	\caption[Aufnahme von Kamera $C'$]{Aufnahme von Kamera $C'$}
+	\caption[Aufnahme von Kamera $C'$]{Aufnahme der Kamera $C'$.}
 	\label{fig:SurfLinks}
 	\endminipage\hfill
 %	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet. Abbildung a zeigt das Bild von $C$, die Abbildung b zeigt das Bild von $C'$}
@@ -174,12 +174,12 @@ Ist $\hat{F}$ durch den erhöhten Rang keine singuläre Matrix, so ergeben der l
 \begin{figure}[!htb]
 	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/L_F_no_Constraint.png}
-	\caption[Epipolarlinien $C$ ohne Singularität]{Epipolarlinien ohne \textit{Epipolar-constraint} im Bild der Canon 6D}
+	\caption[Epipolarlinien $C$ ohne Singularität]{Da $\hat{F}$ nicht singulär ist gehend die Epipolarlinien im Bild von $C$ nicht durch einen gemeinsamen Epipole $e$.}
 	\label{fig:NoEpipoleWithF1}
 	\endminipage\hfill
 	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/LPrime_PC2_F_no_Constraint.png}
-	\caption[Epipolarlinien $C'$ ohne Singularität]{Epipolarlinien ohne \textit{Epipolar-constraint} im Bild der Canon 60D}
+	\caption[Epipolarlinien $C'$ ohne Singularität]{Da $\hat{F}$ nicht singulär ist gehend die Epipolarlinien im Bild von $C'$ nicht durch einen gemeinsamen Epipole $e'$.}
 	\label{fig:NoEpipoleWithF2}
 	\endminipage\hfill
 	%	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet}
@@ -203,12 +203,12 @@ Werden aus $\bar{F}$ der rechte und linke Kern bestimmt, so ergeben sich eindeut
 \begin{figure}[!htb]
 	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/L_PC1_F_Constraint.png}
-	\caption[Epipolarlinien in $C$ aus singulärer Fundamentalmatrix]{Die Abbildung zeigt, dass die Epipolarlinien auf der Aufnahme von $C$, nach dem Erzwingen der singularität in der normierten $\hat{F}$, alle durch den Epipol $e$ verlaufen}
+	\caption[Epipolarlinien in $C$ aus singulärer Fundamentalmatrix]{Die Abbildung zeigt, dass die Epipolarlinien auf der Aufnahme von $C$, nach dem Erzwingen der Singularität in der normierten $\hat{F}$, alle durch den Epipol $e$ verlaufen.}
 	\label{fig:EpipoleWithF1}
 	\endminipage\hfill
 	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/LPrime_PC2_F_Constraint.png}
-	\caption[Epipolarlinien in $C'$ aus singulärer Fundamentalmatrix ]{Die Abbildung zeigt, dass die Epipolarlinien auf der Aufnahme von $C'$, nach dem Erzwingen der singularität in der normierten $\hat{F}$, alle durch den Epipol $e'$ verlaufen}
+	\caption[Epipolarlinien in $C'$ aus singulärer Fundamentalmatrix ]{Die Abbildung zeigt, dass die Epipolarlinien auf der Aufnahme von $C'$, nach dem Erzwingen der Singularität in der normierten $\hat{F}$, alle durch den Epipol $e'$ verlaufen.}
 	\label{fig:EpipoleWithF2}
 	\endminipage\hfill
 	%	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet}
@@ -217,12 +217,12 @@ Werden aus $\bar{F}$ der rechte und linke Kern bestimmt, so ergeben sich eindeut
 \begin{figure}[!htb]
 	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/L_PC1_F_Constraint_denormalized.png}
-	\caption[Epipolarlinien in $C$ aus singulärer denormierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormiert wurde}
+	\caption[Epipolarlinien in $C$ aus singulärer denormierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormiert wurde.}
 	\label{fig:EpipoleWithF1Denorm}
 	\endminipage\hfill
 	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/LPrime_PC2_F_Constraint_denormalized.png}
-	\caption[Epipolarlinien in $C$ aus singulärer denormierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C'$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormiert wurde}
+	\caption[Epipolarlinien in $C$ aus singulärer denormierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C'$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormiert wurde.}
 	\label{fig:EpipoleWithF2Denorm}
 	\endminipage\hfill
 	%	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet}
@@ -263,15 +263,15 @@ kommt ein Wert $\neq 0$ heraus. Je weiter der Wert von Null abweicht, desto unge
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/problemTriangulation_beschriftet.png}
-	\caption[Kritische Triangulation: windschiefe Geraden]{a) Kritische Triangulation wegen windschiefer Geraden}
+	\caption[Kritische Triangulation: windschiefe Geraden]{a) Kritische Triangulation wegen windschiefer Geraden.}
 	\label{fig:ProblemTraingulation}
 	\endminipage\hfill
 	\minipage{0.5\textwidth}
 	\includegraphics[width=\linewidth]{images/SampsAppx.png}
-	\caption[Epipolare Bedingung wird nicht erfüllt]{b) Epipolare Bedingungen werden nicht erfüllt}
+	\caption[Epipolare Bedingung wird nicht erfüllt]{b) Epipolare Bedingungen werden nicht erfüllt.}
 	\label{fig:lFm}
 	\endminipage\hfill
-	\caption[Problemstellung für die Triangulation im real Beispiel]{ a) Die rückprojizierten Strahlen der ungenauen korrespondierenden Punkte $m_\sigma$ und $m'_{\sigma'}$ sind Windschief zueinander und treffen sich nicht in einem Punkt $M_{\delta,0}$ im Raum. b) Die korrespondierenden Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ erfüllen nicht die epipolare Bedingung. Die Epipolarlinie $l' = Fm$ ist die korrespondierende Epipolarlinie zu $m_\sigma$ und $l = F^Tm'$ ist die korrespondierende Epipolarlinie zu $m'_{\sigma}$. Da weder $m_\sigma$ noch $m'_{\sigma'}$ auf der Epipolarlinie zum jeweils korrespondierenden Punkt liegen, kommt es zu keinem Schnittpunkt der rückprojizierten Strahlen}
+	\caption[Problemstellung für die Triangulation im real Beispiel]{ a) Die rückprojizierten Strahlen der ungenauen korrespondierenden Punkte $m_\sigma$ und $m'_{\sigma'}$ sind windschief zueinander und treffen sich nicht in einem Punkt $M_{\delta,0}$ im Raum. b) Die korrespondierenden Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ erfüllen nicht die epipolare Bedingung. Die Epipolarlinie $l' = Fm$ ist die korrespondierende Epipolarlinie zu $m_\sigma$ und $l = F^Tm'$ ist die korrespondierende Epipolarlinie zu $m'_{\sigma}$. Da weder $m_\sigma$ noch $m'_{\sigma'}$ auf der Epipolarlinie zum jeweils korrespondierenden Punkt liegen, kommt es zu keinem Schnittpunkt der rückprojizierten Strahlen.}
 \end{figure}
 
 Um trotz der ungenauen korrespondierenden Punkte eine Triangulation zu ermöglichen, wird ein Verfahren voran geschaltet, welches zwei Punkte $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sucht, die möglichst nah an den ursprünglichen Punkten $m_\sigma$ und $m'_{\sigma'}$ liegen und gleichzeitig die epipolare Bedingung $\hat{m}'^T_{\sigma'}F\hat{m}_\sigma = 0$ erfüllen. $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sollen durch Minimierung einer Funktion $C$ bestimmt werden, welche die Distanz  $d$ zwischen $m_\sigma$ und $\hat{m}_\sigma$ und $m'_{\sigma'}$ und $\hat{m}'_{\sigma'}$ minimiert. Für die Minimierung wird das Verfahren der Sampson-Approximation gewählt\cite{HZ}. 
@@ -297,7 +297,7 @@ Aus allen möglichen Epipolarlinien, welche $\hat{l}$ und $\hat{l}'$ annehmen k�
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/SampsAppxNewPoints.png}
-	\caption[Sampson-Approximation: Kostenfunktion]{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\sigma}$ und $\hat{m'_{\sigma'}}$}\label{fig:Lot}
+	\caption[Sampson-Approximation: Kostenfunktion]{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\sigma}$ und $\hat{m'_{\sigma'}}$.}\label{fig:Lot}
 \end{figure}
 
 
@@ -596,20 +596,22 @@ y'p'^{3T}-p'^{2T}
 
 Die zwei Wege eine solche Matrix zu lösen wurden in Kapitel \ref{sec:HFE} vorgestellt. Zum einen kann die inhomogene Methode angewandt werden in welcher die Bestimmung des Kerns das Ergebnis für $M_{\delta 0}$ bietet oder es kann das homogene Verfahren angewandt werden, welches die Methode der Singulärwertzerlegung beinhaltet. \\
 
-Die rekonstruierten Punkte $M_{\delta 0}$ sind wie in Kapitel \ref{sec:minimal} auch nur bis auf einen Skalierungsfaktor genau bestimmt. Die Abbildungen \ref{fig:reconstructedSampson3D} und \ref{fig:reconstructedSampson2D} zeigen die aus den Bildern \ref{fig:SurfLinks} und \ref{fig:SurfRechts} rekonstruierten Punkte im Raum. Der rote Punkt steht für die Position von $C$, der grüne für die Position von $C'$. Die blauen Punkte sind die rekonstruierten Punkte, der beiden Bilder \ref{fig:SurfRechts} und \ref{fig:SurfLinks}. Somit wurde gezeigt, dass der Algorithmus, welcher für die synthetische Rekonstruktion entwickelt wurde, mit gewissen Modifizierungen auch für ein reelles Stereobildpaar angewandt werden kann. Durch die Näherungen, sind gewissen Abweichungen von der Originalszene nicht zu vermeiden.
+Die rekonstruierten Punkte $M_{\delta 0}$ sind wie in Kapitel \ref{sec:minimal} auch nur bis auf einen Skalierungsfaktor genau bestimmt. Die Abbildung \ref{fig:reconstructedSampson2D3D} zeigt die aus den Bildern \ref{fig:SurfLinks} und \ref{fig:SurfRechts} rekonstruierten Punkte im Raum. Der rote Punkt steht für die Position von $C$, der grüne für die Position von $C'$. Die blauen Punkte sind die rekonstruierten Punkte, der beiden Bilder \ref{fig:SurfRechts} und \ref{fig:SurfLinks}. Somit wurde gezeigt, dass der Algorithmus, welcher für die synthetische Rekonstruktion entwickelt wurde, mit gewissen Modifizierungen auch für ein reelles Stereobildpaar angewandt werden kann. Durch die Näherungen, sind gewissen Abweichungen von der Originalszene nicht zu vermeiden.
 
 
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/reconstructed_Points_Same_Resolutions.png}
-	\caption[Rekonstruierte Szene 3D]{Rekonstruierte Szene, unskaliert in Pixeleinheiten}
-	\label{fig:reconstructedSampson3D}
+%	\caption[Rekonstruierte Szene 3D]{Rekonstruierte Szene, unskaliert in Pixeleinheiten und in einem 3D-Plot angezeigt.}
+%	\label{fig:reconstructedSampson3D}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/reconstructed_Points_Same_Resolutions2D.png}
-	\caption[Rekonstruierte Szene 2D]{Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot angezeigt}
-	\label{fig:reconstructedSampson2D}
+	%\caption[Rekonstruierte Szene 2D]{Rekonstruierte Szene, unskaliert, in Pixeleinheiten und in einem 2D-Plot angezeigt.}
+%	\label{fig:reconstructedSampson2D}
 	\endminipage\hfill
+		\caption[Rekonstruierte Szene in 2D und 3D]{Die Rekonstruierte Szene wird in einem 2D- und einem 3D-Plot ausgegeben.}
+	\label{fig:reconstructedSampson2D3D}
 	%	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet}
 \end{figure}
 

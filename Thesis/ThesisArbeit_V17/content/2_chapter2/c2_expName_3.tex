@@ -4,7 +4,7 @@
 \section{Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Auflösung}
 \label{sec:realAuf} 
 
-Für den Test, ob die Szenerekonstruktion im Realbeispiel auch mit unterschiedlichen Kameraauflösungen funktioniert, wird die Kameramatrix $K'$ von $C'$ künstlich skaliert. Wie aus Kapitel \ref{sec:CameraModels}, hat diese die Form
+Für den Test, ob die Szenerekonstruktion im Realbeispiel auch mit unterschiedlichen Kameraauflösungen funktioniert, wird die Kameramatrix $K'$ von $C'$ künstlich skaliert. Wie aus Kapitel \ref{sec:CameraModels} bekannt, hat diese die Form
 
 %mn Kapitel \nameref{sec:basisTransformation} wurden die einzelnen Bauteile der Kameramatrix genau beschrieben. Die Kameramatrix $K'$ aus Matlab für die Canon 60D gegeben.
 
@@ -106,24 +106,24 @@ Der Szenenrekonstruktionsalgorithmus wird für jede Kameraauflösung getestet. D
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/R_11.png}
-	\caption[Vier Lösungen für $T$ bei gleicher Kameraauflösung]{Zeigt die Die rekonstruierte Matrix $T'$ bei unveränderter Auflösung. Die Auflösungen von $C_\delta$ und $C'_\delta$ sind die selben.}
+	\caption[Vier Lösungen für $T$ bei gleicher Kameraauflösung]{Zeigt die rekonstruierte Matrix $T'$ bei unveränderter Auflösung. Die Auflösungen von $C_\delta$ und $C'_\delta$ sind die selben.}
 	\label{fig:T11}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/R_52.png}
-	\caption[Vier Lösungen für $T$ bei $K'$ mit einer Vervielfachung von 5:2]{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
+	\caption[Vier Lösungen für $T$ bei $K'$ mit einer Vervielfachung von 5:2]{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde.}
 	\label{fig:T52}
 	\endminipage\hfill
 \end{figure}
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/R_12.png}
-	\caption[Vier Lösungen für $T$ bei $K'$ mit einer Vervielfachung von 1:2]{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[1:2]$ skaliert wurde}
+	\caption[Vier Lösungen für $T$ bei $K'$ mit einer Vervielfachung von 1:2]{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[1:2]$ skaliert wurde.}
 	\label{fig:T12}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/R_12_23.png}
-	\caption[Vier Lösungen für $T$ bei $K'$ mit einer Vervielfachung von 1.2 : 2.3]{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[1.2:2.3]$ skaliert wurde}
+	\caption[Vier Lösungen für $T$ bei $K'$ mit einer Vervielfachung von 1.2 : 2.3]{Zeigt die rekonstruierte Matrix $T'$ wenn $K'$ mit einem Verhältnis von $[1.2:2.3]$ skaliert wurde.}
 	\label{fig:T1223}
 	\endminipage\hfill
 \end{figure}
@@ -147,7 +147,7 @@ Die Abbildungen \ref{fig:RecT52}, \ref{fig:RecT12} und \ref{fig:RecT1223} zeigen
 	\includegraphics[width=\linewidth]{images/Reconstrution2D_52.png}
 %	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt}
 	\endminipage\hfill
-	\caption[Rekonstruierte Szene bei $K'$ = 5:2]{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde}
+	\caption[Rekonstruierte Szene bei $K'$ = 5:2]{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[5:2]$ skaliert wurde.}
 	\label{fig:RecT52}
 \end{figure}
 \begin{figure}[!htb]
@@ -161,7 +161,7 @@ Die Abbildungen \ref{fig:RecT52}, \ref{fig:RecT12} und \ref{fig:RecT1223} zeigen
 	%	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt}
 	\label{fig:awesome_image2}
 	\endminipage\hfill
-	\caption[Rekonstruierte Szene bei $K'$ = 1:2]{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[1:2]$ skaliert wurde}
+	\caption[Rekonstruierte Szene bei $K'$ = 1:2]{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[1:2]$ skaliert wurde.}
 	\label{fig:RecT12}
 \end{figure}
 \begin{figure}[!htb]
@@ -175,7 +175,7 @@ Die Abbildungen \ref{fig:RecT52}, \ref{fig:RecT12} und \ref{fig:RecT1223} zeigen
 	%	\caption{$C$ und $C'$ haben unterschiedliche Auflösungen eingestellt}
 	\label{fig:awesome_image2}
 	\endminipage\hfill
-	\caption[Rekonstruierte Szene bei $K'$ = 1.2:2.3]{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[1.2:2.3]$ skaliert wurde}
+	\caption[Rekonstruierte Szene bei $K'$ = 1.2:2.3]{Rekonstruierte Szene, wenn $K'$ mit einem Verhältnis von $[1.2:2.3]$ skaliert wurde.}
 	\label{fig:RecT1223}
 \end{figure}
 
