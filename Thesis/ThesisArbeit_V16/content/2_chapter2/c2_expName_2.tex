@@ -156,7 +156,7 @@ Die originalen Bildpunkte des Stereobildpaares, werden mit den Matrizen $T$ und 
 
 
 
-\subsection{Singularität der Fundamentalmatrix}
+\section{Singularität der Fundamentalmatrix}
 \label{sec:SingularityOfF}
 
 Die aus den Punktekorrespondenzen bestimmte Fundamentalmatrix muss eine singuläre Matrix mit Rang 2 sein\cite{HZ,ZZGXr,Ferid}. Die Singularität der Fundamentalmatrix sorgt zum einen dafür das ihr rechter und linker Kern jeweils eine eindeutige Lösung für den Epipol des jeweiligen Bildes ergibt und die Epipolarlinien, welche mit $l = Fm_\sigma$ und $l' = F^Tm'_{\sigma'}$ berechnet werden, auch alle durch diese Epipole verlaufen\cite{HZ}. Durch Ungenauigkeiten in korrespondierenden Bildpunkten kann es dazu kommen, dass die aus dem Normierten-Acht-Punkt-Algorithmus bestimmte Fundamentalmatrix $\hat{F}$ in ihrem Rang steigt und somit keine singuläre Matrix mehr ist. Matrizen sind singulär, wenn sie keine Inverse besitzen, was durch as verschwinden der Determinante nachgewiesen werden kann\cite{FormelsammlungMatrizen}. Die Determinante von $\hat{F}$ muss Null sein, damit sie eine singuläre Matrix ist.\\
@@ -230,7 +230,7 @@ Werden aus $\bar{F}$ der rechte und linke Kern bestimmt, so ergeben sich eindeut
 
 \pagebreak
 
-\subsection{Singulärwerte der essentiellen Matrix}
+\section{Singulärwerte der essentiellen Matrix}
 
 Die essentielle Matrix wird im entwickelten Algorithmus aus der Fundamentalmatrix $F$ bestimmt. Da zuvor die singularität von $F$ erzwungen wurde, ist die essentielle Matrix ebenfalls eine Matrix von Rang 2\cite{HZ}. Im synthetischen Beispiel wurde gezeigt, dass für die Bestimmung der extrinsischen Kameraparameter für $E$ gelten muss, dass für ihre Singulärwerte $\Sigma = \text{diag}(1,1,0)$ sind. \\
 

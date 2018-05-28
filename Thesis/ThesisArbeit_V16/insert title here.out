@@ -20,10 +20,10 @@
 \BOOKMARK [1][]{section.263}{5.1 Stereoaufbau}{chapter.261}% 20
 \BOOKMARK [1][]{section.265}{5.2 Korrespondenzanalyse}{chapter.261}% 21
 \BOOKMARK [1][]{section.267}{5.3 Normierter-Acht-Punkt-Algorithmus}{chapter.261}% 22
-\BOOKMARK [2][]{subsection.284}{5.3.1 Singularit\344t der Fundamentalmatrix}{section.267}% 23
-\BOOKMARK [2][]{subsection.288}{5.3.2 Singul\344rwerte der essentiellen Matrix}{section.267}% 24
-\BOOKMARK [1][]{section.289}{5.4 Szenenrekonstruktion mit Sampson-Approximation}{chapter.261}% 25
-\BOOKMARK [1][]{section.379}{5.5 Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\366sung}{chapter.261}% 26
+\BOOKMARK [1][]{section.284}{5.4 Singularit\344t der Fundamentalmatrix}{chapter.261}% 23
+\BOOKMARK [1][]{section.288}{5.5 Singul\344rwerte der essentiellen Matrix}{chapter.261}% 24
+\BOOKMARK [1][]{section.289}{5.6 Szenenrekonstruktion mit Sampson-Approximation}{chapter.261}% 25
+\BOOKMARK [1][]{section.379}{5.7 Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\366sung}{chapter.261}% 26
 \BOOKMARK [0][]{chapter.393}{6 Szenenrekonstruktion durch Rektifizierung}{}% 27
 \BOOKMARK [1][]{section.395}{6.1 Szenenrekonstruktion mit Rektifizierung}{chapter.393}% 28
 \BOOKMARK [1][]{section.398}{6.2 Rektifizierung mit Homographien}{chapter.393}% 29
