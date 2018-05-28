@@ -1,0 +1,199 @@
+\begin{thebibliography}{10}
+
+\bibitem{ComputerVision}
+L.~Priese.
+\newblock {\em Computer Vision, Einführung in die Verarbeitung und Analyse
+  digitaler Bilder}.
+\newblock Springer-Verlag Berlin Heidelberg, 2014.
+
+\bibitem{HZ}
+R.~Hartley{,}~A. Zisserman.
+\newblock {\em Multiple View Geometry in computer vision}.
+\newblock Cambridge, 2.Auflage{,} 2004.
+
+\bibitem{Ferid}
+F.~Bajrmovic.
+\newblock {\em Self- Calibration of Multi- Camera Systems}.
+\newblock {D}issertation, Fakultät für Mathematik und Informatik der
+  Friedrich-Schiller-Universität Jena, Logos Verlag Berlin GmbH{,} 2010.
+
+\bibitem{Elements}
+T.~Pajdla.
+\newblock Elements of geometry for computer vision.
+\newblock 2017.
+\newblock \url{http://cmp.felk.cvut.cz/~pajdla/gvg/GVG-2017-Lecture.pdf}{,}
+  Aufgerufen: 8. Feb. 2018.
+
+\bibitem{ZZGXr}
+G.~Xu{,}~Z. Zhang.
+\newblock {\em Epipolar Geometry in Stereo, Motion and Object Recognition: A
+  Unified Approach}.
+\newblock Springer-Science and Bussiness Media, 1996.
+
+\bibitem{Heipke}
+C.~Heipke.
+\newblock {\em Photogrammetrie und Fernerkundung}.
+\newblock Springer-Verlag GmbH Deutschland{,}1. Auflage{,} 2017.
+
+\bibitem{CamerModels.}
+R.~Sturm{,} S. Ramalingam{,}J.P. Tardif{,} S. Gasparini{,}~J. Barreto.
+\newblock Camera models and fundamental concepts used in geometric computer
+  vision.
+\newblock Mitsubishi Electric Research Laboratories{,} 2011.
+
+\bibitem{Photonik}
+E.~Hering{,}~R. Martin.
+\newblock {\em Photonik, Grundlagen, Technologien und Anwendung}.
+\newblock Springer-Verlag Berlin Heidelberg, 2006.
+
+\bibitem{Hoffmann}
+T.~Dang{,} C. Hoffmann{,}~C. Stiller.
+\newblock Continuous stereo self-calibration by camera parameter tracking.
+\newblock {IEEE} Transactions on Image processing{,} Vol. 18{,} Nr. 7{,} 2009.
+
+\bibitem{phdTwoView}
+B.~Micusik.
+\newblock {\em Two-View Geometry of Omnidirectional Cameras}.
+\newblock {D}issertation, Technische Universität Prag, 2004.
+
+\bibitem{Zhang2014}
+Z.~Zhang.
+\newblock {\em Epipolar Geometry}.
+\newblock Springer US, Boston, MA, pp. 247-258{,} 2014.
+
+\bibitem{ZZPaper}
+Z.~Zhang.
+\newblock Determining the epipolar geometry and its uncertainty: A review.
+\newblock International Journal of Computer Vision{,} Vol. 27(2){,} pp.
+  161–198{,} 1997.
+
+\bibitem{Bronstein}
+I.~Bronstein{,}~K. Semendjajew.
+\newblock {\em Taschenbuch der Mathematik}.
+\newblock Springer-Spektrum, 5. Auflage{,} 2004.
+
+\bibitem{phdextrinsicPara}
+S.~Jockel.
+\newblock {\em 3-dimensionale Rekonstruktion einer Tischszene aus monokularen
+  Handkamera-Bildsequenzen im Kontext automotiver Serviceroboter}.
+\newblock {D}issertation, Fakultät für Mathematik, Informatik und
+  Naturwissenschaften, Universität Hamburg, 2006.
+
+\bibitem{HZ8}
+R.~Hartley.
+\newblock In defence of the 8-point algorithm.
+\newblock {IEEE} Transactions on Pattern Analysis and Machine Intelligence{,}
+  1997.
+
+\bibitem{SURF}
+H.~Bay, T.~Tuytelaars, and L.~Van~Gool.
+\newblock {SURF}: Speeded up robust features.
+\newblock In Ale{\v{s}} Leonardis, Horst Bischof, and Axel Pinz, editors, {\em
+  Computer Vision -- ECCV 2006}, Berlin, Heidelberg, pp. 404--417{,} 2006.
+  Springer Berlin Heidelberg.
+
+\bibitem{Schwarz}
+H.~R. Schwarz{,}~N. Köckler.
+\newblock {\em Numerische Mathematik}.
+\newblock Springer-Verlag{,} 8. Auflage{,} 2011.
+
+\bibitem{Scholz}
+D.~Scholz.
+\newblock {\em Numerik interaktiv, Grundlagen verstehen, Modelle erforschen und
+  Verfahren anwenden mit taramath}.
+\newblock Springer-Verlag{,} 2016.
+
+\bibitem{LongQuan}
+L.~Quan.
+\newblock {\em Image Based Modeling}.
+\newblock Springer US, 1. Auflage{,} 2010.
+
+\bibitem{KIT}
+B.~Kitt.
+\newblock {\em Effiziente Schätzung dichter Bewegungsvektorfelder}.
+\newblock KIT Scientific Publishing{,} Karlsruhe, Band 027{,} 2013.
+
+\bibitem{Mathematica}
+Wolfram~Research{,} Inc.
+\newblock Mathematica, {V}ersion 11.1.1.
+\newblock Champaign{, } IL{,} 2018.
+
+\bibitem{Doessel}
+O.~Dössel.
+\newblock {\em Bildgebende Verfahren in der Medizin{:} Von der Technik zur
+  medizinischen Anwendung}.
+\newblock Springer-Verlag Berlin Heidelberg, 2. Auflage{,} 2016.
+
+\bibitem{SIFTSURF}
+X.~Qu{,} B. Soheilian{,} E. Habets{,}~N. Paparoditis.
+\newblock Evaluation of{ SIFT} and {SURF} for vision based localization.
+\newblock The International Archives of the Photogrammetry{,} Remote Sensing
+  and Spatial Information Sciences{,} Volume XLI-B3 {,}2016.
+
+\bibitem{Brooks}
+W.~Chojnacki{,} M. Brooks{,}~A. van~den Hengel{,} D.~Gawey.
+\newblock Revisiting hartley's normalized eight-point-algorithm.
+\newblock {IEEE} Transactions on Pattern Analysis and Machine Intelligence{,}
+  Vol. 25{,} 2003.
+
+\bibitem{ConditionNumber}
+A.~Pyzara{,} B. Bylina{,}~J. Bylina.
+\newblock The influence of a matrix condition number on iterative methods
+  convergence.
+\newblock Proceedings of the Federated Conference on Computer Science and
+  Information Systems{,} pp. 459–464{,} 2011.
+
+\bibitem{Manocha}
+D.~Manocha{,}~J. Demmel.
+\newblock Algorithms for intersecting parametric and algebraic curves{:} simple
+  intersections.
+\newblock ACM Transactions on Graphics (TOG){,} Vol. 13{,} pp. 73-100{,} 1994.
+
+\bibitem{FormelsammlungMatrizen}
+C.~Voigt{,}J. Adamy.
+\newblock {\em Formelsammlung der Matrizenrechnung}.
+\newblock Oldenburg Verlag München Wien, 2007.
+
+\bibitem{Fusiello}
+A.~Fusiello{,}~L. Irsara.
+\newblock Euclidean epipolar rectification of uncalibrated images.
+\newblock Eurac researc, IT, Eurac researc{,} IT{,} 2011.
+
+\bibitem{Javier}
+A.~Javier{,} G. Sanchez{,} R. M. Carmona {,} C.~V. Arnedor.
+\newblock {\em Scene reconstruction and geometrical rectification from stereo
+  images}.
+\newblock ResearchGate{,} 2005.
+
+\bibitem{ZZ}
+C.~Loop{,}~Z. Zhang.
+\newblock Computing rectifying homographies for stereo vision.
+\newblock Proceedings of IEEE Conference on Computer Vision and Pattern
+  Recognition{,} Vol.1{,} pp. 125–131{,}1999 Errors corrected on June 6{,}
+  2001.
+
+\bibitem{MatlabRec}
+The MathWorks{,}{I}nc.
+\newblock {MATLAB}{,}{V}ersion {R}2016a.
+
+\bibitem{R.H.}
+R.~Hartley.
+\newblock Euclidean reconstruction from uncalibrated views.
+\newblock International Journal of Computer Vision{,} Vol.26{,} pp.41-61{,}
+  1998.
+
+\bibitem{rayleigh}
+L.M. Surhone, M.T. Timpledon, and S.F. Marseken.
+\newblock {\em Rayleigh Quotient: Mathematics, Hermitian Matrix, Conjugate
+  Transpose, Eigenvalue, Eigenvector and Eeigenspace, Min-Max Theorem, Rayleigh
+  Quotient Iteration, Numerical Range, Euclidean Vector}.
+\newblock Betascript Publishing, 2010.
+
+\bibitem{Fortran77}
+W.~H. Press{,} S. A. Teukolsky{,} W. T. Vetterling{,} B.~P. Flannery.
+\newblock {\em Numerical Recipes in Fortran 77 The Art Of Scientific
+  Computing}.
+\newblock Copyright Numerical Recipes Software 1986, 1992, 1997 All Rights
+  Reserved., Vol. 1{,} 1997.
+
+\end{thebibliography}

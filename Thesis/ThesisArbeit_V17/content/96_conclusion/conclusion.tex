@@ -1,0 +1,48 @@
+\addchap{Zusammenfassung und Ausblick}
+
+In dieser Arbeit ist ein Szenenrekonstruktionsalgortithmus für stereoskopische Bildaufnahmen mit unterschiedlicher Auflösung entstanden. Dieser ist mit zuvor bekannten intrinsischen Kameraparametern im Stande die extrinsischen Kameraparameter zu bestimmen und die 3D-Szene zu rekonstruieren. \\
+
+Für die Entwicklung des Algorithmus wurde ein synthetischer Szenenaufbau implementiert. Die grundlegenden Funktionen für die Bestimmung der extrinsischen Kameraparameter und der darauf folgenden Rekonstruktion der Szene, wurden anhand dieses Szenenaufbaus entwickelt und validiert. Der entstandene Algorithmus wurde dann auf reale Stereoaufnahmen angewandt. Die auf Grund ungenauer Punktekorrespondenzen entstandenen Fehler, konnten mit Hilfe des synthetischen Beispiels lokalisiert werden. Ein möglicher Lösungsansatz wurde mit Zuhilfenahme von Literaturquellen entwickelt und der Algorithmus entsprechend modifiziert. Der entwickelte modifizierte Algorithmus kann aus stereoskopischen Bildquellen unterschiedlicher Auflösung von vorcharakterisierten intrinsischen Kameraparametern eine Rekonstruktion der aufgenommenen Szene durchführen.  \\
+
+Eine zukünftig angedachte Modifikation dieses Szenenrekonstruktionsalgorithmus ist die Ableitung der Kameraparameter durch die Fundamentalmatrix. Durch die Bestimmung der Fundamentalmatrix sind die für die Triangulation nötigen Informationen bereits vorhanden. Die Ableitung der nötigen Kameraparameter aus der Fundamentalmatrix müsste genauer analysiert und der Rekonstruktionsalgorithmus dementsprechend angepasst werden. Mit dieser Modifikation würde es erlaubt sein, Kameras ohne eine Vorkalibrierung für die Szenenrekonstruktion zu verwenden. \\
+
+Im zweiten Abschnitt dieser Masterarbeit wurde auf den in vielen Computer-Vision-Applikationen genutzten Ansatz für eine effiziente Szenenrekonstruktion, welcher keine zusätzliche Kamerakalibrierung beinhaltet, eingegangen. Der Ansatz basiert auf der vorherigen Rektifizierung von Stereoaufnahmen, was eine Vereinfachung der Korrespondenzanalyse mit sich bringt. Anhand dieser Korrespondenzen können Tiefenkarten erstellt werden, die eine direkte Abschätzung der Szenentiefe darstellt. Da für die Anwendung dieser Applikationen meist gleiche Kameraauflösungen vorausgesetzt werden, wurde in dieser Arbeit ein Rektifizierungsalgoritmus implementiert und auf Bildquellen verschiedener Auflösungen angewandt. Es wurde festgestellt, dass eine Ändern der Proportionen einzelner Pixel zwischen beiden Kameras im implementierte Algorithmus zu Streckung oder Stauchung der rekonstruierten Szene führt. Sind die Proportionen der Pixel dieselben und die Kameras haben nur unterschiedliche Auflösungen kann der implementierte Algorithmus angewandt werden und die Szene rekonstruiert werden. \\
+
+Die meisten Kameras arbeiten mit quadratischen Pixel. Stereoskopische Aufnahmen mit unterschiedlichen Auflösungen solcher Kameras können mit dem implementierten Algorithmus rekonstruiert werden. Für Aufnahmen von rechteckigen Pixel mit unterschiedlichen Proportionen könnte eine Funktion entwickelt werden, welche die unterschiedlichen Pixelproportionen anhand spezieller Bildpunkte erkennt und die Bilder in ein Koordinatensystem mit gleichen Pixelproportionen transformiert. Auf die transformierten Bilder könnte der implementierte Algorithmus angewandt werden und somit aus stereoskopischen Bilder unterschiedlicher Auflösung mit unterschiedlichen Pixelproportionen eine Szene rekonstruiert werden.  
+
+
+
+%%\section*{Zusammenfassung}
+%
+%
+%In dieser Arbeit ist ein Szenenrekonstruktionsalgortithmus für stereoskopische Bildaufnahmen entstanden. Dieser ist mit zuvor bekannten intrinsischen Kameraparametern im Stande die extrinsischen Kameraparameter zu bestimmen und daraufhin die 3D-Szene zu rekonstruieren. Des Weiteren unterstützt der Algorithmus die Verwendung von unterschiedlich aufgelösten Bildern. \\
+%
+%Für die Entwicklung des Algorithmus wurde ein synthetischer Szenenaufbau implementiert. Die grundlegenden Funktionen für die Bestimmung der extrinsischen Kameraparameter und der darauf folgenden Rekonstruktion der Szene, wurden anhand eines synthetisch generierten Szenenaufbaus entwickelt und validiert. der so entstandene Algorithmus konnte dann an realen Stereoaufnahmen angewandt werden. Die auf Grund ungenauer Punktekorrespondenzen entstandenen Fehler, konnten mit Hife des synthetischen Beispiel simuliert und somit lokalisiert werden. Mögliche Lösungsansätze wurden dann mit Zuhilfenahme von Literaturquellen entwickelt und der Algorithmus entsprechend modifiziert. \\
+%
+%Im nächsten Abschnitt wurde auf den in vielen Computer-Vision-Applikationen genutzten Ansatz für eine effiziente Szenenrekonstruktion, welcher keine zusätzliche Kamerakalibrierung beinhaltet, eingegangen. Der Ansatz basiert auf der vorherigen Rektifizierung von Stereoaufnahmen, was eine Vereinfachung der Korrespondenzanalyse mit sich bringt. Anhand dieser Korrespondenzen können Tiefenkarten erstellt werden, die eine direkte Abschätzung der Szenentiefe darstellt. Für diese Applikationen werden meist gleiche Kameraauflösungen vorausgesetzt. In dieser Arbeit wurde ein Rektifizierungsalgoritmus implementiert und auf Bildquellen verschiedener Auflösungen angewandt. Somit konnte die Funktionsweise des Algorithmus analysiert und Mögliche Erweiterungen dessen für solche Anwendungen entwickelt werden. 
+%
+%%\section*{Ausblick}
+%
+%Nachdem die ersten funktionsfähigen prototypischen Algorithmen für eine Szenenrekonstruktion implementiert sind, sollen nun Möglichkeiten für dessen Weiterentwicklung in zukünftigen Projekten aufgezeigt werden.\\
+%
+%Ein nächster Entwicklungsschritt des Algorithmus wäre die Rekonstruktion von Stereoaufnahmen unterschiedlicher Auflösungen allein anhand der Fundamentalmatrix durchführen zu können, so dass die intrinsischen Kameraparameter nicht weiter als Eingabeparameter benötigt werden. Anders als bei der essentiellen Matrix befinden sich in der Fundamentalmatrix noch die information der relativen Kameraauflösungen. Um eine Triangulation... \\
+%
+%Hierzu müsste ein Verfahren entwickelt werden, welches aus der Fundamentalmatrix die relativen Kameramatrizen der Kameras zueinander rausfiltert. Mit Hilfe des Wissens über die ...\\
+%
+%
+%
+%Der nächste Schritt wäre zum Beispiel die intrinsischen Kameraparameter als Eingangsparameter \\
+%
+%
+%
+%relative kamermatrix für die erweiterung des triangulationsverfahren mit der Fundamentalmatrix\\
+%
+%
+%
+%hauptskript ist soweit funktionsfähig \\
+%
+%noch das ganze biild durchgehen rekonstruieren. 
+%komplette punktekoorepondenzen\\
+
+
+

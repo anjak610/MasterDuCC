@@ -1,0 +1,42 @@
+\select@language {ngerman}
+\contentsline {chapter}{\nonumberline Abstract}{4}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Einleitung}{5}{chapter.3}
+\contentsline {chapter}{\numberline {2}Modell der Bildaufnahme mit einer Kamera}{7}{chapter.4}
+\contentsline {section}{\numberline {2.1}Lochkameramodell zur Abbildung von Gegenstandspunkten}{7}{section.6}
+\contentsline {section}{\numberline {2.2}Koordinatensysteme und Koordinatentransformation}{8}{section.10}
+\contentsline {section}{\numberline {2.3}Aufnahme mit einer beliebiger Kameraorientierung}{11}{section.36}
+\contentsline {chapter}{\numberline {3}Geometrische und algebraische Beziehungen zwischen Punktmengen im Raum}{14}{chapter.51}
+\contentsline {section}{\numberline {3.1}Korrespondenzen planarer Punktmengen mit Homographien}{14}{section.60}
+\contentsline {section}{\numberline {3.2}Korrespondenzanalyse f\IeC {\"u}r beliebige Punkte im Raum (Epipolargeometrie)}{16}{section.77}
+\contentsline {section}{\numberline {3.3}Bestimmung von Homographie und Fundamentalmatrix aus Punktkorrespondenzen}{19}{section.110}
+\contentsline {chapter}{\numberline {4}Synthetische Rekonstruktion}{23}{chapter.141}
+\contentsline {section}{\numberline {4.1}Simulierte Bildaufnahme einer virtuellen Szene}{24}{section.143}
+\contentsline {section}{\numberline {4.2}Bildanalyse}{26}{section.176}
+\contentsline {subsection}{\numberline {4.2.1}Bestimmung der extrinsischen Kameraparameter}{26}{subsection.177}
+\contentsline {subsection}{\numberline {4.2.2}Szenenrekonstruktion durch Triangulation}{28}{subsection.216}
+\contentsline {section}{\numberline {4.3}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{32}{section.231}
+\contentsline {section}{\numberline {4.4}Geometrie eines Sensors}{32}{section.232}
+\contentsline {section}{\numberline {4.5}Auswirkungen auf die Szenenrekonstruktion}{33}{section.235}
+\contentsline {chapter}{\numberline {5}Rekonstruktion aus realen Stereobildpaaren}{37}{chapter.261}
+\contentsline {section}{\numberline {5.1}Stereoaufbau}{38}{section.263}
+\contentsline {section}{\numberline {5.2}Korrespondenzanalyse}{38}{section.265}
+\contentsline {section}{\numberline {5.3}Normierter-Acht-Punkt-Algorithmus}{39}{section.267}
+\contentsline {section}{\numberline {5.4}Singularit\IeC {\"a}t der Fundamentalmatrix}{41}{section.284}
+\contentsline {section}{\numberline {5.5}Singul\IeC {\"a}rwerte der essentiellen Matrix}{43}{section.288}
+\contentsline {section}{\numberline {5.6}Szenenrekonstruktion mit Sampson-Approximation}{43}{section.289}
+\contentsline {section}{\numberline {5.7}Ergebnisse einer Stereoanalyse mit Kameras unterschiedlicher Aufl\IeC {\"o}sung}{49}{section.379}
+\contentsline {chapter}{\numberline {6}Szenenrekonstruktion durch Rektifizierung}{53}{chapter.393}
+\contentsline {section}{\numberline {6.1}Szenenrekonstruktion mit Rektifizierung}{53}{section.395}
+\contentsline {section}{\numberline {6.2}Rektifizierung mit Homographien}{55}{section.398}
+\contentsline {subsection}{\numberline {6.2.1}Projektive Transformation}{57}{subsection.431}
+\contentsline {subsection}{\numberline {6.2.2}\IeC {\"A}hnlichkeitstransformation}{61}{subsection.481}
+\contentsline {subsection}{\numberline {6.2.3}Scherungstransformation}{63}{subsection.509}
+\contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{65}{section.536}
+\contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{68}{chapter.547}
+\contentsline {section}{\numberline {7.1}Algorithmus zur Sortierung und Indizierung von Schachbretteckpunkten}{69}{section.549}
+\contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{76}{section.557}
+\contentsline {chapter}{\nonumberline Zusammenfassung und Ausblick}{79}{chapter*.563}
+\contentsline {chapter}{\nonumberline Anhang}{80}{chapter*.564}
+\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{86}{chapter*.566}
+\contentsline {chapter}{Abbildungsverzeichnis}{87}{chapter*.567}
+\contentsline {chapter}{Literaturverzeichnis}{89}{chapter*.568}
