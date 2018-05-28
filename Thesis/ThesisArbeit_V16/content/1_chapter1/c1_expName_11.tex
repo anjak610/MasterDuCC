@@ -1,4 +1,4 @@
-\chapter{Model der Bildaufnahme mit einer Kamera }
+\chapter{Modell der Bildaufnahme mit einer Kamera }
 \label{sec:CameraModels}
 
 Um einen Szenenrekonstruktionalgorithmus zu verstehen werden in diesem Abschnitt grundlegende  Bedingungen eingeführt um die Bildaufnahme mathematisch zu beschreiben. Ein abbildendes System besteht aus einem Objekt $M$, einer Kamera $C$ und einer Bildebene $I$ wie in Abbildung \ref{fig:PinholeCamera3D} dargestellt.\\
@@ -25,7 +25,7 @@ Ein Punkt $M$ in einem dreidimensionalen Weltkoordinatensystem wird mit Hilfe ei
 Im Folgenden wird zuerst ein Kameramodel eingeführt um die Projektion auf die Bildebene zu beschreiben. Daraufhin werden Koordinatentransformationen beschrieben um abschließend die Aufnahme eines Punktes mit einer willkürlichen Kameraorientierung zu berechnen. 
 
 
-\section{Lochkameramodell zur Abbildung eines Punktes auf die Bildebene}
+\section{Lochkameramodell zur Abbildung von Gegenstandspunkten}
 
 Mit Hilfe des Lochkameramodells wird die Abbildung eines Objektes auf eine Bildebene beschrieben. Das Modell beruht ausschließlich auf der geometrischen Optik und vernachlässigt physikalische Effekte, wie Beugung oder die Auswirkung der Linse\cite{Heipke}. Das Lochkameramodell besteht aus einem Projektionszentrum $C$. $C$ beschreibt gleichzeitig die Lage des Kamerazentrums und bildet den Ursprung des Kamerakoordinatensystems\cite{CamerModels.,HZ}. Die Blickrichtung der Kamera wird als Hauptachse bezeichnet. Die Bildebene steht senkrecht zur Hauptachse. Der Schnittpunkt der Hauptachse mit der Bildebene bildet den Hauptpunkt $HP$. Der Hauptpunkt ist der Ursprung des Bildebenenkoordinatensystems. Der Abstand vom Projektionszentrum zum Hauptpunkt wird als Brennweite $\zeta$ beschrieben\cite{HZ,CamerModels.}. Der Bildpunkt $m$ entsteht am Schnittpunk der Verbindungsgerade von $C$ und $M$ mit der Bildebene $I$. 
 
@@ -71,7 +71,7 @@ Die Projektion eines dreidimensionalen Punktes $M_\delta$ auf eine zweidimension
 Die Koordinaten auf der zweidimensionalen Bildebene werden häufig als homomogene Koordinaten angegeben. Dazu werden die Koordinaten mit $Z$ normiert und somit auf die Ebene $(x,y,1)^T$ projiziert wird. Zur Vereinfachung wird zuletzt nur die $x,\,y$ Koordinaten des entstandenen Bildes angegeben. Gleichung \ref{eq:2.1} beschreibt somit die Abbildung eines Punktes auf die Bildebene.
 %Die Kameramatrix beinhaltet alle Informationen über die intrinsischen Kameraparameter einer Kamera. $\zeta$ ist ein intrinsischer Kameraparameter. Mit $\zeta$ kann ein dreidimensionaler Punkt  $M=[X\,Y\,Z]$ in Kamerakoordinaten in einen Punkt $m$ in Bildebenenkoordinaten projiziert werden.
 
-\section{Koordinatentransformation}
+\section{Koordinatensysteme und Koordinatentransformation}
 
 Um einen Punkt von einem übergeordneten Weltkoordinatensystem in ein bestimmtes, zum Weltkoordinatensystem rotiertes, Kamerakoordinatensystem zu überführen ist eine Transformation notwendig. Im Folgenden wird der mathematische Weg einer Transformation eines Weltkoordinatensystems $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3},O)$ in ein Kamerakoordinatensystem $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3},C)$ beschrieben.
 
@@ -277,7 +277,7 @@ Die Transformationsmatrix $T$ setzt sich aus der Rotationsmatrix $R$ und der Tra
 \pagebreak
 
 
-\section{Aufnahme mit einer willkürlichen Kameraorientierung}
+\section{Aufnahme mit einer beliebiger Kameraorientierung}
 
 Ein beliebiger Punkt im Weltkoordinatensystem kann mit der eingeführten Operation auf die Bildebene und schließlich auch auf den Sensor projiziert werden. Es werden insgesamt vier verschiedene Koordinatensysteme definiert.
 Das Weltkoordinatensystem $(O,\delta)$ mit $\delta =(\hat{d_1}, \hat{d_2},\hat{d_3})$, das Kamerakoordinatensystem $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3})$, das Bildebenenkoordinatensystem $(I,\tau)$ mit $\tau = (\hat{t_1},\hat{t_2})$ und als letztes das Sensorkoordinatensystem mit $(S,\sigma)$ mit $\sigma = (\hat{u},\hat{v})$. Abbildung \ref{fig:KoordinatensystemeUeberblick} zeigt die Koordinatensysteme schematisch im Überblick. 

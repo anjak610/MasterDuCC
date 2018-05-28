@@ -1,4 +1,4 @@
-\chapter{Reelle Rekonstruktion}
+\chapter{Rekonstruktion aus realen Stereobildpaaren}
 \label{sec:real} 
 
 Der entwickelte Szenenrekonstrukionsalgorithmus wird im Folgenden anhand eines realen Stereoaufbaus getestet. Anders als bei den synthetischen Bilddaten im Beispiel zuvor, muss beim arbeiten mit reellen Stereobildern mit einer Fehleranfälligkeit der Bilddaten gerechnet werden. Liegt beispielsweise bei der Bestimmung von korrespondierenden Punkten eine Ecke zwischen zwei Pixel, so kann optisches Rauschen, welches in realen Aufnahmen präsent ist, dazu führen dass eine Ecke in gleichen Bildern an verschiedenen Pixel erkannt wird. Diese Abweichung der Punktekorrespondenz führt dazu, dass die in Kapitel \ref{sec:EpiolarContraints} definierten epipolaren Bedingungen nicht mehr zur Gänze erfüllt werden. In diesem Kapitel wird hauptsächlich darauf eingegangen, welche Auswirkungen diese Ungenauigkeiten auf die Bestimmung der Fundamentalmatrix, der essentiellen Matrix, der extrinsischen Kameraparameter und der anschließenden Rekonstruktion der Szene durch Triangulierng haben und wie man ihnen entgegenwirken kann. In Abbildung \ref{fig:ArbeitsProzessReell}, ist der Arbeitsprozess für den reellen Fall zu sehen. Der Ablauf im Allgemeinen bleibt beständig.
@@ -217,12 +217,12 @@ Werden aus $\bar{F}$ der rechte und linke Kern bestimmt, so ergeben sich eindeut
 \begin{figure}[!htb]
 	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/L_PC1_F_Constraint_denormalized.png}
-	\caption[Epipolarlinien in $C$ aus singulärer denormalisierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormalisiert wurde}
+	\caption[Epipolarlinien in $C$ aus singulärer denormierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormiert wurde}
 	\label{fig:EpipoleWithF1Denorm}
 	\endminipage\hfill
 	\minipage{0.46\textwidth}
 	\includegraphics[width=\linewidth]{images/LPrime_PC2_F_Constraint_denormalized.png}
-	\caption[Epipolarlinien in $C$ aus singulärer denormalisierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C'$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormalisiert wurde}
+	\caption[Epipolarlinien in $C$ aus singulärer denormierter Fundamentalmatrix]{Die Abbildung zeigt die Epipolarlinien in $C'$ nachdem die Fundamentalmatrix $\bar{F}$ mit $F = T'\bar{F}T$ denormiert wurde}
 	\label{fig:EpipoleWithF2Denorm}
 	\endminipage\hfill
 	%	\caption{Die mit dem \textit{SURF}-Algorithmus gefundenen Punkte sind mit den gelben Ziffern im Bild gekennzeichnet}
@@ -263,7 +263,7 @@ kommt ein Wert $\neq 0$ heraus. Je weiter der Wert von Null abweicht, desto unge
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/problemTriangulation_beschriftet.png}
-	\caption[Windschiefe Geraden]{a) Windschiefe Geraden}
+	\caption[Kritische Triangulation: windschiefe Geraden]{a) Kritische Triangulation wegen windschiefer Geraden}
 	\label{fig:ProblemTraingulation}
 	\endminipage\hfill
 	\minipage{0.5\textwidth}
@@ -271,7 +271,7 @@ kommt ein Wert $\neq 0$ heraus. Je weiter der Wert von Null abweicht, desto unge
 	\caption[Epipolare Bedingung wird nicht erfüllt]{b) Epipolare Bedingungen werden nicht erfüllt}
 	\label{fig:lFm}
 	\endminipage\hfill
-	\caption[Problemstellung für die Triangulation im reellen Beispiel]{ a) Die rückprojizierten Strahlen der ungenauen korrespondierenden Punkte $m_\sigma$ und $m'_{\sigma'}$ sind Windschief zueinander und treffen sich nicht in einem Punkt $M_{\delta,0}$ im Raum. b) Die korrespondierenden Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ erfüllen nicht die epipolare Bedingung. Die Epipolarlinie $l' = Fm$ ist die korrespondierende Epipolarlinie zu $m_\sigma$ und $l = F^Tm'$ ist die korrespondierende Epipolarlinie zu $m'_{\sigma}$. Da weder $m_\sigma$ noch $m'_{\sigma'}$ auf der Epipolarlinie zum jeweils korrespondierenden Punkt liegen, kommt es zu keinem Schnittpunkt der rückprojizierten Strahlen}
+	\caption[Problemstellung für die Triangulation im real Beispiel]{ a) Die rückprojizierten Strahlen der ungenauen korrespondierenden Punkte $m_\sigma$ und $m'_{\sigma'}$ sind Windschief zueinander und treffen sich nicht in einem Punkt $M_{\delta,0}$ im Raum. b) Die korrespondierenden Bildpunkte $m_\sigma$ und $m'_{\sigma'}$ erfüllen nicht die epipolare Bedingung. Die Epipolarlinie $l' = Fm$ ist die korrespondierende Epipolarlinie zu $m_\sigma$ und $l = F^Tm'$ ist die korrespondierende Epipolarlinie zu $m'_{\sigma}$. Da weder $m_\sigma$ noch $m'_{\sigma'}$ auf der Epipolarlinie zum jeweils korrespondierenden Punkt liegen, kommt es zu keinem Schnittpunkt der rückprojizierten Strahlen}
 \end{figure}
 
 Um trotz der ungenauen korrespondierenden Punkte eine Triangulation zu ermöglichen, wird ein Verfahren voran geschaltet, welches zwei Punkte $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sucht, die möglichst nah an den ursprünglichen Punkten $m_\sigma$ und $m'_{\sigma'}$ liegen und gleichzeitig die epipolare Bedingung $\hat{m}'^T_{\sigma'}F\hat{m}_\sigma = 0$ erfüllen. $\hat{m}_\sigma$ und $\hat{m}'_{\sigma'}$ sollen durch Minimierung einer Funktion $C$ bestimmt werden, welche die Distanz  $d$ zwischen $m_\sigma$ und $\hat{m}_\sigma$ und $m'_{\sigma'}$ und $\hat{m}'_{\sigma'}$ minimiert. Für die Minimierung wird das Verfahren der Sampson-Approximation gewählt\cite{HZ}. 
@@ -297,7 +297,7 @@ Aus allen möglichen Epipolarlinien, welche $\hat{l}$ und $\hat{l}'$ annehmen k�
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/SampsAppxNewPoints.png}
-	\caption[Sampson Approximation aufstellen der Kostenfunktion]{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\sigma}$ und $\hat{m'_{\sigma'}}$}\label{fig:Lot}
+	\caption[Sampson-Approximation: Kostenfunktion]{Die Abbildung zeigt die zwei korrespondierenden Epipolarlinien $\hat{l}$ und $\hat{l'}$ mit den gesuchten Punkten $\hat{m_\sigma}$ und $\hat{m'_{\sigma'}}$}\label{fig:Lot}
 \end{figure}
 
 

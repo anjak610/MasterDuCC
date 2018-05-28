@@ -1,4 +1,4 @@
-\chapter{Geometrische Beziehungen zwischen Punktekorrespondenzen}
+\chapter{Geometrische und algebraische Beziehungen zwischen Punktmengen im Raum}
 \label{sec:HFE}
 
 Das Ziel dieser Masterarbeit ist eine 3D Szene im dreidimensionalen Raum aus einer stereoskopischen Aufnahme zweier Kameras zu rekonstruieren. Bisher wurde die Bildaufnahme einer einzigen Kamera betrachtet. Jedoch kann eine Kamera allein nicht räumlich sehen. Um dreidimensionale Szenen aus Bildern zu rekonstruieren, müssen mindestens zwei Aufnahmen der gleichen Szene aus unterschiedlichen Blickwinkeln aufgenommen werden. Innerhalb dieser Aufnahmen müssen Punktekorrespondenzen gesucht werden. Korrespondierende Punkte zeichnen sich dadurch aus, dass sie die Abbildungen desselben Ursprungspunktes im Raum sind. Für diese Punkte muss eine gemeinsame Abbildungsvorschrift aufgestellt werden. Die Abbildungsvorschrift wird in einer $3 \times 3$-Matrix $H$ ausgedrückt, welche die Transformationsmatrizen sowie die Kameramatrizen zusammenfasst. Die $3 \times 3$-Matrix, kann aus gegebenen Punktekorrespondenzen abgeleitet werden. Aus $H$ können Rückschlüsse auf die Kameraparameter der beiden Kameras gezogen werden.  \\
@@ -42,7 +42,7 @@ Eine Abbildungsvorschrift kann in bestimmten Fällen eindeutig bestimmt werden. 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/HomographieDP_beschriftet.png}
-	\caption[Abbildungsvorschrift in Homographien]{In der Abblidung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ befindet sich auf der Ebene $\pi$, welche durch die Achsen $\hat{d_1}$ und $\hat{d_2}$ aufgespannt wird. $M_\delta$ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $m_\tau$ und $m'_\tau$.}  
+	\caption[Abbildungsvorschrift mit Homographien]{In der Abbildung sind die beiden Kameras $C$ und $C'$ mit ihren Bildebenen $I$ und $I'$ zu sehen. Ein Objektpunkt $M_\delta$ bezüglich eines Weltkoordinatensystems $(O,\delta)$ befindet sich auf der Ebene $\pi$, welche durch die Achsen $\hat{d_1}$ und $\hat{d_2}$ aufgespannt wird. $M_\delta$ wird auf $I$ und $I'$ projiziert. Es entstehen die Bildpunkte $m_\tau$ und $m'_\tau$.}  
 	\label{fig:Homographie}
 \end{figure}
 
@@ -155,7 +155,7 @@ Diese Homographiebedingung stellt ein Gleichungssystem mit neun unbekannten, wel
 
 
 
-\section{Korrespondenzanalyse für beliebige Punkte im Raum (Epipolare Geometrie)}
+\section{Korrespondenzanalyse für beliebige Punkte im Raum (Epipolargeometrie)}
 \label{sec:EpiolarContraints}
 
 Für Bilder von komplexeren, dreidimensionalen Objekten, bei denen die Punkte auf verschiedenen Ebenen im Raum liegen können, kann keine Homographiebedingung hergestellt werden um die Kameraparameter zu bestimmen. Jedoch kann auf geometrische Bedingungen zurückgegriffen werden, um die Abbildungsvorschrift zwischen den Bildern auszunutzen und die Kameraparameter beider Kameras zu bestimmen. Ein Ursprungspunkt $M_\delta$ wird wieder mit zwei Kameras $C$ und $C'$ aufgenommen. In Abbildung \ref{fig:Epipolargeometry} ist das stereoskopische System dargestellt.
@@ -165,7 +165,7 @@ Für Bilder von komplexeren, dreidimensionalen Objekten, bei denen die Punkte au
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/EpipolarGeoemtrieGrafik_beschriftet.png}
-	\caption[Epipolar Geometrie]{$C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinie verbindet die Projektionszentren der Kameras. Die Punkte an welchen die Basislinie die Bildebenen schneidet werden als Epipole $e$ und $e'$ bezeichnet. Durch einen Epipol verlaufen alle Epipolarlinien des Bildes. $M_\delta$ ist der Objektpunkt im 3D-Raum und $m_\tau$ und $m'_{\tau'}$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M_\delta$ bilden die sogenannte Epipolarebene\cite{Hoffmann,phdTwoView,HZ,ZZGXr}.}  
+	\caption[Epipolargeometrie]{$C$ und $C'$ sind die Projektionszentren zweier Kameras. Beide Kameras besitzen jeweils eine Bildebene. Die Basislinie verbindet die Projektionszentren der Kameras. Die Punkte an welchen die Basislinie die Bildebenen schneidet werden als Epipole $e$ und $e'$ bezeichnet. Durch einen Epipol verlaufen alle Epipolarlinien des Bildes. $M_\delta$ ist der Objektpunkt im 3D-Raum und $m_\tau$ und $m'_{\tau'}$ sind die jeweiligen Abbildungen dieses Punktes auf den Bildebenen. Die Verbindungsvektoren zwischen $C, C'$ und $M_\delta$ bilden die sogenannte Epipolarebene\cite{Hoffmann,phdTwoView,HZ,ZZGXr}.}  
 	\label{fig:Epipolargeometry}
 \end{figure}
 
@@ -185,7 +185,7 @@ Ein Bildpunkt $m_i$ auf der Bildebene $I$ wird zuerst auf die Gerade, die durch 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/EpipolarLinien.png}
-	\caption[Abbildungsvorschrift]{Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, während sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.}  
+	\caption[Punkte und Epipolarlinien]{Die Objektpunkte $M_1, M_2$ und $M_3$ werden in $I'$ als $m'_1, m'_2$ und $m'_3$ abgebildet, während sie in $I$ immer den selben Bildpunkt $m_1$ ergeben.}  
 	\label{fig:Epipolarconstraint}
 \end{figure}
 

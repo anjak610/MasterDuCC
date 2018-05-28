@@ -18,14 +18,14 @@ Aus den zuvor detektierten Eckpunkten des Schachbretts wird ein Startpunkt ermit
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/VerzeichnetesSchachbretFunktion.png}
-	\caption[Funktionsübersicht des Sorieralgorithmus]{Schematik der Vorgehensweise des Sortieralgorithmus}
+	\caption[Funktionsübersicht des Sortieralgorithmus]{Schematik der Vorgehensweise des Sortieralgorithmus}
 	\label{fig:UebersichtSortierungsAlg}
 \end{figure}
 
 
 
 
-\section{Sortierungsalgorithmus}
+\section{Algorithmus zur Sortierung und Indizierung von Schachbretteckpunkten}
 
 Im Folgenden soll der Ablauf des implementierten Sortierungsalgorithmus beschrieben und dessen Funktionsweise an Beispielen von unterschiedlichen Schachbrettern demonstriert werden.\\
 
@@ -34,7 +34,7 @@ Der Soritierungsalgorithmus nimmt eine Liste aus unsortierten Eckpunkten eines S
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.6\linewidth]{images/VerzeichnetesSchachbrett_1.png}
-	\caption[Startpunktsuche in Schachbrettpunkten]{Die in blau markierten Bereiche beinhalten die möglichen Startpunkte. Der Bereich entlang der horizontalen $j$- Achse bildet die erste Suchfensterreihe in $i$-Richtung. Der blaue Bereich entlang der vertikalen $i$-Achse bildet die erste Suchfensterreihe in $j$-Richtung. Der gelbe Punkt steht für den Punkt welcher als $VecJ$ bezeichnet wird und der orange Punkt ist derjenige Punkt, welcher als $VecI$ bestimmt wird}
+	\caption[Startpunktsuche in Schachbretteckpunkten]{Die in blau markierten Bereiche beinhalten die möglichen Startpunkte. Der Bereich entlang der horizontalen $j$- Achse bildet die erste Suchfensterreihe in $i$-Richtung. Der blaue Bereich entlang der vertikalen $i$-Achse bildet die erste Suchfensterreihe in $j$-Richtung. Der gelbe Punkt steht für den Punkt welcher als $VecJ$ bezeichnet wird und der orange Punkt ist derjenige Punkt, welcher als $VecI$ bestimmt wird}
 	\label{fig:7.1}
 \end{figure}
 
@@ -86,7 +86,7 @@ Für die Bestimmung von $NextI$ wird zuerst initial $NextI = \, <|Coordx \righta
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.6\linewidth]{images/VerzeichnetesSchachbrett_2.png}
-	\caption[Finden der Startvektoren in Schachbrettpunkten]{Der gelb markierte Bereich beinhaltet die für $NextI$ möglichen Punkte. der orange markierte Bereich beinhaltet die für $NextJ$ möglichen Punkte. Der violett gefärbte Punkt ist der gesuchte $NextI$, der rot gefärbte Punkt ist der gesuchte $NextJ$}
+	\caption[Bestimmung von Startvektoren]{Der gelb markierte Bereich beinhaltet die für $NextI$ möglichen Punkte. der orange markierte Bereich beinhaltet die für $NextJ$ möglichen Punkte. Der violett gefärbte Punkt ist der gesuchte $NextI$, der rot gefärbte Punkt ist der gesuchte $NextJ$}
 	\label{fig:NextINextJ}
 \end{figure}
 
@@ -191,12 +191,12 @@ In Abbildung \ref{fig:ChessBoardLeft} und \ref{fig:ChessBoardRight} wird ein Sch
 \begin{figure}[!htb]
 	\minipage{0.47\textwidth}
 	\includegraphics[width=\linewidth]{images/ChessBoardLeft.png}
-	\caption[Korrespondezsuche mit Sortierungsalgorithmus. Schachbrett auf linker Seite]{Die Kamera,welche das Schachbrett abbildet steht links versetzt zum Schachbrett und ist rotiert}
+	\caption[Korrespondezsuche mit Sortierungsalgorithmus: Schachbrett auf linker Seite]{Die Kamera,welche das Schachbrett abbildet steht links versetzt zum Schachbrett und ist rotiert}
 	\label{fig:ChessBoardLeft}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/ChessBoardRight.png}
-	\caption[Korrespondezsuche mit Sortierungsalgorithmus. Schachbrett auf rechter Seite]{Die Kamera, welche das Schachbrett abbildet steht rechts versetzt zum Schachbrett und ist rotiert}
+	\caption[Korrespondezsuche mit Sortierungsalgorithmus: Schachbrett auf rechter Seite]{Die Kamera, welche das Schachbrett abbildet steht rechts versetzt zum Schachbrett und ist rotiert}
 	\label{fig:ChessBoardRight}
 	\endminipage\hfill
 \end{figure}
@@ -205,12 +205,12 @@ In Abbildung \ref{fig:ChessBoardLeft} und \ref{fig:ChessBoardRight} wird ein Sch
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/ChessBoardLeftAlg.png}
-	\caption[Ergebnis des Sortierungsalgorithmus. Schachbrett auf linker Seite]{Die Abbidlung zeigt das Ergebnis der Sortierung des linken Schachbretts. In grün ist die Reihe an Punkten zu sehen, welche den Schlüssel $NeighbourI = 3$ haben.}
+	\caption[Ergebnis des Sortierungsalgorithmus: Schachbrett auf linker Seite]{Die Abbidlung zeigt das Ergebnis der Sortierung des linken Schachbretts. In grün ist die Reihe an Punkten zu sehen, welche den Schlüssel $NeighbourI = 3$ haben.}
 	\label{fig:ChessBoardLeftAlg}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/ChessBoardRightAlg.png}
-	\caption[Ergebnis des Sortierungsalgorithmus. Schachbrett auf linker Seite]{Die Abbidlung zeigt das Ergebnis der Sortierung des rechten Schachbretts. In grün ist die Reihe an Punkten zu sehen, welche den Schlüssel $NeighbourI = 3$ haben.}
+	\caption[Ergebnis des Sortierungsalgorithmus: Schachbrett auf linker Seite]{Die Abbildung zeigt das Ergebnis der Sortierung des rechten Schachbretts. In grün ist die Reihe an Punkten zu sehen, welche den Schlüssel $NeighbourI = 3$ haben.}
 	\label{fig:ChessBoardRightAlg}
 	\endminipage\hfill
 \end{figure}
@@ -244,7 +244,7 @@ In den folgenden Beispielen ist jeweils das Originalbild des Schachbretts und da
 \begin{figure}[!htb]
 	\minipage{0.45\textwidth}
 	\includegraphics[width=\linewidth]{images/perspektivisch.png}
-	\caption[perspektivisch startk verzerrtes Schachbrett]{Perspektivisch stark verzerrtes Schachbrett}
+	\caption[Perspektivisch stark verzerrtes Schachbrett]{Perspektivisch stark verzerrtes Schachbrett}
 	\label{fig:Extreme3}
 	\endminipage\hfill
 	\minipage{0.49\textwidth}
@@ -276,7 +276,7 @@ In den folgenden Beispielen ist jeweils das Originalbild des Schachbretts und da
 	\endminipage\hfill
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/Tonnenverzeichnung_Perspektivisch_Alg.png}
-	\caption[Sortieret Punkte eines perspektivisch verzerrten Schachbretts mit Tonnenverzeichnung]{Ergebnis des Sortierungsalgorithmus.}
+	\caption[Sortierte Punkte eines perspektivisch verzerrten Schachbretts mit Tonnenverzeichnung]{Ergebnis des Sortierungsalgorithmus.}
 	\label{fig:Extreme8}
 	\endminipage\hfill
 \end{figure}
@@ -284,7 +284,7 @@ In den folgenden Beispielen ist jeweils das Originalbild des Schachbretts und da
 \begin{figure}[!htb]
 	\minipage{0.48\textwidth}
 	\includegraphics[width=\linewidth]{images/extrBsp.png}
-	\caption{Bild eines Tonnenförmig verzeichnetem leicht perspektivisch verzerrtem Schachbretts}
+	\caption{Bild eines rotierten Schachbretts mit Kissenverzeichnung}
 	\label{fig:Extreme9}
 	\endminipage\hfill
 	\minipage{0.48\textwidth}

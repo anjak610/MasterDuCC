@@ -1,13 +1,13 @@
 \select@language {ngerman}
 \contentsline {chapter}{\nonumberline Abstract}{4}{chapter*.2}
 \contentsline {chapter}{\numberline {1}Einleitung}{5}{chapter.3}
-\contentsline {chapter}{\numberline {2}Model der Bildaufnahme mit einer Kamera}{7}{chapter.4}
-\contentsline {section}{\numberline {2.1}Lochkameramodell zur Abbildung eines Punktes auf die Bildebene}{7}{section.6}
-\contentsline {section}{\numberline {2.2}Koordinatentransformation}{8}{section.10}
-\contentsline {section}{\numberline {2.3}Aufnahme mit einer willk\IeC {\"u}rlichen Kameraorientierung}{11}{section.36}
-\contentsline {chapter}{\numberline {3}Geometrische Beziehungen zwischen Punktekorrespondenzen}{14}{chapter.51}
+\contentsline {chapter}{\numberline {2}Modell der Bildaufnahme mit einer Kamera}{7}{chapter.4}
+\contentsline {section}{\numberline {2.1}Lochkameramodell zur Abbildung von Gegenstandspunkten}{7}{section.6}
+\contentsline {section}{\numberline {2.2}Koordinatensysteme und Koordinatentransformation}{8}{section.10}
+\contentsline {section}{\numberline {2.3}Aufnahme mit einer beliebiger Kameraorientierung}{11}{section.36}
+\contentsline {chapter}{\numberline {3}Geometrische und algebraische Beziehungen zwischen Punktmengen im Raum}{14}{chapter.51}
 \contentsline {section}{\numberline {3.1}Korrespondenzen planarer Punktmengen mit Homographien}{14}{section.60}
-\contentsline {section}{\numberline {3.2}Korrespondenzanalyse f\IeC {\"u}r beliebige Punkte im Raum (Epipolare Geometrie)}{16}{section.77}
+\contentsline {section}{\numberline {3.2}Korrespondenzanalyse f\IeC {\"u}r beliebige Punkte im Raum (Epipolargeometrie)}{16}{section.77}
 \contentsline {section}{\numberline {3.3}Bestimmung von Homographie und Fundamentalmatrix aus Punktekorrespondenzen}{19}{section.110}
 \contentsline {chapter}{\numberline {4}Synthetische Rekonstruktion}{23}{chapter.141}
 \contentsline {section}{\numberline {4.1}Simulierte Bildaufnahme einer virtuellen Szene}{24}{section.143}
@@ -17,7 +17,7 @@
 \contentsline {section}{\numberline {4.3}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{32}{section.231}
 \contentsline {section}{\numberline {4.4}Geometrie eines Sensors}{32}{section.232}
 \contentsline {section}{\numberline {4.5}Auswirkungen auf die Szenenrekonstruktion}{33}{section.235}
-\contentsline {chapter}{\numberline {5}Reelle Rekonstruktion}{37}{chapter.261}
+\contentsline {chapter}{\numberline {5}Rekonstruktion aus realen Stereobildpaaren}{37}{chapter.261}
 \contentsline {section}{\numberline {5.1}Stereoaufbau}{38}{section.263}
 \contentsline {section}{\numberline {5.2}Korrespondenzanalyse}{38}{section.265}
 \contentsline {section}{\numberline {5.3}Normierter-Acht-Punkt-Algorithmus}{39}{section.267}
@@ -33,10 +33,10 @@
 \contentsline {subsection}{\numberline {6.2.3}Scherungstransformation}{63}{subsection.509}
 \contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{65}{section.536}
 \contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{68}{chapter.547}
-\contentsline {section}{\numberline {7.1}Sortierungsalgorithmus}{69}{section.549}
+\contentsline {section}{\numberline {7.1}Algorithmus zur Sortierung und Indizierung von Schachbretteckpunkten}{69}{section.549}
 \contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{76}{section.557}
 \contentsline {chapter}{\nonumberline Zusammenfassung und Ausblick}{79}{chapter*.563}
 \contentsline {chapter}{\nonumberline Anhang}{80}{chapter*.564}
-\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{149}{chapter*.570}
-\contentsline {chapter}{Abbildungsverzeichnis}{150}{chapter*.571}
-\contentsline {chapter}{Literaturverzeichnis}{152}{chapter*.572}
+\contentsline {chapter}{\nonumberline Eidesstattliche Erkl\IeC {\"a}rung}{86}{chapter*.566}
+\contentsline {chapter}{Abbildungsverzeichnis}{87}{chapter*.567}
+\contentsline {chapter}{Literaturverzeichnis}{89}{chapter*.568}
