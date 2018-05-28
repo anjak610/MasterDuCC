@@ -3,7 +3,7 @@
 
 
 Ein verbreiteter Ansatz der Stereobildanalyse basiert auf zuvor rektifizierten Bildern.
-Rektifizierte Bilder zeichnen sich durch ins unendliche projizierte Epipole aus. Dies hat zu Folge, dass die jeweiligen Epipolarlinien der Bilder parallel zueinander verlaufen. Anschließend werden die Epipole noch so rotiert, dass die Epipolarlinien in einheitlichen Scanlinien über beide Bilder verlaufen\cite{Fusiello,Javier,ZZ,MatlabRec,phdextrinsicPara}. In Abbildung \ref{fig:Scanlinien} ist das graphisch dargestellt.
+Rektifizierte Bilder zeichnen sich durch ins unendliche projizierte Epipole aus. Dies hat zu Folge, dass die jeweiligen Epipolarlinien der Bilder parallel zueinander verlaufen. Anschließend werden die Epipole noch so rotiert, dass sich die Epipolarlinien in einheitlichen Scanlinien über beide Bilder ziehen\cite{Fusiello,Javier,ZZ,MatlabRec,phdextrinsicPara}. In Abbildung \ref{fig:Scanlinien} ist das graphisch dargestellt.
 
 \begin{figure}[!htb]
 	\centering
@@ -29,7 +29,7 @@ Im Verlauf des Kapitels wird zunächst der Arbeitsprozess der Stereoanalyse auf 
 \section{Szenenrekonstruktion mit Rektifizierung}
 
 
-Bestimmte Formen der Rektifizierung benötigen keine vorherige Kalibrierung der Kameras und werden in den meisten gängigen Szenenrekonstruktionsalgorithmen eingesetzt. \cite{Fusiello,Javier,R.H.}. Der Arbeitsprozess für die Szenenrekonstruktion auf Basis von rektifizierten Bildern, welcher in Abbildung \ref{fig:ArbeitsprozessRektifizierung} schematisch dargestellt ist, unterscheidet sich etwas zu den bereits bekannten Arbeitsprozessen, welche in den Abbildungen \ref{fig:ArbeitsProzessVirtuell} und \ref{fig:ArbeitsProzessReell} zusammengefasst sind.\\
+Bestimmte Formen der Rektifizierung benötigen keine vorherige Kalibrierung der Kameras und werden in den meisten gängigen Szenenrekonstruktionsalgorithmen eingesetzt\cite{Fusiello,Javier,R.H.}. Der Arbeitsprozess für die Szenenrekonstruktion auf Basis von rektifizierten Bildern, welcher in Abbildung \ref{fig:ArbeitsprozessRektifizierung} schematisch dargestellt ist, unterscheidet sich etwas zu den bereits bekannten Arbeitsprozessen, welche in den Abbildungen \ref{fig:ArbeitsProzessVirtuell} und \ref{fig:ArbeitsProzessReell} zusammengefasst sind.\\
 
 
 \begin{figure}[!htb]
@@ -155,7 +155,7 @@ Bevor die Matrizen $H$ und $H'$ in ihre projektiven und affinen Komponenten zerl
 \end{gather}
 
 
-Die Matrizen $H_p$ und $H_p'$ beschreiben den projektiven Teil von $H$ und $H'$ und wirken sich auf den projektiven Komponenten eines Punktes aus. Sie werden dazu verwendet die Epipole ins unendliche zu projizieren\cite{ZZ,phdextrinsicPara}.
+Die Matrizen $H_p$ und $H_p'$ beschreiben den projektiven Teil von $H$ und $H'$ und wirken sich auf die projektiven Komponenten eines Punktes aus. Sie werden dazu verwendet die Epipole ins unendliche zu projizieren\cite{ZZ,phdextrinsicPara}.
 
 
 \begin{gather}
@@ -200,7 +200,7 @@ Des Weiteren gilt für $H_a$ und $H_a'$, dass sie jeweils nochmal in eine Rotati
 \end{gather}\\
 
 $H_r$ und auch $H_r'$ definieren eine Rotation und auch eine Verschiebung, welche die bereits parallelen Epipolarlinien horizontal ausrichtet. Durch die Verschiebung $v_c$ wird der vertikale Versatz zwischen den Epipolarlinien beider Bilder ausgeglichen. Es entstehen die einheitlichen Scanlinien. Die Matrizen $H_s$ und $H_s'$ definieren eine Scherung. 
-Sie gehören nicht zum eigentlichen Rektifizierungsprozess aber dienen dazu die horizontale Verzerrung der Bilder, welche durch die Rektifizierungstransformationen entstanden sind, wieder auszugleichen. 
+Sie gehören nicht zum eigentlichen Rektifizierungsprozess aber dienen dazu die horizontale Verzerrung der Bilder, welche durch die Rektifizierungstransformationen entstehen, wieder auszugleichen. 
 
 %haben keine Auswirkung auf die Rektifizierung an sich aber sorgen dafür, dass die horizontale Verzerrung der beiden Bilder zueinander reduziert wird.\\
 %
@@ -230,7 +230,7 @@ Die Minimierung beinhaltet den Versuch ein $z$ zu finden, welches $w = (w_a,w_b,
 		1&0&0\\
 		0&0&1\\
 		w_a&w_b&1
-	\end{bmatrix}
+	\end{bmatrix}\,.
 \end{gather}
 
 %Jedoch sollen sie nicht ganz null werden, da die projektive Matrix dann keine projektive mehr wäre, sondern eine affine.  Deswegen heißt es auch sie soll so affin wie möglich gemacht werden. Das selbe gilt natürlich auch für $w_a'$ und $w_b'$ aus $H_p'$. 
@@ -311,7 +311,7 @@ Für die Punkte $p_j$ in Bild zwei ergibt sich dann entsprechend die Matrixgleic
 \end{gather} 
 
 
-$w$ und $w^T$ werden nun noch mit ihren Definitionen aus den Gleichungen \ref{eq:w} und \ref{eq:w'} ersetzt. Die Gleichungen \ref{eq:MinimizationBild1} und \ref{eq:MinimizationBild2} werden somit als eine Funktion von $z$ ausgedrückt\cite{ZZ}. 
+$w$ und $w^T$ werden nun noch mit ihren Definitionen aus den Gleichungen \ref{eq:w} und \ref{eq:w'} ersetzt. Die Gleichungen \ref{eq:MinimizationBild1} und \ref{eq:MinimizationBild2} werden als eine Funktion von $z$ ausgedrückt\cite{ZZ}. 
 
 \begin{gather}
 	\frac{z^T[e]_x^TP \, P^T[e]_xz}{z^T[e]_x^Tp_c \, p_c^T[e]_xz}+\frac{z^TF^TP'P'^TFz}{z^TF^Tp_c' \, p_c'^TFz} \, . \label{eq:funcZLong}
@@ -320,7 +320,7 @@ $w$ und $w^T$ werden nun noch mit ihren Definitionen aus den Gleichungen \ref{eq
 Gleichung \ref{eq:funcZLong} wird noch vereinfacht mit
 
 \begin{gather}
-	A = [e]_x^TP \ ,P^T[e]_x\\
+	A = [e]_x^TP \, P^T[e]_x\\
 	B=[e]_x^Tp_c \, p_c^T[e]_x\\
 	A'=F^TP'P'^TF\\
 	B'= F^Tp_c' \, p_c'^TF\\
@@ -511,7 +511,7 @@ $F_{31},\, F_{32}, F_{33} ,F_{13}$ und  $F_{23}$ stehen für die Einträge der M
 \end{gather}\\
 
 
-Die gemeinsame unbekannte Variable $v_c'$ beschreibt die geometrische Verbindung beider Bilder in ihrer Verschiebung entlang der vertikalen Richtung\cite{ZZ}. $F_ {33}$ ist somit der horizontale Versatz, welcher benötigt wird, um die horizontalen Epipolarlinien beider Bilder zueinander auszurichten, sodass die gewünschten Scanlinien über beide Bilder entstehen. $v'$ wird dabei so gewählt, dass die kleinste Koordinate der rektifizierten Bilder in vertikaler Achsenrichtung gleich null ist.\cite{ZZ}.\\
+Die gemeinsame unbekannte Variable $v_c'$ beschreibt die geometrische Verbindung beider Bilder in ihrer Verschiebung entlang der vertikalen Richtung\cite{ZZ}. $F_ {33}$ ist somit der vertikale Versatz, welcher benötigt wird, um die horizontalen Epipolarlinien beider Bilder zueinander auszurichten, sodass die gewünschten Scanlinien über beide Bilder entstehen. $v'$ wird dabei so gewählt, dass die kleinste Koordinate der rektifizierten Bilder in vertikaler Achsenrichtung gleich null ist.\cite{ZZ}.\\
 
 
 %
@@ -561,14 +561,14 @@ Aus diesem Grund werden die Scherungsmatrizen $H_s$ und $H_s'$, aus der Zerlegun
 		u'_a&u'_b&0\\
 		0&1&0\\
 		0&0&1
-	\end{bmatrix}
+	\end{bmatrix}\,.
 \end{gather}
 
 Um die richtigen Werte für $u_a, u_a', u_b$ und $u_b'$ zu erhalten, werden zunächst Punkte an den jeweiligen gegenüberliegenden Kanten der Bilder definiert. Da die Bilder des Quaders nicht aus mehreren Pixeln bestehen, wie ein reales Bild, sondern nur über dessen Eckpunkte bestimmt sind, wird eine Bildbreite $w$ und $w'$ und eine Bildhöhe $h$ und $h'$ um die Abbildungen des Quaders definiert. \\
 
 Da es nicht möglich ist die horizontale Verzerrung gänzlich zu reduzieren, wird stattdessen die Orthogonalität der Verbindungslinien $\overline{bd}$ und $\overline{ca}$ wieder hergestellt. In Abbildung \ref{fig:PreserveAspectRatio} ist das Ziel grafisch dargestellt.\\
 
-Für den nächsten Schritt werden im synthetischen Beispiel für die Abbildungen des Quaders jeweils Bildweite $w$ und Bildhöhe $h$ definiert. Da zunächst von gleichen Kameraauflösungen ausgegangen wird, sind die Bildbreiten und Höhen beider Bilder gleich. Danach werden die vier Mittelpunkte $a,b,c$ und $d$ der Bildkanten definiert mit $a = [\frac{w}{2} \; 0 \; 1]^T, b = [w \; \frac{h}{2}\; 1]^T, c = [\frac{w}{2} \; h \; 1]^T, d = [0 \; \frac{h}{2} \; 1]^T$.
+Für den nächsten Schritt werden für die Abbildungen des Quaders jeweils Bildweite $w$ und Bildhöhe $h$ definiert. Da zunächst von gleichen Kameraauflösungen ausgegangen wird, sind die Bildbreiten und Höhen beider Bilder gleich. Danach werden die vier Mittelpunkte $a,b,c$ und $d$ der Bildkanten definiert mit $a = [\frac{w}{2} \; 0 \; 1]^T, b = [w \; \frac{h}{2}\; 1]^T, c = [\frac{w}{2} \; h \; 1]^T, d = [0 \; \frac{h}{2} \; 1]^T$.
 
 \pagebreak
 
@@ -591,7 +591,7 @@ Die Punkte $a,b,c,d$ und auch $a',b',c',d'$ sind die Mittelpunkte der noch nicht
 	\hat{a'} = H'_r\cdot H'_p \cdot a'\\
 	\hat{b'} = H'_r\cdot H'_p \cdot b'\\
 	\hat{c'} = H'_r\cdot H'_p \cdot c'\\
-	\hat{d'} = H'_r\cdot H'_p \cdot d'\\
+	\hat{d'} = H'_r\cdot H'_p \cdot d'\,.
 \end{gather*}
 
 %Um aus $\hat{a},\hat{b},\hat{c},\hat{d}$ und auch $\hat{a}',\hat{b}',\hat{c}',\hat{d}'$ wieder Punkte der affinen Ebene zu machen werden sie jeweils durch ihre dritte Komponenten geteilt, so das $\hat{a}_w,\hat{b}_w,\hat{c}_w,\hat{d}_w$ und $\hat{a}'_w,\hat{b}'_w,\hat{c}'_w,\hat{d}'_w$ jeweils den Wert eins besitzen. 
@@ -602,14 +602,14 @@ Danach können die Vektoren $\vec{x}$ und $\vec{y}$ der sich ursprünglich gegen
 	x = \hat{b}-\hat{d}\\
 	y = \hat{c}-\hat{a}\\
 	x' = \hat{b}'-\hat{d}'\\
-	y' = \hat{c}'-\hat{a}'
+	y' = \hat{c}'-\hat{a}' \,.S
 \end{gather}
 
 $x$ und $y$ sind Vektoren der euklidischen Bildebene\cite{ZZ}. Das heißt, sie sind genau dann orthogonal zueinander wenn gilt
 
 \begin{gather}
 	(H_sx)^T(H_sy)= 0 \label{eq:OrthoHs}\\
-	(H'_sx')^T(H'_sy')= 0 \label{eq:OrthoHs2}
+	(H'_sx')^T(H'_sy')= 0\,. \label{eq:OrthoHs2}
 \end{gather}.
 
 Für die Erhaltung der Seitenverhältnisse gilt dann

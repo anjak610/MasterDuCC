@@ -113,16 +113,16 @@ B.~Kitt.
 \newblock {\em Effiziente Schätzung dichter Bewegungsvektorfelder}.
 \newblock KIT Scientific Publishing{,} Karlsruhe, Band 027{,} 2013.
 
-\bibitem{Mathematica}
-Wolfram~Research{,} Inc.
-\newblock Mathematica, {V}ersion 11.1.1.
-\newblock Champaign{, } IL{,} 2018.
-
 \bibitem{Doessel}
 O.~Dössel.
 \newblock {\em Bildgebende Verfahren in der Medizin{:} Von der Technik zur
   medizinischen Anwendung}.
 \newblock Springer-Verlag Berlin Heidelberg, 2. Auflage{,} 2016.
+
+\bibitem{Mathematica}
+Wolfram~Research{,} Inc.
+\newblock Mathematica, {V}ersion 11.1.1.
+\newblock Champaign{, } IL{,} 2018.
 
 \bibitem{SIFTSURF}
 X.~Qu{,} B. Soheilian{,} E. Habets{,}~N. Paparoditis.
