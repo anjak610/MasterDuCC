@@ -14,9 +14,9 @@
 \contentsline {section}{\numberline {4.2}Bildanalyse}{26}{section.176}
 \contentsline {subsection}{\numberline {4.2.1}Bestimmung der extrinsischen Kameraparameter}{26}{subsection.177}
 \contentsline {subsection}{\numberline {4.2.2}Szenenrekonstruktion durch Triangulation}{28}{subsection.216}
-\contentsline {section}{\numberline {4.3}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{32}{section.231}
-\contentsline {section}{\numberline {4.4}Geometrie eines Sensors}{32}{section.232}
-\contentsline {section}{\numberline {4.5}Auswirkungen auf die Szenenrekonstruktion}{33}{section.235}
+\contentsline {section}{\numberline {4.3}Auswirkungen von unterschiedlichen Kameraaufl\IeC {\"o}sungen}{31}{section.231}
+\contentsline {section}{\numberline {4.4}Geometrie eines Sensors}{31}{section.232}
+\contentsline {section}{\numberline {4.5}Auswirkungen auf die Szenenrekonstruktion}{32}{section.235}
 \contentsline {chapter}{\numberline {5}Rekonstruktion aus realen Stereobildpaaren}{37}{chapter.261}
 \contentsline {section}{\numberline {5.1}Stereoaufbau}{38}{section.263}
 \contentsline {section}{\numberline {5.2}Korrespondenzanalyse}{38}{section.265}
@@ -32,7 +32,7 @@
 \contentsline {subsection}{\numberline {6.2.2}\IeC {\"A}hnlichkeitstransformation}{61}{subsection.481}
 \contentsline {subsection}{\numberline {6.2.3}Scherungstransformation}{63}{subsection.509}
 \contentsline {section}{\numberline {6.3}Rektifizierung mit unterschiedlichen Kameraufl\IeC {\"o}sungen}{65}{section.536}
-\contentsline {chapter}{\numberline {7}Punktesortierung in Schachbrettmustern}{68}{chapter.547}
+\contentsline {chapter}{\numberline {7}Punktesortierung und Indizierung in Schachbrettmustern}{68}{chapter.547}
 \contentsline {section}{\numberline {7.1}Algorithmus zur Sortierung und Indizierung von Schachbretteckpunkten}{69}{section.549}
 \contentsline {section}{\numberline {7.2}Resultate bei stark verzerrten Schachbrettern}{76}{section.557}
 \contentsline {chapter}{\nonumberline Zusammenfassung und Ausblick}{79}{chapter*.563}

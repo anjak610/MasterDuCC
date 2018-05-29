@@ -1,14 +1,14 @@
 \chapter{Modell der Bildaufnahme mit einer Kamera }
 \label{sec:CameraModels}
 
-Um einen Szenenrekonstruktionalgorithmus zu verstehen werden in diesem Abschnitt grundlegende  Bedingungen eingeführt um die Bildaufnahme mathematisch zu beschreiben. Ein abbildendes System besteht aus einem Objekt $M$, einer Kamera $C$ und einer Bildebene $I$ wie in Abbildung \ref{fig:PinholeCamera3D} dargestellt.\\
+Um einen Szenenrekonstruktionalgorithmus zu verstehen werden in diesem Abschnitt grundlegende  Bedingungen eingeführt um die Bildaufnahme mathematisch zu beschreiben. Ein abbildendes System besteht aus einem Objekt $M$, einer Kamera $C$ und einer Bildebene $I$, wie in Abbildung \ref{fig:PinholeCamera3D} dargestellt.\\
 
 
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/PinholeCameraModell3D.png}
-	\caption[Lochkameramodell]{Schematik eines abbildenden Systems. Ein Punkt $M$ im  Weltkoordinatensystem $O$ wird durch eine Kamera $C$ aufgenommen. Diese Aufnahme wird durch eine Projektion, die als Verbindungslinie von $M$ zu $C$ zu sehen ist dargestellt ist und $M$ auf $m$ abbildet, beschrieben.}
+	\caption[Lochkameramodell]{Schematik eines abbildenden Systems. Ein Punkt $M$ im  Weltkoordinatensystem $O$ wird durch eine Kamera $C$ aufgenommen. Diese Aufnahme wird durch eine Projektion beschrieben, die als Verbindungslinie von $M$ zu $C$ zu sehen ist und $M$ auf $m$ abbildet.}
 	\label{fig:PinholeCamera3D}
 \end{figure}
 
@@ -20,7 +20,7 @@ Um einen Szenenrekonstruktionalgorithmus zu verstehen werden in diesem Abschnitt
 %	\label{fig:PinholeCamera3D}
 %\end{minipage}\\\\
 
-Ein Punkt $M$ in einem dreidimensionalen Weltkoordinatensystem wird mit Hilfe einer Kamera, die in einem eigenen dreidimensionalen Kamerakoordinatensystem beschrieben wird, auf die Bildebene $I$ projiziert. Die Bildebene $I$ ist durch ein zweidimensionales Bildkoordinatensystem beschrieben. Der projizierte Punkt $m$ kann mit einem Sensor aufgenommen und abgespeichert werden.  \\ 
+Ein Punkt $M$ in einem dreidimensionalen Weltkoordinatensystem wird mit Hilfe einer Kamera, die in einem eigenen dreidimensionalen Kamerakoordinatensystem beschrieben wird, auf die Bildebene $I$ projiziert. Die Bildebene $I$ ist durch ein zweidimensionales Bildebenenkoordinatensystem beschrieben. Der projizierte Punkt $m$ kann mit einem Sensor aufgenommen und abgespeichert werden.  \\ 
 
 Im Folgenden wird zuerst ein Kameramodel eingeführt um die Projektion auf die Bildebene zu beschreiben. Daraufhin werden Koordinatentransformationen beschrieben um abschließend die Aufnahme eines Punktes mit einer willkürlichen Kameraorientierung zu berechnen. 
 
@@ -40,7 +40,7 @@ Mit Hilfe des Lochkameramodells wird die Abbildung eines Objektes auf eine Bilde
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=.8\linewidth]{images/PinholeCameraModell2D.png}
-	\caption[Lochkameramodell Querschnitt]{Die Abbildung zeigt einen Querschnitt des beschriebenen Lochkameramodells. Zu sehen ist das Projektionszentrum $C$ der Kamera. $C$ ist gleichzeitig das Kamerazentrum und bildet den Ursprung für das Kamerakoordinatensystem. $\zeta$ beschreibt den Abstand des Projektionszentrums zur Bildebene. Die Hauptachse beschreibt die Blickrichtung der Kamera. Der Punkt an dem die Hauptachse die Bildebene schneidet wird Hauptpunkt genannt und ist gleichzeitig der Ursprung für das Bildebenenkooridnatensystem. Der Bildpunkt $m$ entsteht am Schnittpunk der Verbindungsgerade von $C$ und $M$ mit der der Bildebene $I$}
+	\caption[Lochkameramodell Querschnitt]{Die Abbildung zeigt einen Querschnitt des beschriebenen Lochkameramodells. Zu sehen ist das Projektionszentrum $C$ der Kamera. $C$ ist gleichzeitig das Kamerazentrum und bildet den Ursprung für das Kamerakoordinatensystem. $\zeta$ beschreibt den Abstand des Projektionszentrums zur Bildebene. Die Hauptachse beschreibt die Blickrichtung der Kamera. Der Punkt an dem die Hauptachse die Bildebene schneidet wird Hauptpunkt genannt und ist gleichzeitig der Ursprung für das Bildebenenkooridnatensystem. Der Bildpunkt $m$ entsteht am Schnittpunk der Verbindungsgerade von $C$ und $M$ mit der der Bildebene $I$.}
 	\label{fig:PinholeCamera2D}
 \end{figure}
 

@@ -3,7 +3,7 @@
 
 Anhand der erarbeiteten mathematischen Grundlagen ist ein Algorithmus für die Rekonstruktion einer Szene aus einer Stereobildaufnahme entstanden. Der Algorithmus wurde mit dem Ziel der Kamerakalibrierung und der Szenenrekonstruktion aus Bildquellen unterschiedlicher Auflösungen entwickelt, da Stereokalibrierungsverfahren einiger Computer-Vision-Applikationen keine unterschiedlichen Auflösungen von Kameras berücksichtigen. Der entwickelte Algorithmus ist in der Lage aus einem Stereobildpaar extrinsische Kameraparameter zu bestimmen und anhand dessen die 3D-Szene zu rekonstruieren, jedoch unter der Voraussetzung, dass die intrinsischen Kameraparameter beider Kameras bekannt sind.\\
 
-Im Folgenden wird der Algorithmus anhand eines synthetischen Beispiels erklärt. Dabei werden die einzelnen Schritte des Aufbaus einer virtuellen 3D-Szene, der Bestimmung der extrinsischen Kameraparameter und der Rekonstruktion der virtuellen 3D-Szene beschrieben. Abbildung \ref{fig:ArbeitsProzessVirtuell} fasst den Arbeitsprozess des Szenenrekonstruktionsalgorithmus für das virtuelle Beispiel zusammen. \\
+Im Folgenden wird der Algorithmus anhand eines synthetisch aufgebauten Beispiels erklärt. Dabei werden die einzelnen Schritte des Aufbaus einer virtuellen 3D-Szene, der Bestimmung der extrinsischen Kameraparameter und der Rekonstruktion der virtuellen 3D-Szene beschrieben. Abbildung \ref{fig:ArbeitsProzessVirtuell} fasst den Arbeitsprozess des Szenenrekonstruktionsalgorithmus für das synthetische Beispiel zusammen. \\
 
 
 
@@ -30,7 +30,7 @@ Im Folgenden wird der Algorithmus anhand eines synthetischen Beispiels erklärt.
 
 \section{Simulierte Bildaufnahme einer virtuellen Szene}
 
-Als 3D-Objekt wurde ein Quader, in ein Weltkoordinatensystem $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3})$ positioniert. Es werden zwei Kameras $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3})$ und $(C',\beta')$ mit $\beta' = (\hat{b'_1},\hat{b'_2},\hat{b'_3})$ in $(O,\delta)$ platziert. Das Weltkoordinatensystem $(O,\delta)$ und das Kamerakoordinatensystem $(C,\beta)$ sind deckungsgleich. $C'$ ist relativ zu $C$ verschoben und rotiert. Die zwei Bildebenen $(I,\tau)$ mit $\tau = (\hat{t_1},\hat{t_2},\hat{t_3})$ und $(I',\tau')$ mit $\tau' = (\hat{t_1}',\hat{t_2}',\hat{t_3}')$ sind vor $C$ und $C'$ positioniert. Die Sensorkoordinatensysteme $(S,\sigma)$ und $(S',\sigma')$ wurden gleich den Bildebenenkoordinatensystemen $(I,\tau)$ und $(I',\tau')$ gesetzt. Es wird von zwei identischen Kameras ausgegangen und somit werden für den hier diskutierten Fall ausschließlich mit dem vereinfachten Kameramatrizen $K_0$ gerechnet. Der schematische Aufbau der Szenen ist in den Abbildungen \ref{fig:aufbauMinimalTopDown}, \ref{fig:AbbildungenMinimal} und \ref{fig:KoordsystemeMinimal} dargestellt.
+Als 3D-Objekt wird ein Quader, in ein Weltkoordinatensystem $(O,\delta)$ mit $\delta = (\hat{d_1},\hat{d_2},\hat{d_3})$ positioniert. Es werden zwei Kameras $(C,\beta)$ mit $\beta = (\hat{b_1},\hat{b_2},\hat{b_3})$ und $(C',\beta')$ mit $\beta' = (\hat{b'_1},\hat{b'_2},\hat{b'_3})$ in $(O,\delta)$ platziert. Das Weltkoordinatensystem $(O,\delta)$ und das Kamerakoordinatensystem $(C,\beta)$ sind deckungsgleich. $C'$ ist relativ zu $C$ verschoben und rotiert. Die zwei Bildebenen $(I,\tau)$ mit $\tau = (\hat{t_1},\hat{t_2},\hat{t_3})$ und $(I',\tau')$ mit $\tau' = (\hat{t_1}',\hat{t_2}',\hat{t_3}')$ sind vor $C$ und $C'$ positioniert. Die Sensorkoordinatensysteme $(S,\sigma)$ und $(S',\sigma')$ werden gleich den Bildebenenkoordinatensystemen $(I,\tau)$ und $(I',\tau')$ gesetzt. Es wird von zwei identischen Kameras ausgegangen und somit werden für den hier diskutierten Fall ausschließlich mit dem vereinfachten Kameramatrizen $K_0$ gerechnet. Der schematische Aufbau des synthetischen Beispiels ist in den Abbildungen \ref{fig:aufbauMinimalTopDown}, \ref{fig:AbbildungenMinimal} und \ref{fig:KoordsystemeMinimal} dargestellt.
 
 %Somit reicht für das synthetische Beispiel die vereinfachten Kameramatrix $K_0$, wie in Kapitel \ref{sec:CameraModels} definiert, aus.
 
@@ -85,7 +85,7 @@ T = \begin{bmatrix}
 \end{bmatrix} \, .
 \end{gather}
 
-$C'$ dagegen ist gegenüber $C$ verschoben und rotiert. Als Beispiel wird eine Rotation um die $\hat{b_2}'$ Achse für $C'$ bestimmt. Somit gilt für $P'$:
+$C'$ ist gegenüber $C$ verschoben und rotiert. Als Beispiel wird eine Rotation um die $\hat{b_2}'$-Achse für $C'$ bestimmt. Somit gilt für $P'$
 %entlang $\hat{d_1}$ verschoben und um $\hat{b_2}$ rotiert. Somit ergibt sich für $T=[R|V]$ von $C$:
 
 %Dabei gehen wir davon aus, dass $C$ weder rotiert noch verschoben ist, während $C'$ verschoben und rotiert ist.(Hier eher wieder allgemein bleiben C gegenüber O keine verönderung C' schon)
@@ -128,7 +128,7 @@ $C'$ dagegen ist gegenüber $C$ verschoben und rotiert. Als Beispiel wird eine R
 		\cos(\alpha)&0&-\sin(\alpha)&-C'_x\cos(\alpha)+C'_z\sin(\alpha)\\
 		0&1&0&-C'_y\\
 		\sin(\alpha)&0&\cos(\alpha)&-C'_x\sin(\alpha)-C'_z\cos(\alpha)\\
-	\end{pmatrix}
+	\end{pmatrix}\, .
 \end{gather}\\
 
 %\section{Berechnung der Projetkionsmatritzen }
@@ -136,7 +136,7 @@ $C'$ dagegen ist gegenüber $C$ verschoben und rotiert. Als Beispiel wird eine R
 %Neben den Eckpunkten des Quaders wird noch ein neunter Punkt $E_\delta$ außerhalb des Quaders platziert und zwar so, dass es zu keinen linearen Abhängigkeiten zwischen $E_\delta$ und den anderen Punkten kommt. 
 
 
-Der Quader hat insgesamt acht Punkte, welche auf die Bildebenen der Kameras projiziert werden. Neben den Punkten des Quaders wird noch ein weiterer Punkt außerhalb des Quaders platziert und ebenfalls auf die Bildebenen projiziert. Mit insgesamt neun Punkten bei der Bestimmung der Fundamentalmatrix, wird die Wahrscheinlichkeit ein unterbestimmtes System aus der Koeffizientenmatrix $A$ zu bekommen minimiert. Ist $A$ unterbestimmt so besitzt sie Rang 7 und $F$ kann nicht eindeutig durch einen Sieben-Punkte-Algorithmus bestimmt werden\cite{HZ,LongQuan}. In dem hier berechneten Beispiel werden deswegen neun Punkte benutzt um sicherzugehen, dass $A$ Rang 8 besitzt und somit eindeutig bestimmt werden kann. Zur Bestimmung von $F$, wird der in Kapitel \ref{sec:HFE} aufgeführte Acht-Punkte-Algorithmus angewandt.\\
+Der Quader hat insgesamt acht Punkte, welche auf die Bildebenen der Kameras projiziert werden. Neben den Eckpunkten des Quaders wird noch ein weiterer Punkt außerhalb des Quaders platziert und ebenfalls auf die Bildebenen projiziert. Mit insgesamt neun Punkten bei der Bestimmung der Fundamentalmatrix, wird die Wahrscheinlichkeit ein unterbestimmtes System aus der Koeffizientenmatrix $A$ zu bekommen minimiert. Ist $A$ unterbestimmt so besitzt sie Rang 7 und $F$ kann nicht eindeutig durch einen Acht-Punkt-Algorithmus bestimmt werden\cite{HZ,LongQuan}. In dem hier berechneten Beispiel werden deswegen neun Punkte benutzt um sicherzugehen, dass $A$ Rang 8 besitzt und somit eindeutig bestimmt werden kann. Zur Bestimmung von $F$, wird der in Kapitel \ref{sec:HFE} aufgeführte Acht-Punkt-Algorithmus angewandt.\\
 
 
 
@@ -213,7 +213,7 @@ P' =
 \section{Bildanalyse}
 \label{sec:MinimalFun}
 
-Der Szenenrekonstruktionsalgorithmus für das synthetische Beispiel ist in drei Abschnitte unterteilt. Zuerst wird aus den Punktekorrespondenzen die Fundamentalmatrix und die essentielle Matrix geschätzt. Mit Hilfe der essentiellen Matrix werden die extrinsischen Kameraparameter bestimmt, um so im letzten Schritt die Szenenpunkte durch Rückprojektion der Bildpunkte mit Hilfe der Kameraparameter rekonstruiert. 
+Der Szenenrekonstruktionsalgorithmus für das synthetische Beispiel ist in drei Abschnitte unterteilt. Zuerst wird aus den Punktekorrespondenzen die Fundamentalmatrix und die essentielle Matrix geschätzt. Mit Hilfe der essentiellen Matrix werden die extrinsischen Kameraparameter bestimmt, um so im letzten Schritt die Szenenpunkte durch Rückprojektion der Bildpunkte mit Hilfe der Kameraparameter zu rekonstruieren. 
 
 %\subsection{Bestimmung der Abbildungsvorschriften}
 \subsection{Bestimmung der extrinsischen Kameraparameter}
@@ -506,6 +506,6 @@ Bei den zuvor ermittelten extrinsischen Kameraparametern ist der Translationsvek
 	\caption[Programmplot der rekonstruierten Szene]{Der rote Punkt stellt die Postion von $C$ dar, der grüne steht für die Position von $C'$ relativ zu $C$. Die blauen Punkte stellen den rekonstruierten Quader und den extern platzierten neunten Punkt da.}
 		\label{fig:Quader1}
 \end{figure}
-\pagebreak
+%\pagebreak
 
 
