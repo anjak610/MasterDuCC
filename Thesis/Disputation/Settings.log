@@ -1,12 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.20)  5 JUN 2018 12:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2018.6.5)  5 JUN 2018 14:27
 entering extended mode
 **./Settings.tex
 (Settings.tex
 LaTeX2e <2017/01/01> patch level 1
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\beamer.cls"
-Document Class: beamer 2017/12/24 v3.48 A class for typesetting presentations
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\beamerbasemodes.sty"
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamer.cls
+Document Class: beamer 2018/02/20 v3.50 A class for typesetting presentations
+
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasemodes.sty
 ("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
 Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count79
@@ -15,14 +16,14 @@ Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
 \beamer@tempcount=\count80
 \c@beamerpauses=\count81
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\beamerbasedecode.sty"
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasedecode.st
+y
 \beamer@slideinframe=\count82
 \beamer@minimum=\count83
 )
 \beamer@commentbox=\box27
 \beamer@modecount=\count84
-)
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
 \headdp=\dimen102
@@ -68,8 +69,8 @@ Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 \beamer@sectionadjust=\count102
 \beamer@tocsectionnumber=\count103
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\beamerbaseoptions.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbaseoptions.s
+ty ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 ))
@@ -458,9 +459,11 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\beamerbaserequires.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\beamerbasecompatibility.sty")
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\beamerbasefont.sty"
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbaserequires.
+sty
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasecompatibi
+lity.sty)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasefont.sty
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
@@ -478,28 +481,205 @@ Package: sansmathaccent 2013/03/28
 ("C:\Program Files\MiKTeX 2.9\tex\latex\filehook\filehook.sty"
 Package: filehook 2011/10/12 v0.5d Hooks for input files
 )))
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\beamerbasetranslator.sty"
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasetranslato
+r.sty
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\translator\translator.sty
+Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
+))
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasemisc.sty)
 
-! LaTeX Error: File `translator.sty' not found.
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasetwoscreen
+s.sty)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbaseoverlay.s
+ty
+\beamer@argscount=\count128
+\beamer@lastskipcover=\skip44
+\beamer@trivlistdepth=\count129
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasetitle.sty
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasesection.s
+ty
+\c@lecture=\count130
+\c@part=\count131
+\c@section=\count132
+\c@subsection=\count133
+\c@subsubsection=\count134
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbaseframe.sty
+\beamer@framebox=\box40
+\beamer@frametitlebox=\box41
+\beamer@zoombox=\box42
+\beamer@zoomcount=\count135
+\beamer@zoomframecount=\count136
+\beamer@frametextheight=\dimen167
+\c@subsectionslide=\count137
+\beamer@frametopskip=\skip45
+\beamer@framebottomskip=\skip46
+\beamer@frametopskipautobreak=\skip47
+\beamer@framebottomskipautobreak=\skip48
+\beamer@envbody=\toks27
+\framewidth=\dimen168
+\c@framenumber=\count138
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbaseverbatim.
+sty
+\beamer@verbatimfileout=\write4
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbaseframesize
+.sty
+\beamer@splitbox=\box43
+\beamer@autobreakcount=\count139
+\beamer@autobreaklastheight=\dimen169
+\beamer@frametitletoks=\toks28
+\beamer@framesubtitletoks=\toks29
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbaseframecomp
+onents.sty
+\beamer@footins=\box44
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasecolor.sty
+\beamer@bg@ht=\dimen170
+\beamer@bg@wd=\dimen171
+\beamer@bg@dp=\dimen172
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasenotes.sty
+\beamer@frameboxcopy=\box45
+) (C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasetoc.sty
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasetemplates
+.sty
+\beamer@sbttoks=\toks30
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbaseauxtempla
+tes.sty
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbaseboxes.sty
+\bmb@box=\box46
+\bmb@colorbox=\box47
+\bmb@boxshadow=\box48
+\bmb@boxshadowball=\box49
+\bmb@boxshadowballlarge=\box50
+\bmb@temp=\dimen173
+\bmb@dima=\dimen174
+\bmb@dimb=\dimen175
+\bmb@prevheight=\dimen176
+)
+\beamer@blockheadheight=\dimen177
+))
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbaselocalstru
+cture.sty ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks31
+)
+\c@figure=\count140
+\c@table=\count141
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasenavigatio
+n.sty
+\beamer@section@min@dim=\dimen178
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasetheorems.
+sty ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip51
 
-Enter file name: 
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks32
+\ex@=\dimen179
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen180
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count142
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count143
+\leftroot@=\count144
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count145
+\DOTSCASE@=\count146
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+\big@size=\dimen181
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count147
+\c@MaxMatrixCols=\count148
+\dotsspace@=\muskip11
+\c@parentequation=\count149
+\dspbrk@lvl=\count150
+\tag@help=\toks33
+\row@=\count151
+\column@=\count152
+\maxfields@=\count153
+\andhelp@=\toks34
+\eqnshift@=\dimen182
+\alignsep@=\dimen183
+\tagshift@=\dimen184
+\tagwidth@=\dimen185
+\totwidth@=\dimen186
+\lineht@=\dimen187
+\@envbody=\toks35
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks36
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks37
+\thm@bodyfont=\toks38
+\thm@headfont=\toks39
+\thm@notefont=\toks40
+\thm@headpunct=\toks41
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks42
+)
+\c@theorem=\count154
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerbasethemes.st
+y))
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerthemedefault.
+sty
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerfontthemedefa
+ult.sty)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamercolorthemedef
+ault.sty)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerinnerthemedef
+ault.sty
+\beamer@dima=\dimen188
+\beamer@dimb=\dimen189
+)
+(C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerouterthemedef
+ault.sty))))
 ! Emergency stop.
-<read *> 
-         
-l.15 \usedictionary
-                   {translator-basic-dictionary}
-*** (cannot \read from terminal in nonstop modes)
+<*> ./Settings.tex
+                  
+*** (job aborted, no legal \end found)
 
  
 Here is how much of TeX's memory you used:
- 12771 strings out of 493333
- 235536 string characters out of 3139194
- 306668 words of memory out of 3000000
- 16114 multiletter control sequences out of 15000+200000
- 3940 words of font info for 15 fonts, out of 3000000 for 9000
+ 15609 strings out of 493333
+ 295398 string characters out of 3139195
+ 379895 words of memory out of 3000000
+ 18846 multiletter control sequences out of 15000+200000
+ 4245 words of font info for 16 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,0n,42p,777b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,0n,55p,777b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

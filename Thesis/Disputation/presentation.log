@@ -1,9 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2018.6.5)  5 JUN 2018 14:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2018.6.5)  5 JUN 2018 15:04
 entering extended mode
 **./presentation.tex
 (presentation.tex
 LaTeX2e <2017/01/01> patch level 1
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+\@input{settings.aux}
+\openout2 = `settings.aux'.
+
+(settings.tex
 (C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamer.cls
 Document Class: beamer 2018/02/20 v3.50 A class for typesetting presentations
 
@@ -667,7 +671,7 @@ ault.sty
 \beamer@dimb=\dimen189
 )
 (C:\Users\anjak\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\beamerouterthemedef
-ault.sty))) (presentation.aux)
+ault.sty)))) (presentation.aux)
 \openout1 = `presentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -843,6 +847,8 @@ rem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (presentation.nav) [1
 
+
+
 {C:/Users/anjak/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Try loading font information for U+msa on input line 14.
 
@@ -886,13 +892,13 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16866 strings out of 493333
- 320273 string characters out of 3139195
- 391680 words of memory out of 3000000
- 20018 multiletter control sequences out of 15000+200000
+ 16871 strings out of 493333
+ 320332 string characters out of 3139195
+ 391708 words of memory out of 3000000
+ 20020 multiletter control sequences out of 15000+200000
  10696 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,14n,55p,781b,551s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,14n,57p,800b,551s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTe
