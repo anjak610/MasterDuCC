@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     63717,       1451]
-NotebookOptionsPosition[     63307,       1435]
-NotebookOutlinePosition[     63651,       1450]
-CellTagsIndexPosition[     63608,       1447]
+NotebookDataLength[     64753,       1471]
+NotebookOptionsPosition[     64344,       1455]
+NotebookOutlinePosition[     64687,       1470]
+CellTagsIndexPosition[     64644,       1467]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -524,7 +524,7 @@ Epipol_______________________________________________\>\"", "]"}], ";",
             RowBox[{
              RowBox[{"GraphicPointsC1", "[", 
               RowBox[{"[", 
-               RowBox[{"1", ";;", "9"}], "]"}], "]"}], ",", 
+               RowBox[{"1", ";;", "8"}], "]"}], "]"}], ",", 
              RowBox[{"PlotStyle", "\[Rule]", 
               RowBox[{"Darker", "[", "Green", "]"}]}]}], "]"}], ",", 
            RowBox[{"ListLinePlot", "[", 
@@ -611,7 +611,7 @@ Epipol_______________________________________________\>\"", "]"}], ";",
             RowBox[{
              RowBox[{"GraphicPointsC2", "[", 
               RowBox[{"[", 
-               RowBox[{"1", ";;", "9"}], "]"}], "]"}], ",", 
+               RowBox[{"1", ";;", "8"}], "]"}], "]"}], ",", 
              RowBox[{"PlotStyle", "\[Rule]", 
               RowBox[{"Darker", "[", "Red", "]"}]}]}], "]"}], ",", 
            RowBox[{"ListLinePlot", "[", 
@@ -693,8 +693,22 @@ Epipol_______________________________________________\>\"", "]"}], ";",
         "\[IndentingNewLine]", 
         RowBox[{"Print", "[", 
          RowBox[{"Show", "[", 
-          RowBox[{"G1", ",", "G2", ",", 
-           RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}], "]"}], ";", 
+          RowBox[{"G1", ",", 
+           RowBox[{"(*", 
+            RowBox[{
+             RowBox[{"PlotRange", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "2"}], ",", "2"}], "}"}]}], ","}], "*)"}], 
+           RowBox[{"AspectRatio", " ", "\[Rule]", " ", "1"}], ",", 
+           RowBox[{"AxesOrigin", "\[Rule]", "0"}]}], 
+          RowBox[{"(*", "All", "*)"}], "]"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"Show", "[", 
+          RowBox[{"G2", ",", 
+           RowBox[{"AspectRatio", " ", "\[Rule]", " ", "1"}], ",", 
+           RowBox[{"AxesOrigin", "\[Rule]", "0"}]}], "]"}], "]"}], ";", 
         "\[IndentingNewLine]", 
         RowBox[{"ComputeProjectedPointsOnImagePlane1And2", "[", 
          RowBox[{
@@ -1425,7 +1439,13 @@ Epipol_______________________________________________\>\"", "]"}], ";",
    3.736263994128383*^9}, {3.7362640534820695`*^9, 3.7362640882397594`*^9}, {
    3.7362644259185205`*^9, 3.736264456886073*^9}, {3.7362647383035913`*^9, 
    3.73626475288124*^9}, 3.736264933754318*^9, {3.736265045234285*^9, 
-   3.736265047705742*^9}},ExpressionUUID->"39c15e3f-e3ea-40a2-813b-\
+   3.736265047705742*^9}, {3.737952982310023*^9, 3.7379529907950163`*^9}, {
+   3.737953064718016*^9, 3.7379531151320486`*^9}, {3.737953212233017*^9, 
+   3.7379532182090187`*^9}, {3.737953288157016*^9, 3.737953312482016*^9}, {
+   3.737953343334016*^9, 3.7379533435200496`*^9}, {3.7379533866930175`*^9, 
+   3.737953430334015*^9}, {3.7379534847620497`*^9, 3.7379535392360168`*^9}, {
+   3.7379536450060463`*^9, 3.7379536454410477`*^9}, {3.737953748273059*^9, 
+   3.7379537995980473`*^9}},ExpressionUUID->"39c15e3f-e3ea-40a2-813b-\
 9a9898e6c8f7"],
 
 Cell[BoxData[""], "Input",
@@ -1433,8 +1453,8 @@ Cell[BoxData[""], "Input",
   3.7307826916187973`*^9}},ExpressionUUID->"d087d435-e370-472a-8959-\
 9a2e6665abe2"]
 },
-WindowSize->{1920, 997},
-WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+WindowSize->{986, 988},
+WindowMargins->{{Automatic, -11}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1449,9 +1469,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 62588, 1408, 4871, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 63625, 1428, 5634, "Input", "ExpressionUUID" -> \
 "39c15e3f-e3ea-40a2-813b-9a9898e6c8f7"],
-Cell[63149, 1430, 154, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[64186, 1450, 154, 3, 30, "Input", "ExpressionUUID" -> \
 "d087d435-e370-472a-8959-9a2e6665abe2"]
 }
 ]
