@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    118602,       2270]
-NotebookOptionsPosition[    117986,       2250]
-NotebookOutlinePosition[    118328,       2265]
-CellTagsIndexPosition[    118285,       2262]
+NotebookDataLength[    119778,       2300]
+NotebookOptionsPosition[    119162,       2280]
+NotebookOutlinePosition[    119504,       2295]
+CellTagsIndexPosition[    119461,       2292]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -266,7 +266,9 @@ Points______________________________________________________________ \n\n\
                   ")"}], "\[LessEqual]", " ", 
                  RowBox[{
                   RowBox[{"NextPointJ", "[", "CoordI", "]"}], "+", " ", 
-                  "proportionJ", "+", "0.3"}]}], "&&", 
+                  "proportionJ", "+", 
+                  RowBox[{"(", 
+                   RowBox[{"0.3", "*", "100"}], ")"}]}]}], "&&", 
                 RowBox[{
                  RowBox[{"(", 
                   RowBox[{
@@ -275,10 +277,14 @@ Points______________________________________________________________ \n\n\
                   ")"}], "\[GreaterEqual]", "  ", 
                  RowBox[{
                   RowBox[{"NextPointJ", "[", "CoordI", "]"}], "+", " ", 
-                  "proportionJ", "-", "0.3"}]}], "&&", " ", 
+                  "proportionJ", "-", 
+                  RowBox[{"(", 
+                   RowBox[{"0.3", "*", "100"}], ")"}]}]}], "&&", " ", 
                 RowBox[{"distanceNextPotPointJ", " ", "\[LessEqual]", " ", 
                  RowBox[{"(", 
-                  RowBox[{"distanceJ", "+", "0.5"}], ")"}]}], "&&", " ", 
+                  RowBox[{"distanceJ", "+", 
+                   RowBox[{"(", 
+                    RowBox[{"0.5", "*", "100"}], ")"}]}], ")"}]}], "&&", " ", 
                 RowBox[{
                  RowBox[{
                   RowBox[{"JList", "[", 
@@ -488,7 +494,9 @@ Points______________________________________________________________ \n\n\
                   ")"}], "\[LessEqual]", " ", 
                  RowBox[{
                   RowBox[{"NextPointI", "[", "CoordJ", "]"}], "+", 
-                  "proportionI", "+", "0.3"}]}], "&&", 
+                  "proportionI", "+", 
+                  RowBox[{"(", 
+                   RowBox[{"0.3", "*", "100"}], ")"}]}]}], "&&", 
                 RowBox[{
                  RowBox[{"(", 
                   RowBox[{
@@ -497,9 +505,13 @@ Points______________________________________________________________ \n\n\
                   ")"}], "\[GreaterEqual]", "  ", 
                  RowBox[{
                   RowBox[{"NextPointI", "[", "CoordJ", "]"}], "+", 
-                  "proportionI", " ", "-", "0.3"}]}], "&&", " ", 
+                  "proportionI", " ", "-", 
+                  RowBox[{"(", 
+                   RowBox[{"0.3", "*", "100"}], ")"}]}]}], "&&", " ", 
                 RowBox[{"distanceNextPotPointI", " ", "\[LessEqual]", " ", 
-                 RowBox[{"distanceI", "+", "0.5"}]}], " ", "&&", 
+                 RowBox[{"distanceI", "+", 
+                  RowBox[{"(", 
+                   RowBox[{"0.5", " ", "*", "100"}], ")"}]}]}], " ", "&&", 
                 RowBox[{
                  RowBox[{
                   RowBox[{"IList", "[", 
@@ -851,7 +863,9 @@ Result______________________________________________________________ \n\n\
               "\[LessEqual]", 
               RowBox[{
                RowBox[{"StartAtThisJPoint", "[", "CoordI", "]"}], "+", 
-               "propJ", "+", "0.3"}]}], " ", "&&", 
+               "propJ", "+", 
+               RowBox[{"(", 
+                RowBox[{"0.3", "*", "100"}], ")"}]}]}], " ", "&&", 
              RowBox[{
               RowBox[{
                RowBox[{"SaftyList", "[", 
@@ -859,9 +873,13 @@ Result______________________________________________________________ \n\n\
               "\[GreaterEqual]", "  ", 
               RowBox[{
                RowBox[{"StartAtThisJPoint", "[", "CoordI", "]"}], "+", 
-               "propJ", "-", "0.3"}]}], "&&", " ", 
+               "propJ", "-", 
+               RowBox[{"(", 
+                RowBox[{"0.3", "*", "100"}], ")"}]}]}], "&&", " ", 
              RowBox[{"distanceNextPotPointJ", " ", "\[LessEqual]", " ", 
-              RowBox[{"lastdistanceJ", " ", "+", "0.5"}]}], "&&", " ", 
+              RowBox[{"lastdistanceJ", " ", "+", 
+               RowBox[{"(", 
+                RowBox[{"0.5", "*", "100"}], ")"}]}]}], "&&", " ", 
              RowBox[{
               RowBox[{
                RowBox[{"SaftyList", "[", 
@@ -1189,7 +1207,9 @@ Result______________________________________________________________ \n\n\
               "\[LessEqual]", 
               RowBox[{
                RowBox[{"StartAtThisIPoint", "[", "CoordJ", "]"}], "+", 
-               "propI", "+", "0.3"}]}], " ", "&&", 
+               "propI", "+", 
+               RowBox[{"(", 
+                RowBox[{"0.3", "*", "100"}], ")"}]}]}], " ", "&&", 
              RowBox[{
               RowBox[{
                RowBox[{"SaftyList", "[", 
@@ -1197,9 +1217,13 @@ Result______________________________________________________________ \n\n\
               "\[GreaterEqual]", "  ", 
               RowBox[{
                RowBox[{"StartAtThisIPoint", "[", "CoordJ", "]"}], "+", 
-               "propI", "-", "0.3"}]}], "&&", " ", 
+               "propI", "-", 
+               RowBox[{"(", 
+                RowBox[{"0.3", "*", "100"}], ")"}]}]}], "&&", " ", 
              RowBox[{"distanceNextPotPointI", " ", "\[LessEqual]", " ", 
-              RowBox[{"lastdistanceI", " ", "+", "0.5"}]}], "&&", " ", 
+              RowBox[{"lastdistanceI", " ", "+", 
+               RowBox[{"(", 
+                RowBox[{"0.5", "*", "100"}], ")"}]}]}], "&&", " ", 
              RowBox[{
               RowBox[{
                RowBox[{"SaftyList", "[", 
@@ -1528,7 +1552,9 @@ Result______________________________________________________________ \n\n\
               "\[LessEqual]", "   ", 
               RowBox[{
                RowBox[{"StartPointForJGrid", "[", "CoordI", "]"}], "+", 
-               "propJ", "+", "0.3"}]}], "&&", " ", 
+               "propJ", "+", 
+               RowBox[{"(", 
+                RowBox[{"0.3", "*", "100"}], ")"}]}]}], "&&", " ", 
              RowBox[{
               RowBox[{
                RowBox[{"PossiblePointsListJ", "[", 
@@ -1537,7 +1563,8 @@ Result______________________________________________________________ \n\n\
               RowBox[{
                RowBox[{"StartPointForJGrid", "[", "CoordI", "]"}], "+", 
                "propJ", "-", 
-               RowBox[{"(*", "1.0", "*)"}], "3.0"}]}], "&&", " ", 
+               RowBox[{"(", 
+                RowBox[{"3.0", "*", "100"}], ")"}]}]}], "&&", " ", 
              RowBox[{
               RowBox[{
                RowBox[{"PossiblePointsListJ", "[", 
@@ -1548,7 +1575,9 @@ Result______________________________________________________________ \n\n\
                RowBox[{"distanceJ", " ", "/", "3"}]}]}], "&&", " ", 
              RowBox[{"distanceNextPotGridPointJ", "  ", "\[LessEqual]", " ", 
               RowBox[{"(", 
-               RowBox[{"distanceJ", " ", "+", "0.9"}], ")"}]}], "&&", 
+               RowBox[{"distanceJ", " ", "+", 
+                RowBox[{"(", 
+                 RowBox[{"0.9", "*", "100"}], ")"}]}], ")"}]}], "&&", 
              RowBox[{
               RowBox[{"MemberQ", "[", 
                RowBox[{"CheckPoints", ",", 
@@ -2229,8 +2258,9 @@ Result______________________________________________________________ \n\n\
    3.7287425349401436`*^9, 3.7287427265261884`*^9}, {3.728743457842517*^9, 
    3.728743471221521*^9}, {3.7287436194234724`*^9, 3.728743628133443*^9}, {
    3.7288951200714593`*^9, 3.72889513369199*^9}, {3.7288951728887887`*^9, 
-   3.728895173008198*^9}, {3.7362727481783867`*^9, 
-   3.7362728079034038`*^9}},ExpressionUUID->"eecc44b0-7133-421e-9a58-\
+   3.728895173008198*^9}, {3.7362727481783867`*^9, 3.7362728079034038`*^9}, {
+   3.7401472323996058`*^9, 
+   3.74014742641064*^9}},ExpressionUUID->"eecc44b0-7133-421e-9a58-\
 5f619c87cce0"],
 
 Cell[BoxData[""], "Input",
@@ -2248,8 +2278,8 @@ Cell[BoxData[""], "Input",
   3.7272613072460938`*^9}},ExpressionUUID->"486d87d8-70d1-4db2-b515-\
 b5e2cc0d079d"]
 },
-WindowSize->{961, 988},
-WindowMargins->{{1, Automatic}, {Automatic, 11}},
+WindowSize->{927, 988},
+WindowMargins->{{-9, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2264,13 +2294,13 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 116949, 2213, 9410, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 118125, 2243, 9600, "Input", "ExpressionUUID" -> \
 "eecc44b0-7133-421e-9a58-5f619c87cce0"],
-Cell[117510, 2235, 156, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[118686, 2265, 156, 3, 30, "Input", "ExpressionUUID" -> \
 "1746f5f7-62f7-4a4a-92f3-6c6280c95a5a"],
-Cell[117669, 2240, 154, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[118845, 2270, 154, 3, 30, "Input", "ExpressionUUID" -> \
 "62a98352-822a-4c3d-bc36-636740f7dbc1"],
-Cell[117826, 2245, 156, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[119002, 2275, 156, 3, 30, "Input", "ExpressionUUID" -> \
 "486d87d8-70d1-4db2-b515-b5e2cc0d079d"]
 }
 ]
