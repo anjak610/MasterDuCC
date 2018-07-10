@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     83702,       1559]
-NotebookOptionsPosition[     83093,       1539]
-NotebookOutlinePosition[     83435,       1554]
-CellTagsIndexPosition[     83392,       1551]
+NotebookDataLength[     86272,       1596]
+NotebookOptionsPosition[     85663,       1576]
+NotebookOutlinePosition[     86005,       1591]
+CellTagsIndexPosition[     85962,       1588]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -342,621 +342,650 @@ Cell[BoxData[{
      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{
+  RowBox[{"FindStartVectors", "[", "ConvexHull_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
    RowBox[{
-    RowBox[{"FindStartVectors", "[", "ConvexHull_", "]"}], ":=", 
-    RowBox[{"Module", "[", 
+    RowBox[{"{", 
      RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"StartPointCloud", "=", 
-         RowBox[{"{", "}"}]}], ",", 
-        RowBox[{"StartPointCloudKeys", "=", 
-         RowBox[{"<|", "|>"}]}], ",", " ", "VecI", ",", " ", "VecJ", ",", 
-        "counti", ",", "countj", ",", "Start", ",", "nextI", ",", "nextJ"}], 
-       "}"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"StartPointCloud", "=", 
+       RowBox[{"{", "}"}]}], ",", 
+      RowBox[{"StartPointCloudKeys", "=", 
+       RowBox[{"<|", "|>"}]}], ",", " ", "VecI", ",", " ", "VecJ", ",", 
+      "counti", ",", "countj", ",", "Start", ",", "nextI", ",", "nextJ"}], 
+     "}"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"For", "[", 
       RowBox[{
-       RowBox[{"For", "[", 
+       RowBox[{"rr", "=", "0"}], ",", " ", 
+       RowBox[{"rr", "\[LessEqual]", " ", 
         RowBox[{
-         RowBox[{"rr", "=", "0"}], ",", " ", 
-         RowBox[{"rr", "\[LessEqual]", " ", 
+         RowBox[{"Length", "[", "ConvexHull", "]"}], "-", "1"}]}], ",", " ", 
+       RowBox[{"rr", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
           RowBox[{
-           RowBox[{"Length", "[", "ConvexHull", "]"}], "-", "1"}]}], ",", " ", 
-         RowBox[{"rr", "++"}], ",", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"If", "[", 
            RowBox[{
             RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}], 
-              "\[Equal]", "1"}], "&&", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}], 
-              "\[LessEqual]", " ", "splits"}]}], ",", "\[IndentingNewLine]", 
+             RowBox[{"ConvexHull", "[", 
+              RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}], 
+            "\[Equal]", "1"}], "&&", 
+           RowBox[{
             RowBox[{
-             RowBox[{"AssociateTo", "[", 
-              RowBox[{"StartPointCloudKeys", ",", 
-               RowBox[{"{", 
+             RowBox[{"ConvexHull", "[", 
+              RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}], 
+            "\[LessEqual]", " ", "splits"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"AssociateTo", "[", 
+            RowBox[{"StartPointCloudKeys", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"CoordJ", "->", 
                 RowBox[{
-                 RowBox[{"CoordJ", "->", 
-                  RowBox[{
-                   RowBox[{"ConvexHull", "[", 
-                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CoordJ", "]"}]}], 
-                 ",", 
-                 RowBox[{"CoordI", " ", "->", 
-                  RowBox[{
-                   RowBox[{"ConvexHull", "[", 
-                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CoordI", "]"}]}], 
-                 ",", 
-                 RowBox[{"CellJ", "->", 
-                  RowBox[{
-                   RowBox[{"ConvexHull", "[", 
-                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}]}], 
-                 ",", 
-                 RowBox[{"CellI", "->", 
-                  RowBox[{
-                   RowBox[{"ConvexHull", "[", 
-                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}]}]}], 
-                "}"}]}], "]"}], ";", 
-             RowBox[{"AppendTo", "[", 
-              RowBox[{"StartPointCloud", ",", "StartPointCloudKeys"}], 
-              "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
-          "\[IndentingNewLine]", 
-          RowBox[{"If", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}], 
-              "\[LessEqual]", " ", "splits"}], "&&", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}], 
-              "\[Equal]", "1"}]}], " ", ",", 
-            RowBox[{
-             RowBox[{"AssociateTo", "[", 
-              RowBox[{"StartPointCloudKeys", ",", 
-               RowBox[{"{", 
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "rr", "]"}], "]"}], "[", "CoordJ", "]"}]}], 
+               ",", 
+               RowBox[{"CoordI", " ", "->", 
                 RowBox[{
-                 RowBox[{"CoordJ", "->", 
-                  RowBox[{
-                   RowBox[{"ConvexHull", "[", 
-                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CoordJ", "]"}]}], 
-                 ",", 
-                 RowBox[{"CoordI", " ", "->", 
-                  RowBox[{
-                   RowBox[{"ConvexHull", "[", 
-                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CoordI", "]"}]}], 
-                 ",", 
-                 RowBox[{"CellJ", "->", 
-                  RowBox[{
-                   RowBox[{"ConvexHull", "[", 
-                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}]}], 
-                 ",", 
-                 RowBox[{"CellI", "->", 
-                  RowBox[{
-                   RowBox[{"ConvexHull", "[", 
-                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}]}]}], 
-                "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
-             "\[IndentingNewLine]", 
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"MemberQ", "[", 
-                 RowBox[{"StartPointCloud", ",", "StartPointCloudKeys"}], 
-                 "]"}], "\[Equal]", "False"}], ",", "\[IndentingNewLine]", 
-               RowBox[{"AppendTo", "[", 
-                RowBox[{"StartPointCloud", ",", "StartPointCloudKeys"}], 
-                "]"}]}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
-          ";"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
-       RowBox[{"counti", "=", "10000"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"countj", " ", "=", " ", "10000"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"VecI", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"VecJ", "=", "0"}], ";", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
-       RowBox[{"For", "[", 
-        RowBox[{
-         RowBox[{"aa", "=", "0"}], ",", 
-         RowBox[{"aa", "\[LessEqual]", 
-          RowBox[{"Length", "[", "StartPointCloud", "]"}]}], ",", 
-         RowBox[{"aa", "++"}], ",", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"If", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "aa", "]"}], "]"}], "[", "CoordI", "]"}], 
-              "\[LessEqual]", " ", "counti"}], " ", "&&", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "aa", "]"}], "]"}], "[", "CellJ", "]"}], 
-              "\[LessEqual]", " ", "splits"}], " ", "&&", " ", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "aa", "]"}], "]"}], "[", "CellI", "]"}], 
-              "\[Equal]", "1"}]}], ",", "\[IndentingNewLine]", 
-            "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"counti", " ", "=", " ", 
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "aa", "]"}], "]"}], "[", "CoordI", "]"}]}], ";", 
-             "\[IndentingNewLine]", 
-             RowBox[{"VecI", " ", "=", " ", 
-              RowBox[{"StartPointCloud", "[", 
-               RowBox[{"[", "aa", "]"}], "]"}]}], ";"}]}], 
-           "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-          "\[IndentingNewLine]", "\[IndentingNewLine]", 
-          RowBox[{"If", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "aa", "]"}], "]"}], "[", "CoordJ", "]"}], 
-              "\[LessEqual]", " ", "countj"}], " ", "&&", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "aa", "]"}], "]"}], "[", "CellI", "]"}], 
-              "\[LessEqual]", " ", "splits"}], " ", "&&", " ", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "aa", "]"}], "]"}], "[", "CellJ", "]"}], 
-              "\[Equal]", "1"}]}], ",", "\[IndentingNewLine]", 
-            "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"countj", " ", "=", " ", 
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "aa", "]"}], "]"}], "[", "CoordJ", "]"}]}], ";", 
-             "\[IndentingNewLine]", 
-             RowBox[{"VecJ", " ", "=", " ", 
-              RowBox[{"StartPointCloud", "[", 
-               RowBox[{"[", "aa", "]"}], "]"}]}], ";"}]}], 
-           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
-        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<VecI = \>\"", ",", "VecI"}], "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<VecJ = \>\"", ",", "VecJ"}], "]"}], ";", 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"For", "[", 
-        RowBox[{
-         RowBox[{"yy", "=", "0"}], ",", 
-         RowBox[{"yy", "\[LessEqual]", 
-          RowBox[{"Length", "[", "StartPointCloud", "]"}]}], ",", 
-         RowBox[{"yy", "++"}], ",", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"If", "[", " ", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "yy", "]"}], "]"}], "[", "CellI", "]"}], 
-              "\[Equal]", "1"}], " ", "&&", " ", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "yy", "]"}], "]"}], "[", "CellJ", "]"}], 
-              "\[LessEqual]", " ", "splits"}], " ", "&&", "  ", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "yy", "]"}], "]"}], "[", "CoordJ", "]"}], 
-              "\[LessEqual]", " ", 
-              RowBox[{"VecI", "[", "CoordJ", "]"}]}], " ", "&&", " ", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "yy", "]"}], "]"}], "[", "CoordI", "]"}], 
-              "\[LessEqual]", " ", 
-              RowBox[{
-               RowBox[{"VecI", "[", "CoordI", "]"}], "+", 
-               RowBox[{"(", 
-                RowBox[{"0.8", "*", "100"}], ")"}]}]}]}], ",", 
-            RowBox[{"(*", 
-             RowBox[{
-              RowBox[{
-               RowBox[{
-               "statt", " ", "plus", " ", "0.8", " ", "vllt", " ", "einen", 
-                " ", "Offset", " ", "aus", " ", "distanzen", " ", 
-                "bestimmen"}], "..."}], " ", "nur", " ", "wie", " ", "wenn", 
-              " ", "andere", " ", "Nachbarn", " ", "noch", " ", 
-              RowBox[{"unbekannt", "?"}]}], "*)"}], "\[IndentingNewLine]", 
-            "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"VecI", " ", "=", "  ", 
-              RowBox[{"StartPointCloud", "[", 
-               RowBox[{"[", "yy", "]"}], "]"}]}], ";"}]}], 
-           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
-        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"For", "[", 
-        RowBox[{
-         RowBox[{"yy", "=", "0"}], ",", 
-         RowBox[{"yy", "\[LessEqual]", 
-          RowBox[{"Length", "[", "StartPointCloud", "]"}]}], ",", 
-         RowBox[{"yy", "++"}], ",", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"If", "[", " ", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "yy", "]"}], "]"}], "[", "CellJ", "]"}], 
-              "\[Equal]", "1"}], " ", "&&", " ", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "yy", "]"}], "]"}], "[", "CellI", "]"}], 
-              "\[LessEqual]", " ", "splits"}], " ", "&&", "  ", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "yy", "]"}], "]"}], "[", "CoordI", "]"}], 
-              "\[LessEqual]", " ", 
-              RowBox[{"VecJ", "[", "CoordI", "]"}]}], " ", "&&", " ", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "yy", "]"}], "]"}], "[", "CoordJ", "]"}], 
-              "\[LessEqual]", " ", 
-              RowBox[{
-               RowBox[{"VecJ", "[", "CoordJ", "]"}], "+", 
-               RowBox[{"(", 
-                RowBox[{"0.5", "*", "100"}], ")"}]}]}]}], ",", 
-            "\[IndentingNewLine]", "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"VecJ", " ", "=", "  ", 
-              RowBox[{"StartPointCloud", "[", 
-               RowBox[{"[", "yy", "]"}], "]"}]}], ";"}]}], 
-           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
-        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{
-        "\"\<VecI = \>\"", ",", "VecI", ",", "\"\< VecJ =\>\"", ",", "VecJ"}],
-         "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{"VecI", "\[Equal]", "VecJ"}], ",", " ", 
-         RowBox[{"Start", "=", "VecI"}], ",", 
-         RowBox[{"Start", " ", "=", " ", "VecJ"}]}], "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<Start = \>\"", ",", "Start"}], "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"(*", 
-        RowBox[{"Find", " ", "NextI", " ", "and", " ", "NextJ"}], " ", "*)"}],
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "rr", "]"}], "]"}], "[", "CoordI", "]"}]}], 
+               ",", 
+               RowBox[{"CellJ", "->", 
+                RowBox[{
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}]}], ",", 
+               RowBox[{"CellI", "->", 
+                RowBox[{
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}]}]}], 
+              "}"}]}], "]"}], ";", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"StartPointCloud", ",", "StartPointCloudKeys"}], 
+            "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
         "\[IndentingNewLine]", 
-       RowBox[{"nextI", "=", 
-        RowBox[{"<|", 
+        RowBox[{"If", "[", 
          RowBox[{
-          RowBox[{"CoordJ", "\[Rule]", " ", "100000"}], ",", 
-          RowBox[{"CoordI", " ", "\[Rule]", "100000"}]}], "|>"}]}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"nextJ", "=", 
-        RowBox[{"<|", 
-         RowBox[{
-          RowBox[{"CoordJ", "\[Rule]", " ", "100000"}], ",", 
-          RowBox[{"CoordI", " ", "\[Rule]", "100000"}]}], "|>"}]}], ";", 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<StartPointCloud = \>\"", ",", " ", "StartPointCloud"}], 
-        "]"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"For", "[", 
-        RowBox[{
-         RowBox[{"bb", " ", "=", " ", "0"}], ",", " ", 
-         RowBox[{"bb", "\[LessEqual]", " ", 
-          RowBox[{"Length", "[", "StartPointCloud", "]"}]}], ",", " ", 
-         RowBox[{"bb", "++"}], ",", "\[IndentingNewLine]", 
-         "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"If", "[", 
+          RowBox[{
            RowBox[{
             RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "bb", "]"}], "]"}], "[", "CellI", "]"}], " ", "==",
-               " ", 
-              RowBox[{"Start", "[", "CellI", "]"}]}], "||", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "bb", "]"}], "]"}], "[", "CellI", "]"}], " ", "==",
-               " ", 
-              RowBox[{
-               RowBox[{"Start", "[", "CellI", "]"}], "+", "1"}]}], "||", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "bb", "]"}], "]"}], "[", "CellI", "]"}], " ", "==",
-               " ", 
-              RowBox[{
-               RowBox[{"Start", "[", "CellI", "]"}], "-", "1"}]}]}], " ", ",",
-             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             RowBox[{"ConvexHull", "[", 
+              RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}], 
+            "\[LessEqual]", " ", "splits"}], "&&", 
+           RowBox[{
+            RowBox[{"ConvexHull", "[", 
+             RowBox[{"[", "rr", "]"}], "]"}], "[", 
             RowBox[{
-             RowBox[{"If", "[", 
-              RowBox[{
+             RowBox[{"CellJ", " ", "\[Equal]", "1"}], ",", 
+             RowBox[{
+              RowBox[{"AssociateTo", "[", 
+               RowBox[{"StartPointCloudKeys", ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"CoordJ", "->", 
+                   RowBox[{
+                    RowBox[{"ConvexHull", "[", 
+                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CoordJ", "]"}]}], 
+                  ",", 
+                  RowBox[{"CoordI", " ", "->", 
+                   RowBox[{
+                    RowBox[{"ConvexHull", "[", 
+                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CoordI", "]"}]}], 
+                  ",", 
+                  RowBox[{"CellJ", "->", 
+                   RowBox[{
+                    RowBox[{"ConvexHull", "[", 
+                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}]}], 
+                  ",", 
+                  RowBox[{"CellI", "->", 
+                   RowBox[{
+                    RowBox[{"ConvexHull", "[", 
+                    RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}]}]}], 
+                 "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
+              "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
                RowBox[{
                 RowBox[{
-                 RowBox[{
-                  RowBox[{"StartPointCloud", "[", 
-                   RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordI", "]"}], 
-                 "\[GreaterEqual]", " ", 
-                 RowBox[{"Start", "[", "CoordI", "]"}]}], "&&", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"StartPointCloud", "[", 
-                   RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordJ", "]"}], 
-                 "\[LessEqual]", " ", 
-                 RowBox[{"nextI", "[", "CoordJ", "]"}]}], " ", "&&", 
-                RowBox[{
-                 RowBox[{"StartPointCloud", "[", 
-                  RowBox[{"[", "bb", "]"}], "]"}], "\[NotEqual]", " ", 
-                 "Start"}]}], ",", "\[IndentingNewLine]", 
+                 RowBox[{"MemberQ", "[", 
+                  RowBox[{"StartPointCloud", ",", "StartPointCloudKeys"}], 
+                  "]"}], "\[Equal]", "False"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"AppendTo", "[", 
+                 RowBox[{"StartPointCloud", ",", "StartPointCloudKeys"}], 
+                 "]"}]}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+          ";"}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        RowBox[{"counti", "=", "10000"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"countj", " ", "=", " ", "10000"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"VecI", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"VecJ", "=", "0"}], ";", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"aa", "=", "0"}], ",", 
+          RowBox[{"aa", "\[LessEqual]", 
+           RowBox[{"Length", "[", "StartPointCloud", "]"}]}], ",", 
+          RowBox[{"aa", "++"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CoordI", "]"}], 
+               "\[LessEqual]", " ", "counti"}], " ", "&&", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CellJ", "]"}], 
+               "\[LessEqual]", " ", "splits"}], " ", "&&", " ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CellI", "]"}], 
+               "\[Equal]", "1"}]}], ",", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"counti", " ", "=", " ", 
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CoordI", "]"}]}], ";",
                "\[IndentingNewLine]", 
+              RowBox[{"VecI", " ", "=", " ", 
+               RowBox[{"StartPointCloud", "[", 
+                RowBox[{"[", "aa", "]"}], "]"}]}], ";"}]}], 
+            "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+           "\[IndentingNewLine]", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
                RowBox[{
-                RowBox[{"nextI", "=", " ", 
-                 RowBox[{"StartPointCloud", "[", 
-                  RowBox[{"[", "bb", "]"}], "]"}]}], ";", 
-                "\[IndentingNewLine]", 
-                RowBox[{"Print", "[", 
-                 RowBox[{"\"\<nextI first = \>\"", ",", " ", "nextI"}], "]"}],
-                 ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
-           "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-          "\[IndentingNewLine]", 
-          RowBox[{"If", "[", 
-           RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CoordJ", "]"}], 
+               "\[LessEqual]", " ", "countj"}], " ", "&&", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CellI", "]"}], 
+               "\[LessEqual]", " ", "splits"}], " ", "&&", " ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CellJ", "]"}], 
+               "\[Equal]", "1"}]}], ",", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"countj", " ", "=", " ", 
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "aa", "]"}], "]"}], "[", "CoordJ", "]"}]}], ";",
+               "\[IndentingNewLine]", 
+              RowBox[{"VecJ", " ", "=", " ", 
+               RowBox[{"StartPointCloud", "[", 
+                RowBox[{"[", "aa", "]"}], "]"}]}], ";"}]}], 
+            "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+         "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<VecI = \>\"", ",", "VecI"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<VecJ = \>\"", ",", "VecJ"}], "]"}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"yy", "=", "0"}], ",", 
+          RowBox[{"yy", "\[LessEqual]", 
+           RowBox[{"Length", "[", "StartPointCloud", "]"}]}], ",", 
+          RowBox[{"yy", "++"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", " ", 
             RowBox[{
              RowBox[{
               RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "bb", "]"}], "]"}], "[", "CellJ", "]"}], " ", "==",
-               " ", 
-              RowBox[{"Start", "[", "CellJ", "]"}]}], "||", 
-             RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "yy", "]"}], "]"}], "[", "CellI", "]"}], 
+               "\[Equal]", "1"}], " ", "&&", " ", 
               RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "bb", "]"}], "]"}], "[", "CellJ", "]"}], " ", "==",
-               " ", 
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "yy", "]"}], "]"}], "[", "CellJ", "]"}], 
+               "\[LessEqual]", " ", "splits"}], " ", "&&", "  ", 
               RowBox[{
-               RowBox[{"Start", "[", "CellJ", "]"}], "+", "1"}]}], "||", 
-             RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "yy", "]"}], "]"}], "[", "CoordJ", "]"}], 
+               "\[LessEqual]", " ", 
+               RowBox[{"VecI", "[", "CoordJ", "]"}]}], " ", "&&", " ", 
               RowBox[{
-               RowBox[{"StartPointCloud", "[", 
-                RowBox[{"[", "bb", "]"}], "]"}], "[", "CellJ", "]"}], " ", "==",
-               " ", 
-              RowBox[{
-               RowBox[{"Start", "[", "CellJ", "]"}], "-", "1"}]}]}], ",", 
-            "\[IndentingNewLine]", "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "yy", "]"}], "]"}], "[", "CoordI", "]"}], 
+               "\[LessEqual]", " ", 
+               RowBox[{
+                RowBox[{"VecI", "[", "CoordI", "]"}], "+", 
+                RowBox[{"(", 
+                 RowBox[{"0.8", "*", "100"}], ")"}]}]}]}], ",", 
+             RowBox[{"(*", 
               RowBox[{
                RowBox[{
                 RowBox[{
+                "statt", " ", "plus", " ", "0.8", " ", "vllt", " ", "einen", 
+                 " ", "Offset", " ", "aus", " ", "distanzen", " ", 
+                 "bestimmen"}], "..."}], " ", "nur", " ", "wie", " ", "wenn", 
+               " ", "andere", " ", "Nachbarn", " ", "noch", " ", 
+               RowBox[{"unbekannt", "?"}]}], "*)"}], "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"VecI", " ", "=", "  ", 
+               RowBox[{"StartPointCloud", "[", 
+                RowBox[{"[", "yy", "]"}], "]"}]}], ";"}]}], 
+            "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+         "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"yy", "=", "0"}], ",", 
+          RowBox[{"yy", "\[LessEqual]", 
+           RowBox[{"Length", "[", "StartPointCloud", "]"}]}], ",", 
+          RowBox[{"yy", "++"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", " ", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "yy", "]"}], "]"}], "[", "CellJ", "]"}], 
+               "\[Equal]", "1"}], " ", "&&", " ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "yy", "]"}], "]"}], "[", "CellI", "]"}], 
+               "\[LessEqual]", " ", "splits"}], " ", "&&", "  ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "yy", "]"}], "]"}], "[", "CoordI", "]"}], 
+               "\[LessEqual]", " ", 
+               RowBox[{"VecJ", "[", "CoordI", "]"}]}], " ", "&&", " ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "yy", "]"}], "]"}], "[", "CoordJ", "]"}], 
+               "\[LessEqual]", " ", 
+               RowBox[{
+                RowBox[{"VecJ", "[", "CoordJ", "]"}], "+", 
+                RowBox[{"(", 
+                 RowBox[{"0.5", "*", "100"}], ")"}]}]}]}], ",", 
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"VecJ", " ", "=", "  ", 
+               RowBox[{"StartPointCloud", "[", 
+                RowBox[{"[", "yy", "]"}], "]"}]}], ";"}]}], 
+            "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+         "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{
+         "\"\<VecI = \>\"", ",", "VecI", ",", "\"\< VecJ =\>\"", ",", 
+          "VecJ"}], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"VecI", "\[Equal]", "VecJ"}], ",", " ", 
+            RowBox[{"Start", "=", "VecJ"}], ",", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"VecJ", "[", "CoordI", "]"}], ">", " ", 
+               RowBox[{"VecI", "[", "CoordI", "]"}]}], ",", 
+              RowBox[{"Start", " ", "=", " ", "VecI"}], ",", 
+              RowBox[{"Start", " ", "=", " ", "VecJ"}]}], "]"}]}], "]"}], 
+          ";"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"VecI", "\[Equal]", "VecJ"}], ",", " ", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Start", "=", "VecJ"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Start", " ", "=", " ", "VecJ"}]}], "\[IndentingNewLine]", 
+         "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<Start = \>\"", ",", "Start"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Find", " ", "NextI", " ", "and", " ", "NextJ"}], " ", 
+         "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"nextI", "=", 
+         RowBox[{"<|", 
+          RowBox[{
+           RowBox[{"CoordJ", "\[Rule]", " ", "100000"}], ",", 
+           RowBox[{"CoordI", " ", "\[Rule]", "100000"}]}], "|>"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"nextJ", "=", 
+         RowBox[{"<|", 
+          RowBox[{
+           RowBox[{"CoordJ", "\[Rule]", " ", "100000"}], ",", 
+           RowBox[{"CoordI", " ", "\[Rule]", "100000"}]}], "|>"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<StartPointCloud = \>\"", ",", " ", "StartPointCloud"}], 
+         "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"bb", " ", "=", " ", "0"}], ",", " ", 
+          RowBox[{"bb", "\[LessEqual]", " ", 
+           RowBox[{"Length", "[", "StartPointCloud", "]"}]}], ",", " ", 
+          RowBox[{"bb", "++"}], ",", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "bb", "]"}], "]"}], "[", "CellI", "]"}], " ", "==",
+                " ", 
+               RowBox[{"Start", "[", "CellI", "]"}]}], "||", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "bb", "]"}], "]"}], "[", "CellI", "]"}], " ", "==",
+                " ", 
+               RowBox[{
+                RowBox[{"Start", "[", "CellI", "]"}], "+", "1"}]}], "||", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "bb", "]"}], "]"}], "[", "CellI", "]"}], " ", "==",
+                " ", 
+               RowBox[{
+                RowBox[{"Start", "[", "CellI", "]"}], "-", "1"}]}]}], " ", 
+             ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"StartPointCloud", "[", 
+                    RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordI", "]"}], 
+                  "\[GreaterEqual]", " ", 
+                  RowBox[{"Start", "[", "CoordI", "]"}]}], "&&", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"StartPointCloud", "[", 
+                    RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                  "\[LessEqual]", " ", 
+                  RowBox[{"nextI", "[", "CoordJ", "]"}]}], " ", "&&", 
                  RowBox[{
                   RowBox[{"StartPointCloud", "[", 
-                   RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordJ", "]"}], 
-                 "\[GreaterEqual]", " ", 
-                 RowBox[{"Start", "[", "CoordJ", "]"}]}], "&&", 
+                   RowBox[{"[", "bb", "]"}], "]"}], "\[NotEqual]", " ", 
+                  "Start"}]}], ",", "\[IndentingNewLine]", 
+                "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"nextI", "=", " ", 
+                  RowBox[{"StartPointCloud", "[", 
+                   RowBox[{"[", "bb", "]"}], "]"}]}], ";", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"Print", "[", 
+                  RowBox[{"\"\<nextI first = \>\"", ",", " ", "nextI"}], 
+                  "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+            "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "bb", "]"}], "]"}], "[", "CellJ", "]"}], " ", "==",
+                " ", 
+               RowBox[{"Start", "[", "CellJ", "]"}]}], "||", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "bb", "]"}], "]"}], "[", "CellJ", "]"}], " ", "==",
+                " ", 
+               RowBox[{
+                RowBox[{"Start", "[", "CellJ", "]"}], "+", "1"}]}], "||", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"StartPointCloud", "[", 
+                 RowBox[{"[", "bb", "]"}], "]"}], "[", "CellJ", "]"}], " ", "==",
+                " ", 
+               RowBox[{
+                RowBox[{"Start", "[", "CellJ", "]"}], "-", "1"}]}]}], ",", 
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"StartPointCloud", "[", 
+                    RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                  "\[GreaterEqual]", " ", 
+                  RowBox[{"Start", "[", "CoordJ", "]"}]}], "&&", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"StartPointCloud", "[", 
+                    RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordI", "]"}], 
+                  "\[LessEqual]", "  ", 
+                  RowBox[{"nextJ", "[", "CoordI", "]"}]}], " ", "&&", " ", 
+                 RowBox[{
+                  RowBox[{"StartPointCloud", "[", 
+                   RowBox[{"[", "bb", "]"}], "]"}], "\[NotEqual]", " ", 
+                  "nextI"}], "&&", 
+                 RowBox[{
+                  RowBox[{"StartPointCloud", "[", 
+                   RowBox[{"[", "bb", "]"}], "]"}], "\[NotEqual]", " ", 
+                  "Start"}]}], ",", "\[IndentingNewLine]", 
+                "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"nextJ", "=", " ", 
+                  RowBox[{"StartPointCloud", "[", 
+                   RowBox[{"[", "bb", "]"}], "]"}]}], ";", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"Print", "[", 
+                  RowBox[{"\"\<nextJ first = \>\"", ",", " ", "nextJ"}], 
+                  "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+            "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+         "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "CHeck", " ", "if", " ", "NextI", " ", "and", " ", "NectJ", " ", 
+          "are", " ", "final", " ", "Values"}], "*)"}], "\[IndentingNewLine]",
+         "\[IndentingNewLine]", 
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"bb", " ", "=", " ", "0"}], ",", " ", 
+          RowBox[{"bb", "\[LessEqual]", " ", 
+           RowBox[{"Length", "[", "StartPointCloud", "]"}]}], ",", " ", 
+          RowBox[{"bb", "++"}], ",", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{"nextJ", "[", "CoordI", "]"}], "-", 
+                 RowBox[{"Start", "[", "CoordI", "]"}]}], "]"}], 
+               "\[GreaterEqual]", " ", 
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"StartPointCloud", "[", 
+                   RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordI", "]"}], "-", 
+                 RowBox[{"Start", "[", "CoordI", "]"}]}], "]"}]}], " ", "&&", 
+              " ", 
+              RowBox[{
+               RowBox[{"StartPointCloud", "[", 
+                RowBox[{"[", "bb", "]"}], "]"}], "\[NotEqual]", " ", 
+               "Start"}], " ", "&&", "  ", 
+              RowBox[{
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{"nextJ", "[", "CoordJ", "]"}], "-", 
+                 RowBox[{"Start", "[", "CoordJ", "]"}]}], "]"}], ">", " ", 
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"StartPointCloud", "[", 
+                   RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordJ", "]"}], "-", 
+                 RowBox[{"Start", "[", "CoordJ", "]"}]}], "]"}]}]}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"nextJ", " ", "=", " ", 
+               RowBox[{"StartPointCloud", "[", 
+                RowBox[{"[", "bb", "]"}], "]"}]}], ";"}]}], 
+            "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{"nextI", "[", "CoordJ", "]"}], "-", 
+                 RowBox[{"Start", "[", "CoordJ", "]"}]}], "]"}], 
+               "\[GreaterEqual]", " ", 
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"StartPointCloud", "[", 
+                   RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordJ", "]"}], "-", 
+                 RowBox[{"Start", "[", "CoordJ", "]"}]}], "]"}]}], " ", "&&", 
+              " ", 
+              RowBox[{
+               RowBox[{"StartPointCloud", "[", 
+                RowBox[{"[", "bb", "]"}], "]"}], "\[NotEqual]", " ", 
+               "Start"}], " ", "&&", "  ", 
+              RowBox[{
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{"nextI", "[", "CoordI", "]"}], "-", 
+                 RowBox[{"Start", "[", "CoordI", "]"}]}], "]"}], ">", " ", 
+               RowBox[{"Abs", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"StartPointCloud", "[", 
+                   RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordI", "]"}], "-", 
+                 RowBox[{"Start", "[", "CoordI", "]"}]}], "]"}]}]}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
                 RowBox[{
                  RowBox[{
                   RowBox[{"StartPointCloud", "[", 
                    RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordI", "]"}], 
-                 "\[LessEqual]", "  ", 
+                 "\[NotEqual]", "  ", 
                  RowBox[{"nextJ", "[", "CoordI", "]"}]}], " ", "&&", 
                 RowBox[{
-                 RowBox[{"StartPointCloud", "[", 
-                  RowBox[{"[", "bb", "]"}], "]"}], "\[NotEqual]", " ", 
-                 "Start"}]}], ",", "\[IndentingNewLine]", 
-               "\[IndentingNewLine]", 
-               RowBox[{
-                RowBox[{"nextJ", "=", " ", 
-                 RowBox[{"StartPointCloud", "[", 
-                  RowBox[{"[", "bb", "]"}], "]"}]}], ";", 
-                "\[IndentingNewLine]", 
-                RowBox[{"Print", "[", 
-                 RowBox[{"\"\<nextJ first = \>\"", ",", " ", "nextJ"}], "]"}],
-                 ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
-           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
-        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
-       RowBox[{"(*", 
-        RowBox[{
-        "CHeck", " ", "if", " ", "NextI", " ", "and", " ", "NectJ", " ", 
-         "are", " ", "final", " ", "Values"}], "*)"}], "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
-       RowBox[{"For", "[", 
-        RowBox[{
-         RowBox[{"bb", " ", "=", " ", "0"}], ",", " ", 
-         RowBox[{"bb", "\[LessEqual]", " ", 
-          RowBox[{"Length", "[", "StartPointCloud", "]"}]}], ",", " ", 
-         RowBox[{"bb", "++"}], ",", "\[IndentingNewLine]", 
-         "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"If", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{"nextJ", "[", "CoordI", "]"}], "-", 
-                RowBox[{"Start", "[", "CoordI", "]"}]}], "]"}], 
-              "\[GreaterEqual]", " ", 
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"StartPointCloud", "[", 
-                  RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordI", "]"}], "-", 
-                RowBox[{"Start", "[", "CoordI", "]"}]}], "]"}]}], " ", "&&", 
-             " ", 
-             RowBox[{
-              RowBox[{"StartPointCloud", "[", 
-               RowBox[{"[", "bb", "]"}], "]"}], "\[NotEqual]", " ", "Start"}],
-              " ", "&&", "  ", 
-             RowBox[{
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{"nextJ", "[", "CoordJ", "]"}], "-", 
-                RowBox[{"Start", "[", "CoordJ", "]"}]}], "]"}], ">", " ", 
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"StartPointCloud", "[", 
-                  RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordJ", "]"}], "-", 
-                RowBox[{"Start", "[", "CoordJ", "]"}]}], "]"}]}]}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"nextJ", " ", "=", " ", 
-              RowBox[{"StartPointCloud", "[", 
-               RowBox[{"[", "bb", "]"}], "]"}]}], ";"}]}], 
-           "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-          "\[IndentingNewLine]", 
-          RowBox[{"If", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{"nextI", "[", "CoordJ", "]"}], "-", 
-                RowBox[{"Start", "[", "CoordJ", "]"}]}], "]"}], 
-              "\[GreaterEqual]", " ", 
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"StartPointCloud", "[", 
-                  RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordJ", "]"}], "-", 
-                RowBox[{"Start", "[", "CoordJ", "]"}]}], "]"}]}], " ", "&&", 
-             " ", 
-             RowBox[{
-              RowBox[{"StartPointCloud", "[", 
-               RowBox[{"[", "bb", "]"}], "]"}], "\[NotEqual]", " ", "Start"}],
-              " ", "&&", "  ", 
-             RowBox[{
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{"nextI", "[", "CoordI", "]"}], "-", 
-                RowBox[{"Start", "[", "CoordI", "]"}]}], "]"}], ">", " ", 
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"StartPointCloud", "[", 
-                  RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordI", "]"}], "-", 
-                RowBox[{"Start", "[", "CoordI", "]"}]}], "]"}]}]}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"nextI", " ", "=", " ", 
-              RowBox[{"StartPointCloud", "[", 
-               RowBox[{"[", "bb", "]"}], "]"}]}], ";"}]}], 
-           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
-        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<nexti = \>\"", ",", " ", "nextI"}], "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<nextj = \>\"", ",", " ", "nextJ"}], "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"CreatePossiblePointsListsIAndJ", "[", 
-        RowBox[{"nextI", ",", "nextJ", ",", "Start", ",", "ConvexHull"}], 
-        "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"CreatePossiblePointsListsIAndJ", "[", 
-     RowBox[{"nextI_", ",", "nextJ_", ",", "Start_", ",", "ConvexHull_"}], 
-     "]"}], ":=", 
-    RowBox[{"Module", "[", 
+                 RowBox[{
+                  RowBox[{"StartPointCloud", "[", 
+                   RowBox[{"[", "bb", "]"}], "]"}], "[", "CoordJ", "]"}], 
+                 "\[NotEqual]", "  ", 
+                 RowBox[{"nextJ", "[", "CoordJ", "]"}]}], "&&", 
+                "\[IndentingNewLine]", "nextI"}], " ", "=", " ", 
+               RowBox[{"StartPointCloud", "[", 
+                RowBox[{"[", "bb", "]"}], "]"}]}], ";"}]}], 
+            "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+         "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<nextj = \>\"", ",", " ", "nextJ"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<nexti = \>\"", ",", " ", "nextI"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"CreatePossiblePointsListsIAndJ", "[", 
+         RowBox[{"nextI", ",", "nextJ", ",", "Start", ",", "ConvexHull"}], 
+         "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"{", 
+      RowBox[{"CreatePossiblePointsListsIAndJ", "[", 
+       RowBox[{"nextI_", ",", "nextJ_", ",", "Start_", ",", "ConvexHull_"}], 
+       "]"}], ":=", 
+      RowBox[{"Module", "[", 
        RowBox[{
-        RowBox[{"IList", "=", 
-         RowBox[{"{", "}"}]}], ",", 
-        RowBox[{"JList", "=", 
-         RowBox[{"{", "}"}]}], ",", "IDir", ",", "JDir", ",", "distance", ",",
-         "cache", ",", "PotNextI", ",", "PotNextJ"}], "}"}], ",", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"aj", "=", "2"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"restJ", "=", "splits"}], ";", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
-       RowBox[{"For", "[", 
-        RowBox[{
-         RowBox[{"rr", "=", " ", "0"}], ",", " ", 
-         RowBox[{"rr", "\[LessEqual]", " ", 
-          RowBox[{"Length", "[", "ConvexHull", "]"}]}], ",", " ", 
-         RowBox[{"rr", "++"}], ",", "\[IndentingNewLine]", 
-         "\[IndentingNewLine]", 
+        RowBox[{"{", 
          RowBox[{
-          RowBox[{"If", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}], 
-              "\[LessEqual]", " ", "aj"}], " ", "&&", " ", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}], 
-              "\[LessEqual]", " ", "splits"}]}], ",", "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"AppendTo", "[", 
-              RowBox[{"IList", ",", " ", 
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}]}], "]"}], ";"}]}], 
-           "\[IndentingNewLine]", " ", "]"}], ";", "\[IndentingNewLine]", 
-          "\[IndentingNewLine]", 
-          RowBox[{"If", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-              RowBox[{
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}], 
-              "\[LessEqual]", " ", "aj"}], " ", "&&", " ", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}], 
-              "\[LessEqual]", " ", "splits"}]}], ",", "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"AppendTo", "[", 
-              RowBox[{"JList", ",", 
-               RowBox[{"ConvexHull", "[", 
-                RowBox[{"[", "rr", "]"}], "]"}]}], "]"}], ";"}]}], 
-           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
-        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<IList = \>\"", ",", "IList"}], "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Print", "[", 
-        RowBox[{"\"\<JList = \>\"", ",", "JList"}], "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"FindNeighbours", "[", 
+          RowBox[{"IList", "=", 
+           RowBox[{"{", "}"}]}], ",", 
+          RowBox[{"JList", "=", 
+           RowBox[{"{", "}"}]}], ",", "IDir", ",", "JDir", ",", "distance", 
+          ",", "cache", ",", "PotNextI", ",", "PotNextJ"}], "}"}], ",", 
+        "\[IndentingNewLine]", 
         RowBox[{
-        "IList", ",", "JList", ",", " ", "Start", ",", "nextI", ",", "nextJ", 
-         ",", "ConvexHull"}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
-   ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]",
-   "\[IndentingNewLine]", 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+         RowBox[{"aj", "=", "2"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"restJ", "=", "splits"}], ";", "\[IndentingNewLine]", 
+         "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"rr", "=", " ", "0"}], ",", " ", 
+           RowBox[{"rr", "\[LessEqual]", " ", 
+            RowBox[{"Length", "[", "ConvexHull", "]"}]}], ",", " ", 
+           RowBox[{"rr", "++"}], ",", "\[IndentingNewLine]", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}], 
+                "\[LessEqual]", " ", "aj"}], " ", "&&", " ", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}], 
+                "\[LessEqual]", " ", "splits"}]}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"AppendTo", "[", 
+                RowBox[{"IList", ",", " ", 
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "rr", "]"}], "]"}]}], "]"}], ";"}]}], 
+             "\[IndentingNewLine]", " ", "]"}], ";", "\[IndentingNewLine]", 
+            "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "rr", "]"}], "]"}], "[", "CellI", "]"}], 
+                "\[LessEqual]", " ", "aj"}], " ", "&&", " ", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "rr", "]"}], "]"}], "[", "CellJ", "]"}], 
+                "\[LessEqual]", " ", "splits"}]}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"AppendTo", "[", 
+                RowBox[{"JList", ",", 
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "rr", "]"}], "]"}]}], "]"}], ";"}]}], 
+             "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<IList = \>\"", ",", "IList"}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<JList = \>\"", ",", "JList"}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"FindNeighbours", "[", 
+          RowBox[{
+          "IList", ",", "JList", ",", " ", "Start", ",", "nextI", ",", 
+           "nextJ", ",", "ConvexHull"}], "]"}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]}]}], "Input",
  CellChangeTimes->{{3.7221481711826744`*^9, 3.722148198221853*^9}, {
    3.722149058808034*^9, 3.722149705398755*^9}, {3.722149736535053*^9, 
    3.722149906370448*^9}, {3.7221502274491024`*^9, 3.722150559448614*^9}, {
@@ -1524,8 +1553,16 @@ Cell[BoxData[{
    3.736134477307056*^9, 3.7361344777200603`*^9}, {3.7362726382953887`*^9, 
    3.7362726797443852`*^9}, {3.736272714205407*^9, 3.7362727328274107`*^9}, {
    3.740147055333606*^9, 3.740147083726632*^9}, {3.7401475516446304`*^9, 
-   3.740147575847637*^9}},ExpressionUUID->"9b9e87ff-2930-4fb7-9a54-\
-a2a7b27e7437"],
+   3.740147575847637*^9}, {3.740223224376149*^9, 3.7402232636611166`*^9}, {
+   3.7402233668041177`*^9, 3.7402233997561493`*^9}, {3.7402234337651467`*^9, 
+   3.7402234376771164`*^9}, {3.740223610238154*^9, 3.740223610548116*^9}, {
+   3.7402237320621467`*^9, 3.7402238193321466`*^9}, {3.740223922936141*^9, 
+   3.740223956868116*^9}, {3.7402240268051467`*^9, 3.7402241287881465`*^9}, {
+   3.7402242741041365`*^9, 3.740224322364146*^9}, {3.740224687661147*^9, 
+   3.740224698710149*^9}, {3.7402248352617955`*^9, 3.7402248670688505`*^9}, {
+   3.7402249137888603`*^9, 3.740224931075854*^9}},
+ EmphasizeSyntaxErrors->
+  True,ExpressionUUID->"9b9e87ff-2930-4fb7-9a54-a2a7b27e7437"],
 
 Cell[BoxData["\[IndentingNewLine]"], "Input",
  CellChangeTimes->{
@@ -1537,8 +1574,8 @@ Cell[BoxData[""], "Input",
   3.7227681371236677`*^9}},ExpressionUUID->"9dff0cf8-f385-4bb6-a9b5-\
 e472b505b89b"]
 },
-WindowSize->{991, 982},
-WindowMargins->{{Automatic, -6}, {Automatic, 0}},
+WindowSize->{932, 982},
+WindowMargins->{{Automatic, -1}, {Automatic, 1}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1555,11 +1592,11 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 433, 10, 50, "Input", "ExpressionUUID" -> \
 "7ef4287b-c53d-4430-844f-c88286a4f4f6"],
-Cell[994, 32, 81784, 1495, 5448, "Input", "ExpressionUUID" -> \
+Cell[994, 32, 84354, 1532, 5676, "Input", "ExpressionUUID" -> \
 "9b9e87ff-2930-4fb7-9a54-a2a7b27e7437"],
-Cell[82781, 1529, 149, 3, 50, "Input", "ExpressionUUID" -> \
+Cell[85351, 1566, 149, 3, 50, "Input", "ExpressionUUID" -> \
 "2b8cb909-42e0-42fb-b029-919385dd1e20"],
-Cell[82933, 1534, 156, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[85503, 1571, 156, 3, 30, "Input", "ExpressionUUID" -> \
 "9dff0cf8-f385-4bb6-a9b5-e472b505b89b"]
 }
 ]
