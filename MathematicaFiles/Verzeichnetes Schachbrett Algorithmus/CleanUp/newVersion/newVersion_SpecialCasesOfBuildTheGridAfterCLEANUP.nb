@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    121062,       2323]
-NotebookOptionsPosition[    120445,       2303]
-NotebookOutlinePosition[    120787,       2318]
-CellTagsIndexPosition[    120744,       2315]
+NotebookDataLength[    129285,       2493]
+NotebookOptionsPosition[    128669,       2473]
+NotebookOutlinePosition[    129010,       2488]
+CellTagsIndexPosition[    128967,       2485]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -673,9 +673,15 @@ Result______________________________________________________________ \n\n\
            RowBox[{"\"\<SortedPoints = \>\"", ",", 
             RowBox[{"Flatten", "[", "SortedPoints", "]"}]}], "]"}], ";", 
           "\[IndentingNewLine]", 
+          RowBox[{"(*", 
+           RowBox[{
+            RowBox[{"Clear", "[", "CheckPoints", "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"CheckPoints", "=", 
+             RowBox[{"{", "}"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
           RowBox[{"DrawGraph", "[", "SortedPoints", "]"}], ";", 
           "\[IndentingNewLine]", 
-          RowBox[{"splits", "=", " ", "2"}], ";"}]}], "\[IndentingNewLine]", 
+          RowBox[{"splits", "=", " ", "4"}], ";"}]}], "\[IndentingNewLine]", 
         "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
   "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -1018,10 +1024,30 @@ Result______________________________________________________________ \n\n\
                "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
-       RowBox[{"SetSyntheticPoint", "[", 
+       RowBox[{"(*", 
         RowBox[{
-        "StartAtThisJPoint", ",", "propJ", ",", "lastdistanceJ", ",", 
-         "nextNeighbourNumber"}], "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"SaftyKeysList", ",", 
+           RowBox[{"SetSyntheticPointJ", "[", 
+            RowBox[{
+            "StartAtThisJPoint", ",", "propJ", ",", "lastdistanceJ", ",", 
+             "nextNeighbourNumber", ",", 
+             RowBox[{"CheckLastPointJ", "[", "NeighbourI", "]"}], ",", 
+             "Start", ",", "ConvexHull", ",", "lastDirJ"}], " ", "]"}]}], 
+          "]"}], ";"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"SetSyntheticPointJ", "[", 
+          RowBox[{
+          "StartAtThisJPoint", ",", "propJ", ",", "lastdistanceJ", ",", 
+           "nextNeighbourNumber", ",", 
+           RowBox[{"CheckLastPointJ", "[", "NeighbourI", "]"}], ",", "Start", 
+           ",", "ConvexHull", ",", "lastDirJ"}], " ", "]"}], ";"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<SaftyKeyList = \>\"", ",", " ", "SaftyKeysList"}], "]"}],
+        ";", "\[IndentingNewLine]", 
        RowBox[{"Clear", "[", "SaftyList", "]"}], ";", "\[IndentingNewLine]", 
        RowBox[{"Return", "[", "SaftyKeysList", "]"}], ";"}]}], 
      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
@@ -1681,29 +1707,144 @@ Result______________________________________________________________ \n\n\
         "\[IndentingNewLine]", 
        RowBox[{"Print", "[", "\"\<NEXT\>\"", "]"}], ";", 
        "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{
+        "\"\<SaftyPossiblePointsListJ = \>\"", ",", " ", 
+         "SaftyPossiblePointsListJ"}], "]"}], ";", "\[IndentingNewLine]", 
        RowBox[{"Return", "[", "SaftyPossiblePointsListJ", "]"}], ";"}]}], 
      "\[IndentingNewLine]", "]"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{"SetSyntheticPoint", "[", 
+    RowBox[{"SetSyntheticPointJ", "[", 
      RowBox[{
      "StartAtThisJPoint_", ",", "propJ_", ",", "lastdistanceJ_", ",", 
-      "nextNeighbourNumber_"}], "]"}], ":=", 
+      "nextNeighbourNumber_", ",", "LastNeighboutJ_", ",", "Start_", ",", 
+      "ConvexHull_", ",", "lastDirJ_"}], " ", "]"}], ":=", 
     RowBox[{"Module", "[", 
      RowBox[{
-      RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"LastPoint", ",", " ", "LastDir", ",", " ", 
+        RowBox[{"SynPoint", "=", 
+         RowBox[{"<|", "|>"}]}], ",", 
+        RowBox[{"SynPossiblePointsListJ", " ", "=", " ", 
+         RowBox[{"{", "}"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
       RowBox[{
+       RowBox[{"LastDir", " ", "=", " ", "lastDirJ"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"LastPoint", " ", "=", " ", "StartAtThisJPoint"}], ";", 
+       "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{"\"\<SaftyList in SyntheticPoint Function = \>\"", ",", " ", 
-         RowBox[{"MatrixForm", "[", "StartAtThisJPoint", "]"}]}], "]"}], 
-       ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         RowBox[{"MatrixForm", "[", "LastPoint", "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<LastDir = \>\"", ",", " ", 
+         RowBox[{"LastDir", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], " ", "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"AssociateTo", "[", 
+        RowBox[{"SynPoint", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"CoordJ", "\[Rule]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"LastPoint", "[", "CoordJ", "]"}], "-", 
+              RowBox[{"LastDir", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], ")"}]}], ",", " ", 
+           RowBox[{"CoordI", " ", "\[Rule]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"LastPoint", "[", "CoordI", "]"}], "-", 
+              RowBox[{"LastDir", "[", 
+               RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}], ",", " ", 
+           RowBox[{"NeighbourJ", "\[Rule]", " ", 
+            RowBox[{"nextNeighbourNumber", "+", "1"}]}], ",", " ", 
+           RowBox[{"NeighbourI", " ", "\[Rule]", " ", "LastNeighboutJ"}]}], 
+          "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"SynPoint", "[", "CoordI", "]"}], " ", "=", " ", 
+          RowBox[{
+           RowBox[{"LastPoint", "[", "CoordI", "]"}], "-", 
+           RowBox[{"LastDir", "[", "CoordI", "]"}]}]}], ";"}], "*)"}], 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<Synthetic Point = \>\"", ",", " ", "SynPoint"}], " ", 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "SynPoint", "]"}], ";"}]}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"vv", "=", " ", "1"}], ",", " ", 
+         RowBox[{"vv", "\[LessEqual]", " ", 
+          RowBox[{"Length", "[", "ConvexHull", "]"}]}], ",", " ", 
+         RowBox[{"vv", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"ConvexHull", "[", 
+                RowBox[{"[", "vv", "]"}], "]"}], "[", "CellI", "]"}], "==", 
+              "  ", 
+              RowBox[{
+               RowBox[{"SynPoint", "[", "CellI", "]"}], " ", "+", "1"}]}], "||", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ConvexHull", "[", 
+                RowBox[{"[", "vv", "]"}], "]"}], "[", "CellI", "]"}], "==", 
+              "  ", 
+              RowBox[{
+               RowBox[{"SynPoint", "[", "CellI", "]"}], "-", "1"}]}], "||", 
+             " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"ConvexHull", "[", 
+                 RowBox[{"[", "vv", "]"}], "]"}], "[", "CellI", "]"}], 
+               "\[Equal]", 
+               RowBox[{"SynPoint", "[", "CellI", "]"}]}], " ", "&&", " ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"ConvexHull", "[", 
+                 RowBox[{"[", "vv", "]"}], "]"}], "[", "CellJ", "]"}], 
+               "\[LessEqual]", "  ", "splits"}], " ", "&&", " ", 
+              RowBox[{
+               RowBox[{"MemberQ", "[", 
+                RowBox[{"CheckPoints", ",", 
+                 RowBox[{"ConvexHull", "[", 
+                  RowBox[{"[", "vv", "]"}], "]"}]}], "]"}], "\[Equal]", 
+               "False"}]}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"AppendTo", "[", 
+              RowBox[{"SynPossiblePointsListJ", ",", 
+               RowBox[{"ConvexHull", "[", 
+                RowBox[{"[", "vv", "]"}], "]"}]}], "]"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{
+        "\"\<PossiblePointList after SynPoint = \>\"", ",", 
+         "SynPossiblePointsListJ"}], "]"}], ";"}], "*)"}], 
+     "\[IndentingNewLine]", 
      RowBox[{"(*", 
       RowBox[{
       "Synthetischen", " ", "n\[ADoubleDot]chsten", " ", "Punkt", " ", 
        "setzten", " ", "und", " ", "ab", " ", "dem", " ", "nochmal", " ", 
        "completeGrid", " ", "laufen", " ", "lassen", "??"}], "*)"}], 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"CompleteJGrid", "[", 
+       RowBox[{
+       "StartPointI", ",", "ConvexHull", ",", "lastdistanceJ", ",", "propJ", 
+        ",", "Start", ",", "NeighbourNumberJ", ",", "aI"}], "]"}], "*)"}], 
      "\[IndentingNewLine]", "]"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.7264811532375135`*^9, 3.726481358032544*^9}, {
@@ -2282,8 +2423,37 @@ Result______________________________________________________________ \n\n\
    3.740206603061388*^9}, {3.7402067439550724`*^9, 3.7402067644180284`*^9}, {
    3.740206854000903*^9, 3.7402068877205734`*^9}, {3.740206964651168*^9, 
    3.740207020115381*^9}, {3.740207078000615*^9, 3.740207082266017*^9}, {
-   3.7402071416035385`*^9, 
-   3.740207172186861*^9}},ExpressionUUID->"eecc44b0-7133-421e-9a58-\
+   3.7402071416035385`*^9, 3.740207172186861*^9}, {3.7402077839920907`*^9, 
+   3.740207801073061*^9}, {3.740207921805091*^9, 3.740207992289091*^9}, {
+   3.7402080881970963`*^9, 3.740208100098092*^9}, {3.7402081501420994`*^9, 
+   3.7402081598160915`*^9}, 3.740208523272603*^9, {3.7402085843886323`*^9, 
+   3.740208620649603*^9}, {3.740208652513636*^9, 3.740208782320603*^9}, {
+   3.740208835226616*^9, 3.740208840848602*^9}, {3.740208895665602*^9, 
+   3.740208945744604*^9}, {3.740209027644858*^9, 3.7402090582098265`*^9}, {
+   3.7402091296928277`*^9, 3.7402091737888265`*^9}, {3.740209219676829*^9, 
+   3.740209257034857*^9}, {3.740209423321857*^9, 3.7402094323478265`*^9}, {
+   3.7402094655208263`*^9, 3.74020949741786*^9}, {3.7402097284144506`*^9, 
+   3.740209755892484*^9}, {3.740209816379451*^9, 3.740209818644484*^9}, {
+   3.740211381505193*^9, 3.7402114359061933`*^9}, {3.740211485179224*^9, 
+   3.7402115238991942`*^9}, {3.7402115822731943`*^9, 
+   3.7402116456022234`*^9}, {3.7402116874682274`*^9, 
+   3.7402117128622236`*^9}, {3.7402117457741933`*^9, 
+   3.7402117468602257`*^9}, {3.7402117845722237`*^9, 3.740211818979224*^9}, {
+   3.7402118627241936`*^9, 3.740211884754227*^9}, {3.740212030269683*^9, 
+   3.7402120707856493`*^9}, {3.74021220548827*^9, 3.740212215518304*^9}, {
+   3.740212307933301*^9, 3.7402123214743013`*^9}, {3.7402123553512707`*^9, 
+   3.7402124224273005`*^9}, {3.740212453253271*^9, 3.7402125454615955`*^9}, {
+   3.740212644073205*^9, 3.740212668550167*^9}, {3.7402127453972*^9, 
+   3.7402127617001977`*^9}, {3.740214232126886*^9, 3.740214235380863*^9}, {
+   3.7402143610414667`*^9, 3.740214387861462*^9}, {3.7402145511742334`*^9, 
+   3.740214575575386*^9}, 3.740214646397276*^9, {3.7402147518685946`*^9, 
+   3.7402147599686236`*^9}, {3.74021480396626*^9, 3.740214839310345*^9}, {
+   3.7402149147291775`*^9, 3.7402149370843763`*^9}, {3.7402152678394675`*^9, 
+   3.7402153066274853`*^9}, {3.7402153573614073`*^9, 
+   3.7402153815719285`*^9}, {3.7402155639824953`*^9, 
+   3.7402155673084955`*^9}, {3.74021933615633*^9, 3.7402193760033298`*^9}, {
+   3.740219659037323*^9, 
+   3.740219661743331*^9}},ExpressionUUID->"eecc44b0-7133-421e-9a58-\
 5f619c87cce0"],
 
 Cell[BoxData[""], "Input",
@@ -2301,8 +2471,8 @@ Cell[BoxData[""], "Input",
   3.7272613072460938`*^9}},ExpressionUUID->"486d87d8-70d1-4db2-b515-\
 b5e2cc0d079d"]
 },
-WindowSize->{637, 628},
-WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+WindowSize->{971, 984},
+WindowMargins->{{Automatic, 5}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2317,13 +2487,13 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 119408, 2266, 10966, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 127632, 2436, 10220, "Input", "ExpressionUUID" -> \
 "eecc44b0-7133-421e-9a58-5f619c87cce0"],
-Cell[119969, 2288, 156, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[128193, 2458, 156, 3, 30, "Input", "ExpressionUUID" -> \
 "1746f5f7-62f7-4a4a-92f3-6c6280c95a5a"],
-Cell[120128, 2293, 154, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[128352, 2463, 154, 3, 30, "Input", "ExpressionUUID" -> \
 "62a98352-822a-4c3d-bc36-636740f7dbc1"],
-Cell[120285, 2298, 156, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[128509, 2468, 156, 3, 30, "Input", "ExpressionUUID" -> \
 "486d87d8-70d1-4db2-b515-b5e2cc0d079d"]
 }
 ]

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8169,        180]
-NotebookOptionsPosition[      7866,        166]
-NotebookOutlinePosition[      8208,        181]
-CellTagsIndexPosition[      8165,        178]
+NotebookDataLength[      8408,        183]
+NotebookOptionsPosition[      8105,        169]
+NotebookOutlinePosition[      8447,        184]
+CellTagsIndexPosition[      8404,        181]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -48,32 +48,31 @@ Cell[BoxData[
             RowBox[{
              RowBox[{"GraphicPoints", "[", 
               RowBox[{"[", "cc", "]"}], "]"}], "[", "NeighbourI", "]"}], 
-            "\[Equal]", "3"}], 
+            "\[Equal]", " ", "2"}], 
            RowBox[{"(*", 
             RowBox[{"&&", 
              RowBox[{
               RowBox[{
                RowBox[{"GraphicPoints", "[", 
                 RowBox[{"[", "cc", "]"}], "]"}], "[", "NeighbourJ", "]"}], 
-              "\[Equal]", "5"}]}], "*)"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"(*", 
-            RowBox[{
-             RowBox[{"Print", "[", 
-              RowBox[{"\"\<third J Points = \>\"", ",", " ", 
-               RowBox[{"GraphicPoints", "[", 
-                RowBox[{"[", "cc", "]"}], "]"}]}], "]"}], ";"}], "*)"}], 
-           "\[IndentingNewLine]", 
-           RowBox[{"AppendTo", "[", 
-            RowBox[{"G1", ",", 
-             RowBox[{"{", 
-              RowBox[{
+              "\[Equal]", "2"}]}], "*)"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Print", "[", 
+             RowBox[{"\"\<Point = \>\"", ",", " ", 
+              RowBox[{"GraphicPoints", "[", 
+               RowBox[{"[", "cc", "]"}], "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"G1", ",", 
+              RowBox[{"{", 
                RowBox[{
-                RowBox[{"GraphicPoints", "[", 
-                 RowBox[{"[", "cc", "]"}], "]"}], "[", "CoordJ", "]"}], ",", 
-               RowBox[{
-                RowBox[{"GraphicPoints", "[", 
-                 RowBox[{"[", "cc", "]"}], "]"}], "[", "CoordI", "]"}]}], 
-              "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"GraphicPoints", "[", 
+                  RowBox[{"[", "cc", "]"}], "]"}], "[", "CoordJ", "]"}], ",", 
+                RowBox[{
+                 RowBox[{"GraphicPoints", "[", 
+                  RowBox[{"[", "cc", "]"}], "]"}], "[", "CoordI", "]"}]}], 
+               "}"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
            RowBox[{
             RowBox[{"AppendTo", "[", 
              RowBox[{"G2", ",", " ", 
@@ -161,11 +160,15 @@ Cell[BoxData[
    3.7282034567822914`*^9, 3.7282034571712914`*^9}, {3.7282043042702928`*^9, 
    3.7282043047143216`*^9}, {3.728743429547512*^9, 3.7287434298405113`*^9}, {
    3.7288985805651464`*^9, 3.7288985952783375`*^9}, {3.734355385097198*^9, 
-   3.7343553938022156`*^9}},ExpressionUUID->"1a910c7f-7033-4f7d-a4b1-\
+   3.7343553938022156`*^9}, 3.740207640616061*^9, {3.7402084527216315`*^9, 
+   3.740208467864602*^9}, {3.740219462787301*^9, 3.74021947949833*^9}, {
+   3.7402195349533014`*^9, 3.740219546061299*^9}, {3.7402195853103*^9, 
+   3.740219589060324*^9}, {3.7402196204833355`*^9, 
+   3.74021962083433*^9}},ExpressionUUID->"1a910c7f-7033-4f7d-a4b1-\
 7d18e874f778"]
 },
-WindowSize->{637, 628},
-WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+WindowSize->{963, 983},
+WindowMargins->{{Automatic, 20}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -180,11 +183,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 7304, 144, 718, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 7543, 147, 646, "Input", "ExpressionUUID" -> \
 "1a910c7f-7033-4f7d-a4b1-7d18e874f778"]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
