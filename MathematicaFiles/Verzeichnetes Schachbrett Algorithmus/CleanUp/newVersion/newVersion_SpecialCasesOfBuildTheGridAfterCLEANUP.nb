@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    119778,       2300]
-NotebookOptionsPosition[    119162,       2280]
-NotebookOutlinePosition[    119504,       2295]
-CellTagsIndexPosition[    119461,       2292]
+NotebookDataLength[    121062,       2323]
+NotebookOptionsPosition[    120445,       2303]
+NotebookOutlinePosition[    120787,       2318]
+CellTagsIndexPosition[    120744,       2315]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -967,7 +967,7 @@ Result______________________________________________________________ \n\n\
              RowBox[{"nextNeighbourNumber", "=", " ", 
               RowBox[{"nextNeighbourNumber", "+", "1"}]}], ";", 
              "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
              RowBox[{"For", "[", 
               RowBox[{
                RowBox[{"ii", "=", "1"}], ",", " ", 
@@ -1018,6 +1018,10 @@ Result______________________________________________________________ \n\n\
                "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
+       RowBox[{"SetSyntheticPoint", "[", 
+        RowBox[{
+        "StartAtThisJPoint", ",", "propJ", ",", "lastdistanceJ", ",", 
+         "nextNeighbourNumber"}], "]"}], ";", "\[IndentingNewLine]", 
        RowBox[{"Clear", "[", "SaftyList", "]"}], ";", "\[IndentingNewLine]", 
        RowBox[{"Return", "[", "SaftyKeysList", "]"}], ";"}]}], 
      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
@@ -1683,11 +1687,24 @@ Result______________________________________________________________ \n\n\
  RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{"CreateSyntheticPointsForFurtherChecks", "[", "]"}], ":=", 
+    RowBox[{"SetSyntheticPoint", "[", 
+     RowBox[{
+     "StartAtThisJPoint_", ",", "propJ_", ",", "lastdistanceJ_", ",", 
+      "nextNeighbourNumber_"}], "]"}], ":=", 
     RowBox[{"Module", "[", 
      RowBox[{
-      RowBox[{"{", "}"}], ","}], "\[IndentingNewLine]", "\[IndentingNewLine]",
-      "]"}]}], ";"}], 
+      RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<SaftyList in SyntheticPoint Function = \>\"", ",", " ", 
+         RowBox[{"MatrixForm", "[", "StartAtThisJPoint", "]"}]}], "]"}], 
+       ";"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Synthetischen", " ", "n\[ADoubleDot]chsten", " ", "Punkt", " ", 
+       "setzten", " ", "und", " ", "ab", " ", "dem", " ", "nochmal", " ", 
+       "completeGrid", " ", "laufen", " ", "lassen", "??"}], "*)"}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.7264811532375135`*^9, 3.726481358032544*^9}, {
    3.7264815405235996`*^9, 3.726481591312646*^9}, {3.726481645938631*^9, 
@@ -2259,8 +2276,14 @@ Result______________________________________________________________ \n\n\
    3.728743471221521*^9}, {3.7287436194234724`*^9, 3.728743628133443*^9}, {
    3.7288951200714593`*^9, 3.72889513369199*^9}, {3.7288951728887887`*^9, 
    3.728895173008198*^9}, {3.7362727481783867`*^9, 3.7362728079034038`*^9}, {
-   3.7401472323996058`*^9, 
-   3.74014742641064*^9}},ExpressionUUID->"eecc44b0-7133-421e-9a58-\
+   3.7401472323996058`*^9, 3.74014742641064*^9}, {3.7402061617762575`*^9, 
+   3.740206313888838*^9}, {3.7402063454371276`*^9, 3.740206420667801*^9}, {
+   3.740206528991469*^9, 3.740206536409551*^9}, {3.7402066001954055`*^9, 
+   3.740206603061388*^9}, {3.7402067439550724`*^9, 3.7402067644180284`*^9}, {
+   3.740206854000903*^9, 3.7402068877205734`*^9}, {3.740206964651168*^9, 
+   3.740207020115381*^9}, {3.740207078000615*^9, 3.740207082266017*^9}, {
+   3.7402071416035385`*^9, 
+   3.740207172186861*^9}},ExpressionUUID->"eecc44b0-7133-421e-9a58-\
 5f619c87cce0"],
 
 Cell[BoxData[""], "Input",
@@ -2278,8 +2301,8 @@ Cell[BoxData[""], "Input",
   3.7272613072460938`*^9}},ExpressionUUID->"486d87d8-70d1-4db2-b515-\
 b5e2cc0d079d"]
 },
-WindowSize->{927, 988},
-WindowMargins->{{-9, Automatic}, {Automatic, 0}},
+WindowSize->{637, 628},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2294,13 +2317,13 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 118125, 2243, 9600, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 119408, 2266, 10966, "Input", "ExpressionUUID" -> \
 "eecc44b0-7133-421e-9a58-5f619c87cce0"],
-Cell[118686, 2265, 156, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[119969, 2288, 156, 3, 30, "Input", "ExpressionUUID" -> \
 "1746f5f7-62f7-4a4a-92f3-6c6280c95a5a"],
-Cell[118845, 2270, 154, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[120128, 2293, 154, 3, 30, "Input", "ExpressionUUID" -> \
 "62a98352-822a-4c3d-bc36-636740f7dbc1"],
-Cell[119002, 2275, 156, 3, 30, "Input", "ExpressionUUID" -> \
+Cell[120285, 2298, 156, 3, 30, "Input", "ExpressionUUID" -> \
 "486d87d8-70d1-4db2-b515-b5e2cc0d079d"]
 }
 ]
